@@ -18,5 +18,29 @@
     "bases": ["text", "comparison"],
     "errors": 3,
     "announceClasses": true
+  },
+  "klasse-7-8": {
+    "grades": {
+      "from": 7,
+      "to": 8
+    },
+    "classes": [
+      "spelling_rule",
+      "slip",
+      "real_word",
+      "punctuation",
+      "number_name_date",
+      "factual_error",
+      "added_claim",
+      "connective_negation",
+      "contradiction",
+      "quantity_degree",
+      "overgeneralization",
+      "faulty_inference",
+      "opinion_as_fact"
+    ],
+    "bases": ["text", "comparison"],
+    "errors": 4,
+    "announceClasses": true
   }
 }

@@ -20,6 +20,9 @@ routes:
   - id: klasse-5-6
     title: Klasse 5 bis 6
     description: Texte mit Fehlern in der Rechtschreibung, bei Zahlen und Orten, bei Verbindungen und Widersprüchen.
+  - id: klasse-7-8
+    title: Klasse 7 bis 8
+    description: Wie in Klasse 5 bis 6, dazu Mengen und Grade, Verallgemeinerungen, falsche Folgerungen und Meinungen, die als Tatsachen auftreten.
 sections:
   - id: begruendung
     title: Wie diese Übung begründet ist
