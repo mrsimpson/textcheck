@@ -1,0 +1,378 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Textpaket (Entwurf v1)",
+  "description": "Ein Original-Auszug mit Quelle, eine Zusammenfassung in Sätzen und Stellen mit der richtigen Fassung und mehreren falschen Varianten. Der Seed wählt zur Laufzeit, welche Stellen verfälscht werden und mit welcher Variante.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "titel",
+    "klassen",
+    "thema",
+    "quelle",
+    "original",
+    "zusammenfassung",
+    "stellen"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Kleinbuchstaben mit Bindestrichen; gleich dem Dateinamen."
+    },
+    "titel": {
+      "type": "string",
+      "minLength": 3
+    },
+    "ist_beispiel": {
+      "type": "boolean",
+      "default": false,
+      "description": "Erfundener Text zur Veranschaulichung. Dann entfallen die Quellenpflichten; nie in der App ausliefern."
+    },
+    "klassen": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "von",
+        "bis"
+      ],
+      "properties": {
+        "von": {
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 13
+        },
+        "bis": {
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 13
+        }
+      },
+      "description": "Zwei benachbarte Klassenstufen (bis - von höchstens 1)."
+    },
+    "thema": {
+      "type": "string",
+      "minLength": 3,
+      "description": "Kurze Themenangabe, z. B. 'Seehunde im Wattenmeer'."
+    },
+    "quelle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "titel",
+        "url",
+        "oldid",
+        "lizenz",
+        "lizenz_url",
+        "autoren_url",
+        "abgerufen",
+        "geprueft"
+      ],
+      "properties": {
+        "titel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri",
+          "description": "Adresse der Seite, Link für den Zusatz in der App."
+        },
+        "oldid": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Fester Stand (bei Wikipedia die Revisions-ID)."
+        },
+        "lizenz": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "CC BY-SA 4.0",
+            "CC BY-SA 3.0",
+            "CC BY 4.0",
+            "CC0 1.0",
+            "gemeinfrei",
+            null
+          ]
+        },
+        "lizenz_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "autoren_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri",
+          "description": "Versionsgeschichte oder Autorenliste."
+        },
+        "abgerufen": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "pdf": {
+          "type": "string",
+          "description": "Pfad der lokalen PDF der Quelle (Modus Quellentreue), falls vorhanden."
+        },
+        "geprueft": {
+          "type": "boolean",
+          "description": "Seite geöffnet und die Belege gegen den Text geprüft."
+        }
+      }
+    },
+    "original": {
+      "type": "array",
+      "minItems": 3,
+      "description": "Wörtlicher, unveränderter Auszug aus der Quelle, Satz für Satz.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 3
+          },
+          "abschnitt": {
+            "type": "string",
+            "description": "Abschnitt oder Seite in der Quelle."
+          }
+        }
+      }
+    },
+    "zusammenfassung": {
+      "type": "array",
+      "minItems": 3,
+      "description": "Eigene Sätze. Eine Stelle steht als {stelle: id}; die richtige Fassung aller Stellen ergibt die korrekte Zusammenfassung.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "satz"
+        ],
+        "properties": {
+          "satz": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "stelle"
+                  ],
+                  "properties": {
+                    "stelle": {
+                      "type": "string",
+                      "pattern": "^[a-z0-9]+$"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "beleg": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "zitat"
+            ],
+            "properties": {
+              "zitat": {
+                "type": "string",
+                "minLength": 3,
+                "description": "Wörtliche Textstelle aus dem Original, die diesen Satz (in der richtigen Fassung) trägt."
+              }
+            },
+            "description": "Pflicht für jeden Satz, dessen richtige Fassung nicht leer ist (das Prüfwerkzeug prüft das). Wörtliche Textstelle aus dem Original, die den Satz trägt."
+          }
+        }
+      }
+    },
+    "stellen": {
+      "type": "object",
+      "minProperties": 3,
+      "propertyNames": {
+        "pattern": "^[a-z0-9]+$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "richtig",
+          "varianten"
+        ],
+        "properties": {
+          "richtig": {
+            "type": "string",
+            "description": "Richtige Fassung; leer, wenn die Variante einen Satz einfügt."
+          },
+          "varianten": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "text",
+                "klasse",
+                "basis",
+                "auffaelligkeit",
+                "erklaerung"
+              ],
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "klasse": {
+                  "$ref": "#/$defs/klasse"
+                },
+                "basis": {
+                  "enum": [
+                    "text",
+                    "vergleich",
+                    "vorwissen"
+                  ],
+                  "description": "Was man zum Erkennen braucht."
+                },
+                "auffaelligkeit": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 3,
+                  "description": "1 unauffällig bis 3 auffällig; Einstellung der Autorin oder des Autors, nicht gemessen."
+                },
+                "toleranz": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "description": "Optional. Anzahl Nachbarwörter links und rechts, die im selben Satz ohne Folge markiert werden dürfen; nur bei langen Stellen."
+                },
+                "erklaerung": {
+                  "type": "string",
+                  "minLength": 10,
+                  "description": "Einfache Sprache, für die Klassenstufe geschrieben."
+                },
+                "beleg": {
+                  "type": "string",
+                  "description": "Wörtliche Textstelle aus dem Original, die zeigt, was stimmt (bei Basis 'vergleich')."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "lesbarkeit": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Vom Prüfwerkzeug berechnet, nie von Hand geschrieben. LIX zur Orientierung (IGLU 2021 nennt LIX-Werte von Beispieltexten); kein Grenzwert.",
+      "properties": {
+        "woerter": {
+          "type": "integer"
+        },
+        "saetze": {
+          "type": "integer"
+        },
+        "lix": {
+          "type": "number"
+        }
+      }
+    },
+    "vermerke": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Unsicherheiten und offene Punkte der Autorin oder des Autors, für die Durchsicht."
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "ist_beispiel": {
+            "const": true
+          }
+        },
+        "required": [
+          "ist_beispiel"
+        ]
+      },
+      "else": {
+        "properties": {
+          "quelle": {
+            "properties": {
+              "titel": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "oldid": {
+                "type": "string"
+              },
+              "lizenz": {
+                "type": "string"
+              },
+              "lizenz_url": {
+                "type": "string"
+              },
+              "autoren_url": {
+                "type": "string"
+              },
+              "abgerufen": {
+                "type": "string"
+              },
+              "geprueft": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "klasse": {
+      "enum": [
+        "rechtschreibung_regel",
+        "fluechtigkeit",
+        "echtes_wort",
+        "zeichensetzung",
+        "zahl_name_datum",
+        "sachlich_falsch",
+        "hinzugefuegt",
+        "konjunktion_verneinung",
+        "widerspruch_im_text",
+        "menge_grad",
+        "verallgemeinerung",
+        "folgerung_ursache",
+        "meinung_als_tatsache",
+        "falsche_autoritaet",
+        "wertende_beeinflussung"
+      ]
+    }
+  }
+}
