@@ -367,13 +367,6 @@ fitness:
 
 ### Tasks
 
-- [ ] Only after the confirmation: in this plan's folder, `npx --yes github:lernapps/tooling#exp/compact-guidance create
-      --archetype <archetype>`. Keeps this plan.
-- [ ] `git switch work`, then `npm install` (dependencies, git hooks). From now on: `npx lernapps check`.
-- [ ] Commit the generated app with this plan on `work`.
-- [ ] `git push -u origin work`; open a draft pull request `work` → `main` (`gh pr create --draft --base main
-      --head work --title "Erste Version" --body "Vorschau für die Erstellerin oder den Ersteller"`). The comment
-      "Vorschau der App" links the preview; give the creator the link once. Refused → skill `lernapps-github`.
 - [ ] Load skill `lernapps-app` and the archetype's skill.
 - [ ] Fill the content guide `.agents/skills/app-content/SKILL.md` from the plan and its content method: replace
       every placeholder comment with concrete instructions (files, ids, data files, one example). Delete its top
@@ -394,6 +387,16 @@ fitness:
 
 ### Completed
 
+- [x] Only after the confirmation: in this plan's folder, `npx --yes github:lernapps/tooling#exp/compact-guidance create
+      --archetype <archetype>`. Keeps this plan.
+      Notiz: create lief ohne Fehler (app-templates f28d020). Vorher mussten `.vibe/mockups` und `.vibe/drafts` aus dem Ordner (create verlangt einen Ordner nur mit `.git`, Plan und Skills); danach zurückkopiert.
+- [x] `git switch work`, then `npm install` (dependencies, git hooks). From now on: `npx lernapps check`.
+- [x] Commit the generated app with this plan on `work`.
+      Notiz: Pre-commit schlug an: Formatierung der Skizzen und Entwürfe unter `.vibe/`; behoben mit `npx vp check --fix`, kein Umgehen.
+- [x] `git push -u origin work`; open a draft pull request `work` → `main` (`gh pr create --draft --base main
+      --head work --title "Erste Version" --body "Vorschau für die Erstellerin oder den Ersteller"`). The comment
+      "Vorschau der App" links the preview; give the creator the link once. Refused → skill `lernapps-github`.
+      Notiz: Pre-push: lernapps check ok, 9 Regeln, keine Befunde. `gh pr create` ist gesperrt (GraphQL); Pull Request #1 über `gh api` als Entwurf geöffnet: https://github.com/mrsimpson/textcheck/pull/1
 ## Commit
 
 <!--
