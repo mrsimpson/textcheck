@@ -1,0 +1,616 @@
+{
+  "id": "roemisches-reich",
+  "title": "Das Römische Reich",
+  "language": "de",
+  "grades": {
+    "from": 5,
+    "to": 6
+  },
+  "topic": "Römisches Reich: Größe, Grenzen und Sprache",
+  "source": {
+    "title": "Römisches Reich – Klexikon – das Kinderlexikon",
+    "url": "https://klexikon.zum.de/index.php?title=R%C3%B6misches_Reich&oldid=158323",
+    "revision": "158323",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://klexikon.zum.de/index.php?title=R%C3%B6misches_Reich&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/roemisches-reich.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Das Römische Reich war eine Herrschaft im Altertum.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Etwa von 200 vor Christus bis 480 nach Christus war es das größte Reich im damaligen Europa.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Ganz am Anfang war Rom eine kleine Stadt, aus der sich die Stadt Rom der heutigen Zeit in Italien entwickelte.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Doch die Römer eroberten nach und nach die italienische Halbinsel.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Danach konnte sich kaum ein Land noch gegen Rom wehren.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Zum Römischen Reich gehörten auch die Gebiete, die heute Österreich und die Schweiz sind.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Außerdem kamen die Römer im heutigen Deutschland bis an den Rhein und die Donau.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Um ihre Grenze im Norden zu verteidigen, bauten die Römer den Limes.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Das war eine lange Befestigung mit Wall und Graben.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Die Sprache der Römer war Latein, deshalb stammen viele Wörter im Deutschen aus dieser Sprache.",
+      "section": "Einleitung"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Das Römische Reich gab es ",
+        {
+          "slot": "s1"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Das Römische Reich war eine Herrschaft im Altertum."
+      }
+    },
+    {
+      "sentence": [
+        "Von etwa ",
+        {
+          "slot": "s2a"
+        },
+        " bis ",
+        {
+          "slot": "s2b"
+        },
+        " war es das größte Reich im damaligen Europa."
+      ],
+      "evidence": {
+        "quote": "Etwa von 200 vor Christus bis 480 nach Christus war es das größte Reich im damaligen Europa."
+      }
+    },
+    {
+      "sentence": [
+        "Anfangs war Rom ",
+        {
+          "slot": "s3a"
+        },
+        " Stadt, aus der die heutige Stadt Rom in ",
+        {
+          "slot": "s3b"
+        },
+        " wurde."
+      ],
+      "evidence": {
+        "quote": "Ganz am Anfang war Rom eine kleine Stadt, aus der sich die Stadt Rom der heutigen Zeit in Italien entwickelte."
+      }
+    },
+    {
+      "sentence": [
+        "Die Römer eroberten ",
+        {
+          "slot": "s4a"
+        },
+        " nach und nach die italienische ",
+        {
+          "slot": "s4b"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Doch die Römer eroberten nach und nach die italienische Halbinsel."
+      }
+    },
+    {
+      "sentence": [
+        "Danach konnte sich ",
+        {
+          "slot": "s5"
+        },
+        " Land noch gegen Rom wehren."
+      ],
+      "evidence": {
+        "quote": "Danach konnte sich kaum ein Land noch gegen Rom wehren."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "a1"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Zum Römischen Reich gehörten auch Gebiete im heutigen ",
+        {
+          "slot": "s6a"
+        },
+        " und in der ",
+        {
+          "slot": "s6b"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Zum Römischen Reich gehörten auch die Gebiete, die heute Österreich und die Schweiz sind."
+      }
+    },
+    {
+      "sentence": [
+        "Im heutigen Deutschland kamen sie bis an ",
+        {
+          "slot": "s7a"
+        },
+        " und ",
+        {
+          "slot": "s7b"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Außerdem kamen die Römer im heutigen Deutschland bis an den Rhein und die Donau."
+      }
+    },
+    {
+      "sentence": [
+        "Um ihre Grenze im ",
+        {
+          "slot": "s8a"
+        },
+        " zu ",
+        {
+          "slot": "s8b"
+        },
+        ", bauten die Römer den Limes."
+      ],
+      "evidence": {
+        "quote": "Um ihre Grenze im Norden zu verteidigen, bauten die Römer den Limes."
+      }
+    },
+    {
+      "sentence": [
+        "Der Limes war eine ",
+        {
+          "slot": "s9a"
+        },
+        " ",
+        {
+          "slot": "s9b"
+        },
+        " mit ",
+        {
+          "slot": "s9c"
+        },
+        " und Graben."
+      ],
+      "evidence": {
+        "quote": "Das war eine lange Befestigung mit Wall und Graben."
+      }
+    },
+    {
+      "sentence": [
+        "Die Sprache der Römer war ",
+        {
+          "slot": "s10a"
+        },
+        " ",
+        {
+          "slot": "s10b"
+        },
+        " stammen viele Wörter im Deutschen aus dieser Sprache."
+      ],
+      "evidence": {
+        "quote": "Die Sprache der Römer war Latein, deshalb stammen viele Wörter im Deutschen aus dieser Sprache."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "a2"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "im Altertum",
+      "variants": [
+        {
+          "text": "im Mittelalter",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Das Römische Reich war eine Herrschaft im Altertum.“ Das Reich gab es im Altertum.",
+          "evidence": "Das Römische Reich war eine Herrschaft im Altertum."
+        },
+        {
+          "text": "in der Neuzeit",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Das Römische Reich war eine Herrschaft im Altertum.“ Das Reich gab es im Altertum.",
+          "evidence": "Das Römische Reich war eine Herrschaft im Altertum."
+        }
+      ]
+    },
+    "s2a": {
+      "correct": "200 vor Christus",
+      "variants": [
+        {
+          "text": "200 nach Christus",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Etwa von 200 vor Christus bis 480 nach Christus“ Die Zeitangabe wurde verändert.",
+          "tolerance": 1,
+          "evidence": "Etwa von 200 vor Christus bis 480 nach Christus war es das größte Reich im damaligen Europa."
+        },
+        {
+          "text": "300 vor Christus",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Etwa von 200 vor Christus bis 480 nach Christus“ Die Zeitangabe wurde verändert.",
+          "tolerance": 1,
+          "evidence": "Etwa von 200 vor Christus bis 480 nach Christus war es das größte Reich im damaligen Europa."
+        }
+      ]
+    },
+    "s2b": {
+      "correct": "480 nach Christus",
+      "variants": [
+        {
+          "text": "840 nach Christus",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Etwa von 200 vor Christus bis 480 nach Christus“ Die Zeitangabe wurde verändert.",
+          "tolerance": 1,
+          "evidence": "Etwa von 200 vor Christus bis 480 nach Christus war es das größte Reich im damaligen Europa."
+        },
+        {
+          "text": "480 vor Christus",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Etwa von 200 vor Christus bis 480 nach Christus“ Die Zeitangabe wurde verändert.",
+          "tolerance": 1,
+          "evidence": "Etwa von 200 vor Christus bis 480 nach Christus war es das größte Reich im damaligen Europa."
+        }
+      ]
+    },
+    "s3a": {
+      "correct": "eine kleine",
+      "variants": [
+        {
+          "text": "eine riesige",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Ganz am Anfang war Rom eine kleine Stadt“ Am Anfang war Rom klein.",
+          "evidence": "Ganz am Anfang war Rom eine kleine Stadt, aus der sich die Stadt Rom der heutigen Zeit in Italien entwickelte."
+        }
+      ]
+    },
+    "s3b": {
+      "correct": "Italien",
+      "variants": [
+        {
+          "text": "Griechenland",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „die Stadt Rom der heutigen Zeit in Italien“ Der Ort wurde verändert.",
+          "evidence": "Ganz am Anfang war Rom eine kleine Stadt, aus der sich die Stadt Rom der heutigen Zeit in Italien entwickelte."
+        },
+        {
+          "text": "Itallien",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort hat nur ein „l“: Italien."
+        }
+      ]
+    },
+    "s4a": {
+      "correct": "aber",
+      "variants": [
+        {
+          "text": "deshalb",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht „Doch“: Aus der kleinen Stadt wurde trotzdem ein großes Reich. „Deshalb“ nennt einen Grund, der nicht im Text steht.",
+          "evidence": "Doch die Römer eroberten nach und nach die italienische Halbinsel."
+        }
+      ]
+    },
+    "s4b": {
+      "correct": "Halbinsel",
+      "variants": [
+        {
+          "text": "Insel",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „die italienische Halbinsel“ Es war eine Halbinsel.",
+          "evidence": "Doch die Römer eroberten nach und nach die italienische Halbinsel."
+        },
+        {
+          "text": "Halbinzel",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort endet auf „-insel“, mit „s“. Man schreibt: Halbinsel."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "kaum ein",
+      "variants": [
+        {
+          "text": "jedes",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Danach konnte sich kaum ein Land noch gegen Rom wehren.“ Fast kein Land konnte sich noch wehren.",
+          "evidence": "Danach konnte sich kaum ein Land noch gegen Rom wehren."
+        },
+        {
+          "text": "ein",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht „kaum ein Land“. Ohne „kaum“ sagt der Satz etwas ganz anderes.",
+          "evidence": "Danach konnte sich kaum ein Land noch gegen Rom wehren."
+        }
+      ]
+    },
+    "a1": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Die Römer bauten viele Straßen.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Dieser Satz steht nicht im Original. Von Straßen ist dort nicht die Rede."
+        }
+      ]
+    },
+    "s6a": {
+      "correct": "Österreich",
+      "variants": [
+        {
+          "text": "Norwegen",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „die heute Österreich und die Schweiz sind“ Der Name eines Landes wurde verändert.",
+          "evidence": "Zum Römischen Reich gehörten auch die Gebiete, die heute Österreich und die Schweiz sind."
+        },
+        {
+          "text": "Östereich",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Hier fehlt ein Buchstabe: Österreich. Solche Fehler passieren schnell beim Schreiben."
+        }
+      ]
+    },
+    "s6b": {
+      "correct": "Schweiz",
+      "variants": [
+        {
+          "text": "Schweitz",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach „ei“ steht ein einfaches „z“, kein „tz“. Man schreibt: Schweiz."
+        }
+      ]
+    },
+    "s7a": {
+      "correct": "den Rhein",
+      "variants": [
+        {
+          "text": "die Elbe",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „bis an den Rhein und die Donau“ Der Name eines Flusses wurde verändert.",
+          "evidence": "Außerdem kamen die Römer im heutigen Deutschland bis an den Rhein und die Donau."
+        },
+        {
+          "text": "den Rein",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "„Rein“ gibt es als Wort, gemeint ist aber der Fluss „Rhein“. Ein Rechtschreibprogramm findet diesen Fehler nicht."
+        }
+      ]
+    },
+    "s7b": {
+      "correct": "die Donau",
+      "variants": [
+        {
+          "text": "die Weser",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „bis an den Rhein und die Donau“ Der Name eines Flusses wurde verändert.",
+          "evidence": "Außerdem kamen die Römer im heutigen Deutschland bis an den Rhein und die Donau."
+        },
+        {
+          "text": "die Oder",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „bis an den Rhein und die Donau“ Der Name eines Flusses wurde verändert.",
+          "evidence": "Außerdem kamen die Römer im heutigen Deutschland bis an den Rhein und die Donau."
+        }
+      ]
+    },
+    "s8a": {
+      "correct": "Norden",
+      "variants": [
+        {
+          "text": "Süden",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Um ihre Grenze im Norden zu verteidigen“ Die Himmelsrichtung wurde verändert.",
+          "evidence": "Um ihre Grenze im Norden zu verteidigen, bauten die Römer den Limes."
+        },
+        {
+          "text": "Westen",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Um ihre Grenze im Norden zu verteidigen“ Die Himmelsrichtung wurde verändert.",
+          "evidence": "Um ihre Grenze im Norden zu verteidigen, bauten die Römer den Limes."
+        }
+      ]
+    },
+    "s8b": {
+      "correct": "verteidigen",
+      "variants": [
+        {
+          "text": "erweitern",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Um ihre Grenze im Norden zu verteidigen“ Der Limes sollte die Grenze verteidigen.",
+          "evidence": "Um ihre Grenze im Norden zu verteidigen, bauten die Römer den Limes."
+        }
+      ]
+    },
+    "s9a": {
+      "correct": "lange",
+      "variants": [
+        {
+          "text": "kurze",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Das war eine lange Befestigung“ Der Limes war eine lange Befestigung.",
+          "evidence": "Das war eine lange Befestigung mit Wall und Graben."
+        }
+      ]
+    },
+    "s9b": {
+      "correct": "Befestigung",
+      "variants": [
+        {
+          "text": "Straße",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Das war eine lange Befestigung mit Wall und Graben.“ Der Limes war eine Befestigung.",
+          "evidence": "Das war eine lange Befestigung mit Wall und Graben."
+        },
+        {
+          "text": "Befästigung",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort kommt von „fest“. Darum schreibt man „e“ und nicht „ä“: Befestigung."
+        }
+      ]
+    },
+    "s9c": {
+      "correct": "Wall",
+      "variants": [
+        {
+          "text": "Wahl",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Wahl“ gibt es als Wort, gemeint ist aber „Wall“. Ein Rechtschreibprogramm findet diesen Fehler nicht."
+        },
+        {
+          "text": "Zaun",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Das war eine lange Befestigung mit Wall und Graben.“ Der Limes hatte einen Wall und einen Graben.",
+          "evidence": "Das war eine lange Befestigung mit Wall und Graben."
+        }
+      ]
+    },
+    "s10a": {
+      "correct": "Latein,",
+      "variants": [
+        {
+          "text": "Latein",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier beginnt ein neuer Hauptsatz mit „deshalb“. Davor steht ein Komma: Latein, deshalb."
+        },
+        {
+          "text": "Griechisch,",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Die Sprache der Römer war Latein“ Die Sprache der Römer war Latein.",
+          "evidence": "Die Sprache der Römer war Latein, deshalb stammen viele Wörter im Deutschen aus dieser Sprache."
+        }
+      ]
+    },
+    "s10b": {
+      "correct": "deshalb",
+      "variants": [
+        {
+          "text": "trotzdem",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht „deshalb“: Weil die Römer Latein sprachen, kommen viele Wörter aus dieser Sprache. „Trotzdem“ passt nicht zu diesem Grund.",
+          "evidence": "Die Sprache der Römer war Latein, deshalb stammen viele Wörter im Deutschen aus dieser Sprache."
+        }
+      ]
+    },
+    "a2": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Rom war die Hauptstadt des Reiches.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Dieser Satz steht nicht im Original. Dort wird nicht gesagt, welche Stadt die Hauptstadt war."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Klexikon-Artikel Römisches Reich (Revision 158323), am 2026-10-18 abgerufen und lokal gespeichert; die Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de (rel=license). Das Paket steht unter derselben Lizenz (CC BY-SA 4.0).",
+    "Die Falschschreibungen sind nach den Mustern der IQB-Handreichung und der AFRA-Kategorien (Ableitung, Dehnung, Konsonantverdopplung, Auslautverhärtung, Groß-/Kleinschreibung) konstruiert, nicht von Lernenden gesammelt.",
+    "Weggelassen wurden der Satz über das Mittelmeer, die Abschnitte zu Herrschern, Alltag, Erfindungen, Römerzeit im deutschsprachigen Raum und zum Untergang sowie die Bildunterschriften, weil sie für diesen Auszug nicht gebraucht werden.",
+    "Nicht geprüft: ob der Artikeltext des Klexikons fachlich vollständig stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Sachlage in der Welt.",
+    "Die Quelle liegt als PDF unter public/quellen/de/roemisches-reich.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+  ]
+}
