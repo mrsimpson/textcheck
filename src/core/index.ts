@@ -11,7 +11,7 @@ import type { Side, State, Token } from "./types.ts";
 
 export type { State } from "./types.ts";
 
-/** The language of version 1; a later version sets it by the action "language". */
+/** The language a round starts in; the page sets its own by the action "language" (see `step`). */
 const DEFAULT_LANGUAGE = "de";
 
 export function start(seed: number, route: string, language: string = DEFAULT_LANGUAGE): State {
@@ -98,6 +98,16 @@ function choose(state: State, side: unknown): State {
   return { ...state, choice: side, marked: [], cursor: 0, changed: -1, last: "choose" };
 }
 
+/**
+ * The same round (seed and route) in another language: the page tells the core its language, because the runtime starts
+ * the core without one. A language without a pack for the route's school years leaves the state as it is.
+ */
+function inLanguage(state: State, language: unknown): State {
+  if (typeof language !== "string" || language === state.language) return state;
+  if (packsFor(language, levelOf(state.route)).length === 0) return state;
+  return start(state.seed, state.route, language);
+}
+
 export function step(state: State, input: Input): State {
   if (input.kind === "key") {
     // 1 and 2 pick the text in the mode `choose`; the root component does not use other keys
@@ -106,6 +116,7 @@ export function step(state: State, input: Input): State {
   }
   if (input.kind !== "action") return state;
   if (input.name === "again") return start(state.seed + 1, state.route, state.language);
+  if (input.name === "language") return inLanguage(state, input.value);
   if (state.phase !== "marking") return state;
   switch (input.name) {
     case "choose":

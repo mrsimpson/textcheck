@@ -4,7 +4,7 @@
 
 - Needs: you may reuse and republish it, and you can open it completely. Preferred, in this order:
   1. Children's and school encyclopedias under CC BY-SA (German: Klexikon for grades 3-6; Wikipedia, simple
-     language, for 7+).
+     language, for 7+; English: Simple English Wikipedia for grades 3-8, English Wikipedia for 9+).
   2. Official texts that allow reuse (laws, public bodies with an open licence, CC BY / CC0 pages).
   3. Texts the creator supplies with a licence.
 - Not allowed: newspaper articles, textbooks, tests of publishers, anything without a licence statement.
@@ -29,3 +29,9 @@
   every `evidence.quote` and the excerpt with the opened source.
 - Under CC BY-SA the pack data stays under the same licence; say that in `notes`.
 - In `notes`: what you did not verify, which parts of the source you left out and why.
+
+## Wikimedia rate limits
+
+- Wikimedia limits requests per IP address, and the cloud sessions share addresses. Ask for one page at a time, at least
+  a minute apart, with a descriptive User-Agent; on 429 wait for `retry-after` and try once more. Fetch the page once
+  (action=parse gives text and revision id) and work from the saved copy; the PDF script needs one more request.

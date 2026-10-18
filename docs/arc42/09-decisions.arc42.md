@@ -354,4 +354,25 @@ addresses: qg-privacy
 ```
 
 <!-- app: begin -->
+
+## The Page Tells the Core Its Language
+
+The runtime calls `start(seed, route)` without a language, and again at every route change. The core could keep the
+language in a variable of its module, which would make it depend on more than seed and route and break the playthroughs.
+Instead the root component watches the state's `language` and emits the action `language` when it differs from the
+page's, so that the language stays an input like any other, a playthrough can set it, and the same seed and route give
+the same round in a language. A language without a pack for the route leaves the state as it is. Rejected: a module
+variable in the core, and a separate route per language (the language switcher of the frame already has pages per
+language).
+
+```arc42
+:::decision
+id: dec-language-as-input
+title: The page's language reaches the core as the action language
+status: accepted
+date: 2026-10-18
+addresses: qg-checkable
+:::
+```
+
 <!-- app: end -->

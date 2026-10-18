@@ -170,6 +170,12 @@ The route names the mode: `app/#klasse-5-6-quelle` plays the same round with the
 `app/#klasse-5-6-original` shows two texts, A and B, and the learner first picks the text with the errors and then
 marks the words there; the result says whether the pick was right.
 
+The app has pages per language, German at the root and English below `/en/`, with the frame's language switcher. The
+runtime starts the core with the seed and the route only, so the root component tells it the page's language by the
+action `language`, on the first state and again after every route change; the core then starts the same round, the same
+seed and route, with a pack of that language. The source PDFs lie at the site root, so the link from `/en/app/` goes
+two levels up.
+
 ```arc42
 :::runtime-scenario
 id: scenario-textcheck-round

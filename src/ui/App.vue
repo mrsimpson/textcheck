@@ -40,8 +40,21 @@ onMounted(() => {
   query.addEventListener("change", onChange);
 });
 onUnmounted(() => query?.removeEventListener("change", onChange));
-// the app page is one level below the site root, where the PDFs lie
-const pdfUrl = computed(() => (props.state.pdf === null ? null : `../${props.state.pdf}`));
+// the app page is one level below its language's root (German at the site root, every other language below /<lang>/),
+// the PDFs lie at the site root
+const pdfUrl = computed(() =>
+  props.state.pdf === null ? null : `${props.lang === "de" ? "../" : "../../"}${props.state.pdf}`,
+);
+
+// the runtime starts the core without the page's language, and again at every route change: tell it, so that the round
+// is of the packs of this language
+watch(
+  () => props.state.language,
+  (language) => {
+    if (language !== props.lang) emit("input", { kind: "action", name: "language", value: props.lang });
+  },
+  { immediate: true },
+);
 
 // the two selects: the age group and the mode; a change goes to the route in the address, where the runtime picks it up
 const levelOptions = Object.entries(LEVELS)
