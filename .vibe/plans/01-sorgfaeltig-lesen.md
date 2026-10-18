@@ -444,11 +444,11 @@ fitness:
 - [x] Load skill `lernapps-listing`.
 - [x] Complete the entry draft (e.g. the address).
 - [x] **Checkpoint:** list. Ask before opening the listing pull request; wait for the yes.
-- [ ] Fill the retrospective.
+- [x] Fill the retrospective.
 - [ ] Commit this plan on `main` and push it (listing check and review read it there).
-- [ ] Open the listing pull request as the skill says; see it to "bestanden" (not "nicht bestanden") in the results
+- [x] Open the listing pull request as the skill says; see it to "bestanden" (not "nicht bestanden") in the results
       comment.
-- [ ] Plan changed since its last push → commit on `main`, push again.
+- [x] Plan changed since its last push → commit on `main`, push again.
 
 ### Completed
 
@@ -459,14 +459,17 @@ fitness:
 ### Phases reached
 
 <!-- Last phase completed, checkpoints passed. E.g. "commit; confirmed, published". -->
+commit; Plan bestätigt, Zwischenstopp (erster Test) bestanden, Veröffentlichung bestätigt und erfolgt, Listung bestätigt, Pull Request lernapps/apps#54 offen, Prüfung „bestanden“.
 
 ### Failed checks
 
 <!-- Each failed check: rule id, count. E.g. "`no-request-before-click`: 2". Not the pre-push count. -->
+Keine Regel von `lernapps check` fehlgeschlagen. arc42-Hinweise (Schnittstellen, Szenarien, Einsatznodes) mehrfach beim Schreiben behoben bis 0 Fehler, 0 Warnungen, 0 Hinweise; Formatprüfung im Pre-Commit einmal (Dateien in `.vibe/`), mit `vp check --fix` behoben.
 
 ### Creator turns after the plan
 
 <!-- Number of creator messages after the confirmation, topic of each. Target: max 3. -->
+Mehr als 3 (Ziel überschritten, vom Ersteller so gewünscht): Begriff „Fassung“ (falsch), Skill für Textpakete und Parallelisierung, erster echter Test, Begriff „Variante“ und Dark Mode, Lob und Konfetti, Modi-Reihenfolge, ein Text je Klassenstufe, Oberstufe 11–13, Veröffentlichung, Listung, Fork-Klick.
 
 ### Where I had to guess
 
