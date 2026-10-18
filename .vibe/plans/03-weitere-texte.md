@@ -3,7 +3,7 @@
 # Archetype as in the app's first plan; set it when you start. Never changes.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: code
+phase: commit
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 ---
@@ -54,6 +54,8 @@ Lernende finden zu jeder Altersstufe sechs statt einem Text vor (fünf neue je S
 **Umfang.** In: fünf Pakete je Stufe mit Quell-PDF. Aus: neue Modi, neue Fehlerklassen, neue Stufen, Änderungen am Code (außer Prüfregel).
 
 **Sitzungen (gestartet 18.10.2026, 22:40 UTC).** 3–4: session_01Jk3JFT1RG4aSaEE9MRMvFN; 5–6: session_01SQGW8tST327PUsqMmUeozp; 7–8: session_011BSXj9YcxLoEeVb5WxoFRE; 9–10: session_01GioLccY84UHFbgzN7EgcqA; 11–13: session_013cbn1snih249WjchsR7N3M. Zweige `text/3-4` bis `text/11-13`.
+
+**Themen getauscht (Berichte der Sitzungen):** 3–4: Mond statt Regenbogen; 9–10: Ozonloch, Dampfmaschine, Apollo 11 statt Industrielle Revolution, Französische Revolution, Berliner Mauer; 11–13: Westfälischer Friede 1648 statt Deutsche Wiedervereinigung. Sitzung 5–6 passte die Durchläufe an (Seeds wählen `fledermaeuse`).
 
 **Offen.** Prüfen jedes Pakets durch den Assistenten: Prüfwerkzeug, Auszugssätze wörtlich in Quelle und PDF, Stichprobe der Zahlen, mehrere Seeds gespielt in allen Modi.
 
@@ -124,12 +126,12 @@ New things go into the guide in the slice that adds them. -->
 - [x] `git switch -c increment/03-weitere-texte` from `main`. Commit this plan on it.
 - [x] Basis vorbereiten: Startseite ohne Routenliste, Prüfregel für Modus 2, Tests grün.
 - [x] Fünf Sitzungen starten (`create_session`, je Stufe, Basis `increment/03-weitere-texte`, Zweig `text/<stufe>`), Anweisung mit Themen, Skill, Grenzen und Berichtsform.
-- [ ] Jeden Bericht prüfen: Zweig holen, `npx vp test run`, Auszug in Quelle und PDF, Stichprobe der Zahlen, mehrere Seeds in den drei Modi gespielt. Bei Mängeln einmal zurückschicken.
-- [ ] Geprüfte Zweige in `increment/03-weitere-texte` zusammenführen, Protokollzeilen eintragen, Sitzungen archivieren (erst nach dem Zusammenführen).
-- [ ] Der Guide beschreibt die App, wie sie jetzt ist (`app-content-matches`); `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` ergibt 0.
-- [ ] `npx lernapps check` und `npx arc42 validate --strict` bestehen.
-- [ ] Every box of Explore, Plan and Code ticked.
-- [ ] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
+- [x] Jeden Bericht prüfen: Zweig holen, `npx vp test run`, Auszug in Quelle und PDF, Stichprobe der Zahlen, mehrere Seeds in den drei Modi gespielt. Bei Mängeln einmal zurückschicken.
+- [x] Geprüfte Zweige in `increment/03-weitere-texte` zusammenführen, Protokollzeilen eintragen, Sitzungen archivieren (erst nach dem Zusammenführen).
+- [x] Der Guide beschreibt die App, wie sie jetzt ist (`app-content-matches`); `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` ergibt 0.
+- [x] `npx lernapps check` und `npx arc42 validate --strict` bestehen.
+- [x] Every box of Explore, Plan and Code ticked.
+- [x] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
 
 ### Completed
 
