@@ -94,27 +94,36 @@
 </style>
 <div class="phone">
   <h2>Modus 2 · Original erkennen</h2>
-  <h3>Welcher Text ist das Original?</h3>
-  <div class="goal">Einer der beiden Texte ist das Original. Der andere hat Fehler. Lies beide und entscheide.</div>
+  <h3>Welcher Text hat Fehler?</h3>
+  <div class="goal">
+    Einer der beiden Texte ist das Original. Im anderen sind 3 Fehler versteckt. Entscheide, welcher Text Fehler hat,
+    und markiere sie.
+  </div>
   <div class="tabs"><span class="on">Text A</span><span>Text B</span></div>
   <div class="card">
-    Igel schlafen am Tag unter Laub und Ästen. Sehr gerne fressen sie auch Schnecken, aber nur selten solche mit
+    Igel schlafen am Tag unter Laub und <mark>Esten</mark>. Igel fressen sehr gern Schnecken, aber nur selten solche mit
     Gehäuse. …
   </div>
-  <div class="note">Auf dem Handy schaltest du zwischen A und B um. Am Computer stehen beide nebeneinander.</div>
-  <div class="btn p">A ist das Original</div>
-  <div class="btn p">B ist das Original</div>
+  <div class="note">Dieser Text hat Fehler: tippe auf die Wörter, die nicht stimmen.</div>
+  <div class="btn">Text A hat die Fehler ✓</div>
+  <div class="btn">Text B hat die Fehler</div>
+  <div class="btn p">Prüfen</div>
 </div>
 <div class="phone">
   <h2>Modus 2 · Ergebnis</h2>
   <h3>Auswertung</h3>
-  <div class="res">Richtig: Text B ist das Original.</div>
+  <div class="res">Richtig gewählt: Text B ist das Original, Text A hat die Fehler.</div>
+  <div class="note" style="margin: 0 0 8px">Gefunden: 2 von 3</div>
   <div class="card">
-    <b>Unterschiede</b><br />In Text A: <mark>Steinen</mark><br />Im Original: „Ästen“<br /><span class="note"
-      >Igel schlafen unter Laub und Ästen, nicht unter Steinen.</span
+    <b>Gefunden</b><br />In Text A: <mark>Esten</mark> · Im Original: „Ästen“<br /><span class="note"
+      >Das Wort kommt von „Ast“.</span
     >
   </div>
-  <div class="card"><b>Unterschied 2</b><br />In Text A: <mark>acht</mark> Wochen<br />Im Original: „fünf“</div>
+  <div class="card"><b>Übersehen</b><br />In Text A: <mark>acht</mark> Wochen · Im Original: „fünf“</div>
+  <div class="note">
+    Bei falscher Wahl steht dort: „Text B hatte die Fehler, Text A war das Original.“ Markierungen im Original zählen
+    als falsch markiert.
+  </div>
   <div class="btn p">Neue Runde</div>
 </div>
 <div class="phone">
