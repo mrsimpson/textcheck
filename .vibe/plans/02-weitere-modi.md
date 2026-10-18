@@ -3,7 +3,7 @@
 # Archetype as in the app's first plan; set it when you start. Never changes.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: plan
+phase: code
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 ---
@@ -106,9 +106,9 @@ Skip what earlier answers or the app tell. Answers → "Answers". -->
       and what is new. Max 2 questions.
 - [x] Each new component or interactive exercise: show a sketch (static SVG or image, or the steps). Words alone are
       not enough.
-- [ ] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes → change,
+- [x] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes → change,
       ask again.
-- [ ] Set `phase: code`: change the value line (`grep '^phase:'` prints `phase: code`).
+- [x] Set `phase: code`: change the value line (`grep '^phase:'` prints `phase: code`).
 
 ### Content method
 
@@ -131,7 +131,7 @@ Skip what earlier answers or the app tell. Answers → "Answers". -->
 
 ### Tasks
 
-- [ ] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
+- [x] `git switch -c increment/02-weitere-modi` from `main`. Commit this plan on it.
 - [ ] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
 - [ ] Scheibe 1, Kompetenz „Text mit seiner Quelle vergleichen“ (Modus 3): (a) PDFs für die fünf Pakete mit `scripts/source-pdf.mjs` aus den gespeicherten Quellseiten nach `public/quellen/de/<id>.pdf`, `source.pdf` in den Paketen, Schema und Prüfung: Pfad muss existieren; (b) Routen `klasse-…-quelle` in `src/app.yaml` und Stufen in `levels.json` (Route → Stufe + Modus, ohne Daten zu verdoppeln); (c) Kern: `State.mode`, `start` liest Route und Modus; (d) `App.vue`: PDF-Knopf statt Original; ab 960 px Breite mit feinem Zeiger zusätzlich die PDF eingebettet (`<iframe>`, `title`, Höhe wie die Variante, eigener Bildlauf, Tastaturfalle prüfen: Tab verlässt das Feld); (e) Texte in `de.json`; (f) Playthrough `quelle.yaml`; (g) Tests; (h) Guide: Kompetenz und Modus; (i) Eintrag: Themen; `npx lernapps check`; Commit.
