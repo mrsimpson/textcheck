@@ -52,5 +52,31 @@
     "bases": ["text", "comparison"],
     "errors": 4,
     "announceClasses": true
+  },
+  "klasse-9-10": {
+    "grades": {
+      "from": 9,
+      "to": 10
+    },
+    "classes": [
+      "spelling_rule",
+      "slip",
+      "real_word",
+      "punctuation",
+      "number_name_date",
+      "factual_error",
+      "added_claim",
+      "connective_negation",
+      "contradiction",
+      "quantity_degree",
+      "overgeneralization",
+      "faulty_inference",
+      "opinion_as_fact",
+      "false_authority",
+      "loaded_language"
+    ],
+    "bases": ["text", "comparison"],
+    "errors": 5,
+    "announceClasses": false
   }
 }

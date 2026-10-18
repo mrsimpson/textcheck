@@ -27,6 +27,9 @@ routes:
   - id: klasse-7-8
     title: Klasse 7 bis 8
     description: Wie in Klasse 5 bis 6, dazu Mengen und Grade, Verallgemeinerungen, falsche Folgerungen und Meinungen, die als Tatsachen auftreten.
+  - id: klasse-9-10
+    title: Klasse 9 bis 10
+    description: Alle Fehlerarten, auch Wertungen und Verweise auf ungenannte Fachleute. Welche Arten in der Runde vorkommen, steht nicht mehr in der Aufgabe.
 sections:
   - id: begruendung
     title: Wie diese Übung begründet ist
