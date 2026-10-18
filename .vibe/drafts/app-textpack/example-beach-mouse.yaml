@@ -1,0 +1,141 @@
+id: example-beach-mouse
+title: Die Strandmaus (erfundenes Beispiel)
+isExample: true
+language: de
+grades:
+  from: 7
+  to: 8
+topic: erfundenes Beispiel zur Veranschaulichung
+source:
+  title: null
+  url: null
+  revision: null
+  license: null
+  licenseUrl: null
+  authorsUrl: null
+  retrieved: null
+  verified: false
+excerpt:
+- text: Die Strandmaus lebt in den Dünen der Nordsee-Inseln.
+- text: Sie wird etwa 9 Zentimeter lang und wiegt 25 Gramm.
+- text: Tagsüber versteckt sie sich in Erdgängen, weil Möwen sie sonst fangen würden.
+- text: In der Dämmerung sucht sie Samen und kleine Käfer.
+- text: Im Winter hält sie keinen Winterschlaf, sondern sammelt Vorräte.
+- text: Forschende zählen jedes Jahr im Mai etwa 400 Tiere auf der Insel.
+rendition:
+- sentence:
+  - 'Die Strandmaus lebt in den '
+  - slot: s1
+  - ' der Nordsee-Inseln.'
+  evidence:
+    quote: Die Strandmaus lebt in den Dünen der Nordsee-Inseln.
+- sentence:
+  - 'Sie ist etwa '
+  - slot: s2a
+  - ' Zentimeter lang und wiegt '
+  - slot: s2b
+  - ' Gramm.'
+  evidence:
+    quote: Sie wird etwa 9 Zentimeter lang und wiegt 25 Gramm.
+- sentence:
+  - 'Tagsüber versteckt sie sich in Erdgängen, '
+  - slot: s3
+  - ' Möwen sie sonst fangen würden.'
+  evidence:
+    quote: Tagsüber versteckt sie sich in Erdgängen, weil Möwen sie sonst fangen würden.
+- sentence:
+  - 'In der Dämmerung '
+  - slot: s7
+  evidence:
+    quote: In der Dämmerung sucht sie Samen und kleine Käfer.
+- sentence:
+  - slot: s4
+- sentence:
+  - 'Im Winter hält sie '
+  - slot: s5
+  - ' Winterschlaf, sondern sammelt Vorräte.'
+  evidence:
+    quote: Im Winter hält sie keinen Winterschlaf, sondern sammelt Vorräte.
+- sentence:
+  - 'Forschende zählen jedes Jahr im Mai '
+  - slot: s6
+  - ' 400 Tiere auf der Insel.'
+  evidence:
+    quote: Forschende zählen jedes Jahr im Mai etwa 400 Tiere auf der Insel.
+slots:
+  s1:
+    correct: Dünen
+    variants:
+    - text: Dühnen
+      errorClass: spelling_rule
+      basis: text
+      conspicuousness: 2
+      explanation: Nach einem langen ü braucht das Wort kein h. „Dünen“ ist die richtige Schreibung.
+    - text: Dnüen
+      errorClass: slip
+      basis: text
+      conspicuousness: 3
+      explanation: Zwei Buchstaben sind vertauscht. Richtig ist „Dünen“.
+  s2a:
+    correct: '9'
+    variants:
+    - text: '19'
+      errorClass: number_name_date
+      basis: comparison
+      conspicuousness: 2
+      explanation: Im Original steht „9 Zentimeter“. Die Zahl wurde verändert.
+      evidence: Sie wird etwa 9 Zentimeter lang und wiegt 25 Gramm.
+  s2b:
+    correct: '25'
+    variants:
+    - text: '250'
+      errorClass: number_name_date
+      basis: comparison
+      conspicuousness: 3
+      explanation: Im Original steht „25 Gramm“. Die Zahl wurde verändert.
+      evidence: Sie wird etwa 9 Zentimeter lang und wiegt 25 Gramm.
+  s3:
+    correct: weil
+    variants:
+    - text: obwohl
+      errorClass: connective_negation
+      basis: text
+      conspicuousness: 2
+      explanation: '„Obwohl“ passt nicht: Die Maus versteckt sich gerade wegen der Möwen. Im Original steht „weil“.'
+  s4:
+    correct: ''
+    variants:
+    - text: ' Sie ist die schönste Maus der Insel.'
+      errorClass: opinion_as_fact
+      basis: text
+      conspicuousness: 1
+      explanation: Das ist eine Meinung. Im Original steht dieser Satz nicht, und „schönste“ lässt sich nicht messen.
+  s7:
+    correct: sucht sie Samen und kleine Käfer.
+    variants:
+    - text: frisst sie vor allem Fische aus dem Meer.
+      errorClass: factual_error
+      basis: comparison
+      conspicuousness: 2
+      tolerance: 2
+      explanation: 'Im Original steht: „sucht sie Samen und kleine Käfer“. Von Fischen steht dort nichts.'
+      evidence: In der Dämmerung sucht sie Samen und kleine Käfer.
+  s5:
+    correct: keinen
+    variants:
+    - text: einen
+      errorClass: connective_negation
+      basis: text
+      conspicuousness: 2
+      explanation: Mit „einen“ passt das „sondern“ nicht mehr. Im Original steht „keinen Winterschlaf“.
+  s6:
+    correct: etwa
+    variants:
+    - text: genau
+      errorClass: quantity_degree
+      basis: comparison
+      conspicuousness: 1
+      explanation: Im Original steht „etwa 400“. Gezählt wird nur ungefähr, „genau“ behauptet mehr.
+      evidence: Forschende zählen jedes Jahr im Mai etwa 400 Tiere auf der Insel.
+notes:
+- Invented text, not a real text pack. Only illustrates the schema and the checker.

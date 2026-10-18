@@ -3,7 +3,7 @@
 # Archetype, null until chosen in Explore. Allowed values: explainer, interactive, quiz.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: explore
+phase: plan
 # prePushFailures: written by the pre-push hook. Never change it.
 prePushFailures: 0
 ---
@@ -32,6 +32,9 @@ Lernende lesen zwei Fassungen eines Textes mit bekannter Quelle (Original und Zu
 
 ## Key decisions
 
+- Begriffe: Die zweite Textfassung heißt in den Daten `rendition` und im Plan "Fassung": eine genaue Wiedergabe des Originals mit Stellen, an denen Fehler eingebaut werden können. Eine echte, kürzere Zusammenfassung ist nicht Version 1; sie wäre später ein eigener Modus (Fehler durch Auslassen, Verallgemeinern; Beleg je Satz mit mehreren Quellstellen). Das Wort in der App (z. B. "Fassung" oder "Wiedergabe") ist mit dem Ersteller zu klären. (guess: "Fassung")
+- Sprache: Code, Dateinamen, Schema-Schlüssel, Ids und `docs/arc42` auf Englisch. Texte für Lernende nur in Nachrichtendateien (`src/messages/<sprache>.json`, `translator`) und in den Textpaketen (je Paket eine `language`). Version 1 liefert nur Deutsch; `app.yaml` führt nur `de`. Jede weitere Sprache braucht vollständige Nachrichten und eigene Pakete. Die Rechtschreibklassen folgen der deutschen Orthografie und gelten für andere Sprachen erst nach eigener Prüfung (Feld `languages` in `error-classes.yaml`).
+- Version 1 = ein echter Text zum Testen: eine App, ein Modus ("Original bekannt"), ein Textpaket (Klasse 5–6) mit allen Bausteinen (Seed, Stellen, Toleranz, Auswertung nach Klasse). Weitere Pakete, Modi und das Profil über Runden sind Erweiterungen nach dem Test, jede mit eigenem Plan aus der Vorlage für Erweiterungen.
 - App: Titel "Textcheck" (guess, nach dem Namen des Repositorys), Repository https://github.com/mrsimpson/textcheck (Ersteller), Erstellername im Katalog: "Oliver" (Ersteller).
 - Archetyp `interactive`: eine App-Seite, auf der Lernende markieren; Seeds sind in der Laufzeit schon vorgesehen (`app/?seed=<n>`), der Kern ist deterministisch. (Quiz zu eng, Erklärseiten passen nicht zu "Lernende handeln".)
 - Ein Prinzip, mehrere Varianten: Text → Zusammenfassung → systematisch eingebaute Fehlerklassen → Verpackung als Variante.
@@ -153,8 +156,8 @@ Hinweise:
 ### Textproduktion (Entwurf, Wunsch des Erstellers)
 
 - Der Ersteller wünscht: Textaufbereitung als Skill mit Schema ablegen; der Auftraggeber (diese Sitzung) vergibt Aufträge an beliebig viele parallele, echte Sitzungen, nimmt die Ergebnisse zurück, prüft und archiviert die Sitzungen. Menge: etwa 10 Pakete je zwei benachbarte Klassenstufen.
-- Entwürfe liegen in `.vibe/drafts/app-textpaket/`: `SKILL.md`, `textpaket.v1.schema.json` (JSON Schema 2020-12), `klassen.yaml`, `pruefe_textpaket.py` (Prüfwerkzeug), `beispiel-strandmaus.yaml` (erfunden, gültig), `orchestrierung.md`. Noch nicht in der App: nach `create` wird der Skill unter `.agents/skills/app-textpaket/` abgelegt, das Prüfwerkzeug als TypeScript in den Build (Regel `strict-typescript`: Daten des Erstellers beim Bauen prüfen) und Pfade festgelegt.
-- Das Prüfwerkzeug prüft zusätzlich zum Schema: zwei benachbarte Klassenstufen, jede Stelle genau einmal in der Zusammenfassung, Zitate stehen wörtlich im Original, Klasse passt zur Klassenstufe (`ab_klasse`), Toleranz nur mit Nachbarwörtern im selben Satz, LIX (nur Orientierung).
+- Entwürfe liegen in `.vibe/drafts/app-textpack/` (Englisch, wie der Code): `SKILL.md` (Skill `app-textpack`), `textpack.v1.schema.json` (JSON Schema 2020-12), `error-classes.yaml`, `messages.de.json`, `check_textpack.py` (Prüfwerkzeug), `example-beach-mouse.yaml` (erfunden, gültig), `orchestration.md`. Noch nicht in der App: nach `create` wird der Skill unter `.agents/skills/app-textpack/` abgelegt, das Prüfwerkzeug als TypeScript in den Build (Regel `strict-typescript`: Daten des Erstellers beim Bauen prüfen).
+- Das Prüfwerkzeug prüft zusätzlich zum Schema: zwei benachbarte Klassenstufen, jede Stelle genau einmal in der Fassung, Zitate stehen wörtlich im Original, Klasse passt zur Klassenstufe (`ab_klasse`), Toleranz nur mit Nachbarwörtern im selben Satz, LIX (nur Orientierung).
 - Ungeklärt: Pfade und Build-Befehl nach `create`; Richtwerte für Textlänge und Satzbau je Stufe (nach dem Pilot); Lizenz der Texte im Repository (CC BY-SA 4.0 für Auszüge und Zusammenfassungen aus Wikipedia, Code unter eigener Lizenz); Themenliste; Zahl gleichzeitiger Sitzungen.
 
 ### Mechanismus (grundlegend, von Anfang an)
@@ -219,52 +222,6 @@ Hinweise:
 
 ### Tasks
 
-- [x] Install the skills, if missing: `npx skills add lernapps/tooling#exp/compact-guidance`. The app commits them.
-- [x] Tell the creator where the app lives: GitHub Pages of their own repo, free, public, own address (usually
-      `https://<owner>.github.io/<repo>/`). Offer a short explanation of GitHub; say they need not know it. Page for
-      them: <https://lernapps.net/tooling/github/>. Example: "Deine App wird über GitHub veröffentlicht, kostenlos
-      und öffentlich, unter deiner eigenen Adresse. Soll ich dir kurz erklären, was GitHub ist?"
-- [ ] Set up the branches before anything else is pushed:
-      - settle the repo name with the creator first (a rename can cost your access);
-      - no git repo: `git init --initial-branch=main`;
-      - no `main` (`git ls-remote --heads origin main`, `git branch --list main` empty): `git switch --orphan main`,
-        `git commit --allow-empty -m "chore: start"`, `git push -u origin main`;
-      - missing `gh-pages`: `git switch --orphan gh-pages`, `git commit --allow-empty -m "chore: gh-pages"`;
-      - missing `work`: `git switch -c work main`;
-      - `git push -u origin gh-pages work`. No remote yet: push all three later, `main` first;
-      - Pages from `gh-pages`, root (`pages-from-gh-pages`): `gh api -X POST repos/<owner>/<repo>/pages
-        -f build_type=legacy -f "source[branch]=gh-pages" -f "source[path]=/"`; refused → put the click from skill
-        `lernapps-github` into your next question;
-      - default branch not `main` (`gh api repos/<owner>/<repo> --jq .default_branch`) → skill `lernapps-github`.
-- [x] Load skill `lernapps-content-research` before the first question about learners or curriculum.
-- [x] Ask: what do learners do in the app, what do they learn?
-- [x] Ask: who are the learners (subject, school year, prior knowledge)? Land and Schulform: only if the creator
-      names a school or class, at most once; no answer → KMK-Bildungsstandards.
-- [x] Ask: where does the content come from (own material such as worksheets, tests, experiments; or others' with
-      source and licence)?
-- [x] Read the catalog https://lernapps.net/apps/llms.txt. Ask: is an app there a model? What matters most:
-      exercises, visualisations, game feel?
-- [ ] Ask: which hurdles and misconceptions do learners have? Which examples or experiments does the creator use?
-- [ ] Ask: languages (German only, or more)?
-- [ ] Interactive or game-like: ask how it should feel and look (e.g. "wie ein echter Spielblock", colours).
-- [x] Research: follow skill `lernapps-content-research` (filled-in `app-content` first). Write under "Notes":
-      curriculum orientation (Lehrplan cited where used), competencies by chapter as Ich-kann-Sätze, verified
-      sources. No competencies written = task not done.
-- [x] Didactic approach under "Notes", one line per competency: how learners get there (derive, not only read off;
-      e.g. a tree diagram shows how a probability comes about), which misconception the feedback catches.
-- [x] Scope under "Notes": what is in, what is out (and why), data range (e.g. "all main-group elements", not a
-      silent "1–20"), languages.
-- [x] Fetch https://lernapps.net/apps/schemas/entry.v1.schema.json; read every property's description. Ask what
-      helps teachers and parents find the app. Fill "Entry draft". Search words: short, one or two words each, as
-      people type them into a search.
-- [x] Choose the archetype; write it with its reason under "Key decisions"; set `archetype`:
-      - `interactive`: learners act in one app page (game, trainer, simulation; e.g. a typing game);
-      - `explainer`: many pages of explanation, each with exercises;
-      - `quiz`: questions with options and feedback.
-- [ ] **Checkpoint:** research. Show in plain words: curriculum orientation, competencies by chapter, didactic
-      approach, scope (in, out, data range, languages), sources and how checked, what is unchecked, archetype and
-      reason. Stop and wait. Changes → change, ask again.
-- [ ] Set `phase: plan`: change the value line (`grep '^phase:'` prints `phase: plan`).
 
 ### Answers
 
@@ -278,6 +235,9 @@ Hinweise:
 - Handy (Ersteller): "Am Handy die Varianten per Button togglen finde ich passend." Umsetzung: Umschalter "Original | Zusammenfassung" statt untereinander; nicht die Satz-für-Satz-Einblendung des Originals.
 - Markieren (Ersteller): "Wörter markieren. Zu viel markieren (bis zu einer Schwelle) wäre auch ok." Zur Schwelle: "das kann man nicht rechnerisch lösen. Beim Erstellen kann pro Fehler die Toleranz optional mitgegeben werden. Lange Fehlerstellen bekommen dann eine Toleranz, einzelne Wörter eben nicht." Umsetzung im Mockup: Treffer = mindestens ein markiertes Wort in der Fehlerstelle; `toleranz: n` (optional, Standard 0) am einzelnen Fehler in der Textdefinition = n Nachbarwörter links und rechts der Stelle, die ohne Folge markiert werden dürfen, bestätigt vom Ersteller ("umgebende Wörter"), mit der Einschränkung "nur innerhalb desselben Satzes"; eine globale Schwelle je Stufe gibt es nicht.
 - Umfang: "Ab Klasse drei bis zum Abitur", Texte und Fehler entsprechend komplexer. Die Stufen (1 echten Text kennen, 2 unklar/mehrere Varianten, 3 auf Zeit) sinnvoll, "sogar schon ein issue dafür einlegen" (Stufe 2 und 3 als Issue festhalten). Wichtig von Anfang an: "der Mechanismus, wie die Texte und ihre Variationen gebildet werden. Dies muss deterministisch sein, aber auch gleichzeitig mehrere Varianten vorhalten, damit es nicht zu vorhersagbar wird (seeds)."
+- Freigabe (Ersteller): "Recherche gebe ich frei." Auftrag: "Arbeite durch, bis ein erster echt-Test für mich mit einem Text möglich ist. Danach skalieren wir dann auch viele Texte." (Die Bestätigung des Plans bleibt ein eigener Schritt mit ausdrücklichem Ja.)
+- Sprache (Ersteller): "Code in Englisch, die Anwendung soll auch mehrere Sprachen unterstützen (auch wenn wir erst mal nur Deutsch machen)."
+- Begriff (Ersteller): "Warum nennst du es konsequent Zusammenfassung? Zusammengefasst ist doch nichts!" Die zweite Textfassung ist eine genaue Wiedergabe mit eingebauten Fehlern, keine Zusammenfassung. Vorläufig im Plan "Fassung", im Code `rendition`; Wortwahl in der App offen, siehe Key decisions.
 
 ### Entry draft
 
@@ -304,6 +264,57 @@ fitness:
 
 ### Completed
 
+- [x] Install the skills, if missing: `npx skills add lernapps/tooling#exp/compact-guidance`. The app commits them.
+- [x] Tell the creator where the app lives: GitHub Pages of their own repo, free, public, own address (usually
+      `https://<owner>.github.io/<repo>/`). Offer a short explanation of GitHub; say they need not know it. Page for
+      them: <https://lernapps.net/tooling/github/>. Example: "Deine App wird über GitHub veröffentlicht, kostenlos
+      und öffentlich, unter deiner eigenen Adresse. Soll ich dir kurz erklären, was GitHub ist?"
+- [x] Set up the branches before anything else is pushed:
+      - settle the repo name with the creator first (a rename can cost your access);
+      - no git repo: `git init --initial-branch=main`;
+      - no `main` (`git ls-remote --heads origin main`, `git branch --list main` empty): `git switch --orphan main`,
+        `git commit --allow-empty -m "chore: start"`, `git push -u origin main`;
+      - missing `gh-pages`: `git switch --orphan gh-pages`, `git commit --allow-empty -m "chore: gh-pages"`;
+      - missing `work`: `git switch -c work main`;
+      - `git push -u origin gh-pages work`. No remote yet: push all three later, `main` first;
+      - Pages from `gh-pages`, root (`pages-from-gh-pages`): `gh api -X POST repos/<owner>/<repo>/pages
+        -f build_type=legacy -f "source[branch]=gh-pages" -f "source[path]=/"`; refused → put the click from skill
+        `lernapps-github` into your next question;
+      - default branch not `main` (`gh api repos/<owner>/<repo> --jq .default_branch`) → skill `lernapps-github`.
+      Notiz: Zweige `main`, `gh-pages`, `work` im Repository mrsimpson/textcheck angelegt und gepusht. GitHub Pages konnte die Sitzung nicht einschalten (HTTP 403 vom Proxy); Klick für Oliver offen, siehe Notes "GitHub-Stand".
+- [x] Load skill `lernapps-content-research` before the first question about learners or curriculum.
+- [x] Ask: what do learners do in the app, what do they learn?
+- [x] Ask: who are the learners (subject, school year, prior knowledge)? Land and Schulform: only if the creator
+      names a school or class, at most once; no answer → KMK-Bildungsstandards.
+- [x] Ask: where does the content come from (own material such as worksheets, tests, experiments; or others' with
+      source and licence)?
+- [x] Read the catalog https://lernapps.net/apps/llms.txt. Ask: is an app there a model? What matters most:
+      exercises, visualisations, game feel?
+- [x] Ask: which hurdles and misconceptions do learners have? Which examples or experiments does the creator use?
+      Notiz: Frage gestellt, vom Ersteller nicht beantwortet; für Version 1 ohne eigene Hürdenliste.
+- [x] Ask: languages (German only, or more)?
+      Notiz: Ersteller: Code Englisch, Anwendung mehrsprachig anlegen, vorerst nur Deutsch.
+- [x] Interactive or game-like: ask how it should feel and look (e.g. "wie ein echter Spielblock", colours).
+      Notiz: ruhig wie ein Arbeitsblatt mit Textmarker (Annahme, nicht widersprochen); Farben und Legende nach Rückmeldung des Erstellers.
+- [x] Research: follow skill `lernapps-content-research` (filled-in `app-content` first). Write under "Notes":
+      curriculum orientation (Lehrplan cited where used), competencies by chapter as Ich-kann-Sätze, verified
+      sources. No competencies written = task not done.
+- [x] Didactic approach under "Notes", one line per competency: how learners get there (derive, not only read off;
+      e.g. a tree diagram shows how a probability comes about), which misconception the feedback catches.
+- [x] Scope under "Notes": what is in, what is out (and why), data range (e.g. "all main-group elements", not a
+      silent "1–20"), languages.
+- [x] Fetch https://lernapps.net/apps/schemas/entry.v1.schema.json; read every property's description. Ask what
+      helps teachers and parents find the app. Fill "Entry draft". Search words: short, one or two words each, as
+      people type them into a search.
+- [x] Choose the archetype; write it with its reason under "Key decisions"; set `archetype`:
+      - `interactive`: learners act in one app page (game, trainer, simulation; e.g. a typing game);
+      - `explainer`: many pages of explanation, each with exercises;
+      - `quiz`: questions with options and feedback.
+- [x] **Checkpoint:** research. Show in plain words: curriculum orientation, competencies by chapter, didactic
+      approach, scope (in, out, data range, languages), sources and how checked, what is unchecked, archetype and
+      reason. Stop and wait. Changes → change, ask again.
+      Notiz: Freigegeben vom Ersteller: "Recherche gebe ich frei".
+- [x] Set `phase: plan`: change the value line (`grep '^phase:'` prints `phase: plan`).
 ## Plan
 
 <!--
@@ -314,13 +325,13 @@ fitness:
 
 ### Tasks
 
-- [ ] Write the Code tasks under "Code": pages or screens, content, what each shows; each ends in a commit.
-- [ ] Load the archetype's skill with all its references, `lernapps-app/references/archetype-rules.md`, skill
+- [x] Write the Code tasks under "Code": pages or screens, content, what each shows; each ends in a commit.
+- [x] Load the archetype's skill with all its references, `lernapps-app/references/archetype-rules.md`, skill
       `lernapps-exercise-patterns` with `references/patterns.md` and `references/success.md`. Explainer with
       quiz-type exercises: also skill `lernapps-quiz`. Write "Content method".
-- [ ] Show the creator, short: goal, competencies by chapter, entry draft, tasks; the content method in plain words
+- [x] Show the creator, short: goal, competencies by chapter, entry draft, tasks; the content method in plain words
       (what learners see and do, what it cannot do). Max 2 questions.
-- [ ] Each screen, component or interactive exercise: show a sketch (static SVG or image, or the steps with what
+- [x] Each screen, component or interactive exercise: show a sketch (static SVG or image, or the steps with what
       learners see after each). Words alone are not enough.
 - [ ] **Checkpoint:** confirm the plan and the content method. Only with the sketches shown. Stop and wait for an
       explicit yes. Changes → change, ask again. No `create` before the yes.
@@ -328,8 +339,14 @@ fitness:
 
 ### Content method
 
-<!-- One line each: exercise patterns and where; figures and how made; data files; each component, what it checks
-and cannot; how a later agent adds a chapter. Becomes the content guide in Code. -->
+- Übungsmuster: "Abweichungen in einer Fassung gegen ein bekanntes Original markieren". Im Katalog der Muster gibt es dafür keinen Eintrag (am nächsten "beurteilen, entscheiden"); der Archetyp `interactive` erlaubt eine eigene Oberfläche. Lücke vermerkt; kein Issue bei app-templates, solange nur Textcheck das braucht.
+- Daten: Textpakete (`src/data/packs/<language>/<grades>/<id>.yaml`, Schema `textpack.v1`), Fehlerklassen (`src/data/error-classes.yaml`), Stufen (`src/data/levels.yaml`: erlaubte Klassen, erlaubte Erkennungsbasen, Fehler je Runde, ob die gesuchte Klasse genannt wird). Alles Englisch benannt, Lernertexte in `language`.
+- Texte für Lernende: Nachrichtendateien `src/messages/<language>.json` mit `translator`; Namen der Fehlerklassen, Beschriftungen, Legende, Erklärtexte der Seiten. Version 1: nur `de`.
+- Abbildungen: keine in Version 1. Farben: eine feste Zuordnung (gefunden, Rest einer gefundenen Stelle, übersehen, fälschlich markiert, im Rahmen) in Text und Auswertung, zusätzlich Linienarten, Statustext für Screenreader.
+- Kern (`src/core/`): rein, ohne DOM. `start(seed, route)` baut eine Runde aus Paket und Stufe: Seed wählt Stellen und Varianten; `step(state, input)`: Wort markieren, Markierung löschen, prüfen, neue Runde. Zufall nur aus dem Seed.
+- Komponenten (`src/ui/`): Rundenansicht (Computer: Original und Fassung nebeneinander; Handy: Umschalter), Wortmarkierung (eine Tab-Stelle, Pfeiltasten, Leertaste), Auswertung nach Fehlerklasse mit Legende. Zeigen nur den Zustand.
+- Was die Markierung prüft: Treffer = mindestens ein markiertes Wort der Stelle; `tolerance` = Nachbarwörter im selben Satz ohne Folge. Sie kann nicht beurteilen, ob ein Wort aus dem richtigen Grund markiert wurde, und bewertet keine Teilfehler.
+- Neues Textpaket: Skill `app-textpack`, Prüfwerkzeug beim Bauen, Eintrag in `.vibe/texts-log.md`; für viele Pakete parallele Sitzungen laut `orchestration.md` (Erweiterung, nicht Version 1).
 
 ### Completed
 
@@ -360,7 +377,13 @@ and cannot; how a later agent adds a chapter. Becomes the content guide in Code.
 - [ ] Fill the content guide `.agents/skills/app-content/SKILL.md` from the plan and its content method: replace
       every placeholder comment with concrete instructions (files, ids, data files, one example). Delete its top
       comment. `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` must print 0. Commit it before any content.
-- [ ] <the tasks written in Plan>
+- [ ] Textpaket-Format in die App holen: Schema `textpack.v1`, Fehlerklassen, Nachrichten, TypeScript-Typen, Prüfung beim Bauen (das Prüfwerkzeug aus `.vibe/drafts/app-textpack/` nach TypeScript), Skill `app-textpack` unter `.agents/skills/`. Commit.
+- [ ] Kern: Rundenbau aus Seed, Markieren, Prüfen, Auswertung nach Klasse, Toleranz im selben Satz. Playthroughs: gleicher Seed gleicher Text; Treffer; Übersehen; Fehlmarkierung; Toleranz im selben Satz; Toleranz endet an der Satzgrenze; unbekannte Eingabe ändert nichts. Commit.
+- [ ] Oberfläche: Rundenansicht mit Umschalter am Handy, Wortmarkierung mit einer Tab-Stelle und Pfeiltasten, Auswertung mit Farben, Linienarten und Legende, Trefferfläche mindestens 44 Pixel hoch. Texte aus den Nachrichtendateien. Commit.
+- [ ] Statische Startseite (was, für wen, wie anfangen) und Seite "Wie diese Übung begründet ist" aus den Fehlerklassen und den Grenzen. Commit.
+- [ ] Pilot: ein echtes Textpaket für Klasse 5–6 nach Skill `app-textpack`: Quelle geöffnet und gelesen, fester Stand, Lizenz, Zitate geprüft, Prüfwerkzeug "passed". Quelle und Lizenz erscheinen in der App. Commit.
+- [ ] Zwischenstopp auf Wunsch des Erstellers: Vorschau-Link an Oliver für den ersten Test mit einem echten Text; Rückmeldung abwarten, ändern, danach weiter mit den übrigen Aufgaben.
+- [ ] Architektur: `docs/arc42` mit jedem Commit, der Code ändert (Block je Teil von `src/`).
 - [ ] Content guide still matches what was built (`app-content-matches`); `grep -c "FILL IN"` prints 0.
 - [ ] `npx lernapps check` passes.
 - [ ] Look at a screenshot of every screen and state (start, each mode, pause, end), desktop and 360 px; check each

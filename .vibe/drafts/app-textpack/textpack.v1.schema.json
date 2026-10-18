@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Text pack (draft v1)",
+  "description": "A source excerpt, a rendition of it in sentences, and slots holding the correct wording plus several wrong variants. At run time a seed decides which slots are corrupted and with which variant. All learner-facing text (title, topic, excerpt, rendition, slot texts, explanations) is written in `language`.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "language", "grades", "topic", "source", "excerpt", "rendition", "slots"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "Lowercase with hyphens; equals the file name." },
+    "title": { "type": "string", "minLength": 3 },
+    "isExample": { "type": "boolean", "default": false, "description": "Invented text that only illustrates the format. Relaxes the source duties. Never shipped in the app." },
+    "language": { "type": "string", "pattern": "^[a-z]{2}$", "description": "ISO 639-1 code of all texts in this pack." },
+    "grades": {
+      "type": "object", "additionalProperties": false, "required": ["from", "to"],
+      "properties": { "from": { "type": "integer", "minimum": 3, "maximum": 13 }, "to": { "type": "integer", "minimum": 3, "maximum": 13 } },
+      "description": "Two adjacent school years. The checker enforces to - from <= 1."
+    },
+    "topic": { "type": "string", "minLength": 3 },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["title", "url", "revision", "license", "licenseUrl", "authorsUrl", "retrieved", "verified"],
+      "properties": {
+        "title": { "type": ["string", "null"] },
+        "url": { "type": ["string", "null"], "format": "uri" },
+        "revision": { "type": ["string", "null"], "description": "Fixed version of the page (Wikipedia: revision id)." },
+        "license": { "type": ["string", "null"], "enum": ["CC BY-SA 4.0", "CC BY-SA 3.0", "CC BY 4.0", "CC0 1.0", "public domain", null] },
+        "licenseUrl": { "type": ["string", "null"], "format": "uri" },
+        "authorsUrl": { "type": ["string", "null"], "format": "uri", "description": "Page history or author list." },
+        "retrieved": { "type": ["string", "null"], "format": "date" },
+        "pdf": { "type": "string", "description": "Path of the local PDF of the source (mode: source fidelity)." },
+        "verified": { "type": "boolean", "description": "The page was opened and all evidence quotes were checked against it." }
+      }
+    },
+    "excerpt": {
+      "type": "array", "minItems": 3,
+      "description": "Verbatim, unchanged excerpt of the source, sentence by sentence.",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["text"],
+        "properties": { "text": { "type": "string", "minLength": 3 }, "section": { "type": "string" } }
+      }
+    },
+    "rendition": {
+      "type": "array", "minItems": 3,
+      "description": "The text learners check, in the author's own words, sentence by sentence. A slot is written as {slot: id}; with every slot in its correct wording the rendition is a faithful account of the excerpt.",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["sentence"],
+        "properties": {
+          "sentence": {
+            "type": "array", "minItems": 1,
+            "items": { "oneOf": [
+              { "type": "string" },
+              { "type": "object", "additionalProperties": false, "required": ["slot"], "properties": { "slot": { "type": "string", "pattern": "^[a-z0-9]+$" } } }
+            ] }
+          },
+          "evidence": {
+            "type": "object", "additionalProperties": false, "required": ["quote"],
+            "properties": { "quote": { "type": "string", "minLength": 3, "description": "Verbatim passage of the excerpt that supports this sentence in its correct wording. Required unless the correct wording is empty (checked by the tool)." } }
+          }
+        }
+      }
+    },
+    "slots": {
+      "type": "object", "minProperties": 3,
+      "propertyNames": { "pattern": "^[a-z0-9]+$" },
+      "additionalProperties": {
+        "type": "object", "additionalProperties": false, "required": ["correct", "variants"],
+        "properties": {
+          "correct": { "type": "string", "description": "Correct wording; empty if a variant inserts a sentence." },
+          "variants": {
+            "type": "array", "minItems": 1,
+            "items": {
+              "type": "object", "additionalProperties": false, "required": ["text", "errorClass", "basis", "conspicuousness", "explanation"],
+              "properties": {
+                "text": { "type": "string", "minLength": 1 },
+                "errorClass": { "$ref": "#/$defs/errorClass" },
+                "basis": { "enum": ["text", "comparison", "prior_knowledge"], "description": "What a learner needs to detect the error." },
+                "conspicuousness": { "type": "integer", "minimum": 1, "maximum": 3, "description": "1 inconspicuous to 3 conspicuous. An author setting, not measured." },
+                "tolerance": { "type": "integer", "minimum": 1, "description": "Optional. Number of neighbouring words on each side, inside the same sentence, that may be marked without penalty. Long slots only." },
+                "explanation": { "type": "string", "minLength": 10, "description": "Plain language for the grade level, in `language`." },
+                "evidence": { "type": "string", "description": "Verbatim passage of the excerpt showing what is right (basis: comparison)." }
+              }
+            }
+          }
+        }
+      }
+    },
+    "readability": {
+      "type": "object", "additionalProperties": false,
+      "description": "Computed by the checker, never written by hand. LIX is orientation only (IGLU 2021 reports LIX values of its sample texts); there is no limit.",
+      "properties": { "words": { "type": "integer" }, "sentences": { "type": "integer" }, "lix": { "type": "number" } }
+    },
+    "notes": { "type": "array", "items": { "type": "string" }, "description": "Open points and uncertainties of the author, for review." }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "isExample": { "const": true } }, "required": ["isExample"] },
+      "else": {
+        "properties": {
+          "source": {
+            "properties": {
+              "title": { "type": "string" }, "url": { "type": "string" }, "revision": { "type": "string" },
+              "license": { "type": "string" }, "licenseUrl": { "type": "string" }, "authorsUrl": { "type": "string" },
+              "retrieved": { "type": "string" }, "verified": { "const": true }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "errorClass": {
+      "enum": [
+        "spelling_rule", "slip", "real_word", "punctuation",
+        "number_name_date", "factual_error", "added_claim",
+        "connective_negation", "contradiction", "quantity_degree", "overgeneralization", "faulty_inference",
+        "opinion_as_fact", "false_authority", "loaded_language"
+      ]
+    }
+  }
+}

@@ -77,6 +77,15 @@ button.primary { background: var(--accent); color: #fff; border-color: var(--acc
 .sr { position: absolute; left: -9999px; }
 details { margin-top: 12px; font-size: .9rem; color: var(--muted); }
 code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .85em; }
+.viewbar { display: none; gap: 8px; margin: 0 0 12px; }
+.viewbar .vb { flex: 1; font-weight: 600; }
+.viewbar .vb[aria-selected="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .viewbar .vb[aria-selected="true"] { color: #0b1020; } }
+@media (max-width: 720px) {
+  .viewbar { display: flex; }
+  .grid[data-view="sum"] > section:first-child { display: none; }
+  .grid[data-view="orig"] > section:nth-child(2) { display: none; }
+}
 </style>
 </head>
 <body>
@@ -84,7 +93,7 @@ code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .85em; 
   <h1>Runde (Mockup)</h1>
   <div class="note">
     Entwurf zum Besprechen, keine fertige App. Der Text ist <strong>erfunden</strong> und enthält keine Tatsachen.
-    Die Daten sind dieselben wie in <code>textpaket-beispiel.yaml</code>. Der Seed wählt, welche Stellen verfälscht werden und welche Variante:
+    Gleicher Inhalt wie <code>drafts/app-textpack/example-beach-mouse.yaml</code>. Der Seed wählt, welche Stellen verfälscht werden und welche Variante:
     gleicher Seed ergibt denselben Text, anderer Seed andere Fehler.
   </div>
 
@@ -107,14 +116,18 @@ code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .85em; 
 
   <div class="goal" id="goal" aria-live="polite"></div>
 
-  <div class="grid">
+  <div class="viewbar" role="tablist" aria-label="Ansicht">
+    <button class="ctl vb" role="tab" id="vb-orig" aria-selected="false" type="button">Original</button>
+    <button class="ctl vb" role="tab" id="vb-sum" aria-selected="true" type="button">Fassung</button>
+  </div>
+  <div class="grid" data-view="sum">
     <section class="card" aria-labelledby="h-orig">
       <h2 id="h-orig">Original</h2>
       <div id="orig"></div>
       <div class="src">Quelle: erfundenes Beispiel, kein echtes Original. In der App steht hier Titel, Link und Lizenz der Quelle.</div>
     </section>
     <section class="card" aria-labelledby="h-sum">
-      <h2 id="h-sum">Zusammenfassung: Markiere, was nicht stimmt</h2>
+      <h2 id="h-sum">Fassung: Markiere, was nicht stimmt</h2>
       <div id="sum"></div>
       <div class="bar">
         <span id="count" aria-live="polite"></span>
@@ -131,7 +144,7 @@ code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .85em; 
   <details>
     <summary>Was dieses Mockup noch nicht zeigt</summary>
     <ul>
-      <li>Markiert wird Wort für Wort (entschieden). Die Toleranz steht optional am einzelnen Fehler in der Textdefinition (<code>toleranz</code>, Anzahl Nachbarwörter, nur innerhalb desselben Satzes). Einzelne Wörter haben keine, lange Fehlerstellen eine.</li>
+      <li>Am Handy schaltet der Umschalter zwischen Original und Fassung um (entschieden); am Computer stehen beide nebeneinander. Markiert wird Wort für Wort (entschieden). Die Toleranz steht optional am einzelnen Fehler in der Textdefinition (<code>toleranz</code>, Anzahl Nachbarwörter, nur innerhalb desselben Satzes). Einzelne Wörter haben keine, lange Fehlerstellen eine.</li>
       <li>Tastaturbedienung: hier Tab durch alle Wörter. Vorschlag für die App: Pfeiltasten und Leertaste.</li>
       <li>Profil über mehrere Runden und der Vorschlag der nächsten Runde fehlen.</li>
       <li>Die Seite „Wie diese Übung begründet ist“ fehlt. Die Statuswörter „belegt“ und „abgeleitet“ stehen hier schon an den Klassen.</li>
@@ -302,7 +315,7 @@ function check() {
       const hit = markedStelle(id);
       html += `<div class="item"><span class="st ${hit ? 'ok' : 'miss'}">${hit ? 'Gefunden' : 'Übersehen'}</span> `
         + `<span class="chip">${D.basis[e.basis]}</span>`
-        + `<dl class="cmp"><dt>In der Zusammenfassung:</dt><dd>„${e.text.trim()}“</dd>`
+        + `<dl class="cmp"><dt>In der Fassung:</dt><dd>„${e.text.trim()}“</dd>`
         + `<dt>Richtig (Original):</dt><dd>${s.richtig ? '„' + s.richtig + '“' : 'Dieser Satz steht nicht im Original.'}</dd></dl>`
         + `<div>${e.erklaerung}</div></div>`;
     });
@@ -337,6 +350,13 @@ $('dice').addEventListener('click', () => { $('seed').value = Math.floor(Math.ra
 $('stufe').addEventListener('change', startRound);
 $('reset').addEventListener('click', () => { if (state.checked) return; state.marked.clear(); render(); });
 $('check').addEventListener('click', check);
+function setView(v) {
+  document.querySelector('.grid').dataset.view = v;
+  $('vb-orig').setAttribute('aria-selected', v === 'orig' ? 'true' : 'false');
+  $('vb-sum').setAttribute('aria-selected', v === 'sum' ? 'true' : 'false');
+}
+$('vb-orig').addEventListener('click', () => setView('orig'));
+$('vb-sum').addEventListener('click', () => setView('sum'));
 startRound();
 </script>
 </body>
