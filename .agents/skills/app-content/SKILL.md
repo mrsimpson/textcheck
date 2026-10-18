@@ -111,8 +111,7 @@ To add a text pack (a new "round" source):
 
 1. Choose grades (adjacent pair, e.g. 5-6) and a harmless topic that fits the age. Open and read the source; note the
    revision and the licence.
-2. Follow the skill `app-textpack` (`.agents/skills/app-textpack/SKILL.md`): excerpt, rendition with evidence, slots with
-   several variants, classes only up to the pack's upper grade.
+2. Follow the skill `app-textpack` (`.agents/skills/app-textpack/SKILL.md`): research, draft, error slots, checks, hand-in; classes only up to the pack's upper grade.
 3. Save as `src/data/packs/<language>/<from>-<to>/<id>.json`; the id equals the file name.
 4. Run `npx vp test run`: the schema and the pack checks must pass. Read warnings.
 5. Play it: `app/?seed=<n>#klasse-<from>-<to>` with several seeds. Add it to the log `.vibe/texts-log.md`.

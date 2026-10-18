@@ -1,57 +1,45 @@
 ---
 name: app-textpack
-description: Use when you create a new text pack for Textcheck - a source excerpt, a rendition of it in sentences, and slots with the correct wording and several wrong variants - for one pair of adjacent school years, one topic and one language. The content guide app-content takes precedence.
+description: Use when you write a new text pack for Textcheck - research a source, draft the rendition, build error slots from the error patterns, save the source as PDF and hand the pack in. Content authoring only; for one pair of adjacent school years, one topic, one language. The content guide app-content takes precedence.
 ---
 
-# Create a text pack
+# Write a text pack
 
-A text pack belongs to **two adjacent school years**, **one topic** and **one language**. At run time a seed decides which slots are corrupted and with which variant. You deliver the data, not the selection.
+You deliver one pack: a source excerpt, a faithful rendition of it ("Fassung"), and slots where errors can be built
+in. You do not select errors; that happens later, by seed. You do not change code.
 
-## Language
+Pack = **two adjacent school years** + **one topic** + **one language** + **one source**. Code, ids, file names: English.
+Everything learners read: in the pack's language. Terms: Original, Fassung (never "Zusammenfassung"); see `app-content`.
 
-- Code, file names, schema keys and ids are English.
-- All learner-facing text in the pack (title, topic, excerpt, rendition, slot texts, explanations) is written in the pack's `language`. Version 1 ships German (`de`) only; the format and the app support more languages.
-- Spelling classes follow German orthography (see `src/data/error-classes.json`, `languages`). For another language, review the classes first and say so in `notes`; do not reuse them silently.
-- Learner-facing names of error classes and of the detection basis live in the message files (`src/messages/<language>.json`), not in the pack.
+## Workflow
 
-## Inputs (from the assignment)
+Do the steps in order. Read the reference when you reach the step.
 
-- School years (`from`, `to`), topic, pack id (lowercase with hyphens), language.
-- Optionally a source. Without one, pick a page you can open and read completely.
+1. **Brief.** Get school years, topic (or choose one that fits the age), pack id (lowercase, hyphens), language. Read
+   `src/data/levels.json` for the allowed error classes, bases and errors per round of these school years.
+2. **Research** - [references/research.md](references/research.md). Find a source you may reuse, open it completely,
+   fix the revision, note licence and authors. No source read in full, no pack.
+3. **Draft** - [references/drafting.md](references/drafting.md). Choose the excerpt, write the rendition sentence by
+   sentence with evidence quotes. Length and wording fit the school years.
+4. **Error slots** - [references/error-patterns.md](references/error-patterns.md). Pick places, build several
+   variants per place from the patterns of the allowed classes; write explanations.
+5. **Check** - `npx vp test run src/core/pack-check.test.ts` (schema + pack checks). Then do what no check does:
+   compare excerpt and quotes with the opened source (`verified: true` only after that), and read each variant in its
+   sentence aloud. Never weaken a check.
+6. **Source PDF** - [references/pdf.md](references/pdf.md). Only if the assignment asks for it or the mode Quellentreue
+   exists; the script is `scripts/source-pdf.mjs`.
+7. **Hand in.** File `src/data/packs/<language>/<from>-<to>/<id>.json` (id = file name). Add a line to
+   `.vibe/texts-log.md`. Branch `text/<id>`, no merge into `work`. Report: source and revision, check result,
+   warnings, what you could not verify, what reads badly.
 
-## Steps
-
-1. **Open and read the source.** Only sources with a licence listed in the schema (`source.license`). For Wikipedia use a fixed revision. Never write from memory. On HTTP 429 wait and report it; no scraper, no loops.
-2. **Excerpt.** Verbatim and unchanged, sentence by sentence. Length and sentence structure fit the school years. Guide values per school-year pair are fixed after the pilot; the pilot pack has ten sentences.
-3. **Rendition.** The text learners check, in your own words, sentence by sentence and faithful to the excerpt. It is not a summary unless the assignment says so. Every sentence with text gets `evidence.quote`: the verbatim passage of the excerpt that supports it. Only claims the excerpt supports.
-4. **Slots.** A slot is a word or phrase of the rendition with a `correct` wording and at least one wrong variant.
-   - Each variant has `errorClass`, `basis`, `conspicuousness` (1 to 3) and `explanation`. Classes only from `src/data/error-classes.json`, only those with `fromGrade` up to the upper school year of the pack.
-   - `basis`: `text` (detectable in the text alone), `comparison` (only by comparing with the excerpt; give `evidence`), `prior_knowledge`.
-   - Several variants per slot where it makes sense: this keeps rounds unpredictable.
-   - Enough slots: at least 3 error classes, and at least the number of errors a round needs for these years, plus three in reserve.
-   - Long slots (three words or more) get `tolerance` (neighbouring words), but only when the same sentence has words next to the slot. Single words get none.
-   - A slot with `correct: ""` inserts a sentence (for example an opinion stated as fact). It stands in a sentence of its own.
-5. **Explanations** in plain language for the school years, quoting the excerpt. For classes of the families `logic` and `stance`, name the technique and explain it briefly.
-6. **Family `stance`:** harmless topics only. No real propaganda, no incitement against groups, no names of real learners.
-7. **Check:** `npx vp test run src/core/pack-check.test.ts` must pass: the schema (`src/data/textpack.v1.schema.json`) and the pack checks (`src/core/pack-check.ts`). To read the warnings, call `checkPack(pack)` in a scratch test. Justify warnings in `notes`.
-8. **Secure the source (not version 1):** a PDF of the source at the fixed revision for the mode source fidelity comes with that mode; then add licence, author link and the note "unchanged" to the cover page.
-
-## Hand-in
-
-- File `src/data/packs/<language>/<from>-<to>/<id>.json`; the id equals the file name. Add a line to `.vibe/texts-log.md`.
-- Branch `text/<id>`; do not merge into `work`.
-- Report to the requester: source and revision, check result, warnings, uncertainties, what you could not verify.
-- Play it: `app/?seed=<n>#klasse-<from>-<to>` with several seeds, as a learner would, and note what reads badly (a grammatical slip after a variant, a sentence that depends on another).
+Format: schema `src/data/textpack.v1.schema.json`, example `src/data/packs/de/5-6/fledermaeuse.json`. Copy the
+structure from there; do not describe or re-invent it.
 
 ## Never
 
-- Never invent. No number, name or quote that you did not find in the opened source.
-- No statements about curricula you have not read.
-- No names, classes or schools of real learners.
-- Never weaken a check to get a pack through.
-
-## Learned the hard way
-
-- A variant must keep the sentence grammatical: if a slot's variant is a number, include the noun it agrees with in the slot ("ein Jungtier" to "zwei Jungtiere", not "ein" to "zwei" before "Jungtier").
-- A variant that creates an obvious contradiction with another slot of the pack will also be flagged when the other slot is not corrupted; make the contradiction hold either way.
-- Only claims the source supports. The pilot pack checks the Fassung against its source, not the source against biology.
+- Never invent a number, name, date or quote. Everything comes from the opened source.
+- Never write a pack from memory or from a search snippet.
+- No real people (learners, teachers, schools). No real propaganda or incitement in the stance classes; harmless
+  topics only.
+- Never circumvent a block (403, 429, captcha, paywall): wait, report, choose another source.
+- Never write a class that the school years do not allow, never loosen a check to get a pack through.
