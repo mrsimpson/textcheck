@@ -136,16 +136,23 @@ export interface Result {
   classes: ClassResult[];
 }
 
+/** How a route plays: mark errors against the Original, against the source PDF, or choose the text with errors first. */
+export type Mode = "mark" | "source" | "choose";
+
 /** What the last input changed; the root component announces it. */
 export type Last = "start" | "mark" | "unmark" | "clear" | "check";
 
 export interface State {
   seed: number;
   route: string;
+  /** The mode of the route; `source` shows the PDF of the source instead of the Original. */
+  mode: Mode;
   language: string;
   packId: string;
   title: string;
   source: Source;
+  /** The path of the source PDF relative to the site root, when the mode is `source` and the pack has one, else null. */
+  pdf: string | null;
   /** The sentences of the Original, as shown. */
   original: string[];
   /** The words of the Variante; each sentence is a run of tokens with the same `sentence`. */

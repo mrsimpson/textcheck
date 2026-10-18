@@ -3,7 +3,7 @@
 // and how every word counts. Pure TypeScript without DOM; the runtime keeps the state and calls start and step
 // (@lernapps/app-templates/interactive). Every input is an action; unknown ones leave the state as it is.
 import type { Input } from "@lernapps/app-templates/interactive";
-import { levelOf, packsFor } from "./data.ts";
+import { levelOf, packsFor, parseRoute } from "./data.ts";
 import { evaluate } from "./evaluate.ts";
 import { buildRound } from "./round.ts";
 import type { State } from "./types.ts";
@@ -15,15 +15,18 @@ const DEFAULT_LANGUAGE = "de";
 
 export function start(seed: number, route: string, language: string = DEFAULT_LANGUAGE): State {
   const level = levelOf(route);
+  const { mode } = parseRoute(route);
   const { pack, tokens, corruptions } = buildRound(packsFor(language, level), level, seed);
   const classes = [...new Set(corruptions.map((corruption) => corruption.errorClass))];
   return {
     seed,
     route,
+    mode,
     language,
     packId: pack.id,
     title: pack.title,
     source: pack.source,
+    pdf: mode === "source" ? (pack.source.pdf ?? null) : null,
     original: pack.excerpt.map((entry) => entry.text),
     tokens,
     corruptions,

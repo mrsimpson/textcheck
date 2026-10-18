@@ -15,6 +15,7 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
     "authorsUrl": "https://klexikon.zum.de/index.php?title=Igel&action=history",
     "retrieved": "2026-10-18",
+    "pdf": "quellen/de/igel.pdf",
     "verified": true
   },
   "excerpt": [
@@ -312,6 +313,6 @@
     "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de; die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Nur Klassen, die ab Klasse 3 vorkommen: Rechtschreibung (Ableitung, Doppelkonsonant, tz, ck), Flüchtigkeitsfehler, Zeichensetzung, Zahl/Ort. Die Falschschreibungen sind konstruiert, nach den Schwerpunkten der IQB-Handreichung.",
     "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt.",
-    "Keine lokale PDF der Quelle."
+    "Die Quelle liegt als PDF unter public/quellen/de/igel.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
   ]
 }

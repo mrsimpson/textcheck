@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/interactive/playthrough.v1.schema.json
+# The mode source fidelity: the same round as in marking.yaml (Fledermäuse, grades 5 and 6, seed 1), but the route
+# ends in -quelle, so the source PDF stands where the Original stood. Two errors found and one missed.
+route: klasse-5-6-quelle
+seed: 1
+steps:
+  - inputs: [{ kind: action, name: toggle, value: 12 }]
+    state:
+      seed: 1
+      mode: source
+      pdf: quellen/de/fledermaeuse.pdf
+      phase: marking
+      marked: [12]
+      last: mark
+    announce: "viele markiert. 1 markiert."
+  - inputs:
+      - { kind: action, name: toggle, value: 23 }
+      - { kind: action, name: check }
+    state:
+      phase: result
+      last: check
+    announce: "Geprüft: 2 von 3 Fehlern gefunden. Fälschlich markiert: 0."

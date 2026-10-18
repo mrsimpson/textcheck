@@ -1,3 +1,4 @@
+import { parseRoute } from "../core/data.ts";
 import { parse } from "yaml";
 import { describe, expect, it } from "vitest";
 import appYaml from "../app.yaml?raw";
@@ -33,7 +34,14 @@ describe("the start page", () => {
   });
 
   it("has a route for every level and a level for every route", () => {
-    expect(app.routes.map((route) => route.id).sort()).toEqual(Object.keys(levels).sort());
+    const ids = app.routes.map((route) => route.id);
+    expect(ids.filter((id) => parseRoute(id).mode === "mark").sort()).toEqual(Object.keys(levels).sort());
+    for (const id of ids) expect(Object.keys(levels), id).toContain(parseRoute(id).level);
+  });
+
+  it("has the route of the mode source for every level", () => {
+    const ids = app.routes.map((route) => route.id);
+    for (const level of Object.keys(levels)) expect(ids, level).toContain(`${level}-quelle`);
   });
 });
 

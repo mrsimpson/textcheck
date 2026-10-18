@@ -6,6 +6,9 @@ import { PACKS } from "./data.ts";
 import { checkPack } from "./pack-check.ts";
 import type { TextPack } from "./types.ts";
 
+const pdfs = Object.keys(import.meta.glob("../../public/quellen/**/*.pdf")).map((path) =>
+  path.replace("../../public/", ""),
+);
 const validate = new Ajv2020({ allErrors: true, validateFormats: false }).compile(schema);
 const copy = (pack: TextPack): TextPack => structuredClone(pack);
 
@@ -22,6 +25,11 @@ describe("the text packs", () => {
     it(`${pack.id} passes the pack checks`, () => {
       const report = checkPack(pack);
       expect(report.errors).toEqual([]);
+    });
+
+    it(`${pack.id} has the PDF of its source`, () => {
+      expect(pack.source.pdf).toBeDefined();
+      expect(pdfs, `${pack.source.pdf} lies in public/quellen`).toContain(pack.source.pdf);
     });
 
     it(`${pack.id} has its source filled in and verified`, () => {

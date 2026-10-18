@@ -15,6 +15,7 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
     "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Deutsche_Inflation_1914_bis_1923&action=history",
     "retrieved": "2026-10-18",
+    "pdf": "quellen/de/hyperinflation-1923.pdf",
     "verified": true
   },
   "excerpt": [
@@ -657,6 +658,6 @@
     "Die eingefügten Sätze (Schubkarren, Wertung, Ökonomen) sind erfunden, harmlos und stehen nicht im Original; die Erklärungen sagen das. Bewusst politisch neutral: keine heutigen Parteien, keine Gruppen als Ziel.",
     "Warnung bewusst: Bei „aufgrund … / und löste dadurch … aus“ (faulty_inference) ist die Verwechslung von Ursache und Wirkung nur im Vergleich mit dem Original erkennbar, darum basis comparison.",
     "Nicht geprüft: ob der Artikeltext fachlich vollständig oder unumstritten ist (Ursachen der Inflation werden in der Forschung unterschiedlich gewichtet); das Paket prüft den Vergleich mit dieser Quelle.",
-    "Keine lokale PDF der Quelle."
+    "Die Quelle liegt als PDF unter public/quellen/de/hyperinflation-1923.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
   ]
 }

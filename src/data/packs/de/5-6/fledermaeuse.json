@@ -15,7 +15,7 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
     "authorsUrl": "https://klexikon.zum.de/index.php?title=Flederm%C3%A4use&action=history",
     "retrieved": "2026-10-18",
-    "pdf": "sources/de/fledermaeuse.pdf",
+    "pdf": "quellen/de/fledermaeuse.pdf",
     "verified": true
   },
   "excerpt": [
@@ -432,6 +432,6 @@
     "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de (rel=license). Eine eigene Lizenzseite des Klexikons gibt es nicht (Klexikon:Lizenz ist leer); die Version 4.0 folgt aus diesem Link.",
     "Fehlerarten bei der Rechtschreibung folgen den Schwerpunkten der IQB-Handreichung (Konsonantenverdopplung, z/tz) und den AFRA-Kategorien der IQB-Lernaufgabe (Ableitung, Groß-/Kleinschreibung, Vokallänge). Die einzelnen Falschschreibungen sind für diese Wörter konstruiert, nicht von Lernenden gesammelt.",
     "Nicht geprüft: ob der Artikeltext des Klexikons fachlich vollständig stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Biologie.",
-    "Keine lokale PDF der Quelle (Modus Quellentreue ist nicht Teil von Version 1)."
+    "Die Quelle liegt als PDF unter public/quellen/de/fledermaeuse.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
   ]
 }

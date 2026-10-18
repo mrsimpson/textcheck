@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { LEVELS } from "./data.ts";
+import { LEVELS, parseRoute } from "./data.ts";
 import { start, step, type State } from "./index.ts";
 
 const route = "klasse-5-6";
@@ -134,5 +134,29 @@ describe("marking and checking", () => {
   it("does not mark after checking", () => {
     const state = step(start(4, route), action("check"));
     expect(step(state, action("toggle", 0))).toBe(state);
+  });
+});
+
+describe("the modes of a route", () => {
+  it("reads the mode from the end of the route and the level from the rest", () => {
+    expect(parseRoute("klasse-5-6")).toEqual({ level: "klasse-5-6", mode: "mark" });
+    expect(parseRoute("klasse-5-6-quelle")).toEqual({ level: "klasse-5-6", mode: "source" });
+    expect(parseRoute("klasse-11-13-original")).toEqual({ level: "klasse-11-13", mode: "choose" });
+  });
+
+  it("plays the same round in the mode source, with the PDF of the source instead of the Original", () => {
+    const marking = start(4, route);
+    const source = start(4, `${route}-quelle`);
+    expect(source.mode).toBe("source");
+    expect(source.corruptions).toEqual(marking.corruptions);
+    expect(source.tokens).toEqual(marking.tokens);
+    expect(marking.pdf).toBeNull();
+    expect(source.pdf).toMatch(/^quellen\/de\/.+\.pdf$/);
+  });
+
+  it("keeps the mode in the next round", () => {
+    const next = step(start(4, `${route}-quelle`), action("again"));
+    expect(next.route).toBe(`${route}-quelle`);
+    expect(next.mode).toBe("source");
   });
 });

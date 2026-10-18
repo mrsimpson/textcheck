@@ -3,7 +3,7 @@
 // them), the words to mark, and after checking the result. It announces every change for screen readers and moves the
 // focus to the result and back to the words. The runtime gives it the core's state; what the learner does goes back
 // as input. The only state of its own is which panel a narrow screen shows.
-import { computed, nextTick, ref, watch } from "vue";
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import { announce, moveFocus } from "@lernapps/tooling/a11y";
 import type { Input } from "@lernapps/app-templates/interactive";
 import type { State } from "../core/index.ts";
@@ -17,6 +17,24 @@ const t = translatorOf(props.lang);
 const view = ref<"original" | "rendition">("rendition");
 const words = ref<InstanceType<typeof WordList> | null>(null);
 const root = ref<HTMLElement | null>(null);
+
+// the source PDF is embedded only where a PDF shows well in a frame: a wide screen with a mouse; elsewhere the link
+// to a new tab is all there is
+const WIDE = "(min-width: 960px) and (pointer: fine)";
+const embed = ref(false);
+let query: MediaQueryList | null = null;
+const onChange = (): void => {
+  embed.value = query?.matches ?? false;
+};
+onMounted(() => {
+  query = matchMedia(WIDE);
+  onChange();
+  query.addEventListener("change", onChange);
+});
+onUnmounted(() => query?.removeEventListener("change", onChange));
+// the app page is one level below the site root, where the PDFs lie
+const pdfUrl = computed(() => (props.state.pdf === null ? null : `../${props.state.pdf}`));
+const sourceMode = computed(() => props.state.mode === "source");
 
 const goal = computed(() =>
   props.state.announced === null
@@ -61,13 +79,33 @@ const checking = computed(() => props.state.phase === "result");
   <section ref="root" class="textcheck" :aria-label="t('region')">
     <p class="goal">{{ goal }}</p>
     <div class="switch" role="group" :aria-label="t('view')">
-      <button type="button" :aria-pressed="view === 'original'" @click="view = 'original'">{{ t("original") }}</button>
+      <button type="button" :aria-pressed="view === 'original'" @click="view = 'original'">
+        {{ sourceMode ? t("sourceTab") : t("original") }}
+      </button>
       <button type="button" :aria-pressed="view === 'rendition'" @click="view = 'rendition'">
         {{ t("renditionTab") }}
       </button>
     </div>
     <div class="panels" :data-view="view">
-      <section class="panel original" aria-labelledby="original-heading">
+      <section v-if="sourceMode" class="panel original pdf" aria-labelledby="original-heading">
+        <h2 id="original-heading">{{ t("sourceHeading") }}</h2>
+        <p v-if="pdfUrl !== null">
+          <a class="open" :href="pdfUrl" target="_blank" rel="noopener noreferrer">{{ t("openPdf") }}</a>
+        </p>
+        <iframe v-if="embed && pdfUrl !== null" :src="pdfUrl" :title="t('pdfTitle', { title: state.title })"></iframe>
+        <p class="source">
+          {{ t("source") }} {{ state.source.title }}, {{ state.source.license }}
+          <template v-if="state.source.licenseUrl !== null">
+            ·
+            <a :href="state.source.licenseUrl" target="_blank" rel="noopener noreferrer">{{ t("license") }}</a>
+          </template>
+          <template v-if="state.source.authorsUrl !== null">
+            ·
+            <a :href="state.source.authorsUrl" target="_blank" rel="noopener noreferrer">{{ t("authors") }}</a>
+          </template>
+        </p>
+      </section>
+      <section v-else class="panel original" aria-labelledby="original-heading">
         <h2 id="original-heading">{{ t("original") }}</h2>
         <p v-for="(sentence, index) in state.original" :key="index">{{ sentence }}</p>
         <p class="source">
@@ -229,6 +267,26 @@ h2 {
   margin: 0 0 0.6em;
   font-size: 1.125rem;
   line-height: 1.8;
+}
+
+.open {
+  display: inline-block;
+  min-height: 2.75rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--tc-accent);
+  border-radius: 8px;
+  color: var(--tc-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pdf iframe {
+  width: 100%;
+  height: 70vh;
+  min-height: 28rem;
+  border: 1px solid var(--tc-line);
+  border-radius: 8px;
+  background: #ffffff;
 }
 
 .source,

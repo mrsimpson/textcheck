@@ -15,6 +15,7 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
     "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Winterschlaf&action=history",
     "retrieved": "2026-10-18",
+    "pdf": "quellen/de/winterschlaf.pdf",
     "verified": true
   },
   "excerpt": [
@@ -433,10 +434,10 @@
     }
   },
   "notes": [
-    "Quelle gelesen: Wikipedia-Artikel Winterschlaf, Revision 265605273 (abgerufen am 18.10.2026, Abschnitte „Das Verhalten der Winterschläfer in den kalten Jahreszeiten“ und „Die Dauer des Winterschlafs“); die elf Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Quelle gelesen: Wikipedia-Artikel Winterschlaf, Revision 265605273 (abgerufen am 18.10.2026, Abschnitte „Das Verhalten der Winterschläfer in den kalten Jahreszeiten“ und „Die Dauer des Winterschlafs“); die zwölf Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
     "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite, Link auf die Lizenz); die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Fehlerarten: Die Falschschreibungen sind konstruiert (Dehnungs-h, Konsonantenverdopplung, nach den Schwerpunkten der IQB-Handreichung); die Klassen ab Klasse 7 (Menge/Grad, Verallgemeinerung, falsche Folgerung, Meinung als Tatsache) sind abgeleitet, nicht belegt.",
     "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Biologie.",
-    "Keine lokale PDF der Quelle (Modus Quellentreue folgt)."
+    "Die Quelle liegt als PDF unter public/quellen/de/winterschlaf.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
   ]
 }
