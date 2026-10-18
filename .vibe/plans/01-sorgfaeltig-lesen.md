@@ -3,7 +3,7 @@
 # Archetype, null until chosen in Explore. Allowed values: explainer, interactive, quiz.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: code
+phase: commit
 # prePushFailures: written by the pre-push hook. Never change it.
 prePushFailures: 0
 ---
@@ -369,11 +369,11 @@ fitness:
 ### Tasks
 
 - [x] Zwischenstopp auf Wunsch des Erstellers: Vorschau-Link an Oliver für den ersten Test mit einem echten Text; Rückmeldung abwarten, ändern, danach weiter mit den übrigen Aufgaben.
-- [ ] Umfang erweitert (Oliver, nach dem ersten Test): je ein Text pro Klassenpaar 3–4, 5–6 (fertig), 7–8, 9–10, 11–12, damit er die steigende Komplexität beurteilen kann. Pro Paar: Route und Eintrag in `src/data/levels.json` (Klassen der Fehlerklassen nach `fromGrade`, Fehler je Runde, Quellen), Eintrag in `src/app.yaml`, ein Text nach Skill `app-textpack`, Kompetenzen nur für vorhandene Stufen.
-- [ ] Reihenfolge: 7–8, 3–4, 9–10, 11–12; jeder Text einzeln geprüft (Checker, Quelle gelesen, mehrere Seeds gespielt) und gepusht.
-- [ ] Neue Fehlerklassen in der App ab 7 prüfen: Texte der Klassen `quantity_degree`, `overgeneralization`, `faulty_inference`, `opinion_as_fact` (ab 7), `false_authority`, `loaded_language` (ab 10) in `de.json`, auf der Seite „Wie diese Übung begründet ist“ und in den Tests.
-- [ ] Every box of Explore, Plan and Code ticked.
-- [ ] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
+- [x] Umfang erweitert (Oliver, nach dem ersten Test): je ein Text pro Klassenpaar 3–4, 5–6 (fertig), 7–8, 9–10, 11–12, damit er die steigende Komplexität beurteilen kann. Pro Paar: Route und Eintrag in `src/data/levels.json` (Klassen der Fehlerklassen nach `fromGrade`, Fehler je Runde, Quellen), Eintrag in `src/app.yaml`, ein Text nach Skill `app-textpack`, Kompetenzen nur für vorhandene Stufen.
+- [x] Reihenfolge: 7–8, 3–4, 9–10, 11–13 (Oberstufe gemeinsam); jeder Text einzeln geprüft (Checker, Quelle gelesen, mehrere Seeds gespielt) und gepusht.
+- [x] Neue Fehlerklassen in der App ab 7 prüfen: Texte der Klassen `quantity_degree`, `overgeneralization`, `faulty_inference`, `opinion_as_fact` (ab 7), `false_authority`, `loaded_language` (ab 10) in `de.json`, auf der Seite „Wie diese Übung begründet ist“ und in den Tests.
+- [x] Every box of Explore, Plan and Code ticked.
+- [x] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
 
 ### Completed
 

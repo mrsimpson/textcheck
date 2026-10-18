@@ -16,6 +16,9 @@ competencies:
   - Ich kann Sätze finden, die sich im selben Text widersprechen.
   - Ich kann eine falsche Zeit-, Orts- oder Mengenangabe mit dem Original abgleichen.
   - Ich kann falsch geschriebene Wörter finden, auch solche, die ein Rechtschreibprogramm nicht findet.
+  - Ich kann eine Meinung von einer Tatsache unterscheiden und die Meinung markieren.
+  - Ich kann eine Folgerung erkennen, die der Text nicht trägt.
+  - Ich kann wertende oder emotionalisierende Formulierungen erkennen.
 languages: [de]
 routes:
   - id: klasse-3-4
@@ -30,6 +33,9 @@ routes:
   - id: klasse-9-10
     title: Klasse 9 bis 10
     description: Alle Fehlerarten, auch Wertungen und Verweise auf ungenannte Fachleute. Welche Arten in der Runde vorkommen, steht nicht mehr in der Aufgabe.
+  - id: klasse-11-13
+    title: Oberstufe (Klasse 11 bis 13)
+    description: Alle Fehlerarten in einem historischen Text, mehr Fehler je Runde und keine Hinweise auf die Arten.
 sections:
   - id: begruendung
     title: Wie diese Übung begründet ist

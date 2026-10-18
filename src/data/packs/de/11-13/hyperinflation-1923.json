@@ -1,0 +1,662 @@
+{
+  "id": "hyperinflation-1923",
+  "title": "Die Hyperinflation 1923",
+  "language": "de",
+  "grades": {
+    "from": 11,
+    "to": 13
+  },
+  "topic": "Deutsche Inflation 1914 bis 1923: Ursachen, Ruhrkampf, Rentenmark",
+  "source": {
+    "title": "Deutsche Inflation 1914 bis 1923 – Wikipedia",
+    "url": "https://de.wikipedia.org/w/index.php?title=Deutsche_Inflation_1914_bis_1923&oldid=270518471",
+    "revision": "270518471",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Deutsche_Inflation_1914_bis_1923&action=history",
+    "retrieved": "2026-10-18",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Die deutsche Inflation von 1914 bis November 1923 war eine der radikalsten Geldentwertungen in großen Industrienationen.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Eigentliche Ursache der ab 1919 anziehenden Inflation, die ab Mitte 1922 in eine Hyperinflation überging, war die massive Ausweitung der Geldmenge durch den Staat in den Anfangsjahren der Weimarer Republik aufgrund der hohen Reparationszahlungen.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Im Oktober 1921 wies die Mark noch ein Hundertstel ihres Wertes vom August 1914 auf, im Oktober 1922 nur mehr ein Tausendstel.",
+      "section": "Reparationen und Inflation 1918 bis 1922"
+    },
+    {
+      "text": "Weil die Reichsregierung nicht mehr in der Lage war, die Reparationen in voller Höhe zu bezahlen oder Wirtschaftsgüter als Ersatz zu liefern, begannen französische und belgische Truppen am 11. Januar 1923 die Ruhrbesetzung.",
+      "section": "Hyperinflation des Jahres 1923"
+    },
+    {
+      "text": "Das Kabinett Cuno, die damalige Regierung unter Reichskanzler Wilhelm Cuno, rief zu einem Generalstreik („Ruhrkampf“) auf, also zum passiven Widerstand gegen die Ruhrbesetzung.",
+      "section": "Hyperinflation des Jahres 1923"
+    },
+    {
+      "text": "Den Streikenden wurden die Lohnfortzahlung durch das Deutsche Reich bzw. finanzielle Hilfen versprochen, den Unternehmen die Begleichung der entgangenen Gewinne.",
+      "section": "Hyperinflation des Jahres 1923"
+    },
+    {
+      "text": "Das Geld dafür konnte die Regierung nur durch die Notenpresse erzeugen, wodurch die Geldmenge erheblich zunahm.",
+      "section": "Hyperinflation des Jahres 1923"
+    },
+    {
+      "text": "Der Wechselkurs der Mark gegenüber dem US-Dollar sank rapide und betrug im November 1923 1 US-Dollar zu 4,2 Billionen Mark.",
+      "section": "Hyperinflation des Jahres 1923"
+    },
+    {
+      "text": "Cuno trat am 12. August 1923 zurück.",
+      "section": "Hyperinflation des Jahres 1923"
+    },
+    {
+      "text": "Gustav Stresemann wurde sein Nachfolger und brach am 26. September 1923 den Ruhrkampf ab.",
+      "section": "Hyperinflation des Jahres 1923"
+    },
+    {
+      "text": "Entscheidend war dabei die Furcht vor einem Umsturz.",
+      "section": "Hyperinflation des Jahres 1923"
+    },
+    {
+      "text": "Ab dem 15. November 1923 gab die Deutsche Rentenbank die Rentenmark aus.",
+      "section": "Hyperinflation des Jahres 1923"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Die deutsche Inflation von ",
+        {
+          "slot": "s1"
+        },
+        " bis November 1923 war ",
+        {
+          "slot": "s1b"
+        },
+        " Geldentwertungen in ",
+        {
+          "slot": "s1c"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Die deutsche Inflation von 1914 bis November 1923 war eine der radikalsten Geldentwertungen in großen Industrienationen."
+      }
+    },
+    {
+      "sentence": [
+        "Eigentliche Ursache der Inflation ab ",
+        {
+          "slot": "s2b"
+        },
+        " war die massive Ausweitung der Geldmenge durch den Staat in den Anfangsjahren der Weimarer Republik, ",
+        {
+          "slot": "s2"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Eigentliche Ursache der ab 1919 anziehenden Inflation, die ab Mitte 1922 in eine Hyperinflation überging, war die massive Ausweitung der Geldmenge durch den Staat in den Anfangsjahren der Weimarer Republik aufgrund der hohen Reparationszahlungen."
+      }
+    },
+    {
+      "sentence": [
+        "Im Oktober 1921 war die Mark nur noch ",
+        {
+          "slot": "s3"
+        },
+        " ihres Wertes vom August 1914 wert, im Oktober 1922 nur noch ",
+        {
+          "slot": "s3b"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Im Oktober 1921 wies die Mark noch ein Hundertstel ihres Wertes vom August 1914 auf, im Oktober 1922 nur mehr ein Tausendstel."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s4"
+        },
+        " die Reichsregierung die Reparationen nicht mehr in voller Höhe bezahlen ",
+        {
+          "slot": "s4d"
+        },
+        " besetzten französische und ",
+        {
+          "slot": "s4b"
+        },
+        " Truppen am ",
+        {
+          "slot": "s4c"
+        },
+        " das Ruhrgebiet."
+      ],
+      "evidence": {
+        "quote": "Weil die Reichsregierung nicht mehr in der Lage war, die Reparationen in voller Höhe zu bezahlen oder Wirtschaftsgüter als Ersatz zu liefern, begannen französische und belgische Truppen am 11. Januar 1923 die Ruhrbesetzung."
+      }
+    },
+    {
+      "sentence": [
+        "Die Regierung unter Reichskanzler ",
+        {
+          "slot": "s5"
+        },
+        " rief zum ",
+        {
+          "slot": "s5c"
+        },
+        " auf, also zu passivem ",
+        {
+          "slot": "s5b"
+        },
+        " gegen die Besetzung."
+      ],
+      "evidence": {
+        "quote": "Das Kabinett Cuno, die damalige Regierung unter Reichskanzler Wilhelm Cuno, rief zu einem Generalstreik („Ruhrkampf“) auf, also zum passiven Widerstand gegen die Ruhrbesetzung."
+      }
+    },
+    {
+      "sentence": [
+        "Den Streikenden versprach der Staat ",
+        {
+          "slot": "s6"
+        },
+        ", den Unternehmen den Ausgleich entgangener Gewinne."
+      ],
+      "evidence": {
+        "quote": "Den Streikenden wurden die Lohnfortzahlung durch das Deutsche Reich bzw. finanzielle Hilfen versprochen, den Unternehmen die Begleichung der entgangenen Gewinne."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s7c"
+        },
+        " Geld dafür konnte die Regierung ",
+        {
+          "slot": "s7"
+        },
+        " erzeugen, wodurch die Geldmenge ",
+        {
+          "slot": "s7b"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Das Geld dafür konnte die Regierung nur durch die Notenpresse erzeugen, wodurch die Geldmenge erheblich zunahm."
+      }
+    },
+    {
+      "sentence": [
+        "Im November 1923 kostete ein US-Dollar ",
+        {
+          "slot": "s8"
+        },
+        " Mark."
+      ],
+      "evidence": {
+        "quote": "Der Wechselkurs der Mark gegenüber dem US-Dollar sank rapide und betrug im November 1923 1 US-Dollar zu 4,2 Billionen Mark."
+      }
+    },
+    {
+      "sentence": [
+        "Cuno trat am ",
+        {
+          "slot": "s9"
+        },
+        " 1923 zurück."
+      ],
+      "evidence": {
+        "quote": "Cuno trat am 12. August 1923 zurück."
+      }
+    },
+    {
+      "sentence": [
+        "Sein Nachfolger Gustav Stresemann brach am ",
+        {
+          "slot": "s10"
+        },
+        " den Ruhrkampf ab."
+      ],
+      "evidence": {
+        "quote": "Gustav Stresemann wurde sein Nachfolger und brach am 26. September 1923 den Ruhrkampf ab."
+      }
+    },
+    {
+      "sentence": [
+        "Entscheidend war dabei die ",
+        {
+          "slot": "s11"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Entscheidend war dabei die Furcht vor einem Umsturz."
+      }
+    },
+    {
+      "sentence": [
+        "Ab dem ",
+        {
+          "slot": "s12"
+        },
+        " 1923 gab die Deutsche ",
+        {
+          "slot": "s12b"
+        },
+        " ",
+        {
+          "slot": "s12c"
+        },
+        " aus."
+      ],
+      "evidence": {
+        "quote": "Ab dem 15. November 1923 gab die Deutsche Rentenbank die Rentenmark aus."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s13"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s14"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s15"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "1914",
+      "variants": [
+        {
+          "text": "1918",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Die deutsche Inflation von 1914 bis November 1923 war eine der radikalsten Geldentwertungen in großen Industrienationen.“ Die Inflation begann 1914, nicht erst 1918.",
+          "evidence": "Die deutsche Inflation von 1914 bis November 1923 war eine der radikalsten Geldentwertungen in großen Industrienationen."
+        }
+      ]
+    },
+    "s1b": {
+      "correct": "eine der radikalsten",
+      "variants": [
+        {
+          "text": "die radikalste",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Die deutsche Inflation von 1914 bis November 1923 war eine der radikalsten Geldentwertungen in großen Industrienationen.“ Sie war „eine der radikalsten“, nicht „die radikalste“. Aus einer Gruppe wird hier eine Einzelstellung.",
+          "evidence": "Die deutsche Inflation von 1914 bis November 1923 war eine der radikalsten Geldentwertungen in großen Industrienationen."
+        }
+      ]
+    },
+    "s1c": {
+      "correct": "großen Industrienationen",
+      "variants": [
+        {
+          "text": "allen Ländern der Welt",
+          "errorClass": "overgeneralization",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Die deutsche Inflation von 1914 bis November 1923 war eine der radikalsten Geldentwertungen in großen Industrienationen.“ Es geht um große Industrienationen, nicht um alle Länder.",
+          "evidence": "Die deutsche Inflation von 1914 bis November 1923 war eine der radikalsten Geldentwertungen in großen Industrienationen.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s2b": {
+      "correct": "1919",
+      "variants": [
+        {
+          "text": "1929",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Eigentliche Ursache der ab 1919 anziehenden Inflation, die ab Mitte 1922 in eine Hyperinflation überging, war die massive Ausweitung der Geldmenge durch den Staat in den Anfangsjahren der Weimarer Republik aufgrund der hohen Reparationszahlungen.“ Die Inflation zog ab 1919 an.",
+          "evidence": "Eigentliche Ursache der ab 1919 anziehenden Inflation, die ab Mitte 1922 in eine Hyperinflation überging, war die massive Ausweitung der Geldmenge durch den Staat in den Anfangsjahren der Weimarer Republik aufgrund der hohen Reparationszahlungen."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "aufgrund der hohen Reparationszahlungen",
+      "variants": [
+        {
+          "text": "und löste dadurch die hohen Reparationszahlungen aus",
+          "errorClass": "faulty_inference",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Eigentliche Ursache der ab 1919 anziehenden Inflation, die ab Mitte 1922 in eine Hyperinflation überging, war die massive Ausweitung der Geldmenge durch den Staat in den Anfangsjahren der Weimarer Republik aufgrund der hohen Reparationszahlungen.“ Die Reparationen waren der Grund der Geldmengenausweitung, nicht ihre Folge. Ursache und Wirkung sind vertauscht.",
+          "evidence": "Eigentliche Ursache der ab 1919 anziehenden Inflation, die ab Mitte 1922 in eine Hyperinflation überging, war die massive Ausweitung der Geldmenge durch den Staat in den Anfangsjahren der Weimarer Republik aufgrund der hohen Reparationszahlungen.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s3": {
+      "correct": "ein Hundertstel",
+      "variants": [
+        {
+          "text": "die Hälfte",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Im Oktober 1921 wies die Mark noch ein Hundertstel ihres Wertes vom August 1914 auf, im Oktober 1922 nur mehr ein Tausendstel.“ Im Oktober 1921 war es nur noch ein Hundertstel.",
+          "evidence": "Im Oktober 1921 wies die Mark noch ein Hundertstel ihres Wertes vom August 1914 auf, im Oktober 1922 nur mehr ein Tausendstel."
+        }
+      ]
+    },
+    "s3b": {
+      "correct": "ein Tausendstel",
+      "variants": [
+        {
+          "text": "ein Zehntel",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Der Satz widerspricht sich selbst: Ein Zehntel ist mehr als ein Hundertstel, die Mark verlor aber weiter an Wert („nur noch“). Im Original steht: „im Oktober 1922 nur mehr ein Tausendstel“.",
+          "evidence": "Im Oktober 1921 wies die Mark noch ein Hundertstel ihres Wertes vom August 1914 auf, im Oktober 1922 nur mehr ein Tausendstel."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "Weil",
+      "variants": [
+        {
+          "text": "Obwohl",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Weil die Reichsregierung nicht mehr in der Lage war, die Reparationen in voller Höhe zu bezahlen oder Wirtschaftsgüter als Ersatz zu liefern, begannen französische und belgische Truppen am 11. Januar 1923 die Ruhrbesetzung.“ Der Zahlungsausfall war der Grund der Besetzung. „Obwohl“ nennt einen Gegensatz.",
+          "evidence": "Weil die Reichsregierung nicht mehr in der Lage war, die Reparationen in voller Höhe zu bezahlen oder Wirtschaftsgüter als Ersatz zu liefern, begannen französische und belgische Truppen am 11. Januar 1923 die Ruhrbesetzung."
+        }
+      ]
+    },
+    "s4d": {
+      "correct": "konnte,",
+      "variants": [
+        {
+          "text": "konnte",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach dem Nebensatz mit „Weil … konnte“ beginnt der Hauptsatz. Dazwischen steht ein Komma."
+        }
+      ]
+    },
+    "s4b": {
+      "correct": "belgische",
+      "variants": [
+        {
+          "text": "britische",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Weil die Reichsregierung nicht mehr in der Lage war, die Reparationen in voller Höhe zu bezahlen oder Wirtschaftsgüter als Ersatz zu liefern, begannen französische und belgische Truppen am 11. Januar 1923 die Ruhrbesetzung.“ Es waren französische und belgische Truppen.",
+          "evidence": "Weil die Reichsregierung nicht mehr in der Lage war, die Reparationen in voller Höhe zu bezahlen oder Wirtschaftsgüter als Ersatz zu liefern, begannen französische und belgische Truppen am 11. Januar 1923 die Ruhrbesetzung."
+        }
+      ]
+    },
+    "s4c": {
+      "correct": "11. Januar 1923",
+      "variants": [
+        {
+          "text": "11. Januar 1922",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Weil die Reichsregierung nicht mehr in der Lage war, die Reparationen in voller Höhe zu bezahlen oder Wirtschaftsgüter als Ersatz zu liefern, begannen französische und belgische Truppen am 11. Januar 1923 die Ruhrbesetzung.“ Die Besetzung begann am 11. Januar 1923.",
+          "evidence": "Weil die Reichsregierung nicht mehr in der Lage war, die Reparationen in voller Höhe zu bezahlen oder Wirtschaftsgüter als Ersatz zu liefern, begannen französische und belgische Truppen am 11. Januar 1923 die Ruhrbesetzung.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s5": {
+      "correct": "Wilhelm Cuno",
+      "variants": [
+        {
+          "text": "Gustav Stresemann",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Das Kabinett Cuno, die damalige Regierung unter Reichskanzler Wilhelm Cuno, rief zu einem Generalstreik („Ruhrkampf“) auf, also zum passiven Widerstand gegen die Ruhrbesetzung.“ Reichskanzler war damals Wilhelm Cuno. Stresemann wurde erst sein Nachfolger.",
+          "evidence": "Das Kabinett Cuno, die damalige Regierung unter Reichskanzler Wilhelm Cuno, rief zu einem Generalstreik („Ruhrkampf“) auf, also zum passiven Widerstand gegen die Ruhrbesetzung."
+        }
+      ]
+    },
+    "s5c": {
+      "correct": "Generalstreik",
+      "variants": [
+        {
+          "text": "Generalsteik",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Ein Buchstabe fehlt: Generalstreik."
+        }
+      ]
+    },
+    "s5b": {
+      "correct": "Widerstand",
+      "variants": [
+        {
+          "text": "Wiederstand",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort gehört zu „wider“ (gegen). Darum schreibt man „Widerstand“ ohne „e“ nach dem „i“."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "Lohnfortzahlung",
+      "variants": [
+        {
+          "text": "Streikverbot",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Den Streikenden wurden die Lohnfortzahlung durch das Deutsche Reich bzw. finanzielle Hilfen versprochen, den Unternehmen die Begleichung der entgangenen Gewinne.“ Den Streikenden wurden Lohnfortzahlung und Hilfen versprochen, kein Verbot.",
+          "evidence": "Den Streikenden wurden die Lohnfortzahlung durch das Deutsche Reich bzw. finanzielle Hilfen versprochen, den Unternehmen die Begleichung der entgangenen Gewinne."
+        }
+      ]
+    },
+    "s7c": {
+      "correct": "Das",
+      "variants": [
+        {
+          "text": "Dass",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier ist „das“ ein Artikel vor „Geld“. „Dass“ leitet einen Nebensatz ein."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "nur durch die Notenpresse",
+      "variants": [
+        {
+          "text": "durch höhere Steuern",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Das Geld dafür konnte die Regierung nur durch die Notenpresse erzeugen, wodurch die Geldmenge erheblich zunahm.“ Das Geld kam nur aus der Notenpresse, nicht aus Steuern.",
+          "evidence": "Das Geld dafür konnte die Regierung nur durch die Notenpresse erzeugen, wodurch die Geldmenge erheblich zunahm.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s7b": {
+      "correct": "erheblich zunahm",
+      "variants": [
+        {
+          "text": "leicht abnahm",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Das Geld dafür konnte die Regierung nur durch die Notenpresse erzeugen, wodurch die Geldmenge erheblich zunahm.“ Die Geldmenge nahm erheblich zu.",
+          "evidence": "Das Geld dafür konnte die Regierung nur durch die Notenpresse erzeugen, wodurch die Geldmenge erheblich zunahm."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "4,2 Billionen",
+      "variants": [
+        {
+          "text": "4,2 Millionen",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Der Wechselkurs der Mark gegenüber dem US-Dollar sank rapide und betrug im November 1923 1 US-Dollar zu 4,2 Billionen Mark.“ Es waren 4,2 Billionen Mark, nicht Millionen.",
+          "evidence": "Der Wechselkurs der Mark gegenüber dem US-Dollar sank rapide und betrug im November 1923 1 US-Dollar zu 4,2 Billionen Mark."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "12. August",
+      "variants": [
+        {
+          "text": "12. Oktober",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das widerspricht dem folgenden Satz: Stresemann brach den Ruhrkampf schon am 26. September ab, als Nachfolger von Cuno. Cuno trat also vorher zurück, nämlich am 12. August.",
+          "evidence": "Cuno trat am 12. August 1923 zurück."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "26. September 1923",
+      "variants": [
+        {
+          "text": "26. September 1925",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Gustav Stresemann wurde sein Nachfolger und brach am 26. September 1923 den Ruhrkampf ab.“ Der Ruhrkampf wurde 1923 abgebrochen.",
+          "evidence": "Gustav Stresemann wurde sein Nachfolger und brach am 26. September 1923 den Ruhrkampf ab.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s11": {
+      "correct": "Furcht vor einem Umsturz",
+      "variants": [
+        {
+          "text": "Druck der Gewerkschaften",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Entscheidend war dabei die Furcht vor einem Umsturz.“ Entscheidend war die Furcht vor einem Umsturz. Die Gewerkschaften waren damals so geschwächt, dass sie von der Regierung finanziert werden mussten.",
+          "evidence": "Entscheidend war dabei die Furcht vor einem Umsturz.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s12": {
+      "correct": "15. November",
+      "variants": [
+        {
+          "text": "15. Dezember",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Ab dem 15. November 1923 gab die Deutsche Rentenbank die Rentenmark aus.“ Die Rentenmark wurde ab dem 15. November ausgegeben.",
+          "evidence": "Ab dem 15. November 1923 gab die Deutsche Rentenbank die Rentenmark aus."
+        }
+      ]
+    },
+    "s12b": {
+      "correct": "Rentenbank",
+      "variants": [
+        {
+          "text": "Reichsbank",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Ab dem 15. November 1923 gab die Deutsche Rentenbank die Rentenmark aus.“ Es war die Deutsche Rentenbank, nicht die Reichsbank.",
+          "evidence": "Ab dem 15. November 1923 gab die Deutsche Rentenbank die Rentenmark aus."
+        }
+      ]
+    },
+    "s12c": {
+      "correct": "die Rentenmark",
+      "variants": [
+        {
+          "text": "die heiß ersehnte Rettungsmark",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Heiß ersehnte Rettungsmark“ ist eine Wertung, die Gefühle weckt. Das Original nennt nur das Datum und die Ausgabe der Rentenmark.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s13": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "In Berlin bezahlten viele Menschen ihr Brot mit Schubkarren voller Geld.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht im Original. Dort geht es um Kurse, Beschlüsse und Daten, nicht um Alltagsbilder."
+        }
+      ]
+    },
+    "s14": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Die Politik von Kanzler Cuno war ohne Zweifel die schlechteste, die man sich denken konnte.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das ist eine Wertung. „Ohne Zweifel“ und „die schlechteste“ messen nichts. Das Original beschreibt, was Cuno beschloss und wann er zurücktrat."
+        }
+      ]
+    },
+    "s15": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Führende Ökonomen sind sich einig, dass erst die Rentenmark die Inflation beendet hat.",
+          "errorClass": "false_authority",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "„Führende Ökonomen“ werden weder genannt noch belegt. Im Original steht nur: „Ab dem 15. November 1923 gab die Deutsche Rentenbank die Rentenmark aus.“ Eine Ursache für das Ende der Inflation nennt der Auszug nicht.",
+          "evidence": "Ab dem 15. November 1923 gab die Deutsche Rentenbank die Rentenmark aus."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Wikipedia-Artikel Deutsche Inflation 1914 bis 1923, Revision 270518471 (abgerufen am 18.10.2026, Einleitung und die Abschnitte bis zur Rentenmark); die zwölf Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Lizenz: Wikipedia-Text unter CC BY-SA 4.0; die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Alle 15 Fehlerklassen kommen vor. Die Klassen ab Klasse 7 und ab Klasse 10 sind abgeleitet, nicht belegt. Die Falschschreibungen sind konstruiert (wider/wieder, Doppelkonsonanten), das/dass ist nach der IQB-Handreichung gewählt.",
+    "Die eingefügten Sätze (Schubkarren, Wertung, Ökonomen) sind erfunden, harmlos und stehen nicht im Original; die Erklärungen sagen das. Bewusst politisch neutral: keine heutigen Parteien, keine Gruppen als Ziel.",
+    "Warnung bewusst: Bei „aufgrund … / und löste dadurch … aus“ (faulty_inference) ist die Verwechslung von Ursache und Wirkung nur im Vergleich mit dem Original erkennbar, darum basis comparison.",
+    "Nicht geprüft: ob der Artikeltext fachlich vollständig oder unumstritten ist (Ursachen der Inflation werden in der Forschung unterschiedlich gewichtet); das Paket prüft den Vergleich mit dieser Quelle.",
+    "Keine lokale PDF der Quelle."
+  ]
+}
