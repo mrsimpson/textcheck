@@ -154,7 +154,7 @@ Skip what earlier answers or the app tell. Answers → "Answers". -->
 
 ### Tasks
 
-- [ ] Push the branch; open a pull request to `main`. Pre-push runs the heavy checks; fix failures. See the pull
+- [x] Push the branch; open a pull request to `main`. Pre-push runs the heavy checks; fix failures. See the pull
       request's checks to green. GitHub step fails or refused → skill `lernapps-github`.
 - [ ] **Checkpoint:** publish. Show what the increment adds and the preview link from the comment "Vorschau der
       App"; ask whether it may go online. Wait for the yes.
