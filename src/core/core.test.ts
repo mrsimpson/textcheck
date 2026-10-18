@@ -160,3 +160,54 @@ describe("the modes of a route", () => {
     expect(next.mode).toBe("source");
   });
 });
+
+describe("the mode choose", () => {
+  const choose = `${route}-original`;
+
+  it("plays the same round as the other modes and hides which text is the Variante", () => {
+    const state = start(4, choose);
+    expect(state.mode).toBe("choose");
+    expect(state.corruptions).toEqual(start(4, route).corruptions);
+    expect(state.tokens).toEqual(start(4, route).tokens);
+    expect(state.originalTokens.length).toBeGreaterThan(0);
+    expect(state.choice).toBeNull();
+  });
+
+  it("puts the Variante on both sides, depending on the seed", () => {
+    const sides = new Set<string>();
+    for (let seed = 1; seed <= 20; seed++) sides.add(start(seed, choose).variantSide);
+    expect([...sides].sort()).toEqual(["a", "b"]);
+  });
+
+  it("lets the learner mark nothing before the pick, and checks only after it", () => {
+    const state = start(1, choose);
+    expect(step(state, action("toggle", 3))).toBe(state);
+    expect(step(state, action("check")).phase).toBe("marking");
+  });
+
+  it("clears the marks when the pick changes", () => {
+    const first = step(start(1, choose), action("choose", "a"));
+    const marked = step(first, action("toggle", 2));
+    expect(marked.marked).toEqual([2]);
+    const other = step(marked, action("choose", first.choice === "a" ? "b" : "a"));
+    expect(other.marked).toEqual([]);
+  });
+
+  it("counts a right pick with the errors found, a wrong pick as no error found and the marks as wrong", () => {
+    const state = start(1, choose);
+    const right = step(
+      step(
+        step(state, action("choose", state.variantSide)),
+        action("toggle", wordsOf(state, state.corruptions[0]?.slot ?? "")[0]),
+      ),
+      action("check"),
+    );
+    expect(right.result?.chosenRight).toBe(true);
+    expect(right.result?.found).toBe(1);
+    const wrongSide = state.variantSide === "a" ? "b" : "a";
+    const wrong = step(step(step(state, action("choose", wrongSide)), action("toggle", 0)), action("check"));
+    expect(wrong.result?.chosenRight).toBe(false);
+    expect(wrong.result?.found).toBe(0);
+    expect(wrong.result?.wrong).toBe(1);
+  });
+});

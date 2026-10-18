@@ -5,8 +5,9 @@
 import type { Input } from "@lernapps/app-templates/interactive";
 import { levelOf, packsFor, parseRoute } from "./data.ts";
 import { evaluate } from "./evaluate.ts";
-import { buildRound } from "./round.ts";
-import type { State } from "./types.ts";
+import { random } from "./random.ts";
+import { buildRound, originalTokensOf } from "./round.ts";
+import type { Side, State, Token } from "./types.ts";
 
 export type { State } from "./types.ts";
 
@@ -17,6 +18,8 @@ export function start(seed: number, route: string, language: string = DEFAULT_LA
   const level = levelOf(route);
   const { mode } = parseRoute(route);
   const { pack, tokens, corruptions } = buildRound(packsFor(language, level), level, seed);
+  // the side of the Variante in the mode `choose` comes from its own draw, so that every mode plays the same round
+  const variantSide: Side = random((seed ^ 0x5bd1e995) >>> 0)() < 0.5 ? "a" : "b";
   const classes = [...new Set(corruptions.map((corruption) => corruption.errorClass))];
   return {
     seed,
@@ -28,6 +31,9 @@ export function start(seed: number, route: string, language: string = DEFAULT_LA
     source: pack.source,
     pdf: mode === "source" ? (pack.source.pdf ?? null) : null,
     original: pack.excerpt.map((entry) => entry.text),
+    originalTokens: mode === "choose" ? originalTokensOf(pack) : [],
+    variantSide,
+    choice: null,
     tokens,
     corruptions,
     announced: level.announceClasses ? classes : null,
@@ -40,20 +46,29 @@ export function start(seed: number, route: string, language: string = DEFAULT_LA
   };
 }
 
+/**
+ * The words the learner may mark: the Variante, or in the mode `choose` the text chosen as having the errors (none
+ * before the choice).
+ */
+export function markable(state: State): readonly Token[] {
+  if (state.mode !== "choose") return state.tokens;
+  if (state.choice === null) return [];
+  return state.choice === state.variantSide ? state.tokens : state.originalTokens;
+}
+
 /** The id of the first word of the sentence `offset` sentences from the one the cursor is in, else the cursor. */
 function sentenceStep(state: State, offset: number): number {
-  const here = state.tokens[state.cursor]?.sentence;
+  const words = markable(state);
+  const here = words[state.cursor]?.sentence;
   if (here === undefined) return state.cursor;
-  const sentences = [...new Set(state.tokens.map((token) => token.sentence))];
+  const sentences = [...new Set(words.map((token) => token.sentence))];
   const target = sentences[sentences.indexOf(here) + offset];
-  return target === undefined
-    ? state.cursor
-    : (state.tokens.find((token) => token.sentence === target)?.id ?? state.cursor);
+  return target === undefined ? state.cursor : (words.find((token) => token.sentence === target)?.id ?? state.cursor);
 }
 
 /** The cursor after a move: "next" and "prev" by word, "next-sentence" and "prev-sentence", "first", "last". */
 function moved(state: State, how: unknown): number {
-  const last = state.tokens.length - 1;
+  const last = markable(state).length - 1;
   switch (how) {
     case "next":
       return Math.min(state.cursor + 1, last);
@@ -72,14 +87,27 @@ function moved(state: State, how: unknown): number {
   }
 }
 
+/** The learner picks the text with the errors; earlier marks belonged to the other text and go. */
+function choose(state: State, side: unknown): State {
+  if (state.mode !== "choose" || (side !== "a" && side !== "b") || side === state.choice) return state;
+  return { ...state, choice: side, marked: [], cursor: 0, changed: -1, last: "choose" };
+}
+
 export function step(state: State, input: Input): State {
+  if (input.kind === "key") {
+    // 1 and 2 pick the text in the mode `choose`; the root component does not use other keys
+    if (state.phase !== "marking") return state;
+    return input.key === "1" ? choose(state, "a") : input.key === "2" ? choose(state, "b") : state;
+  }
   if (input.kind !== "action") return state;
   if (input.name === "again") return start(state.seed + 1, state.route, state.language);
   if (state.phase !== "marking") return state;
   switch (input.name) {
+    case "choose":
+      return choose(state, input.value);
     case "toggle": {
       const id = input.value;
-      if (typeof id !== "number" || !Number.isInteger(id) || state.tokens[id] === undefined) return state;
+      if (typeof id !== "number" || !Number.isInteger(id) || markable(state)[id] === undefined) return state;
       const on = state.marked.includes(id);
       const marked = on ? state.marked.filter((other) => other !== id) : [...state.marked, id].sort((a, b) => a - b);
       return { ...state, marked, cursor: id, changed: id, last: on ? "unmark" : "mark" };
@@ -90,13 +118,12 @@ export function step(state: State, input: Input): State {
     }
     case "clear":
       return state.marked.length === 0 ? state : { ...state, marked: [], changed: -1, last: "clear" };
-    case "check":
-      return {
-        ...state,
-        phase: "result",
-        result: evaluate(state.tokens, state.corruptions, state.marked),
-        last: "check",
-      };
+    case "check": {
+      if (state.mode === "choose" && state.choice === null) return state;
+      const result = evaluate(markable(state), state.corruptions, state.marked);
+      const chosenRight = state.mode === "choose" ? state.choice === state.variantSide : null;
+      return { ...state, phase: "result", result: { ...result, chosenRight }, last: "check" };
+    }
     default:
       return state;
   }

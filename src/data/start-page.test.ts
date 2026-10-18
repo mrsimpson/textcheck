@@ -39,9 +39,12 @@ describe("the start page", () => {
     for (const id of ids) expect(Object.keys(levels), id).toContain(parseRoute(id).level);
   });
 
-  it("has the route of the mode source for every level", () => {
+  it("has the routes of the modes source and choose for every level", () => {
     const ids = app.routes.map((route) => route.id);
-    for (const level of Object.keys(levels)) expect(ids, level).toContain(`${level}-quelle`);
+    for (const level of Object.keys(levels)) {
+      expect(ids, level).toContain(`${level}-quelle`);
+      expect(ids, level).toContain(`${level}-original`);
+    }
   });
 });
 

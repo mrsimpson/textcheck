@@ -131,16 +131,21 @@ export interface Result {
   wrong: number;
   /** Words marked that are right but within the tolerance of an error. */
   tolerated: number;
-  /** One status per token, in token order. */
+  /** One status per token of the checked text, in token order. */
   status: Status[];
   classes: ClassResult[];
+  /** In the mode `choose`: whether the learner picked the text with the errors; else null. */
+  chosenRight: boolean | null;
 }
 
 /** How a route plays: mark errors against the Original, against the source PDF, or choose the text with errors first. */
 export type Mode = "mark" | "source" | "choose";
 
 /** What the last input changed; the root component announces it. */
-export type Last = "start" | "mark" | "unmark" | "clear" | "check";
+export type Last = "start" | "mark" | "unmark" | "clear" | "check" | "choose";
+
+/** The two texts of the mode `choose`. */
+export type Side = "a" | "b";
 
 export interface State {
   seed: number;
@@ -155,6 +160,12 @@ export interface State {
   pdf: string | null;
   /** The sentences of the Original, as shown. */
   original: string[];
+  /** The words of the Original, in the mode `choose` (else empty): the learner may mark them there too. */
+  originalTokens: Token[];
+  /** In the mode `choose`: which text, a or b, is the Variante (the other is the Original). */
+  variantSide: Side;
+  /** In the mode `choose`: the text the learner says has the errors; else null. */
+  choice: Side | null;
   /** The words of the Variante; each sentence is a run of tokens with the same `sentence`. */
   tokens: Token[];
   /** The errors of the round; the answers, which the component shows only after checking. */

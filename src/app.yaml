@@ -20,6 +20,7 @@ competencies:
   - Ich kann eine Folgerung erkennen, die der Text nicht trägt.
   - Ich kann wertende oder emotionalisierende Formulierungen erkennen.
   - Ich kann einen Text mit seiner Quelle vergleichen und Stellen finden, die von der Quelle abweichen.
+  - Ich kann zwei Texte vergleichen und erkennen, welcher Fehler hat.
 languages: [de]
 routes:
   - id: klasse-3-4
@@ -52,6 +53,21 @@ routes:
   - id: klasse-11-13-quelle
     title: Oberstufe (Klasse 11 bis 13), mit der Quelle als PDF
     description: Dieselben Texte; statt des Originals gibt es die Quelle als PDF zum Vergleichen.
+  - id: klasse-3-4-original
+    title: Klasse 3 bis 4, Original erkennen
+    description: Zwei Texte, einer ist das Original. Finde den Text mit den Fehlern und markiere sie.
+  - id: klasse-5-6-original
+    title: Klasse 5 bis 6, Original erkennen
+    description: Zwei Texte, einer ist das Original. Finde den Text mit den Fehlern und markiere sie.
+  - id: klasse-7-8-original
+    title: Klasse 7 bis 8, Original erkennen
+    description: Zwei Texte, einer ist das Original. Finde den Text mit den Fehlern und markiere sie.
+  - id: klasse-9-10-original
+    title: Klasse 9 bis 10, Original erkennen
+    description: Zwei Texte, einer ist das Original. Finde den Text mit den Fehlern und markiere sie.
+  - id: klasse-11-13-original
+    title: Oberstufe (Klasse 11 bis 13), Original erkennen
+    description: Zwei Texte, einer ist das Original. Finde den Text mit den Fehlern und markiere sie.
 sections:
   - id: begruendung
     title: Wie diese Übung begründet ist

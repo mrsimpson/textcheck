@@ -6,7 +6,8 @@
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import { announce, moveFocus } from "@lernapps/tooling/a11y";
 import type { Input } from "@lernapps/app-templates/interactive";
-import type { State } from "../core/index.ts";
+import { markable, type State } from "../core/index.ts";
+import ChooseView from "./ChooseView.vue";
 import ResultView from "./ResultView.vue";
 import WordList from "./WordList.vue";
 import { translatorOf } from "./messages.ts";
@@ -16,6 +17,7 @@ const emit = defineEmits<{ input: [input: Input] }>();
 const t = translatorOf(props.lang);
 const view = ref<"original" | "rendition">("rendition");
 const words = ref<InstanceType<typeof WordList> | null>(null);
+const choose = ref<InstanceType<typeof ChooseView> | null>(null);
 const root = ref<HTMLElement | null>(null);
 
 // the source PDF is embedded only where a PDF shows well in a frame: a wide screen with a mouse; elsewhere the link
@@ -37,16 +39,23 @@ const pdfUrl = computed(() => (props.state.pdf === null ? null : `../${props.sta
 const sourceMode = computed(() => props.state.mode === "source");
 
 const goal = computed(() =>
-  props.state.announced === null
-    ? t("goalHidden", { count: props.state.corruptions.length })
-    : t("goalNamed", {
-        count: props.state.corruptions.length,
-        classes: props.state.announced.map((id) => t(`errorClass.${id}` as never)).join(", "),
-      }),
+  props.state.mode === "choose"
+    ? props.state.announced === null
+      ? t("goalChoose", { count: props.state.corruptions.length })
+      : t("goalChooseNamed", {
+          count: props.state.corruptions.length,
+          classes: props.state.announced.map((id) => t(`errorClass.${id}` as never)).join(", "),
+        })
+    : props.state.announced === null
+      ? t("goalHidden", { count: props.state.corruptions.length })
+      : t("goalNamed", {
+          count: props.state.corruptions.length,
+          classes: props.state.announced.map((id) => t(`errorClass.${id}` as never)).join(", "),
+        }),
 );
 
 watch(
-  () => [props.state.last, props.state.marked.length, props.state.seed, props.state.phase] as const,
+  () => [props.state.last, props.state.marked.length, props.state.seed, props.state.phase, props.state.choice] as const,
   () => {
     const { state } = props;
     const word = state.tokens[state.changed]?.text ?? "";
@@ -55,6 +64,8 @@ watch(
     else if (state.last === "mark") announce(t("announceMark", { word, count }));
     else if (state.last === "unmark") announce(t("announceUnmark", { word, count }));
     else if (state.last === "clear") announce(t("announceClear"));
+    else if (state.last === "choose")
+      announce(t("announceChoose", { name: t(state.choice === "a" ? "textA" : "textB") }));
     else if (state.result !== null)
       announce(t("announceCheck", { found: state.result.found, total: state.result.total, wrong: state.result.wrong }));
   },
@@ -68,17 +79,36 @@ watch(
     if (phase === "result") {
       const heading = root.value?.querySelector<HTMLElement>("#result-heading");
       if (heading) moveFocus(heading);
-    } else if (before === "result") words.value?.focus();
+    } else if (before === "result") (words.value ?? choose.value)?.focus();
   },
 );
 
 const checking = computed(() => props.state.phase === "result");
+
+/** The words of the checked text and, in the mode `choose`, the sentence about the pick. */
+const checked = computed(() => markable(props.state));
+const choiceNote = computed(() => {
+  const { result, variantSide } = props.state;
+  if (result === null || result.chosenRight === null) return null;
+  const params = {
+    original: t(variantSide === "a" ? "textB" : "textA"),
+    variant: t(variantSide === "a" ? "textA" : "textB"),
+  };
+  return result.chosenRight ? t("chosenRight", params) : t("chosenWrong", params);
+});
 </script>
 
 <template>
   <section ref="root" class="textcheck" :aria-label="t('region')">
     <p class="goal">{{ goal }}</p>
-    <div class="switch" role="group" :aria-label="t('view')">
+    <ChooseView
+      v-if="state.mode === 'choose'"
+      ref="choose"
+      :state="state"
+      :lang="lang"
+      @input="(input) => emit('input', input)"
+    />
+    <div v-else class="switch" role="group" :aria-label="t('view')">
       <button type="button" :aria-pressed="view === 'original'" @click="view = 'original'">
         {{ sourceMode ? t("sourceTab") : t("original") }}
       </button>
@@ -86,7 +116,7 @@ const checking = computed(() => props.state.phase === "result");
         {{ t("renditionTab") }}
       </button>
     </div>
-    <div class="panels" :data-view="view">
+    <div v-if="state.mode !== 'choose'" class="panels" :data-view="view">
       <section v-if="sourceMode" class="panel original pdf" aria-labelledby="original-heading">
         <h2 id="original-heading">{{ t("sourceHeading") }}</h2>
         <p v-if="pdfUrl !== null">
@@ -148,7 +178,8 @@ const checking = computed(() => props.state.phase === "result");
     <ResultView
       v-if="state.result !== null"
       :result="state.result"
-      :tokens="state.tokens"
+      :tokens="checked"
+      :choice-note="choiceNote"
       :lang="lang"
       @input="(input) => emit('input', input)"
     />

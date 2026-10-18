@@ -92,6 +92,16 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
   - Fixed and varying: as in the mode `mark`; success check the same.
   - Data: `source.pdf` of the pack, a path relative to the site root (`quellen/<language>/<id>.pdf`); the files lie in
     `public/quellen/<language>/`, the build copies them to the site root.
+- **Choose the text with the errors, then mark them** (mode `choose`, route ending in `-original`).
+  - Competency: Ich kann zwei Texte vergleichen und erkennen, welcher Fehler hat.
+  - Form: two texts, A and B: the Original (the verbatim excerpt) and the Variante with the errors of the round. Which
+    one is which stays hidden until checking. The learner picks the text with the errors and marks the words there; the
+    picked text is the one that can be marked. On a phone a switch shows one text at a time.
+  - Fixed: excerpt, Variante, slots, level. Varies per use: the errors (seed) and the side of the Variante (own draw
+    from the seed); the round is the same as in the other modes.
+  - Success check: the pick and the marks. A right pick counts like the mode `mark`; a wrong pick finds no error and
+    its marks count as wrongly marked; the result names the Original either way.
+  - Data: none of its own; keys 1 and 2 pick the text.
 - Nothing is computed or drawn; no number field exists.
 
 ## Figures
