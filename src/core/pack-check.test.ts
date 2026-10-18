@@ -41,7 +41,7 @@ describe("the error classes", () => {
 });
 
 describe("the pack checks", () => {
-  const [pack] = PACKS;
+  const pack = PACKS.find((candidate) => candidate.id === "fledermaeuse");
   if (pack === undefined) return;
 
   it("reject a quote that is not in the excerpt", () => {

@@ -17,6 +17,9 @@ competencies:
   - Ich kann falsch geschriebene Wörter finden, auch solche, die ein Rechtschreibprogramm nicht findet.
 languages: [de]
 routes:
+  - id: klasse-3-4
+    title: Klasse 3 bis 4
+    description: Kurze Texte mit Fehlern in der Rechtschreibung, in der Zeichensetzung und bei Zahlen und Orten.
   - id: klasse-5-6
     title: Klasse 5 bis 6
     description: Texte mit Fehlern in der Rechtschreibung, bei Zahlen und Orten, bei Verbindungen und Widersprüchen.

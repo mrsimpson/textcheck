@@ -1,4 +1,14 @@
 {
+  "klasse-3-4": {
+    "grades": {
+      "from": 3,
+      "to": 4
+    },
+    "classes": ["spelling_rule", "slip", "punctuation", "number_name_date"],
+    "bases": ["text", "comparison"],
+    "errors": 3,
+    "announceClasses": true
+  },
   "klasse-5-6": {
     "grades": {
       "from": 5,
