@@ -21,7 +21,7 @@
 - Rate limits: on HTTP 429 or 403, stop, wait, try again later, then report. No loops, no tricks (other headers, other
   hosts). Every request has a cost for the source.
 - Facts you will need to judge errors (numbers, names, definitions) stand in the source. If the source looks wrong
-  or outdated, take another source; the pack checks the Fassung against the source, not the source against the world.
+  or outdated, take another source; the pack checks the Variante against the source, not the source against the world.
 
 ## Record
 

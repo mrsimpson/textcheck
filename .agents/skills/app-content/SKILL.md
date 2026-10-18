@@ -5,7 +5,7 @@ description: Use for any content work in this app - researching, writing, extend
 
 # Content guide of this app
 
-Textcheck trains careful reading. Learners compare a text (the "Fassung") with a source excerpt (the "Original") and
+Textcheck trains careful reading. Learners compare a text (the "Variante") with a source excerpt (the "Original") and
 mark the words that do not match or do not hold. The texts are text packs; a seed decides in every round which slots of
 a pack are corrupted and with which variant. Code, ids and file names are English; everything learners read is in the
 language of its pack (version 1: German only).
@@ -28,7 +28,7 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
 1. Grades 3-4: Ich kann falsch geschriebene Wörter in einem kurzen Text finden und markieren. Ich kann Zahlen, Namen
    und Wörter finden, die vom Original abweichen. Ich kann ein Wort markieren, das im Satz keinen Sinn ergibt.
 2. Grades 5-6 (route `klasse-5-6`, pack `src/data/packs/de/5-6/*.json`): Ich kann Stellen markieren, an denen die
-   Fassung dem Original widerspricht. Ich kann Sätze finden, die sich im selben Text widersprechen. Ich kann eine
+   Variante dem Original widerspricht. Ich kann Sätze finden, die sich im selben Text widersprechen. Ich kann eine
    falsche Zeit-, Orts- oder Mengenangabe mit dem Original abgleichen.
 3. Grades 7-10: Ich kann eine Meinung von einer Tatsache unterscheiden und die Meinung markieren. Ich kann eine
    Folgerung erkennen, die der Text nicht trägt. Ich kann unbelegte Behauptungen und Verallgemeinerungen markieren.
@@ -45,7 +45,7 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
   which variant. Same seed and route give the same round.
 - A **text pack** (`src/data/packs/<language>/<from>-<to>/<id>.json`, schema `src/data/textpack.v1.schema.json`):
   - `excerpt`: verbatim sentences of the source, unchanged.
-  - `rendition`: the Fassung, in own words, sentence by sentence, each sentence with `evidence.quote` from the excerpt.
+  - `rendition`: the Variante, in own words, sentence by sentence, each sentence with `evidence.quote` from the excerpt.
     A sentence holds plain strings and `{ "slot": id }` parts.
   - `slots`: per slot the `correct` wording and one or more `variants`. Each variant has `errorClass`, `basis`
     (`text`, `comparison`, `prior_knowledge`), `conspicuousness` (1-3), `explanation`, optional `tolerance`
@@ -54,16 +54,17 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
   - At least 6 slots and 3 error classes; the level's `errors` per round plus three in reserve.
 - A **level** (`src/data/levels.json`): `route`, `grades`, allowed `classes` and `bases`, `errors` per round,
   `announceClasses` (whether the goal line names the error classes in the round).
-- The learner sees: the goal line, the Original and the Fassung (side by side; on a phone a switch), the marked words,
+- The learner sees: the goal line, the Original and the Variante (side by side; on a phone a switch), the marked words,
   then the result grouped by error class (found, missed, wrongly marked, within tolerance) with the explanation.
 - Length of a pack: the excerpt has 6 to 10 sentences. Guide values per grade pair are fixed after the pilot.
 
 ## Terminology
 
-- Original (the source excerpt, always correct) and Fassung (the text learners check). Never "Zusammenfassung": the
-  Fassung is a faithful rendition of the excerpt, not a shortened summary.
-- "Fehler" for what is wrong in the Fassung; "markieren" for the learner's action; "Stelle" and "Variante" are
-  internal words and never shown to learners.
+- Original (the source excerpt, always correct) and Variante (the text learners check). Never "Zusammenfassung": the
+  Variante (called "Fassung" until the creator chose "Variante" after the first test) is a faithful rendition of the excerpt, not a shortened summary.
+- "Fehler" for what is wrong in the Variante; "markieren" for the learner's action; "Stelle" is an internal word
+  and never shown to learners. Learners see "Variante" only for the whole text they check; the wrong versions of a
+  slot are `variants` in code and data and never shown by that word.
 - Learners are addressed with "du". Plain language: short sentences, active voice, no jargon.
 - The result never shames: "Übersehen" and "Fälschlich markiert" describe, they do not judge.
 - Status words on the page "Wie diese Übung begründet ist": "belegt" (a source we read names it) and "abgeleitet"
@@ -122,7 +123,7 @@ competencies, and at least one pack; a playthrough for the route if its rules di
 
 ## Rules learned from mistakes
 
-- Never call the Fassung a "Zusammenfassung": it is not shortened (the creator pointed it out).
+- Never call the Variante a "Zusammenfassung": it is not shortened (the creator pointed it out).
 - A pack holds only error classes whose `fromGrade` is at most the pack's upper grade; the first example mixed in
   classes from grade 7 into a pack for grades 5-6, the checker caught it.
 - Tolerance only works when the slot has neighbouring words in the same sentence; an inserted sentence has none.

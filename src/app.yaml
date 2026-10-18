@@ -1,17 +1,17 @@
 # yaml-language-server: $schema=../node_modules/@lernapps/app-templates/runtime/interactive/interactive.v1.schema.json
 title: Textcheck
 description: |
-  Hier übst du, genau zu lesen. Du siehst ein Original und eine Fassung davon. In der Fassung stecken Fehler. Finde sie
+  Hier übst du, genau zu lesen. Du siehst ein Original und eine Variante davon. In der Variante stecken Fehler. Finde sie
   und markiere sie. Für Schülerinnen und Schüler ab Klasse 3 bis zum Abitur. Die Texte und die Fehler werden mit der
   Klassenstufe schwieriger.
 howto: |
   - Lies das Original. Es stimmt und nennt seine Quelle.
-  - Lies die Fassung und markiere die Wörter, die nicht stimmen. Du markierst mit einem Klick oder Tipp, mit der Tastatur
+  - Lies die Variante und markiere die Wörter, die nicht stimmen. Du markierst mit einem Klick oder Tipp, mit der Tastatur
     wählst du Wörter mit den Pfeiltasten und markierst mit der Leertaste.
   - Tippe auf „Prüfen“. Du siehst, welche Fehler du gefunden hast, welche nicht, und warum.
   - Ein paar Wörter zu viel zu markieren ist nicht schlimm, wenn sie direkt neben einem langen Fehler im selben Satz stehen.
 competencies:
-  - Ich kann Stellen markieren, an denen die Fassung dem Original widerspricht.
+  - Ich kann Stellen markieren, an denen die Variante dem Original widerspricht.
   - Ich kann Sätze finden, die sich im selben Text widersprechen.
   - Ich kann eine falsche Zeit-, Orts- oder Mengenangabe mit dem Original abgleichen.
   - Ich kann falsch geschriebene Wörter finden, auch solche, die ein Rechtschreibprogramm nicht findet.

@@ -38,7 +38,7 @@ Deviation from the Original (basis `comparison`, give `evidence`):
 
 Logic (grade 5-7+):
 - **connective_negation**: wrong connective (weil/obwohl, deshalb/trotzdem) or a negation that flips the meaning.
-- **contradiction**: a statement that contradicts another sentence of the same Fassung; the other sentence must stay
+- **contradiction**: a statement that contradicts another sentence of the same Variante; the other sentence must stay
   correct and be quotable.
 - **quantity_degree** (7+): "einige" -> "alle", "oft" -> "immer", "meist" -> "nie".
 - **overgeneralization** (7+): from one case to all.

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// The words of the Fassung. While marking, they are one listbox with one tab stop: the arrow keys move between words
+// The words of the Variante. While marking, they are one listbox with one tab stop: the arrow keys move between words
 // and sentences, the space bar marks, a tap or click marks too. After checking, they show how each word counts, by
 // colour and line style, with a hidden status text for screen readers. It holds no state of its own; every change is
 // an action the root component hands on.

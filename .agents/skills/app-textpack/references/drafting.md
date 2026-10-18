@@ -9,17 +9,17 @@
   have 500-850 words; our excerpts are shorter on purpose, because the task is to compare, not to read at length.
 - Choose a stretch that stands on its own: no pronoun without antecedent, no "wie oben gesagt".
 
-## Rendition (the Fassung)
+## Rendition (the Variante)
 
 - A faithful retelling in own words, sentence by sentence. Not shorter on purpose, not an interpretation.
 - One rendition sentence has one idea and rests on one or a few excerpt sentences. Each has `evidence.quote`: the
-  verbatim passage of the excerpt that supports it. A claim without a quote does not belong in the Fassung.
+  verbatim passage of the excerpt that supports it. A claim without a quote does not belong in the Variante.
 - Age: sentence length, word choice and sentence structure fit the school years (grades 3-4 main clauses, simple
   words; 7+ subordinate clauses, technical terms from the source). Keep terms from the source where learners must
   find them again.
 - Do not copy the excerpt word by word; change order, words and sentence building, so that comparing is real
   comparing. Keep numbers, names and dates the same as the source.
-- The correct Fassung must be right everywhere: any error learners find must be one that a slot introduced.
+- The correct Variante must be right everywhere: any error learners find must be one that a slot introduced.
 
 ## Pace and variety
 

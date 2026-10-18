@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// The round: the goal line, the Original and the Fassung (side by side; on a narrow screen a switch shows one of
+// The round: the goal line, the Original and the Variante (side by side; on a narrow screen a switch shows one of
 // them), the words to mark, and after checking the result. It announces every change for screen readers and moves the
 // focus to the result and back to the words. The runtime gives it the core's state; what the learner does goes back
 // as input. The only state of its own is which panel a narrow screen shows.
@@ -269,5 +269,20 @@ h2 {
   background: var(--tc-accent);
   color: var(--tc-on-accent);
   font-weight: 700;
+}
+</style>
+
+<style>
+/* The shell's page is light by default; follow the system setting so the dark card never sits on a white page. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --interactive-text: #e8eaf0;
+    --interactive-muted: #a2abbd;
+    --interactive-background: #14161b;
+    --interactive-surface: #1d2027;
+    --interactive-accent: #8ab4ff;
+    --interactive-on-accent: #0b1020;
+    color-scheme: dark;
+  }
 }
 </style>

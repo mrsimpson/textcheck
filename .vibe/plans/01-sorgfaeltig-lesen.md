@@ -465,3 +465,4 @@ fitness:
 ### Where I had to guess
 
 <!-- Each gap in plan, skills, messages or answers, and your choice. "None" if none. -->
+- Nach dem ersten Test (Oliver): Das Wort für den Text, den Lernende prüfen, ist „Variante“ (vorher „Fassung“, geraten). Der Dark Mode folgt der Systemeinstellung auch für die Seite; vorher blieb die Seite hell.

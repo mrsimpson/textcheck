@@ -148,7 +148,7 @@ export interface State {
   source: Source;
   /** The sentences of the Original, as shown. */
   original: string[];
-  /** The words of the Fassung; each sentence is a run of tokens with the same `sentence`. */
+  /** The words of the Variante; each sentence is a run of tokens with the same `sentence`. */
   tokens: Token[];
   /** The errors of the round; the answers, which the component shows only after checking. */
   corruptions: Corruption[];

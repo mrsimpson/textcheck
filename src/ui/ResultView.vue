@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // The result of a round: the counts, the errors grouped by class (found or missed, how to detect it, what stands in
-// the Fassung and in the Original, why), the words marked wrongly or within tolerance, and the legend of the colours.
+// the Variante and in the Original, why), the words marked wrongly or within tolerance, and the legend of the colours.
 // It shows the core's result and emits "again" for the next round.
 import { computed } from "vue";
 import type { Input } from "@lernapps/app-templates/interactive";

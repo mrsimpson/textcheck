@@ -1,10 +1,13 @@
 // Saves the source of a text pack as a tagged PDF with a licence notice on top.
 // Usage: node source-pdf.mjs --url <fixed-revision url> --out sources/de/<id>.pdf --title <title>
 //   --licence "CC BY-SA 4.0" --licence-url <url> --authors-url <url> --retrieved <YYYY-MM-DD>
-//   [--selector "#mw-content-text"] [--lang de]
+//   [--selector "#mw-content-text"] [--lang de] [--file <saved html>]
+// --file renders a copy of the page you already saved (for example when the source answers 403 later); --url is still
+// printed in the notice and must be the fixed revision the copy came from.
 import { chromium } from "playwright";
 import { mkdirSync } from "node:fs";
-import { dirname } from "node:path";
+import { dirname, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
 const args = Object.fromEntries(
   process.argv.slice(2).reduce((pairs, value, index, all) => {
@@ -26,8 +29,9 @@ const executablePath = process.env.PLAYWRIGHT_CHROMIUM_PATH;
 const browser = await chromium.launch(executablePath ? { executablePath } : {});
 try {
   const page = await browser.newPage();
-  const response = await page.goto(args.url, { waitUntil: "load" });
-  if (!response || !response.ok()) {
+  const target = args.file ? pathToFileURL(resolve(args.file)).href : args.url;
+  const response = await page.goto(target, { waitUntil: "load" });
+  if (!args.file && (!response || !response.ok())) {
     throw new Error(`Source answered ${response ? response.status() : "nothing"}; not saved.`);
   }
   const found = await page.evaluate(
@@ -49,11 +53,17 @@ try {
       selector,
       lang,
       notice:
-        `<h1 style="font-size:18px;margin:0 0 8px">${args.title}</h1>` +
-        `<p>Source: <a href="${args.url}">${args.url}</a>, retrieved ${args.retrieved}. ` +
-        `Licence: <a href="${args["licence-url"]}">${args.licence}</a>. ` +
-        `Authors: <a href="${args["authors-url"]}">${args["authors-url"]}</a>. ` +
-        `Saved unchanged (layout of the site left out).</p>`,
+        lang === "de"
+          ? `<h1 style="font-size:18px;margin:0 0 8px">${args.title}</h1>` +
+            `<p>Quelle: <a href="${args.url}">${args.url}</a>, abgerufen am ${args.retrieved}. ` +
+            `Lizenz: <a href="${args["licence-url"]}">${args.licence}</a>. ` +
+            `Autorinnen und Autoren: <a href="${args["authors-url"]}">${args["authors-url"]}</a>. ` +
+            `Inhalt unverändert, ohne das Layout der Seite.</p>`
+          : `<h1 style="font-size:18px;margin:0 0 8px">${args.title}</h1>` +
+            `<p>Source: <a href="${args.url}">${args.url}</a>, retrieved ${args.retrieved}. ` +
+            `Licence: <a href="${args["licence-url"]}">${args.licence}</a>. ` +
+            `Authors: <a href="${args["authors-url"]}">${args["authors-url"]}</a>. ` +
+            `Content unchanged, site layout left out.</p>`,
     },
   );
   if (!found) throw new Error(`Selector ${selector} not found; not saved.`);

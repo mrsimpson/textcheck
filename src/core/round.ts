@@ -1,5 +1,5 @@
 // Builds a round from a text pack: which slots are corrupted and with which variant (drawn from the seed within the
-// limits of the level), and the words of the Fassung as learners see them.
+// limits of the level), and the words of the Variante as learners see them.
 import { ERROR_CLASSES } from "./data.ts";
 import { random } from "./random.ts";
 import type { Corruption, Level, TextPack, Token, Variant } from "./types.ts";
