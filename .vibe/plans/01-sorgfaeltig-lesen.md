@@ -3,7 +3,7 @@
 # Archetype, null until chosen in Explore. Allowed values: explainer, interactive, quiz.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: plan
+phase: code
 # prePushFailures: written by the pre-push hook. Never change it.
 prePushFailures: 0
 ---
@@ -238,6 +238,7 @@ Hinweise:
 - Freigabe (Ersteller): "Recherche gebe ich frei." Auftrag: "Arbeite durch, bis ein erster echt-Test für mich mit einem Text möglich ist. Danach skalieren wir dann auch viele Texte." (Die Bestätigung des Plans bleibt ein eigener Schritt mit ausdrücklichem Ja.)
 - Sprache (Ersteller): "Code in Englisch, die Anwendung soll auch mehrere Sprachen unterstützen (auch wenn wir erst mal nur Deutsch machen)."
 - Begriff (Ersteller): "Warum nennst du es konsequent Zusammenfassung? Zusammengefasst ist doch nichts!" Die zweite Textfassung ist eine genaue Wiedergabe mit eingebauten Fehlern, keine Zusammenfassung. Vorläufig im Plan "Fassung", im Code `rendition`; Wortwahl in der App offen, siehe Key decisions.
+- Bestätigung (Ersteller), nach der Frage "Bestätigst du den Plan und die Inhaltsmethode ausdrücklich?": "Paare passen. Wähle Themen selbst, abhängig von der Altersstufe. Leg los, bis zum PR." Auslegung: Der Plan ist bestätigt; Auftrag bis zur Entwurfs-Pull-Request (`work` → `main`). Das Wort "Fassung" blieb unbeantwortet und gilt als Annahme (guess). Klassenstufen-Paare: 3–4, 5–6, 7–8, 9–10, 11–12 oder 12–13 (letztes Paar nicht entschieden, guess).
 
 ### Entry draft
 
@@ -333,9 +334,9 @@ fitness:
       (what learners see and do, what it cannot do). Max 2 questions.
 - [x] Each screen, component or interactive exercise: show a sketch (static SVG or image, or the steps with what
       learners see after each). Words alone are not enough.
-- [ ] **Checkpoint:** confirm the plan and the content method. Only with the sketches shown. Stop and wait for an
+- [x] **Checkpoint:** confirm the plan and the content method. Only with the sketches shown. Stop and wait for an
       explicit yes. Changes → change, ask again. No `create` before the yes.
-- [ ] Set `phase: code`: change the value line (`grep '^phase:'` prints `phase: code`).
+- [x] Set `phase: code`: change the value line (`grep '^phase:'` prints `phase: code`).
 
 ### Content method
 
