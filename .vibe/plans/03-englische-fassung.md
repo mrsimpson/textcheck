@@ -36,11 +36,12 @@ Lernende im deutschen Schulsystem können die App auf Englisch üben: dieselben 
 
 - Nur die Sprache ändert sich, nicht das Schulsystem: gleiche Stufen (3–4, 5–6, 7–8, 9–10, 11–13), gleiche Modi, gleiche Fehlerklassen. (Ersteller)
 - Die Texte (Pakete) sind englisch, nicht übersetzt: je Stufe zwei englische Artikel, also zehn. Die deutschen Pakete bleiben unverändert. (Ersteller: „auch die Texte auf Englisch“; „nur jeweils zwei Artikel pro Stufe“)
+- Sprachwahl: der globale Sprachumschalter im Kopf der Seite (wie in den anderen Apps), nicht ein Auswahlfeld neben Altersstufe und Modus. Voreinstellung ist die Browsersprache. (Ersteller)
 - Ablage nach Leitfaden: `src/data/packs/en/<von>-<bis>/<id>.json`, Quell-PDFs in `public/quellen/en/`, Meldungen in `src/messages/en.json`. (guess)
 
 ## Notes
 
-**Offen.** Welche Themen die englischen Artikel haben; wie die Sprache gewählt wird (drittes Auswahlfeld neben Altersstufe und Modus?); ob „Tannen“ „Texten“ heißen soll (angenommen, guess). Quellen: englische Wikipedia / Simple English Wikipedia (CC BY-SA), vor dem Schreiben geöffnet und gelesen.
+**Offen.** Welche Themen die englischen Artikel haben; wie der Umschalter im Gerüst arbeitet (Seiten je Sprache, Voreinstellung aus der Browsersprache; im Gerüst zu prüfen); ob „Tannen“ „Texten“ heißen soll (angenommen, guess). Quellen: englische Wikipedia / Simple English Wikipedia (CC BY-SA), vor dem Schreiben geöffnet und gelesen.
 
 ## Explore
 
@@ -68,6 +69,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 - „I18n: English. Da die Altersstufen in Jahren, nur jeweils zwei Artikel pro Stufe“
 - „Plan 02 unangetastet. Plan 03: wir sind ja dennoch für das deutsche Schulsystem unterwegs, nur eben in English ⇒ nur andere Sprache, gleiche Stufen. Und eben auch den Tannen auf Englisch.“
+- „Wir haben in anderen Apps einen globalen Language Switcher, der default auf der Browsersprache steht. Keine Select-Box bei der Auswahl.“
 
 ### Completed
 
