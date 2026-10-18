@@ -3,7 +3,7 @@
 # Archetype, null until chosen in Explore. Allowed values: explainer, interactive, quiz.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: commit
+phase: code
 # prePushFailures: written by the pre-push hook. Never change it.
 prePushFailures: 0
 ---
@@ -41,6 +41,7 @@ Lernende lesen zwei Fassungen eines Textes mit bekannter Quelle (Original und Zu
 - Version 1 = Stufe 1 (der echte Text ist bekannt: Fehler im zweiten Text finden). Stufe 2 (echter Text unklar, mehrere Fassungen) und Stufe 3 (auf Zeit) als Issue festhalten, später. (Ersteller: Stufen sinnvoll, Issue anlegen.)
 - Texte entstehen als Daten, die Fehler werden vom Seed ausgewählt und eingesetzt: gleicher Seed → gleicher Text. Mehrere Fehlervarianten je Stelle halten das Ergebnis unvorhersagbar. (Ersteller: "deterministisch, aber mehrere Varianten, Seeds".)
 - Klassen 3 bis 13 (Ersteller), gestaffelt in vier Stufen: 3–4, 5–6, 7–10, 11–13 (guess).
+- Umfang Version 1 (Oliver): ein Text je Klassenpaar 3–4, 5–6, 7–8, 9–10, 11–12 (letztes Paar: Annahme, Ersteller fragen). Modi 2 (Original erkennen), 3 (Quellentreue), 4 (Auf Zeit) folgen als eigene Inkremente.
 - Nur Deutsch (guess).
 - Gefühl: ruhig wie ein Arbeitsblatt mit Textmarker, ohne Zeitdruck; Zeit erst in Stufe 3 (guess).
 - Texte und Zusammenfassungen schreibe ich selbst, jeweils mit Quelle und Link zum Original; Fakten werden an der Quelle geprüft (Ersteller: "Hauptsache im Original nachlesbar").
@@ -368,8 +369,11 @@ fitness:
 ### Tasks
 
 - [x] Zwischenstopp auf Wunsch des Erstellers: Vorschau-Link an Oliver für den ersten Test mit einem echten Text; Rückmeldung abwarten, ändern, danach weiter mit den übrigen Aufgaben.
-- [x] Every box of Explore, Plan and Code ticked.
-- [x] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
+- [ ] Umfang erweitert (Oliver, nach dem ersten Test): je ein Text pro Klassenpaar 3–4, 5–6 (fertig), 7–8, 9–10, 11–12, damit er die steigende Komplexität beurteilen kann. Pro Paar: Route und Eintrag in `src/data/levels.json` (Klassen der Fehlerklassen nach `fromGrade`, Fehler je Runde, Quellen), Eintrag in `src/app.yaml`, ein Text nach Skill `app-textpack`, Kompetenzen nur für vorhandene Stufen.
+- [ ] Reihenfolge: 7–8, 3–4, 9–10, 11–12; jeder Text einzeln geprüft (Checker, Quelle gelesen, mehrere Seeds gespielt) und gepusht.
+- [ ] Neue Fehlerklassen in der App ab 7 prüfen: Texte der Klassen `quantity_degree`, `overgeneralization`, `faulty_inference`, `opinion_as_fact` (ab 7), `false_authority`, `loaded_language` (ab 10) in `de.json`, auf der Seite „Wie diese Übung begründet ist“ und in den Tests.
+- [ ] Every box of Explore, Plan and Code ticked.
+- [ ] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
 
 ### Completed
 
