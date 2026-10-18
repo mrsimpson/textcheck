@@ -181,7 +181,9 @@ hosts: bb-component-rules, bb-interactive-description, bb-interactive-core, bb-i
 
 ## Interactive app page
 
-The shell, the core and the UI run in the learner's browser on the app page.
+The shell, the core and the UI run in the learner's browser on the app page. The PDFs of the sources (`public/quellen/`) are static files beside the
+app page, copied to the site by the build; the app page links to them and, on a wide screen, embeds them in a frame of
+the same site.
 
 ```arc42
 :::deployment-node
@@ -197,7 +199,9 @@ hosts: bb-shell, bb-interactive-core, bb-interactive-ui, bb-interactive-data, bb
 
 ## Textcheck in the learner's browser
 
-The core's parts, the UI's components and the data that are bundled with them run in the learner's browser on the app page.
+The core's parts, the UI's components and the data that are bundled with them run in the learner's browser on the app page. The PDFs of the sources (`public/quellen/`) are static files beside the
+app page, copied to the site by the build; the app page links to them and, on a wide screen, embeds them in a frame of
+the same site.
 
 ```arc42
 :::deployment-node
@@ -205,7 +209,7 @@ id: dn-textcheck-browser
 title: Textcheck app page
 type: container
 parent: dn-interactive-app-page
-hosts: bb-textcheck-state, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-root, bb-textcheck-wordlist, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-packs, bb-textcheck-tables
+hosts: bb-textcheck-state, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-root, bb-textcheck-wordlist, bb-textcheck-choose, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-packs, bb-textcheck-tables
 :::
 ```
 

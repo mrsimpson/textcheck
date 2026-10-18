@@ -15,6 +15,7 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
     "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Buchdruck&action=history",
     "retrieved": "2026-10-18",
+    "pdf": "quellen/de/buchdruck.pdf",
     "verified": true
   },
   "excerpt": [
@@ -590,6 +591,6 @@
     "Alle Fehlerklassen außer „Widerspruch im Text“ kommen vor; die Klassen ab Klasse 7 und ab Klasse 10 sind abgeleitet, nicht belegt. Rechtschreibfehler konstruiert nach den IQB-Schwerpunkten (Ableitung, Auslaut -d).",
     "Die eingefügten Sätze (Historiker, Meinung, Folgerung, Zusatz) sind erfunden, harmlos und stehen nicht im Original; die Erklärung nennt das.",
     "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt; die Zahlen folgen dem Artikel, nicht anderen Quellen.",
-    "Keine lokale PDF der Quelle."
+    "Die Quelle liegt als PDF unter public/quellen/de/buchdruck.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
   ]
 }

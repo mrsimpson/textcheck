@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/interactive/playthrough.v1.schema.json
+# The mode "Original erkennen", Fledermäuse, grades 5 and 6, seed 1. This mode builds no spelling errors: the errors are
+# "Fische" (word 18, a wrong fact), "trotzdem" (word 27, a wrong connective) and an added sentence. The Variante is text A. The learner first picks text B (the Original), changes the pick to text A, marks two of the three errors and
+# checks: the pick is right, two errors are found.
+route: klasse-5-6-original
+seed: 1
+steps:
+  - inputs: [{ kind: action, name: choose, value: b }]
+    state:
+      mode: choose
+      variantSide: a
+      choice: b
+      marked: []
+      last: choose
+    announce: "Text B gewählt. Markiere dort die Wörter, die nicht stimmen."
+  - inputs: [{ kind: key, key: "1" }]
+    state: { choice: a, last: choose }
+    announce: "Text A gewählt. Markiere dort die Wörter, die nicht stimmen."
+  - inputs:
+      - { kind: action, name: toggle, value: 18 }
+      - { kind: action, name: toggle, value: 27 }
+    state: { marked: [18, 27], last: mark }
+    announce: "trotzdem markiert. 2 markiert."
+  - inputs: [{ kind: action, name: check }]
+    state:
+      phase: result
+      result:
+        total: 3
+        found: 2
+        wrong: 0
+        chosenRight: true
+    announce: "Geprüft: 2 von 3 Fehlern gefunden. Fälschlich markiert: 0."

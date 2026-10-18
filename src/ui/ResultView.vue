@@ -7,7 +7,7 @@ import type { Input } from "@lernapps/app-templates/interactive";
 import type { Result, Token } from "../core/types.ts";
 import { translatorOf } from "./messages.ts";
 
-const props = defineProps<{ result: Result; tokens: readonly Token[]; lang: string }>();
+const props = defineProps<{ result: Result; tokens: readonly Token[]; lang: string; choiceNote?: string | null }>();
 const emit = defineEmits<{ input: [input: Input] }>();
 const t = translatorOf(props.lang);
 
@@ -38,6 +38,7 @@ const pieces = Array.from({ length: 28 }, (_, index) => ({
       ></span>
     </div>
     <h2 id="result-heading" tabindex="-1">{{ t("resultHeading") }}</h2>
+    <p v-if="choiceNote" class="choice">{{ choiceNote }}</p>
     <p v-if="allFound" class="praise">{{ result.wrong === 0 ? t("praiseClean") : t("praiseAll") }}</p>
     <p class="summary">
       {{ t("resultSummary", { found: result.found, total: result.total }) }}
@@ -239,6 +240,14 @@ dd {
 </style>
 
 <style scoped>
+.choice {
+  margin: 0 0 0.75rem;
+  padding: 0.6rem 0.8rem;
+  border-left: 4px solid var(--tc-accent);
+  background: var(--tc-card);
+  font-weight: 700;
+}
+
 .praise {
   margin: 0 0 0.75rem;
   padding: 0.6rem 0.8rem;

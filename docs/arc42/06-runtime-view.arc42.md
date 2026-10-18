@@ -159,19 +159,23 @@ involves: bb-e2e, bb-interactive-description, bb-interactive-playthroughs, bb-sh
 ## Playing a round of Textcheck
 
 The learner opens `app/#klasse-5-6`, possibly with `?seed=<n>`. The core takes the pack of the route's school years from
-the data access, lets the round builder pick the slots to corrupt and the variants from the seed, and splits the Fassung
-into words. The root component shows the Original, the Fassung and the goal line, the word list takes marks and arrow
+the data access, lets the round builder pick the slots to corrupt and the variants from the seed, and splits the Variante
+into words. The root component shows the Original, the Variante and the goal line, the word list takes marks and arrow
 keys and hands them back as actions, and the core keeps the marks. When the learner checks, the evaluation says which
 errors were found and how every word counts, and the root component shows the result view and moves the focus to it.
 Every change is announced through the live region, and every learner text comes from the message file through the
 translator.
+
+The route names the mode: `app/#klasse-5-6-quelle` plays the same round with the source PDF instead of the Original,
+`app/#klasse-5-6-original` shows two texts, A and B, and the learner first picks the text with the errors and then
+marks the words there; the result says whether the pick was right.
 
 ```arc42
 :::runtime-scenario
 id: scenario-textcheck-round
 title: Playing a round of Textcheck
 trigger: The learner opens a route, marks words, checks, and asks for the next round
-involves: bb-shell, bb-textcheck-root, bb-textcheck-wordlist, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-state, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-packs, bb-textcheck-tables
+involves: bb-shell, bb-textcheck-root, bb-textcheck-wordlist, bb-textcheck-choose, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-state, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-packs, bb-textcheck-tables
 :::
 ```
 

@@ -3,10 +3,13 @@
 // them), the words to mark, and after checking the result. It announces every change for screen readers and moves the
 // focus to the result and back to the words. The runtime gives it the core's state; what the learner does goes back
 // as input. The only state of its own is which panel a narrow screen shows.
-import { computed, nextTick, ref, watch } from "vue";
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import { announce, moveFocus } from "@lernapps/tooling/a11y";
 import type { Input } from "@lernapps/app-templates/interactive";
-import type { State } from "../core/index.ts";
+import { LEVELS, parseRoute, routeOf } from "../core/data.ts";
+import { markable, type State } from "../core/index.ts";
+import type { Mode } from "../core/types.ts";
+import ChooseView from "./ChooseView.vue";
 import ResultView from "./ResultView.vue";
 import WordList from "./WordList.vue";
 import { translatorOf } from "./messages.ts";
@@ -16,19 +19,63 @@ const emit = defineEmits<{ input: [input: Input] }>();
 const t = translatorOf(props.lang);
 const view = ref<"original" | "rendition">("rendition");
 const words = ref<InstanceType<typeof WordList> | null>(null);
+const choose = ref<InstanceType<typeof ChooseView> | null>(null);
 const root = ref<HTMLElement | null>(null);
 
+// the source PDF is embedded only where a PDF shows well in a frame: a wide screen with a mouse; elsewhere the link
+// to a new tab is all there is
+const WIDE = "(min-width: 960px) and (pointer: fine)";
+const embed = ref(false);
+let query: MediaQueryList | null = null;
+const onChange = (): void => {
+  embed.value = query?.matches ?? false;
+};
+onMounted(() => {
+  picker.value?.addEventListener("change", () => {
+    if (levelSelect.value !== null && modeSelect.value !== null)
+      location.hash = routeOf(levelSelect.value.value, modeSelect.value.value as Mode);
+  });
+  query = matchMedia(WIDE);
+  onChange();
+  query.addEventListener("change", onChange);
+});
+onUnmounted(() => query?.removeEventListener("change", onChange));
+// the app page is one level below the site root, where the PDFs lie
+const pdfUrl = computed(() => (props.state.pdf === null ? null : `../${props.state.pdf}`));
+
+// the two selects: the age group and the mode; a change goes to the route in the address, where the runtime picks it up
+const levelOptions = Object.entries(LEVELS)
+  .sort(([, a], [, b]) => a.grades.from - b.grades.from)
+  .map(([id, level]) => ({ id, label: t("levelOption", { from: level.grades.from, to: level.grades.to }) }));
+const modeOptions: { id: Mode; label: string }[] = [
+  { id: "mark", label: t("modeMark") },
+  { id: "source", label: t("modeSource") },
+  { id: "choose", label: t("modeChoose") },
+];
+const picked = computed(() => parseRoute(props.state.route));
+const picker = ref<HTMLElement | null>(null);
+const levelSelect = ref<HTMLSelectElement | null>(null);
+const modeSelect = ref<HTMLSelectElement | null>(null);
+const sourceMode = computed(() => props.state.mode === "source");
+
 const goal = computed(() =>
-  props.state.announced === null
-    ? t("goalHidden", { count: props.state.corruptions.length })
-    : t("goalNamed", {
-        count: props.state.corruptions.length,
-        classes: props.state.announced.map((id) => t(`errorClass.${id}` as never)).join(", "),
-      }),
+  props.state.mode === "choose"
+    ? props.state.announced === null
+      ? t("goalChoose", { count: props.state.corruptions.length })
+      : t("goalChooseNamed", {
+          count: props.state.corruptions.length,
+          classes: props.state.announced.map((id) => t(`errorClass.${id}` as never)).join(", "),
+        })
+    : props.state.announced === null
+      ? t("goalHidden", { count: props.state.corruptions.length })
+      : t("goalNamed", {
+          count: props.state.corruptions.length,
+          classes: props.state.announced.map((id) => t(`errorClass.${id}` as never)).join(", "),
+        }),
 );
 
 watch(
-  () => [props.state.last, props.state.marked.length, props.state.seed, props.state.phase] as const,
+  () => [props.state.last, props.state.marked.length, props.state.seed, props.state.phase, props.state.choice] as const,
   () => {
     const { state } = props;
     const word = state.tokens[state.changed]?.text ?? "";
@@ -37,6 +84,8 @@ watch(
     else if (state.last === "mark") announce(t("announceMark", { word, count }));
     else if (state.last === "unmark") announce(t("announceUnmark", { word, count }));
     else if (state.last === "clear") announce(t("announceClear"));
+    else if (state.last === "choose")
+      announce(t("announceChoose", { name: t(state.choice === "a" ? "textA" : "textB") }));
     else if (state.result !== null)
       announce(t("announceCheck", { found: state.result.found, total: state.result.total, wrong: state.result.wrong }));
   },
@@ -50,24 +99,77 @@ watch(
     if (phase === "result") {
       const heading = root.value?.querySelector<HTMLElement>("#result-heading");
       if (heading) moveFocus(heading);
-    } else if (before === "result") words.value?.focus();
+    } else if (before === "result") (words.value ?? choose.value)?.focus();
   },
 );
 
 const checking = computed(() => props.state.phase === "result");
+
+/** The words of the checked text and, in the mode `choose`, the sentence about the pick. */
+const checked = computed(() => markable(props.state));
+const choiceNote = computed(() => {
+  const { result, variantSide } = props.state;
+  if (result === null || result.chosenRight === null) return null;
+  const params = {
+    original: t(variantSide === "a" ? "textB" : "textA"),
+    variant: t(variantSide === "a" ? "textA" : "textB"),
+  };
+  return result.chosenRight ? t("chosenRight", params) : t("chosenWrong", params);
+});
 </script>
 
 <template>
   <section ref="root" class="textcheck" :aria-label="t('region')">
+    <div ref="picker" class="picker">
+      <label>
+        {{ t("level") }}
+        <select ref="levelSelect" :value="picked.level">
+          <option v-for="option in levelOptions" :key="option.id" :value="option.id">{{ option.label }}</option>
+        </select>
+      </label>
+      <label>
+        {{ t("mode") }}
+        <select ref="modeSelect" :value="picked.mode">
+          <option v-for="option in modeOptions" :key="option.id" :value="option.id">{{ option.label }}</option>
+        </select>
+      </label>
+    </div>
     <p class="goal">{{ goal }}</p>
-    <div class="switch" role="group" :aria-label="t('view')">
-      <button type="button" :aria-pressed="view === 'original'" @click="view = 'original'">{{ t("original") }}</button>
+    <ChooseView
+      v-if="state.mode === 'choose'"
+      ref="choose"
+      :state="state"
+      :lang="lang"
+      @input="(input) => emit('input', input)"
+    />
+    <div v-else class="switch" role="group" :aria-label="t('view')">
+      <button type="button" :aria-pressed="view === 'original'" @click="view = 'original'">
+        {{ sourceMode ? t("sourceTab") : t("original") }}
+      </button>
       <button type="button" :aria-pressed="view === 'rendition'" @click="view = 'rendition'">
         {{ t("renditionTab") }}
       </button>
     </div>
-    <div class="panels" :data-view="view">
-      <section class="panel original" aria-labelledby="original-heading">
+    <div v-if="state.mode !== 'choose'" class="panels" :data-view="view">
+      <section v-if="sourceMode" class="panel original pdf" aria-labelledby="original-heading">
+        <h2 id="original-heading">{{ t("sourceHeading") }}</h2>
+        <p v-if="pdfUrl !== null">
+          <a class="open" :href="pdfUrl" target="_blank" rel="noopener noreferrer">{{ t("openPdf") }}</a>
+        </p>
+        <iframe v-if="embed && pdfUrl !== null" :src="pdfUrl" :title="t('pdfTitle', { title: state.title })"></iframe>
+        <p class="source">
+          {{ t("source") }} {{ state.source.title }}, {{ state.source.license }}
+          <template v-if="state.source.licenseUrl !== null">
+            ·
+            <a :href="state.source.licenseUrl" target="_blank" rel="noopener noreferrer">{{ t("license") }}</a>
+          </template>
+          <template v-if="state.source.authorsUrl !== null">
+            ·
+            <a :href="state.source.authorsUrl" target="_blank" rel="noopener noreferrer">{{ t("authors") }}</a>
+          </template>
+        </p>
+      </section>
+      <section v-else class="panel original" aria-labelledby="original-heading">
         <h2 id="original-heading">{{ t("original") }}</h2>
         <p v-for="(sentence, index) in state.original" :key="index">{{ sentence }}</p>
         <p class="source">
@@ -110,7 +212,8 @@ const checking = computed(() => props.state.phase === "result");
     <ResultView
       v-if="state.result !== null"
       :result="state.result"
-      :tokens="state.tokens"
+      :tokens="checked"
+      :choice-note="choiceNote"
       :lang="lang"
       @input="(input) => emit('input', input)"
     />
@@ -159,6 +262,38 @@ const checking = computed(() => props.state.phase === "result");
     --tc-tol: #bfdbfe;
     --tc-tol-bg: #1e2f5a;
   }
+}
+
+.picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.picker label {
+  box-sizing: border-box;
+  flex: 1 1 14rem;
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-weight: 600;
+}
+
+.picker select {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-height: 2.75rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--tc-line);
+  border-radius: 8px;
+  background: var(--tc-card);
+  color: var(--tc-ink);
+  font: inherit;
+  font-weight: 400;
 }
 
 .goal {
@@ -231,6 +366,26 @@ h2 {
   line-height: 1.8;
 }
 
+.open {
+  display: inline-block;
+  min-height: 2.75rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--tc-accent);
+  border-radius: 8px;
+  color: var(--tc-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pdf iframe {
+  width: 100%;
+  height: 70vh;
+  min-height: 28rem;
+  border: 1px solid var(--tc-line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
 .source,
 .hint {
   color: var(--tc-muted);
@@ -273,6 +428,11 @@ h2 {
 </style>
 
 <style>
+/* The two selects of the app replace the shell's list of route links; without JavaScript the list stays. */
+body:has(.textcheck) .interactive-routes {
+  display: none;
+}
+
 /* The shell's page is light by default; follow the system setting so the dark card never sits on a white page. */
 @media (prefers-color-scheme: dark) {
   :root {

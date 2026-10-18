@@ -26,8 +26,8 @@ Do the steps in order. Read the reference when you reach the step.
 5. **Check** - `npx vp test run src/core/pack-check.test.ts` (schema + pack checks). Then do what no check does:
    compare excerpt and quotes with the opened source (`verified: true` only after that), and read each variant in its
    sentence aloud. Never weaken a check.
-6. **Source PDF** - [references/pdf.md](references/pdf.md). Only if the assignment asks for it or the mode Quellentreue
-   exists; the script is `scripts/source-pdf.mjs`.
+6. **Source PDF** - [references/pdf.md](references/pdf.md). Required: `public/quellen/<language>/<id>.pdf` and
+   `source.pdf` in the pack; the script is `scripts/source-pdf.mjs`.
 7. **Hand in.** File `src/data/packs/<language>/<from>-<to>/<id>.json` (id = file name). Add a line to
    `.vibe/texts-log.md`. Branch `text/<id>`, no merge into `work`. Report: source and revision, check result,
    warnings, what you could not verify, what reads badly.

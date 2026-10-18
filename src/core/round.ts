@@ -73,6 +73,16 @@ export function tokensOf(pack: TextPack, chosen: ReadonlyMap<string, Variant>): 
   return tokens;
 }
 
+/** The words of the excerpt (the Original), by sentence; no word belongs to a slot. */
+export function originalTokensOf(pack: TextPack): Token[] {
+  const tokens: Token[] = [];
+  pack.excerpt.forEach((entry, sentence) => {
+    for (const word of entry.text.matchAll(/\S+/g))
+      tokens.push({ id: tokens.length, text: word[0], sentence, slot: null });
+  });
+  return tokens;
+}
+
 /** The errors of the round, in the order their slots stand in the text. */
 export function corruptionsOf(
   pack: TextPack,

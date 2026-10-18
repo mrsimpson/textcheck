@@ -17,7 +17,8 @@ language of its pack (version 1: German only).
   - Erster und Mittlerer Schulabschluss, i.d.F. vom 23.06.2022, section 4.3 Lesen (pp. 29-31) and 4.4.
   - Allgemeine Hochschulreife, Beschluss vom 18.10.2012, section 2.3 Lesen.
 - Grades 3 to 13, in packs for two adjacent school years each: 3-4, 5-6, 7-8, 9-10 and 11-13 (Oberstufe, decided by the creator).
-- Version 1 ships grades 5-6 only (route `klasse-5-6`). The ceiling for each error class (`fromGrade` in
+- Version 1 ships one text for each of the grades 3-4, 5-6, 7-8, 9-10 and 11-13, a route each (`klasse-3-4` ...).
+  A route ending in `-quelle` plays the same level in the mode `source` (all five levels have one). The ceiling for each error class (`fromGrade` in
   `src/data/error-classes.json`) is a setting of the creator and the assistant, not a finding of a source.
 - The plan `.vibe/plans/01-sorgfaeltig-lesen.md` holds the research: sources, competencies, didactics.
 
@@ -83,6 +84,26 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
     unless they lie within `tolerance` words of the slot in the same sentence. The check does not judge why a word was
     marked and gives no partial credit.
   - Example: `src/data/packs/de/5-6/` (see the pilot pack); data files `levels.json`, `error-classes.json`.
+- **The same, against the source PDF** (mode `source`, route ending in `-quelle`).
+  - Competency: Ich kann einen Text mit seiner Quelle vergleichen und Stellen finden, die von der Quelle abweichen.
+  - Form: the same round as the mode `mark`; the Original panel is replaced by the PDF of the source: a link that opens
+    it in a new tab and, on a wide screen with a mouse, the PDF embedded beside the Variante (a frame of the same
+    site; on phones and tablets the link only).
+  - Fixed and varying: as in the mode `mark`; success check the same.
+  - Data: `source.pdf` of the pack, a path relative to the site root (`quellen/<language>/<id>.pdf`); the files lie in
+    `public/quellen/<language>/`, the build copies them to the site root.
+- **Choose the text with the errors, then mark them** (mode `choose`, route ending in `-original`).
+  - Competency: Ich kann zwei Texte vergleichen und erkennen, welcher Fehler hat.
+  - Form: two texts, A and B: the Original (the verbatim excerpt) and the Variante with the errors of the round. Which
+    one is which stays hidden until checking. The learner picks the text with the errors and marks the words there; the
+    picked text is the one that can be marked. On a phone a switch shows one text at a time.
+  - Fixed: excerpt, Variante, slots, level. Varies per use: the errors (seed) and the side of the Variante (own draw
+    from the seed). No errors of the family `form` (spelling, slip, real word, punctuation): they would give the
+    Variante away in a comparison of two texts (the creator: too easy). So a pack needs enough slots with variants of
+    the other families; the tests check it for every level.
+  - Success check: the pick and the marks. A right pick counts like the mode `mark`; a wrong pick finds no error and
+    its marks count as wrongly marked; the result names the Original either way.
+  - Data: none of its own; keys 1 and 2 pick the text.
 - Nothing is computed or drawn; no number field exists.
 
 ## Figures
@@ -113,12 +134,13 @@ To add a text pack (a new "round" source):
 1. Choose grades (adjacent pair, e.g. 5-6) and a harmless topic that fits the age. Open and read the source; note the
    revision and the licence.
 2. Follow the skill `app-textpack` (`.agents/skills/app-textpack/SKILL.md`): research, draft, error slots, checks, hand-in; classes only up to the pack's upper grade.
-3. Save as `src/data/packs/<language>/<from>-<to>/<id>.json`; the id equals the file name.
+3. Save as `src/data/packs/<language>/<from>-<to>/<id>.json`; the id equals the file name. Make the source PDF with the
+   script of the skill `app-textpack` into `public/quellen/<language>/<id>.pdf` and set `source.pdf` (the tests need it).
 4. Run `npx vp test run`: the schema and the pack checks must pass. Read warnings.
 5. Play it: `app/?seed=<n>#klasse-<from>-<to>` with several seeds. Add it to the log `.vibe/texts-log.md`.
 6. Commit pack and log together. The core finds packs by file name; no code changes.
 
-To add a route (a new grade pair): add its entry to `src/data/levels.json`, its route to `src/app.yaml`, its
+To add a route (a new grade pair): add its entry to `src/data/levels.json`, its route and its `-quelle` route to `src/app.yaml`, its
 competencies, and at least one pack; a playthrough for the route if its rules differ.
 
 ## Rules learned from mistakes
@@ -127,5 +149,6 @@ competencies, and at least one pack; a playthrough for the route if its rules di
 - A pack holds only error classes whose `fromGrade` is at most the pack's upper grade; the first example mixed in
   classes from grade 7 into a pack for grades 5-6, the checker caught it.
 - Tolerance only works when the slot has neighbouring words in the same sentence; an inserted sentence has none.
+- In the mode `choose` no spelling errors: a misspelt word shows at once which text is the Variante.
 - Do not show hints in the text after checking (a superscript "gefunden" disturbed reading): colour and line style in
   the text, the same colours with a legend below.

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { LEVELS } from "./data.ts";
+import { ERROR_CLASSES, LEVELS, parseRoute, routeOf } from "./data.ts";
 import { start, step, type State } from "./index.ts";
 
 const route = "klasse-5-6";
@@ -134,5 +134,96 @@ describe("marking and checking", () => {
   it("does not mark after checking", () => {
     const state = step(start(4, route), action("check"));
     expect(step(state, action("toggle", 0))).toBe(state);
+  });
+});
+
+describe("the modes of a route", () => {
+  it("reads the mode from the end of the route and the level from the rest", () => {
+    expect(parseRoute("klasse-5-6")).toEqual({ level: "klasse-5-6", mode: "mark" });
+    expect(parseRoute("klasse-5-6-quelle")).toEqual({ level: "klasse-5-6", mode: "source" });
+    expect(parseRoute("klasse-11-13-original")).toEqual({ level: "klasse-11-13", mode: "choose" });
+  });
+
+  it("plays the same round in the mode source, with the PDF of the source instead of the Original", () => {
+    const marking = start(4, route);
+    const source = start(4, `${route}-quelle`);
+    expect(source.mode).toBe("source");
+    expect(source.corruptions).toEqual(marking.corruptions);
+    expect(source.tokens).toEqual(marking.tokens);
+    expect(marking.pdf).toBeNull();
+    expect(source.pdf).toMatch(/^quellen\/de\/.+\.pdf$/);
+  });
+
+  it("keeps the mode in the next round", () => {
+    const next = step(start(4, `${route}-quelle`), action("again"));
+    expect(next.route).toBe(`${route}-quelle`);
+    expect(next.mode).toBe("source");
+  });
+});
+
+describe("the mode choose", () => {
+  const choose = `${route}-original`;
+
+  it("hides which text is the Variante and builds no error of the form family", () => {
+    const state = start(4, choose);
+    expect(state.mode).toBe("choose");
+    for (let seed = 1; seed <= 30; seed++)
+      for (const level of Object.keys(LEVELS))
+        for (const corruption of start(seed, `${level}-original`).corruptions)
+          expect(ERROR_CLASSES[corruption.errorClass]?.family, `${level} seed ${seed}`).not.toBe("form");
+    expect(state.originalTokens.length).toBeGreaterThan(0);
+    expect(state.choice).toBeNull();
+  });
+
+  it("puts the Variante on both sides, depending on the seed", () => {
+    const sides = new Set<string>();
+    for (let seed = 1; seed <= 20; seed++) sides.add(start(seed, choose).variantSide);
+    expect([...sides].sort()).toEqual(["a", "b"]);
+  });
+
+  it("lets the learner mark nothing before the pick, and checks only after it", () => {
+    const state = start(1, choose);
+    expect(step(state, action("toggle", 3))).toBe(state);
+    expect(step(state, action("check")).phase).toBe("marking");
+  });
+
+  it("clears the marks when the pick changes", () => {
+    const first = step(start(1, choose), action("choose", "a"));
+    const marked = step(first, action("toggle", 2));
+    expect(marked.marked).toEqual([2]);
+    const other = step(marked, action("choose", first.choice === "a" ? "b" : "a"));
+    expect(other.marked).toEqual([]);
+  });
+
+  it("counts a right pick with the errors found, a wrong pick as no error found and the marks as wrong", () => {
+    const state = start(1, choose);
+    const right = step(
+      step(
+        step(state, action("choose", state.variantSide)),
+        action("toggle", wordsOf(state, state.corruptions[0]?.slot ?? "")[0]),
+      ),
+      action("check"),
+    );
+    expect(right.result?.chosenRight).toBe(true);
+    expect(right.result?.found).toBe(1);
+    const wrongSide = state.variantSide === "a" ? "b" : "a";
+    const wrong = step(step(step(state, action("choose", wrongSide)), action("toggle", 0)), action("check"));
+    expect(wrong.result?.chosenRight).toBe(false);
+    expect(wrong.result?.found).toBe(0);
+    expect(wrong.result?.wrong).toBe(1);
+  });
+});
+
+describe("the routes", () => {
+  it("are built and read back for every level and mode", () => {
+    for (const level of Object.keys(LEVELS))
+      for (const mode of ["mark", "source", "choose"] as const)
+        expect(parseRoute(routeOf(level, mode))).toEqual({ level, mode });
+  });
+
+  it("give every mode enough errors in every level", () => {
+    for (const level of Object.keys(LEVELS))
+      for (const mode of ["mark", "source", "choose"] as const)
+        expect(start(1, routeOf(level, mode)).corruptions.length, `${level} ${mode}`).toBe(LEVELS[level]?.errors);
   });
 });

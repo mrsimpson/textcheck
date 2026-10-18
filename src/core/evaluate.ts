@@ -68,5 +68,6 @@ export function evaluate(
     tolerated: status.filter((value) => value === "tolerated").length,
     status,
     classes,
+    chosenRight: null,
   };
 }
