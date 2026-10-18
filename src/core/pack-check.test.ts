@@ -74,6 +74,12 @@ describe("the pack checks", () => {
     expect(checkPack(bad).errors.join("\n")).toContain("adjacent");
   });
 
+  it("accept the Oberstufe as one range", () => {
+    const upper = copy(pack);
+    upper.grades = { from: 11, to: 13 };
+    expect(checkPack(upper).errors.join("\n")).not.toContain("adjacent");
+  });
+
   it("reject a tolerance on a slot that has no neighbouring words", () => {
     const bad = copy(pack);
     const last = bad.slots["s11"];

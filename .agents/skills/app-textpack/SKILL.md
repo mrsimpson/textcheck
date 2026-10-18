@@ -8,7 +8,7 @@ description: Use when you write a new text pack for Textcheck - research a sourc
 You deliver one pack: a source excerpt, a faithful rendition of it ("Variante"), and slots where errors can be built
 in. You do not select errors; that happens later, by seed. You do not change code.
 
-Pack = **two adjacent school years** + **one topic** + **one language** + **one source**. Code, ids, file names: English.
+Pack = **two adjacent school years (or 11-13, the Oberstufe)** + **one topic** + **one language** + **one source**. Code, ids, file names: English.
 Everything learners read: in the pack's language. Terms: Original, Variante (never "Zusammenfassung"); see `app-content`.
 
 ## Workflow

@@ -41,7 +41,7 @@
           "maximum": 13
         }
       },
-      "description": "Two adjacent school years. The checker enforces to - from <= 1."
+      "description": "Two adjacent school years, or 11 to 13 (Oberstufe). The checker enforces it."
     },
     "topic": {
       "type": "string",

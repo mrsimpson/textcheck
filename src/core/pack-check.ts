@@ -21,7 +21,9 @@ export function checkPack(pack: TextPack): PackReport {
   const errors: string[] = [];
   const warnings: string[] = [];
   const { from, to } = pack.grades;
-  if (to < from || to - from > 1) errors.push(`grades ${from} to ${to} are not two adjacent school years`);
+  const upperSchool = from === 11 && to === 13; // the Oberstufe is one pack range
+  if (to < from || (to - from > 1 && !upperSchool))
+    errors.push(`grades ${from} to ${to} are not two adjacent school years (or the Oberstufe 11 to 13)`);
   if (pack.isExample === true) errors.push("an example pack does not belong in src/data/packs");
 
   const excerpt = squeeze(pack.excerpt.map((entry) => entry.text).join(" "));

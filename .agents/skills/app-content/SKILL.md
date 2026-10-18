@@ -16,7 +16,7 @@ language of its pack (version 1: German only).
   - Primarbereich, i.d.F. vom 23.06.2022, section 4.3 Lesen (pp. 16-17) and "Orthografisch schreiben" (pp. 14-15).
   - Erster und Mittlerer Schulabschluss, i.d.F. vom 23.06.2022, section 4.3 Lesen (pp. 29-31) and 4.4.
   - Allgemeine Hochschulreife, Beschluss vom 18.10.2012, section 2.3 Lesen.
-- Grades 3 to 13, in packs for two adjacent school years each: 3-4, 5-6, 7-8, 9-10, 11-12 (the last pair is not decided).
+- Grades 3 to 13, in packs for two adjacent school years each: 3-4, 5-6, 7-8, 9-10 and 11-13 (Oberstufe, decided by the creator).
 - Version 1 ships grades 5-6 only (route `klasse-5-6`). The ceiling for each error class (`fromGrade` in
   `src/data/error-classes.json`) is a setting of the creator and the assistant, not a finding of a source.
 - The plan `.vibe/plans/01-sorgfaeltig-lesen.md` holds the research: sources, competencies, didactics.
