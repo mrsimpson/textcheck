@@ -431,13 +431,13 @@ fitness:
       change → note the creator's click (skill `lernapps-github`).
 - [x] **Checkpoint:** publish. Show the preview link from the comment "Vorschau der App"; ask before the app goes
       online; wait for the yes. Put the noted clicks into the same question.
-- [ ] `git switch main`, `git merge --ff-only work`, `git push origin main` (GitHub marks the pull request merged
+- [x] `git switch main`, `git merge --ff-only work`, `git push origin main` (GitHub marks the pull request merged
       and removes the preview). Run started?
       `gh run list --workflow Pages --branch main --commit "$(git rev-parse HEAD)"`; none after a minute →
       `gh workflow run Pages --ref main` (refused: creator clicks Actions → Pages → Run workflow). Watch it
-      (`gh run watch`). Fails → read the failed step, fix, push. Admin-only Pages setting → the run deployed
+      (`gh run watch`). Notiz: Oliver hat den Pull Request im Browser zusammengeführt (Berechtigung für den Push auf main wurde in der Sitzung verweigert); Lauf Pages erfolgreich, veröffentlicht unter https://mrsimpson.github.io/textcheck/ (200, auch /app/). Fails → read the failed step, fix, push. Admin-only Pages setting → the run deployed
       anyway; after the creator's click the app appears without a new run.
-- [ ] Open the address the job `deploy` printed ("published at ...", also in the run summary); confirm the app shows.
+- [x] Open the address the job `deploy` printed ("published at ...", also in the run summary); confirm the app shows.
       Use that address, never a derived one; follow redirects. Do not wait for it yourself.
 - [ ] Load skill `lernapps-listing`.
 - [ ] Complete the entry draft (e.g. the address).
