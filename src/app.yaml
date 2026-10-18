@@ -1,28 +1,55 @@
 # yaml-language-server: $schema=../node_modules/@lernapps/app-templates/runtime/interactive/interactive.v1.schema.json
-title: Buchstaben tippen
+title: Textcheck
 description: |
-  Ein Buchstabe erscheint, du tippst ihn auf der Tastatur. Für jeden hast du fünf Sekunden.
-  Zum Üben der Grundreihe und der oberen Reihe, ab Klasse 3.
+  Hier übst du, genau zu lesen. Du siehst ein Original und eine Fassung davon. In der Fassung stecken Fehler. Finde sie
+  und markiere sie. Für Schülerinnen und Schüler ab Klasse 3 bis zum Abitur. Die Texte und die Fehler werden mit der
+  Klassenstufe schwieriger.
 howto: |
-  - Tippe den Buchstaben, der groß in der Mitte steht.
-  - Richtig getippt gibt einen Punkt, und der nächste Buchstabe kommt.
-  - Ein falscher Buchstabe oder zu langes Warten zählt als Fehler.
-  - Nach zehn Buchstaben ist die Runde vorbei. Mit Enter spielst du die nächste.
+  - Lies das Original. Es stimmt und nennt seine Quelle.
+  - Lies die Fassung und markiere die Wörter, die nicht stimmen. Du markierst mit einem Klick oder Tipp, mit der Tastatur
+    wählst du Wörter mit den Pfeiltasten und markierst mit der Leertaste.
+  - Tippe auf „Prüfen“. Du siehst, welche Fehler du gefunden hast, welche nicht, und warum.
+  - Ein paar Wörter zu viel zu markieren ist nicht schlimm, wenn sie direkt neben einem langen Fehler im selben Satz stehen.
 competencies:
-  - Ich kann die Buchstaben der Grundreihe auf der Tastatur finden.
-  - Ich kann die Buchstaben der oberen Reihe tippen.
+  - Ich kann Stellen markieren, an denen die Fassung dem Original widerspricht.
+  - Ich kann Sätze finden, die sich im selben Text widersprechen.
+  - Ich kann eine falsche Zeit-, Orts- oder Mengenangabe mit dem Original abgleichen.
+  - Ich kann falsch geschriebene Wörter finden, auch solche, die ein Rechtschreibprogramm nicht findet.
 languages: [de]
 routes:
-  - id: grundreihe
-    title: Grundreihe
-    description: a s d f j k l
-  - id: obere-reihe
-    title: Obere Reihe
-    description: q w e r t z u i o p
+  - id: klasse-5-6
+    title: Klasse 5 bis 6
+    description: Texte mit Fehlern in der Rechtschreibung, bei Zahlen und Orten, bei Verbindungen und Widersprüchen.
 sections:
-  - id: zehn-finger
-    title: Warum die Grundreihe?
+  - id: begruendung
+    title: Wie diese Übung begründet ist
     text: |
-      Auf der Grundreihe liegen deine Finger, wenn du nicht tippst: links auf a, s, d, f, rechts auf j, k, l.
-      Von dort erreicht jeder Finger seine Tasten. Wer die Grundreihe sicher findet, muss beim Tippen nicht mehr auf
-      die Tastatur schauen.
+      Hier steht, woran wir uns halten und was wir selbst abgeleitet haben. **Belegt** heißt: Eine Quelle, die wir gelesen
+      haben, nennt diese Fehlerart. **Abgeleitet** heißt: ein eigener Schluss aus verwandten Quellen. Ab welcher Klasse
+      eine Fehlerart vorkommt, ist unsere Einstellung. Keine der gelesenen Quellen ordnet die Fehlerarten Klassenstufen zu.
+
+      Die Fehlerarten:
+
+      - **Rechtschreibung (Regelfehler)**, belegt, ab Klasse 3: IQB-Lernaufgabe und -Handreichung, KMK-Standards.
+      - **Flüchtigkeitsfehler**, belegt, ab Klasse 3: Schmellentin und Lindauer (2019).
+      - **Fehler mit echtem Wort (das/dass, das fahren)**, belegt, ab Klasse 5: IQB-Handreichung und -Lernaufgabe.
+      - **Zeichensetzung**, abgeleitet, ab Klasse 3: KMK-Standards, Schmellentin und Lindauer.
+      - **Zahl, Name, Datum oder Ort verändert**, abgeleitet, ab Klasse 3: IGLU 2021, KMK-Standards.
+      - **Sachlich falsche Angabe**, abgeleitet, ab Klasse 5: IGLU 2021, Cook, Ellerton und Kinkead (2018).
+      - **Hinzugefügte Aussage**, abgeleitet, ab Klasse 5: Voss, Carstensen und Bos (2005).
+      - **Verbindung oder Verneinung verändert**, abgeleitet, ab Klasse 5: Voss, Carstensen und Bos (2005).
+      - **Widerspruch im Text**, abgeleitet, ab Klasse 5: Voss, Carstensen und Bos (2005), KMK-Standards.
+      - **Menge oder Grad verändert**, abgeleitet, ab Klasse 7: eigener Schluss, keine Quelle gelesen.
+      - **Verallgemeinerung**, abgeleitet, ab Klasse 7: Cook, Ellerton und Kinkead (2018).
+      - **Falsche Folgerung oder Ursache**, abgeleitet, ab Klasse 7: Cook, Ellerton und Kinkead (2018), IGLU 2021.
+      - **Meinung als Tatsache**, abgeleitet, ab Klasse 7: IGLU 2021, Voss, Carstensen und Bos (2005), KMK-Standards.
+      - **Falsche Autorität oder Quelle**, abgeleitet, ab Klasse 10: Cook, Lewandowsky und Ecker (2017).
+      - **Wertende, emotionalisierende Beeinflussung**, abgeleitet, ab Klasse 10: IGLU 2021, KMK-Standards, Cook und andere (2017).
+
+      Was wir nicht belegen können:
+
+      - Dass diese Übung die Lesekompetenz verbessert. Dafür gibt es keine Studie.
+      - Dass Fehlersuche in Texten das Prüfen unbekannter Webseiten übt. Das ist etwas anderes (Wineburg und McGrew 2018).
+      - Die Länge und den Satzbau der Texte je Klassenstufe: Das sind Einstellungen der Autorinnen und Autoren.
+      - Die Fehler bei der Rechtschreibung sind für die Wörter der Texte konstruiert. Die Arten der Fehler stammen aus den
+        IQB-Materialien, die einzelnen Falschschreibungen von Lernenden haben wir nicht gesammelt.

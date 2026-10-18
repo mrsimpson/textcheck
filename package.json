@@ -12,9 +12,11 @@
     "@doctc/arc42": "0.36.1",
     "@lernapps/app-templates": "github:lernapps/app-templates#f28d02036d0fdff868a56c5e5458a56de1a684c5",
     "@lernapps/tooling": "github:lernapps/tooling#f3e14bce03ffc805a6e44a8563001e87d6b3e5c0",
+    "ajv": "^8.20.0",
     "typescript": "6.0.3",
     "vite-plus": "1.0.0",
-    "vue-tsc": "3.3.11"
+    "vue-tsc": "3.3.11",
+    "yaml": "^2.9.1"
   },
   "overrides": {
     "vite": "npm:@voidzero-dev/vite-plus-core@1.0.0"

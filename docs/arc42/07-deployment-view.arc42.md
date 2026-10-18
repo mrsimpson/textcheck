@@ -194,4 +194,32 @@ hosts: bb-shell, bb-interactive-core, bb-interactive-ui, bb-interactive-data, bb
 ```
 
 <!-- app: begin -->
+
+## Textcheck in the learner's browser
+
+The core's parts, the UI's components and the data that are bundled with them run in the learner's browser on the app page.
+
+```arc42
+:::deployment-node
+id: dn-textcheck-browser
+title: Textcheck app page
+type: container
+parent: dn-interactive-app-page
+hosts: bb-textcheck-state, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-root, bb-textcheck-wordlist, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-packs, bb-textcheck-tables
+:::
+```
+
+## Textcheck pack checks
+
+The pack checks run with the unit tests, on the creator's machine in the hooks and in CI.
+
+```arc42
+:::deployment-node
+id: dn-textcheck-tests
+title: Textcheck unit tests
+type: container
+parent: dn-interactive-build
+hosts: bb-textcheck-pack-check
+:::
+```
 <!-- app: end -->

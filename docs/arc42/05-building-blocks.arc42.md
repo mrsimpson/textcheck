@@ -633,6 +633,194 @@ protocol: TypeScript module exports
 ```
 
 <!-- app: begin core -->
+
+### The core's parts
+
+The core builds a round from a text pack, takes the learner's actions and says what was found. Its parts and how they
+use each other:
+
+```arc42
+:::diagram
+id: building-blocks-textcheck-core
+view: building-block
+notation: mermaid
+:::
+```
+
+```mermaid
+flowchart TB
+    subgraph bb-interactive-core["Core"]
+        bb-textcheck-state["Round state and inputs"]
+        bb-textcheck-round["Round builder"]
+        bb-textcheck-evaluate["Evaluation"]
+        bb-textcheck-data-access["Data access"]
+        bb-textcheck-pack-check["Pack checks"]
+    end
+    bb-interactive-data["Data"]
+    bb-textcheck-state -->|"if-textcheck-round"| bb-textcheck-round
+    bb-textcheck-state -->|"if-textcheck-evaluation"| bb-textcheck-evaluate
+    bb-textcheck-state -->|"if-textcheck-data"| bb-textcheck-data-access
+    bb-textcheck-round -->|"if-textcheck-data"| bb-textcheck-data-access
+    bb-textcheck-evaluate -->|"if-textcheck-data"| bb-textcheck-data-access
+    bb-textcheck-pack-check -->|"if-textcheck-round"| bb-textcheck-round
+    bb-textcheck-pack-check -->|"if-textcheck-data"| bb-textcheck-data-access
+    bb-textcheck-data-access -->|"if-interactive-data"| bb-interactive-data
+```
+
+### Round state and inputs
+
+Built. `src/core/index.ts` holds the core's contract and its state machine: `start` builds a round, `step` takes the
+actions of the UI (mark, unmark, clear, move, check, again) and returns the next state; unknown inputs leave the state
+as it is. `src/core/types.ts` has the types of the data and of the state.
+
+```arc42
+:::building-block
+id: bb-textcheck-state
+title: Round state and inputs
+parent: bb-interactive-core
+technology: TypeScript
+requires: if-textcheck-round, if-textcheck-evaluation, if-textcheck-data
+path: src/core/index.ts
+:::
+```
+
+#### Actions interface
+
+The root component hands every action of the learner to `step` as an action input with a name and optionally a value:
+`toggle` (a word id), `move` (next, prev, next-sentence, prev-sentence, first, last), `clear`, `check` and `again`.
+
+```arc42
+:::interface
+id: if-textcheck-actions
+title: Learner actions as inputs
+provider: bb-textcheck-state
+protocol: Typed action inputs (contract.ts)
+path: src/core/index.ts
+:::
+```
+
+### Round builder
+
+Built. Picks the text pack of the route's school years and the slots to corrupt from the seed (a seeded shuffle, within
+the classes, bases and error count of the level), and splits the Fassung into words, each word belonging to the slot it
+overlaps. The random numbers come only from the seed (`src/core/random.ts`), so the same seed gives the same round.
+
+```arc42
+:::building-block
+id: bb-textcheck-round
+title: Round builder
+parent: bb-interactive-core
+technology: TypeScript
+requires: if-textcheck-data
+path: src/core/round.ts
+:::
+```
+
+#### Round building interface
+
+The round builder is used by the state machine and by the pack checks, which ask it which slots a level can corrupt.
+
+```arc42
+:::interface
+id: if-textcheck-round
+title: Round building (buildRound, candidatesOf)
+provider: bb-textcheck-round
+protocol: TypeScript module exports
+path: src/core/round.ts
+:::
+```
+
+### Evaluation
+
+Built. Counts which errors were found (any marked word of the slot), classifies every word (found, rest of a found
+slot, missed, wrongly marked, within the tolerance of a long error in the same sentence) and groups the errors by class.
+
+```arc42
+:::building-block
+id: bb-textcheck-evaluate
+title: Evaluation
+parent: bb-interactive-core
+technology: TypeScript
+requires: if-textcheck-data
+path: src/core/evaluate.ts
+:::
+```
+
+#### Evaluation interface
+
+The state machine asks for the evaluation when the learner checks a round.
+
+```arc42
+:::interface
+id: if-textcheck-evaluation
+title: Evaluation of a round (evaluate)
+provider: bb-textcheck-evaluate
+protocol: TypeScript module exports
+path: src/core/evaluate.ts
+:::
+```
+
+### Data access
+
+Built. Loads the error classes, the levels and every text pack under `src/data/packs/` as JSON modules, in the order of
+their paths. A new pack file is found by its place; no code changes.
+
+```arc42
+:::building-block
+id: bb-textcheck-data-access
+title: Data access
+parent: bb-interactive-core
+technology: TypeScript, Vite glob import
+requires: if-interactive-data
+path: src/core/data.ts
+:::
+```
+
+#### Data access interface
+
+The round builder, the evaluation, the state machine and the pack checks read the error classes, the levels and the packs only through this module.
+
+```arc42
+:::interface
+id: if-textcheck-data
+title: Packs, levels and error classes
+provider: bb-textcheck-data-access
+protocol: TypeScript module exports
+path: src/core/data.ts
+:::
+```
+
+### Pack checks
+
+Built. Checks what the JSON schema cannot say: two adjacent school years, evidence quotes verbatim in the excerpt,
+every slot exactly once, classes fitting the school years and language, tolerance only with neighbouring words, enough
+slots for each level. The unit tests run it over every pack together with the schema (Ajv).
+
+```arc42
+:::building-block
+id: bb-textcheck-pack-check
+title: Pack checks
+parent: bb-interactive-core
+technology: TypeScript, Ajv, Vitest
+requires: if-textcheck-round, if-textcheck-data
+path: src/core/pack-check.ts
+:::
+```
+
+#### Pack checks interface
+
+The unit tests call the pack checks for every pack file; whoever writes a pack runs them too.
+
+```arc42
+:::interface
+id: if-textcheck-pack-check
+title: Pack checks (checkPack)
+provider: bb-textcheck-pack-check
+protocol: TypeScript module exports
+path: src/core/pack-check.ts
+:::
+```
+
 <!-- app: end core -->
 
 ## UI
@@ -668,6 +856,148 @@ protocol: Vue props and events
 ```
 
 <!-- app: begin ui -->
+
+### The UI's parts
+
+The root component shows the round and hands what the learner does back as actions; the word list and the result view
+show parts of the state; the texts come from the message files through one translator.
+
+```arc42
+:::diagram
+id: building-blocks-textcheck-ui
+view: building-block
+notation: mermaid
+:::
+```
+
+```mermaid
+flowchart TB
+    subgraph bb-interactive-ui["UI"]
+        bb-textcheck-root["Root component"]
+        bb-textcheck-wordlist["Word list"]
+        bb-textcheck-result["Result view"]
+        bb-textcheck-ui-texts["UI texts"]
+    end
+    bb-interactive-messages["Messages"]
+    bb-textcheck-root -->|"if-textcheck-wordlist"| bb-textcheck-wordlist
+    bb-textcheck-root -->|"if-textcheck-result"| bb-textcheck-result
+    bb-textcheck-root -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
+    bb-textcheck-wordlist -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
+    bb-textcheck-result -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
+    bb-textcheck-ui-texts -->|"if-messages"| bb-interactive-messages
+```
+
+### Root component
+
+Built. `src/ui/App.vue` shows the goal line, the Original and the Fassung (side by side; on a narrow screen a switch
+shows one of them) and, after checking, the result. It announces every change through the live region, moves the focus
+to the result heading after checking and back to the words after a new round, and emits the learner's actions. The
+panel a narrow screen shows is its only state of its own.
+
+```arc42
+:::building-block
+id: bb-textcheck-root
+title: Root component
+parent: bb-interactive-ui
+technology: Vue single-file component
+requires: if-textcheck-wordlist, if-textcheck-result, if-textcheck-ui-texts, if-a11y
+path: src/ui/App.vue
+:::
+```
+
+### Word list
+
+Built. `src/ui/WordList.vue` shows the words of the Fassung. While marking, they are one listbox with one tab stop: the
+arrow keys move between words and sentences, the space bar marks, a tap or click marks. After checking it shows how
+each word counts, by colour and line style with a hidden status text for screen readers.
+
+```arc42
+:::building-block
+id: bb-textcheck-wordlist
+title: Word list
+parent: bb-interactive-ui
+technology: Vue single-file component
+requires: if-textcheck-ui-texts
+path: src/ui/WordList.vue
+:::
+```
+
+#### Word list interface
+
+The root component gives the word list the words, the marks, the cursor and the status of each word as props, and takes
+its `input` events (toggle and move actions) on.
+
+```arc42
+:::interface
+id: if-textcheck-wordlist
+title: Word list props and input events
+provider: bb-textcheck-wordlist
+protocol: Vue props and events
+path: src/ui/WordList.vue
+:::
+```
+
+### Result view
+
+Built. `src/ui/ResultView.vue` shows the counts, the errors grouped by class with what stands in the Fassung and in the
+Original and the explanation, the words marked wrongly or within tolerance, and the legend. It emits the action
+`again`.
+
+```arc42
+:::building-block
+id: bb-textcheck-result
+title: Result view
+parent: bb-interactive-ui
+technology: Vue single-file component
+requires: if-textcheck-ui-texts
+path: src/ui/ResultView.vue
+:::
+```
+
+#### Result view interface
+
+The root component gives the result view the result and the words as props and takes its `input` event on.
+
+```arc42
+:::interface
+id: if-textcheck-result
+title: Result view props and input event
+provider: bb-textcheck-result
+protocol: Vue props and events
+path: src/ui/ResultView.vue
+:::
+```
+
+### UI texts
+
+Built. `src/ui/messages.ts` gives the translator of a language over the message file of that language, German for a
+language the app does not have yet. A new language is a new complete message file and an entry here.
+
+```arc42
+:::building-block
+id: bb-textcheck-ui-texts
+title: UI texts
+parent: bb-interactive-ui
+technology: TypeScript
+requires: if-messages, if-translator
+path: src/ui/messages.ts
+:::
+```
+
+#### UI texts interface
+
+All components of the UI get their learner texts through this translator and nowhere else.
+
+```arc42
+:::interface
+id: if-textcheck-ui-texts
+title: Translator of a language
+provider: bb-textcheck-ui-texts
+protocol: TypeScript module export
+path: src/ui/messages.ts
+:::
+```
+
 <!-- app: end ui -->
 
 ## Data
@@ -698,6 +1028,89 @@ path: src/data
 ```
 
 <!-- app: begin data -->
+
+### The data's parts
+
+The data are the text packs, which carry the content, and two tables that say what a school-year pair gets and what the
+error classes are. The data access of the core reads both.
+
+```arc42
+:::diagram
+id: building-blocks-textcheck-data
+view: building-block
+notation: mermaid
+:::
+```
+
+```mermaid
+flowchart TB
+    subgraph bb-interactive-data["Data"]
+        bb-textcheck-packs["Text packs"]
+        bb-textcheck-tables["Levels and error classes"]
+    end
+```
+
+### Text packs
+
+Built. `src/data/packs/<language>/<from>-<to>/<id>.json`, each a source excerpt, the rendition learners check and the
+slots with their correct wording and wrong variants; the schema `src/data/textpack.v1.schema.json` says the format. The
+content guide `.agents/skills/app-content/SKILL.md` and the skill `app-textpack` say how to write one.
+
+```arc42
+:::building-block
+id: bb-textcheck-packs
+title: Text packs
+parent: bb-interactive-data
+technology: JSON, JSON Schema
+path: src/data/packs
+:::
+```
+
+#### Text pack format interface
+
+The data access loads every file under `src/data/packs/` and the unit tests check each against the schema.
+
+```arc42
+:::interface
+id: if-textcheck-pack-format
+title: Text pack format (textpack.v1 schema)
+provider: bb-textcheck-packs
+protocol: JSON, JSON Schema
+path: src/data/textpack.v1.schema.json
+:::
+```
+
+### Levels and error classes
+
+Built. `src/data/levels.json` names for each route the school years, the error classes and detection bases it may use,
+the errors per round and whether the goal line names the classes. `src/data/error-classes.json` lists the error classes
+with their family, status (documented or derived), usual basis, first school year, languages and source.
+
+```arc42
+:::building-block
+id: bb-textcheck-tables
+title: Levels and error classes
+parent: bb-interactive-data
+technology: JSON
+path: src/data/levels.json
+:::
+```
+
+#### Tables interface
+
+The data access reads both tables as JSON modules; the rationale page in `src/app.yaml` repeats the class list for
+learners and a unit test keeps the two in step.
+
+```arc42
+:::interface
+id: if-textcheck-tables
+title: Levels and error classes tables
+provider: bb-textcheck-tables
+protocol: JSON module import
+path: src/data/error-classes.json
+:::
+```
+
 <!-- app: end data -->
 
 ## Messages

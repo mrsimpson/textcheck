@@ -1,0 +1,7 @@
+# Texts log
+
+One line per text pack: id, school years, language, source with revision, check result, who wrote it.
+
+| id | school years | language | source (revision) | licence | check | written by |
+|---|---|---|---|---|---|---|
+| fledermaeuse | 5-6 | de | Klexikon, "Fledermäuse" (157941, 6 May 2024) | CC BY-SA 4.0 | schema and pack checks passed; excerpt verbatim in the retrieved article | assistant, pilot |

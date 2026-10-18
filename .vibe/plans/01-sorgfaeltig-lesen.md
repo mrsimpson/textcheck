@@ -367,21 +367,7 @@ fitness:
 
 ### Tasks
 
-- [ ] Load skill `lernapps-app` and the archetype's skill.
-- [ ] Fill the content guide `.agents/skills/app-content/SKILL.md` from the plan and its content method: replace
-      every placeholder comment with concrete instructions (files, ids, data files, one example). Delete its top
-      comment. `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` must print 0. Commit it before any content.
-- [ ] Textpaket-Format in die App holen: Schema `textpack.v1`, Fehlerklassen, Nachrichten, TypeScript-Typen, Prüfung beim Bauen (das Prüfwerkzeug aus `.vibe/drafts/app-textpack/` nach TypeScript), Skill `app-textpack` unter `.agents/skills/`. Commit.
-- [ ] Kern: Rundenbau aus Seed, Markieren, Prüfen, Auswertung nach Klasse, Toleranz im selben Satz. Playthroughs: gleicher Seed gleicher Text; Treffer; Übersehen; Fehlmarkierung; Toleranz im selben Satz; Toleranz endet an der Satzgrenze; unbekannte Eingabe ändert nichts. Commit.
-- [ ] Oberfläche: Rundenansicht mit Umschalter am Handy, Wortmarkierung mit einer Tab-Stelle und Pfeiltasten, Auswertung mit Farben, Linienarten und Legende, Trefferfläche mindestens 44 Pixel hoch. Texte aus den Nachrichtendateien. Commit.
-- [ ] Statische Startseite (was, für wen, wie anfangen) und Seite "Wie diese Übung begründet ist" aus den Fehlerklassen und den Grenzen. Commit.
-- [ ] Pilot: ein echtes Textpaket für Klasse 5–6 nach Skill `app-textpack`: Quelle geöffnet und gelesen, fester Stand, Lizenz, Zitate geprüft, Prüfwerkzeug "passed". Quelle und Lizenz erscheinen in der App. Commit.
 - [ ] Zwischenstopp auf Wunsch des Erstellers: Vorschau-Link an Oliver für den ersten Test mit einem echten Text; Rückmeldung abwarten, ändern, danach weiter mit den übrigen Aufgaben.
-- [ ] Architektur: `docs/arc42` mit jedem Commit, der Code ändert (Block je Teil von `src/`).
-- [ ] Content guide still matches what was built (`app-content-matches`); `grep -c "FILL IN"` prints 0.
-- [ ] `npx lernapps check` passes.
-- [ ] Look at a screenshot of every screen and state (start, each mode, pause, end), desktop and 360 px; check each
-      against the confirmed sketches and the archetype's rules (interactive: `references/frame.md`).
 - [ ] Every box of Explore, Plan and Code ticked.
 - [ ] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
 
@@ -397,6 +383,29 @@ fitness:
       --head work --title "Erste Version" --body "Vorschau für die Erstellerin oder den Ersteller"`). The comment
       "Vorschau der App" links the preview; give the creator the link once. Refused → skill `lernapps-github`.
       Notiz: Pre-push: lernapps check ok, 9 Regeln, keine Befunde. `gh pr create` ist gesperrt (GraphQL); Pull Request #1 über `gh api` als Entwurf geöffnet: https://github.com/mrsimpson/textcheck/pull/1
+- [x] Load skill `lernapps-app` and the archetype's skill.
+- [x] Fill the content guide `.agents/skills/app-content/SKILL.md` from the plan and its content method: replace
+      every placeholder comment with concrete instructions (files, ids, data files, one example). Delete its top
+      comment. `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` must print 0. Commit it before any content.
+      Notiz: Ausgefüllt vor dem Inhalt; `grep -c "FILL IN"` gibt 0. Englisch geschrieben (Agenten-Anleitung).
+- [x] Textpaket-Format in die App holen: Schema `textpack.v1`, Fehlerklassen, Nachrichten, TypeScript-Typen, Prüfung beim Bauen (das Prüfwerkzeug aus `.vibe/drafts/app-textpack/` nach TypeScript), Skill `app-textpack` unter `.agents/skills/`. Commit.
+      Notiz: Schema `src/data/textpack.v1.schema.json`, `error-classes.json`, `levels.json`, TypeScript-Prüfung `src/core/pack-check.ts` mit Ajv in den Tests, Skill `app-textpack`. Datenformat JSON statt YAML (die Plattform importiert JSON-Module).
+- [x] Kern: Rundenbau aus Seed, Markieren, Prüfen, Auswertung nach Klasse, Toleranz im selben Satz. Playthroughs: gleicher Seed gleicher Text; Treffer; Übersehen; Fehlmarkierung; Toleranz im selben Satz; Toleranz endet an der Satzgrenze; unbekannte Eingabe ändert nichts. Commit.
+      Notiz: Tests in `src/core/core.test.ts`; Durchläufe `marking.yaml` (Seed 1) und `tolerance.yaml` (Seed 3), im Browser auf beiden Breiten gespielt.
+- [x] Oberfläche: Rundenansicht mit Umschalter am Handy, Wortmarkierung mit einer Tab-Stelle und Pfeiltasten, Auswertung mit Farben, Linienarten und Legende, Trefferfläche mindestens 44 Pixel hoch. Texte aus den Nachrichtendateien. Commit.
+      Notiz: Trefferfläche mindestens 44 Pixel hoch nur bei groben Zeigegeräten (`pointer: coarse`), sonst Zeilenhöhe 2,1; sonst wäre der Text sehr luftig.
+- [x] Statische Startseite (was, für wen, wie anfangen) und Seite "Wie diese Übung begründet ist" aus den Fehlerklassen und den Grenzen. Commit.
+      Notiz: Die Begründungsseite ist ein Abschnitt der Startseite (`src/app.yaml`, Markdown ohne Tabelle: Liste); ein Test hält sie mit den Fehlerklassen im Gleichschritt.
+- [x] Pilot: ein echtes Textpaket für Klasse 5–6 nach Skill `app-textpack`: Quelle geöffnet und gelesen, fester Stand, Lizenz, Zitate geprüft, Prüfwerkzeug "passed". Quelle und Lizenz erscheinen in der App. Commit.
+      Notiz: Klexikon "Fledermäuse", Revision 157941 (6. Mai 2024), CC BY-SA 4.0; zehn Auszugssätze wörtlich geprüft; 15 Stellen, 8 Fehlerklassen.
+- [x] Architektur: `docs/arc42` mit jedem Commit, der Code ändert (Block je Teil von `src/`).
+      Notiz: `arc42 validate --strict`: 0 Fehler, 0 Warnungen, 0 Hinweise.
+- [x] Content guide still matches what was built (`app-content-matches`); `grep -c "FILL IN"` prints 0.
+- [x] `npx lernapps check` passes.
+- [x] Look at a screenshot of every screen and state (start, each mode, pause, end), desktop and 360 px; check each
+      against the confirmed sketches and the archetype's rules (interactive: `references/frame.md`).
+      Notiz: Start, Runde, markiert, Auswertung, Desktop und 360 px, an der echten App gesehen. Tastatur: Pfeile und Leertaste markieren, Fokus geht nach dem Prüfen zur Überschrift der Auswertung.
+
 ## Commit
 
 <!--

@@ -155,4 +155,38 @@ involves: bb-e2e, bb-interactive-description, bb-interactive-playthroughs, bb-sh
 ```
 
 <!-- app: begin -->
+
+## Playing a round of Textcheck
+
+The learner opens `app/#klasse-5-6`, possibly with `?seed=<n>`. The core takes the pack of the route's school years from
+the data access, lets the round builder pick the slots to corrupt and the variants from the seed, and splits the Fassung
+into words. The root component shows the Original, the Fassung and the goal line, the word list takes marks and arrow
+keys and hands them back as actions, and the core keeps the marks. When the learner checks, the evaluation says which
+errors were found and how every word counts, and the root component shows the result view and moves the focus to it.
+Every change is announced through the live region, and every learner text comes from the message file through the
+translator.
+
+```arc42
+:::runtime-scenario
+id: scenario-textcheck-round
+title: Playing a round of Textcheck
+trigger: The learner opens a route, marks words, checks, and asks for the next round
+involves: bb-shell, bb-textcheck-root, bb-textcheck-wordlist, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-state, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-packs, bb-textcheck-tables
+:::
+```
+
+## Checking a text pack
+
+Whoever writes a pack, and the unit tests in the pre-commit and pre-push checks, run the pack checks over every file under
+`src/data/packs/`: the schema first, then what a schema cannot say, with the round builder telling how many slots each
+level can corrupt. An error fails the tests; warnings are read and justified in the pack's notes.
+
+```arc42
+:::runtime-scenario
+id: scenario-textcheck-pack-check
+title: Checking a text pack
+trigger: A pack is written or changed, or the tests run
+involves: bb-textcheck-pack-check, bb-textcheck-round, bb-textcheck-data-access, bb-textcheck-packs, bb-textcheck-tables
+:::
+```
 <!-- app: end -->
