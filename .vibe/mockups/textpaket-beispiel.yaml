@@ -1,0 +1,291 @@
+# Beispiel einer Textdefinition (Entwurf, nicht Teil der App)
+# Erfundener Text zur Veranschaulichung. Keine echte Quelle, keine Tatsachen.
+# Gleiche Daten wie im Mockup mockup-runde.html.
+#
+# Aufbau:
+#   klassen   Fehlerklassen mit Status "belegt" (Quelle gelesen) oder "abgeleitet" (eigener Schluss)
+#   basis     Was man braucht, um den Fehler zu erkennen
+#   paket     Original, Zusammenfassung in Sätzen, Stellen mit richtiger Fassung und falschen Varianten
+#   stufen    Was zu einer Klassenstufe gehört (Einstellung der Autorin oder des Autors, nicht gemessen)
+# Der Seed wählt in einer Runde: welche Stellen verfälscht werden und mit welcher Variante.
+klassen:
+  rechtschreibung_regel:
+    name: Rechtschreibung (Regelfehler)
+    familie: A Form
+    status: belegt
+    basis_typisch: text
+    ab_klasse: '3'
+    quelle: IQB-Lernaufgabe (AFRA-Liste), IQB-Handreichung Fehlerschwerpunkte; KMK Primar Fehleraufmerksamkeit
+  fluechtigkeit:
+    name: Flüchtigkeitsfehler
+    familie: A Form
+    status: belegt
+    basis_typisch: text
+    ab_klasse: '3'
+    quelle: Schmellentin & Lindauer 2019 (Regel- und Flüchtigkeitsfehler trennen); Unterart Wort doppelt
+      oder fehlt abgeleitet
+  echtes_wort:
+    name: Fehler mit echtem Wort (das/dass, das fahren)
+    familie: A Form
+    status: belegt
+    basis_typisch: text
+    ab_klasse: '5'
+    quelle: IQB-Handreichung (das/dass), IQB-Lernaufgabe (Rechtschreibprogramm übersieht Substantivierungen)
+  zeichensetzung:
+    name: Zeichensetzung
+    familie: A Form
+    status: Kompetenz belegt, Stufung abgeleitet
+    basis_typisch: text
+    ab_klasse: 3 (Satzschluss), 7 (Komma)
+    quelle: KMK Primar (Satzzeichen); Schmellentin & Lindauer (Komma früh nicht erwartet, ein Einzelfall)
+  zahl_name_datum:
+    name: Zahl, Name, Datum oder Ort verändert
+    familie: B Abweichung vom Original
+    status: Prozess belegt, Klasse abgeleitet
+    basis_typisch: vergleich
+    ab_klasse: '3'
+    quelle: IGLU 2021 (explizit angegebene Informationen lokalisieren); KMK (Textinformationen auf lokaler
+      Ebene)
+  sachlich_falsch:
+    name: Sachlich falsche Angabe
+    familie: B Abweichung vom Original
+    status: abgeleitet
+    basis_typisch: vergleich
+    ab_klasse: '5'
+    quelle: IGLU 2021 (Prüfen und Bewerten); Cook et al. 2018 (Verzerrung der Gegenposition)
+  hinzugefuegt:
+    name: Hinzugefügte Aussage
+    familie: B Abweichung vom Original
+    status: abgeleitet
+    basis_typisch: vergleich
+    ab_klasse: '5'
+    quelle: Irwin über Voss et al. (Makroregeln beim Zusammenfassen)
+  konjunktion_verneinung:
+    name: Verbindung oder Verneinung verändert
+    familie: C Innere Logik
+    status: Prozess belegt, Klasse abgeleitet
+    basis_typisch: text
+    ab_klasse: '5'
+    quelle: 'Irwin über Voss et al. (integrative Prozesse: Konjunktionen)'
+  widerspruch_im_text:
+    name: Widerspruch im Text
+    familie: C Innere Logik
+    status: Prozess belegt, Klasse abgeleitet
+    basis_typisch: text
+    ab_klasse: '5'
+    quelle: Irwin über Voss et al. (Widersprüche klären); KMK ESA/MSA (Verstehensschwierigkeiten erkennen)
+  menge_grad:
+    name: Menge oder Grad verändert
+    familie: C Innere Logik
+    status: abgeleitet
+    basis_typisch: vergleich
+    ab_klasse: '7'
+    quelle: eigener Schluss, keine Quelle gelesen
+  verallgemeinerung:
+    name: Verallgemeinerung
+    familie: C Innere Logik
+    status: Schlussart belegt, Übertragung abgeleitet
+    basis_typisch: text
+    ab_klasse: '7'
+    quelle: Cook et al. 2018 (induktiv schwacher Schluss)
+  folgerung_ursache:
+    name: Falsche Folgerung oder Ursache
+    familie: C Innere Logik
+    status: Fehlschluss belegt (Klima), Übertragung abgeleitet
+    basis_typisch: text
+    ab_klasse: '7'
+    quelle: Cook et al. 2018 (falsche Ursache, Non sequitur, Einzelursache); IGLU 2021 (einfache Schlussfolgerung)
+  meinung_als_tatsache:
+    name: Meinung als Tatsache
+    familie: D Standpunkt und Beeinflussung
+    status: Fähigkeit belegt, Klasse abgeleitet
+    basis_typisch: vergleich
+    ab_klasse: '7'
+    quelle: IGLU 2021 (Standpunkt, Voreingenommenheit); Irwin über Voss et al. (objektiv und subjektiv
+      unterscheiden); KMK ESA/MSA 4.4
+  falsche_autoritaet:
+    name: Falsche Autorität oder Quelle
+    familie: D Standpunkt und Beeinflussung
+    status: belegt für Erwachsene und Klima, Übertragung abgeleitet
+    basis_typisch: vergleich
+    ab_klasse: '10'
+    quelle: Cook et al. 2017 und 2018 (falsche Experten)
+  wertende_beeinflussung:
+    name: Wertende, emotionalisierende Beeinflussung
+    familie: D Standpunkt und Beeinflussung
+    status: Fähigkeit belegt, Klasse abgeleitet
+    basis_typisch: text
+    ab_klasse: '10'
+    quelle: IGLU 2021 (Wirkung sprachlicher Merkmale); KMK Abitur 2.3 (Geltungsansprüche reflektieren);
+      Cook et al. 2017 (Technik erklären)
+basis:
+  text: nur am Text erkennbar
+  vergleich: nur im Vergleich mit dem Original erkennbar
+  vorwissen: nur mit Vorwissen erkennbar
+paket:
+  id: strandmaus-beispiel
+  titel: Die Strandmaus (erfundenes Beispiel)
+  hinweis: Erfundener Text zur Veranschaulichung. Kein echtes Textpaket, keine Quelle, nichts davon ist
+    eine Tatsache.
+  quelle:
+    titel: null
+    url: null
+    lizenz: null
+    abgerufen: null
+    geprueft: false
+  original:
+  - Die Strandmaus lebt in den Dünen der Nordsee-Inseln.
+  - Sie wird etwa 9 Zentimeter lang und wiegt 25 Gramm.
+  - Tagsüber versteckt sie sich in Erdgängen, weil Möwen sie sonst fangen würden.
+  - In der Dämmerung sucht sie Samen und kleine Käfer.
+  - Im Winter hält sie keinen Winterschlaf, sondern sammelt Vorräte.
+  - Forschende zählen jedes Jahr im Mai etwa 400 Tiere auf der Insel.
+  zusammenfassung:
+  - satz:
+    - 'Die Strandmaus lebt in den '
+    - stelle: s1
+    - ' der Nordsee-Inseln.'
+  - satz:
+    - 'Sie ist etwa '
+    - stelle: s2a
+    - ' Zentimeter lang und wiegt '
+    - stelle: s2b
+    - ' Gramm.'
+  - satz:
+    - 'Tagsüber versteckt sie sich in Erdgängen, '
+    - stelle: s3
+    - ' Möwen sie sonst fangen würden.'
+  - satz:
+    - 'In der Dämmerung '
+    - stelle: s7
+  - satz:
+    - stelle: s4
+  - satz:
+    - 'Im Winter hält sie '
+    - stelle: s5
+    - ' Winterschlaf, sondern sammelt Vorräte.'
+  - satz:
+    - 'Forschende zählen jedes Jahr im Mai '
+    - stelle: s6
+    - ' 400 Tiere auf der Insel.'
+  stellen:
+    s1:
+      richtig: Dünen
+      varianten:
+      - text: Dühnen
+        klasse: rechtschreibung_regel
+        basis: text
+        auffaelligkeit: 2
+        erklaerung: Nach einem langen ü braucht das Wort kein h. „Dünen“ ist die richtige Schreibung.
+      - text: Dnüen
+        klasse: fluechtigkeit
+        basis: text
+        auffaelligkeit: 3
+        erklaerung: Zwei Buchstaben sind vertauscht. Richtig ist „Dünen“.
+    s2a:
+      richtig: '9'
+      varianten:
+      - text: '19'
+        klasse: zahl_name_datum
+        basis: vergleich
+        auffaelligkeit: 2
+        erklaerung: Im Original steht „9 Zentimeter“. Die Zahl wurde verändert.
+    s2b:
+      richtig: '25'
+      varianten:
+      - text: '250'
+        klasse: zahl_name_datum
+        basis: vergleich
+        auffaelligkeit: 3
+        erklaerung: Im Original steht „25 Gramm“. Die Zahl wurde verändert.
+    s3:
+      richtig: weil
+      varianten:
+      - text: obwohl
+        klasse: konjunktion_verneinung
+        basis: text
+        auffaelligkeit: 2
+        erklaerung: '„Obwohl“ passt nicht: Die Maus versteckt sich gerade wegen der Möwen. Im Original
+          steht „weil“.'
+    s4:
+      richtig: ''
+      varianten:
+      - text: ' Sie ist die schönste Maus der Insel.'
+        klasse: meinung_als_tatsache
+        basis: vergleich
+        auffaelligkeit: 1
+        erklaerung: Das ist eine Meinung. Im Original steht dieser Satz nicht, und „schönste“ lässt sich
+          nicht messen.
+    s7:
+      richtig: sucht sie Samen und kleine Käfer.
+      varianten:
+      - text: frisst sie vor allem Fische aus dem Meer.
+        klasse: sachlich_falsch
+        basis: vergleich
+        auffaelligkeit: 2
+        toleranz: 2
+        erklaerung: 'Im Original steht: „sucht sie Samen und kleine Käfer“. Von Fischen steht dort nichts.'
+    s5:
+      richtig: keinen
+      varianten:
+      - text: einen
+        klasse: konjunktion_verneinung
+        basis: text
+        auffaelligkeit: 2
+        erklaerung: Mit „einen“ passt das „sondern“ nicht mehr. Im Original steht „keinen Winterschlaf“.
+    s6:
+      richtig: etwa
+      varianten:
+      - text: genau
+        klasse: menge_grad
+        basis: vergleich
+        auffaelligkeit: 1
+        erklaerung: Im Original steht „etwa 400“. Gezählt wird nur ungefähr, „genau“ behauptet mehr.
+  stufen:
+    klasse_3_4:
+      klassen:
+      - rechtschreibung_regel
+      - fluechtigkeit
+      - zahl_name_datum
+      - zeichensetzung
+      basis:
+      - text
+      - vergleich
+      fehler: 2
+      gesuchte_klasse_wird_genannt: true
+    klasse_5_6:
+      klassen:
+      - rechtschreibung_regel
+      - fluechtigkeit
+      - zahl_name_datum
+      - zeichensetzung
+      - echtes_wort
+      - sachlich_falsch
+      - hinzugefuegt
+      - konjunktion_verneinung
+      - widerspruch_im_text
+      basis:
+      - text
+      - vergleich
+      fehler: 3
+      gesuchte_klasse_wird_genannt: true
+    klasse_7_10:
+      klassen:
+      - rechtschreibung_regel
+      - fluechtigkeit
+      - zahl_name_datum
+      - zeichensetzung
+      - echtes_wort
+      - sachlich_falsch
+      - hinzugefuegt
+      - konjunktion_verneinung
+      - widerspruch_im_text
+      - menge_grad
+      - verallgemeinerung
+      - folgerung_ursache
+      - meinung_als_tatsache
+      basis:
+      - text
+      - vergleich
+      fehler: 4
+      gesuchte_klasse_wird_genannt: false
