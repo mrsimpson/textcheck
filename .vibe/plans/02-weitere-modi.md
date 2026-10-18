@@ -3,7 +3,7 @@
 # Archetype as in the app's first plan; set it when you start. Never changes.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: explore
+phase: plan
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 ---
@@ -28,6 +28,8 @@ a correction.
 
 *Gestartet am 18.10.2026. Explore, Plan, Code, Commit.*
 
+Skizze der Modi: `.vibe/mockups/modi-2-3.png`.
+
 ## Goal
 
 Lernende können zu jedem Text zwei weitere Aufgaben üben: erkennen, welcher von zwei Texten der echte ist (ohne Quelle, nur durch genaues Lesen und Vergleichen), und Fehler in einem Text finden, indem sie ihn mit der Quelle als PDF vergleichen, die in einem neuen Tab aufgeht. Beides für alle Klassenstufen, die es schon gibt.
@@ -35,9 +37,9 @@ Lernende können zu jedem Text zwei weitere Aufgaben üben: erkennen, welcher vo
 ## Key decisions
 
 - Modi laufen als eigene Routen je Klassenstufe: `klasse-5-6` (Modus 1, Fehler markieren), `klasse-5-6-original` (Modus 2), `klasse-5-6-quelle` (Modus 3). Gleiche Texte, gleiche Seeds, gleiche Daten; keine neuen Datenformate für die Texte. (guess)
-- Modus 2 baut die zwei Texte aus demselben Textpaket: Text A und Text B sind beide Varianten derselben Fassung; einer hat alle Stellen richtig (der „echte“), der andere hat die Fehler der Runde (wie in Modus 1, ohne Hinweise). Der Seed bestimmt, welcher links steht. (guess)
-- Modus 2 hat keine Quelle auf dem Bildschirm; der Auszug (Original) kommt erst im Ergebnis dazu, mit den Belegen. Fehler mit Grundlage „nur im Vergleich mit dem Original erkennbar“ sind hier nur durch den Vergleich der beiden Texte zu finden. (guess)
-- Modus 3 zeigt nur die Fassung mit Fehlern und einen Link „Quelle als PDF öffnen“ (neuer Tab, `target=_blank`, `rel=noopener`). Das PDF liegt auf derselben Seite (`public/quellen/…`), keine fremde Anfrage. (Ersteller: „PDFs draus machen und die URL einfach als Target=_blank link unterlegen“)
+- Modus 2 zeigt zwei Texte: das Original (der wörtliche Auszug aus der Quelle) und die Variante mit den Fehlern der Runde. Welcher Text Original und welcher Variante ist, steht nicht dran; der Seed bestimmt die Reihenfolge (Text A / Text B). Lernende wählen, welcher das Original ist. (Ersteller: „zwei Texte, von denen wir nicht wissen, was Original und was Variante ist“)
+- Modus 2 hat keine weitere Quelle; Lernende vergleichen die beiden Texte miteinander (Sätze entsprechen sich, wie bei Original und Variante). Nur zwei Texte; mehr Texte später. (Ersteller: „erst mal nur zwei Texte“.) Rückmeldung nur mit Erklärung, kein Punktestand (guess), alle Klassenstufen einschließlich 3–4 (guess).
+- Modus 3 ist Modus 1 mit der PDF der Quelle anstelle des Originals: nur die Variante mit Fehlern und ein Link „Quelle als PDF öffnen“ (neuer Tab, `target=_blank`, `rel=noopener`). Die PDF liegt auf derselben Seite (`public/quellen/…`, vom Build ins Hauptverzeichnis kopiert, getestet), keine fremde Anfrage. (Ersteller: „Modus 3 dann das PDF anstatt des Originals“; früher „PDFs draus machen und die URL einfach als Target=_blank link unterlegen“)
 - PDFs entstehen mit dem Skript des Skills `app-textpack` aus der gespeicherten Quelle; Lizenz, Autorenlink und „unverändert“ stehen auf jeder PDF.
 - Ein Modus je Plan-Inkrement fertig bedeutet nicht: Modus 4 „Auf Zeit“ bleibt später.
 
@@ -51,12 +53,12 @@ Lernende können zu jedem Text zwei weitere Aufgaben üben: erkennen, welcher vo
 Beide kommen in die Liste auf der Startseite (`src/app.yaml`) und in den Eintrag im Katalog.
 
 **Fach- und Lernhürden (abgeleitet).**
-- Modus 2: Wer nur einen Text liest, vertraut ihm. Der Vergleich zwingt zum zweiten Blick. Gefahr: Mehrheitsregel mit drei Texten (der echte ist der, der mit den anderen an jeder Stelle übereinstimmt). Darum in Version 1 dieses Modus nur zwei Texte.
+- Modus 2: Wer nur einen Text liest, vertraut ihm. Der Vergleich zwingt zum zweiten Blick. Hürde: Original und Variante sind in eigenen Worten geschrieben; man muss Aussagen vergleichen, nicht Wörter. Nur zwei Texte (Ersteller).
 - Modus 3: Das PDF ist lang. Lernende sollen die passende Stelle suchen, nicht alles lesen; die PDF enthält nur den Artikel, nicht die Seitenleisten. Quellen sind ungleich lang (Igel 4 Seiten); bei langen Artikeln kürzen wir nicht (sonst wäre es nicht die Quelle).
 
 **Umfang.** In: Modus 2 und 3 für die fünf vorhandenen Routen (3–4, 5–6, 7–8, 9–10, 11–13); je ein Text. Aus: weitere Texte, Modus „Auf Zeit“, drei Texte in Modus 2, Prüfung durch Dritte.
 
-**Offene Punkte.** Rückmeldung für Modus 2: nur „richtig/falsch“ und die Unterschiede mit Erklärung, oder auch Punkte? (Vorschlag: nur Erklärung, kein Punktestand, wie Modus 1.) Barrierefreiheit der zwei Texte nebeneinander auf 360 px: Umschalter wie in Modus 1 (Text A | Text B).
+**Offene Punkte.** Barrierefreiheit der zwei Texte auf 360 px: Umschalter wie in Modus 1 (Text A | Text B). Ob „Original erkennen“ ohne Markieren genug fordert, zeigt der Test des Erstellers.
 
 ## Explore
 
@@ -65,15 +67,16 @@ Skip what earlier answers or the app tell. Answers → "Answers". -->
 
 ### Tasks
 
-- [ ] **Checkpoint:** research. Show in plain words: curriculum orientation, new competencies by chapter, didactic
+- [x] **Checkpoint:** research. Show in plain words: curriculum orientation, new competencies by chapter, didactic
       approach, scope, sources and how checked, what is unchecked. Stop and wait. Changes → change, ask again.
-- [ ] Set `phase: plan`: change the value line (`grep '^phase:'` prints `phase: plan`).
+- [x] Set `phase: plan`: change the value line (`grep '^phase:'` prints `phase: plan`).
 
 ### Answers
 
 <!-- Creator's answers, their words, one bullet each. -->
 - „Original erkennen ist Modus zwei, Quellentreue Modus drei“ (Modus 1: Fehler markieren; Modus 4 „Auf Zeit“ später).
 - „Modus 2 zuerst, ja.“ (Zwei Texte, einer ist der echte; der andere hat Fehler.)
+- „Wir brauchen in Modus 2 erst mal nur zwei Texte, von dem wir nicht wissen, was Original und was Variante ist. Modus 3 dann das PDF anstatt des Originals.“
 - Früher: „Man kann beide Texte darstellen und sagen, welches der echte ist“; „Quellentreue: nur die Quelle (als iframe) und den teils falschen Text“; „zum Build-Zeitpunkt PDFs draus machen und die URL einfach als Target=_blank link unterlegen“.
 
 ### Completed
@@ -95,13 +98,13 @@ Skip what earlier answers or the app tell. Answers → "Answers". -->
 
 ### Tasks
 
-- [ ] Write the Code tasks: one slice per competency (skill `lernapps-content-growth`), in the guide's order; each
+- [x] Write the Code tasks: one slice per competency (skill `lernapps-content-growth`), in the guide's order; each
       ends in a commit.
-- [ ] Write "Content method": the guide's patterns, figures, components per slice; anything new, with why the
+- [x] Write "Content method": the guide's patterns, figures, components per slice; anything new, with why the
       guide's patterns do not fit.
-- [ ] Show the creator, short: goal, new competencies by chapter, slices; in plain words what learners see and do,
+- [x] Show the creator, short: goal, new competencies by chapter, slices; in plain words what learners see and do,
       and what is new. Max 2 questions.
-- [ ] Each new component or interactive exercise: show a sketch (static SVG or image, or the steps). Words alone are
+- [x] Each new component or interactive exercise: show a sketch (static SVG or image, or the steps). Words alone are
       not enough.
 - [ ] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes → change,
       ask again.
@@ -109,8 +112,11 @@ Skip what earlier answers or the app tell. Answers → "Answers". -->
 
 ### Content method
 
-<!-- One line each: guide patterns, figures, components used, and where; anything new, what it does and cannot.
-New things go into the guide in the slice that adds them. -->
+- Muster „Abweichungen in einer Variante gegen ein bekanntes Original markieren“ (Guide) bleibt Modus 1; unverändert.
+- Modus 3 (Quellentreue) = dasselbe Muster, aber die Quelle als PDF (neuer Tab) statt des Originals auf dem Bildschirm. Gleiche Daten, gleiche Auswertung, gleiche Farben. Keine neue Komponente: `App.vue` zeigt statt des Original-Felds einen Link-Knopf; Pfad der PDF aus `source.pdf` des Pakets.
+- Modus 2 (Original erkennen) ist ein neues Muster: „Zwei Texte vergleichen und das Original wählen“. Fest: Auszug und Variante des Pakets, Stufe. Wechselnd: welche Stellen verfälscht sind (Seed), welcher Text links steht. Erfolg: richtige Wahl; danach alle Unterschiede mit Original, Variante und Erklärung (wie die Karten der Auswertung in Modus 1). Neue Komponente `ChooseView.vue` (zwei Textkarten, Umschalter auf dem Handy, zwei Knöpfe); Muster kommt in den Guide in derselben Scheibe.
+- Figuren: keine. Farben: wie im Guide (Unterschiede im Ergebnis orange mit gestrichelter Linie, Original grün); Farbe ist nie das einzige Zeichen.
+- Grenze: Modus 2 hat nur zwei Texte; das Ergebnis bewertet nur die Wahl, nicht, ob jemand die Fehler benennen kann.
 
 ### Completed
 
@@ -128,7 +134,9 @@ New things go into the guide in the slice that adds them. -->
 - [ ] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
 - [ ] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
-- [ ] <the slices written in Plan, each: competency, content, exercise, the entry's topic, check, commit>
+- [ ] Scheibe 1, Kompetenz „Text mit seiner Quelle vergleichen“ (Modus 3): (a) PDFs für die fünf Pakete mit `scripts/source-pdf.mjs` aus den gespeicherten Quellseiten nach `public/quellen/de/<id>.pdf`, `source.pdf` in den Paketen, Schema und Prüfung: Pfad muss existieren; (b) Routen `klasse-…-quelle` in `src/app.yaml` und Stufen in `levels.json` (Route → Stufe + Modus, ohne Daten zu verdoppeln); (c) Kern: `State.mode`, `start` liest Route und Modus; (d) `App.vue`: PDF-Knopf statt Original; (e) Texte in `de.json`; (f) Playthrough `quelle.yaml`; (g) Tests; (h) Guide: Kompetenz und Modus; (i) Eintrag: Themen; `npx lernapps check`; Commit.
+- [ ] Scheibe 2, Kompetenz „Zwei Texte vergleichen und das Original erkennen“ (Modus 2): (a) Kern: Zustand `choice`, Aktionen `choose-a`/`choose-b`, Auswertung (richtige Wahl, Unterschiede aus den Stellen), Seed bestimmt Reihenfolge; (b) `ChooseView.vue` und Auswertung; Tastatur: A und B (Tasten 1 und 2); (c) Routen `klasse-…-original`; (d) Texte in `de.json`; (e) Playthrough `original.yaml`; (f) Tests; (g) Guide: neues Muster mit Beispiel; (h) Eintrag: Themen; `npx lernapps check`; Commit.
+- [ ] Scheibe 3, Dokumentation: arc42 (Bausteine, Laufzeit, Verteilung für Modi und `public/quellen`), Startseite (Beschreibung, Kompetenzen, Begründung: Modi), Skill `app-textpack` (PDF-Schritt jetzt Pflicht, Pfad), `.vibe/texts-log.md`; `npx arc42 validate --strict`; `npx lernapps check`; Commit.
 - [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
 - [ ] `npx lernapps check` passes.
