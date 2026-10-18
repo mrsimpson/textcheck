@@ -9,14 +9,14 @@
   --bg: #f7f6f2; --card: #ffffff; --ink: #1f2430; --muted: #566074; --line: #d5d8df;
   --accent: #1d4ed8; --mark: #fde68a; --mark-ink: #1f2430;
   --ok: #166534; --ok-bg: #dcfce7; --miss: #9a3412; --miss-bg: #ffedd5; --fa: #6b21a8; --fa-bg: #f3e8ff;
-  --note: #eef2ff;
+  --note: #eef2ff; --fr: #1e3a8a; --fr-bg: #dbeafe;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #14161b; --card: #1d2027; --ink: #e8eaf0; --muted: #a2abbd; --line: #343a47;
     --accent: #8ab4ff; --mark: #6b5b12; --mark-ink: #fff6d1;
     --ok: #86efac; --ok-bg: #12301e; --miss: #fdba74; --miss-bg: #3a2210; --fa: #d8b4fe; --fa-bg: #2b1a3d;
-    --note: #1c2340;
+    --note: #1c2340; --fr: #bfdbfe; --fr-bg: #1e2f5a;
   }
 }
 * { box-sizing: border-box; }
@@ -45,7 +45,7 @@ button.primary { background: var(--accent); color: #fff; border-color: var(--acc
 .tok.found { background: var(--ok-bg); color: var(--ok); text-decoration: underline; }
 .tok.part { background: var(--ok-bg); color: var(--ok); text-decoration: none; }
 .tok.missed { background: var(--miss-bg); color: var(--miss); text-decoration: underline dashed; }
-.tok.ok2 { background: var(--note); color: var(--ink); text-decoration: underline dotted; }
+.tok.ok2 { background: var(--fr-bg); color: var(--fr); text-decoration: underline dotted; }
 .tok.fa { background: var(--fa-bg); color: var(--fa); text-decoration: line-through; }
 .tag { font-size: .7rem; font-weight: 700; vertical-align: super; margin-left: 1px; }
 .bar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-top: 12px; }
@@ -57,9 +57,18 @@ button.primary { background: var(--accent); color: #fff; border-color: var(--acc
 .chip { font-size: .75rem; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
 .item { padding: 10px 12px; border-top: 1px solid var(--line); }
 .item:first-of-type { border-top: 0; }
-.st { font-weight: 700; }
-.st.ok { color: var(--ok); }
-.st.miss { color: var(--miss); }
+.st { font-weight: 700; padding: 2px 8px; border-radius: 6px; }
+.st.ok { background: var(--ok-bg); color: var(--ok); text-decoration: underline; }
+.st.miss { background: var(--miss-bg); color: var(--miss); text-decoration: underline dashed; }
+.fa-box.fa { border-left: 6px solid var(--fa); background: var(--fa-bg); color: var(--fa); }
+.fa-box.fr { border-left: 6px solid var(--fr); background: var(--fr-bg); color: var(--fr); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+.sw { display: inline-block; padding: 1px 8px; border-radius: 4px; font-size: .85rem; margin-right: 4px; }
+.sw.found { background: var(--ok-bg); color: var(--ok); text-decoration: underline; }
+.sw.part { background: var(--ok-bg); color: var(--ok); }
+.sw.missed { background: var(--miss-bg); color: var(--miss); text-decoration: underline dashed; }
+.sw.fa { background: var(--fa-bg); color: var(--fa); text-decoration: line-through; }
+.sw.ok2 { background: var(--fr-bg); color: var(--fr); text-decoration: underline dotted; }
 .cmp { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; margin: 6px 0; font-size: .95rem; }
 .cmp dt { color: var(--muted); }
 .cmp dd { margin: 0; }
@@ -265,11 +274,11 @@ function check() {
     b.disabled = true;
     b.classList.remove('found', 'missed', 'fa');
     const old = b.querySelector('.tag'); if (old) old.remove();
-    if (isErr && m) { b.classList.add('found'); b.insertAdjacentHTML('beforeend', '<span class="tag"> ✔ gefunden</span>'); }
-    else if (isErr && !m && markedStelle(t.stelle)) { b.classList.add('part'); }
-    else if (isErr && !m) { b.classList.add('missed'); b.insertAdjacentHTML('beforeend', '<span class="tag"> ✖ übersehen</span>'); }
-    else if (m && zone.has(t.id)) { b.classList.add('ok2'); b.insertAdjacentHTML('beforeend', '<span class="tag"> ~ im Rahmen</span>'); }
-    else if (m) { b.classList.add('fa'); b.insertAdjacentHTML('beforeend', '<span class="tag"> ? richtig</span>'); }
+    if (isErr && m) { b.classList.add('found'); b.insertAdjacentHTML('beforeend', '<span class="sr"> (gefunden)</span>'); }
+    else if (isErr && !m && markedStelle(t.stelle)) { b.classList.add('part'); b.insertAdjacentHTML('beforeend', '<span class="sr"> (Teil des gefundenen Fehlers)</span>'); }
+    else if (isErr && !m) { b.classList.add('missed'); b.insertAdjacentHTML('beforeend', '<span class="sr"> (übersehen)</span>'); }
+    else if (m && zone.has(t.id)) { b.classList.add('ok2'); b.insertAdjacentHTML('beforeend', '<span class="sr"> (im Rahmen)</span>'); }
+    else if (m) { b.classList.add('fa'); b.insertAdjacentHTML('beforeend', '<span class="sr"> (fälschlich markiert)</span>'); }
   });
 
   // Rückmeldung nach Fehlerklasse
@@ -291,7 +300,7 @@ function check() {
       const e = state.errors[id];
       const s = D.paket.stellen[id];
       const hit = markedStelle(id);
-      html += `<div class="item"><span class="st ${hit ? 'ok' : 'miss'}">${hit ? '✔ Gefunden' : '✖ Übersehen'}</span> `
+      html += `<div class="item"><span class="st ${hit ? 'ok' : 'miss'}">${hit ? 'Gefunden' : 'Übersehen'}</span> `
         + `<span class="chip">${D.basis[e.basis]}</span>`
         + `<dl class="cmp"><dt>In der Zusammenfassung:</dt><dd>„${e.text.trim()}“</dd>`
         + `<dt>Richtig (Original):</dt><dd>${s.richtig ? '„' + s.richtig + '“' : 'Dieser Satz steht nicht im Original.'}</dd></dl>`
@@ -300,17 +309,23 @@ function check() {
     html += `</section>`;
   }
   if (falseTokens.length) {
-    html += `<div class="fa-box"><strong>Fälschlich markiert:</strong> `
+    html += `<div class="fa-box fa"><strong>Fälschlich markiert:</strong> `
       + falseTokens.map(t => `„${t.text}“`).join(', ')
       + `. Diese Wörter sind richtig. Vergleiche sie mit dem Original, bevor du etwas markierst.</div>`;
   }
   if (okTokens.length) {
-    html += `<div class="fa-box"><strong>Im Rahmen:</strong> `
+    html += `<div class="fa-box fr"><strong>Im Rahmen:</strong> `
       + okTokens.map(t => `„${t.text}“`).join(', ')
       + `. Diese Wörter sind richtig. Sie liegen im selben Satz direkt neben einem langen Fehler, bei dem die Textdefinition einen Spielraum erlaubt. Das zählt nicht als Fehlmarkierung.</div>`;
   }
-  html += `<div class="legend">✔ gefunden (übrige Wörter derselben Stelle grün, ohne Zeichen) · ✖ übersehen · ? richtig, aber markiert · ~ im Rahmen: im selben Satz neben einem langen Fehler erlaubt. Die Farben sind nur Zusatz, die Zeichen gelten immer. `
-    + `Status „belegt“: Quelle gelesen. Status „abgeleitet“: eigener Schluss, nicht aus einer Studie.</div>`
+  html += `<div class="legend" role="group" aria-label="Legende">`
+    + `<span><span class="sw found">gefunden</span></span>`
+    + `<span><span class="sw part">Rest einer gefundenen Stelle</span></span>`
+    + `<span><span class="sw missed">übersehen</span></span>`
+    + `<span><span class="sw fa">fälschlich markiert</span></span>`
+    + `<span><span class="sw ok2">im Rahmen (selber Satz, neben langem Fehler)</span></span>`
+    + `</div>`
+    + `<div class="legend">Status „belegt“: Quelle gelesen. Status „abgeleitet“: eigener Schluss, nicht aus einer Studie.</div>`
     + `<div class="bar"><span></span><button class="ctl primary" id="again" type="button">Neue Runde mit anderem Seed</button></div>`;
   $('result').innerHTML = html;
   $('again').addEventListener('click', () => { $('seed').value = (state.seed + 1); startRound(); });
