@@ -272,6 +272,10 @@ const choiceNote = computed(() => {
 }
 
 .picker label {
+  box-sizing: border-box;
+  flex: 1 1 14rem;
+  min-width: 0;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -279,6 +283,9 @@ const choiceNote = computed(() => {
 }
 
 .picker select {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
   min-height: 2.75rem;
   padding: 0.4rem 0.6rem;
   border: 1px solid var(--tc-line);
