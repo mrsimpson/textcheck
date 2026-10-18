@@ -18,11 +18,27 @@ const wordsWith = (status: string): string =>
     .join(", ");
 const wrongWords = computed(() => wordsWith("false"));
 const toleratedWords = computed(() => wordsWith("tolerated"));
+const allFound = computed(() => props.result.total > 0 && props.result.found === props.result.total);
+// Confetti pieces: fixed positions, delays and colours by index, so a round looks the same every time.
+const pieces = Array.from({ length: 28 }, (_, index) => ({
+  left: `${(index * 37) % 100}%`,
+  delay: `${((index * 53) % 100) / 100}s`,
+  hue: (index * 47) % 360,
+  turn: `${(index % 2 === 0 ? 1 : -1) * (180 + ((index * 29) % 360))}deg`,
+}));
 </script>
 
 <template>
   <section class="result" aria-labelledby="result-heading">
+    <div v-if="allFound" class="confetti" aria-hidden="true">
+      <span
+        v-for="(piece, index) in pieces"
+        :key="index"
+        :style="{ left: piece.left, animationDelay: piece.delay, '--hue': piece.hue, '--turn': piece.turn }"
+      ></span>
+    </div>
     <h2 id="result-heading" tabindex="-1">{{ t("resultHeading") }}</h2>
+    <p v-if="allFound" class="praise">{{ result.wrong === 0 ? t("praiseClean") : t("praiseAll") }}</p>
     <p class="summary">
       {{ t("resultSummary", { found: result.found, total: result.total }) }}
       <template v-if="result.wrong > 0"> · {{ t("resultWrong", { count: result.wrong }) }}</template>
@@ -219,5 +235,47 @@ dd {
   font: inherit;
   font-weight: 700;
   cursor: pointer;
+}
+</style>
+
+<style scoped>
+.praise {
+  margin: 0 0 0.75rem;
+  padding: 0.6rem 0.8rem;
+  border-left: 4px solid var(--tc-found);
+  background: var(--tc-found-bg);
+  color: var(--tc-found);
+  font-weight: 700;
+}
+
+.confetti {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.confetti span {
+  position: absolute;
+  top: -1.5rem;
+  width: 0.6rem;
+  height: 1rem;
+  border-radius: 2px;
+  background: hsl(var(--hue) 80% 55%);
+  animation: confetti-fall 2.8s ease-in forwards;
+}
+
+@keyframes confetti-fall {
+  to {
+    transform: translateY(105vh) rotate(var(--turn));
+    opacity: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confetti {
+    display: none;
+  }
 }
 </style>

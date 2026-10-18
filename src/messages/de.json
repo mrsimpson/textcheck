@@ -20,6 +20,8 @@
   "announceClear": "Alle Markierungen gelöscht.",
   "announceCheck": "Geprüft: {found} von {total} Fehlern gefunden. Fälschlich markiert: {wrong}.",
   "resultHeading": "Auswertung",
+  "praiseClean": "Stark! Du hast alle Fehler gefunden und nichts Falsches markiert. Das war sehr sorgfältig gelesen.",
+  "praiseAll": "Stark! Du hast alle Fehler gefunden. Schau dir unten an, was zusätzlich markiert war.",
   "resultSummary": "Gefunden: {found} von {total}",
   "resultWrong": "Fälschlich markiert: {count}",
   "resultTolerated": "Im Rahmen: {count}",
