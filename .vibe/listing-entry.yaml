@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://lernapps.net/apps/schemas/entry.v1.schema.json
+title: Textcheck
+subject: Deutsch
+grades: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+summary: >-
+  Du liest ein Original und eine Variante davon und markierst die Wörter, die in der Variante nicht stimmen:
+  von Rechtschreibfehlern bis zu Meinungen, die wie Tatsachen klingen. Die Texte werden mit der Klasse länger
+  und schwieriger. Nach dem Prüfen siehst du, welche Fehler du gefunden hast, und warum sie falsch sind.
+url: https://mrsimpson.github.io/textcheck/
+topics:
+  - { title: "Klasse 3 bis 4: Igel", path: "app/#klasse-3-4" }
+  - { title: "Klasse 5 bis 6: Fledermäuse", path: "app/#klasse-5-6" }
+  - { title: "Klasse 7 bis 8: Winterschlaf", path: "app/#klasse-7-8" }
+  - { title: "Klasse 9 bis 10: Buchdruck", path: "app/#klasse-9-10" }
+  - { title: "Oberstufe: Die Hyperinflation 1923", path: "app/#klasse-11-13" }
+keywords: [Lesen, Textverständnis, Fehlersuche, Korrekturlesen, Lesekompetenz, genau lesen]
+creator: { name: Oliver }
+source: https://github.com/mrsimpson/textcheck
+fitness:
+  account: false
+  install: false
+  storage: none
+  thirdParty: none
+  checked: false

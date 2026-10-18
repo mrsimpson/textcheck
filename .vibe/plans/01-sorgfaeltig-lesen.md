@@ -243,6 +243,8 @@ Hinweise:
 
 ### Entry draft
 
+Final: `.vibe/listing-entry.yaml` (Prüfung lokal: bestanden). Der Entwurf unten ist der frühere Stand.
+
 <!-- YAML valid against the entry schema; its property names. Only known values, never invented. -->
 
 ```yaml
@@ -439,9 +441,9 @@ fitness:
       anyway; after the creator's click the app appears without a new run.
 - [x] Open the address the job `deploy` printed ("published at ...", also in the run summary); confirm the app shows.
       Use that address, never a derived one; follow redirects. Do not wait for it yourself.
-- [ ] Load skill `lernapps-listing`.
-- [ ] Complete the entry draft (e.g. the address).
-- [ ] **Checkpoint:** list. Ask before opening the listing pull request; wait for the yes.
+- [x] Load skill `lernapps-listing`.
+- [x] Complete the entry draft (e.g. the address).
+- [x] **Checkpoint:** list. Ask before opening the listing pull request; wait for the yes.
 - [ ] Fill the retrospective.
 - [ ] Commit this plan on `main` and push it (listing check and review read it there).
 - [ ] Open the listing pull request as the skill says; see it to "bestanden" (not "nicht bestanden") in the results
