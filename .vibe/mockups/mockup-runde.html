@@ -1,0 +1,1030 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mockup einer Runde</title>
+    <style>
+      :root {
+        --bg: #f7f6f2;
+        --card: #ffffff;
+        --ink: #1f2430;
+        --muted: #566074;
+        --line: #d5d8df;
+        --accent: #1d4ed8;
+        --mark: #fde68a;
+        --mark-ink: #1f2430;
+        --ok: #166534;
+        --ok-bg: #dcfce7;
+        --miss: #9a3412;
+        --miss-bg: #ffedd5;
+        --fa: #6b21a8;
+        --fa-bg: #f3e8ff;
+        --note: #eef2ff;
+        --fr: #1e3a8a;
+        --fr-bg: #dbeafe;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #14161b;
+          --card: #1d2027;
+          --ink: #e8eaf0;
+          --muted: #a2abbd;
+          --line: #343a47;
+          --accent: #8ab4ff;
+          --mark: #6b5b12;
+          --mark-ink: #fff6d1;
+          --ok: #86efac;
+          --ok-bg: #12301e;
+          --miss: #fdba74;
+          --miss-bg: #3a2210;
+          --fa: #d8b4fe;
+          --fa-bg: #2b1a3d;
+          --note: #1c2340;
+          --fr: #bfdbfe;
+          --fr-bg: #1e2f5a;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font:
+          16px/1.5 system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+      }
+      .wrap {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 16px;
+      }
+      h1 {
+        font-size: 1.25rem;
+        margin: 0 0 4px;
+      }
+      h2 {
+        font-size: 1.05rem;
+        margin: 0 0 8px;
+      }
+      .note {
+        background: var(--note);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 10px 12px;
+        margin: 8px 0 16px;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: end;
+        margin-bottom: 16px;
+      }
+      label {
+        display: block;
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 2px;
+      }
+      select,
+      input,
+      button.ctl {
+        font: inherit;
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--card);
+        color: var(--ink);
+        min-height: 44px;
+      }
+      input[type="number"] {
+        width: 8rem;
+      }
+      button.ctl {
+        cursor: pointer;
+      }
+      button.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) button.primary {
+          color: #0b1020;
+        }
+      }
+      .goal {
+        border-left: 4px solid var(--accent);
+        background: var(--card);
+        padding: 10px 12px;
+        border-radius: 0 8px 8px 0;
+        margin-bottom: 16px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      @media (max-width: 720px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 14px 16px;
+      }
+      .card p {
+        margin: 0 0 0.6em;
+        font-size: 1.125rem;
+        line-height: 1.8;
+      }
+      .src {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-top: 8px;
+      }
+      .tok {
+        font: inherit;
+        color: inherit;
+        background: none;
+        border: 0;
+        border-radius: 4px;
+        padding: 2px 2px;
+        margin: 0;
+        cursor: pointer;
+      }
+      .tok:hover {
+        background: var(--line);
+      }
+      .tok:focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 1px;
+      }
+      .tok[aria-pressed="true"] {
+        background: var(--mark);
+        color: var(--mark-ink);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+      }
+      .tok.found {
+        background: var(--ok-bg);
+        color: var(--ok);
+        text-decoration: underline;
+      }
+      .tok.part {
+        background: var(--ok-bg);
+        color: var(--ok);
+        text-decoration: none;
+      }
+      .tok.missed {
+        background: var(--miss-bg);
+        color: var(--miss);
+        text-decoration: underline dashed;
+      }
+      .tok.ok2 {
+        background: var(--fr-bg);
+        color: var(--fr);
+        text-decoration: underline dotted;
+      }
+      .tok.fa {
+        background: var(--fa-bg);
+        color: var(--fa);
+        text-decoration: line-through;
+      }
+      .tag {
+        font-size: 0.7rem;
+        font-weight: 700;
+        vertical-align: super;
+        margin-left: 1px;
+      }
+      .bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 12px;
+      }
+      .result {
+        margin-top: 16px;
+      }
+      .sum {
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .cls {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        margin-bottom: 12px;
+        overflow: hidden;
+        background: var(--card);
+      }
+      .cls > header {
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .cls h3 {
+        font-size: 1rem;
+        margin: 0;
+      }
+      .chip {
+        font-size: 0.75rem;
+        padding: 2px 8px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        color: var(--muted);
+      }
+      .item {
+        padding: 10px 12px;
+        border-top: 1px solid var(--line);
+      }
+      .item:first-of-type {
+        border-top: 0;
+      }
+      .st {
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 6px;
+      }
+      .st.ok {
+        background: var(--ok-bg);
+        color: var(--ok);
+        text-decoration: underline;
+      }
+      .st.miss {
+        background: var(--miss-bg);
+        color: var(--miss);
+        text-decoration: underline dashed;
+      }
+      .fa-box.fa {
+        border-left: 6px solid var(--fa);
+        background: var(--fa-bg);
+        color: var(--fa);
+      }
+      .fa-box.fr {
+        border-left: 6px solid var(--fr);
+        background: var(--fr-bg);
+        color: var(--fr);
+      }
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        align-items: center;
+      }
+      .sw {
+        display: inline-block;
+        padding: 1px 8px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        margin-right: 4px;
+      }
+      .sw.found {
+        background: var(--ok-bg);
+        color: var(--ok);
+        text-decoration: underline;
+      }
+      .sw.part {
+        background: var(--ok-bg);
+        color: var(--ok);
+      }
+      .sw.missed {
+        background: var(--miss-bg);
+        color: var(--miss);
+        text-decoration: underline dashed;
+      }
+      .sw.fa {
+        background: var(--fa-bg);
+        color: var(--fa);
+        text-decoration: line-through;
+      }
+      .sw.ok2 {
+        background: var(--fr-bg);
+        color: var(--fr);
+        text-decoration: underline dotted;
+      }
+      .cmp {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 2px 10px;
+        margin: 6px 0;
+        font-size: 0.95rem;
+      }
+      .cmp dt {
+        color: var(--muted);
+      }
+      .cmp dd {
+        margin: 0;
+      }
+      .fa-box {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 10px 12px;
+        background: var(--card);
+        margin-bottom: 12px;
+      }
+      .legend {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-top: 8px;
+      }
+      .sr {
+        position: absolute;
+        left: -9999px;
+      }
+      details {
+        margin-top: 12px;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      code {
+        font-family: ui-monospace, Menlo, Consolas, monospace;
+        font-size: 0.85em;
+      }
+      .viewbar {
+        display: none;
+        gap: 8px;
+        margin: 0 0 12px;
+      }
+      .viewbar .vb {
+        flex: 1;
+        font-weight: 600;
+      }
+      .viewbar .vb[aria-selected="true"] {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) .viewbar .vb[aria-selected="true"] {
+          color: #0b1020;
+        }
+      }
+      @media (max-width: 720px) {
+        .viewbar {
+          display: flex;
+        }
+        .grid[data-view="sum"] > section:first-child {
+          display: none;
+        }
+        .grid[data-view="orig"] > section:nth-child(2) {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Runde (Mockup)</h1>
+      <div class="note">
+        Entwurf zum Besprechen, keine fertige App. Der Text ist <strong>erfunden</strong> und enthält keine Tatsachen.
+        Gleicher Inhalt wie <code>drafts/app-textpack/example-beach-mouse.yaml</code>. Der Seed wählt, welche Stellen
+        verfälscht werden und welche Variante: gleicher Seed ergibt denselben Text, anderer Seed andere Fehler.
+      </div>
+
+      <div class="controls">
+        <div>
+          <label for="stufe">Klassenstufe</label>
+          <select id="stufe">
+            <option value="klasse_3_4">Klasse 3 bis 4</option>
+            <option value="klasse_5_6" selected>Klasse 5 bis 6</option>
+            <option value="klasse_7_10">Klasse 7 bis 10</option>
+          </select>
+        </div>
+        <div>
+          <label for="seed">Seed</label>
+          <input id="seed" type="number" value="7" min="0" step="1" />
+        </div>
+        <button class="ctl primary" id="start" type="button">Runde starten</button>
+        <button class="ctl" id="dice" type="button">Neuer Zufalls-Seed</button>
+      </div>
+
+      <div class="goal" id="goal" aria-live="polite"></div>
+
+      <div class="viewbar" role="tablist" aria-label="Ansicht">
+        <button class="ctl vb" role="tab" id="vb-orig" aria-selected="false" type="button">Original</button>
+        <button class="ctl vb" role="tab" id="vb-sum" aria-selected="true" type="button">Fassung</button>
+      </div>
+      <div class="grid" data-view="sum">
+        <section class="card" aria-labelledby="h-orig">
+          <h2 id="h-orig">Original</h2>
+          <div id="orig"></div>
+          <div class="src">
+            Quelle: erfundenes Beispiel, kein echtes Original. In der App steht hier Titel, Link und Lizenz der Quelle.
+          </div>
+        </section>
+        <section class="card" aria-labelledby="h-sum">
+          <h2 id="h-sum">Fassung: Markiere, was nicht stimmt</h2>
+          <div id="sum"></div>
+          <div class="bar">
+            <span id="count" aria-live="polite"></span>
+            <span>
+              <button class="ctl" id="reset" type="button">Markierungen löschen</button>
+              <button class="ctl primary" id="check" type="button">Prüfen</button>
+            </span>
+          </div>
+        </section>
+      </div>
+
+      <div class="result" id="result" aria-live="polite"></div>
+
+      <details>
+        <summary>Was dieses Mockup noch nicht zeigt</summary>
+        <ul>
+          <li>
+            Am Handy schaltet der Umschalter zwischen Original und Fassung um (entschieden); am Computer stehen beide
+            nebeneinander. Markiert wird Wort für Wort (entschieden). Die Toleranz steht optional am einzelnen Fehler in
+            der Textdefinition (<code>toleranz</code>, Anzahl Nachbarwörter, nur innerhalb desselben Satzes). Einzelne
+            Wörter haben keine, lange Fehlerstellen eine.
+          </li>
+          <li>Tastaturbedienung: hier Tab durch alle Wörter. Vorschlag für die App: Pfeiltasten und Leertaste.</li>
+          <li>Profil über mehrere Runden und der Vorschlag der nächsten Runde fehlen.</li>
+          <li>
+            Die Seite „Wie diese Übung begründet ist“ fehlt. Die Statuswörter „belegt“ und „abgeleitet“ stehen hier
+            schon an den Klassen.
+          </li>
+        </ul>
+      </details>
+    </div>
+
+    <script>
+      const D = {
+        klassen: {
+          rechtschreibung_regel: {
+            name: "Rechtschreibung (Regelfehler)",
+            familie: "A Form",
+            status: "belegt",
+            basis_typisch: "text",
+            ab_klasse: "3",
+            quelle:
+              "IQB-Lernaufgabe (AFRA-Liste), IQB-Handreichung Fehlerschwerpunkte; KMK Primar Fehleraufmerksamkeit",
+          },
+          fluechtigkeit: {
+            name: "Flüchtigkeitsfehler",
+            familie: "A Form",
+            status: "belegt",
+            basis_typisch: "text",
+            ab_klasse: "3",
+            quelle:
+              "Schmellentin & Lindauer 2019 (Regel- und Flüchtigkeitsfehler trennen); Unterart Wort doppelt oder fehlt abgeleitet",
+          },
+          echtes_wort: {
+            name: "Fehler mit echtem Wort (das/dass, das fahren)",
+            familie: "A Form",
+            status: "belegt",
+            basis_typisch: "text",
+            ab_klasse: "5",
+            quelle: "IQB-Handreichung (das/dass), IQB-Lernaufgabe (Rechtschreibprogramm übersieht Substantivierungen)",
+          },
+          zeichensetzung: {
+            name: "Zeichensetzung",
+            familie: "A Form",
+            status: "Kompetenz belegt, Stufung abgeleitet",
+            basis_typisch: "text",
+            ab_klasse: "3 (Satzschluss), 7 (Komma)",
+            quelle: "KMK Primar (Satzzeichen); Schmellentin & Lindauer (Komma früh nicht erwartet, ein Einzelfall)",
+          },
+          zahl_name_datum: {
+            name: "Zahl, Name, Datum oder Ort verändert",
+            familie: "B Abweichung vom Original",
+            status: "Prozess belegt, Klasse abgeleitet",
+            basis_typisch: "vergleich",
+            ab_klasse: "3",
+            quelle:
+              "IGLU 2021 (explizit angegebene Informationen lokalisieren); KMK (Textinformationen auf lokaler Ebene)",
+          },
+          sachlich_falsch: {
+            name: "Sachlich falsche Angabe",
+            familie: "B Abweichung vom Original",
+            status: "abgeleitet",
+            basis_typisch: "vergleich",
+            ab_klasse: "5",
+            quelle: "IGLU 2021 (Prüfen und Bewerten); Cook et al. 2018 (Verzerrung der Gegenposition)",
+          },
+          hinzugefuegt: {
+            name: "Hinzugefügte Aussage",
+            familie: "B Abweichung vom Original",
+            status: "abgeleitet",
+            basis_typisch: "vergleich",
+            ab_klasse: "5",
+            quelle: "Irwin über Voss et al. (Makroregeln beim Zusammenfassen)",
+          },
+          konjunktion_verneinung: {
+            name: "Verbindung oder Verneinung verändert",
+            familie: "C Innere Logik",
+            status: "Prozess belegt, Klasse abgeleitet",
+            basis_typisch: "text",
+            ab_klasse: "5",
+            quelle: "Irwin über Voss et al. (integrative Prozesse: Konjunktionen)",
+          },
+          widerspruch_im_text: {
+            name: "Widerspruch im Text",
+            familie: "C Innere Logik",
+            status: "Prozess belegt, Klasse abgeleitet",
+            basis_typisch: "text",
+            ab_klasse: "5",
+            quelle: "Irwin über Voss et al. (Widersprüche klären); KMK ESA/MSA (Verstehensschwierigkeiten erkennen)",
+          },
+          menge_grad: {
+            name: "Menge oder Grad verändert",
+            familie: "C Innere Logik",
+            status: "abgeleitet",
+            basis_typisch: "vergleich",
+            ab_klasse: "7",
+            quelle: "eigener Schluss, keine Quelle gelesen",
+          },
+          verallgemeinerung: {
+            name: "Verallgemeinerung",
+            familie: "C Innere Logik",
+            status: "Schlussart belegt, Übertragung abgeleitet",
+            basis_typisch: "text",
+            ab_klasse: "7",
+            quelle: "Cook et al. 2018 (induktiv schwacher Schluss)",
+          },
+          folgerung_ursache: {
+            name: "Falsche Folgerung oder Ursache",
+            familie: "C Innere Logik",
+            status: "Fehlschluss belegt (Klima), Übertragung abgeleitet",
+            basis_typisch: "text",
+            ab_klasse: "7",
+            quelle:
+              "Cook et al. 2018 (falsche Ursache, Non sequitur, Einzelursache); IGLU 2021 (einfache Schlussfolgerung)",
+          },
+          meinung_als_tatsache: {
+            name: "Meinung als Tatsache",
+            familie: "D Standpunkt und Beeinflussung",
+            status: "Fähigkeit belegt, Klasse abgeleitet",
+            basis_typisch: "vergleich",
+            ab_klasse: "7",
+            quelle:
+              "IGLU 2021 (Standpunkt, Voreingenommenheit); Irwin über Voss et al. (objektiv und subjektiv unterscheiden); KMK ESA/MSA 4.4",
+          },
+          falsche_autoritaet: {
+            name: "Falsche Autorität oder Quelle",
+            familie: "D Standpunkt und Beeinflussung",
+            status: "belegt für Erwachsene und Klima, Übertragung abgeleitet",
+            basis_typisch: "vergleich",
+            ab_klasse: "10",
+            quelle: "Cook et al. 2017 und 2018 (falsche Experten)",
+          },
+          wertende_beeinflussung: {
+            name: "Wertende, emotionalisierende Beeinflussung",
+            familie: "D Standpunkt und Beeinflussung",
+            status: "Fähigkeit belegt, Klasse abgeleitet",
+            basis_typisch: "text",
+            ab_klasse: "10",
+            quelle:
+              "IGLU 2021 (Wirkung sprachlicher Merkmale); KMK Abitur 2.3 (Geltungsansprüche reflektieren); Cook et al. 2017 (Technik erklären)",
+          },
+        },
+        basis: {
+          text: "nur am Text erkennbar",
+          vergleich: "nur im Vergleich mit dem Original erkennbar",
+          vorwissen: "nur mit Vorwissen erkennbar",
+        },
+        paket: {
+          id: "strandmaus-beispiel",
+          titel: "Die Strandmaus (erfundenes Beispiel)",
+          hinweis:
+            "Erfundener Text zur Veranschaulichung. Kein echtes Textpaket, keine Quelle, nichts davon ist eine Tatsache.",
+          quelle: { titel: null, url: null, lizenz: null, abgerufen: null, geprueft: false },
+          original: [
+            "Die Strandmaus lebt in den Dünen der Nordsee-Inseln.",
+            "Sie wird etwa 9 Zentimeter lang und wiegt 25 Gramm.",
+            "Tagsüber versteckt sie sich in Erdgängen, weil Möwen sie sonst fangen würden.",
+            "In der Dämmerung sucht sie Samen und kleine Käfer.",
+            "Im Winter hält sie keinen Winterschlaf, sondern sammelt Vorräte.",
+            "Forschende zählen jedes Jahr im Mai etwa 400 Tiere auf der Insel.",
+          ],
+          zusammenfassung: [
+            { satz: ["Die Strandmaus lebt in den ", { stelle: "s1" }, " der Nordsee-Inseln."] },
+            { satz: ["Sie ist etwa ", { stelle: "s2a" }, " Zentimeter lang und wiegt ", { stelle: "s2b" }, " Gramm."] },
+            {
+              satz: ["Tagsüber versteckt sie sich in Erdgängen, ", { stelle: "s3" }, " Möwen sie sonst fangen würden."],
+            },
+            { satz: ["In der Dämmerung ", { stelle: "s7" }] },
+            { satz: [{ stelle: "s4" }] },
+            { satz: ["Im Winter hält sie ", { stelle: "s5" }, " Winterschlaf, sondern sammelt Vorräte."] },
+            { satz: ["Forschende zählen jedes Jahr im Mai ", { stelle: "s6" }, " 400 Tiere auf der Insel."] },
+          ],
+          stellen: {
+            s1: {
+              richtig: "Dünen",
+              varianten: [
+                {
+                  text: "Dühnen",
+                  klasse: "rechtschreibung_regel",
+                  basis: "text",
+                  auffaelligkeit: 2,
+                  erklaerung: "Nach einem langen ü braucht das Wort kein h. „Dünen“ ist die richtige Schreibung.",
+                },
+                {
+                  text: "Dnüen",
+                  klasse: "fluechtigkeit",
+                  basis: "text",
+                  auffaelligkeit: 3,
+                  erklaerung: "Zwei Buchstaben sind vertauscht. Richtig ist „Dünen“.",
+                },
+              ],
+            },
+            s2a: {
+              richtig: "9",
+              varianten: [
+                {
+                  text: "19",
+                  klasse: "zahl_name_datum",
+                  basis: "vergleich",
+                  auffaelligkeit: 2,
+                  erklaerung: "Im Original steht „9 Zentimeter“. Die Zahl wurde verändert.",
+                },
+              ],
+            },
+            s2b: {
+              richtig: "25",
+              varianten: [
+                {
+                  text: "250",
+                  klasse: "zahl_name_datum",
+                  basis: "vergleich",
+                  auffaelligkeit: 3,
+                  erklaerung: "Im Original steht „25 Gramm“. Die Zahl wurde verändert.",
+                },
+              ],
+            },
+            s3: {
+              richtig: "weil",
+              varianten: [
+                {
+                  text: "obwohl",
+                  klasse: "konjunktion_verneinung",
+                  basis: "text",
+                  auffaelligkeit: 2,
+                  erklaerung:
+                    "„Obwohl“ passt nicht: Die Maus versteckt sich gerade wegen der Möwen. Im Original steht „weil“.",
+                },
+              ],
+            },
+            s4: {
+              richtig: "",
+              varianten: [
+                {
+                  text: " Sie ist die schönste Maus der Insel.",
+                  klasse: "meinung_als_tatsache",
+                  basis: "vergleich",
+                  auffaelligkeit: 1,
+                  erklaerung:
+                    "Das ist eine Meinung. Im Original steht dieser Satz nicht, und „schönste“ lässt sich nicht messen.",
+                },
+              ],
+            },
+            s7: {
+              richtig: "sucht sie Samen und kleine Käfer.",
+              varianten: [
+                {
+                  text: "frisst sie vor allem Fische aus dem Meer.",
+                  klasse: "sachlich_falsch",
+                  basis: "vergleich",
+                  auffaelligkeit: 2,
+                  toleranz: 2,
+                  erklaerung: "Im Original steht: „sucht sie Samen und kleine Käfer“. Von Fischen steht dort nichts.",
+                },
+              ],
+            },
+            s5: {
+              richtig: "keinen",
+              varianten: [
+                {
+                  text: "einen",
+                  klasse: "konjunktion_verneinung",
+                  basis: "text",
+                  auffaelligkeit: 2,
+                  erklaerung: "Mit „einen“ passt das „sondern“ nicht mehr. Im Original steht „keinen Winterschlaf“.",
+                },
+              ],
+            },
+            s6: {
+              richtig: "etwa",
+              varianten: [
+                {
+                  text: "genau",
+                  klasse: "menge_grad",
+                  basis: "vergleich",
+                  auffaelligkeit: 1,
+                  erklaerung: "Im Original steht „etwa 400“. Gezählt wird nur ungefähr, „genau“ behauptet mehr.",
+                },
+              ],
+            },
+          },
+          stufen: {
+            klasse_3_4: {
+              klassen: ["rechtschreibung_regel", "fluechtigkeit", "zahl_name_datum", "zeichensetzung"],
+              basis: ["text", "vergleich"],
+              fehler: 2,
+              gesuchte_klasse_wird_genannt: true,
+            },
+            klasse_5_6: {
+              klassen: [
+                "rechtschreibung_regel",
+                "fluechtigkeit",
+                "zahl_name_datum",
+                "zeichensetzung",
+                "echtes_wort",
+                "sachlich_falsch",
+                "hinzugefuegt",
+                "konjunktion_verneinung",
+                "widerspruch_im_text",
+              ],
+              basis: ["text", "vergleich"],
+              fehler: 3,
+              gesuchte_klasse_wird_genannt: true,
+            },
+            klasse_7_10: {
+              klassen: [
+                "rechtschreibung_regel",
+                "fluechtigkeit",
+                "zahl_name_datum",
+                "zeichensetzung",
+                "echtes_wort",
+                "sachlich_falsch",
+                "hinzugefuegt",
+                "konjunktion_verneinung",
+                "widerspruch_im_text",
+                "menge_grad",
+                "verallgemeinerung",
+                "folgerung_ursache",
+                "meinung_als_tatsache",
+              ],
+              basis: ["text", "vergleich"],
+              fehler: 4,
+              gesuchte_klasse_wird_genannt: false,
+            },
+          },
+        },
+      };
+
+      function mulberry32(a) {
+        return function () {
+          a |= 0;
+          a = (a + 0x6d2b79f5) | 0;
+          let t = Math.imul(a ^ (a >>> 15), 1 | a);
+          t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+          return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+        };
+      }
+
+      // Kern: reine Funktion von (Seed, Stufe). Kein Math.random, keine Uhr.
+      function chooseErrors(seed, stufeKey) {
+        const rnd = mulberry32(seed);
+        const st = D.paket.stufen[stufeKey];
+        const cand = [];
+        for (const [id, s] of Object.entries(D.paket.stellen)) {
+          const vs = s.varianten.filter((v) => st.klassen.includes(v.klasse) && st.basis.includes(v.basis));
+          if (vs.length) cand.push([id, vs]);
+        }
+        for (let i = cand.length - 1; i > 0; i--) {
+          const j = Math.floor(rnd() * (i + 1));
+          [cand[i], cand[j]] = [cand[j], cand[i]];
+        }
+        const errors = {};
+        for (const [id, vs] of cand.slice(0, st.fehler)) {
+          errors[id] = vs[Math.floor(rnd() * vs.length)];
+        }
+        return errors;
+      }
+
+      let state = null;
+      const $ = (id) => document.getElementById(id);
+
+      function startRound() {
+        const seed = Math.max(0, parseInt($("seed").value || "0", 10));
+        const stufeKey = $("stufe").value;
+        const errors = chooseErrors(seed, stufeKey);
+        const tokens = [];
+        const sentences = D.paket.zusammenfassung.map((s, si) => {
+          const out = [];
+          for (const part of s.satz) {
+            if (typeof part === "string") {
+              part
+                .split(/\s+/)
+                .filter(Boolean)
+                .forEach((w) => {
+                  const t = { id: tokens.length, text: w, stelle: null, sen: si };
+                  out.push(t);
+                  tokens.push(t);
+                });
+            } else {
+              const st = D.paket.stellen[part.stelle];
+              const err = errors[part.stelle];
+              const txt = err ? err.text : st.richtig;
+              txt
+                .split(/\s+/)
+                .filter(Boolean)
+                .forEach((w) => {
+                  const t = { id: tokens.length, text: w, stelle: part.stelle, sen: si };
+                  out.push(t);
+                  tokens.push(t);
+                });
+            }
+          }
+          return out;
+        });
+        state = { seed, stufeKey, errors, tokens, sentences, marked: new Set(), checked: false };
+        render();
+      }
+
+      function render() {
+        const st = D.paket.stufen[state.stufeKey];
+        const n = Object.keys(state.errors).length;
+        const names = [...new Set(Object.values(state.errors).map((e) => D.klassen[e.klasse].name))];
+        $("goal").innerHTML = st.gesuchte_klasse_wird_genannt
+          ? `<strong>Leseziel:</strong> In dieser Runde sind <strong>${n}</strong> Fehler versteckt. Es kommen diese Arten vor: ${names.join(", ")}.`
+          : `<strong>Leseziel:</strong> In dieser Runde sind <strong>${n}</strong> Fehler versteckt. Welche Arten es sind, sagen wir dir erst nach dem Prüfen.`;
+
+        $("orig").innerHTML = D.paket.original.map((s) => `<p>${s}</p>`).join("");
+
+        const sum = $("sum");
+        sum.innerHTML = "";
+        state.sentences.forEach((sen) => {
+          if (!sen.length) return;
+          const p = document.createElement("p");
+          sen.forEach((t, i) => {
+            const b = document.createElement("button");
+            b.type = "button";
+            b.className = "tok";
+            b.textContent = t.text;
+            b.dataset.id = t.id;
+            b.setAttribute("aria-pressed", state.marked.has(t.id) ? "true" : "false");
+            b.addEventListener("click", () => {
+              if (state.checked) return;
+              if (state.marked.has(t.id)) state.marked.delete(t.id);
+              else state.marked.add(t.id);
+              b.setAttribute("aria-pressed", state.marked.has(t.id) ? "true" : "false");
+              updateCount();
+            });
+            p.appendChild(b);
+            p.appendChild(document.createTextNode(" "));
+          });
+          sum.appendChild(p);
+        });
+        $("result").innerHTML = "";
+        $("check").disabled = false;
+        updateCount();
+      }
+
+      function updateCount() {
+        $("count").textContent = `${state.marked.size} Wörter markiert`;
+      }
+
+      function check() {
+        state.checked = true;
+        $("check").disabled = true;
+        const errIds = Object.keys(state.errors);
+        const markedStelle = (id) => state.tokens.some((t) => t.stelle === id && state.marked.has(t.id));
+        const found = errIds.filter(markedStelle);
+        const missed = errIds.filter((id) => !markedStelle(id));
+        // Toleranzzone je Fehler: Spanne der Stelle plus optional n Nachbarwörter links und rechts (aus der Textdefinition)
+        const zone = new Set();
+        errIds.forEach((id) => {
+          const span = state.tokens.filter((t) => t.stelle === id);
+          if (!span.length) return;
+          const n = state.errors[id].toleranz || 0;
+          const sen = span[0].sen;
+          const lo = span[0].id - n,
+            hi = span[span.length - 1].id + n;
+          state.tokens.forEach((t) => {
+            if (t.sen === sen && t.id >= lo && t.id <= hi) zone.add(t.id);
+          });
+        });
+        const inErrorSpan = (t) => t.stelle && state.errors[t.stelle];
+        const okTokens = state.tokens.filter((t) => state.marked.has(t.id) && !inErrorSpan(t) && zone.has(t.id));
+        const falseTokens = state.tokens.filter((t) => state.marked.has(t.id) && !inErrorSpan(t) && !zone.has(t.id));
+
+        // Markierungen im Text sichtbar auswerten
+        document.querySelectorAll("#sum .tok").forEach((b) => {
+          const t = state.tokens[+b.dataset.id];
+          const isErr = t.stelle && state.errors[t.stelle];
+          const m = state.marked.has(t.id);
+          b.disabled = true;
+          b.classList.remove("found", "missed", "fa");
+          const old = b.querySelector(".tag");
+          if (old) old.remove();
+          if (isErr && m) {
+            b.classList.add("found");
+            b.insertAdjacentHTML("beforeend", '<span class="sr"> (gefunden)</span>');
+          } else if (isErr && !m && markedStelle(t.stelle)) {
+            b.classList.add("part");
+            b.insertAdjacentHTML("beforeend", '<span class="sr"> (Teil des gefundenen Fehlers)</span>');
+          } else if (isErr && !m) {
+            b.classList.add("missed");
+            b.insertAdjacentHTML("beforeend", '<span class="sr"> (übersehen)</span>');
+          } else if (m && zone.has(t.id)) {
+            b.classList.add("ok2");
+            b.insertAdjacentHTML("beforeend", '<span class="sr"> (im Rahmen)</span>');
+          } else if (m) {
+            b.classList.add("fa");
+            b.insertAdjacentHTML("beforeend", '<span class="sr"> (fälschlich markiert)</span>');
+          }
+        });
+
+        // Rückmeldung nach Fehlerklasse
+        const byClass = {};
+        errIds.forEach((id) => {
+          const e = state.errors[id];
+          (byClass[e.klasse] = byClass[e.klasse] || []).push(id);
+        });
+        let html =
+          `<div class="sum">Gefunden: ${found.length} von ${errIds.length}` +
+          (falseTokens.length
+            ? ` · Fälschlich markiert: ${falseTokens.length} ${falseTokens.length === 1 ? "Wort" : "Wörter"}`
+            : "") +
+          (okTokens.length ? ` · Im Rahmen: ${okTokens.length}` : "") +
+          `</div>`;
+
+        for (const [k, ids] of Object.entries(byClass)) {
+          const kl = D.klassen[k];
+          const f = ids.filter(markedStelle).length;
+          html +=
+            `<section class="cls"><header><h3>${kl.name}: ${f} von ${ids.length} gefunden</h3>` +
+            `<span class="chip" title="${kl.quelle}">Status: ${kl.status}</span></header>`;
+          ids.forEach((id) => {
+            const e = state.errors[id];
+            const s = D.paket.stellen[id];
+            const hit = markedStelle(id);
+            html +=
+              `<div class="item"><span class="st ${hit ? "ok" : "miss"}">${hit ? "Gefunden" : "Übersehen"}</span> ` +
+              `<span class="chip">${D.basis[e.basis]}</span>` +
+              `<dl class="cmp"><dt>In der Fassung:</dt><dd>„${e.text.trim()}“</dd>` +
+              `<dt>Richtig (Original):</dt><dd>${s.richtig ? "„" + s.richtig + "“" : "Dieser Satz steht nicht im Original."}</dd></dl>` +
+              `<div>${e.erklaerung}</div></div>`;
+          });
+          html += `</section>`;
+        }
+        if (falseTokens.length) {
+          html +=
+            `<div class="fa-box fa"><strong>Fälschlich markiert:</strong> ` +
+            falseTokens.map((t) => `„${t.text}“`).join(", ") +
+            `. Diese Wörter sind richtig. Vergleiche sie mit dem Original, bevor du etwas markierst.</div>`;
+        }
+        if (okTokens.length) {
+          html +=
+            `<div class="fa-box fr"><strong>Im Rahmen:</strong> ` +
+            okTokens.map((t) => `„${t.text}“`).join(", ") +
+            `. Diese Wörter sind richtig. Sie liegen im selben Satz direkt neben einem langen Fehler, bei dem die Textdefinition einen Spielraum erlaubt. Das zählt nicht als Fehlmarkierung.</div>`;
+        }
+        html +=
+          `<div class="legend" role="group" aria-label="Legende">` +
+          `<span><span class="sw found">gefunden</span></span>` +
+          `<span><span class="sw part">Rest einer gefundenen Stelle</span></span>` +
+          `<span><span class="sw missed">übersehen</span></span>` +
+          `<span><span class="sw fa">fälschlich markiert</span></span>` +
+          `<span><span class="sw ok2">im Rahmen (selber Satz, neben langem Fehler)</span></span>` +
+          `</div>` +
+          `<div class="legend">Status „belegt“: Quelle gelesen. Status „abgeleitet“: eigener Schluss, nicht aus einer Studie.</div>` +
+          `<div class="bar"><span></span><button class="ctl primary" id="again" type="button">Neue Runde mit anderem Seed</button></div>`;
+        $("result").innerHTML = html;
+        $("again").addEventListener("click", () => {
+          $("seed").value = state.seed + 1;
+          startRound();
+        });
+        $("result").scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+
+      $("start").addEventListener("click", startRound);
+      $("dice").addEventListener("click", () => {
+        $("seed").value = Math.floor(Math.random() * 100000);
+        startRound();
+      });
+      $("stufe").addEventListener("change", startRound);
+      $("reset").addEventListener("click", () => {
+        if (state.checked) return;
+        state.marked.clear();
+        render();
+      });
+      $("check").addEventListener("click", check);
+      function setView(v) {
+        document.querySelector(".grid").dataset.view = v;
+        $("vb-orig").setAttribute("aria-selected", v === "orig" ? "true" : "false");
+        $("vb-sum").setAttribute("aria-selected", v === "sum" ? "true" : "false");
+      }
+      $("vb-orig").addEventListener("click", () => setView("orig"));
+      $("vb-sum").addEventListener("click", () => setView("sum"));
+      startRound();
+    </script>
+  </body>
+</html>

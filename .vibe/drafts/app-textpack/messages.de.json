@@ -1,0 +1,54 @@
+{
+  "errorClass": {
+    "spelling_rule": {
+      "name": "Rechtschreibung (Regelfehler)"
+    },
+    "slip": {
+      "name": "Flüchtigkeitsfehler"
+    },
+    "real_word": {
+      "name": "Fehler mit echtem Wort (das/dass, das fahren)"
+    },
+    "punctuation": {
+      "name": "Zeichensetzung"
+    },
+    "number_name_date": {
+      "name": "Zahl, Name, Datum oder Ort verändert"
+    },
+    "factual_error": {
+      "name": "Sachlich falsche Angabe"
+    },
+    "added_claim": {
+      "name": "Hinzugefügte Aussage"
+    },
+    "connective_negation": {
+      "name": "Verbindung oder Verneinung verändert"
+    },
+    "contradiction": {
+      "name": "Widerspruch im Text"
+    },
+    "quantity_degree": {
+      "name": "Menge oder Grad verändert"
+    },
+    "overgeneralization": {
+      "name": "Verallgemeinerung"
+    },
+    "faulty_inference": {
+      "name": "Falsche Folgerung oder Ursache"
+    },
+    "opinion_as_fact": {
+      "name": "Meinung als Tatsache"
+    },
+    "false_authority": {
+      "name": "Falsche Autorität oder Quelle"
+    },
+    "loaded_language": {
+      "name": "Wertende, emotionalisierende Beeinflussung"
+    }
+  },
+  "basis": {
+    "text": "nur am Text erkennbar",
+    "comparison": "nur im Vergleich mit dem Original erkennbar",
+    "prior_knowledge": "nur mit Vorwissen erkennbar"
+  }
+}

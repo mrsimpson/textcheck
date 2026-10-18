@@ -1,0 +1,288 @@
+<script setup lang="ts">
+// The round: the goal line, the Original and the Variante (side by side; on a narrow screen a switch shows one of
+// them), the words to mark, and after checking the result. It announces every change for screen readers and moves the
+// focus to the result and back to the words. The runtime gives it the core's state; what the learner does goes back
+// as input. The only state of its own is which panel a narrow screen shows.
+import { computed, nextTick, ref, watch } from "vue";
+import { announce, moveFocus } from "@lernapps/tooling/a11y";
+import type { Input } from "@lernapps/app-templates/interactive";
+import type { State } from "../core/index.ts";
+import ResultView from "./ResultView.vue";
+import WordList from "./WordList.vue";
+import { translatorOf } from "./messages.ts";
+
+const props = defineProps<{ state: State; lang: string }>();
+const emit = defineEmits<{ input: [input: Input] }>();
+const t = translatorOf(props.lang);
+const view = ref<"original" | "rendition">("rendition");
+const words = ref<InstanceType<typeof WordList> | null>(null);
+const root = ref<HTMLElement | null>(null);
+
+const goal = computed(() =>
+  props.state.announced === null
+    ? t("goalHidden", { count: props.state.corruptions.length })
+    : t("goalNamed", {
+        count: props.state.corruptions.length,
+        classes: props.state.announced.map((id) => t(`errorClass.${id}` as never)).join(", "),
+      }),
+);
+
+watch(
+  () => [props.state.last, props.state.marked.length, props.state.seed, props.state.phase] as const,
+  () => {
+    const { state } = props;
+    const word = state.tokens[state.changed]?.text ?? "";
+    const count = state.marked.length;
+    if (state.last === "start") announce(t("announceStart", { count: state.corruptions.length }));
+    else if (state.last === "mark") announce(t("announceMark", { word, count }));
+    else if (state.last === "unmark") announce(t("announceUnmark", { word, count }));
+    else if (state.last === "clear") announce(t("announceClear"));
+    else if (state.result !== null)
+      announce(t("announceCheck", { found: state.result.found, total: state.result.total, wrong: state.result.wrong }));
+  },
+);
+
+// after checking the focus goes to the result's heading, after a new round back to the words
+watch(
+  () => [props.state.phase, props.state.seed] as const,
+  async ([phase], [before]) => {
+    await nextTick();
+    if (phase === "result") {
+      const heading = root.value?.querySelector<HTMLElement>("#result-heading");
+      if (heading) moveFocus(heading);
+    } else if (before === "result") words.value?.focus();
+  },
+);
+
+const checking = computed(() => props.state.phase === "result");
+</script>
+
+<template>
+  <section ref="root" class="textcheck" :aria-label="t('region')">
+    <p class="goal">{{ goal }}</p>
+    <div class="switch" role="group" :aria-label="t('view')">
+      <button type="button" :aria-pressed="view === 'original'" @click="view = 'original'">{{ t("original") }}</button>
+      <button type="button" :aria-pressed="view === 'rendition'" @click="view = 'rendition'">
+        {{ t("renditionTab") }}
+      </button>
+    </div>
+    <div class="panels" :data-view="view">
+      <section class="panel original" aria-labelledby="original-heading">
+        <h2 id="original-heading">{{ t("original") }}</h2>
+        <p v-for="(sentence, index) in state.original" :key="index">{{ sentence }}</p>
+        <p class="source">
+          {{ t("source") }} {{ state.source.title }}, {{ state.source.license }}
+          <template v-if="state.source.licenseUrl !== null">
+            ·
+            <a :href="state.source.licenseUrl" target="_blank" rel="noopener noreferrer">{{ t("license") }}</a>
+          </template>
+          <template v-if="state.source.authorsUrl !== null">
+            ·
+            <a :href="state.source.authorsUrl" target="_blank" rel="noopener noreferrer">{{ t("authors") }}</a>
+          </template>
+        </p>
+      </section>
+      <section class="panel rendition" aria-labelledby="rendition-heading">
+        <h2 id="rendition-heading">{{ t("rendition") }}</h2>
+        <p v-if="!checking" id="words-hint" class="hint">{{ t("hint") }}</p>
+        <WordList
+          ref="words"
+          :tokens="state.tokens"
+          :marked="state.marked"
+          :cursor="state.cursor"
+          :checking="checking"
+          :status="state.result?.status ?? []"
+          :label="t('rendition')"
+          :lang="lang"
+          @input="(input) => emit('input', input)"
+        />
+        <div v-if="!checking" class="bar">
+          <span aria-hidden="true">{{ t("marked", { count: state.marked.length }) }}</span>
+          <span class="buttons">
+            <button type="button" @click="emit('input', { kind: 'action', name: 'clear' })">{{ t("clear") }}</button>
+            <button type="button" class="primary" @click="emit('input', { kind: 'action', name: 'check' })">
+              {{ t("check") }}
+            </button>
+          </span>
+        </div>
+      </section>
+    </div>
+    <ResultView
+      v-if="state.result !== null"
+      :result="state.result"
+      :tokens="state.tokens"
+      :lang="lang"
+      @input="(input) => emit('input', input)"
+    />
+  </section>
+</template>
+
+<style scoped>
+.textcheck {
+  --tc-bg: #ffffff;
+  --tc-card: #ffffff;
+  --tc-ink: #1f2430;
+  --tc-muted: #566074;
+  --tc-line: #d5d8df;
+  --tc-accent: #1d4ed8;
+  --tc-on-accent: #ffffff;
+  --tc-mark: #fde68a;
+  --tc-mark-ink: #1f2430;
+  --tc-found: #166534;
+  --tc-found-bg: #dcfce7;
+  --tc-missed: #9a3412;
+  --tc-missed-bg: #ffedd5;
+  --tc-false: #6b21a8;
+  --tc-false-bg: #f3e8ff;
+  --tc-tol: #1e3a8a;
+  --tc-tol-bg: #dbeafe;
+  color: var(--tc-ink);
+}
+
+@media (prefers-color-scheme: dark) {
+  .textcheck {
+    --tc-bg: #14161b;
+    --tc-card: #1d2027;
+    --tc-ink: #e8eaf0;
+    --tc-muted: #a2abbd;
+    --tc-line: #343a47;
+    --tc-accent: #8ab4ff;
+    --tc-on-accent: #0b1020;
+    --tc-mark: #6b5b12;
+    --tc-mark-ink: #fff6d1;
+    --tc-found: #86efac;
+    --tc-found-bg: #12301e;
+    --tc-missed: #fdba74;
+    --tc-missed-bg: #3a2210;
+    --tc-false: #d8b4fe;
+    --tc-false-bg: #2b1a3d;
+    --tc-tol: #bfdbfe;
+    --tc-tol-bg: #1e2f5a;
+  }
+}
+
+.goal {
+  margin: 0 0 1rem;
+  padding: 0.6rem 0.8rem;
+  border-left: 4px solid var(--tc-accent);
+  background: var(--tc-card);
+}
+
+.switch {
+  display: none;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.switch button {
+  flex: 1;
+  min-height: 2.75rem;
+  border: 1px solid var(--tc-line);
+  border-radius: 8px;
+  background: var(--tc-card);
+  color: var(--tc-ink);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.switch button[aria-pressed="true"] {
+  border-color: var(--tc-accent);
+  background: var(--tc-accent);
+  color: var(--tc-on-accent);
+}
+
+.panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 720px) {
+  .switch {
+    display: flex;
+  }
+
+  .panels {
+    grid-template-columns: 1fr;
+  }
+
+  .panels[data-view="rendition"] > .original,
+  .panels[data-view="original"] > .rendition {
+    display: none;
+  }
+}
+
+.panel {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--tc-line);
+  border-radius: 12px;
+  background: var(--tc-card);
+}
+
+h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.original p {
+  margin: 0 0 0.6em;
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.source,
+.hint {
+  color: var(--tc-muted);
+  font-size: 0.85rem !important;
+  line-height: 1.5 !important;
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.buttons button {
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--tc-line);
+  border-radius: 8px;
+  background: var(--tc-card);
+  color: var(--tc-ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.buttons .primary {
+  border-color: var(--tc-accent);
+  background: var(--tc-accent);
+  color: var(--tc-on-accent);
+  font-weight: 700;
+}
+</style>
+
+<style>
+/* The shell's page is light by default; follow the system setting so the dark card never sits on a white page. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --interactive-text: #e8eaf0;
+    --interactive-muted: #a2abbd;
+    --interactive-background: #14161b;
+    --interactive-surface: #1d2027;
+    --interactive-accent: #8ab4ff;
+    --interactive-on-accent: #0b1020;
+    color-scheme: dark;
+  }
+}
+</style>

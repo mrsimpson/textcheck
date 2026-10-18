@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../node_modules/@lernapps/app-templates/runtime/interactive/interactive.v1.schema.json
+title: Textcheck
+description: |
+  Hier übst du, genau zu lesen. Du siehst ein Original und eine Variante davon. In der Variante stecken Fehler. Finde sie
+  und markiere sie. Für Schülerinnen und Schüler ab Klasse 3 bis zum Abitur. Die Texte und die Fehler werden mit der
+  Klassenstufe schwieriger.
+howto: |
+  - Lies das Original. Es stimmt und nennt seine Quelle.
+  - Lies die Variante und markiere die Wörter, die nicht stimmen. Du markierst mit einem Klick oder Tipp, mit der Tastatur
+    wählst du Wörter mit den Pfeiltasten und markierst mit der Leertaste.
+  - Tippe auf „Prüfen“. Du siehst, welche Fehler du gefunden hast, welche nicht, und warum.
+  - Ein paar Wörter zu viel zu markieren ist nicht schlimm, wenn sie direkt neben einem langen Fehler im selben Satz stehen.
+competencies:
+  - Ich kann falsch geschriebene Wörter in einem kurzen Text finden und markieren.
+  - Ich kann Stellen markieren, an denen die Variante dem Original widerspricht.
+  - Ich kann Sätze finden, die sich im selben Text widersprechen.
+  - Ich kann eine falsche Zeit-, Orts- oder Mengenangabe mit dem Original abgleichen.
+  - Ich kann falsch geschriebene Wörter finden, auch solche, die ein Rechtschreibprogramm nicht findet.
+  - Ich kann eine Meinung von einer Tatsache unterscheiden und die Meinung markieren.
+  - Ich kann eine Folgerung erkennen, die der Text nicht trägt.
+  - Ich kann wertende oder emotionalisierende Formulierungen erkennen.
+languages: [de]
+routes:
+  - id: klasse-3-4
+    title: Klasse 3 bis 4
+    description: Kurze Texte mit Fehlern in der Rechtschreibung, in der Zeichensetzung und bei Zahlen und Orten.
+  - id: klasse-5-6
+    title: Klasse 5 bis 6
+    description: Texte mit Fehlern in der Rechtschreibung, bei Zahlen und Orten, bei Verbindungen und Widersprüchen.
+  - id: klasse-7-8
+    title: Klasse 7 bis 8
+    description: Wie in Klasse 5 bis 6, dazu Mengen und Grade, Verallgemeinerungen, falsche Folgerungen und Meinungen, die als Tatsachen auftreten.
+  - id: klasse-9-10
+    title: Klasse 9 bis 10
+    description: Alle Fehlerarten, auch Wertungen und Verweise auf ungenannte Fachleute. Welche Arten in der Runde vorkommen, steht nicht mehr in der Aufgabe.
+  - id: klasse-11-13
+    title: Oberstufe (Klasse 11 bis 13)
+    description: Alle Fehlerarten in einem historischen Text, mehr Fehler je Runde und keine Hinweise auf die Arten.
+sections:
+  - id: begruendung
+    title: Wie diese Übung begründet ist
+    text: |
+      Hier steht, woran wir uns halten und was wir selbst abgeleitet haben. **Belegt** heißt: Eine Quelle, die wir gelesen
+      haben, nennt diese Fehlerart. **Abgeleitet** heißt: ein eigener Schluss aus verwandten Quellen. Ab welcher Klasse
+      eine Fehlerart vorkommt, ist unsere Einstellung. Keine der gelesenen Quellen ordnet die Fehlerarten Klassenstufen zu.
+
+      Die Fehlerarten:
+
+      - **Rechtschreibung (Regelfehler)**, belegt, ab Klasse 3: IQB-Lernaufgabe und -Handreichung, KMK-Standards.
+      - **Flüchtigkeitsfehler**, belegt, ab Klasse 3: Schmellentin und Lindauer (2019).
+      - **Fehler mit echtem Wort (das/dass, das fahren)**, belegt, ab Klasse 5: IQB-Handreichung und -Lernaufgabe.
+      - **Zeichensetzung**, abgeleitet, ab Klasse 3: KMK-Standards, Schmellentin und Lindauer.
+      - **Zahl, Name, Datum oder Ort verändert**, abgeleitet, ab Klasse 3: IGLU 2021, KMK-Standards.
+      - **Sachlich falsche Angabe**, abgeleitet, ab Klasse 5: IGLU 2021, Cook, Ellerton und Kinkead (2018).
+      - **Hinzugefügte Aussage**, abgeleitet, ab Klasse 5: Voss, Carstensen und Bos (2005).
+      - **Verbindung oder Verneinung verändert**, abgeleitet, ab Klasse 5: Voss, Carstensen und Bos (2005).
+      - **Widerspruch im Text**, abgeleitet, ab Klasse 5: Voss, Carstensen und Bos (2005), KMK-Standards.
+      - **Menge oder Grad verändert**, abgeleitet, ab Klasse 7: eigener Schluss, keine Quelle gelesen.
+      - **Verallgemeinerung**, abgeleitet, ab Klasse 7: Cook, Ellerton und Kinkead (2018).
+      - **Falsche Folgerung oder Ursache**, abgeleitet, ab Klasse 7: Cook, Ellerton und Kinkead (2018), IGLU 2021.
+      - **Meinung als Tatsache**, abgeleitet, ab Klasse 7: IGLU 2021, Voss, Carstensen und Bos (2005), KMK-Standards.
+      - **Falsche Autorität oder Quelle**, abgeleitet, ab Klasse 10: Cook, Lewandowsky und Ecker (2017).
+      - **Wertende, emotionalisierende Beeinflussung**, abgeleitet, ab Klasse 10: IGLU 2021, KMK-Standards, Cook und andere (2017).
+
+      Was wir nicht belegen können:
+
+      - Dass diese Übung die Lesekompetenz verbessert. Dafür gibt es keine Studie.
+      - Dass Fehlersuche in Texten das Prüfen unbekannter Webseiten übt. Das ist etwas anderes (Wineburg und McGrew 2018).
+      - Die Länge und den Satzbau der Texte je Klassenstufe: Das sind Einstellungen der Autorinnen und Autoren.
+      - Die Fehler bei der Rechtschreibung sind für die Wörter der Texte konstruiert. Die Arten der Fehler stammen aus den
+        IQB-Materialien, die einzelnen Falschschreibungen von Lernenden haben wir nicht gesammelt.

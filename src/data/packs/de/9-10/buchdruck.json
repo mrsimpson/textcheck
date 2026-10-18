@@ -1,0 +1,595 @@
+{
+  "id": "buchdruck",
+  "title": "Buchdruck",
+  "language": "de",
+  "grades": {
+    "from": 9,
+    "to": 10
+  },
+  "topic": "Buchdruck: Erfindung, Ausbreitung und Folgen",
+  "source": {
+    "title": "Buchdruck – Wikipedia",
+    "url": "https://de.wikipedia.org/w/index.php?title=Buchdruck&oldid=269019864",
+    "revision": "269019864",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Buchdruck&action=history",
+    "retrieved": "2026-10-18",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Die Erfindung des modernen Buchdrucks am Ende des Spätmittelalters geht auf den Mainzer Goldschmied Johannes Gutenberg zurück.",
+      "section": "Johannes Gutenberg"
+    },
+    {
+      "text": "Das Setzen der vorgefertigten Lettern war viel einfacher und schneller als die Herstellung von Druckplatten für den Blockdruck.",
+      "section": "Johannes Gutenberg"
+    },
+    {
+      "text": "Der von Gutenberg erfundene Buchdruck mit beweglichen Lettern und Druckpresse machte das Buch zu einem Massenartikel, da Bücher für eine breitere Allgemeinheit erschwinglich wurden.",
+      "section": "Johannes Gutenberg"
+    },
+    {
+      "text": "Die erste Druckerei in der Schweiz wurde um 1468 in Basel gegründet, die erste französische 1470 in Paris.",
+      "section": "Ausbreitung des Buchdrucks"
+    },
+    {
+      "text": "Im Jahr 1500 gab es bereits rund 270 Druckorte, von denen mehr als 60 im Heiligen Römischen Reich Deutscher Nation lagen.",
+      "section": "Ausbreitung des Buchdrucks"
+    },
+    {
+      "text": "In der Frühdruckerzeit wurden durchschnittliche Auflagen von 150 bis 250 Exemplaren erreicht.",
+      "section": "Frühe Buchproduktion in Europa"
+    },
+    {
+      "text": "Etwa 77 % aller Inkunabeln erschienen in lateinischer Sprache.",
+      "section": "Frühe Buchproduktion in Europa"
+    },
+    {
+      "text": "Im 16. Jahrhundert bildete der Druck der Schriften Martin Luthers fast ein Drittel der gesamten Auflage.",
+      "section": "Frühe Buchproduktion in Europa"
+    },
+    {
+      "text": "Das Aufkommen des Buchdruckes führte zu einer Umstrukturierung der Werkstätten.",
+      "section": "Frühe Buchproduktion in Europa"
+    },
+    {
+      "text": "Im Laufe der Zeit entstanden Großbetriebe wie der von Anton Koberger in Nürnberg.",
+      "section": "Frühe Buchproduktion in Europa"
+    },
+    {
+      "text": "Dieser beschäftigte bis zu 100 Arbeiter an 24 Pressen.",
+      "section": "Frühe Buchproduktion in Europa"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Der moderne Buchdruck geht auf den ",
+        {
+          "slot": "s1"
+        },
+        " ",
+        {
+          "slot": "s1b"
+        },
+        " Johannes Gutenberg zurück."
+      ],
+      "evidence": {
+        "quote": "Die Erfindung des modernen Buchdrucks am Ende des Spätmittelalters geht auf den Mainzer Goldschmied Johannes Gutenberg zurück."
+      }
+    },
+    {
+      "sentence": [
+        "Das Setzen vorgefertigter Lettern war ",
+        {
+          "slot": "s2"
+        },
+        " ",
+        {
+          "slot": "s2b"
+        },
+        " als die Herstellung von Druckplatten."
+      ],
+      "evidence": {
+        "quote": "Das Setzen der vorgefertigten Lettern war viel einfacher und schneller als die Herstellung von Druckplatten für den Blockdruck."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s3c"
+        },
+        " machte ",
+        {
+          "slot": "s3d"
+        },
+        " Buch zu einem ",
+        {
+          "slot": "s3b"
+        },
+        ", ",
+        {
+          "slot": "s3"
+        },
+        " Bücher für eine breitere Allgemeinheit erschwinglich wurden."
+      ],
+      "evidence": {
+        "quote": "Der von Gutenberg erfundene Buchdruck mit beweglichen Lettern und Druckpresse machte das Buch zu einem Massenartikel, da Bücher für eine breitere Allgemeinheit erschwinglich wurden."
+      }
+    },
+    {
+      "sentence": [
+        "Die erste Druckerei in der Schweiz entstand um ",
+        {
+          "slot": "s4"
+        },
+        " in Basel, die erste französische 1470 in ",
+        {
+          "slot": "s4b"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Die erste Druckerei in der Schweiz wurde um 1468 in Basel gegründet, die erste französische 1470 in Paris."
+      }
+    },
+    {
+      "sentence": [
+        "Im Jahr 1500 gab es rund ",
+        {
+          "slot": "s5"
+        },
+        " ",
+        {
+          "slot": "s5b"
+        },
+        " ",
+        {
+          "slot": "s5c"
+        },
+        " davon im Heiligen Römischen Reich Deutscher Nation."
+      ],
+      "evidence": {
+        "quote": "Im Jahr 1500 gab es bereits rund 270 Druckorte, von denen mehr als 60 im Heiligen Römischen Reich Deutscher Nation lagen."
+      }
+    },
+    {
+      "sentence": [
+        "In der Frühzeit des Buchdrucks lagen die Auflagen im Durchschnitt bei ",
+        {
+          "slot": "s6"
+        },
+        " Exemplaren."
+      ],
+      "evidence": {
+        "quote": "In der Frühdruckerzeit wurden durchschnittliche Auflagen von 150 bis 250 Exemplaren erreicht."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s7"
+        },
+        " Inkunabeln erschienen in ",
+        {
+          "slot": "s7b"
+        },
+        " Sprache."
+      ],
+      "evidence": {
+        "quote": "Etwa 77 % aller Inkunabeln erschienen in lateinischer Sprache."
+      }
+    },
+    {
+      "sentence": [
+        "Im 16. Jahrhundert machten die Schriften Martin Luthers ",
+        {
+          "slot": "s8"
+        },
+        " der gesamten ",
+        {
+          "slot": "s8b"
+        },
+        " aus."
+      ],
+      "evidence": {
+        "quote": "Im 16. Jahrhundert bildete der Druck der Schriften Martin Luthers fast ein Drittel der gesamten Auflage."
+      }
+    },
+    {
+      "sentence": ["Der Buchdruck veränderte auch die Werkstätten."],
+      "evidence": {
+        "quote": "Das Aufkommen des Buchdruckes führte zu einer Umstrukturierung der Werkstätten."
+      }
+    },
+    {
+      "sentence": [
+        "Es entstanden Großbetriebe wie der von Anton Koberger in ",
+        {
+          "slot": "s9"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Im Laufe der Zeit entstanden Großbetriebe wie der von Anton Koberger in Nürnberg."
+      }
+    },
+    {
+      "sentence": [
+        "Dieser beschäftigte bis zu ",
+        {
+          "slot": "s10"
+        },
+        " Arbeiter an ",
+        {
+          "slot": "s10b"
+        },
+        " Pressen."
+      ],
+      "evidence": {
+        "quote": "Dieser beschäftigte bis zu 100 Arbeiter an 24 Pressen."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s11"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s12"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s13"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s14"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "Mainzer",
+      "variants": [
+        {
+          "text": "Kölner",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Die Erfindung des modernen Buchdrucks am Ende des Spätmittelalters geht auf den Mainzer Goldschmied Johannes Gutenberg zurück.“ Gutenberg war Mainzer, nicht Kölner.",
+          "evidence": "Die Erfindung des modernen Buchdrucks am Ende des Spätmittelalters geht auf den Mainzer Goldschmied Johannes Gutenberg zurück."
+        }
+      ]
+    },
+    "s1b": {
+      "correct": "Goldschmied",
+      "variants": [
+        {
+          "text": "Goldschmid",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort kommt von „schmieden“. Darum schreibt man „Schmied“ mit „ie“ und am Ende mit „d“: Goldschmied."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "viel",
+      "variants": [
+        {
+          "text": "etwas",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Das Setzen der vorgefertigten Lettern war viel einfacher und schneller als die Herstellung von Druckplatten für den Blockdruck.“ Der Unterschied war groß, nicht nur klein.",
+          "evidence": "Das Setzen der vorgefertigten Lettern war viel einfacher und schneller als die Herstellung von Druckplatten für den Blockdruck."
+        }
+      ]
+    },
+    "s2b": {
+      "correct": "einfacher und schneller",
+      "variants": [
+        {
+          "text": "aufwendiger und langsamer",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Das Setzen der vorgefertigten Lettern war viel einfacher und schneller als die Herstellung von Druckplatten für den Blockdruck.“ Das Setzen war einfacher und schneller, nicht aufwendiger und langsamer.",
+          "evidence": "Das Setzen der vorgefertigten Lettern war viel einfacher und schneller als die Herstellung von Druckplatten für den Blockdruck.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s3c": {
+      "correct": "Der Buchdruck",
+      "variants": [
+        {
+          "text": "Der geradezu geniale Buchdruck",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Geradezu genial“ ist eine Wertung. Das Original beschreibt nüchtern, was der Buchdruck bewirkte. Solche Wörter sollen dir ein Gefühl geben, keine Tatsache.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s3d": {
+      "correct": "das",
+      "variants": [
+        {
+          "text": "dass",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier steht „das“ als Artikel vor „Buch“. Man kann „dieses“ oder „ein“ dafür einsetzen. „Dass“ leitet einen Nebensatz ein."
+        }
+      ]
+    },
+    "s3b": {
+      "correct": "Massenartikel",
+      "variants": [
+        {
+          "text": "Luxusartikel",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Der von Gutenberg erfundene Buchdruck mit beweglichen Lettern und Druckpresse machte das Buch zu einem Massenartikel, da Bücher für eine breitere Allgemeinheit erschwinglich wurden.“ Das Buch wurde für viele erschwinglich, kein Luxus.",
+          "evidence": "Der von Gutenberg erfundene Buchdruck mit beweglichen Lettern und Druckpresse machte das Buch zu einem Massenartikel, da Bücher für eine breitere Allgemeinheit erschwinglich wurden."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "weil",
+      "variants": [
+        {
+          "text": "obwohl",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Der von Gutenberg erfundene Buchdruck mit beweglichen Lettern und Druckpresse machte das Buch zu einem Massenartikel, da Bücher für eine breitere Allgemeinheit erschwinglich wurden.“ Erschwinglich ist der Grund. „Obwohl“ macht aus dem Grund einen Gegensatz.",
+          "evidence": "Der von Gutenberg erfundene Buchdruck mit beweglichen Lettern und Druckpresse machte das Buch zu einem Massenartikel, da Bücher für eine breitere Allgemeinheit erschwinglich wurden."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "1468",
+      "variants": [
+        {
+          "text": "1486",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Die erste Druckerei in der Schweiz wurde um 1468 in Basel gegründet, die erste französische 1470 in Paris.“ Die Schweizer Druckerei entstand um 1468. Zwei Ziffern wurden vertauscht.",
+          "evidence": "Die erste Druckerei in der Schweiz wurde um 1468 in Basel gegründet, die erste französische 1470 in Paris."
+        }
+      ]
+    },
+    "s4b": {
+      "correct": "Paris",
+      "variants": [
+        {
+          "text": "Lyon",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Die erste Druckerei in der Schweiz wurde um 1468 in Basel gegründet, die erste französische 1470 in Paris.“ Die erste französische Druckerei stand in Paris.",
+          "evidence": "Die erste Druckerei in der Schweiz wurde um 1468 in Basel gegründet, die erste französische 1470 in Paris."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "270",
+      "variants": [
+        {
+          "text": "2700",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Im Jahr 1500 gab es bereits rund 270 Druckorte, von denen mehr als 60 im Heiligen Römischen Reich Deutscher Nation lagen.“ Es waren rund 270 Druckorte.",
+          "evidence": "Im Jahr 1500 gab es bereits rund 270 Druckorte, von denen mehr als 60 im Heiligen Römischen Reich Deutscher Nation lagen."
+        }
+      ]
+    },
+    "s5b": {
+      "correct": "Druckorte,",
+      "variants": [
+        {
+          "text": "Druckorte",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Vor „mehr als“ beginnt eine neue Aussage. Dort setzt man ein Komma."
+        }
+      ]
+    },
+    "s5c": {
+      "correct": "mehr als 60",
+      "variants": [
+        {
+          "text": "fast alle",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Im Jahr 1500 gab es bereits rund 270 Druckorte, von denen mehr als 60 im Heiligen Römischen Reich Deutscher Nation lagen.“ Mehr als 60 von rund 270 Druckorten lagen im Reich, nicht fast alle.",
+          "evidence": "Im Jahr 1500 gab es bereits rund 270 Druckorte, von denen mehr als 60 im Heiligen Römischen Reich Deutscher Nation lagen."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "150 bis 250",
+      "variants": [
+        {
+          "text": "1500 bis 2500",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „In der Frühdruckerzeit wurden durchschnittliche Auflagen von 150 bis 250 Exemplaren erreicht.“ Es waren 150 bis 250 Exemplare.",
+          "evidence": "In der Frühdruckerzeit wurden durchschnittliche Auflagen von 150 bis 250 Exemplaren erreicht.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s7": {
+      "correct": "Etwa 77 Prozent aller",
+      "variants": [
+        {
+          "text": "Alle",
+          "errorClass": "overgeneralization",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Etwa 77 % aller Inkunabeln erschienen in lateinischer Sprache.“ Es waren etwa 77 Prozent, nicht alle. Aus „die meisten“ wird „alle“.",
+          "evidence": "Etwa 77 % aller Inkunabeln erschienen in lateinischer Sprache."
+        }
+      ]
+    },
+    "s7b": {
+      "correct": "lateinischer",
+      "variants": [
+        {
+          "text": "deutscher",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Etwa 77 % aller Inkunabeln erschienen in lateinischer Sprache.“ Die meisten Inkunabeln erschienen auf Latein.",
+          "evidence": "Etwa 77 % aller Inkunabeln erschienen in lateinischer Sprache."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "fast ein Drittel",
+      "variants": [
+        {
+          "text": "fast zwei Drittel",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Im 16. Jahrhundert bildete der Druck der Schriften Martin Luthers fast ein Drittel der gesamten Auflage.“ Es war fast ein Drittel.",
+          "evidence": "Im 16. Jahrhundert bildete der Druck der Schriften Martin Luthers fast ein Drittel der gesamten Auflage.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s8b": {
+      "correct": "Auflage",
+      "variants": [
+        {
+          "text": "Aufalge",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Hier sind zwei Buchstaben vertauscht: Auflage."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "Nürnberg",
+      "variants": [
+        {
+          "text": "Augsburg",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Im Laufe der Zeit entstanden Großbetriebe wie der von Anton Koberger in Nürnberg.“ Kobergers Betrieb stand in Nürnberg.",
+          "evidence": "Im Laufe der Zeit entstanden Großbetriebe wie der von Anton Koberger in Nürnberg."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "100",
+      "variants": [
+        {
+          "text": "1000",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Dieser beschäftigte bis zu 100 Arbeiter an 24 Pressen.“ Es waren bis zu 100 Arbeiter.",
+          "evidence": "Dieser beschäftigte bis zu 100 Arbeiter an 24 Pressen."
+        }
+      ]
+    },
+    "s10b": {
+      "correct": "24",
+      "variants": [
+        {
+          "text": "4",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Dieser beschäftigte bis zu 100 Arbeiter an 24 Pressen.“ Es waren 24 Pressen.",
+          "evidence": "Dieser beschäftigte bis zu 100 Arbeiter an 24 Pressen."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Historiker sagen, dass Gutenberg der wichtigste Mensch der Weltgeschichte war.",
+          "errorClass": "false_authority",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Der Satz beruft sich auf „Historiker“, ohne einen Namen oder eine Quelle zu nennen. Im Original steht nichts davon: „Die Erfindung des modernen Buchdrucks … geht auf den Mainzer Goldschmied Johannes Gutenberg zurück.“",
+          "evidence": "Die Erfindung des modernen Buchdrucks am Ende des Spätmittelalters geht auf den Mainzer Goldschmied Johannes Gutenberg zurück."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Der Buchdruck war ohne Zweifel die beste Erfindung des Mittelalters.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das ist eine Meinung. „Ohne Zweifel“ und „die beste“ bewerten, sie messen nichts. Im Original steht, was der Buchdruck bewirkte, nicht, wie gut er war."
+        }
+      ]
+    },
+    "s13": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Weil 1500 schon so viele Druckorte bestanden, konnte danach jeder Mensch in Europa Bücher kaufen.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Aus der Zahl der Druckorte folgt nicht, dass „jeder Mensch“ Bücher kaufen konnte. Im Original steht nur, dass Bücher für eine breitere Allgemeinheit erschwinglich wurden."
+        }
+      ]
+    },
+    "s14": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Gutenberg verkaufte seine ersten Drucke auf dem Markt in Mainz.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht im Original. Dort geht es nur um die Erfindung und ihre Folgen."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Wikipedia-Artikel Buchdruck, Revision 269019864 (abgerufen am 18.10.2026); die elf Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite); die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Alle Fehlerklassen außer „Widerspruch im Text“ kommen vor; die Klassen ab Klasse 7 und ab Klasse 10 sind abgeleitet, nicht belegt. Rechtschreibfehler konstruiert nach den IQB-Schwerpunkten (Ableitung, Auslaut -d).",
+    "Die eingefügten Sätze (Historiker, Meinung, Folgerung, Zusatz) sind erfunden, harmlos und stehen nicht im Original; die Erklärung nennt das.",
+    "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt; die Zahlen folgen dem Artikel, nicht anderen Quellen.",
+    "Keine lokale PDF der Quelle."
+  ]
+}
