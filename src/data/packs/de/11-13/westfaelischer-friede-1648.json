@@ -1,0 +1,971 @@
+{
+  "id": "westfaelischer-friede-1648",
+  "title": "Der Westfälische Friede",
+  "language": "de",
+  "grades": {
+    "from": 11,
+    "to": 13
+  },
+  "topic": "Westfälischer Friede 1648: Ende des Dreißigjährigen Krieges, Friedenskongress, Verträge, Wirkung",
+  "source": {
+    "title": "Westfälischer Friede – Wikipedia",
+    "url": "https://de.wikipedia.org/w/index.php?title=Westf%C3%A4lischer_Friede&oldid=271038853",
+    "revision": "271038853",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Westf%C3%A4lischer_Friede&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/westfaelischer-friede-1648.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Der Westfälische Friede (lateinisch Pax Westphalica) oder der Westfälische Friedensschluss besteht aus zwei Friedensverträgen, die am 24. Oktober 1648 in Münster und Osnabrück geschlossen wurden und den Dreißigjährigen Krieg beendeten.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Zusammen mit dem am 15. Mai desselben Jahres ratifizierten Frieden von Münster, der parallel verhandelt wurde, aber nicht als Teil des Westfälischen Friedens gilt, fand damit der erste große Friedenskongress der Neuzeit seinen Abschluss.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Entsprechend den nach Verhandlungsparteien getrennten Tagungsorten des Friedenskongresses wurden zwei komplementäre Friedensverträge ausgehandelt.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Für den römisch-deutschen Kaiser und Frankreich war dies der Münstersche Friedensvertrag (Instrumentum Pacis Monasteriensis, IPM) und für Kaiser und Reich einerseits und Schweden andererseits der Osnabrücker Friedensvertrag (Instrumentum Pacis Osnabrugensis, IPO).",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Beide Verträge wurden schließlich am selben Tag, dem 24. Oktober 1648, in Münster im Namen von Kaiser Ferdinand III. und König Ludwig XIV. von Frankreich bzw. Königin Christina von Schweden unterzeichnet.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Vorausgegangen war ein fünf Jahre währender Friedenskongress aller Kriegsparteien, der zugleich in beiden Städten tagte.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Es war der erste internationale Kongress, auf dem nahezu alle großen europäischen Mächte vertreten waren.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "In einem separaten Friedensexekutionskongress zwischen April 1649 und Juli 1650 in Nürnberg, dem Nürnberger Exekutionstag, wurden in zwei Rezessen verbindliche Abmachungen zu Abrüstungs- und Entschädigungsfragen getroffen.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Die Beschlüsse des Westfälischen Friedens und die Ergänzungen im Nürnberger Exekutionstag wurden als Reichsgrundgesetz behandelt und im vollen Wortlaut in den Abschied des Reichstages vom 17. Mai 1654 aufgenommen, genannt Jüngster Reichsabschied.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Der Westfälische Friede war Namensgeber des Westfälischen Systems und wurde zum Vorbild für spätere Friedenskonferenzen, da er dem Prinzip der Gleichberechtigung der Staaten, unabhängig von ihrer tatsächlichen Macht, zur Durchsetzung verhalf.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Die reichsrechtlichen Regelungen des Friedens von Münster, Osnabrück und Nürnberg wurden zu Bestandteilen der Verfassungsordnung des Heiligen Römischen Reiches bis zu dessen Ende im Jahr 1806.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Zugleich trug der allgemeine Friede – die pax universalis – von Münster und Osnabrück zur gesamteuropäischen Stabilität bei, da sich spätere Friedensschlüsse bis zur Französischen Revolution immer wieder an ihm orientierten.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Um die gesamteuropäische Bedeutung des Westfälischen Friedensschlusses zu würdigen, wurden die Rathäuser von Münster und Osnabrück als Verhandlungsorte im April 2015 von der EU-Kommission mit dem Europäischen Kulturerbe-Siegel ausgezeichnet.",
+      "section": "Einleitung"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Der Westfälische Friede besteht aus ",
+        {
+          "slot": "f1"
+        },
+        " Friedensverträgen, die am ",
+        {
+          "slot": "f2"
+        },
+        " in Münster und Osnabrück geschlossen wurden und den ",
+        {
+          "slot": "f3"
+        },
+        " Krieg beendeten."
+      ],
+      "evidence": {
+        "quote": "Der Westfälische Friede (lateinisch Pax Westphalica) oder der Westfälische Friedensschluss besteht aus zwei Friedensverträgen, die am 24. Oktober 1648 in Münster und Osnabrück geschlossen wurden und den Dreißigjährigen Krieg beendeten."
+      }
+    },
+    {
+      "sentence": [
+        "Zusammen mit dem am ",
+        {
+          "slot": "f4"
+        },
+        " desselben Jahres ratifizierten Frieden von ",
+        {
+          "slot": "f5"
+        },
+        " der parallel verhandelt wurde, aber ",
+        {
+          "slot": "f6"
+        },
+        ", fand der erste große Friedenskongress der ",
+        {
+          "slot": "f7"
+        },
+        " seinen Abschluss."
+      ],
+      "evidence": {
+        "quote": "Zusammen mit dem am 15. Mai desselben Jahres ratifizierten Frieden von Münster, der parallel verhandelt wurde, aber nicht als Teil des Westfälischen Friedens gilt, fand damit der erste große Friedenskongress der Neuzeit seinen Abschluss."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "f8"
+        }
+      ],
+      "evidence": {
+        "quote": "Entsprechend den nach Verhandlungsparteien getrennten Tagungsorten des Friedenskongresses wurden zwei komplementäre Friedensverträge ausgehandelt."
+      }
+    },
+    {
+      "sentence": [
+        "Für den römisch-deutschen Kaiser und ",
+        {
+          "slot": "f9"
+        },
+        " war dies der Münstersche Friedensvertrag, für Kaiser und Reich einerseits und ",
+        {
+          "slot": "f10"
+        },
+        " andererseits der Osnabrücker Friedensvertrag."
+      ],
+      "evidence": {
+        "quote": "Für den römisch-deutschen Kaiser und Frankreich war dies der Münstersche Friedensvertrag (Instrumentum Pacis Monasteriensis, IPM) und für Kaiser und Reich einerseits und Schweden andererseits der Osnabrücker Friedensvertrag (Instrumentum Pacis Osnabrugensis, IPO)."
+      }
+    },
+    {
+      "sentence": [
+        "Beide Verträge wurden schließlich am selben Tag, dem ",
+        {
+          "slot": "f11"
+        },
+        ", in ",
+        {
+          "slot": "f12"
+        },
+        " im Namen von Kaiser ",
+        {
+          "slot": "f13"
+        },
+        " und König Ludwig XIV. von Frankreich bzw. Königin Christina von Schweden unterzeichnet."
+      ],
+      "evidence": {
+        "quote": "Beide Verträge wurden schließlich am selben Tag, dem 24. Oktober 1648, in Münster im Namen von Kaiser Ferdinand III. und König Ludwig XIV. von Frankreich bzw. Königin Christina von Schweden unterzeichnet."
+      }
+    },
+    {
+      "sentence": [
+        "Vorausgegangen war ein Friedenskongress ",
+        {
+          "slot": "f15"
+        },
+        " Kriegsparteien, der ",
+        {
+          "slot": "f14"
+        },
+        " Jahre währte und ",
+        {
+          "slot": "f16"
+        },
+        " tagte."
+      ],
+      "evidence": {
+        "quote": "Vorausgegangen war ein fünf Jahre währender Friedenskongress aller Kriegsparteien, der zugleich in beiden Städten tagte."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "f17"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Es war der ",
+        {
+          "slot": "f18"
+        },
+        " internationale Kongress, auf dem ",
+        {
+          "slot": "f19"
+        },
+        " vertreten waren."
+      ],
+      "evidence": {
+        "quote": "Es war der erste internationale Kongress, auf dem nahezu alle großen europäischen Mächte vertreten waren."
+      }
+    },
+    {
+      "sentence": [
+        "In Nürnberg fand zwischen ",
+        {
+          "slot": "f20"
+        },
+        " und Juli 1650 ein eigener Friedensexekutionskongress statt, der Nürnberger Exekutionstag; dort wurden in zwei Rezessen ",
+        {
+          "slot": "f21"
+        },
+        " Abmachungen zu Abrüstungs- und ",
+        {
+          "slot": "f22"
+        },
+        " getroffen."
+      ],
+      "evidence": {
+        "quote": "In einem separaten Friedensexekutionskongress zwischen April 1649 und Juli 1650 in Nürnberg, dem Nürnberger Exekutionstag, wurden in zwei Rezessen verbindliche Abmachungen zu Abrüstungs- und Entschädigungsfragen getroffen."
+      }
+    },
+    {
+      "sentence": [
+        "Die Beschlüsse des Westfälischen Friedens und die Ergänzungen im Nürnberger Exekutionstag wurden als ",
+        {
+          "slot": "f23"
+        },
+        " behandelt und im vollen Wortlaut in den Abschied des Reichstages vom ",
+        {
+          "slot": "f24"
+        },
+        " aufgenommen, genannt Jüngster Reichsabschied."
+      ],
+      "evidence": {
+        "quote": "Die Beschlüsse des Westfälischen Friedens und die Ergänzungen im Nürnberger Exekutionstag wurden als Reichsgrundgesetz behandelt und im vollen Wortlaut in den Abschied des Reichstages vom 17. Mai 1654 aufgenommen, genannt Jüngster Reichsabschied."
+      }
+    },
+    {
+      "sentence": [
+        "Der Westfälische Friede war ",
+        {
+          "slot": "f25"
+        },
+        " des Westfälischen Systems und wurde zum ",
+        {
+          "slot": "f26"
+        },
+        " für ",
+        {
+          "slot": "f27"
+        },
+        ", da er dem Prinzip ",
+        {
+          "slot": "f28"
+        },
+        " zur Durchsetzung verhalf."
+      ],
+      "evidence": {
+        "quote": "Der Westfälische Friede war Namensgeber des Westfälischen Systems und wurde zum Vorbild für spätere Friedenskonferenzen, da er dem Prinzip der Gleichberechtigung der Staaten, unabhängig von ihrer tatsächlichen Macht, zur Durchsetzung verhalf."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "f29"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Die reichsrechtlichen Regelungen des Friedens von Münster, Osnabrück und Nürnberg wurden zu Bestandteilen der ",
+        {
+          "slot": "f30"
+        },
+        " des Heiligen Römischen Reiches bis zu dessen Ende im Jahr ",
+        {
+          "slot": "f31"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Die reichsrechtlichen Regelungen des Friedens von Münster, Osnabrück und Nürnberg wurden zu Bestandteilen der Verfassungsordnung des Heiligen Römischen Reiches bis zu dessen Ende im Jahr 1806."
+      }
+    },
+    {
+      "sentence": [
+        "Zugleich trug der allgemeine Friede von Münster und Osnabrück zur ",
+        {
+          "slot": "f32"
+        },
+        " Stabilität bei, ",
+        {
+          "slot": "f33"
+        },
+        " sich spätere Friedensschlüsse bis zur Französischen Revolution immer wieder an ihm orientierten."
+      ],
+      "evidence": {
+        "quote": "Zugleich trug der allgemeine Friede – die pax universalis – von Münster und Osnabrück zur gesamteuropäischen Stabilität bei, da sich spätere Friedensschlüsse bis zur Französischen Revolution immer wieder an ihm orientierten."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "f34"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Um die ",
+        {
+          "slot": "f35"
+        },
+        " des Westfälischen Friedensschlusses zu würdigen, wurden die Rathäuser von Münster und Osnabrück als Verhandlungsorte im April ",
+        {
+          "slot": "f36"
+        },
+        " von der ",
+        {
+          "slot": "f37"
+        },
+        " mit dem Europäischen Kulturerbe-Siegel ausgezeichnet."
+      ],
+      "evidence": {
+        "quote": "Um die gesamteuropäische Bedeutung des Westfälischen Friedensschlusses zu würdigen, wurden die Rathäuser von Münster und Osnabrück als Verhandlungsorte im April 2015 von der EU-Kommission mit dem Europäischen Kulturerbe-Siegel ausgezeichnet."
+      }
+    }
+  ],
+  "slots": {
+    "f1": {
+      "correct": "zwei",
+      "variants": [
+        {
+          "text": "drei",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „besteht aus zwei Friedensverträgen“. Es waren zwei Verträge, einer in Münster und einer in Osnabrück.",
+          "evidence": "Der Westfälische Friede (lateinisch Pax Westphalica) oder der Westfälische Friedensschluss besteht aus zwei Friedensverträgen, die am 24. Oktober 1648 in Münster und Osnabrück geschlossen wurden und den Dreißigjährigen Krieg beendeten."
+        },
+        {
+          "text": "fünf",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „besteht aus zwei Friedensverträgen“. Fünf ist zu viel.",
+          "evidence": "Der Westfälische Friede (lateinisch Pax Westphalica) oder der Westfälische Friedensschluss besteht aus zwei Friedensverträgen, die am 24. Oktober 1648 in Münster und Osnabrück geschlossen wurden und den Dreißigjährigen Krieg beendeten."
+        }
+      ]
+    },
+    "f2": {
+      "correct": "24. Oktober 1648",
+      "variants": [
+        {
+          "text": "24. Oktober 1618",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „die am 24. Oktober 1648 in Münster und Osnabrück geschlossen wurden und den Dreißigjährigen Krieg beendeten“. 1618 begann der Krieg, er endete 1648.",
+          "evidence": "Der Westfälische Friede (lateinisch Pax Westphalica) oder der Westfälische Friedensschluss besteht aus zwei Friedensverträgen, die am 24. Oktober 1648 in Münster und Osnabrück geschlossen wurden und den Dreißigjährigen Krieg beendeten.",
+          "tolerance": 1
+        },
+        {
+          "text": "14. Oktober 1648",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „am 24. Oktober 1648“. Der Tag stimmt nicht.",
+          "evidence": "Der Westfälische Friede (lateinisch Pax Westphalica) oder der Westfälische Friedensschluss besteht aus zwei Friedensverträgen, die am 24. Oktober 1648 in Münster und Osnabrück geschlossen wurden und den Dreißigjährigen Krieg beendeten.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "f3": {
+      "correct": "Dreißigjährigen",
+      "variants": [
+        {
+          "text": "Hundertjährigen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „den Dreißigjährigen Krieg beendeten“. Der Krieg dauerte dreißig Jahre.",
+          "evidence": "Der Westfälische Friede (lateinisch Pax Westphalica) oder der Westfälische Friedensschluss besteht aus zwei Friedensverträgen, die am 24. Oktober 1648 in Münster und Osnabrück geschlossen wurden und den Dreißigjährigen Krieg beendeten."
+        },
+        {
+          "text": "Siebenjährigen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „den Dreißigjährigen Krieg beendeten“. Der Siebenjährige Krieg war ein späterer Krieg.",
+          "evidence": "Der Westfälische Friede (lateinisch Pax Westphalica) oder der Westfälische Friedensschluss besteht aus zwei Friedensverträgen, die am 24. Oktober 1648 in Münster und Osnabrück geschlossen wurden und den Dreißigjährigen Krieg beendeten."
+        },
+        {
+          "text": "Dreisigjährigen",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Zahlwörter wie „dreißig“ schreibt man mit „ß“ nach dem langen „ei“: Dreißigjährigen."
+        }
+      ]
+    },
+    "f4": {
+      "correct": "15. Mai",
+      "variants": [
+        {
+          "text": "15. Juni",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „am 15. Mai desselben Jahres ratifizierten Frieden von Münster“. Der Monat stimmt nicht.",
+          "evidence": "Zusammen mit dem am 15. Mai desselben Jahres ratifizierten Frieden von Münster, der parallel verhandelt wurde, aber nicht als Teil des Westfälischen Friedens gilt, fand damit der erste große Friedenskongress der Neuzeit seinen Abschluss."
+        },
+        {
+          "text": "5. Mai",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „am 15. Mai“. Der Tag stimmt nicht.",
+          "evidence": "Zusammen mit dem am 15. Mai desselben Jahres ratifizierten Frieden von Münster, der parallel verhandelt wurde, aber nicht als Teil des Westfälischen Friedens gilt, fand damit der erste große Friedenskongress der Neuzeit seinen Abschluss."
+        }
+      ]
+    },
+    "f5": {
+      "correct": "Münster,",
+      "variants": [
+        {
+          "text": "Münster",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Der Relativsatz „der parallel verhandelt wurde, aber nicht … gilt“ wird durch Kommas abgetrennt. Das erste Komma fehlt."
+        }
+      ]
+    },
+    "f6": {
+      "correct": "nicht als Teil des Westfälischen Friedens gilt",
+      "variants": [
+        {
+          "text": "ebenfalls als Teil des Westfälischen Friedens gilt",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das passt nicht zum ersten Satz: Dort besteht der Westfälische Friede aus zwei Verträgen (Münster und Osnabrück). Der zusätzliche Frieden von Münster ist kein dritter Teil. Im Original steht: „aber nicht als Teil des Westfälischen Friedens gilt“.",
+          "evidence": "Zusammen mit dem am 15. Mai desselben Jahres ratifizierten Frieden von Münster, der parallel verhandelt wurde, aber nicht als Teil des Westfälischen Friedens gilt, fand damit der erste große Friedenskongress der Neuzeit seinen Abschluss.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "f7": {
+      "correct": "Neuzeit",
+      "variants": [
+        {
+          "text": "Antike",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „der erste große Friedenskongress der Neuzeit“. Ein Kongress im Jahr 1648 gehört nicht in die Antike.",
+          "evidence": "Zusammen mit dem am 15. Mai desselben Jahres ratifizierten Frieden von Münster, der parallel verhandelt wurde, aber nicht als Teil des Westfälischen Friedens gilt, fand damit der erste große Friedenskongress der Neuzeit seinen Abschluss."
+        }
+      ]
+    },
+    "f8": {
+      "correct": "Entsprechend den nach Verhandlungsparteien getrennten Tagungsorten des Friedenskongresses wurden zwei komplementäre Friedensverträge ausgehandelt.",
+      "variants": [
+        {
+          "text": "Weil zwei komplementäre Friedensverträge ausgehandelt wurden, tagte der Friedenskongress an getrennten Orten.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Hier sind Ursache und Wirkung vertauscht. Im Original steht: „Entsprechend den nach Verhandlungsparteien getrennten Tagungsorten des Friedenskongresses wurden zwei komplementäre Friedensverträge ausgehandelt.“ Die getrennten Orte kamen zuerst, die zwei Verträge folgten daraus.",
+          "evidence": "Entsprechend den nach Verhandlungsparteien getrennten Tagungsorten des Friedenskongresses wurden zwei komplementäre Friedensverträge ausgehandelt."
+        },
+        {
+          "text": "Entsprechend den nach Verhandlungsparteien getrennten Tagungsorten des Friedenskongresses wurden zwei gegensätzliche Friedensverträge ausgehandelt.",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „zwei komplementäre Friedensverträge“. „Komplementär“ heißt: die Verträge ergänzen sich. „Gegensätzlich“ meint das Gegenteil.",
+          "evidence": "Entsprechend den nach Verhandlungsparteien getrennten Tagungsorten des Friedenskongresses wurden zwei komplementäre Friedensverträge ausgehandelt."
+        },
+        {
+          "text": "Unabhängig von den nach Verhandlungsparteien getrennten Tagungsorten des Friedenskongresses wurde ein einziger Friedensvertrag ausgehandelt.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das widerspricht dem Rest des Textes: Schon der erste Satz spricht von zwei Friedensverträgen, später heißt es „Beide Verträge“. Im Original steht: „wurden zwei komplementäre Friedensverträge ausgehandelt“.",
+          "evidence": "Entsprechend den nach Verhandlungsparteien getrennten Tagungsorten des Friedenskongresses wurden zwei komplementäre Friedensverträge ausgehandelt."
+        }
+      ]
+    },
+    "f9": {
+      "correct": "Frankreich",
+      "variants": [
+        {
+          "text": "Schweden",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Für den römisch-deutschen Kaiser und Frankreich war dies der Münstersche Friedensvertrag“. Schweden verhandelte in Osnabrück, wie die Fortsetzung des Satzes sagt.",
+          "evidence": "Für den römisch-deutschen Kaiser und Frankreich war dies der Münstersche Friedensvertrag (Instrumentum Pacis Monasteriensis, IPM) und für Kaiser und Reich einerseits und Schweden andererseits der Osnabrücker Friedensvertrag (Instrumentum Pacis Osnabrugensis, IPO)."
+        }
+      ]
+    },
+    "f10": {
+      "correct": "Schweden",
+      "variants": [
+        {
+          "text": "Frankreich",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „für Kaiser und Reich einerseits und Schweden andererseits der Osnabrücker Friedensvertrag“. Frankreich verhandelte in Münster.",
+          "evidence": "Für den römisch-deutschen Kaiser und Frankreich war dies der Münstersche Friedensvertrag (Instrumentum Pacis Monasteriensis, IPM) und für Kaiser und Reich einerseits und Schweden andererseits der Osnabrücker Friedensvertrag (Instrumentum Pacis Osnabrugensis, IPO)."
+        }
+      ]
+    },
+    "f11": {
+      "correct": "24. Oktober 1648",
+      "variants": [
+        {
+          "text": "24. Oktober 1649",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „am selben Tag, dem 24. Oktober 1648“. Das Jahr stimmt nicht.",
+          "evidence": "Beide Verträge wurden schließlich am selben Tag, dem 24. Oktober 1648, in Münster im Namen von Kaiser Ferdinand III. und König Ludwig XIV. von Frankreich bzw. Königin Christina von Schweden unterzeichnet.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "f12": {
+      "correct": "Münster",
+      "variants": [
+        {
+          "text": "Osnabrück",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „am selben Tag, dem 24. Oktober 1648, in Münster“. Beide Verträge wurden in Münster unterzeichnet, auch der Osnabrücker.",
+          "evidence": "Beide Verträge wurden schließlich am selben Tag, dem 24. Oktober 1648, in Münster im Namen von Kaiser Ferdinand III. und König Ludwig XIV. von Frankreich bzw. Königin Christina von Schweden unterzeichnet."
+        }
+      ]
+    },
+    "f13": {
+      "correct": "Ferdinand III.",
+      "variants": [
+        {
+          "text": "Ferdinand II.",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „im Namen von Kaiser Ferdinand III.“. Die Zahl hinter dem Namen stimmt nicht.",
+          "evidence": "Beide Verträge wurden schließlich am selben Tag, dem 24. Oktober 1648, in Münster im Namen von Kaiser Ferdinand III. und König Ludwig XIV. von Frankreich bzw. Königin Christina von Schweden unterzeichnet."
+        }
+      ]
+    },
+    "f14": {
+      "correct": "fünf",
+      "variants": [
+        {
+          "text": "zehn",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „ein fünf Jahre währender Friedenskongress“. Es waren fünf Jahre.",
+          "evidence": "Vorausgegangen war ein fünf Jahre währender Friedenskongress aller Kriegsparteien, der zugleich in beiden Städten tagte."
+        },
+        {
+          "text": "zwei",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „ein fünf Jahre währender Friedenskongress“. Zwei Jahre sind zu kurz.",
+          "evidence": "Vorausgegangen war ein fünf Jahre währender Friedenskongress aller Kriegsparteien, der zugleich in beiden Städten tagte."
+        }
+      ]
+    },
+    "f15": {
+      "correct": "aller",
+      "variants": [
+        {
+          "text": "einiger",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Friedenskongress aller Kriegsparteien“. Alle Kriegsparteien nahmen teil, nicht nur einige.",
+          "evidence": "Vorausgegangen war ein fünf Jahre währender Friedenskongress aller Kriegsparteien, der zugleich in beiden Städten tagte."
+        }
+      ]
+    },
+    "f16": {
+      "correct": "zugleich in beiden Städten",
+      "variants": [
+        {
+          "text": "abwechselnd in einer der beiden Städte",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „der zugleich in beiden Städten tagte“. Der Kongress tagte in Münster und Osnabrück gleichzeitig.",
+          "evidence": "Vorausgegangen war ein fünf Jahre währender Friedenskongress aller Kriegsparteien, der zugleich in beiden Städten tagte.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "f17": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Viele Gesandte reisten damals mit der Kutsche in die beiden Städte.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Dieser Satz steht nicht im Original. Der Auszug sagt nichts darüber, wie die Gesandten reisten."
+        }
+      ]
+    },
+    "f18": {
+      "correct": "erste",
+      "variants": [
+        {
+          "text": "letzte",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Es war der erste internationale Kongress“. Von einem letzten Kongress ist nicht die Rede.",
+          "evidence": "Es war der erste internationale Kongress, auf dem nahezu alle großen europäischen Mächte vertreten waren."
+        }
+      ]
+    },
+    "f19": {
+      "correct": "nahezu alle großen europäischen Mächte",
+      "variants": [
+        {
+          "text": "alle großen europäischen Mächte",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „auf dem nahezu alle großen europäischen Mächte vertreten waren“. „Nahezu“ lässt Ausnahmen zu, „alle“ nicht.",
+          "evidence": "Es war der erste internationale Kongress, auf dem nahezu alle großen europäischen Mächte vertreten waren.",
+          "tolerance": 1
+        },
+        {
+          "text": "nur einige große europäische Mächte",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „nahezu alle großen europäischen Mächte“. „Nur einige“ ist viel weniger.",
+          "evidence": "Es war der erste internationale Kongress, auf dem nahezu alle großen europäischen Mächte vertreten waren.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "f20": {
+      "correct": "April 1649",
+      "variants": [
+        {
+          "text": "April 1648",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „zwischen April 1649 und Juli 1650“. Der Nürnberger Tag fand nach dem Frieden von 1648 statt.",
+          "evidence": "In einem separaten Friedensexekutionskongress zwischen April 1649 und Juli 1650 in Nürnberg, dem Nürnberger Exekutionstag, wurden in zwei Rezessen verbindliche Abmachungen zu Abrüstungs- und Entschädigungsfragen getroffen."
+        },
+        {
+          "text": "Mai 1649",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „zwischen April 1649 und Juli 1650“. Er begann im April, nicht im Mai.",
+          "evidence": "In einem separaten Friedensexekutionskongress zwischen April 1649 und Juli 1650 in Nürnberg, dem Nürnberger Exekutionstag, wurden in zwei Rezessen verbindliche Abmachungen zu Abrüstungs- und Entschädigungsfragen getroffen."
+        }
+      ]
+    },
+    "f21": {
+      "correct": "verbindliche",
+      "variants": [
+        {
+          "text": "unverbindliche",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „wurden in zwei Rezessen verbindliche Abmachungen … getroffen“. Die Abmachungen waren verbindlich.",
+          "evidence": "In einem separaten Friedensexekutionskongress zwischen April 1649 und Juli 1650 in Nürnberg, dem Nürnberger Exekutionstag, wurden in zwei Rezessen verbindliche Abmachungen zu Abrüstungs- und Entschädigungsfragen getroffen."
+        }
+      ]
+    },
+    "f22": {
+      "correct": "Entschädigungsfragen",
+      "variants": [
+        {
+          "text": "Handelsfragen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „zu Abrüstungs- und Entschädigungsfragen“. Es ging um Abrüstung und Entschädigung, nicht um Handel.",
+          "evidence": "In einem separaten Friedensexekutionskongress zwischen April 1649 und Juli 1650 in Nürnberg, dem Nürnberger Exekutionstag, wurden in zwei Rezessen verbindliche Abmachungen zu Abrüstungs- und Entschädigungsfragen getroffen."
+        },
+        {
+          "text": "Entschädigunsfragen",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Im Wort fehlt ein Buchstabe: Entschädigungsfragen."
+        }
+      ]
+    },
+    "f23": {
+      "correct": "Reichsgrundgesetz",
+      "variants": [
+        {
+          "text": "unverbindliche Empfehlung",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „wurden als Reichsgrundgesetz behandelt“. Ein Grundgesetz ist keine unverbindliche Empfehlung.",
+          "evidence": "Die Beschlüsse des Westfälischen Friedens und die Ergänzungen im Nürnberger Exekutionstag wurden als Reichsgrundgesetz behandelt und im vollen Wortlaut in den Abschied des Reichstages vom 17. Mai 1654 aufgenommen, genannt Jüngster Reichsabschied."
+        }
+      ]
+    },
+    "f24": {
+      "correct": "17. Mai 1654",
+      "variants": [
+        {
+          "text": "17. Mai 1645",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Ein Reichsabschied von 1645 könnte die Beschlüsse von 1648 nicht aufnehmen. Im Original steht: „im vollen Wortlaut in den Abschied des Reichstages vom 17. Mai 1654 aufgenommen“.",
+          "evidence": "Die Beschlüsse des Westfälischen Friedens und die Ergänzungen im Nürnberger Exekutionstag wurden als Reichsgrundgesetz behandelt und im vollen Wortlaut in den Abschied des Reichstages vom 17. Mai 1654 aufgenommen, genannt Jüngster Reichsabschied.",
+          "tolerance": 1
+        },
+        {
+          "text": "17. Juni 1654",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „vom 17. Mai 1654“. Der Monat stimmt nicht.",
+          "evidence": "Die Beschlüsse des Westfälischen Friedens und die Ergänzungen im Nürnberger Exekutionstag wurden als Reichsgrundgesetz behandelt und im vollen Wortlaut in den Abschied des Reichstages vom 17. Mai 1654 aufgenommen, genannt Jüngster Reichsabschied.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "f25": {
+      "correct": "Namensgeber",
+      "variants": [
+        {
+          "text": "Gegner",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Der Westfälische Friede war Namensgeber des Westfälischen Systems“. Der Friede war nicht Gegner, sondern Ursprung des Namens.",
+          "evidence": "Der Westfälische Friede war Namensgeber des Westfälischen Systems und wurde zum Vorbild für spätere Friedenskonferenzen, da er dem Prinzip der Gleichberechtigung der Staaten, unabhängig von ihrer tatsächlichen Macht, zur Durchsetzung verhalf."
+        }
+      ]
+    },
+    "f26": {
+      "correct": "Vorbild",
+      "variants": [
+        {
+          "text": "Gegenbeispiel",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „wurde zum Vorbild für spätere Friedenskonferenzen“. Ein Vorbild macht man nach, ein Gegenbeispiel gerade nicht.",
+          "evidence": "Der Westfälische Friede war Namensgeber des Westfälischen Systems und wurde zum Vorbild für spätere Friedenskonferenzen, da er dem Prinzip der Gleichberechtigung der Staaten, unabhängig von ihrer tatsächlichen Macht, zur Durchsetzung verhalf."
+        }
+      ]
+    },
+    "f27": {
+      "correct": "spätere Friedenskonferenzen",
+      "variants": [
+        {
+          "text": "alle Friedenskonferenzen der Weltgeschichte",
+          "errorClass": "overgeneralization",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „wurde zum Vorbild für spätere Friedenskonferenzen“. Gemeint sind spätere Konferenzen, nicht alle der Weltgeschichte.",
+          "evidence": "Der Westfälische Friede war Namensgeber des Westfälischen Systems und wurde zum Vorbild für spätere Friedenskonferenzen, da er dem Prinzip der Gleichberechtigung der Staaten, unabhängig von ihrer tatsächlichen Macht, zur Durchsetzung verhalf.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "f28": {
+      "correct": "der Gleichberechtigung der Staaten unabhängig von ihrer tatsächlichen Macht",
+      "variants": [
+        {
+          "text": "des Vorrangs der mächtigsten Staaten",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „dem Prinzip der Gleichberechtigung der Staaten, unabhängig von ihrer tatsächlichen Macht“. Das Prinzip sollte alle Staaten gleich behandeln, nicht die mächtigsten bevorzugen.",
+          "evidence": "Der Westfälische Friede war Namensgeber des Westfälischen Systems und wurde zum Vorbild für spätere Friedenskonferenzen, da er dem Prinzip der Gleichberechtigung der Staaten, unabhängig von ihrer tatsächlichen Macht, zur Durchsetzung verhalf.",
+          "tolerance": 1
+        },
+        {
+          "text": "der Gleichberechtigung der Staaten entsprechend ihrer tatsächlichen Macht",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das widerspricht sich selbst: Gleichberechtigung heißt gleiche Rechte, nicht Rechte nach Macht. Im Original steht: „der Gleichberechtigung der Staaten, unabhängig von ihrer tatsächlichen Macht“.",
+          "evidence": "Der Westfälische Friede war Namensgeber des Westfälischen Systems und wurde zum Vorbild für spätere Friedenskonferenzen, da er dem Prinzip der Gleichberechtigung der Staaten, unabhängig von ihrer tatsächlichen Macht, zur Durchsetzung verhalf.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "f29": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Der Westfälische Friede war ohne Zweifel der gerechteste Friedensschluss der Geschichte.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht im Original. „Der gerechteste Friedensschluss“ ist eine Meinung, kein überprüfbarer Befund. Der Auszug beschreibt Inhalt und Wirkung des Friedens."
+        }
+      ]
+    },
+    "f30": {
+      "correct": "Verfassungsordnung",
+      "variants": [
+        {
+          "text": "Handelsordnung",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „zu Bestandteilen der Verfassungsordnung des Heiligen Römischen Reiches“. Es ging um die Verfassung, nicht um den Handel.",
+          "evidence": "Die reichsrechtlichen Regelungen des Friedens von Münster, Osnabrück und Nürnberg wurden zu Bestandteilen der Verfassungsordnung des Heiligen Römischen Reiches bis zu dessen Ende im Jahr 1806."
+        }
+      ]
+    },
+    "f31": {
+      "correct": "1806",
+      "variants": [
+        {
+          "text": "1866",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „bis zu dessen Ende im Jahr 1806“. Die Ziffern sind vertauscht.",
+          "evidence": "Die reichsrechtlichen Regelungen des Friedens von Münster, Osnabrück und Nürnberg wurden zu Bestandteilen der Verfassungsordnung des Heiligen Römischen Reiches bis zu dessen Ende im Jahr 1806."
+        },
+        {
+          "text": "1648",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Ein Ende im Jahr 1648 passt nicht: Die Regelungen wurden 1648 geschlossen und noch 1654 in den Reichsabschied aufgenommen. Im Original steht: „bis zu dessen Ende im Jahr 1806“.",
+          "evidence": "Die reichsrechtlichen Regelungen des Friedens von Münster, Osnabrück und Nürnberg wurden zu Bestandteilen der Verfassungsordnung des Heiligen Römischen Reiches bis zu dessen Ende im Jahr 1806."
+        }
+      ]
+    },
+    "f32": {
+      "correct": "gesamteuropäischen",
+      "variants": [
+        {
+          "text": "regionalen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „zur gesamteuropäischen Stabilität“. Gemeint ist Europa als Ganzes, nicht eine Region.",
+          "evidence": "Zugleich trug der allgemeine Friede – die pax universalis – von Münster und Osnabrück zur gesamteuropäischen Stabilität bei, da sich spätere Friedensschlüsse bis zur Französischen Revolution immer wieder an ihm orientierten."
+        },
+        {
+          "text": "gesammteuropäischen",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das Wort kommt von „gesamt“. Es wird mit einem „m“ geschrieben: gesamteuropäischen."
+        }
+      ]
+    },
+    "f33": {
+      "correct": "da",
+      "variants": [
+        {
+          "text": "das",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier ist ein Bindewort nötig, das den Grund einleitet: „da“. „Das“ wäre ein Artikel oder Pronomen und passt nicht zum Satzbau."
+        },
+        {
+          "text": "obwohl",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „da sich spätere Friedensschlüsse bis zur Französischen Revolution immer wieder an ihm orientierten“. Dass sich andere an ihm orientierten, ist der Grund für die Stabilität. „Obwohl“ macht daraus einen Gegensatz.",
+          "evidence": "Zugleich trug der allgemeine Friede – die pax universalis – von Münster und Osnabrück zur gesamteuropäischen Stabilität bei, da sich spätere Friedensschlüsse bis zur Französischen Revolution immer wieder an ihm orientierten."
+        }
+      ]
+    },
+    "f34": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Alle Experten sind sich einig, dass der Krieg ohne diesen Frieden noch hundert Jahre gedauert hätte.",
+          "errorClass": "false_authority",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "„Alle Experten“ werden weder genannt noch belegt, und die Behauptung lässt sich nicht beweisen. Im Original steht nur: „Der Westfälische Friede … besteht aus zwei Friedensverträgen, die … den Dreißigjährigen Krieg beendeten.“",
+          "evidence": "Der Westfälische Friede (lateinisch Pax Westphalica) oder der Westfälische Friedensschluss besteht aus zwei Friedensverträgen, die am 24. Oktober 1648 in Münster und Osnabrück geschlossen wurden und den Dreißigjährigen Krieg beendeten."
+        }
+      ]
+    },
+    "f35": {
+      "correct": "gesamteuropäische Bedeutung",
+      "variants": [
+        {
+          "text": "alles überragende Bedeutung",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Alles überragend“ ist eine übertreibende, gefühlsbetonte Wortwahl. Im Original steht sachlich: „die gesamteuropäische Bedeutung“.",
+          "evidence": "Um die gesamteuropäische Bedeutung des Westfälischen Friedensschlusses zu würdigen, wurden die Rathäuser von Münster und Osnabrück als Verhandlungsorte im April 2015 von der EU-Kommission mit dem Europäischen Kulturerbe-Siegel ausgezeichnet.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "f36": {
+      "correct": "2015",
+      "variants": [
+        {
+          "text": "2005",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „im April 2015“. Die Ziffern stimmen nicht.",
+          "evidence": "Um die gesamteuropäische Bedeutung des Westfälischen Friedensschlusses zu würdigen, wurden die Rathäuser von Münster und Osnabrück als Verhandlungsorte im April 2015 von der EU-Kommission mit dem Europäischen Kulturerbe-Siegel ausgezeichnet."
+        },
+        {
+          "text": "1995",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „im April 2015“. 1995 liegt zwanzig Jahre früher.",
+          "evidence": "Um die gesamteuropäische Bedeutung des Westfälischen Friedensschlusses zu würdigen, wurden die Rathäuser von Münster und Osnabrück als Verhandlungsorte im April 2015 von der EU-Kommission mit dem Europäischen Kulturerbe-Siegel ausgezeichnet."
+        }
+      ]
+    },
+    "f37": {
+      "correct": "EU-Kommission",
+      "variants": [
+        {
+          "text": "UNESCO",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „von der EU-Kommission mit dem Europäischen Kulturerbe-Siegel ausgezeichnet“. Das Siegel vergibt die EU-Kommission.",
+          "evidence": "Um die gesamteuropäische Bedeutung des Westfälischen Friedensschlusses zu würdigen, wurden die Rathäuser von Münster und Osnabrück als Verhandlungsorte im April 2015 von der EU-Kommission mit dem Europäischen Kulturerbe-Siegel ausgezeichnet."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Wikipedia-Artikel Westfälischer Friede, Revision 271038853 (abgerufen am 18.10.2026), Einleitung, Überblick, Vorbereitung und Teilnehmer; die 13 Auszugssätze der Einleitung stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft) und in der Quell-PDF.",
+    "Lizenz: Wikipedia-Text unter CC BY-SA 4.0; die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Alle 15 Fehlerklassen kommen vor. Die Klassen ab Klasse 7 und ab Klasse 10 sind abgeleitet, nicht belegt. Die Falschschreibungen sind konstruiert (ß, Doppelkonsonant), das Fehlen eines Buchstabens ist eine Flüchtigkeit.",
+    "Die eingefügten Sätze (Kutsche, Wertung, Experten) stehen nicht im Auszug, sind harmlos und politisch neutral; die Erklärungen sagen das.",
+    "Der Satz über die getrennten Tagungsorte ist als ganzer Satz eine Stelle (Ursache und Wirkung vertauscht, falsches Wort oder Widerspruch); dort gibt es darum keine Toleranz.",
+    "Die Variante „UNESCO“ ist ein plausibler Irrtum (anderes Siegel), steht aber nicht im Artikel; sie ist kein Zitat.",
+    "Nicht geprüft: ob der Artikeltext fachlich vollständig oder unumstritten ist; das Paket prüft den Vergleich mit dieser Quelle.",
+    "Die Quelle liegt als PDF unter public/quellen/de/westfaelischer-friede-1648.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+  ]
+}
