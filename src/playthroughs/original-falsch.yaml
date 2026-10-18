@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/interactive/playthrough.v1.schema.json
-# The mode "Original erkennen", seed 1: the Variante is text A, but the learner picks text B, which is the Original,
+# The mode "Original erkennen", seed 23: the Variante is text A, but the learner picks text B, which is the Original,
 # marks its first word and checks. The pick is wrong, no error is found, the mark counts as wrong.
 route: klasse-5-6-original
-seed: 1
+seed: 23
 steps:
   - inputs:
       - { kind: key, key: "2" }

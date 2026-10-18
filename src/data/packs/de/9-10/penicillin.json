@@ -1,0 +1,985 @@
+{
+  "id": "penicillin",
+  "title": "Penicillin",
+  "language": "de",
+  "grades": {
+    "from": 9,
+    "to": 10
+  },
+  "topic": "Penicillin: vom Tierversuch zum ersten Patienten",
+  "source": {
+    "title": "Penicillin – Wikipedia",
+    "url": "https://de.wikipedia.org/w/index.php?title=Penicillin&oldid=267453249",
+    "revision": "267453249",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Penicillin&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/penicillin.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Im Jahre 1939 interessierten sich Howard Walter Florey und Ernst Boris Chain für das Penicillin.",
+      "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+    },
+    {
+      "text": "Norman Heatley gelang es, das Antibiotikum aus der Kulturflüssigkeit, in der man die Schimmelpilze züchtete, zu extrahieren und zu reinigen.",
+      "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+    },
+    {
+      "text": "Am 24. August 1940 fand ein Tierversuch an 50 Ratten statt, die mit einer tödlichen Dosis Streptokokken infiziert wurden.",
+      "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+    },
+    {
+      "text": "Die Hälfte von ihnen erhielt Penicillin, und nur eine aus dieser Gruppe starb.",
+      "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+    },
+    {
+      "text": "Die Ratten der anderen Gruppe starben alle innerhalb weniger Stunden.",
+      "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+    },
+    {
+      "text": "Dieses Tierexperiment stellte überraschend die kraftvolle Wirkung des Penicillins heraus, die bei diesem aggressiven Bakterienstamm nicht erwartet wurde.",
+      "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+    },
+    {
+      "text": "Am 12. Februar 1941 wurde der erste Patient mit dem gewonnenen Penicillin behandelt.",
+      "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+    },
+    {
+      "text": "Es handelte sich um den 43-jährigen Londoner Polizisten Albert Alexander, der sich beim Rosenschneiden verletzt und durch Infektion der Wunde eine Blutvergiftung erlitten hatte; ihm wurde eine Dosis von 160 Milligramm injiziert.",
+      "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+    },
+    {
+      "text": "Nach fünf Tagen Behandlung war das Fieber verschwunden, jedoch war der Penicillinvorrat aufgebraucht, weshalb die Behandlung abgebrochen werden musste.",
+      "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+    },
+    {
+      "text": "Der Patient starb am 15. März 1941.",
+      "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+    },
+    {
+      "text": "Dies ließ retrospektiv vermuten, dass das Penicillin hätte länger eingenommen werden müssen, als die sichtbaren Beschwerden andauern.",
+      "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+    },
+    {
+      "text": "Der erste Patient hätte nach heutigem Wissensstand fünf bis zehn Tage behandelt werden müssen.",
+      "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        {
+          "slot": "s1"
+        },
+        " wurde das Penicillin für Howard Walter ",
+        {
+          "slot": "s1b"
+        },
+        " und Ernst Boris Chain interessant."
+      ],
+      "evidence": {
+        "quote": "Im Jahre 1939 interessierten sich Howard Walter Florey und Ernst Boris Chain für das Penicillin."
+      }
+    },
+    {
+      "sentence": [
+        "Norman Heatley gelang es, das ",
+        {
+          "slot": "s2"
+        },
+        " aus der Kulturflüssigkeit zu ",
+        {
+          "slot": "s3"
+        },
+        " und zu reinigen."
+      ],
+      "evidence": {
+        "quote": "Norman Heatley gelang es, das Antibiotikum aus der Kulturflüssigkeit, in der man die Schimmelpilze züchtete, zu extrahieren und zu reinigen."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i1"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Am ",
+        {
+          "slot": "s4"
+        },
+        " fand ein Tierversuch an ",
+        {
+          "slot": "s5"
+        },
+        " Ratten statt."
+      ],
+      "evidence": {
+        "quote": "Am 24. August 1940 fand ein Tierversuch an 50 Ratten statt"
+      }
+    },
+    {
+      "sentence": [
+        "Die Tiere wurden mit einer tödlichen Dosis ",
+        {
+          "slot": "s6"
+        },
+        " infiziert."
+      ],
+      "evidence": {
+        "quote": "die mit einer tödlichen Dosis Streptokokken infiziert wurden"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s7b"
+        },
+        " der Ratten erhielt Penicillin, und ",
+        {
+          "slot": "s7"
+        },
+        " aus dieser Gruppe starb."
+      ],
+      "evidence": {
+        "quote": "Die Hälfte von ihnen erhielt Penicillin, und nur eine aus dieser Gruppe starb."
+      }
+    },
+    {
+      "sentence": [
+        "Die Ratten der anderen Gruppe starben ",
+        {
+          "slot": "s8"
+        },
+        " innerhalb weniger ",
+        {
+          "slot": "s9"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Die Ratten der anderen Gruppe starben alle innerhalb weniger Stunden."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i4b"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Dieses Tierexperiment zeigte ",
+        {
+          "slot": "s10"
+        },
+        " die kraftvolle Wirkung des Penicillins."
+      ],
+      "evidence": {
+        "quote": "Dieses Tierexperiment stellte überraschend die kraftvolle Wirkung des Penicillins heraus"
+      }
+    },
+    {
+      "sentence": [
+        "Bei diesem ",
+        {
+          "slot": "s11"
+        },
+        " Bakterienstamm hatte man eine so starke Wirkung nicht erwartet."
+      ],
+      "evidence": {
+        "quote": "die bei diesem aggressiven Bakterienstamm nicht erwartet wurde"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i2"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Der erste Patient wurde am ",
+        {
+          "slot": "s12"
+        },
+        " mit dem gewonnenen Penicillin behandelt."
+      ],
+      "evidence": {
+        "quote": "Am 12. Februar 1941 wurde der erste Patient mit dem gewonnenen Penicillin behandelt."
+      }
+    },
+    {
+      "sentence": [
+        "Der Patient war der ",
+        {
+          "slot": "s13"
+        },
+        " Londoner ",
+        {
+          "slot": "s14"
+        },
+        " Albert Alexander."
+      ],
+      "evidence": {
+        "quote": "Es handelte sich um den 43-jährigen Londoner Polizisten Albert Alexander"
+      }
+    },
+    {
+      "sentence": [
+        "Er hatte sich beim ",
+        {
+          "slot": "s15"
+        },
+        " verletzt und durch eine Infektion der Wunde eine ",
+        {
+          "slot": "s16"
+        },
+        " erlitten."
+      ],
+      "evidence": {
+        "quote": "der sich beim Rosenschneiden verletzt und durch Infektion der Wunde eine Blutvergiftung erlitten hatte"
+      }
+    },
+    {
+      "sentence": [
+        "Er bekam eine Spritze mit einer Dosis von ",
+        {
+          "slot": "s17"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "ihm wurde eine Dosis von 160 Milligramm injiziert"
+      }
+    },
+    {
+      "sentence": [
+        "Das Fieber war nach ",
+        {
+          "slot": "s18"
+        },
+        " Behandlung verschwunden."
+      ],
+      "evidence": {
+        "quote": "Nach fünf Tagen Behandlung war das Fieber verschwunden"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i3"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Jedoch war der Penicillinvorrat ",
+        {
+          "slot": "s19"
+        },
+        " ",
+        {
+          "slot": "s20"
+        },
+        " die Behandlung abgebrochen werden musste."
+      ],
+      "evidence": {
+        "quote": "jedoch war der Penicillinvorrat aufgebraucht, weshalb die Behandlung abgebrochen werden musste"
+      }
+    },
+    {
+      "sentence": [
+        "Am ",
+        {
+          "slot": "s22"
+        },
+        " starb der Patient."
+      ],
+      "evidence": {
+        "quote": "Der Patient starb am 15. März 1941."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i5"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Im Nachhinein ",
+        {
+          "slot": "s24"
+        },
+        " ",
+        {
+          "slot": "s24b"
+        },
+        " das Penicillin ",
+        {
+          "slot": "s23"
+        },
+        " hätte eingenommen werden müssen, als die sichtbaren Beschwerden andauern."
+      ],
+      "evidence": {
+        "quote": "Dies ließ retrospektiv vermuten, dass das Penicillin hätte länger eingenommen werden müssen, als die sichtbaren Beschwerden andauern."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i6"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Der erste Patient hätte nach heutigem Wissensstand ",
+        {
+          "slot": "s25"
+        },
+        " behandelt werden müssen."
+      ],
+      "evidence": {
+        "quote": "Der erste Patient hätte nach heutigem Wissensstand fünf bis zehn Tage behandelt werden müssen."
+      }
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "1939",
+      "variants": [
+        {
+          "text": "1929",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Im Jahre 1939 interessierten sich Howard Walter Florey und Ernst Boris Chain für das Penicillin.“ Es war 1939, nicht 1929.",
+          "evidence": "Im Jahre 1939 interessierten sich Howard Walter Florey und Ernst Boris Chain für das Penicillin."
+        },
+        {
+          "text": "1993",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Im Jahre 1939 interessierten sich Howard Walter Florey und Ernst Boris Chain für das Penicillin.“ Die Ziffern wurden vertauscht: 1939.",
+          "evidence": "Im Jahre 1939 interessierten sich Howard Walter Florey und Ernst Boris Chain für das Penicillin."
+        }
+      ]
+    },
+    "s1b": {
+      "correct": "Florey",
+      "variants": [
+        {
+          "text": "Fleming",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Howard Walter Florey und Ernst Boris Chain“. Der Name Fleming kommt in diesem Abschnitt nicht vor.",
+          "evidence": "Im Jahre 1939 interessierten sich Howard Walter Florey und Ernst Boris Chain für das Penicillin."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "Antibiotikum",
+      "variants": [
+        {
+          "text": "Vitamin",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „das Antibiotikum aus der Kulturflüssigkeit“. Penicillin ist ein Antibiotikum, kein Vitamin.",
+          "evidence": "Norman Heatley gelang es, das Antibiotikum aus der Kulturflüssigkeit, in der man die Schimmelpilze züchtete, zu extrahieren und zu reinigen."
+        },
+        {
+          "text": "Antibiodikum",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das Wort kommt aus dem Griechischen („biotikos“) und wird mit „t“ geschrieben: Antibiotikum. Ein „d“ ist hier falsch, auch wenn man es ähnlich spricht."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "extrahieren",
+      "variants": [
+        {
+          "text": "vernichten",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „zu extrahieren und zu reinigen“. Heatley gewann den Stoff heraus. Vernichten und reinigen passen nicht zusammen.",
+          "evidence": "Norman Heatley gelang es, das Antibiotikum aus der Kulturflüssigkeit, in der man die Schimmelpilze züchtete, zu extrahieren und zu reinigen."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "24. August 1940",
+      "variants": [
+        {
+          "text": "24. August 1941",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Am 24. August 1940 fand ein Tierversuch an 50 Ratten statt“. Der Versuch war 1940, nicht 1941.",
+          "evidence": "Am 24. August 1940 fand ein Tierversuch an 50 Ratten statt",
+          "tolerance": 1
+        },
+        {
+          "text": "14. August 1940",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Am 24. August 1940 fand ein Tierversuch an 50 Ratten statt“. Der Tag war der 24., nicht der 14.",
+          "evidence": "Am 24. August 1940 fand ein Tierversuch an 50 Ratten statt",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s5": {
+      "correct": "50",
+      "variants": [
+        {
+          "text": "500",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „ein Tierversuch an 50 Ratten“. Es waren 50 Ratten, nicht 500.",
+          "evidence": "Am 24. August 1940 fand ein Tierversuch an 50 Ratten statt"
+        },
+        {
+          "text": "15",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „ein Tierversuch an 50 Ratten“. Die Ziffern wurden vertauscht: 50 Ratten.",
+          "evidence": "Am 24. August 1940 fand ein Tierversuch an 50 Ratten statt"
+        }
+      ]
+    },
+    "s6": {
+      "correct": "Streptokokken",
+      "variants": [
+        {
+          "text": "Staphylokokken",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „mit einer tödlichen Dosis Streptokokken infiziert“. Die Ratten wurden mit Streptokokken infiziert, nicht mit Staphylokokken.",
+          "evidence": "die mit einer tödlichen Dosis Streptokokken infiziert wurden"
+        },
+        {
+          "text": "Streptokoken",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "In „Kokken“ schreibt man ein doppeltes „k“: Streptokokken."
+        }
+      ]
+    },
+    "s7b": {
+      "correct": "Die Hälfte",
+      "variants": [
+        {
+          "text": "Ein Drittel",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Die Hälfte von ihnen erhielt Penicillin“. Die Hälfte der Ratten bekam Penicillin, nicht ein Drittel.",
+          "evidence": "Die Hälfte von ihnen erhielt Penicillin, und nur eine aus dieser Gruppe starb."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "nur eine",
+      "variants": [
+        {
+          "text": "keine",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „und nur eine aus dieser Gruppe starb“. Eine Ratte starb. „Keine“ sagt, dass alle überlebten.",
+          "evidence": "Die Hälfte von ihnen erhielt Penicillin, und nur eine aus dieser Gruppe starb."
+        },
+        {
+          "text": "jede",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „und nur eine aus dieser Gruppe starb“. Fast alle Ratten dieser Gruppe überlebten. „Jede“ sagt das Gegenteil.",
+          "evidence": "Die Hälfte von ihnen erhielt Penicillin, und nur eine aus dieser Gruppe starb."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "alle",
+      "variants": [
+        {
+          "text": "einige",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Die Ratten der anderen Gruppe starben alle innerhalb weniger Stunden.“ Es starben alle, nicht nur einige.",
+          "evidence": "Die Ratten der anderen Gruppe starben alle innerhalb weniger Stunden."
+        },
+        {
+          "text": "nicht",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Die Ratten der anderen Gruppe starben alle innerhalb weniger Stunden.“ Mit „nicht“ ist der Satz verneint und sagt das Gegenteil."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "Stunden",
+      "variants": [
+        {
+          "text": "Tage",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „starben alle innerhalb weniger Stunden“. Es waren Stunden, nicht Tage.",
+          "evidence": "Die Ratten der anderen Gruppe starben alle innerhalb weniger Stunden."
+        },
+        {
+          "text": "Wochen",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „starben alle innerhalb weniger Stunden“. Es waren Stunden, nicht Wochen.",
+          "evidence": "Die Ratten der anderen Gruppe starben alle innerhalb weniger Stunden."
+        }
+      ]
+    },
+    "i4b": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Alle Ratten überlebten den Versuch.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Dieser Satz widerspricht dem Text. Dort steht, dass die Ratten der anderen Gruppe alle starben."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "überraschend",
+      "variants": [
+        {
+          "text": "erwartungsgemäß",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Dieses Tierexperiment stellte überraschend die kraftvolle Wirkung des Penicillins heraus“. Die Wirkung war überraschend, man hatte sie nicht erwartet.",
+          "evidence": "Dieses Tierexperiment stellte überraschend die kraftvolle Wirkung des Penicillins heraus"
+        },
+        {
+          "text": "sensationell",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Sensationell“ ist ein Gefühlswort. Das Original sagt nüchtern: „überraschend“. Solche Wörter sollen beeindrucken, sie belegen nichts."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "aggressiven",
+      "variants": [
+        {
+          "text": "harmlosen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „bei diesem aggressiven Bakterienstamm“. Der Stamm war aggressiv, nicht harmlos.",
+          "evidence": "die bei diesem aggressiven Bakterienstamm nicht erwartet wurde"
+        },
+        {
+          "text": "agressiven",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort „aggressiv“ schreibt man mit zwei „g“. Nach dem kurzen „a“ folgt ein doppelter Konsonant."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "12. Februar 1941",
+      "variants": [
+        {
+          "text": "12. Februar 1914",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Am 12. Februar 1941 wurde der erste Patient mit dem gewonnenen Penicillin behandelt.“ Die Ziffern wurden vertauscht: 1941.",
+          "evidence": "Am 12. Februar 1941 wurde der erste Patient mit dem gewonnenen Penicillin behandelt.",
+          "tolerance": 1
+        },
+        {
+          "text": "21. Februar 1941",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Am 12. Februar 1941 wurde der erste Patient mit dem gewonnenen Penicillin behandelt.“ Es war der 12., nicht der 21.",
+          "evidence": "Am 12. Februar 1941 wurde der erste Patient mit dem gewonnenen Penicillin behandelt.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s13": {
+      "correct": "43-jährige",
+      "variants": [
+        {
+          "text": "34-jährige",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „den 43-jährigen Londoner Polizisten Albert Alexander“. Die Ziffern wurden vertauscht: 43.",
+          "evidence": "Es handelte sich um den 43-jährigen Londoner Polizisten Albert Alexander"
+        },
+        {
+          "text": "63-jährige",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „den 43-jährigen Londoner Polizisten Albert Alexander“. Der Patient war 43, nicht 63.",
+          "evidence": "Es handelte sich um den 43-jährigen Londoner Polizisten Albert Alexander"
+        }
+      ]
+    },
+    "s14": {
+      "correct": "Polizist",
+      "variants": [
+        {
+          "text": "Feuerwehrmann",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „den 43-jährigen Londoner Polizisten Albert Alexander“. Der Beruf wurde ausgetauscht.",
+          "evidence": "Es handelte sich um den 43-jährigen Londoner Polizisten Albert Alexander"
+        },
+        {
+          "text": "Polizst",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein Buchstabe: Polizist."
+        }
+      ]
+    },
+    "s15": {
+      "correct": "Rosenschneiden",
+      "variants": [
+        {
+          "text": "Holzhacken",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „der sich beim Rosenschneiden verletzt“. Er verletzte sich bei der Gartenarbeit mit den Rosen, nicht beim Holzhacken.",
+          "evidence": "der sich beim Rosenschneiden verletzt und durch Infektion der Wunde eine Blutvergiftung erlitten hatte"
+        }
+      ]
+    },
+    "s16": {
+      "correct": "Blutvergiftung",
+      "variants": [
+        {
+          "text": "Lungenentzündung",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „durch Infektion der Wunde eine Blutvergiftung erlitten“. Es war eine Blutvergiftung, keine Lungenentzündung.",
+          "evidence": "der sich beim Rosenschneiden verletzt und durch Infektion der Wunde eine Blutvergiftung erlitten hatte"
+        }
+      ]
+    },
+    "s17": {
+      "correct": "160 Milligramm",
+      "variants": [
+        {
+          "text": "160 Gramm",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „ihm wurde eine Dosis von 160 Milligramm injiziert“. Die Einheit wurde verändert. Ein Gramm ist tausendmal so viel wie ein Milligramm.",
+          "evidence": "ihm wurde eine Dosis von 160 Milligramm injiziert"
+        },
+        {
+          "text": "1600 Milligramm",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „ihm wurde eine Dosis von 160 Milligramm injiziert“. Es waren 160 Milligramm, nicht 1600.",
+          "evidence": "ihm wurde eine Dosis von 160 Milligramm injiziert"
+        }
+      ]
+    },
+    "s18": {
+      "correct": "fünf Tagen",
+      "variants": [
+        {
+          "text": "fünf Wochen",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Nach fünf Tagen Behandlung war das Fieber verschwunden“. Nach fünf Tagen, nicht nach fünf Wochen.",
+          "evidence": "Nach fünf Tagen Behandlung war das Fieber verschwunden"
+        },
+        {
+          "text": "fünfzehn Tagen",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Nach fünf Tagen Behandlung war das Fieber verschwunden“. Es waren fünf Tage, nicht fünfzehn.",
+          "evidence": "Nach fünf Tagen Behandlung war das Fieber verschwunden"
+        }
+      ]
+    },
+    "i3": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Weil das Fieber nach fünf Tagen weg war, war der Patient geheilt.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das Fieber war weg, aber die Behandlung wurde abgebrochen und der Patient starb. Aus „kein Fieber mehr“ folgt nicht „geheilt“."
+        },
+        {
+          "text": "Daraus folgt: Wer Penicillin bekommt, wird immer gesund.",
+          "errorClass": "overgeneralization",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier wird aus einem Fall ein Gesetz gemacht. Im Original wird der erste Patient behandelt, und er starb. „Immer“ steht dort nicht."
+        }
+      ]
+    },
+    "s19": {
+      "correct": "aufgebraucht,",
+      "variants": [
+        {
+          "text": "aufgebracht,",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "„Aufgebracht“ ist ein echtes Wort und heißt „wütend“. Gemeint ist „aufgebraucht“: Der Vorrat war leer."
+        },
+        {
+          "text": "aufgebraucht",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Vor „weshalb“ beginnt ein Nebensatz. Dort setzt man ein Komma."
+        }
+      ]
+    },
+    "s20": {
+      "correct": "weshalb",
+      "variants": [
+        {
+          "text": "obwohl",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „aufgebraucht, weshalb die Behandlung abgebrochen werden musste“. Der leere Vorrat ist der Grund. „Obwohl“ macht daraus einen Gegensatz."
+        },
+        {
+          "text": "weil",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „aufgebraucht, weshalb die Behandlung abgebrochen werden musste“. Mit „weil“ wären Grund und Folge vertauscht."
+        }
+      ]
+    },
+    "s22": {
+      "correct": "15. März 1941",
+      "variants": [
+        {
+          "text": "15. April 1941",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Der Patient starb am 15. März 1941.“ Es war der 15. März, nicht der 15. April.",
+          "evidence": "Der Patient starb am 15. März 1941.",
+          "tolerance": 1
+        },
+        {
+          "text": "5. März 1941",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Der Patient starb am 15. März 1941.“ Es war der 15., nicht der 5.",
+          "evidence": "Der Patient starb am 15. März 1941.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "i5": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Der Patient lebte danach noch viele Jahre.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz widerspricht dem Satz davor. Dort steht, dass der Patient am 15. März 1941 starb."
+        },
+        {
+          "text": "Die Forscher in Oxford arbeiteten oft bis spät in die Nacht.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht im Original. Dort steht nichts darüber, wie lange die Forscher arbeiteten."
+        }
+      ]
+    },
+    "s24": {
+      "correct": "vermutete man,",
+      "variants": [
+        {
+          "text": "bewies man,",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Dies ließ retrospektiv vermuten“. Es war eine Vermutung, kein Beweis.",
+          "evidence": "Dies ließ retrospektiv vermuten, dass das Penicillin hätte länger eingenommen werden müssen, als die sichtbaren Beschwerden andauern."
+        }
+      ]
+    },
+    "s24b": {
+      "correct": "dass",
+      "variants": [
+        {
+          "text": "das",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier beginnt ein Nebensatz mit einer Aussage. Man schreibt „dass“. „Das“ kann man durch „dieses“ ersetzen, hier geht das nicht."
+        }
+      ]
+    },
+    "s23": {
+      "correct": "länger",
+      "variants": [
+        {
+          "text": "kürzer",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „dass das Penicillin hätte länger eingenommen werden müssen“. Es hätte länger gegeben werden müssen, nicht kürzer.",
+          "evidence": "Dies ließ retrospektiv vermuten, dass das Penicillin hätte länger eingenommen werden müssen, als die sichtbaren Beschwerden andauern."
+        },
+        {
+          "text": "früher",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „dass das Penicillin hätte länger eingenommen werden müssen“. Es ging um die Dauer, nicht um den Zeitpunkt.",
+          "evidence": "Dies ließ retrospektiv vermuten, dass das Penicillin hätte länger eingenommen werden müssen, als die sichtbaren Beschwerden andauern."
+        }
+      ]
+    },
+    "i6": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Norman Heatley war der klügste Forscher im ganzen Team.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das ist eine Meinung. „Der klügste“ lässt sich nicht messen. Im Original steht nur, was Heatley gelang: das Antibiotikum zu extrahieren und zu reinigen."
+        },
+        {
+          "text": "Heatleys Arbeit war einfach unfassbar großartig.",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "„Unfassbar großartig“ ist ein Gefühlswort. Das Original sagt nüchtern, was Heatley gelang."
+        }
+      ]
+    },
+    "s25": {
+      "correct": "fünf bis zehn Tage",
+      "variants": [
+        {
+          "text": "fünf bis zehn Wochen",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „fünf bis zehn Tage behandelt werden müssen“. Es waren Tage, nicht Wochen.",
+          "evidence": "Der erste Patient hätte nach heutigem Wissensstand fünf bis zehn Tage behandelt werden müssen.",
+          "tolerance": 1
+        },
+        {
+          "text": "ein bis zwei Tage",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „fünf bis zehn Tage behandelt werden müssen“. Es waren fünf bis zehn Tage.",
+          "evidence": "Der erste Patient hätte nach heutigem Wissensstand fünf bis zehn Tage behandelt werden müssen.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "i1": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Forscher sagen, dass Schimmelpilze zu den ältesten Lebewesen der Erde gehören.",
+          "errorClass": "false_authority",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Der Satz beruft sich auf „Forscher“, ohne einen Namen oder eine Quelle zu nennen. Im Original steht davon nichts. Dort geht es nur um die Kulturflüssigkeit der Schimmelpilze.",
+          "evidence": "Norman Heatley gelang es, das Antibiotikum aus der Kulturflüssigkeit, in der man die Schimmelpilze züchtete, zu extrahieren und zu reinigen."
+        },
+        {
+          "text": "Die Ratten stammten aus einer Zucht in Oxford.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht im Original. Dort steht nichts darüber, woher die Ratten kamen."
+        }
+      ]
+    },
+    "i2": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Dieser Tierversuch war der wichtigste Moment der ganzen Medizingeschichte.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das ist eine Meinung. „Der wichtigste Moment“ lässt sich nicht messen. Im Original steht, was der Versuch zeigte, nicht wie wichtig er war."
+        },
+        {
+          "text": "Die armen Ratten mussten dafür furchtbar leiden.",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "„Arm“ und „furchtbar“ sind Gefühlswörter. Das Original beschreibt nüchtern, was bei dem Versuch geschah."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Wikipedia-Artikel Penicillin, Revision 267453249 (abgerufen am 18.10.2026), als gespeicherte Seite vollständig durchgesehen; die 12 Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft; Fußnotenzeichen fehlen im Auszug).",
+    "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite); die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Alle Fehlerklassen der Stufe kommen vor. Die Klassen ab Klasse 7 und ab Klasse 10 sind abgeleitet, nicht belegt. Rechtschreibfehler sind konstruiert nach den IQB-Schwerpunkten (Konsonantverdopplung, Auslautverhärtung, Dehnung, das/dass, wieder/wider).",
+    "Die eingefügten Sätze (Stellen ohne Text im richtigen Wortlaut) sind erfunden, harmlos und stehen nicht im Original; die Erklärung nennt das.",
+    "Der Auszug nennt einen echten Patienten, der starb. Die Varianten bleiben sachlich; es werden nur Zahlen, Namen und Aussagen verändert. Das Paket gibt keine medizinischen Ratschläge.",
+    "Der eingefügte Satz „Der Patient lebte danach noch viele Jahre.“ widerspricht dem richtigen Satz „Der Patient starb am 15. März 1941.“; ist dort das Datum verändert, bleibt es ein Widerspruch zum Original.",
+    "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt; die Zahlen und Namen folgen dem Artikel, nicht anderen Quellen. Die falschen Varianten sind absichtlich verändert und stehen nicht in der Quelle.",
+    "Die Quelle liegt als PDF unter public/quellen/de/penicillin.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+  ]
+}

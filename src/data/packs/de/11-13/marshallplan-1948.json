@@ -1,0 +1,914 @@
+{
+  "id": "marshallplan-1948",
+  "title": "Der Marshallplan",
+  "language": "de",
+  "grades": {
+    "from": 11,
+    "to": 13
+  },
+  "topic": "Marshallplan 1948 bis 1952: Hilfen der USA für Europa, Teilnehmer, Bedingungen, Bewertung",
+  "source": {
+    "title": "Marshallplan – Wikipedia",
+    "url": "https://de.wikipedia.org/w/index.php?title=Marshallplan&oldid=271097086",
+    "revision": "271097086",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Marshallplan&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/marshallplan-1948.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Der Marshallplan, offiziell European Recovery Program (ERP), war ein historisch bedeutendes Wirtschaftsförderungsprogramm der USA für den Wiederaufbau der Staaten Europas nach dem Zweiten Weltkrieg.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Im Zeitraum von 1948 bis 1952 wurden Hilfen im Wert von ca. 13,12 Milliarden US-Dollar (entspricht heute rund 155,05 Milliarden Dollar) an viele, insbesondere westeuropäische Staaten geleistet.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Die BRD erhielt hiervon 1,41 Milliarden US-Dollar.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Unter den am Programm teilnehmenden Staaten befanden sich neben den im Zweiten Weltkrieg mit den USA verbündeten Staaten wie Großbritannien, Frankreich und den Beneluxländern auch die Kriegsgegner Deutschland und Österreich.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Den mittel- und osteuropäischen Staaten und der Sowjetunion wurden die Hilfen ebenfalls angeboten.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Allerdings zog sich die Sowjetunion bald aus den Verhandlungen zurück und verbot auch den unter ihrem Einfluss stehenden europäischen Staaten die Teilnahme.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Die Hilfsleistungen bestanden zu einem großen Teil aus Krediten sowie Lieferungen von Rohstoffen, Lebensmitteln und Industriegütern.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Das Programm verstand sich als Hilfe zur Selbsthilfe und war an Bedingungen geknüpft, wie den Abbau von Handelshemmnissen, die Stabilisierung der eigenen Währung oder die zwischenstaatliche Kooperation.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Die Initiative ging vom damaligen US-Außenminister George C. Marshall (Amtszeit 1947 bis 1949) aus, nach dem das Programm benannt und der deshalb auch 1953 mit dem Friedensnobelpreis ausgezeichnet wurde.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Da in den westeuropäischen Ländern spätestens ab 1950 der Nachkriegsboom einsetzte, galt und gilt der Marshallplan in der Bevölkerung als sehr erfolgreich, insbesondere in der Bundesrepublik Deutschland.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Wie groß sein tatsächlicher Anteil am Wirtschaftsaufschwung war, ist aber umstritten.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Ohne Zweifel beschleunigte der Marshallplan die wirtschaftliche Erholung in Europa.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Zudem war er ein entscheidender Impuls für die europäische Integration und den Abbau von Handelshemmnissen zwischen den westeuropäischen Staaten.",
+      "section": "Einleitung"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Der Marshallplan, amtlich European Recovery Program (ERP), war ein ",
+        {
+          "slot": "s1"
+        },
+        " ",
+        {
+          "slot": "s2"
+        },
+        " der ",
+        {
+          "slot": "s3"
+        },
+        " für den Wiederaufbau der Staaten Europas nach dem Zweiten Weltkrieg."
+      ],
+      "evidence": {
+        "quote": "Der Marshallplan, offiziell European Recovery Program (ERP), war ein historisch bedeutendes Wirtschaftsförderungsprogramm der USA für den Wiederaufbau der Staaten Europas nach dem Zweiten Weltkrieg."
+      }
+    },
+    {
+      "sentence": [
+        "Zwischen ",
+        {
+          "slot": "s4"
+        },
+        " und ",
+        {
+          "slot": "s5"
+        },
+        " wurden Hilfen im Wert von etwa ",
+        {
+          "slot": "s6"
+        },
+        " Milliarden US-Dollar an ",
+        {
+          "slot": "s7"
+        },
+        " geleistet."
+      ],
+      "evidence": {
+        "quote": "Im Zeitraum von 1948 bis 1952 wurden Hilfen im Wert von ca. 13,12 Milliarden US-Dollar (entspricht heute rund 155,05 Milliarden Dollar) an viele, insbesondere westeuropäische Staaten geleistet."
+      }
+    },
+    {
+      "sentence": [
+        "Die Bundesrepublik Deutschland erhielt davon ",
+        {
+          "slot": "s8"
+        },
+        " Milliarden US-Dollar."
+      ],
+      "evidence": {
+        "quote": "Die BRD erhielt hiervon 1,41 Milliarden US-Dollar."
+      }
+    },
+    {
+      "sentence": [
+        "Unter den teilnehmenden Staaten waren nicht nur Länder, die im Zweiten Weltkrieg ",
+        {
+          "slot": "s9"
+        },
+        " waren, wie Großbritannien, Frankreich und die ",
+        {
+          "slot": "s10"
+        },
+        ", sondern auch die Kriegsgegner ",
+        {
+          "slot": "s11"
+        },
+        " und Österreich."
+      ],
+      "evidence": {
+        "quote": "Unter den am Programm teilnehmenden Staaten befanden sich neben den im Zweiten Weltkrieg mit den USA verbündeten Staaten wie Großbritannien, Frankreich und den Beneluxländern auch die Kriegsgegner Deutschland und Österreich."
+      }
+    },
+    {
+      "sentence": [
+        "Die Hilfen ",
+        {
+          "slot": "s12"
+        },
+        " den mittel- und osteuropäischen Staaten und der Sowjetunion ebenfalls angeboten."
+      ],
+      "evidence": {
+        "quote": "Den mittel- und osteuropäischen Staaten und der Sowjetunion wurden die Hilfen ebenfalls angeboten."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s13"
+        },
+        " zog sich die Sowjetunion ",
+        {
+          "slot": "s14"
+        },
+        " aus den Verhandlungen zurück und ",
+        {
+          "slot": "s15"
+        },
+        " auch den europäischen Staaten unter ihrem Einfluss die Teilnahme."
+      ],
+      "evidence": {
+        "quote": "Allerdings zog sich die Sowjetunion bald aus den Verhandlungen zurück und verbot auch den unter ihrem Einfluss stehenden europäischen Staaten die Teilnahme."
+      }
+    },
+    {
+      "sentence": [
+        "Die Hilfen bestanden ",
+        {
+          "slot": "s16"
+        },
+        " aus Krediten sowie aus Lieferungen von ",
+        {
+          "slot": "s17"
+        },
+        " und ",
+        {
+          "slot": "s18"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Die Hilfsleistungen bestanden zu einem großen Teil aus Krediten sowie Lieferungen von Rohstoffen, Lebensmitteln und Industriegütern."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s19"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Das Programm verstand sich als ",
+        {
+          "slot": "s20"
+        },
+        " und war an Bedingungen geknüpft, etwa den Abbau von ",
+        {
+          "slot": "s21"
+        },
+        ", die Stabilisierung der eigenen ",
+        {
+          "slot": "s22"
+        },
+        " oder die zwischenstaatliche Kooperation."
+      ],
+      "evidence": {
+        "quote": "Das Programm verstand sich als Hilfe zur Selbsthilfe und war an Bedingungen geknüpft, wie den Abbau von Handelshemmnissen, die Stabilisierung der eigenen Währung oder die zwischenstaatliche Kooperation."
+      }
+    },
+    {
+      "sentence": [
+        "Die Initiative ging vom damaligen US-Außenminister ",
+        {
+          "slot": "s23"
+        },
+        " aus, dessen Amtszeit von ",
+        {
+          "slot": "s24"
+        },
+        " dauerte."
+      ],
+      "evidence": {
+        "quote": "Die Initiative ging vom damaligen US-Außenminister George C. Marshall (Amtszeit 1947 bis 1949) aus, nach dem das Programm benannt und der deshalb auch 1953 mit dem Friedensnobelpreis ausgezeichnet wurde."
+      }
+    },
+    {
+      "sentence": [
+        "Das Programm ist nach ihm benannt; ",
+        {
+          "slot": "s25"
+        },
+        " erhielt er ",
+        {
+          "slot": "s26"
+        },
+        " den Friedensnobelpreis."
+      ],
+      "evidence": {
+        "quote": "Die Initiative ging vom damaligen US-Außenminister George C. Marshall (Amtszeit 1947 bis 1949) aus, nach dem das Programm benannt und der deshalb auch 1953 mit dem Friedensnobelpreis ausgezeichnet wurde."
+      }
+    },
+    {
+      "sentence": [
+        "Weil in den westeuropäischen Ländern spätestens ab ",
+        {
+          "slot": "s27"
+        },
+        " der Nachkriegsboom einsetzte, galt und gilt der Marshallplan ",
+        {
+          "slot": "s28"
+        },
+        " als ",
+        {
+          "slot": "s29"
+        },
+        ", insbesondere in der Bundesrepublik Deutschland."
+      ],
+      "evidence": {
+        "quote": "Da in den westeuropäischen Ländern spätestens ab 1950 der Nachkriegsboom einsetzte, galt und gilt der Marshallplan in der Bevölkerung als sehr erfolgreich, insbesondere in der Bundesrepublik Deutschland."
+      }
+    },
+    {
+      "sentence": [
+        "Wie groß sein tatsächlicher Anteil am Wirtschaftsaufschwung ",
+        {
+          "slot": "s30"
+        },
+        " ist ",
+        {
+          "slot": "s31"
+        },
+        " umstritten."
+      ],
+      "evidence": {
+        "quote": "Wie groß sein tatsächlicher Anteil am Wirtschaftsaufschwung war, ist aber umstritten."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s32"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Unstrittig ist, ",
+        {
+          "slot": "s33"
+        },
+        " der Marshallplan die wirtschaftliche Erholung in Europa ",
+        {
+          "slot": "s34"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Ohne Zweifel beschleunigte der Marshallplan die wirtschaftliche Erholung in Europa."
+      }
+    },
+    {
+      "sentence": [
+        "Außerdem war er ",
+        {
+          "slot": "s35"
+        },
+        " für die europäische Integration und den Abbau von Handelshemmnissen zwischen den ",
+        {
+          "slot": "s36"
+        },
+        " Staaten."
+      ],
+      "evidence": {
+        "quote": "Zudem war er ein entscheidender Impuls für die europäische Integration und den Abbau von Handelshemmnissen zwischen den westeuropäischen Staaten."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s37"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "bedeutendes",
+      "variants": [
+        {
+          "text": "wundersames",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Wundersames“ klingt, als habe das Programm Wunder bewirkt. Das ist eine gefühlsbetonte Wertung. Im Original steht sachlich: „ein historisch bedeutendes Wirtschaftsförderungsprogramm“."
+        },
+        {
+          "text": "unbedeutendes",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „ein historisch bedeutendes Wirtschaftsförderungsprogramm“. Die Variante behauptet das Gegenteil.",
+          "evidence": "Der Marshallplan, offiziell European Recovery Program (ERP), war ein historisch bedeutendes Wirtschaftsförderungsprogramm der USA für den Wiederaufbau der Staaten Europas nach dem Zweiten Weltkrieg."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "Wirtschaftsförderungsprogramm",
+      "variants": [
+        {
+          "text": "Wirtschaftsförderungsprogam",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Im Wort fehlt ein Buchstabe: Wirtschaftsförderungsprogramm."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "USA",
+      "variants": [
+        {
+          "text": "Sowjetunion",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „ein historisch bedeutendes Wirtschaftsförderungsprogramm der USA“. Das Programm ging von den USA aus, nicht von der Sowjetunion.",
+          "evidence": "Der Marshallplan, offiziell European Recovery Program (ERP), war ein historisch bedeutendes Wirtschaftsförderungsprogramm der USA für den Wiederaufbau der Staaten Europas nach dem Zweiten Weltkrieg."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "1948",
+      "variants": [
+        {
+          "text": "1945",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Im Zeitraum von 1948 bis 1952“. Die Hilfen begannen 1948, nicht 1945.",
+          "evidence": "Im Zeitraum von 1948 bis 1952 wurden Hilfen im Wert von ca. 13,12 Milliarden US-Dollar (entspricht heute rund 155,05 Milliarden Dollar) an viele, insbesondere westeuropäische Staaten geleistet."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "1952",
+      "variants": [
+        {
+          "text": "1955",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Im Zeitraum von 1948 bis 1952“. Die Hilfen endeten 1952, nicht 1955.",
+          "evidence": "Im Zeitraum von 1948 bis 1952 wurden Hilfen im Wert von ca. 13,12 Milliarden US-Dollar (entspricht heute rund 155,05 Milliarden Dollar) an viele, insbesondere westeuropäische Staaten geleistet."
+        },
+        {
+          "text": "1946",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Ende des Zeitraums läge vor seinem Anfang: Ein Zeitraum von 1948 bis 1946 gibt es nicht. Im Original steht: „von 1948 bis 1952“."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "13,12",
+      "variants": [
+        {
+          "text": "31,12",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Hilfen im Wert von ca. 13,12 Milliarden US-Dollar“. Hier sind die Ziffern vertauscht.",
+          "evidence": "Im Zeitraum von 1948 bis 1952 wurden Hilfen im Wert von ca. 13,12 Milliarden US-Dollar (entspricht heute rund 155,05 Milliarden Dollar) an viele, insbesondere westeuropäische Staaten geleistet."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "viele, vor allem westeuropäische Staaten",
+      "variants": [
+        {
+          "text": "alle Staaten Europas",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „an viele, insbesondere westeuropäische Staaten“. Nicht alle Staaten Europas erhielten Hilfe, denn die Sowjetunion und die Staaten unter ihrem Einfluss blieben fern. Aus „viele“ wird „alle“.",
+          "evidence": "Im Zeitraum von 1948 bis 1952 wurden Hilfen im Wert von ca. 13,12 Milliarden US-Dollar (entspricht heute rund 155,05 Milliarden Dollar) an viele, insbesondere westeuropäische Staaten geleistet.",
+          "tolerance": 1
+        },
+        {
+          "text": "ausschließlich westeuropäische Staaten",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „an viele, insbesondere westeuropäische Staaten“. „Insbesondere“ heißt: vor allem, aber nicht nur. Österreich und Deutschland zählen zu den Empfängern, ebenso weitere Staaten. „Ausschließlich“ verengt die Aussage.",
+          "evidence": "Im Zeitraum von 1948 bis 1952 wurden Hilfen im Wert von ca. 13,12 Milliarden US-Dollar (entspricht heute rund 155,05 Milliarden Dollar) an viele, insbesondere westeuropäische Staaten geleistet.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s8": {
+      "correct": "1,41",
+      "variants": [
+        {
+          "text": "14,1",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Die BRD erhielt hiervon 1,41 Milliarden US-Dollar.“ Hier ist das Komma verschoben. Die Bundesrepublik hätte sonst mehr erhalten als die gesamte Hilfssumme.",
+          "evidence": "Die BRD erhielt hiervon 1,41 Milliarden US-Dollar."
+        },
+        {
+          "text": "1,14",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Die BRD erhielt hiervon 1,41 Milliarden US-Dollar.“ Die Ziffern sind vertauscht.",
+          "evidence": "Die BRD erhielt hiervon 1,41 Milliarden US-Dollar."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "mit den USA verbündet",
+      "variants": [
+        {
+          "text": "mit Deutschland verbündet",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „neben den im Zweiten Weltkrieg mit den USA verbündeten Staaten wie Großbritannien, Frankreich und den Beneluxländern“. Diese Länder waren mit den USA verbündet, nicht mit Deutschland. Im selben Satz steht Deutschland als Kriegsgegner.",
+          "evidence": "Unter den am Programm teilnehmenden Staaten befanden sich neben den im Zweiten Weltkrieg mit den USA verbündeten Staaten wie Großbritannien, Frankreich und den Beneluxländern auch die Kriegsgegner Deutschland und Österreich.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s10": {
+      "correct": "Beneluxländer",
+      "variants": [
+        {
+          "text": "Beneluxlender",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort gehört zu „Land“. Darum schreibt man den Umlaut mit „ä“: Beneluxländer."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "Deutschland",
+      "variants": [
+        {
+          "text": "Japan",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „auch die Kriegsgegner Deutschland und Österreich“. Von Japan ist an dieser Stelle nicht die Rede. Gemeint sind Länder Europas.",
+          "evidence": "Unter den am Programm teilnehmenden Staaten befanden sich neben den im Zweiten Weltkrieg mit den USA verbündeten Staaten wie Großbritannien, Frankreich und den Beneluxländern auch die Kriegsgegner Deutschland und Österreich."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "wurden",
+      "variants": [
+        {
+          "text": "wurden nicht",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Den mittel- und osteuropäischen Staaten und der Sowjetunion wurden die Hilfen ebenfalls angeboten.“ Die Verneinung kehrt die Aussage um. Im nächsten Satz zieht sich die Sowjetunion aus den Verhandlungen zurück, das setzt ein Angebot voraus."
+        }
+      ]
+    },
+    "s13": {
+      "correct": "Allerdings",
+      "variants": [
+        {
+          "text": "Deshalb",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Allerdings zog sich die Sowjetunion bald aus den Verhandlungen zurück“. Der Rückzug steht im Gegensatz zum Angebot und folgt nicht daraus. „Deshalb“ nennt einen Grund, den der Text nicht gibt."
+        }
+      ]
+    },
+    "s14": {
+      "correct": "bald",
+      "variants": [
+        {
+          "text": "nie",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „zog sich die Sowjetunion bald aus den Verhandlungen zurück“. „Nie“ passt auch nicht zu „zog sich zurück“ im selben Satz.",
+          "evidence": "Allerdings zog sich die Sowjetunion bald aus den Verhandlungen zurück und verbot auch den unter ihrem Einfluss stehenden europäischen Staaten die Teilnahme."
+        }
+      ]
+    },
+    "s15": {
+      "correct": "verbot",
+      "variants": [
+        {
+          "text": "erlaubte",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „verbot auch den unter ihrem Einfluss stehenden europäischen Staaten die Teilnahme“. Die Sowjetunion hat die Teilnahme untersagt, nicht erlaubt.",
+          "evidence": "Allerdings zog sich die Sowjetunion bald aus den Verhandlungen zurück und verbot auch den unter ihrem Einfluss stehenden europäischen Staaten die Teilnahme."
+        }
+      ]
+    },
+    "s16": {
+      "correct": "zu einem großen Teil",
+      "variants": [
+        {
+          "text": "ausschließlich",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Die Hilfsleistungen bestanden zu einem großen Teil aus Krediten sowie Lieferungen“. Es heißt „zu einem großen Teil“, nicht „ausschließlich“.",
+          "evidence": "Die Hilfsleistungen bestanden zu einem großen Teil aus Krediten sowie Lieferungen von Rohstoffen, Lebensmitteln und Industriegütern."
+        },
+        {
+          "text": "zu einem kleinen Teil",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „zu einem großen Teil aus Krediten sowie Lieferungen“. Hier wird aus einem großen ein kleiner Teil.",
+          "evidence": "Die Hilfsleistungen bestanden zu einem großen Teil aus Krediten sowie Lieferungen von Rohstoffen, Lebensmitteln und Industriegütern.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s17": {
+      "correct": "Rohstoffen, Lebensmitteln",
+      "variants": [
+        {
+          "text": "Rohstoffen Lebensmitteln",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "In einer Aufzählung trennt ein Komma gleichrangige Glieder: Rohstoffen, Lebensmitteln und Industriegütern."
+        }
+      ]
+    },
+    "s18": {
+      "correct": "Industriegütern",
+      "variants": [
+        {
+          "text": "Industriegüttern",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach einem lang gesprochenen Vokal („ü“) steht nur ein „t“: Güter, Industriegütern."
+        }
+      ]
+    },
+    "s19": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Viele Lieferungen kamen mit Schiffen über den Atlantik nach Europa.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht im Original. Dort geht es um die Arten der Hilfe (Kredite, Rohstoffe, Lebensmittel, Industriegüter), nicht um den Transportweg."
+        }
+      ]
+    },
+    "s20": {
+      "correct": "Hilfe zur Selbsthilfe",
+      "variants": [
+        {
+          "text": "Geschenk ohne Bedingungen",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das widerspricht dem Rest des Satzes: Das Programm war laut Satz „an Bedingungen geknüpft“. Im Original steht: „Das Programm verstand sich als Hilfe zur Selbsthilfe und war an Bedingungen geknüpft“.",
+          "evidence": "Das Programm verstand sich als Hilfe zur Selbsthilfe und war an Bedingungen geknüpft, wie den Abbau von Handelshemmnissen, die Stabilisierung der eigenen Währung oder die zwischenstaatliche Kooperation.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s21": {
+      "correct": "Handelshemmnissen",
+      "variants": [
+        {
+          "text": "Handelshemnissen",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort ist aus „Hemmnis“ gebildet. Dort steht „mm“ nach dem kurzen Vokal: Handelshemmnissen."
+        },
+        {
+          "text": "Handelsvorteilen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „den Abbau von Handelshemmnissen“. Abgebaut werden sollten Hindernisse im Handel, nicht Vorteile.",
+          "evidence": "Das Programm verstand sich als Hilfe zur Selbsthilfe und war an Bedingungen geknüpft, wie den Abbau von Handelshemmnissen, die Stabilisierung der eigenen Währung oder die zwischenstaatliche Kooperation."
+        }
+      ]
+    },
+    "s22": {
+      "correct": "Währung",
+      "variants": [
+        {
+          "text": "Verfassung",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „die Stabilisierung der eigenen Währung“. Von einer Verfassung ist dort nicht die Rede.",
+          "evidence": "Das Programm verstand sich als Hilfe zur Selbsthilfe und war an Bedingungen geknüpft, wie den Abbau von Handelshemmnissen, die Stabilisierung der eigenen Währung oder die zwischenstaatliche Kooperation."
+        }
+      ]
+    },
+    "s23": {
+      "correct": "George C. Marshall",
+      "variants": [
+        {
+          "text": "Harry S. Truman",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „vom damaligen US-Außenminister George C. Marshall“. Das Programm ist nach Marshall benannt, nicht nach Truman.",
+          "evidence": "Die Initiative ging vom damaligen US-Außenminister George C. Marshall (Amtszeit 1947 bis 1949) aus, nach dem das Programm benannt und der deshalb auch 1953 mit dem Friedensnobelpreis ausgezeichnet wurde.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s24": {
+      "correct": "1947 bis 1949",
+      "variants": [
+        {
+          "text": "1957 bis 1959",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „(Amtszeit 1947 bis 1949)“. Die Jahre sind um zehn verschoben.",
+          "evidence": "Die Initiative ging vom damaligen US-Außenminister George C. Marshall (Amtszeit 1947 bis 1949) aus, nach dem das Programm benannt und der deshalb auch 1953 mit dem Friedensnobelpreis ausgezeichnet wurde.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s25": {
+      "correct": "deshalb",
+      "variants": [
+        {
+          "text": "trotzdem",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „der deshalb auch 1953 mit dem Friedensnobelpreis ausgezeichnet wurde“. Marshall erhielt den Preis wegen der Initiative, nicht trotz ihr."
+        }
+      ]
+    },
+    "s26": {
+      "correct": "1953",
+      "variants": [
+        {
+          "text": "1948",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „1953 mit dem Friedensnobelpreis ausgezeichnet“. 1948 war das Programm erst angelaufen.",
+          "evidence": "Die Initiative ging vom damaligen US-Außenminister George C. Marshall (Amtszeit 1947 bis 1949) aus, nach dem das Programm benannt und der deshalb auch 1953 mit dem Friedensnobelpreis ausgezeichnet wurde."
+        },
+        {
+          "text": "1963",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „1953 mit dem Friedensnobelpreis ausgezeichnet“. Zehn Jahre später wäre es nicht mehr „deshalb“.",
+          "evidence": "Die Initiative ging vom damaligen US-Außenminister George C. Marshall (Amtszeit 1947 bis 1949) aus, nach dem das Programm benannt und der deshalb auch 1953 mit dem Friedensnobelpreis ausgezeichnet wurde."
+        }
+      ]
+    },
+    "s27": {
+      "correct": "1950",
+      "variants": [
+        {
+          "text": "1945",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „spätestens ab 1950 der Nachkriegsboom“. Der Boom setzte nicht 1945 ein, sondern „spätestens ab 1950“.",
+          "evidence": "Da in den westeuropäischen Ländern spätestens ab 1950 der Nachkriegsboom einsetzte, galt und gilt der Marshallplan in der Bevölkerung als sehr erfolgreich, insbesondere in der Bundesrepublik Deutschland."
+        },
+        {
+          "text": "1955",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „spätestens ab 1950“. „Spätestens“ heißt: nicht später als 1950.",
+          "evidence": "Da in den westeuropäischen Ländern spätestens ab 1950 der Nachkriegsboom einsetzte, galt und gilt der Marshallplan in der Bevölkerung als sehr erfolgreich, insbesondere in der Bundesrepublik Deutschland."
+        }
+      ]
+    },
+    "s28": {
+      "correct": "in der Bevölkerung",
+      "variants": [
+        {
+          "text": "bei allen Historikern",
+          "errorClass": "overgeneralization",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „galt und gilt der Marshallplan in der Bevölkerung als sehr erfolgreich“. Von allen Historikern ist nicht die Rede. Aus der Meinung der Bevölkerung wird ein Urteil aller Fachleute.",
+          "evidence": "Da in den westeuropäischen Ländern spätestens ab 1950 der Nachkriegsboom einsetzte, galt und gilt der Marshallplan in der Bevölkerung als sehr erfolgreich, insbesondere in der Bundesrepublik Deutschland.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s29": {
+      "correct": "sehr erfolgreich",
+      "variants": [
+        {
+          "text": "ein sagenhafter Erfolg",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Sagenhafter Erfolg“ ist ein Schwärmen, kein Befund. Im Original steht nüchtern: „als sehr erfolgreich“.",
+          "evidence": "Da in den westeuropäischen Ländern spätestens ab 1950 der Nachkriegsboom einsetzte, galt und gilt der Marshallplan in der Bevölkerung als sehr erfolgreich, insbesondere in der Bundesrepublik Deutschland.",
+          "tolerance": 1
+        },
+        {
+          "text": "kaum erfolgreich",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „galt und gilt der Marshallplan in der Bevölkerung als sehr erfolgreich“. Die Variante sagt das Gegenteil.",
+          "evidence": "Da in den westeuropäischen Ländern spätestens ab 1950 der Nachkriegsboom einsetzte, galt und gilt der Marshallplan in der Bevölkerung als sehr erfolgreich, insbesondere in der Bundesrepublik Deutschland."
+        }
+      ]
+    },
+    "s30": {
+      "correct": "war,",
+      "variants": [
+        {
+          "text": "war",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Der Nebensatz „Wie groß … war“ steht vor dem Hauptsatz. Beide trennt ein Komma."
+        }
+      ]
+    },
+    "s31": {
+      "correct": "allerdings",
+      "variants": [
+        {
+          "text": "deshalb",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „ist aber umstritten“. Der Satz schränkt den Erfolg ein. „Deshalb“ würde den Streit aus dem Erfolg ableiten, das ergibt keinen Sinn.",
+          "evidence": "Wie groß sein tatsächlicher Anteil am Wirtschaftsaufschwung war, ist aber umstritten."
+        }
+      ]
+    },
+    "s32": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Führende Historiker sind sich einig, dass der Marshallplan das Wirtschaftswunder in Deutschland allein ausgelöst hat.",
+          "errorClass": "false_authority",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "„Führende Historiker“ werden weder genannt noch belegt. Im Original steht das Gegenteil: „Wie groß sein tatsächlicher Anteil am Wirtschaftsaufschwung war, ist aber umstritten.“",
+          "evidence": "Wie groß sein tatsächlicher Anteil am Wirtschaftsaufschwung war, ist aber umstritten."
+        }
+      ]
+    },
+    "s33": {
+      "correct": "dass",
+      "variants": [
+        {
+          "text": "das",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier leitet das Wort einen Nebensatz ein, deshalb schreibt man „dass“. „Das“ ist ein Artikel oder ein Pronomen."
+        }
+      ]
+    },
+    "s34": {
+      "correct": "beschleunigte",
+      "variants": [
+        {
+          "text": "allein bewirkte",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Ohne Zweifel beschleunigte der Marshallplan die wirtschaftliche Erholung in Europa.“ Beschleunigen ist nicht „allein bewirken“. Der Satz davor nennt den Anteil des Plans sogar umstritten. Aus einem Beitrag wird die einzige Ursache.",
+          "evidence": "Ohne Zweifel beschleunigte der Marshallplan die wirtschaftliche Erholung in Europa."
+        }
+      ]
+    },
+    "s35": {
+      "correct": "ein entscheidender Impuls",
+      "variants": [
+        {
+          "text": "der einzige Impuls",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „ein entscheidender Impuls für die europäische Integration“. Es heißt „ein“ entscheidender Impuls, nicht „der einzige“.",
+          "evidence": "Zudem war er ein entscheidender Impuls für die europäische Integration und den Abbau von Handelshemmnissen zwischen den westeuropäischen Staaten.",
+          "tolerance": 1
+        },
+        {
+          "text": "ein kleiner Nebeneffekt",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „ein entscheidender Impuls für die europäische Integration“. Die Variante macht daraus das Gegenteil.",
+          "evidence": "Zudem war er ein entscheidender Impuls für die europäische Integration und den Abbau von Handelshemmnissen zwischen den westeuropäischen Staaten.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s36": {
+      "correct": "westeuropäischen",
+      "variants": [
+        {
+          "text": "osteuropäischen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „zwischen den westeuropäischen Staaten“. Die osteuropäischen Staaten nahmen nicht am Programm teil.",
+          "evidence": "Zudem war er ein entscheidender Impuls für die europäische Integration und den Abbau von Handelshemmnissen zwischen den westeuropäischen Staaten."
+        }
+      ]
+    },
+    "s37": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Der Marshallplan war damit die klügste Entscheidung der amerikanischen Außenpolitik im 20. Jahrhundert.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht im Original. „Die klügste Entscheidung“ ist eine Meinung, kein überprüfbarer Befund. Der Auszug beschreibt Wirkungen und nennt auch, was umstritten ist."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Wikipedia-Artikel Marshallplan, Revision 271097086 (abgerufen am 18.10.2026), der gesamte Artikeltext; die 13 Auszugssätze der Einleitung stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft) und in der Quell-PDF.",
+    "Lizenz: Wikipedia-Text unter CC BY-SA 4.0; die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Alle 15 Fehlerklassen kommen vor. Die Klassen ab Klasse 7 und ab Klasse 10 sind abgeleitet, nicht belegt. Die Falschschreibungen sind konstruiert (Umlaut, Doppelkonsonant), das/dass nach der IQB-Handreichung gewählt.",
+    "Die eingefügten Sätze (Schiffe, Wertung, Historiker) sind erfunden oder stehen nicht im Auszug; sie sind harmlos und politisch neutral, keine heutigen Parteien oder Gruppen. Die Erklärungen sagen, dass sie nicht im Original stehen.",
+    "Der Auszug enthält selbst die Wendung „Ohne Zweifel“; sie ist Teil des Originals und deshalb kein Fehler.",
+    "Nicht geprüft: ob der Artikeltext fachlich vollständig oder unumstritten ist; das Paket prüft den Vergleich mit dieser Quelle.",
+    "Die Quelle liegt als PDF unter public/quellen/de/marshallplan-1948.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+  ]
+}

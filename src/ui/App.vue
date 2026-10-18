@@ -433,6 +433,11 @@ body:has(.textcheck) .interactive-routes {
   display: none;
 }
 
+/* The start page lists every route (15 links). The selects of the app page do that job, so the list is left out. */
+.interactive-section:has(> .interactive-route-list) {
+  display: none;
+}
+
 /* The shell's page is light by default; follow the system setting so the dark card never sits on a white page. */
 @media (prefers-color-scheme: dark) {
   :root {

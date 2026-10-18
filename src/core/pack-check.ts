@@ -88,6 +88,19 @@ export function checkPack(pack: TextPack): PackReport {
       errors.push(`route ${route} needs ${level.errors} errors, the pack offers ${available} slots`);
     else if (available < level.errors + 3)
       warnings.push(`route ${route}: only ${available} slots for ${level.errors} errors, add reserve`);
+    // the mode Original erkennen builds no errors of the form family (the Variante would be given away)
+    const compared = candidatesOf(pack, {
+      ...level,
+      classes: level.classes.filter((name) => ERROR_CLASSES[name]?.family !== "form"),
+    }).length;
+    if (compared < level.errors)
+      errors.push(
+        `route ${route}-original needs ${level.errors} errors, the pack offers ${compared} slots without form`,
+      );
+    else if (compared < level.errors + 2)
+      warnings.push(
+        `route ${route}-original: only ${compared} slots without form for ${level.errors} errors, add reserve`,
+      );
   }
   return { errors, warnings };
 }
