@@ -466,3 +466,4 @@ fitness:
 
 <!-- Each gap in plan, skills, messages or answers, and your choice. "None" if none. -->
 - Nach dem ersten Test (Oliver): Das Wort für den Text, den Lernende prüfen, ist „Variante“ (vorher „Fassung“, geraten). Der Dark Mode folgt der Systemeinstellung auch für die Seite; vorher blieb die Seite hell.
+- Modi (Oliver): 1 Fehler markieren (gebaut), 2 Original erkennen (2–3 Texte, welcher ist der echte), 3 Quellentreue (Quelle als PDF, nur der Text), danach Auf Zeit.
