@@ -1,0 +1,562 @@
+{
+  "id": "sonnensystem",
+  "title": "Das Sonnensystem",
+  "language": "de",
+  "grades": {
+    "from": 5,
+    "to": 6
+  },
+  "topic": "Sonnensystem: Sonne, Planeten und Asteroiden",
+  "source": {
+    "title": "Sonnensystem – Klexikon – das Kinderlexikon",
+    "url": "https://klexikon.zum.de/index.php?title=Sonnensystem&oldid=157291",
+    "revision": "157291",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://klexikon.zum.de/index.php?title=Sonnensystem&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/sonnensystem.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "In einem Sonnensystem umkreisen Planeten und andere Himmelskörper einen Stern.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Unser Sonnensystem ist ungefähr viereinhalb Milliarden Jahre alt.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Zum Vergleich: Das Weltall selbst ist fast 14 Milliarden Jahre alt.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Die Sonne befindet sich in der Mitte.",
+      "section": "Was gehört alles zu unserem Sonnensystem?"
+    },
+    {
+      "text": "Die acht Planeten kreisen auf ihren unterschiedlichen Bahnen um die Sonne herum.",
+      "section": "Was gehört alles zu unserem Sonnensystem?"
+    },
+    {
+      "text": "Unsere Planeten heißen: Merkur, Venus, Erde, Mars, Jupiter, Saturn, Uranus und Neptun.",
+      "section": "Was gehört alles zu unserem Sonnensystem?"
+    },
+    {
+      "text": "Sechs der Planeten haben eigene Monde, die um sie kreisen.",
+      "section": "Was gehört alles zu unserem Sonnensystem?"
+    },
+    {
+      "text": "Zwischen den Planeten Mars und Jupiter umkreisen viele Gesteinsbrocken die Sonne.",
+      "section": "Was schwirrt noch um die Sonne?"
+    },
+    {
+      "text": "Diese Brocken nennt man Asteroiden.",
+      "section": "Was schwirrt noch um die Sonne?"
+    },
+    {
+      "text": "Im sogenannten „Asteroidengürtel“ gibt es über 650.000 solcher Brocken.",
+      "section": "Was schwirrt noch um die Sonne?"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "In einem Sonnensystem ziehen Planeten und andere Himmelskörper um einen ",
+        {
+          "slot": "s1"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "In einem Sonnensystem umkreisen Planeten und andere Himmelskörper einen Stern."
+      }
+    },
+    {
+      "sentence": [
+        "Unser Sonnensystem ist ungefähr ",
+        {
+          "slot": "s2"
+        },
+        " Milliarden Jahre alt."
+      ],
+      "evidence": {
+        "quote": "Unser Sonnensystem ist ungefähr viereinhalb Milliarden Jahre alt."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s3a"
+        },
+        " ist das Weltall fast ",
+        {
+          "slot": "s3b"
+        },
+        " Milliarden Jahre alt."
+      ],
+      "evidence": {
+        "quote": "Zum Vergleich: Das Weltall selbst ist fast 14 Milliarden Jahre alt."
+      }
+    },
+    {
+      "sentence": [
+        "Die ",
+        {
+          "slot": "s4a"
+        },
+        " befindet sich in der ",
+        {
+          "slot": "s4b"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Die Sonne befindet sich in der Mitte."
+      }
+    },
+    {
+      "sentence": [
+        "Die ",
+        {
+          "slot": "s5a"
+        },
+        " Planeten ziehen auf verschiedenen ",
+        {
+          "slot": "s5b"
+        },
+        " um die Sonne."
+      ],
+      "evidence": {
+        "quote": "Die acht Planeten kreisen auf ihren unterschiedlichen Bahnen um die Sonne herum."
+      }
+    },
+    {
+      "sentence": [
+        "Die Planeten heißen Merkur, Venus, Erde, ",
+        {
+          "slot": "s6a"
+        },
+        ", Jupiter, Saturn, Uranus und ",
+        {
+          "slot": "s6b"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Unsere Planeten heißen: Merkur, Venus, Erde, Mars, Jupiter, Saturn, Uranus und Neptun."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "a1"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s7"
+        },
+        " der Planeten haben eigene ",
+        {
+          "slot": "s7p"
+        },
+        " die um sie kreisen."
+      ],
+      "evidence": {
+        "quote": "Sechs der Planeten haben eigene Monde, die um sie kreisen."
+      }
+    },
+    {
+      "sentence": [
+        "Zwischen den Planeten ",
+        {
+          "slot": "s8"
+        },
+        " kreisen viele Gesteinsbrocken um die Sonne."
+      ],
+      "evidence": {
+        "quote": "Zwischen den Planeten Mars und Jupiter umkreisen viele Gesteinsbrocken die Sonne."
+      }
+    },
+    {
+      "sentence": [
+        "Man nennt diese Brocken ",
+        {
+          "slot": "s9"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Diese Brocken nennt man Asteroiden."
+      }
+    },
+    {
+      "sentence": [
+        "Im „Asteroidengürtel“ gibt es über ",
+        {
+          "slot": "s10"
+        },
+        " solcher Brocken."
+      ],
+      "evidence": {
+        "quote": "Im sogenannten „Asteroidengürtel“ gibt es über 650.000 solcher Brocken."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "a2"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "Stern",
+      "variants": [
+        {
+          "text": "Mond",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „umkreisen Planeten und andere Himmelskörper einen Stern“ Sie umkreisen einen Stern.",
+          "evidence": "In einem Sonnensystem umkreisen Planeten und andere Himmelskörper einen Stern."
+        },
+        {
+          "text": "Planeten",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „umkreisen Planeten und andere Himmelskörper einen Stern“ Sie umkreisen einen Stern.",
+          "evidence": "In einem Sonnensystem umkreisen Planeten und andere Himmelskörper einen Stern."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "viereinhalb",
+      "variants": [
+        {
+          "text": "dreieinhalb",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „ungefähr viereinhalb Milliarden Jahre alt“ Die Zahl wurde verändert.",
+          "evidence": "Unser Sonnensystem ist ungefähr viereinhalb Milliarden Jahre alt."
+        },
+        {
+          "text": "vierzehn",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „ungefähr viereinhalb Milliarden Jahre alt“ Die Zahl wurde verändert.",
+          "evidence": "Unser Sonnensystem ist ungefähr viereinhalb Milliarden Jahre alt."
+        },
+        {
+          "text": "viereinhalp",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort endet mit „halb“. Wer verlängert („ein halbes Jahr“), hört das „b“: viereinhalb."
+        }
+      ]
+    },
+    "s3a": {
+      "correct": "Zum Vergleich",
+      "variants": [
+        {
+          "text": "Deshalb",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht „Zum Vergleich“: Das Alter des Weltalls wird neben das Alter des Sonnensystems gestellt. „Deshalb“ nennt einen Grund, den es nicht gibt.",
+          "evidence": "Zum Vergleich: Das Weltall selbst ist fast 14 Milliarden Jahre alt."
+        },
+        {
+          "text": "Zum Beispiel",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht „Zum Vergleich“. Das Weltall ist aber kein Beispiel für das Sonnensystem, sondern etwas viel Älteres.",
+          "evidence": "Zum Vergleich: Das Weltall selbst ist fast 14 Milliarden Jahre alt."
+        }
+      ]
+    },
+    "s3b": {
+      "correct": "14",
+      "variants": [
+        {
+          "text": "40",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Das Weltall selbst ist fast 14 Milliarden Jahre alt.“ Die Zahl wurde verändert.",
+          "evidence": "Zum Vergleich: Das Weltall selbst ist fast 14 Milliarden Jahre alt."
+        },
+        {
+          "text": "24",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Das Weltall selbst ist fast 14 Milliarden Jahre alt.“ Die Zahl wurde verändert.",
+          "evidence": "Zum Vergleich: Das Weltall selbst ist fast 14 Milliarden Jahre alt."
+        },
+        {
+          "text": "3",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Davor steht, dass das Sonnensystem ungefähr viereinhalb Milliarden Jahre alt ist. Das Weltall kann nicht jünger sein als das Sonnensystem darin.",
+          "evidence": "Zum Vergleich: Das Weltall selbst ist fast 14 Milliarden Jahre alt."
+        }
+      ]
+    },
+    "s4a": {
+      "correct": "Sonne",
+      "variants": [
+        {
+          "text": "Erde",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Die Sonne befindet sich in der Mitte.“ In der Mitte befindet sich die Sonne.",
+          "evidence": "Die Sonne befindet sich in der Mitte."
+        },
+        {
+          "text": "Sone",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach dem kurzen „o“ steht ein doppeltes „n“: Sonne."
+        }
+      ]
+    },
+    "s4b": {
+      "correct": "Mitte",
+      "variants": [
+        {
+          "text": "Ecke",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Die Sonne befindet sich in der Mitte.“ Die Sonne ist in der Mitte.",
+          "evidence": "Die Sonne befindet sich in der Mitte."
+        },
+        {
+          "text": "Mite",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach dem kurzen „i“ steht ein doppeltes „t“: Mitte."
+        }
+      ]
+    },
+    "s5a": {
+      "correct": "acht",
+      "variants": [
+        {
+          "text": "neun",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Die acht Planeten kreisen“ Die Zahl wurde verändert.",
+          "evidence": "Die acht Planeten kreisen auf ihren unterschiedlichen Bahnen um die Sonne herum."
+        },
+        {
+          "text": "zwölf",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Die acht Planeten kreisen“ Die Zahl wurde verändert.",
+          "evidence": "Die acht Planeten kreisen auf ihren unterschiedlichen Bahnen um die Sonne herum."
+        }
+      ]
+    },
+    "s5b": {
+      "correct": "Bahnen",
+      "variants": [
+        {
+          "text": "Bannen",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "„Bannen“ gibt es als Wort (bannen), gemeint ist aber „Bahnen“. Ein Rechtschreibprogramm findet diesen Fehler nicht."
+        }
+      ]
+    },
+    "s6a": {
+      "correct": "Mars",
+      "variants": [
+        {
+          "text": "Pluto",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Merkur, Venus, Erde, Mars, Jupiter, Saturn, Uranus und Neptun“ Ein Name wurde verändert.",
+          "evidence": "Unsere Planeten heißen: Merkur, Venus, Erde, Mars, Jupiter, Saturn, Uranus und Neptun."
+        },
+        {
+          "text": "Mond",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Merkur, Venus, Erde, Mars, Jupiter, Saturn, Uranus und Neptun“ Ein Mond ist kein Planet.",
+          "evidence": "Unsere Planeten heißen: Merkur, Venus, Erde, Mars, Jupiter, Saturn, Uranus und Neptun."
+        }
+      ]
+    },
+    "s6b": {
+      "correct": "Neptun",
+      "variants": [
+        {
+          "text": "Ceres",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Merkur, Venus, Erde, Mars, Jupiter, Saturn, Uranus und Neptun“ Ein Name wurde verändert. Ceres ist kein Planet, sondern ein Zwergplanet.",
+          "evidence": "Unsere Planeten heißen: Merkur, Venus, Erde, Mars, Jupiter, Saturn, Uranus und Neptun."
+        }
+      ]
+    },
+    "a1": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Auf der Venus ist es sehr heiß.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht im Original. Dort werden die Planeten nur genannt."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "Sechs",
+      "variants": [
+        {
+          "text": "Zwei",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Sechs der Planeten haben eigene Monde“ Die Zahl wurde verändert.",
+          "evidence": "Sechs der Planeten haben eigene Monde, die um sie kreisen."
+        },
+        {
+          "text": "Neun",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Weiter oben steht, dass es acht Planeten gibt. Neun Planeten mit Monden kann es dann nicht geben.",
+          "evidence": "Sechs der Planeten haben eigene Monde, die um sie kreisen."
+        }
+      ]
+    },
+    "s7p": {
+      "correct": "Monde,",
+      "variants": [
+        {
+          "text": "Monde",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach „Monde“ beginnt mit „die“ ein Nebensatz. Vor einem Nebensatz steht ein Komma: Monde, die."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "Mars und Jupiter",
+      "variants": [
+        {
+          "text": "Erde und Mars",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Zwischen den Planeten Mars und Jupiter“ Die Planeten wurden verändert.",
+          "tolerance": 1,
+          "evidence": "Zwischen den Planeten Mars und Jupiter umkreisen viele Gesteinsbrocken die Sonne."
+        },
+        {
+          "text": "Jupiter und Saturn",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Zwischen den Planeten Mars und Jupiter“ Die Planeten wurden verändert.",
+          "tolerance": 1,
+          "evidence": "Zwischen den Planeten Mars und Jupiter umkreisen viele Gesteinsbrocken die Sonne."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "Asteroiden",
+      "variants": [
+        {
+          "text": "Kometen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Diese Brocken nennt man Asteroiden.“ Kometen sind etwas anderes.",
+          "evidence": "Diese Brocken nennt man Asteroiden."
+        },
+        {
+          "text": "Asterioden",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Hier sind zwei Buchstaben vertauscht: Asteroiden. Solche Fehler passieren schnell beim Schreiben."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "650.000",
+      "variants": [
+        {
+          "text": "65.000",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „über 650.000 solcher Brocken“ Die Zahl wurde verändert.",
+          "evidence": "Im sogenannten „Asteroidengürtel“ gibt es über 650.000 solcher Brocken."
+        },
+        {
+          "text": "560.000",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „über 650.000 solcher Brocken“ Die Zahl wurde verändert.",
+          "evidence": "Im sogenannten „Asteroidengürtel“ gibt es über 650.000 solcher Brocken."
+        },
+        {
+          "text": "650",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „über 650.000 solcher Brocken“ Die Zahl wurde verändert.",
+          "evidence": "Im sogenannten „Asteroidengürtel“ gibt es über 650.000 solcher Brocken."
+        }
+      ]
+    },
+    "a2": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Die Planeten sind unterschiedlich groß.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Dieser Satz steht nicht im Original. Dort steht nichts über die Größe der Planeten."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Klexikon-Artikel Sonnensystem (Revision 157291), am 2026-10-18 abgerufen und lokal gespeichert; die Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de (rel=license). Das Paket steht unter derselben Lizenz (CC BY-SA 4.0).",
+    "Die Falschschreibungen sind nach den Mustern der IQB-Handreichung und der AFRA-Kategorien (Ableitung, Dehnung, Konsonantverdopplung, Auslautverhärtung, Groß-/Kleinschreibung) konstruiert, nicht von Lernenden gesammelt.",
+    "Weggelassen wurden die Sätze über andere Sternsysteme, Zwergplaneten, Meteoriten und Kometen sowie die Bildunterschriften, weil sie für diesen Auszug nicht gebraucht werden. Der Satz „Das sind 4.500.000.000 Jahre.“ wurde ausgelassen.",
+    "Nicht geprüft: ob der Artikeltext des Klexikons fachlich vollständig stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Sachlage in der Welt.",
+    "Die Quelle liegt als PDF unter public/quellen/de/sonnensystem.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+  ]
+}
