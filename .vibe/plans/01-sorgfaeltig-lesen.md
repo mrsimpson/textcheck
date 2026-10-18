@@ -445,7 +445,7 @@ fitness:
 - [x] Complete the entry draft (e.g. the address).
 - [x] **Checkpoint:** list. Ask before opening the listing pull request; wait for the yes.
 - [x] Fill the retrospective.
-- [ ] Commit this plan on `main` and push it (listing check and review read it there).
+- [x] Commit this plan on `main` and push it (listing check and review read it there).
 - [x] Open the listing pull request as the skill says; see it to "bestanden" (not "nicht bestanden") in the results
       comment.
 - [x] Plan changed since its last push → commit on `main`, push again.
