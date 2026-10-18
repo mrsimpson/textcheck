@@ -424,12 +424,12 @@ fitness:
 
 ### Tasks
 
-- [ ] `git push origin work` (not `main`). Pre-push runs the heavy checks; fix failures. See the pull request's
+- [x] `git push origin work` (not `main`). Pre-push runs the heavy checks; fix failures. See the pull request's
       checks to green; mark it ready (`gh pr ready`).
-- [ ] Verify over REST: default branch `main` (`gh api repos/<owner>/<repo> --jq .default_branch`); Pages serves
+- [x] Verify over REST: default branch `main` (`gh api repos/<owner>/<repo> --jq .default_branch`); Pages serves
       `gh-pages` from `/` (`gh api repos/<owner>/<repo>/pages`; "Not Found" = off). Not right and not yours to
       change → note the creator's click (skill `lernapps-github`).
-- [ ] **Checkpoint:** publish. Show the preview link from the comment "Vorschau der App"; ask before the app goes
+- [x] **Checkpoint:** publish. Show the preview link from the comment "Vorschau der App"; ask before the app goes
       online; wait for the yes. Put the noted clicks into the same question.
 - [ ] `git switch main`, `git merge --ff-only work`, `git push origin main` (GitHub marks the pull request merged
       and removes the preview). Run started?
