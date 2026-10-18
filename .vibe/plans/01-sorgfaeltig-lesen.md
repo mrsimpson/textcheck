@@ -3,7 +3,7 @@
 # Archetype, null until chosen in Explore. Allowed values: explainer, interactive, quiz.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: code
+phase: commit
 # prePushFailures: written by the pre-push hook. Never change it.
 prePushFailures: 0
 ---
@@ -367,9 +367,9 @@ fitness:
 
 ### Tasks
 
-- [ ] Zwischenstopp auf Wunsch des Erstellers: Vorschau-Link an Oliver für den ersten Test mit einem echten Text; Rückmeldung abwarten, ändern, danach weiter mit den übrigen Aufgaben.
-- [ ] Every box of Explore, Plan and Code ticked.
-- [ ] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
+- [x] Zwischenstopp auf Wunsch des Erstellers: Vorschau-Link an Oliver für den ersten Test mit einem echten Text; Rückmeldung abwarten, ändern, danach weiter mit den übrigen Aufgaben.
+- [x] Every box of Explore, Plan and Code ticked.
+- [x] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
 
 ### Completed
 
