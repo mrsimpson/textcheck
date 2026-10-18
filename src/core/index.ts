@@ -3,7 +3,7 @@
 // and how every word counts. Pure TypeScript without DOM; the runtime keeps the state and calls start and step
 // (@lernapps/app-templates/interactive). Every input is an action; unknown ones leave the state as it is.
 import type { Input } from "@lernapps/app-templates/interactive";
-import { levelOf, packsFor, parseRoute } from "./data.ts";
+import { ERROR_CLASSES, levelOf, packsFor, parseRoute } from "./data.ts";
 import { evaluate } from "./evaluate.ts";
 import { random } from "./random.ts";
 import { buildRound, originalTokensOf } from "./round.ts";
@@ -15,8 +15,13 @@ export type { State } from "./types.ts";
 const DEFAULT_LANGUAGE = "de";
 
 export function start(seed: number, route: string, language: string = DEFAULT_LANGUAGE): State {
-  const level = levelOf(route);
   const { mode } = parseRoute(route);
+  // Original erkennen compares two texts, where a misspelling would give the Variante away: no errors of the form family
+  const base = levelOf(route);
+  const level =
+    mode === "choose"
+      ? { ...base, classes: base.classes.filter((name) => ERROR_CLASSES[name]?.family !== "form") }
+      : base;
   const { pack, tokens, corruptions } = buildRound(packsFor(language, level), level, seed);
   // the side of the Variante in the mode `choose` comes from its own draw, so that every mode plays the same round
   const variantSide: Side = random((seed ^ 0x5bd1e995) >>> 0)() < 0.5 ? "a" : "b";

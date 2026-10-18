@@ -1,5 +1,11 @@
 {
   "region": "Runde",
+  "level": "Altersstufe",
+  "mode": "Modus",
+  "levelOption": "Klasse {from} bis {to}",
+  "modeMark": "Fehler markieren (mit Original)",
+  "modeSource": "Fehler markieren (mit Quelle als PDF)",
+  "modeChoose": "Original erkennen",
   "goalNamed": "In dieser Runde sind {count} Fehler versteckt. Es kommen diese Arten vor: {classes}.",
   "goalHidden": "In dieser Runde sind {count} Fehler versteckt. Welche Arten es sind, sagen wir dir erst nach dem Prüfen.",
   "view": "Ansicht",

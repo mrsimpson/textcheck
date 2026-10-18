@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { LEVELS, parseRoute } from "./data.ts";
+import { ERROR_CLASSES, LEVELS, parseRoute, routeOf } from "./data.ts";
 import { start, step, type State } from "./index.ts";
 
 const route = "klasse-5-6";
@@ -164,11 +164,13 @@ describe("the modes of a route", () => {
 describe("the mode choose", () => {
   const choose = `${route}-original`;
 
-  it("plays the same round as the other modes and hides which text is the Variante", () => {
+  it("hides which text is the Variante and builds no error of the form family", () => {
     const state = start(4, choose);
     expect(state.mode).toBe("choose");
-    expect(state.corruptions).toEqual(start(4, route).corruptions);
-    expect(state.tokens).toEqual(start(4, route).tokens);
+    for (let seed = 1; seed <= 30; seed++)
+      for (const level of Object.keys(LEVELS))
+        for (const corruption of start(seed, `${level}-original`).corruptions)
+          expect(ERROR_CLASSES[corruption.errorClass]?.family, `${level} seed ${seed}`).not.toBe("form");
     expect(state.originalTokens.length).toBeGreaterThan(0);
     expect(state.choice).toBeNull();
   });
@@ -209,5 +211,19 @@ describe("the mode choose", () => {
     expect(wrong.result?.chosenRight).toBe(false);
     expect(wrong.result?.found).toBe(0);
     expect(wrong.result?.wrong).toBe(1);
+  });
+});
+
+describe("the routes", () => {
+  it("are built and read back for every level and mode", () => {
+    for (const level of Object.keys(LEVELS))
+      for (const mode of ["mark", "source", "choose"] as const)
+        expect(parseRoute(routeOf(level, mode))).toEqual({ level, mode });
+  });
+
+  it("give every mode enough errors in every level", () => {
+    for (const level of Object.keys(LEVELS))
+      for (const mode of ["mark", "source", "choose"] as const)
+        expect(start(1, routeOf(level, mode)).corruptions.length, `${level} ${mode}`).toBe(LEVELS[level]?.errors);
   });
 });

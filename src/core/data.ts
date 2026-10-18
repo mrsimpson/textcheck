@@ -26,6 +26,12 @@ export function parseRoute(route: string): { level: string; mode: Mode } {
   return { level: route, mode: "mark" };
 }
 
+/** The route of a level in a mode: the reverse of `parseRoute`. */
+export function routeOf(level: string, mode: Mode): string {
+  const suffix = Object.entries(MODE_SUFFIXES).find(([, value]) => value === mode)?.[0] ?? "";
+  return `${level}${suffix}`;
+}
+
 /** The level of a route; throws for a route without one. */
 export function levelOf(route: string): Level {
   const { level: name } = parseRoute(route);

@@ -6,7 +6,9 @@
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import { announce, moveFocus } from "@lernapps/tooling/a11y";
 import type { Input } from "@lernapps/app-templates/interactive";
+import { LEVELS, parseRoute, routeOf } from "../core/data.ts";
 import { markable, type State } from "../core/index.ts";
+import type { Mode } from "../core/types.ts";
 import ChooseView from "./ChooseView.vue";
 import ResultView from "./ResultView.vue";
 import WordList from "./WordList.vue";
@@ -29,6 +31,10 @@ const onChange = (): void => {
   embed.value = query?.matches ?? false;
 };
 onMounted(() => {
+  picker.value?.addEventListener("change", () => {
+    if (levelSelect.value !== null && modeSelect.value !== null)
+      location.hash = routeOf(levelSelect.value.value, modeSelect.value.value as Mode);
+  });
   query = matchMedia(WIDE);
   onChange();
   query.addEventListener("change", onChange);
@@ -36,6 +42,20 @@ onMounted(() => {
 onUnmounted(() => query?.removeEventListener("change", onChange));
 // the app page is one level below the site root, where the PDFs lie
 const pdfUrl = computed(() => (props.state.pdf === null ? null : `../${props.state.pdf}`));
+
+// the two selects: the age group and the mode; a change goes to the route in the address, where the runtime picks it up
+const levelOptions = Object.entries(LEVELS)
+  .sort(([, a], [, b]) => a.grades.from - b.grades.from)
+  .map(([id, level]) => ({ id, label: t("levelOption", { from: level.grades.from, to: level.grades.to }) }));
+const modeOptions: { id: Mode; label: string }[] = [
+  { id: "mark", label: t("modeMark") },
+  { id: "source", label: t("modeSource") },
+  { id: "choose", label: t("modeChoose") },
+];
+const picked = computed(() => parseRoute(props.state.route));
+const picker = ref<HTMLElement | null>(null);
+const levelSelect = ref<HTMLSelectElement | null>(null);
+const modeSelect = ref<HTMLSelectElement | null>(null);
 const sourceMode = computed(() => props.state.mode === "source");
 
 const goal = computed(() =>
@@ -100,6 +120,20 @@ const choiceNote = computed(() => {
 
 <template>
   <section ref="root" class="textcheck" :aria-label="t('region')">
+    <div ref="picker" class="picker">
+      <label>
+        {{ t("level") }}
+        <select ref="levelSelect" :value="picked.level">
+          <option v-for="option in levelOptions" :key="option.id" :value="option.id">{{ option.label }}</option>
+        </select>
+      </label>
+      <label>
+        {{ t("mode") }}
+        <select ref="modeSelect" :value="picked.mode">
+          <option v-for="option in modeOptions" :key="option.id" :value="option.id">{{ option.label }}</option>
+        </select>
+      </label>
+    </div>
     <p class="goal">{{ goal }}</p>
     <ChooseView
       v-if="state.mode === 'choose'"
@@ -228,6 +262,31 @@ const choiceNote = computed(() => {
     --tc-tol: #bfdbfe;
     --tc-tol-bg: #1e2f5a;
   }
+}
+
+.picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.picker label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-weight: 600;
+}
+
+.picker select {
+  min-height: 2.75rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--tc-line);
+  border-radius: 8px;
+  background: var(--tc-card);
+  color: var(--tc-ink);
+  font: inherit;
+  font-weight: 400;
 }
 
 .goal {
@@ -362,6 +421,11 @@ h2 {
 </style>
 
 <style>
+/* The two selects of the app replace the shell's list of route links; without JavaScript the list stays. */
+body:has(.textcheck) .interactive-routes {
+  display: none;
+}
+
 /* The shell's page is light by default; follow the system setting so the dark card never sits on a white page. */
 @media (prefers-color-scheme: dark) {
   :root {

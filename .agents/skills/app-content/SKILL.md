@@ -98,7 +98,9 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
     one is which stays hidden until checking. The learner picks the text with the errors and marks the words there; the
     picked text is the one that can be marked. On a phone a switch shows one text at a time.
   - Fixed: excerpt, Variante, slots, level. Varies per use: the errors (seed) and the side of the Variante (own draw
-    from the seed); the round is the same as in the other modes.
+    from the seed). No errors of the family `form` (spelling, slip, real word, punctuation): they would give the
+    Variante away in a comparison of two texts (the creator: too easy). So a pack needs enough slots with variants of
+    the other families; the tests check it for every level.
   - Success check: the pick and the marks. A right pick counts like the mode `mark`; a wrong pick finds no error and
     its marks count as wrongly marked; the result names the Original either way.
   - Data: none of its own; keys 1 and 2 pick the text.
@@ -147,5 +149,6 @@ competencies, and at least one pack; a playthrough for the route if its rules di
 - A pack holds only error classes whose `fromGrade` is at most the pack's upper grade; the first example mixed in
   classes from grade 7 into a pack for grades 5-6, the checker caught it.
 - Tolerance only works when the slot has neighbouring words in the same sentence; an inserted sentence has none.
+- In the mode `choose` no spelling errors: a misspelt word shows at once which text is the Variante.
 - Do not show hints in the text after checking (a superscript "gefunden" disturbed reading): colour and line style in
   the text, the same colours with a legend below.
