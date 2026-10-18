@@ -3,7 +3,7 @@
 # Archetype as in the app's first plan; set it when you start. Never changes.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: code
+phase: commit
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 ---
@@ -136,12 +136,12 @@ Skip what earlier answers or the app tell. Answers → "Answers". -->
       the ones you use. Commit the update alone; fix its check findings before content.
 - [x] Scheibe 1, Kompetenz „Text mit seiner Quelle vergleichen“ (Modus 3): (a) PDFs für die fünf Pakete mit `scripts/source-pdf.mjs` aus den gespeicherten Quellseiten nach `public/quellen/de/<id>.pdf`, `source.pdf` in den Paketen, Schema und Prüfung: Pfad muss existieren; (b) Routen `klasse-…-quelle` in `src/app.yaml` und Stufen in `levels.json` (Route → Stufe + Modus, ohne Daten zu verdoppeln); (c) Kern: `State.mode`, `start` liest Route und Modus; (d) `App.vue`: PDF-Knopf statt Original; ab 960 px Breite mit feinem Zeiger zusätzlich die PDF eingebettet (`<iframe>`, `title`, Höhe wie die Variante, eigener Bildlauf, Tastaturfalle prüfen: Tab verlässt das Feld); (e) Texte in `de.json`; (f) Playthrough `quelle.yaml`; (g) Tests; (h) Guide: Kompetenz und Modus; (i) Eintrag: Themen; `npx lernapps check`; Commit.
 - [x] Scheibe 2, Kompetenz „Zwei Texte vergleichen und das Original erkennen“ (Modus 2): (a) Kern: Zustand `choice` (welcher Text hat die Fehler), Aktionen `choose-a`/`choose-b`, Markierungen auf den Wörtern des gewählten Texts, Auswertung (Wahl richtig, gefundene und übersehene Fehler, Markierungen im Original als falsch), Seed bestimmt die Reihenfolge; (b) `ChooseView.vue` und Auswertung; Tastatur: Tasten 1 und 2 wählen den Text, sonst wie in Modus 1; (c) Routen `klasse-…-original`; (d) Texte in `de.json`; (e) Playthrough `original.yaml`; (f) Tests; (g) Guide: neues Muster mit Beispiel; (h) Eintrag: Themen; `npx lernapps check`; Commit.
-- [ ] Scheibe 3, Dokumentation: arc42 (Bausteine, Laufzeit, Verteilung für Modi und `public/quellen`), Startseite (Beschreibung, Kompetenzen, Begründung: Modi), Skill `app-textpack` (PDF-Schritt jetzt Pflicht, Pfad), `.vibe/texts-log.md`; `npx arc42 validate --strict`; `npx lernapps check`; Commit.
-- [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
+- [x] Scheibe 3, Dokumentation: arc42 (Bausteine, Laufzeit, Verteilung für Modi und `public/quellen`), Startseite (Beschreibung, Kompetenzen, Begründung: Modi), Skill `app-textpack` (PDF-Schritt jetzt Pflicht, Pfad), `.vibe/texts-log.md`; `npx arc42 validate --strict`; `npx lernapps check`; Commit.
+- [x] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
-- [ ] `npx lernapps check` passes.
-- [ ] Every box of Explore, Plan and Code ticked.
-- [ ] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
+- [x] `npx lernapps check` passes.
+- [x] Every box of Explore, Plan and Code ticked.
+- [x] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
 
 ### Completed
 

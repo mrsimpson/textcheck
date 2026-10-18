@@ -702,7 +702,7 @@ path: src/core/index.ts
 ### Round builder
 
 Built. Picks the text pack of the route's school years and the slots to corrupt from the seed (a seeded shuffle, within
-the classes, bases and error count of the level), and splits the Fassung into words, each word belonging to the slot it
+the classes, bases and error count of the level), and splits the Variante into words, each word belonging to the slot it
 overlaps. The random numbers come only from the seed (`src/core/random.ts`), so the same seed gives the same round.
 
 ```arc42
@@ -875,12 +875,16 @@ flowchart TB
     subgraph bb-interactive-ui["UI"]
         bb-textcheck-root["Root component"]
         bb-textcheck-wordlist["Word list"]
+        bb-textcheck-choose["Choose view"]
         bb-textcheck-result["Result view"]
         bb-textcheck-ui-texts["UI texts"]
     end
     bb-interactive-messages["Messages"]
     bb-textcheck-root -->|"if-textcheck-wordlist"| bb-textcheck-wordlist
+    bb-textcheck-root -->|"if-textcheck-choose"| bb-textcheck-choose
     bb-textcheck-root -->|"if-textcheck-result"| bb-textcheck-result
+    bb-textcheck-choose -->|"if-textcheck-wordlist"| bb-textcheck-wordlist
+    bb-textcheck-choose -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
     bb-textcheck-root -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
     bb-textcheck-wordlist -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
     bb-textcheck-result -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
@@ -889,10 +893,12 @@ flowchart TB
 
 ### Root component
 
-Built. `src/ui/App.vue` shows the goal line, the Original and the Fassung (side by side; on a narrow screen a switch
+Built. `src/ui/App.vue` shows the goal line, the Original and the Variante (side by side; on a narrow screen a switch
 shows one of them) and, after checking, the result. It announces every change through the live region, moves the focus
 to the result heading after checking and back to the words after a new round, and emits the learner's actions. The
-panel a narrow screen shows is its only state of its own.
+panel a narrow screen shows is its only state of its own. The route decides the mode: the Original, the PDF of the
+source (a link to a new tab and, on a wide screen with a mouse, the PDF in a frame of the same site) or the two texts
+of the mode Original erkennen, which the choose view shows.
 
 ```arc42
 :::building-block
@@ -900,14 +906,14 @@ id: bb-textcheck-root
 title: Root component
 parent: bb-interactive-ui
 technology: Vue single-file component
-requires: if-textcheck-wordlist, if-textcheck-result, if-textcheck-ui-texts, if-a11y
+requires: if-textcheck-wordlist, if-textcheck-choose, if-textcheck-result, if-textcheck-ui-texts, if-a11y
 path: src/ui/App.vue
 :::
 ```
 
 ### Word list
 
-Built. `src/ui/WordList.vue` shows the words of the Fassung. While marking, they are one listbox with one tab stop: the
+Built. `src/ui/WordList.vue` shows the words of the Variante. While marking, they are one listbox with one tab stop: the
 arrow keys move between words and sentences, the space bar marks, a tap or click marks. After checking it shows how
 each word counts, by colour and line style with a hidden status text for screen readers.
 
@@ -937,9 +943,42 @@ path: src/ui/WordList.vue
 :::
 ```
 
+### Choose view
+
+Built. `src/ui/ChooseView.vue` shows the two texts of the mode Original erkennen, A and B, one the Original and the other
+the Variante; which is which stays hidden until checking. The learner picks the text that has the errors (a button under
+each text, or the keys 1 and 2) and marks the words there with the word list. A narrow screen shows one text at a time;
+the text shown is its only state of its own.
+
+```arc42
+:::building-block
+id: bb-textcheck-choose
+title: Choose view
+parent: bb-interactive-ui
+technology: Vue single-file component
+requires: if-textcheck-wordlist, if-textcheck-ui-texts
+path: src/ui/ChooseView.vue
+:::
+```
+
+#### Choose view interface
+
+The root component gives the choose view the state and the language as props and takes its `input` events (the pick, and
+the actions of the word list) on.
+
+```arc42
+:::interface
+id: if-textcheck-choose
+title: Choose view props and input events
+provider: bb-textcheck-choose
+protocol: Vue props and events
+path: src/ui/ChooseView.vue
+:::
+```
+
 ### Result view
 
-Built. `src/ui/ResultView.vue` shows the counts, the errors grouped by class with what stands in the Fassung and in the
+Built. `src/ui/ResultView.vue` shows the counts, the errors grouped by class with what stands in the Variante and in the
 Original and the explanation, the words marked wrongly or within tolerance, and the legend. It emits the action
 `again`.
 
