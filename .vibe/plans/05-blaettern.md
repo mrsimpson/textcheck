@@ -117,7 +117,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 ### Tasks
 
 - [x] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
-- [ ] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
+- [x] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
 - [ ] Slice 1, Modus „Fehler markieren (mit Original)“ (`App.vue`): Umschalter und Blätter auf allen Bildschirmen; Umblätter-Effekt; „weniger Bewegung“; verdecktes Blatt nicht fokussierbar. Tests und Playthroughs anpassen. Check, commit.
 - [ ] Slice 2, Modus „Original erkennen“ (`ChooseView.vue`): dasselbe für Text A und B; Markierungen und Wahl bleiben beim Umblättern. Check, commit.
