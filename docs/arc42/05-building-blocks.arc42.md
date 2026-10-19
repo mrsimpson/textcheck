@@ -903,7 +903,8 @@ flowchart TB
 
 ### Root component
 
-Built. `src/ui/App.vue` shows the goal line, the Original and the Variante (like two sheets, one on top of the other,
+Built. `src/ui/App.vue` draws the heading line of the page itself, with the button for the reading settings at its right
+edge (the shell's own heading steps aside by CSS while the app runs), and shows the goal line, the Original and the Variante (like two sheets, one on top of the other,
 starting with the Original: a switch turns from one to the other with a short page-turn animation, which reduced motion
 switches off, and the hidden one is not in the page, so the learner cannot compare them side by side; the source PDF is
 no sheet and has no switch: where it is embedded (a wide screen of 1300 px and more with a mouse) it stands next to the
@@ -1062,7 +1063,7 @@ path: src/ui/messages.ts
 
 ### Reading settings
 
-Built. `src/ui/ReadingSettings.vue` is one small button "Schrift und Lesen" in the line of the page's heading, at its right edge, which opens a
+Built. `src/ui/ReadingSettings.vue` is one small button "Schrift" in the line of the heading, at its right edge, which opens a
 dialog with the style of the font (normal, round, fixed width), the weight, the size and the line spacing, a line of
 sample text, a button for the defaults and one to close it; the texts change while the learner sets. It holds
 no state of its own: the root component gives it the settings and keeps what the learner changes.

@@ -15,7 +15,7 @@ test.describe("Settings for reading", () => {
   test("loads the bundled font, and sets style, size and spacing for the texts", async ({ page }) => {
     await open(page);
     await expect.poll(() => page.evaluate(() => document.fonts.check('16px "Recursive TC"'))).toBe(true);
-    await page.getByRole("button", { name: "Schrift und Lesen" }).click();
+    await page.getByRole("button", { name: "Schrift", exact: true }).click();
     await page.getByRole("radio", { name: "Festbreite" }).check();
     await expect.poll(() => textStyle(page, "font-variation-settings")).toContain('"MONO" 1');
     await page.getByRole("radio", { name: "Rund" }).check();
@@ -28,13 +28,13 @@ test.describe("Settings for reading", () => {
 
   test("keeps the settings on the device, and goes back to the defaults", async ({ page }) => {
     await open(page);
-    await page.getByRole("button", { name: "Schrift und Lesen" }).click();
+    await page.getByRole("button", { name: "Schrift", exact: true }).click();
     await page.getByLabel("Strichstärke").fill("700");
     await expect.poll(() => textStyle(page, "font-weight")).toBe("700");
     await page.reload();
     await expect(page.locator(".interactive-app")).toHaveAttribute("data-mounted", "");
     await expect.poll(() => textStyle(page, "font-weight")).toBe("700");
-    await page.getByRole("button", { name: "Schrift und Lesen" }).click();
+    await page.getByRole("button", { name: "Schrift", exact: true }).click();
     await page.getByRole("button", { name: "Zurücksetzen" }).click();
     await expect.poll(() => textStyle(page, "font-weight")).toBe("400");
     await expect(page.getByRole("button", { name: "Zurücksetzen" })).toBeDisabled();
@@ -49,7 +49,7 @@ test.describe("Settings for reading", () => {
       });
     });
     await open(page);
-    await page.getByRole("button", { name: "Schrift und Lesen" }).click();
+    await page.getByRole("button", { name: "Schrift", exact: true }).click();
     await page.getByLabel("Strichstärke").fill("600");
     await expect.poll(() => textStyle(page, "font-weight")).toBe("600");
   });
@@ -58,7 +58,7 @@ test.describe("Settings for reading", () => {
     page,
   }) => {
     await open(page);
-    const button = page.getByRole("button", { name: "Schrift und Lesen" });
+    const button = page.getByRole("button", { name: "Schrift", exact: true });
     await expect(page.getByRole("dialog")).toHaveCount(0);
     await button.click();
     const dialog = page.getByRole("dialog", { name: "Schrift und Lesen" });
@@ -73,16 +73,20 @@ test.describe("Settings for reading", () => {
     expect((await button.boundingBox())?.height ?? 99).toBeLessThan(60);
   });
 
-  test("puts the button in the line of the heading, at its right edge", async ({ page }) => {
+  test("puts the button in the line of the heading, at its right edge, and leaves one heading", async ({ page }) => {
     await open(page);
-    const heading = await page.locator(".interactive h1").boundingBox();
-    const button = await page.getByRole("button", { name: "Schrift und Lesen" }).boundingBox();
+    await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Textcheck");
+    const heading = await page.getByRole("heading", { level: 1 }).boundingBox();
+    const button = await page.getByRole("button", { name: "Schrift", exact: true }).boundingBox();
     const column = await page.locator(".interactive").boundingBox();
     const middle = (box: { y: number; height: number } | null): number => (box?.y ?? 0) + (box?.height ?? 0) / 2;
     expect(Math.abs(middle(heading) - middle(button))).toBeLessThan(6);
     expect((column?.x ?? 0) + (column?.width ?? 0) - ((button?.x ?? 0) + (button?.width ?? 0))).toBeLessThan(24);
-    // it does not push the rest of the page down: the age group comes straight under the heading
+    // the age group comes straight under the heading
     const picker = await page.locator(".picker").boundingBox();
-    expect((picker?.y ?? 0) - ((heading?.y ?? 0) + (heading?.height ?? 0))).toBeLessThan(40);
+    const gap = (picker?.y ?? 0) - ((heading?.y ?? 0) + (heading?.height ?? 0));
+    expect(gap).toBeGreaterThanOrEqual(0);
+    expect(gap).toBeLessThan(40);
   });
 });

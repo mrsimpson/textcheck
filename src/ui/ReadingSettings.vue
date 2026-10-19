@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// The settings for reading behind one small button in the line of the page's heading, in a dialog: the style of the font, its weight, the size and the
+// The settings for reading behind one small button (it stands in the line of the page's heading), in a dialog: the style of the font, its weight, the size and the
 // line spacing, with a line of sample text and a button to go back to the defaults. The texts change while the learner
 // sets. It holds no state of its own; the root component gives it the settings and keeps what the learner changes.
 import { computed, ref } from "vue";
@@ -28,9 +28,9 @@ const isDefault = computed(
 </script>
 
 <template>
-  <div class="tools">
+  <div>
     <button type="button" class="open" aria-haspopup="dialog" @click="dialog?.showModal()">
-      {{ t("readingTitle") }}
+      {{ t("readingButton") }}
     </button>
     <dialog ref="dialog" class="reading" aria-labelledby="reading-title">
       <h2 id="reading-title">{{ t("readingTitle") }}</h2>
@@ -83,14 +83,6 @@ const isDefault = computed(
 </template>
 
 <style scoped>
-/* The button stands in the line of the heading of the page, at its right edge: the page's main element (the root's
-   style makes it the reference) is the frame, and the heading is its first line. */
-.tools {
-  position: absolute;
-  top: -0.25rem;
-  right: 1rem;
-}
-
 .open {
   min-height: 2.75rem;
   padding: 0.4rem 0.9rem;

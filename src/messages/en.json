@@ -99,5 +99,7 @@
   "switchText": "You have already marked words. If you change the age group or the mode, a new round begins and your marks are lost.",
   "switchConfirm": "Change",
   "switchCancel": "Stay",
-  "readingDone": "Done"
+  "readingDone": "Done",
+  "appTitle": "Textcheck",
+  "readingButton": "Font"
 }

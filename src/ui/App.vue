@@ -237,6 +237,10 @@ const choiceNote = computed(() => {
 
 <template>
   <section ref="root" class="textcheck" :style="readingStyle" :aria-label="t('region')">
+    <div class="titlebar">
+      <h1>{{ t("appTitle") }}</h1>
+      <ReadingSettings v-model="reading" :lang="lang" />
+    </div>
     <div class="picker" @change="onPick">
       <label>
         {{ t("level") }}
@@ -251,7 +255,6 @@ const choiceNote = computed(() => {
         </select>
       </label>
     </div>
-    <ReadingSettings v-model="reading" :lang="lang" />
     <p class="goal">{{ goal }}</p>
     <p v-if="state.mode === 'choose'" class="hint note">{{ t("renditionNoteChoose") }}</p>
     <ChooseView
@@ -425,6 +428,26 @@ const choiceNote = computed(() => {
     --tc-tol: #bfdbfe;
     --tc-tol-bg: #1e2f5a;
   }
+}
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 1.25rem 0 1rem;
+}
+
+.titlebar h1 {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif; /* the heading of the shell, which this one replaces */
+  font-size: 1.875rem;
+  line-height: 1.2;
 }
 
 .picker {
@@ -662,9 +685,10 @@ h2 {
   font-display: swap;
 }
 
-/* The button for the reading settings stands in the line of the page's heading: the main element is its frame. */
-body:has(.textcheck) .interactive {
-  position: relative;
+/* The heading of the page is part of the app's own first line, with the button for the reading settings next to it; the
+   shell's heading steps aside while the app runs (without JavaScript it stays). */
+body:has(.textcheck) .interactive > h1 {
+  display: none;
 }
 
 /* The two selects of the app replace the shell's list of route links; without JavaScript the list stays. */

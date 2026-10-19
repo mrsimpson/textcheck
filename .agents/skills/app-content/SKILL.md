@@ -69,7 +69,7 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
 - The learner sees: the goal line, the Original and the Variante (like two sheets, one on top of the other, with a switch and a short page-turn animation, so that the eye cannot
   compare them side by side; the round starts with the Original; the mode `source` has no switch: the PDF stands next to the Variante on a wide screen of 1300 px and more, in a frame of 80 rem; elsewhere the button that opens the PDF stands above the Variante). The address is the round (`?seed=<n>#<route>`) and the only place the seed is taken from (without one the page works one out and writes it into the address), so a round can be reloaded and shared, and back and forward lead from round to round. A new age group or mode always starts a round with a new seed, so that switching never shows the same text and errors again, the marked words,
   then the result grouped by error class (found, missed, wrongly marked, within tolerance) with the explanation.
-- The learner can set how the texts look (small button "Schrift und Lesen" with a dialog: style normal, round or fixed width,
+- The learner can set how the texts look (small button "Schrift" in the line of the heading, with a dialog "Schrift und Lesen": style normal, round or fixed width,
   weight, size, line spacing; kept on the device). The font is Recursive (SIL Open Font License 1.1), bundled in
   `src/ui/fonts/` with its licence; it changes how a text looks, never what it says.
 - Length of a pack: the excerpt has 6 to 10 sentences. Guide values per grade pair are fixed after the pilot.
