@@ -12,6 +12,8 @@
   "original": "Original",
   "rendition": "Variant: mark what is wrong",
   "renditionTab": "Variant",
+  "renditionNote": "The variant deliberately uses different wording. This is not necessarily an error.",
+  "renditionNoteChoose": "One of the two texts deliberately uses different wording. This is not necessarily an error.",
   "sourceTab": "Source",
   "textA": "Text A",
   "textB": "Text B",
