@@ -58,14 +58,6 @@
     {
       "text": "Weltweit verfolgten rund 600 Millionen Menschen die Fernsehübertragung der Mondlandung 1969.",
       "section": "Einleitung"
-    },
-    {
-      "text": "In den späten 1950er und frühen 1960er Jahren herrschte zwischen den Vereinigten Staaten und der Sowjetunion der Kalte Krieg.",
-      "section": "Hintergrund"
-    },
-    {
-      "text": "Am 4. Oktober 1957 startete die Sowjetunion Sputnik 1, den ersten künstlichen Satelliten.",
-      "section": "Hintergrund"
     }
   ],
   "rendition": [
@@ -338,45 +330,6 @@
       "sentence": [
         {
           "slot": "i4"
-        }
-      ]
-    },
-    {
-      "sentence": [
-        "Der ",
-        {
-          "slot": "s26"
-        },
-        " bestimmte in den späten 1950er und frühen 1960er Jahren das Verhältnis zwischen den ",
-        {
-          "slot": "s25"
-        },
-        " und der Sowjetunion."
-      ],
-      "evidence": {
-        "quote": "In den späten 1950er und frühen 1960er Jahren herrschte zwischen den Vereinigten Staaten und der Sowjetunion der Kalte Krieg."
-      }
-    },
-    {
-      "sentence": [
-        "Die Sowjetunion startete am ",
-        {
-          "slot": "s28"
-        },
-        " ",
-        {
-          "slot": "s29"
-        },
-        ", den ersten künstlichen Satelliten."
-      ],
-      "evidence": {
-        "quote": "Am 4. Oktober 1957 startete die Sowjetunion Sputnik 1, den ersten künstlichen Satelliten."
-      }
-    },
-    {
-      "sentence": [
-        {
-          "slot": "i6"
         }
       ]
     }
@@ -967,110 +920,6 @@
         }
       ]
     },
-    "s25": {
-      "correct": "Vereinigten Staaten",
-      "variants": [
-        {
-          "text": "Vereinten Nationen",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „herrschte zwischen den Vereinigten Staaten und der Sowjetunion der Kalte Krieg“. Es waren die Vereinigten Staaten, nicht die Vereinten Nationen.",
-          "evidence": "In den späten 1950er und frühen 1960er Jahren herrschte zwischen den Vereinigten Staaten und der Sowjetunion der Kalte Krieg."
-        },
-        {
-          "text": "Vereinigten Staten",
-          "errorClass": "slip",
-          "basis": "text",
-          "conspicuousness": 3,
-          "explanation": "Hier fehlt ein „a“: Staaten."
-        }
-      ]
-    },
-    "s26": {
-      "correct": "Kalte Krieg",
-      "variants": [
-        {
-          "text": "Zweite Weltkrieg",
-          "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 1,
-          "explanation": "Im Original steht: „herrschte zwischen den Vereinigten Staaten und der Sowjetunion der Kalte Krieg“. Der Zweite Weltkrieg war schon 1945 zu Ende.",
-          "evidence": "In den späten 1950er und frühen 1960er Jahren herrschte zwischen den Vereinigten Staaten und der Sowjetunion der Kalte Krieg."
-        },
-        {
-          "text": "Kalte Kriek",
-          "errorClass": "slip",
-          "basis": "text",
-          "conspicuousness": 2,
-          "explanation": "Hier ist ein Buchstabe falsch: Krieg."
-        }
-      ]
-    },
-    "s28": {
-      "correct": "4. Oktober 1957",
-      "variants": [
-        {
-          "text": "4. Oktober 1975",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 3,
-          "explanation": "Im Original steht: „Am 4. Oktober 1957 startete die Sowjetunion Sputnik 1“. Zwei Ziffern wurden vertauscht: 1957.",
-          "evidence": "Am 4. Oktober 1957 startete die Sowjetunion Sputnik 1, den ersten künstlichen Satelliten.",
-          "tolerance": 1
-        },
-        {
-          "text": "14. Oktober 1957",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Am 4. Oktober 1957 startete die Sowjetunion Sputnik 1“. Es war der 4., nicht der 14.",
-          "evidence": "Am 4. Oktober 1957 startete die Sowjetunion Sputnik 1, den ersten künstlichen Satelliten.",
-          "tolerance": 1
-        }
-      ]
-    },
-    "s29": {
-      "correct": "Sputnik 1",
-      "variants": [
-        {
-          "text": "Sputnik 2",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 3,
-          "explanation": "Im Original steht: „startete die Sowjetunion Sputnik 1, den ersten künstlichen Satelliten“. Es war Sputnik 1, nicht Sputnik 2.",
-          "evidence": "Am 4. Oktober 1957 startete die Sowjetunion Sputnik 1, den ersten künstlichen Satelliten."
-        },
-        {
-          "text": "Explorer 1",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „startete die Sowjetunion Sputnik 1, den ersten künstlichen Satelliten“. Explorer ist kein sowjetischer Satellit.",
-          "evidence": "Am 4. Oktober 1957 startete die Sowjetunion Sputnik 1, den ersten künstlichen Satelliten."
-        }
-      ]
-    },
-    "i6": {
-      "correct": "",
-      "variants": [
-        {
-          "text": "Viele Wissenschaftler sagen, dass Sputnik die Welt für immer verändert hat.",
-          "errorClass": "false_authority",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Der Satz beruft sich auf „Wissenschaftler“, ohne einen Namen oder eine Quelle zu nennen. Im Original steht davon nichts. Dort steht nur, dass Sputnik 1 der erste künstliche Satellit war.",
-          "evidence": "Am 4. Oktober 1957 startete die Sowjetunion Sputnik 1, den ersten künstlichen Satelliten."
-        },
-        {
-          "text": "Sputnik 1 war der bedeutendste Satellit aller Zeiten.",
-          "errorClass": "opinion_as_fact",
-          "basis": "text",
-          "conspicuousness": 2,
-          "explanation": "Das ist eine Meinung. „Der bedeutendste“ lässt sich nicht messen. Im Original steht nur, dass Sputnik 1 der erste künstliche Satellit war."
-        }
-      ]
-    },
     "i5": {
       "correct": "",
       "variants": [
@@ -1093,6 +942,7 @@
     "Der eingefügte Satz „Nur wenige Menschen sahen die Fernsehübertragung der Mondlandung.“ widerspricht dem richtigen Satz zur Zahl der Zuschauer; „Collins landete zusammen mit Armstrong auf dem Mond.“ widerspricht dem richtigen Satz zu Collins im Kommandomodul.",
     "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt; die Zahlen und Namen folgen dem Artikel, nicht anderen Quellen. Die falschen Varianten sind absichtlich verändert und stehen nicht in der Quelle.",
     "Die Quelle liegt als PDF unter public/quellen/de/apollo-11.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
-    "Überarbeitung Klasse 9–10: Der Auszug beginnt bereits mit den ersten beiden Sätzen der Einleitung des Artikels (die Treffer-Meldung des Skripts kommt von der Infobox vor dem Text) und bleibt unverändert. Jahre, Namen und Zahlen aller Auszugssätze mit dem Artikel im PDF abgeglichen. In der Variante: Satz zur Hornet verständlicher gefasst, zwei eingefügte Sätze an passendere Stellen gesetzt, die Meinung zu Sputnik neu gefasst."
+    "Überarbeitung Klasse 9–10: Der Auszug beginnt bereits mit den ersten beiden Sätzen der Einleitung des Artikels (die Treffer-Meldung des Skripts kommt von der Infobox vor dem Text) und bleibt unverändert. Jahre, Namen und Zahlen aller Auszugssätze mit dem Artikel im PDF abgeglichen. In der Variante: Satz zur Hornet verständlicher gefasst, zwei eingefügte Sätze an passendere Stellen gesetzt, die Meinung zu Sputnik neu gefasst.",
+    "Durchsicht (Assistent, nach Hinweis aus der Überarbeitung): Die zwei letzten Auszugssätze (Kalter Krieg, Sputnik 1) und ihre Stellen sind entfernt; der Text endet jetzt mit der Fernsehübertragung der Mondlandung statt mit einer angehängten Vorgeschichte."
   ]
 }
