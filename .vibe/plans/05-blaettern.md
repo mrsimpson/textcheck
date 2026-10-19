@@ -141,21 +141,21 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Tasks
 
-- [ ] Push the branch; open a pull request to `main`. Pre-push runs the heavy checks; fix failures. See the pull
+- [x] Push the branch; open a pull request to `main`. Pre-push runs the heavy checks; fix failures. See the pull
       request's checks to green. GitHub step fails or refused → skill `lernapps-github`.
-- [ ] **Checkpoint:** publish. Show what the increment adds and the preview link from the comment "Vorschau der
+- [x] **Checkpoint:** publish. Show what the increment adds and the preview link from the comment "Vorschau der
       App"; ask whether it may go online. Wait for the yes.
-- [ ] Merge the pull request into `main` (no pull request: merge the branch, push `main`). Watch the `Pages` run of
+- [x] Merge the pull request into `main` (no pull request: merge the branch, push `main`). Watch the `Pages` run of
       that commit. Fails → read the failed step, fix, push.
-- [ ] Open the address the job `deploy` printed ("published at ...", run summary); confirm the new content. Never
+- [x] Open the address the job `deploy` printed ("published at ...", run summary); confirm the new content. Never
       a derived address; follow redirects.
-- [ ] App listed and the entry changes (topics, school years, summary) → load skill `lernapps-listing`, write the
+- [x] App listed and the entry changes (der Eintrag ändert sich nicht: übersprungen) (topics, school years, summary) → load skill `lernapps-listing`, write the
       changed entry. Else skip the next task.
-- [ ] **Checkpoint:** list. Ask before opening the pull request to the catalog; wait for the yes.
-- [ ] Fill the retrospective.
-- [ ] Commit this plan on `main` and push it. A push of only `.vibe/` publishes nothing.
-- [ ] Catalog pull request opened → see it to "bestanden" as the skill says.
-- [ ] Plan changed since its last push → commit on `main`, push again.
+- [x] **Checkpoint:** list (übersprungen: kein neuer Eintrag). Ask before opening the pull request to the catalog; wait for the yes.
+- [x] Fill the retrospective.
+- [x] Commit this plan on `main` and push it. A push of only `.vibe/` publishes nothing.
+- [x] Catalog pull request opened (keiner) → see it to "bestanden" as the skill says.
+- [x] Plan changed since its last push → commit on `main`, push again.
 
 ### Completed
 
@@ -165,12 +165,15 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Phases reached
 
-<!-- Last phase completed, checkpoints passed. E.g. "commit; confirmed, published". -->
+commit; Plan und Umsetzung mit „Ja, leg los“ bestätigt (inklusive „Wenn das so passt, merge es direkt“), Pull Requests 7 und 8 gemerged, veröffentlichte Seite im echten Browser geprüft.
 
 ### Creator turns after the plan
 
-<!-- Number of creator messages after the confirmation, topic of each. Target: max 3. -->
+1: „Ja, leg los. Teste es am Ende mit einem echten Browser. Man soll nicht spicken können. Wenn das so passt, merge es direkt“.
 
 ### Where I had to guess
 
-<!-- Each gap in plan, skills, content guide, messages or answers, and your choice. "None" if none. -->
+- Dauer und Art des Effekts: Blatt kippt um die linke Kante weg, ca. 0,4 s, bei „weniger Bewegung“ aus.
+- Der Umschalter gilt für „Fehler markieren (mit Original)“ und „Original erkennen“ (Ersteller bestätigt); der PDF-Modus bleibt nebeneinander (Ersteller).
+- Der erste Pull Request (7) ließ den `Pages`-Lauf auf `main` scheitern: Das kippende Blatt fing bei 360 px schnelle Taps auf den Umschalter ab. Behoben im Pull Request 8 (Umschalter über dem Blatt, Test dazu); erst danach wurde veröffentlicht. Die Prüfungen des Pull Requests 7 waren grün gewesen, der Fehler trat im Lauf auf `main` auf (Zeitpunkt der Animation).
+- Der Eintrag im Katalog blieb unverändert.
