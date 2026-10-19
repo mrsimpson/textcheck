@@ -20,6 +20,12 @@
   },
   "excerpt": [
     {
+      "text": "Das Fahrrad ist ein Fahrzeug, das nur durch menschliche Muskelkraft angetrieben wird."
+    },
+    {
+      "text": "Es besteht meistens aus zwei Rädern, einem Sattel zum Sitzen und einem Lenker."
+    },
+    {
       "text": "Vor etwa 200 Jahren hat man zuerst versucht, ein „Laufrad“ zu bauen.",
       "section": "Wann wurde das Fahrrad erfunden?"
     },
@@ -36,14 +42,6 @@
       "section": "Wann wurde das Fahrrad erfunden?"
     },
     {
-      "text": "Die damaligen Laufräder waren sehr schwerfällig.",
-      "section": "Wann wurde das Fahrrad erfunden?"
-    },
-    {
-      "text": "Sie konnten bis zu 40 Kilogramm wiegen.",
-      "section": "Wann wurde das Fahrrad erfunden?"
-    },
-    {
       "text": "Fünfzig Jahre später wurde in Frankreich das „Velocipede“ erfunden.",
       "section": "Wann wurde das Fahrrad erfunden?"
     },
@@ -53,6 +51,34 @@
     }
   ],
   "rendition": [
+    {
+      "sentence": [
+        "Ein Fahrrad ist ein Fahrzeug, das nur durch die ",
+        {
+          "slot": "n1"
+        },
+        " von Menschen angetrieben wird."
+      ],
+      "evidence": {
+        "quote": "Das Fahrrad ist ein Fahrzeug, das nur durch menschliche Muskelkraft angetrieben wird."
+      }
+    },
+    {
+      "sentence": [
+        "Meistens hat es ",
+        {
+          "slot": "n2"
+        },
+        " Räder, einen ",
+        {
+          "slot": "n3"
+        },
+        " und einen Lenker."
+      ],
+      "evidence": {
+        "quote": "Es besteht meistens aus zwei Rädern, einem Sattel zum Sitzen und einem Lenker."
+      }
+    },
     {
       "sentence": [
         "Vor etwa ",
@@ -91,7 +117,7 @@
     },
     {
       "sentence": [
-        "Die Draisine war aus ",
+        "Diese Laufmaschine, die Draisine, war aus ",
         {
           "slot": "s6"
         },
@@ -115,34 +141,6 @@
       ],
       "evidence": {
         "quote": "Man musste sich immer wieder mit den Füßen vom Boden abstoßen."
-      }
-    },
-    {
-      "sentence": [
-        "Die damaligen Laufräder waren sehr ",
-        {
-          "slot": "s9"
-        },
-        "."
-      ],
-      "evidence": {
-        "quote": "Die damaligen Laufräder waren sehr schwerfällig."
-      }
-    },
-    {
-      "sentence": [
-        "Sie wogen bis zu ",
-        {
-          "slot": "s10"
-        },
-        " ",
-        {
-          "slot": "s11"
-        },
-        "."
-      ],
-      "evidence": {
-        "quote": "Sie konnten bis zu 40 Kilogramm wiegen."
       }
     },
     {
@@ -298,51 +296,6 @@
         }
       ]
     },
-    "s9": {
-      "correct": "schwerfällig",
-      "variants": [
-        {
-          "text": "schwerfellig",
-          "errorClass": "spelling_rule",
-          "basis": "text",
-          "conspicuousness": 3,
-          "explanation": "Das Wort hat ein „ä“, weil es zu „fallen“ gehört: schwerfällig."
-        }
-      ]
-    },
-    "s10": {
-      "correct": "40",
-      "variants": [
-        {
-          "text": "400",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 1,
-          "explanation": "Im Original steht: „Sie konnten bis zu 40 Kilogramm wiegen.“ Sie konnten bis zu 40 Kilogramm wiegen.",
-          "evidence": "Sie konnten bis zu 40 Kilogramm wiegen."
-        },
-        {
-          "text": "60",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Sie konnten bis zu 40 Kilogramm wiegen.“ Es waren bis zu 40 Kilogramm.",
-          "evidence": "Sie konnten bis zu 40 Kilogramm wiegen."
-        }
-      ]
-    },
-    "s11": {
-      "correct": "Kilogramm",
-      "variants": [
-        {
-          "text": "Kilogram",
-          "errorClass": "slip",
-          "basis": "text",
-          "conspicuousness": 3,
-          "explanation": "Am Ende fehlt ein „m“: Kilogramm. Das Wort hat zwei „m“."
-        }
-      ]
-    },
     "s12": {
       "correct": "Fünfzig",
       "variants": [
@@ -402,12 +355,50 @@
           "explanation": "Das Wort besteht aus „Vorder“ und „Rad“. Es endet mit „d“, wie in den Rädern."
         }
       ]
+    },
+    "n1": {
+      "correct": "Muskelkraft",
+      "variants": [
+        {
+          "text": "Muskelkraf",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Am Ende fehlt ein „t“: Muskelkraft."
+        }
+      ]
+    },
+    "n2": {
+      "correct": "zwei",
+      "variants": [
+        {
+          "text": "drei",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Es besteht meistens aus zwei Rädern, einem Sattel zum Sitzen und einem Lenker.“ Ein Fahrrad hat meistens zwei Räder.",
+          "evidence": "Es besteht meistens aus zwei Rädern, einem Sattel zum Sitzen und einem Lenker."
+        }
+      ]
+    },
+    "n3": {
+      "correct": "Sattel",
+      "variants": [
+        {
+          "text": "Satel",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "In „Sattel“ klingt das „a“ kurz. Darum steht „tt“ im Wort."
+        }
+      ]
     }
   },
   "notes": [
-    "Quelle gelesen: Klexikon-Artikel Fahrrad, Revision 162200 (abgerufen am 18.10.2026, Abschnitt „Wann wurde das Fahrrad erfunden?“); die acht Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Quelle gelesen: Klexikon-Artikel Fahrrad, Revision 162200 (abgerufen am 18.10.2026, Abschnitt „Wann wurde das Fahrrad erfunden?“); die 8 Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
     "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de; die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Nur Klassen, die ab Klasse 3 vorkommen: Rechtschreibung (Ableitung, Doppelkonsonant, tz, ck, ß), Flüchtigkeitsfehler, Zeichensetzung, Zahl/Name/Ort. Die Falschschreibungen sind konstruiert, nach den Schwerpunkten der IQB-Handreichung.",
+    "Geändert (Einleitung): Der Auszug beginnt jetzt mit den ersten zwei Sätzen des Artikels; gestrichen sind die Sätze zu schwerfälligen Laufrädern und ihrem Gewicht.",
     "Die Anführungszeichen um „Laufrad“ und „Velocipede“ stehen im Original und bleiben auch in der Variante. Der letzte Auszugssatz steht nach einem Bildtext im Artikel, bleibt aber im selben Abschnitt.",
     "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt.",
     "Die Quelle liegt als PDF unter public/quellen/de/fahrrad.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."

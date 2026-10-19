@@ -20,6 +20,15 @@
   },
   "excerpt": [
     {
+      "text": "Ein Mond ist ein natürlicher Satellit."
+    },
+    {
+      "text": "Ein solcher Begleiter kreist um einen Planeten."
+    },
+    {
+      "text": "Wenn man vom Mond spricht, meint man normalerweise den Mond der Erde."
+    },
+    {
       "text": "Der Mond ist der einzige Himmelskörper, den Menschen schon einmal besucht haben.",
       "section": "Waren Menschen schon dort?"
     },
@@ -42,17 +51,39 @@
     {
       "text": "Er und Edwin Aldrin waren knapp einen Tag auf der Mondoberfläche und sammelten auch einige Mondsteine auf.",
       "section": "Waren Menschen schon dort?"
-    },
-    {
-      "text": "Dann flogen sie wieder nach oben und die drei Astronauten kehrten zur Erde zurück.",
-      "section": "Waren Menschen schon dort?"
-    },
-    {
-      "text": "Danach waren amerikanische Astronauten noch mehrmals auf dem Mond, bis 1972.",
-      "section": "Waren Menschen schon dort?"
     }
   ],
   "rendition": [
+    {
+      "sentence": [
+        "Ein Mond ist ein natürlicher ",
+        {
+          "slot": "n1"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Ein Mond ist ein natürlicher Satellit."
+      }
+    },
+    {
+      "sentence": [
+        "Er kreist als Begleiter um einen ",
+        {
+          "slot": "n2"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Ein solcher Begleiter kreist um einen Planeten."
+      }
+    },
+    {
+      "sentence": ["Wenn man „Mond“ sagt, meint man meistens den Mond der Erde."],
+      "evidence": {
+        "quote": "Wenn man vom Mond spricht, meint man normalerweise den Mond der Erde."
+      }
+    },
     {
       "sentence": [
         "Der ",
@@ -142,34 +173,6 @@
       ],
       "evidence": {
         "quote": "Er und Edwin Aldrin waren knapp einen Tag auf der Mondoberfläche und sammelten auch einige Mondsteine auf."
-      }
-    },
-    {
-      "sentence": [
-        "Dann flogen sie wieder nach oben und die ",
-        {
-          "slot": "s12"
-        },
-        " Astronauten kehrten zur Erde ",
-        {
-          "slot": "s13"
-        },
-        "."
-      ],
-      "evidence": {
-        "quote": "Dann flogen sie wieder nach oben und die drei Astronauten kehrten zur Erde zurück."
-      }
-    },
-    {
-      "sentence": [
-        "Danach waren noch mehrmals amerikanische Astronauten auf dem Mond, bis ",
-        {
-          "slot": "s14"
-        },
-        "."
-      ],
-      "evidence": {
-        "quote": "Danach waren amerikanische Astronauten noch mehrmals auf dem Mond, bis 1972."
       }
     }
   ],
@@ -360,66 +363,38 @@
         }
       ]
     },
-    "s12": {
-      "correct": "drei",
+    "n1": {
+      "correct": "Satellit",
       "variants": [
         {
-          "text": "zwei",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Dann flogen sie wieder nach oben und die drei Astronauten kehrten zur Erde zurück.“ Die drei Astronauten kehrten zur Erde zurück.",
-          "evidence": "Dann flogen sie wieder nach oben und die drei Astronauten kehrten zur Erde zurück."
-        },
-        {
-          "text": "vier",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Dann flogen sie wieder nach oben und die drei Astronauten kehrten zur Erde zurück.“ Es waren drei Astronauten.",
-          "evidence": "Dann flogen sie wieder nach oben und die drei Astronauten kehrten zur Erde zurück."
-        }
-      ]
-    },
-    "s13": {
-      "correct": "zurück",
-      "variants": [
-        {
-          "text": "zurük",
+          "text": "Satelit",
           "errorClass": "spelling_rule",
           "basis": "text",
           "conspicuousness": 2,
-          "explanation": "Nach dem kurzen „ü“ steht „ck“: zurück. Du hörst das „k“ am Ende."
+          "explanation": "In „Satellit“ klingt das „e“ kurz. Darum steht „ll“ im Wort."
         }
       ]
     },
-    "s14": {
-      "correct": "1972",
+    "n2": {
+      "correct": "Planeten",
       "variants": [
         {
-          "text": "1992",
+          "text": "Stern",
           "errorClass": "number_name_date",
           "basis": "comparison",
           "conspicuousness": 2,
-          "explanation": "Im Original steht: „Danach waren amerikanische Astronauten noch mehrmals auf dem Mond, bis 1972.“ Die Astronauten waren noch mehrmals auf dem Mond, bis 1972.",
-          "evidence": "Danach waren amerikanische Astronauten noch mehrmals auf dem Mond, bis 1972."
-        },
-        {
-          "text": "1927",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 3,
-          "explanation": "Im Original steht: „Danach waren amerikanische Astronauten noch mehrmals auf dem Mond, bis 1972.“ Es war das Jahr 1972. Zwei Ziffern sind vertauscht.",
-          "evidence": "Danach waren amerikanische Astronauten noch mehrmals auf dem Mond, bis 1972."
+          "explanation": "Im Original steht: „Ein solcher Begleiter kreist um einen Planeten.“ Ein Mond kreist um einen Planeten, nicht um einen Stern.",
+          "evidence": "Ein solcher Begleiter kreist um einen Planeten."
         }
       ]
     }
   },
   "notes": [
-    "Quelle gelesen: Klexikon-Artikel Mond, Revision 162657 (abgerufen am 18.10.2026, Abschnitt „Waren Menschen schon dort?“); die acht Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Quelle gelesen: Klexikon-Artikel Mond, Revision 162657 (abgerufen am 18.10.2026, Abschnitt „Waren Menschen schon dort?“); die 9 Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
     "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de; die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Nur Klassen, die ab Klasse 3 vorkommen: Rechtschreibung (Ableitung, Doppelkonsonant, tz, ck, ß), Flüchtigkeitsfehler, Zeichensetzung, Zahl/Name/Ort. Die Falschschreibungen sind konstruiert, nach den Schwerpunkten der IQB-Handreichung.",
-    "Ausgelassen: die Sätze zu Rakete und Landefähre, zum Zitat von Armstrong und zu den Raumsonden. Der Auszug beginnt am Abschnittsanfang; die Sätze sind nicht ganz lückenlos, folgen aber der Reihenfolge der Quelle.",
+    "Geändert (Einleitung): Der Auszug beginnt jetzt mit den ersten zwei Sätzen des Artikels und einem dritten Satz, der klärt, welcher Mond gemeint ist; gestrichen sind die zwei letzten Sätze (Rückkehr der Astronauten, spätere Flüge bis 1972).",
+    "Ausgelassen: die Sätze zu Rakete und Landefähre und zum Zitat von Armstrong, am Ende die Sätze zur Rückkehr und zu den späteren Mondflügen. Der Auszug besteht aus dem Anfang des Artikels (drei Sätze) und aus Sätzen des Abschnitts „Waren Menschen schon dort?“, in der Reihenfolge der Quelle.",
     "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt.",
     "Die Quelle liegt als PDF unter public/quellen/de/mond.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
   ]
