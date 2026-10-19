@@ -94,7 +94,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Content method
 
-- Kein Inhalt ändert sich, kein neues Muster, keine neue Komponente. Skizze Ergebnis: Überschrift „Ergebnis“ / Zusammenfassung / `[Neue Runde]` / Auflösungen nach Fehlerklasse / Legende.
+- Kein Inhalt ändert sich, kein neues Muster, keine neue Komponente. Skizze breit: `Ergebnis ........ [Neue Runde]`, darunter Zusammenfassung / Auflösungen; schmal: `Ergebnis` / `[ Neue Runde (volle Breite) ]` / Zusammenfassung / Auflösungen nach Fehlerklasse / Legende.
 
 ### Completed
 
