@@ -4,7 +4,7 @@
 # Archetype as in the app's first plan; set it when you start. Never changes.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: explore
+phase: plan
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
@@ -44,7 +44,7 @@ Lernende können sich bei einer schwierigen Runde Schritt für Schritt Hinweise 
 - Alles gefunden ohne Hinweis: Feuerwerk. Mit Hinweis: Konfetti. Bei „Bewegung reduzieren“ keine Effekte, wie heute. (Ersteller)
 - Die Auflösung nennt bei Hinweisen einen ermutigenden Satz: beim nächsten Mal klappt es vielleicht ohne. (Ersteller)
 - Der Kern zählt die Hinweisstufe pro Runde (Aktion `hint`); eine neue Runde setzt sie zurück. Das Ergebnis (gefunden, übersehen) ändert sich nicht, es gibt keine Punkte. (guess)
-- Im Modus `choose` markiert Stufe 2 den betroffenen Satz in beiden Texten (der Satz des Originals über `evidence.quote`), so verrät der Hinweis nicht, welcher Text die Variante ist; Stufe 1 gilt ohnehin vor der Wahl. Eingefügte Sätze (nur ein Slot, ohne Gegenstück im Original) werden vor der Wahl in keinem Text markiert, nach der Wahl im gewählten Text. (Ersteller: „in beiden Varianten hervorheben“; Einschränkung guess)
+- Eingefügte Sätze (nur ein Slot, ohne Gegenstück im Original) kommen in den Hinweisen nicht vor: Stufe 2 markiert sie in keinem Modus. Im Modus `choose` markiert Stufe 2 den betroffenen Satz in beiden Texten (der Satz des Originals über `evidence.quote`), so verrät der Hinweis nicht, welcher Text die Variante ist; Stufe 1 gilt ohnehin vor der Wahl. (Ersteller: „in beiden Varianten hervorheben“, „Nimm eingefügte Sätze aus den Tipps raus“)
 - Der Knopf „Hinweis“ steht unter dem Text neben „Prüfen“; ein Hinweis bleibt bis zum Ende der Runde sichtbar und lässt sich nicht zurücknehmen. (guess)
 
 ## Notes
@@ -73,9 +73,9 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
       curriculum orientation (Lehrplan cited where used), new competencies by chapter as Ich-kann-Sätze, verified
       sources.
 - [x] Under "Notes": the didactic approach per competency and the scope (in, out, data range).
-- [ ] **Checkpoint:** research. Show in plain words: curriculum orientation, new competencies by chapter, didactic
+- [x] **Checkpoint:** research. Show in plain words: curriculum orientation, new competencies by chapter, didactic
       approach, scope, sources and how checked, what is unchecked. Stop and wait. Changes → change, ask again.
-- [ ] Set `phase: plan`: change the value line (`grep '^phase:'` prints `phase: plan`).
+- [x] Set `phase: plan`: change the value line (`grep '^phase:'` prints `phase: plan`).
 
 ### Answers
 
@@ -93,13 +93,13 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Tasks
 
-- [ ] Write the Code tasks: one slice per competency (skill `lernapps-content-growth`), in the guide's order; each
+- [x] Write the Code tasks: one slice per competency (skill `lernapps-content-growth`), in the guide's order; each
       ends in a commit.
-- [ ] Write "Content method": the guide's patterns, figures, components per slice; anything new, with why the
+- [x] Write "Content method": the guide's patterns, figures, components per slice; anything new, with why the
       guide's patterns do not fit.
-- [ ] Show the creator, short: goal, new competencies by chapter, slices; in plain words what learners see and do,
+- [x] Show the creator, short: goal, new competencies by chapter, slices; in plain words what learners see and do,
       and what is new. Max 2 questions.
-- [ ] Each new component or interactive exercise: show a sketch (static SVG or image, or the steps). Words alone are
+- [x] Each new component or interactive exercise: show a sketch (static SVG or image, or the steps). Words alone are
       not enough.
 - [ ] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes → change,
       ask again.
@@ -107,8 +107,10 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Content method
 
-<!-- One line each: guide patterns, figures, components used, and where; anything new, what it does and cannot.
-New things go into the guide in the slice that adds them. -->
+- Kein Inhalt ändert sich. Das Muster „Abweichungen markieren“ bleibt; die Hinweise sind eine Hilfe darüber, kein neues Muster. Keine Figuren.
+- Neu im Kern: Aktion `hint`, Zustand `hintLevel` (0 bis 2) je Runde; Stufe 1 liefert die Fehlerklassen der Runde, Stufe 2 die Sätze mit Fehler (ohne eingefügte Sätze) samt Klasse. Neu in der Oberfläche: Knopf „Hinweis“, Anzeige der Hinweise, Feuerwerk (CSS, wie das Konfetti).
+- Skizze (Variante mit Hinweis Stufe 2): `Goal line` / `Original` ... / Satz 3 mit Rand und Marke „Zahl“ / Satz 7 mit Rand und Marke „Widerspruch“ / unter dem Text `[ Hinweis ] [ Prüfen ]` und die Zeile „Hinweis 2 von 2“.
+- Skizze (Ergebnis): ohne Hinweis `Feuerwerk` + Lob; mit Hinweis `Konfetti` + Lob + „Beim nächsten Mal klappt es vielleicht auch ohne Hinweis.“
 
 ### Completed
 
@@ -123,10 +125,12 @@ New things go into the guide in the slice that adds them. -->
 
 ### Tasks
 
-- [ ] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
+- [x] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
 - [ ] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
-- [ ] <the slices written in Plan, each: competency, content, exercise, the entry's topic, check, commit>
+- [ ] Slice 1 Kern: Aktion `hint`, Zustand, Sätze mit Fehler und Klasse je Satz (ohne eingefügte), Stufe 1 entfällt bei `announceClasses`; Playthroughs und Tests. Check, Commit.
+- [ ] Slice 2 Anzeige: Knopf, Stufe 1 und 2 in den Modi `mark`, `source` und `choose` (beide Texte), Meldungen de/en, Sprachausgabe (`announce`). e2e. Check, Commit.
+- [ ] Slice 3 Auflösung: Feuerwerk ohne Hinweis, Konfetti mit Hinweis, ermutigender Satz, keine Effekte bei reduzierter Bewegung; Tests, arc42, Skill `app-content`. Check, Commit.
 - [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
 - [ ] `npx lernapps check` passes.
