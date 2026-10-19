@@ -4,7 +4,7 @@
 # Archetype as in the app's first plan; set it when you start. Never changes.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: explore
+phase: plan
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
@@ -37,9 +37,9 @@ Auch am Desktop liegen Original und Variante wie Blätter übereinander; man bl�
 
 ## Key decisions
 
-- Nebeneinander entfällt auf allen Bildschirmen; die Umschalter „Original“/„Variante“ (bisher nur Handy) gelten überall. (Ersteller: „auch auf dem Desktop eine andere Darstellung“)
+- Nebeneinander entfällt in diesen beiden Modi auf allen Bildschirmen; die Umschalter „Original“/„Variante“ (bisher nur Handy) gelten überall. (Ersteller: „auch auf dem Desktop eine andere Darstellung“)
 - Kurzer Umblätter-Effekt beim Wechsel (Seite kippt kurz weg, ca. 0,4 s); bei „weniger Bewegung“ im System ohne Effekt, nur Wechsel. (Ersteller: „gerne optisch ansprechend“; Bewegung abschaltbar wegen Barrierefreiheit, guess)
-- Gilt für „Fehler markieren (mit Original)“ und „Original erkennen“; ob auch für „Original erkennen“, ist offen (Frage an den Ersteller).
+- Gilt für „Fehler markieren (mit Original)“ und „Original erkennen“. (Ersteller: „Ja, in beiden Modi umblättern“)
 - Im Modus mit Quelle als PDF bleibt es am Desktop nebeneinander (PDF neben der Variante), weil man dort das PDF nicht als Text abgleicht. (Ersteller: „Bei PDF-Quelle ist nebeneinander besser“)
 - Das markierte Blatt bleibt beim Umblättern unverändert (Markierungen bleiben).
 
@@ -54,24 +54,25 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Tasks
 
-- [ ] Set `archetype` as in the app's first plan in `.vibe/plans/`.
-- [ ] Skills are in `.agents/skills/`. Only if missing: `npx skills add lernapps/tooling#exp/compact-guidance`.
-- [ ] Load the content guide `.agents/skills/app-content/SKILL.md` and skill `lernapps-content-growth`; read the
+- [x] Set `archetype` as in the app's first plan in `.vibe/plans/`.
+- [x] Skills are in `.agents/skills/`. Only if missing: `npx skills add lernapps/tooling#exp/compact-guidance`.
+- [x] Load the content guide `.agents/skills/app-content/SKILL.md` and skill `lernapps-content-growth`; read the
       plans in `.vibe/plans/` (what the app teaches, how content is made, what is open).
-- [ ] Interview, as in the first plan: one topic per question, the creator's words under "Answers"; no answer →
+- [x] Interview, as in the first plan: one topic per question, the creator's words under "Answers"; no answer →
       ask once more, then "(guess)", shown at the checkpoint. Topics: which competencies, chapters or rounds, for
       which school years; hurdles and examples; amount; anything of look and feel or terms that changes.
-- [ ] Research: the guide's curriculum and sources; skill `lernapps-content-research` for the rest. Under "Notes":
+- [x] Research: the guide's curriculum and sources; skill `lernapps-content-research` for the rest. Under "Notes":
       curriculum orientation (Lehrplan cited where used), new competencies by chapter as Ich-kann-Sätze, verified
       sources.
-- [ ] Under "Notes": the didactic approach per competency and the scope (in, out, data range).
-- [ ] **Checkpoint:** research. Show in plain words: curriculum orientation, new competencies by chapter, didactic
+- [x] Under "Notes": the didactic approach per competency and the scope (in, out, data range).
+- [x] **Checkpoint:** research (keine Recherche nötig: reine Darstellung; Rückfragen beantwortet). Show in plain words: curriculum orientation, new competencies by chapter, didactic
       approach, scope, sources and how checked, what is unchecked. Stop and wait. Changes → change, ask again.
-- [ ] Set `phase: plan`: change the value line (`grep '^phase:'` prints `phase: plan`).
+- [x] Set `phase: plan`: change the value line (`grep '^phase:'` prints `phase: plan`).
 
 ### Answers
 
-- „Bei PDF-Quelle ist nebeneinander besser und. Ich verführerisch“ (Satz bricht ab; der Rest ist unklar, nachgefragt)
+- „Bei PDF-Quelle ist nebeneinander besser und. Ich verführerisch“ (Satz brach ab)
+- „Ja, in beiden Modi umblättern, das PDF bleibt nebeneinander.“
 
 ### Completed
 
@@ -81,13 +82,13 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Tasks
 
-- [ ] Write the Code tasks: one slice per competency (skill `lernapps-content-growth`), in the guide's order; each
+- [x] Write the Code tasks: one slice per competency (skill `lernapps-content-growth`), in the guide's order; each
       ends in a commit.
-- [ ] Write "Content method": the guide's patterns, figures, components per slice; anything new, with why the
+- [x] Write "Content method": the guide's patterns, figures, components per slice; anything new, with why the
       guide's patterns do not fit.
-- [ ] Show the creator, short: goal, new competencies by chapter, slices; in plain words what learners see and do,
+- [x] Show the creator, short: goal, new competencies by chapter, slices; in plain words what learners see and do,
       and what is new. Max 2 questions.
-- [ ] Each new component or interactive exercise: show a sketch (static SVG or image, or the steps). Words alone are
+- [x] Each new component (kein neues Bauteil; Ablauf in „Content method“) or interactive exercise: show a sketch (static SVG or image, or the steps). Words alone are
       not enough.
 - [ ] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes → change,
       ask again.
@@ -95,8 +96,12 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Content method
 
-<!-- One line each: guide patterns, figures, components used, and where; anything new, what it does and cannot.
-New things go into the guide in the slice that adds them. -->
+- Muster „Fehler markieren“ und „Original erkennen“ unverändert; nur die Anzeige ändert sich. Keine Figuren, keine neuen Bauteile.
+- Anzeige: ein Blatt sichtbar, das andere liegt dahinter. Umschalter „Original“/„Variante“ (im Modus Original erkennen „Text A“/„Text B“) über den Blättern, auf allen Bildschirmen.
+- Effekt: Das Blatt kippt um seine linke Kante weg (CSS-Drehung, ca. 0,4 s), das andere erscheint darunter. Nur mit CSS, kein Skript für die Bewegung. Bei „weniger Bewegung“ kein Effekt.
+- Das unsichtbare Blatt ist für Bildschirmleser und Tastatur nicht erreichbar (kein Fokus in verdeckten Wörtern); der Wechsel wird angesagt.
+- Modus mit Quelle als PDF: unverändert nebeneinander am Desktop (PDF-Rahmen neben der Variante); auf dem Handy bleibt der bestehende Umschalter.
+- Grenze: Wer Original und Variante nebeneinander sehen will, kann das in diesen beiden Modi nicht mehr. Das ist gewollt.
 
 ### Completed
 
@@ -114,7 +119,11 @@ New things go into the guide in the slice that adds them. -->
 - [ ] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
 - [ ] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
-- [ ] <the slices written in Plan, each: competency, content, exercise, the entry's topic, check, commit>
+- [ ] Slice 1, Modus „Fehler markieren (mit Original)“ (`App.vue`): Umschalter und Blätter auf allen Bildschirmen; Umblätter-Effekt; „weniger Bewegung“; verdecktes Blatt nicht fokussierbar. Tests und Playthroughs anpassen. Check, commit.
+- [ ] Slice 2, Modus „Original erkennen“ (`ChooseView.vue`): dasselbe für Text A und B; Markierungen und Wahl bleiben beim Umblättern. Check, commit.
+- [ ] Slice 3, Modus mit PDF bleibt nebeneinander am Desktop (Test dafür); Schmalbildschirm wie bisher. Check, commit.
+- [ ] Browser-Test (Playwright) am Desktop und Handy: Blätter wechseln, Effekt an und aus, Tastatur. Commit.
+- [ ] Skill `app-content` (Abschnitte „Content structure“ und Muster: „side by side“ → Blätter, PDF nebeneinander) und arc42-Texte zur Anzeige anpassen, im selben Commit wie die Änderung.
 - [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
 - [ ] `npx lernapps check` passes.
@@ -123,21 +132,7 @@ New things go into the guide in the slice that adds them. -->
 
 ### Completed
 
-## Commit
-
-<!--
-- Push to `main` = publish (workflow `Pages`, job `deploy`). A pull request to `main` runs the same checks without
-  publishing.
--->
-
-### Tasks
-
-- [ ] Push the branch; open a pull request to `main`. Pre-push runs the heavy checks; fix failures. See the pull
-      request's checks to green. GitHub step fails or refused → skill `lernapps-github`.
-- [ ] **Checkpoint:** publish. Show what the increment adds and the preview link from the comment "Vorschau der
-      App"; ask whether it may go online. Wait for the yes.
-- [ ] Merge the pull request into `main` (no pull request: merge the branch, push `main`). Watch the `Pages` run of
-      that commit. Fails → read the failed step, fix, push.
+, fix, push.
 - [ ] Open the address the job `deploy` printed ("published at ...", run summary); confirm the new content. Never
       a derived address; follow redirects.
 - [ ] App listed and the entry changes (topics, school years, summary) → load skill `lernapps-listing`, write the
