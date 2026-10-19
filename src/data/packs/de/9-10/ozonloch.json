@@ -52,14 +52,6 @@
       "section": "Beobachtungsgeschichte"
     },
     {
-      "text": "Ursache dieser Dynamik ist die Reaktion von Schadstoffen, die auf den Eiskristallen stratosphärischer Wolken gespeichert sind und nach der langen, kalten Polarnacht mit dem Ozon verdunsten.",
-      "section": "Beobachtungsgeschichte"
-    },
-    {
-      "text": "Dabei wird dieses abgebaut.",
-      "section": "Beobachtungsgeschichte"
-    },
-    {
       "text": "Die Größe des Einbruchs entwickelte sich innerhalb weniger Jahre von wenigen Prozent auf mehr als fünfzig Prozent.",
       "section": "Beobachtungsgeschichte"
     }
@@ -333,42 +325,6 @@
           "slot": "i4"
         }
       ]
-    },
-    {
-      "sentence": [
-        "Ursache dieser Entwicklung ist die Reaktion von Schadstoffen, die auf den ",
-        {
-          "slot": "s26"
-        },
-        " stratosphärischer Wolken gespeichert sind."
-      ],
-      "evidence": {
-        "quote": "Ursache dieser Dynamik ist die Reaktion von Schadstoffen, die auf den Eiskristallen stratosphärischer Wolken gespeichert sind"
-      }
-    },
-    {
-      "sentence": [
-        "Nach der langen, kalten ",
-        {
-          "slot": "s27"
-        },
-        " verdunsten sie zusammen mit dem Ozon."
-      ],
-      "evidence": {
-        "quote": "nach der langen, kalten Polarnacht mit dem Ozon verdunsten"
-      }
-    },
-    {
-      "sentence": [
-        "Dabei wird das Ozon ",
-        {
-          "slot": "s28"
-        },
-        "."
-      ],
-      "evidence": {
-        "quote": "Dabei wird dieses abgebaut."
-      }
     },
     {
       "sentence": [
@@ -907,66 +863,6 @@
         }
       ]
     },
-    "s26": {
-      "correct": "Eiskristallen",
-      "variants": [
-        {
-          "text": "Wassertropfen",
-          "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „die auf den Eiskristallen stratosphärischer Wolken gespeichert sind“. Es sind Eiskristalle, keine Wassertropfen.",
-          "evidence": "Ursache dieser Dynamik ist die Reaktion von Schadstoffen, die auf den Eiskristallen stratosphärischer Wolken gespeichert sind"
-        },
-        {
-          "text": "Eiskristalen",
-          "errorClass": "spelling_rule",
-          "basis": "text",
-          "conspicuousness": 2,
-          "explanation": "Das Wort „Kristall“ schreibt man mit zwei „l“: Eiskristallen."
-        }
-      ]
-    },
-    "s27": {
-      "correct": "Polarnacht",
-      "variants": [
-        {
-          "text": "Trockenzeit",
-          "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „nach der langen, kalten Polarnacht“. Gemeint ist die Dunkelheit am Pol, nicht eine Trockenzeit.",
-          "evidence": "nach der langen, kalten Polarnacht mit dem Ozon verdunsten"
-        },
-        {
-          "text": "Polanacht",
-          "errorClass": "slip",
-          "basis": "text",
-          "conspicuousness": 2,
-          "explanation": "Hier ist ein Buchstabe ausgelassen: Polarnacht."
-        }
-      ]
-    },
-    "s28": {
-      "correct": "abgebaut",
-      "variants": [
-        {
-          "text": "aufgebaut",
-          "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 1,
-          "explanation": "Im Original steht: „Dabei wird dieses abgebaut.“ Das Ozon wird abgebaut, nicht aufgebaut.",
-          "evidence": "Dabei wird dieses abgebaut."
-        },
-        {
-          "text": "regelrecht zerfetzt",
-          "errorClass": "loaded_language",
-          "basis": "text",
-          "conspicuousness": 1,
-          "explanation": "„Regelrecht zerfetzt“ ist ein starkes Bild. Das Original sagt nüchtern: „Dabei wird dieses abgebaut.“"
-        }
-      ]
-    },
     "s29": {
       "correct": "mehr als fünfzig Prozent",
       "variants": [
@@ -1108,6 +1004,7 @@
     "Der eingefügte Satz „Im Jahr 1990 trat das Ozonloch nicht auf.“ ist ein Widerspruch zum richtigen Satz „Seit Anfang der 1980er Jahre tritt das Ozonloch jedes Jahr auf“; er bleibt ein Fehler, auch wenn dort selbst eine Stelle verändert wurde.",
     "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt; die Zahlen und Namen folgen dem Artikel, nicht anderen Quellen. Die falschen Varianten sind absichtlich verändert und stehen nicht in der Quelle.",
     "Die Quelle liegt als PDF unter public/quellen/de/ozonloch.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
-    "Überarbeitung Klasse 9–10: Der Auszug beginnt bereits mit dem ersten Satz der Einleitung des Artikels und bleibt unverändert; geprüft wurde, dass er ohne den weggelassenen Teil verständlich ist. Jahre, Namen und Zahlen aller Auszugssätze mit dem Artikel im PDF abgeglichen (1985, 1957, 1974, 1995, Anfang der 1980er Jahre, mehr als fünfzig Prozent)."
+    "Überarbeitung Klasse 9–10: Der Auszug beginnt bereits mit dem ersten Satz der Einleitung des Artikels und bleibt unverändert; geprüft wurde, dass er ohne den weggelassenen Teil verständlich ist. Jahre, Namen und Zahlen aller Auszugssätze mit dem Artikel im PDF abgeglichen (1985, 1957, 1974, 1995, Anfang der 1980er Jahre, mehr als fünfzig Prozent).",
+    "Durchsicht (Assistent, nach Hinweis aus der Überarbeitung): Die Auszugssätze zur Reaktion der Schadstoffe auf Eiskristallen („mit dem Ozon verdunsten“) sind entfernt, weil die Formulierung des Artikels fachlich unscharf ist; der Auszug geht von der Dauer des Ozonlochs direkt zur Größe des Einbruchs."
   ]
 }
