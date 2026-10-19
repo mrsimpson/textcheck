@@ -67,6 +67,9 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Answers
 
+- Stufen: Die letzte Stufe „Stelle im Satz eingrenzen“ wäre zu genau. Stufe 1: sind die Fehlerklassen verdeckt, werden sie sichtbar. Danach: Eingrenzung auf den jeweiligen Absatz und die Fehlerklassen dort annotieren.
+- Auflösung: Eine Motivation, dass es beim nächsten Mal vielleicht auch ohne Hinweise klappt. Ohne Hinweis gelöst: Feuerwerk statt Konfetti.
+
 <!-- Creator's answers, their words, one bullet each. -->
 
 ### Completed
