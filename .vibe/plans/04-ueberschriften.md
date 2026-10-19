@@ -108,7 +108,7 @@ New things go into the guide in the slice that adds them. -->
 
 - [x] `git switch -c increment/04-ueberschriften` from `main`. Commit this plan on it.
 - [x] Überschrift in der Oberfläche (Original, Variante, Modus 2), Prüfskript, Skill.
-- [ ] Fünf Sitzungen (eine je Stufe) überarbeiten die Pakete ihrer Stufe.
+- [ ] Fünf Sitzungen (eine je Stufe; gestartet 19.10.2026 04:16 UTC: 3–4 session_01XXFyjKrCE7hhwpdVawmTLE, 5–6 session_012YFu4QXhikur9wHXquXbTG, 7–8 session_017Z9qdAJyw3uK7txWXBdzop, 9–10 session_018BJN2cetFd327GwmAcxjdV, 11–13 session_019Cz1hdP83wuW4y3dkR4Nia; Zweige text-fix/<stufe>) überarbeiten die Pakete ihrer Stufe.
 - [ ] Ergebnisse prüfen (Tests, `check-lead.mjs`, Runden gelesen), zusammenführen.
 - [ ] Durchläufe der Stufe 5–6 und Tests prüfen; `npx lernapps check` und `npx arc42 validate --strict` bestehen.
 - [ ] Der Guide beschreibt die App, wie sie jetzt ist: Überschrift, Einleitung; Hinweis zu Durchläufen und Paketzahl. `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` ergibt 0.
