@@ -128,21 +128,15 @@
       }
     },
     {
-      "sentence": ["Hedgehogs have long spines."],
-      "evidence": {
-        "quote": "Hedgehogs have long spines, or quills, made of keratin"
-      }
-    },
-    {
       "sentence": [
-        "Another word for spines is ",
+        "Hedgehogs have long spines, or ",
         {
           "slot": "s6"
         },
         "."
       ],
       "evidence": {
-        "quote": "Hedgehogs have long spines, or quills, made of keratin"
+        "quote": "Hedgehogs have long spines, or quills"
       }
     },
     {
@@ -562,7 +556,7 @@
     "Left out on purpose: the first sentence (a missing comma in the source), the sentence with quotation marks (\"quilling\"), the sentence on poisonous quills, the reference list and the link sections.",
     "Licence: Simple English Wikipedia text is CC BY-SA 4.0 (licence page linked above, author list = page history); the data of this pack is under the same licence.",
     "Only classes that occur from grade 3: spelling, slip, punctuation, number/name. The misspellings (Zeeland, quils, porcupins, adullt, alowed, sik and others) and the slips (swapped or missing letters) are constructed on the patterns of common English school errors, not taken from a child corpus.",
-    "Not verified: whether the article is complete and correct in its facts (the pack checks the Variant against the article, not against the world). The rendition is an own-words retelling: it splits long sentences, says \"Another word for spines is quills\" for \"long spines, or quills\", and \"not be allowed\" for \"may not be legal\".",
+    "Not verified: whether the article is complete and correct in its facts (the pack checks the Variant against the article, not against the world). The rendition is an own-words retelling: it splits long sentences, keeps \"long spines, or quills\" and says \"not be allowed\" for \"may not be legal\".",
     "The source is to be saved as a PDF under public/quellen/en/hedgehog.pdf (made by the lead for the mode source); the PDF test fails until then."
   ]
 }

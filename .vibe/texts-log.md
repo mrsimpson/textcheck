@@ -46,3 +46,5 @@ One line per text pack: id, school years, language, source with revision, check 
 | black-death | 11-13 | en | English Wikipedia, "Black Death" (1377102371) | CC BY-SA 4.0 | schema and pack checks passed; excerpt verbatim in the saved article and in the PDF | assistant |
 
 The English sources were saved on 2026-10-18 (Wikimedia limits requests per IP, so the pages were fetched one by one); the licence CC BY-SA 4.0 was read in the footer of the fetched pages. Source PDFs were made from the saved pages, with the images left out.
+
+Plan 06 (2026-10-19): hedgehog (en, 3-4): sentence "Another word for spines is quills" replaced by "Hedgehogs have long spines, or quills." (slot s6 kept). Other packs: sentences with words not in the excerpt listed by script and read against their quotes (e.g. sonnensystem "Man nennt diese Brocken"): rewordings only, nothing changed.

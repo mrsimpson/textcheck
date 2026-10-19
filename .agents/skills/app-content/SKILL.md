@@ -54,6 +54,8 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
   - `excerpt`: verbatim sentences of the source, unchanged.
   - `rendition`: the Variante, in own words, sentence by sentence, each sentence with `evidence.quote` from the excerpt.
     A sentence holds plain strings and `{ "slot": id }` parts.
+    Reword, split, reorder: yes. Add a statement the excerpt does not make: never ("Another word for spines is quills"
+    was cut from the hedgehog pack for this; the creator: no new content). Only the rendition is reworded; the excerpt stays verbatim.
   - `slots`: per slot the `correct` wording and one or more `variants`. Each variant has `errorClass`, `basis`
     (`text`, `comparison`, `prior_knowledge`), `conspicuousness` (1-3), `explanation`, optional `tolerance`
     (neighbouring words in the same sentence that may be marked without penalty; only for slots of three words or
@@ -61,6 +63,9 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
   - At least 6 slots and 3 error classes; the level's `errors` per round plus three in reserve.
 - A **level** (`src/data/levels.json`): `route`, `grades`, allowed `classes` and `bases`, `errors` per round,
   `announceClasses` (whether the goal line names the error classes in the round).
+- A note says that the Variante deliberately words things differently and that this is not necessarily an error
+  (`renditionNote`, over the Variante in the modes `mark` and `source`; `renditionNoteChoose` over both texts in the mode
+  `choose`, where it must not name the Variante). It belongs to the app, not to a pack.
 - The learner sees: the goal line, the Original and the Variante (like two sheets, one on top of the other, with a switch and a short page-turn animation, so that the eye cannot
   compare them side by side; the round starts with the Original; the mode `source` lays the PDF out as a sheet too, wide enough to read, in a frame of 56 rem, where it is embedded; elsewhere the button that opens the PDF stands above the Variante), the marked words,
   then the result grouped by error class (found, missed, wrongly marked, within tolerance) with the explanation.
@@ -165,6 +170,8 @@ competencies, and at least one pack; a playthrough for the route if its rules di
 
 ## Rules learned from mistakes
 
+- The rendition adds nothing: before a pack is handed in, read every sentence against its `evidence.quote` and cut what the
+  quote does not say (plan 06).
 - Never call the Variante a "Zusammenfassung": it is not shortened (the creator pointed it out).
 - A pack holds only error classes whose `fromGrade` is at most the pack's upper grade; the first example mixed in
   classes from grade 7 into a pack for grades 5-6, the checker caught it.

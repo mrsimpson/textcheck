@@ -50,6 +50,8 @@ Die App beginnt mit dem Original, beide Blätter sind gleich hoch, der Tastaturh
 
 ## Notes
 
+Nummer: Auf `main` kam parallel der Plan 06 (Hinweis „umformuliert“); dieser Plan wurde deshalb zu 07. Der Branch heißt weiter `increment/06-lesbarkeit`, weil der Pull Request schon offen war.
+
 Reine Darstellung: keine neuen Kompetenzen, Texte oder Quellen. Betroffen: `src/ui/App.vue`, `ChooseView.vue`, `WordList.vue`, `src/messages/de.json` und `en.json`, neu eine Komponente für die Schrift-Einstellungen und ein Modul für die Werte, Playthroughs/e2e, arc42 (Schrift gebündelt, Speicher) und der Abschnitt zur Anzeige im Skill `app-content`.
 
 Recursive: <https://www.recursive.design/>, Lizenz SIL Open Font License 1.1; Lizenztext und Namensnennung kommen mit der Schriftdatei in die App. Größe der zugeschnittenen Datei und Platz im Quota des Tooling sind vor dem Einbau zu messen (offen).

@@ -1,0 +1,172 @@
+---
+# Read by the hooks, the review, the evals. Schema: @lernapps/tooling/guidance/plan-front-matter.v1.schema.json
+# Keep all four keys.
+# Archetype as in the app's first plan; set it when you start. Never changes.
+archetype: interactive
+# Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
+phase: commit
+# prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
+prePushFailures: 0
+# failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
+failedChecks: {}
+---
+
+# Increment: Hinweis „umformuliert“ und keine neuen Inhalte in der Variante
+
+<!--
+For you, the assistant. One increment of a published app: new competencies, chapters, pages, rounds, questions, or
+a correction.
+- Path: .vibe/plans/<NN>-<short name>.md, NN = highest + 1. Highest = current; never change earlier plans.
+  App with only `.vibe/plan.md`: that is plan 01; start this as 02 (the update in Code moves it).
+- Read every skill and page named here in full, from its file (`.agents/skills/`, curl). Never a summarising fetch tool.
+- The first version's decisions stand: archetype, content method, content guide
+  `.agents/skills/app-content/SKILL.md`. Change the guide only for a new pattern, figure type or source rule; say
+  so at the checkpoints.
+- One phase at a time, tasks in order. Done → tick `[x]` at once, move it to "Completed". New task → add it.
+- Checkpoint task: stop, ask, wait for the creator's answer.
+- Work on the branch `increment/<NN>-<short name>` until the yes to publish; push only that branch. A failing check:
+  tell the creator, do not push.
+- Plan in the creator's language. Keep headings and front matter keys. Delete a comment once its part is filled.
+-->
+
+*Gestartet 2026-10-19. Explore, Plan, Code, Commit.*
+
+## Goal
+
+Lernende wissen vor dem Prüfen, dass die Variante in eigenen Worten umformuliert ist und deshalb vom Original abweichen darf. Die Variante fügt nichts hinzu, was im Original nicht steht.
+
+## Key decisions
+
+- Die Variante bleibt eine Umformulierung (Sätze teilen, umstellen, Wörter ersetzen): so vergleicht man Sinn, nicht Zeichen.
+- Keine neuen Inhalte: ein Satz der Variante sagt nichts, was nicht im Original steht (Anlass: „Another word for spines is quills“).
+- Ein Hinweis über dem Text sagt, dass umformuliert wurde.
+
+## Notes
+
+Kein neuer Lehrplanbezug, keine neue Kompetenz, keine neue Quelle: Es ändert sich nur der Hinweis und der Wortlaut einzelner Sätze.
+Umfang: Hinweis in den Modi `mark` und `source`, Deutsch und Englisch; Satz „Another word for spines is quills“ im Hedgehog; Prüfung der übrigen Packs auf Sätze, die das Original ergänzen (Verdacht: `sonnensystem`, „Man nennt diese Brocken …“).
+Ungeprüft: Der Hinweis wird nicht mit Kindern getestet.
+
+## Explore
+
+<!-- All content questions belong here; Plan maps them onto the app. Ask; write no code. Max 2 questions per message,
+one topic each. Skip what earlier answers or the app tell. Never tick a question you assumed. -->
+
+### Tasks
+
+- [x] Set `archetype` as in the app's first plan in `.vibe/plans/`.
+- [x] Skills are in `.agents/skills/`. Only if missing: `npx skills add lernapps/tooling#exp/compact-guidance`.
+- [x] Load the content guide `.agents/skills/app-content/SKILL.md` and skill `lernapps-content-growth`; read the
+      plans in `.vibe/plans/` (what the app teaches, how content is made, what is open).
+- [x] Interview, as in the first plan: one topic per question, the creator's words under "Answers"; no answer →
+      ask once more, then "(guess)", shown at the checkpoint. Topics: which competencies, chapters or rounds, for
+      which school years; hurdles and examples; amount; anything of look and feel or terms that changes.
+- [x] Research: the guide's curriculum and sources; skill `lernapps-content-research` for the rest. Under "Notes":
+      curriculum orientation (Lehrplan cited where used), new competencies by chapter as Ich-kann-Sätze, verified
+      sources.
+- [x] Under "Notes": the didactic approach per competency and the scope (in, out, data range).
+- [x] **Checkpoint:** research. Show in plain words: curriculum orientation, new competencies by chapter, didactic
+      approach, scope, sources and how checked, what is unchecked. Stop and wait. Changes → change, ask again.
+- [x] Set `phase: plan`: change the value line (`grep '^phase:'` prints `phase: plan`).
+
+### Answers
+
+- Hinweis über dem Text: „Die Variante enthält bewusst andere Formulierungen. Diese sind nicht zwangsläufig Fehler“
+- „Wir sollten keine Inhalte neu ergänzen (another word for spines is quills).“
+- Offen, von mir angenommen (bestätigt mit „ja“): Der Hinweis steht überall, wo die Variante zu sehen ist, ohne Feld im Pack; im Modus „Original erkennen“ neutral über beiden Texten („Einer der beiden Texte …“); Englisch sinngemäß übersetzt.
+
+### Completed
+
+## Plan
+
+<!-- Confirmable in one read. After the confirmation: work on your own (creator turns to the end: max 3). -->
+
+### Tasks
+
+- [x] Write the Code tasks: one slice per competency (skill `lernapps-content-growth`), in the guide's order; each
+      ends in a commit.
+- [x] Write "Content method": the guide's patterns, figures, components per slice; anything new, with why the
+      guide's patterns do not fit.
+- [x] Show the creator, short: goal, new competencies by chapter, slices; in plain words what learners see and do,
+      and what is new. Max 2 questions.
+- [x] Each new component or interactive exercise (keine neue: nur ein Textabsatz): show a sketch (static SVG or image, or the steps). Words alone are
+      not enough.
+- [x] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes → change,
+      ask again.
+- [x] Set `phase: code`: change the value line (`grep '^phase:'` prints `phase: code`).
+
+### Content method
+
+- Muster unverändert: „Mark deviations in a rendition against a known original“ (Modi `mark`, `source`).
+- Neu im Leitfaden: Regel „Die Variante ergänzt nichts, was im Original nicht steht; Umformulieren ja, Hinzufügen nein“ und die Nachricht `renditionNote`.
+- Keine Figuren, keine neue Komponente.
+
+### Completed
+
+## Code
+
+<!--
+- Load skill lernapps-app, the archetype's skill and the content guide before content.
+- Commit after each slice; the hooks check. Pre-commit fails → read node_modules/.cache/lernapps/pre-commit.log.
+- Fix from the message; never bypass a hook. Undecidable → choose, mark "(guess)", go on.
+- Creator asks for a change → first say your reading in one sentence; never narrow it silently.
+-->
+
+### Tasks
+
+- [ ] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
+- [ ] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
+      the ones you use. Commit the update alone; fix its check findings before content.
+- [x] Slice 1, Hinweis: Nachricht `renditionNote` in `src/messages/de.json` („Die Variante enthält bewusst andere Formulierungen. Diese sind nicht zwangsläufig Fehler.“) und `en.json` (sinngemäß); und `renditionNoteChoose` (neutral, „Einer der beiden Texte enthält bewusst andere Formulierungen. Diese sind nicht zwangsläufig Fehler.“); in `src/ui/App.vue` als Absatz über dem Variantentext (Modi `mark`, `source`) und über beiden Texten (Modus `choose`); (kein neuer Test: Nachrichten-Test vergleicht de/en, Oberfläche ohne Spiellogik); `npx lernapps check`; commit.
+- [x] Slice 2, Hedgehog: „Another word for spines is quills“ ersetzen durch einen Satz, der nur das Original sagt („Hedgehogs have long spines, or quills.“, Slot `s6` bleibt); `notes` anpassen; Pack-Prüfung und Tests; commit.
+- [x] Slice 3, übrige Packs: alle Packs (de, en) auf Sätze prüfen, die etwas ergänzen, was nicht im Original steht (zuerst `sonnensystem`); Funde korrigieren und im Log `.vibe/texts-log.md` vermerken; commit.
+- [x] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
+      increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
+- [x] `npx lernapps check` passes.
+- [x] Every box of Explore, Plan and Code ticked.
+- [x] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
+
+### Completed
+
+## Commit
+
+<!--
+- Push to `main` = publish (workflow `Pages`, job `deploy`). A pull request to `main` runs the same checks without
+  publishing.
+-->
+
+### Tasks
+
+- [ ] Push the branch; open a pull request to `main`. Pre-push runs the heavy checks; fix failures. See the pull
+      request's checks to green. GitHub step fails or refused → skill `lernapps-github`.
+- [ ] **Checkpoint:** publish. Show what the increment adds and the preview link from the comment "Vorschau der
+      App"; ask whether it may go online. Wait for the yes.
+- [ ] Merge the pull request into `main` (no pull request: merge the branch, push `main`). Watch the `Pages` run of
+      that commit. Fails → read the failed step, fix, push.
+- [ ] Open the address the job `deploy` printed ("published at ...", run summary); confirm the new content. Never
+      a derived address; follow redirects.
+- [ ] App listed and the entry changes (topics, school years, summary) → load skill `lernapps-listing`, write the
+      changed entry. Else skip the next task.
+- [ ] **Checkpoint:** list. Ask before opening the pull request to the catalog; wait for the yes.
+- [ ] Fill the retrospective.
+- [ ] Commit this plan on `main` and push it. A push of only `.vibe/` publishes nothing.
+- [ ] Catalog pull request opened → see it to "bestanden" as the skill says.
+- [ ] Plan changed since its last push → commit on `main`, push again.
+
+### Completed
+
+## Retrospective
+
+<!-- At the end of Commit. Facts, short, no names. Read by review and evals. -->
+
+### Phases reached
+
+<!-- Last phase completed, checkpoints passed. E.g. "commit; confirmed, published". -->
+
+### Creator turns after the plan
+
+<!-- Number of creator messages after the confirmation, topic of each. Target: max 3. -->
+
+### Where I had to guess
+
+<!-- Each gap in plan, skills, content guide, messages or answers, and your choice. "None" if none. -->
