@@ -24,6 +24,10 @@
       "section": "Einleitung"
     },
     {
+      "text": "Die Vorgeschichte dieser Hyperinflation findet sich in der Finanzierung des Ersten Weltkrieges.",
+      "section": "Einleitung"
+    },
+    {
       "text": "Eigentliche Ursache der ab 1919 anziehenden Inflation, die ab Mitte 1922 in eine Hyperinflation überging, war die massive Ausweitung der Geldmenge durch den Staat in den Anfangsjahren der Weimarer Republik aufgrund der hohen Reparationszahlungen.",
       "section": "Einleitung"
     },
@@ -87,6 +91,18 @@
       ],
       "evidence": {
         "quote": "Die deutsche Inflation von 1914 bis November 1923 war eine der radikalsten Geldentwertungen in großen Industrienationen."
+      }
+    },
+    {
+      "sentence": [
+        "Die Vorgeschichte der Hyperinflation liegt in der Art, wie der ",
+        {
+          "slot": "s16"
+        },
+        " finanziert wurde."
+      ],
+      "evidence": {
+        "quote": "Die Vorgeschichte dieser Hyperinflation findet sich in der Finanzierung des Ersten Weltkrieges."
       }
     },
     {
@@ -233,7 +249,7 @@
     },
     {
       "sentence": [
-        "Entscheidend war dabei die ",
+        "Entscheidend war dabei ",
         {
           "slot": "s11"
         },
@@ -561,14 +577,14 @@
       ]
     },
     "s11": {
-      "correct": "Furcht vor einem Umsturz",
+      "correct": "die Furcht vor einem Umsturz",
       "variants": [
         {
-          "text": "Druck der Gewerkschaften",
+          "text": "der Druck der Gewerkschaften",
           "errorClass": "factual_error",
           "basis": "comparison",
           "conspicuousness": 2,
-          "explanation": "Im Original steht: „Entscheidend war dabei die Furcht vor einem Umsturz.“ Entscheidend war die Furcht vor einem Umsturz. Die Gewerkschaften waren damals so geschwächt, dass sie von der Regierung finanziert werden mussten.",
+          "explanation": "Im Original steht: „Entscheidend war dabei die Furcht vor einem Umsturz.“ Entscheidend war also die Furcht vor einem Umsturz, nicht der Druck der Gewerkschaften.",
           "evidence": "Entscheidend war dabei die Furcht vor einem Umsturz.",
           "tolerance": 1
         }
@@ -649,6 +665,19 @@
           "evidence": "Ab dem 15. November 1923 gab die Deutsche Rentenbank die Rentenmark aus."
         }
       ]
+    },
+    "s16": {
+      "correct": "Erste Weltkrieg",
+      "variants": [
+        {
+          "text": "Zweite Weltkrieg",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Die Vorgeschichte dieser Hyperinflation findet sich in der Finanzierung des Ersten Weltkrieges.“ Es geht um den Ersten Weltkrieg. Der Zweite Weltkrieg begann erst nach dieser Inflation.",
+          "evidence": "Die Vorgeschichte dieser Hyperinflation findet sich in der Finanzierung des Ersten Weltkrieges."
+        }
+      ]
     }
   },
   "notes": [
@@ -658,6 +687,7 @@
     "Die eingefügten Sätze (Schubkarren, Wertung, Ökonomen) sind erfunden, harmlos und stehen nicht im Original; die Erklärungen sagen das. Bewusst politisch neutral: keine heutigen Parteien, keine Gruppen als Ziel.",
     "Warnung bewusst: Bei „aufgrund … / und löste dadurch … aus“ (faulty_inference) ist die Verwechslung von Ursache und Wirkung nur im Vergleich mit dem Original erkennbar, darum basis comparison.",
     "Nicht geprüft: ob der Artikeltext fachlich vollständig oder unumstritten ist (Ursachen der Inflation werden in der Forschung unterschiedlich gewichtet); das Paket prüft den Vergleich mit dieser Quelle.",
-    "Die Quelle liegt als PDF unter public/quellen/de/hyperinflation-1923.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+    "Die Quelle liegt als PDF unter public/quellen/de/hyperinflation-1923.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
+    "Überarbeitung Anfang: Der Auszug beginnt jetzt mit den ersten beiden Sätzen der Einleitung des Artikels (neu: „Die Vorgeschichte dieser Hyperinflation …“, mit neuer Stelle s16 und neuem Variantensatz); Erklärung zu s11 ohne zusätzliche Behauptung. Titel geprüft, unverändert. Grammatik an Stelle s11 behoben („die Druck“)."
   ]
 }
