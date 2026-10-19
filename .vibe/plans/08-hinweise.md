@@ -44,7 +44,7 @@ Lernende können sich bei einer schwierigen Runde Schritt für Schritt Hinweise 
 - Alles gefunden ohne Hinweis: Feuerwerk. Mit Hinweis: Konfetti. Bei „Bewegung reduzieren“ keine Effekte, wie heute. (Ersteller)
 - Die Auflösung nennt bei Hinweisen einen ermutigenden Satz: beim nächsten Mal klappt es vielleicht ohne. (Ersteller)
 - Der Kern zählt die Hinweisstufe pro Runde (Aktion `hint`); eine neue Runde setzt sie zurück. Das Ergebnis (gefunden, übersehen) ändert sich nicht, es gibt keine Punkte. (guess)
-- Im Modus `choose` gibt es Hinweise erst nach der Wahl des Textes, weil Sätze mit Fehlern sonst die Variante verraten. (guess)
+- Im Modus `choose` markiert Stufe 2 den betroffenen Satz in beiden Texten (der Satz des Originals über `evidence.quote`), so verrät der Hinweis nicht, welcher Text die Variante ist; Stufe 1 gilt ohnehin vor der Wahl. Eingefügte Sätze (nur ein Slot, ohne Gegenstück im Original) werden vor der Wahl in keinem Text markiert, nach der Wahl im gewählten Text. (Ersteller: „in beiden Varianten hervorheben“; Einschränkung guess)
 - Der Knopf „Hinweis“ steht unter dem Text neben „Prüfen“; ein Hinweis bleibt bis zum Ende der Runde sichtbar und lässt sich nicht zurücknehmen. (guess)
 
 ## Notes
