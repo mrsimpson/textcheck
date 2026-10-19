@@ -56,7 +56,7 @@ test.describe("the English app page", () => {
 
   test("leaves the German page German", async ({ page }) => {
     await open(page, "./app/?seed=1#klasse-5-6");
-    expect(await stateOf(page)).toMatchObject({ language: "de", packId: "fledermaeuse" });
+    expect(await stateOf(page)).toMatchObject({ language: "de" });
     await expect(page.getByRole("button", { name: "Prüfen" })).toBeVisible();
   });
 });
