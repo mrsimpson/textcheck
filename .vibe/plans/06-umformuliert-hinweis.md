@@ -4,7 +4,7 @@
 # Archetype as in the app's first plan; set it when you start. Never changes.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: plan
+phase: code
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
@@ -73,7 +73,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 - Hinweis über dem Text: „Die Variante enthält bewusst andere Formulierungen. Diese sind nicht zwangsläufig Fehler“
 - „Wir sollten keine Inhalte neu ergänzen (another word for spines is quills).“
-- Offen, von mir angenommen (guess): Der Hinweis steht nicht im Modus „Original erkennen“; Englisch wird sinngemäß übersetzt.
+- Offen, von mir angenommen (bestätigt mit „ja“): Der Hinweis steht überall, wo die Variante zu sehen ist, ohne Feld im Pack; im Modus „Original erkennen“ neutral über beiden Texten („Einer der beiden Texte …“); Englisch sinngemäß übersetzt.
 
 ### Completed
 
@@ -91,9 +91,9 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
       and what is new. Max 2 questions.
 - [x] Each new component or interactive exercise (keine neue: nur ein Textabsatz): show a sketch (static SVG or image, or the steps). Words alone are
       not enough.
-- [ ] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes → change,
+- [x] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes → change,
       ask again.
-- [ ] Set `phase: code`: change the value line (`grep '^phase:'` prints `phase: code`).
+- [x] Set `phase: code`: change the value line (`grep '^phase:'` prints `phase: code`).
 
 ### Content method
 
@@ -117,7 +117,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 - [ ] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
 - [ ] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
-- [ ] Slice 1, Hinweis: Nachricht `renditionNote` in `src/messages/de.json` („Die Variante enthält bewusst andere Formulierungen. Diese sind nicht zwangsläufig Fehler.“) und `en.json` (sinngemäß); in `src/ui/App.vue` als Absatz über dem Variantentext, nur in den Modi `mark` und `source`; Playthrough/Test ergänzen; `npx lernapps check`; commit.
+- [ ] Slice 1, Hinweis: Nachricht `renditionNote` in `src/messages/de.json` („Die Variante enthält bewusst andere Formulierungen. Diese sind nicht zwangsläufig Fehler.“) und `en.json` (sinngemäß); und `renditionNoteChoose` (neutral, „Einer der beiden Texte enthält bewusst andere Formulierungen. Diese sind nicht zwangsläufig Fehler.“); in `src/ui/App.vue` als Absatz über dem Variantentext (Modi `mark`, `source`) und über beiden Texten (Modus `choose`); Playthrough/Test ergänzen; `npx lernapps check`; commit.
 - [ ] Slice 2, Hedgehog: „Another word for spines is quills“ ersetzen durch einen Satz, der nur das Original sagt („Hedgehogs have long spines, or quills.“, Slot `s6` bleibt); `notes` anpassen; Pack-Prüfung und Tests; commit.
 - [ ] Slice 3, übrige Packs: alle Packs (de, en) auf Sätze prüfen, die etwas ergänzen, was nicht im Original steht (zuerst `sonnensystem`); Funde korrigieren und im Log `.vibe/texts-log.md` vermerken; commit.
 - [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
