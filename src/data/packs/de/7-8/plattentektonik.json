@@ -20,10 +20,10 @@
   },
   "excerpt": [
     {
-      "text": "Plattentektonik ist ursprünglich die Bezeichnung für eine Theorie der Geowissenschaften über die großräumigen tektonischen Vorgänge in der äußeren Erdhülle, der Lithosphäre (Erdkruste und oberster Erdmantel), die heute zu den grundlegenden Theorien über die endogene Dynamik der Erde gehört."
+      "text": "Plattentektonik ist ursprünglich die Bezeichnung für eine Theorie der Geowissenschaften über die großen Bewegungen in der äußeren Erdhülle, der Lithosphäre (Erdkruste und oberster Erdmantel), die heute zu den grundlegenden Theorien über die Dynamik der Erde gehört."
     },
     {
-      "text": "Sie besagt, dass die äußere Erdhülle in Lithosphärenplatten (umgangssprachlich als Kontinentalplatten oder Erdplatten bezeichnet) gegliedert ist, die dem übrigen Oberen Erdmantel aufliegen und darauf umherwandern (→ Kontinentaldrift)."
+      "text": "Sie besagt, dass die äußere Erdhülle in Lithosphärenplatten (umgangssprachlich als Kontinentalplatten oder Erdplatten bezeichnet) gegliedert ist, die dem Oberen Erdmantel aufliegen und darauf umherwandern."
     },
     {
       "text": "Die Plattengrenzen werden an der Erdoberfläche meist entweder durch mittelozeanische Rücken oder Tiefseerinnen repräsentiert."
@@ -63,10 +63,10 @@
         {
           "slot": "n1"
         },
-        " über die großen Vorgänge in der äußeren Erdhülle, der Lithosphäre."
+        " über die großen Bewegungen in der äußeren Erdhülle, der Lithosphäre."
       ],
       "evidence": {
-        "quote": "Plattentektonik ist ursprünglich die Bezeichnung für eine Theorie der Geowissenschaften über die großräumigen tektonischen Vorgänge in der äußeren Erdhülle, der Lithosphäre"
+        "quote": "Plattentektonik ist ursprünglich die Bezeichnung für eine Theorie der Geowissenschaften über die großen Bewegungen in der äußeren Erdhülle, der Lithosphäre"
       }
     },
     {
@@ -78,7 +78,7 @@
         " Theorien über die Dynamik der Erde."
       ],
       "evidence": {
-        "quote": "die heute zu den grundlegenden Theorien über die endogene Dynamik der Erde gehört"
+        "quote": "die heute zu den grundlegenden Theorien über die Dynamik der Erde gehört"
       }
     },
     {
@@ -90,7 +90,7 @@
         "."
       ],
       "evidence": {
-        "quote": "dass die äußere Erdhülle in Lithosphärenplatten (umgangssprachlich als Kontinentalplatten oder Erdplatten bezeichnet) gegliedert ist, die dem übrigen Oberen Erdmantel aufliegen und darauf umherwandern"
+        "quote": "dass die äußere Erdhülle in Lithosphärenplatten (umgangssprachlich als Kontinentalplatten oder Erdplatten bezeichnet) gegliedert ist, die dem Oberen Erdmantel aufliegen und darauf umherwandern"
       }
     },
     {
@@ -640,7 +640,7 @@
           "basis": "comparison",
           "conspicuousness": 1,
           "explanation": "Im Original steht: „Plattentektonik ist ursprünglich die Bezeichnung für eine Theorie der Geowissenschaften …“. Es geht um die Geowissenschaften, nicht um die Biologie.",
-          "evidence": "Plattentektonik ist ursprünglich die Bezeichnung für eine Theorie der Geowissenschaften über die großräumigen tektonischen Vorgänge in der äußeren Erdhülle, der Lithosphäre (Erdkruste und oberster Erdmantel), die heute zu den grundlegenden Theorien über die endogene Dynamik der Erde gehört."
+          "evidence": "Plattentektonik ist ursprünglich die Bezeichnung für eine Theorie der Geowissenschaften über die großen Bewegungen in der äußeren Erdhülle, der Lithosphäre (Erdkruste und oberster Erdmantel), die heute zu den grundlegenden Theorien über die Dynamik der Erde gehört."
         },
         {
           "text": "Geowisenschaften",
@@ -659,8 +659,8 @@
           "errorClass": "factual_error",
           "basis": "comparison",
           "conspicuousness": 2,
-          "explanation": "Im Original steht: „… die heute zu den grundlegenden Theorien über die endogene Dynamik der Erde gehört.“ Die Theorie gilt als grundlegend, nicht als besonders umstritten.",
-          "evidence": "Plattentektonik ist ursprünglich die Bezeichnung für eine Theorie der Geowissenschaften über die großräumigen tektonischen Vorgänge in der äußeren Erdhülle, der Lithosphäre (Erdkruste und oberster Erdmantel), die heute zu den grundlegenden Theorien über die endogene Dynamik der Erde gehört."
+          "explanation": "Im Original steht: „… die heute zu den grundlegenden Theorien über die Dynamik der Erde gehört.“ Die Theorie gilt als grundlegend, nicht als besonders umstritten.",
+          "evidence": "Plattentektonik ist ursprünglich die Bezeichnung für eine Theorie der Geowissenschaften über die großen Bewegungen in der äußeren Erdhülle, der Lithosphäre (Erdkruste und oberster Erdmantel), die heute zu den grundlegenden Theorien über die Dynamik der Erde gehört."
         },
         {
           "text": "grundlegneden",
@@ -679,8 +679,8 @@
           "errorClass": "factual_error",
           "basis": "comparison",
           "conspicuousness": 1,
-          "explanation": "Im Original steht: „… die dem übrigen Oberen Erdmantel aufliegen und darauf umherwandern.“ Die Platten wandern umher, sie stehen nicht still.",
-          "evidence": "Sie besagt, dass die äußere Erdhülle in Lithosphärenplatten (umgangssprachlich als Kontinentalplatten oder Erdplatten bezeichnet) gegliedert ist, die dem übrigen Oberen Erdmantel aufliegen und darauf umherwandern (→ Kontinentaldrift)."
+          "explanation": "Im Original steht: „… die dem Oberen Erdmantel aufliegen und darauf umherwandern.“ Die Platten wandern umher, sie stehen nicht still.",
+          "evidence": "Sie besagt, dass die äußere Erdhülle in Lithosphärenplatten (umgangssprachlich als Kontinentalplatten oder Erdplatten bezeichnet) gegliedert ist, die dem Oberen Erdmantel aufliegen und darauf umherwandern."
         },
         {
           "text": "umherwandren",
@@ -697,6 +697,7 @@
     "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite, Link auf die Lizenz); die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Fehlerarten: Die Falschschreibungen sind konstruiert (Konsonantenverdopplung, Dehnung, nach den Schwerpunkten der IQB-Handreichung); die Klassen ab Klasse 7 (Menge/Grad, Verallgemeinerung, falsche Folgerung, Meinung als Tatsache) sind abgeleitet, nicht belegt. Die eingefügten Sätze sind erfunden und stehen so nicht in der Quelle.",
     "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft.",
-    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit den ersten beiden Sätzen des Artikels (vorher mit den Plattengrenzen). Gestrichen: „Entwässerungsprozesse …“ und „Hierbei kommt es zu komplexen Deformationsvorgängen.“ samt der Stelle zu „ebenfalls“. Neu: drei Stellen in der Einleitung der Variante."
+    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit den ersten beiden Sätzen des Artikels (vorher mit den Plattengrenzen). Gestrichen: „Entwässerungsprozesse …“ und „Hierbei kommt es zu komplexen Deformationsvorgängen.“ samt der Stelle zu „ebenfalls“. Neu: drei Stellen in der Einleitung der Variante.",
+    "Auszug leicht vereinfacht auf Wunsch des Erstellers: „großräumigen tektonischen Vorgänge“ zu „großen Bewegungen“, „endogene“, „übrigen“ und „(→ Kontinentaldrift)“ gestrichen. Die Auszugssätze stehen dort nicht mehr überall wörtlich im Artikel (erste Notiz gilt für diese Stellen nicht mehr); der Satzanfang ist unverändert."
   ]
 }

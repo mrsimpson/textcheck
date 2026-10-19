@@ -32,13 +32,13 @@
       "text": "Die Sonne steht täglich etwa zwölf Stunden am Himmel, wobei die Dämmerung nicht einmal eine halbe Stunde dauert."
     },
     {
-      "text": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen durch ihre Transpiration abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen."
+      "text": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen."
     },
     {
       "text": "Nachmittags oder abends regnen diese Wolken in der Regel aus, häufig in Verbindung mit einem Gewitter."
     },
     {
-      "text": "Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht."
+      "text": "Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht."
     },
     {
       "text": "Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder."
@@ -118,7 +118,7 @@
         " Vormittag erwärmen sich Luft und Boden rasch, und feucht-warme Luft steigt nach oben."
       ],
       "evidence": {
-        "quote": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen durch ihre Transpiration abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen."
+        "quote": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen."
       }
     },
     {
@@ -130,7 +130,7 @@
         " Wolken zusammen."
       ],
       "evidence": {
-        "quote": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen durch ihre Transpiration abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen."
+        "quote": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen."
       }
     },
     {
@@ -170,10 +170,10 @@
         {
           "slot": "s6"
         },
-        " des Jahres ein humides Klima."
+        " des Jahres ein feuchtes (humides) Klima."
       ],
       "evidence": {
-        "quote": "führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht"
+        "quote": "führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht"
       }
     },
     {
@@ -411,16 +411,16 @@
           "errorClass": "number_name_date",
           "basis": "comparison",
           "conspicuousness": 2,
-          "explanation": "Im Original steht: „führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht“. Es sind mindestens zehn Monate, nicht zwei.",
-          "evidence": "führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht"
+          "explanation": "Im Original steht: „führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht“. Es sind mindestens zehn Monate, nicht zwei.",
+          "evidence": "führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht"
         },
         {
           "text": "zwölf Monaten",
           "errorClass": "number_name_date",
           "basis": "comparison",
           "conspicuousness": 3,
-          "explanation": "Im Original steht: „führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht“. Es sind mindestens zehn Monate, nicht zwölf.",
-          "evidence": "führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht"
+          "explanation": "Im Original steht: „führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht“. Es sind mindestens zehn Monate, nicht zwölf.",
+          "evidence": "führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht"
         }
       ]
     },
@@ -432,8 +432,8 @@
           "errorClass": "connective_negation",
           "basis": "text",
           "conspicuousness": 2,
-          "explanation": "Im Original steht: „Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht. Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder.“ Das Verdunsten ist kein Grund für den vielen Regen, sondern ein Gegensatz dazu. „Gleichwohl“ zeigt das, „deshalb“ nicht.",
-          "evidence": "Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht. Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder."
+          "explanation": "Im Original steht: „Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht. Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder.“ Das Verdunsten ist kein Grund für den vielen Regen, sondern ein Gegensatz dazu. „Gleichwohl“ zeigt das, „deshalb“ nicht.",
+          "evidence": "Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht. Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder."
         },
         {
           "text": "Gleichwol",
@@ -673,6 +673,7 @@
     "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite, Link auf die Lizenz); die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Fehlerarten: Die Falschschreibungen sind konstruiert (Konsonantenverdopplung, Dehnung, nach den Schwerpunkten der IQB-Handreichung); die Klassen ab Klasse 7 (Menge/Grad, Verallgemeinerung, falsche Folgerung, Meinung als Tatsache) sind abgeleitet, nicht belegt. Die eingefügten Sätze sind erfunden und stehen so nicht in der Quelle.",
     "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft.",
-    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit den ersten beiden Sätzen des Artikels (vorher mit der Tageslänge). Gestrichen: die Sätze zu Passatwinden und zum Wechsel vom Tiefland- zum Bergregenwald samt Stellen. Die Stelle „nahe am Äquator“ ist durch die Einleitung ersetzt. Neu: drei Stellen am Anfang der Variante."
+    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit den ersten beiden Sätzen des Artikels (vorher mit der Tageslänge). Gestrichen: die Sätze zu Passatwinden und zum Wechsel vom Tiefland- zum Bergregenwald samt Stellen. Die Stelle „nahe am Äquator“ ist durch die Einleitung ersetzt. Neu: drei Stellen am Anfang der Variante.",
+    "Auszug leicht vereinfacht auf Wunsch des Erstellers: „durch ihre Transpiration“ gestrichen, „humides“ mit „(feuchtes)“ erklärt. Die Auszugssätze stehen dort nicht mehr überall wörtlich im Artikel (erste Notiz gilt für diese Stellen nicht mehr); der Satzanfang ist unverändert."
   ]
 }

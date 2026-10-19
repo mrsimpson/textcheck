@@ -20,7 +20,7 @@
   },
   "excerpt": [
     {
-      "text": "Die Photosynthese (altgriechisch φῶς phō̂s, deutsch ‚Licht‘ und σύνθεσις sýnthesis, deutsch ‚Zusammensetzung‘, auch Fotosynthese geschrieben) ist ein physiologischer Prozess zur Erzeugung energiereicher Biomoleküle aus energieärmeren Stoffen mit Hilfe von Lichtenergie."
+      "text": "Die Photosynthese (auch Fotosynthese geschrieben) ist ein Prozess zur Erzeugung energiereicher Biomoleküle aus energieärmeren Stoffen mit Hilfe von Lichtenergie."
     },
     {
       "text": "Sie wird von Pflanzen, Algen und manchen Bakterien betrieben."
@@ -38,7 +38,7 @@
       "text": "In einer weiteren Publikation 1796 stellte er fest, dass die Pflanze der aufgenommenen „Kohlensäure“ (Kohlendioxid) den Kohlenstoff als Nahrung entnimmt und den Sauerstoff „aushaucht“."
     },
     {
-      "text": "Trotz dieser Befunde konnte sich die Humustheorie bis in die Mitte des 19. Jahrhunderts halten, weil die meisten Forscher davon überzeugt waren, dass Lebendes nur aus Lebendem hervorgehen kann."
+      "text": "Trotz dieser Befunde konnte sich die Humustheorie, nach der die Pflanze ihre Nahrung aus der Erde nimmt, bis in die Mitte des 19. Jahrhunderts halten, weil die meisten Forscher davon überzeugt waren, dass Lebendes nur aus Lebendem hervorgehen kann."
     },
     {
       "text": "Erst durch die Erfolge Justus von Liebigs (1840) mit Mineraldünger wurde es unabweisbar, dass Pflanzen anorganische Substanzen assimilieren können."
@@ -66,7 +66,7 @@
         " aus energieärmeren Stoffen energiereiche Biomoleküle entstehen."
       ],
       "evidence": {
-        "quote": "ist ein physiologischer Prozess zur Erzeugung energiereicher Biomoleküle aus energieärmeren Stoffen mit Hilfe von Lichtenergie"
+        "quote": "ist ein Prozess zur Erzeugung energiereicher Biomoleküle aus energieärmeren Stoffen mit Hilfe von Lichtenergie"
       }
     },
     {
@@ -164,10 +164,10 @@
         {
           "slot": "s7"
         },
-        " bis in die Mitte des 19. Jahrhunderts."
+        ", nach der die Pflanze ihre Nahrung aus der Erde nimmt, bis in die Mitte des 19. Jahrhunderts."
       ],
       "evidence": {
-        "quote": "Trotz dieser Befunde konnte sich die Humustheorie bis in die Mitte des 19. Jahrhunderts halten"
+        "quote": "Trotz dieser Befunde konnte sich die Humustheorie, nach der die Pflanze ihre Nahrung aus der Erde nimmt, bis in die Mitte des 19. Jahrhunderts halten"
       }
     },
     {
@@ -464,8 +464,8 @@
           "errorClass": "factual_error",
           "basis": "comparison",
           "conspicuousness": 2,
-          "explanation": "Im Original steht: „Trotz dieser Befunde konnte sich die Humustheorie bis in die Mitte des 19. Jahrhunderts halten“. Die Theorie, die sich hielt, hieß Humustheorie.",
-          "evidence": "Trotz dieser Befunde konnte sich die Humustheorie bis in die Mitte des 19. Jahrhunderts halten"
+          "explanation": "Im Original steht: „Trotz dieser Befunde konnte sich die Humustheorie, nach der die Pflanze ihre Nahrung aus der Erde nimmt, bis in die Mitte des 19. Jahrhunderts halten“. Die Theorie, die sich hielt, hieß Humustheorie.",
+          "evidence": "Trotz dieser Befunde konnte sich die Humustheorie, nach der die Pflanze ihre Nahrung aus der Erde nimmt, bis in die Mitte des 19. Jahrhunderts halten"
         },
         {
           "text": "Humustheorrie",
@@ -688,8 +688,8 @@
           "errorClass": "factual_error",
           "basis": "comparison",
           "conspicuousness": 2,
-          "explanation": "Im Original steht: „… ist ein physiologischer Prozess zur Erzeugung energiereicher Biomoleküle aus energieärmeren Stoffen mit Hilfe von Lichtenergie.“ Die Photosynthese braucht Lichtenergie, nicht Wärmeenergie.",
-          "evidence": "Die Photosynthese (altgriechisch φῶς phō̂s, deutsch ‚Licht‘ und σύνθεσις sýnthesis, deutsch ‚Zusammensetzung‘, auch Fotosynthese geschrieben) ist ein physiologischer Prozess zur Erzeugung energiereicher Biomoleküle aus energieärmeren Stoffen mit Hilfe von Lichtenergie."
+          "explanation": "Im Original steht: „… ist ein Prozess zur Erzeugung energiereicher Biomoleküle aus energieärmeren Stoffen mit Hilfe von Lichtenergie.“ Die Photosynthese braucht Lichtenergie, nicht Wärmeenergie.",
+          "evidence": "Die Photosynthese (auch Fotosynthese geschrieben) ist ein Prozess zur Erzeugung energiereicher Biomoleküle aus energieärmeren Stoffen mit Hilfe von Lichtenergie."
         },
         {
           "text": "Lichenergie",
@@ -726,6 +726,7 @@
     "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite, Link auf die Lizenz); die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Fehlerarten: Die Falschschreibungen sind konstruiert (Konsonantenverdopplung, Dehnung, nach den Schwerpunkten der IQB-Handreichung); die Klassen ab Klasse 7 (Menge/Grad, Verallgemeinerung, falsche Folgerung, Meinung als Tatsache) sind abgeleitet, nicht belegt. Die eingefügten Sätze sind erfunden und stehen so nicht in der Quelle.",
     "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft.",
-    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit den ersten beiden Sätzen des Artikels (vorher mit der Forschungsgeschichte, Satz „Seit der Antike …“). Gestrichen: der Satz „Wie die Assimilation des Kohlendioxids …“ und die zugehörige Stelle. Neu: zwei Stellen in der Einleitung der Variante. Der Satz der Einleitung mit griechischen Wörtern steht unverändert im Artikel."
+    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit den ersten beiden Sätzen des Artikels (vorher mit der Forschungsgeschichte, Satz „Seit der Antike …“). Gestrichen: der Satz „Wie die Assimilation des Kohlendioxids …“ und die zugehörige Stelle. Neu: zwei Stellen in der Einleitung der Variante. Der Satz der Einleitung mit griechischen Wörtern steht unverändert im Artikel.",
+    "Auszug leicht vereinfacht auf Wunsch des Erstellers: griechische Wörter und „physiologischer“ im ersten Satz gestrichen; die Humustheorie im Satz „Trotz dieser Befunde …“ erklärt (Satz des Artikels zur Vorstellung „Nahrung aus der Erde“). Die Auszugssätze stehen dort nicht mehr überall wörtlich im Artikel (erste Notiz gilt für diese Stellen nicht mehr); der Satzanfang ist unverändert."
   ]
 }

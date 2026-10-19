@@ -20,7 +20,7 @@
   },
   "excerpt": [
     {
-      "text": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“; Pl. Tiden, Tieden [tiːdən] „Zeiten“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
+      "text": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
     },
     {
       "text": "Die Gezeitenkräfte entstehen dadurch, dass Mond und Sonne trotz ihrer großen Entfernung mit ihrer Anziehungskraft nicht ganz gleichmäßig auf die Erde einwirken, sondern auf der ihnen gerade zugewandten Seite etwas stärker und auf der abgewandten Seite etwas schwächer als im Durchschnitt."
@@ -718,7 +718,7 @@
           "basis": "comparison",
           "conspicuousness": 1,
           "explanation": "Im Original steht: „Die Gezeiten oder Tiden … sind die Wasserbewegungen der Ozeane …“. Es sind die Wasserbewegungen der Ozeane, nicht der Flüsse.",
-          "evidence": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“; Pl. Tiden, Tieden [tiːdən] „Zeiten“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
+          "evidence": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
         },
         {
           "text": "Ozäne",
@@ -738,7 +738,7 @@
           "basis": "comparison",
           "conspicuousness": 2,
           "explanation": "Im Original steht: „… die durch die von Mond und Sonne erzeugten Gezeitenkräfte …“. Die Gezeitenkräfte kommen von Mond und Sonne, nicht nur vom Mond.",
-          "evidence": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“; Pl. Tiden, Tieden [tiːdən] „Zeiten“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
+          "evidence": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
         },
         {
           "text": "Wind und Sonne",
@@ -746,7 +746,7 @@
           "basis": "comparison",
           "conspicuousness": 2,
           "explanation": "Im Original steht: „… die durch die von Mond und Sonne erzeugten Gezeitenkräfte …“. Die Gezeitenkräfte kommen von Mond und Sonne, nicht vom Wind.",
-          "evidence": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“; Pl. Tiden, Tieden [tiːdən] „Zeiten“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
+          "evidence": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
         }
       ]
     }
@@ -756,6 +756,7 @@
     "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite, Link auf die Lizenz); die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Fehlerarten: Die Falschschreibungen sind konstruiert (Konsonantenverdopplung, Dehnung, nach den Schwerpunkten der IQB-Handreichung); die Klassen ab Klasse 7 (Menge/Grad, Verallgemeinerung, falsche Folgerung, Meinung als Tatsache) sind abgeleitet, nicht belegt. Die eingefügten Sätze sind erfunden und stehen so nicht in der Quelle.",
     "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft.",
-    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit dem ersten Satz des Artikels (vorher mit „Die Gezeitenkräfte entstehen …“). Gestrichen: „Diese Komponente ist am stärksten in zwei Bändern …“ samt der Stelle „45°“. Neu: zwei Stellen in der Einleitung der Variante. Verständlichkeit: Der Satz „Beim Mond ist die Periode …“ heißt jetzt „Beim Einfluss des Mondes ist diese Periode …“."
+    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit dem ersten Satz des Artikels (vorher mit „Die Gezeitenkräfte entstehen …“). Gestrichen: „Diese Komponente ist am stärksten in zwei Bändern …“ samt der Stelle „45°“. Neu: zwei Stellen in der Einleitung der Variante. Verständlichkeit: Der Satz „Beim Mond ist die Periode …“ heißt jetzt „Beim Einfluss des Mondes ist diese Periode …“.",
+    "Auszug leicht vereinfacht auf Wunsch des Erstellers: Mehrzahl-Angabe in der Klammer des ersten Satzes gestrichen. Die Auszugssätze stehen dort nicht mehr überall wörtlich im Artikel (erste Notiz gilt für diese Stellen nicht mehr); der Satzanfang ist unverändert."
   ]
 }

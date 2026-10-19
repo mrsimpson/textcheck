@@ -20,7 +20,7 @@
   },
   "excerpt": [
     {
-      "text": "Der Blutkreislauf, auch Kreislauf, Blutzirkulation und kurz Zirkulation, Blutgefäßsystem oder Blutbahn genannt, ist das Strömungssystem des Blutes im Körper des Menschen und der meisten Tiere, ausgehend vom Herzen zu den Organen und wieder zurück zum Herzen."
+      "text": "Der Blutkreislauf, auch Kreislauf, Blutzirkulation und kurz Zirkulation genannt, ist das Strömungssystem des Blutes im Körper des Menschen und der meisten Tiere, ausgehend vom Herzen zu den Organen und wieder zurück zum Herzen."
     },
     {
       "text": "Herz und Blutkreislauf zusammen bilden das Herz-Kreislauf-System (kardiovaskuläres System)."
@@ -270,8 +270,8 @@
           "errorClass": "factual_error",
           "basis": "comparison",
           "conspicuousness": 1,
-          "explanation": "Im Original steht: „Der Blutkreislauf, auch Kreislauf, Blutzirkulation und kurz Zirkulation, Blutgefäßsystem oder Blutbahn genannt, ist das Strömungssystem des Blutes im Körper des Menschen und der meisten Tiere, ausgehend vom Herzen zu den Organen und wieder zurück zum Herzen.“ Der Blutkreislauf ist ein Strömungssystem, kein Nervensystem.",
-          "evidence": "Der Blutkreislauf, auch Kreislauf, Blutzirkulation und kurz Zirkulation, Blutgefäßsystem oder Blutbahn genannt, ist das Strömungssystem des Blutes im Körper des Menschen und der meisten Tiere, ausgehend vom Herzen zu den Organen und wieder zurück zum Herzen."
+          "explanation": "Im Original steht: „Der Blutkreislauf, auch Kreislauf, Blutzirkulation und kurz Zirkulation genannt, ist das Strömungssystem des Blutes im Körper des Menschen und der meisten Tiere, ausgehend vom Herzen zu den Organen und wieder zurück zum Herzen.“ Der Blutkreislauf ist ein Strömungssystem, kein Nervensystem.",
+          "evidence": "Der Blutkreislauf, auch Kreislauf, Blutzirkulation und kurz Zirkulation genannt, ist das Strömungssystem des Blutes im Körper des Menschen und der meisten Tiere, ausgehend vom Herzen zu den Organen und wieder zurück zum Herzen."
         },
         {
           "text": "Strömungsystem",
@@ -657,6 +657,7 @@
     "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite, Link auf die Lizenz); die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Fehlerarten: Die Falschschreibungen sind konstruiert (Konsonantenverdopplung, Dehnung, nach den Schwerpunkten der IQB-Handreichung); die Klassen ab Klasse 7 (Menge/Grad, Verallgemeinerung, falsche Folgerung, Meinung als Tatsache) sind abgeleitet, nicht belegt. Die eingefügten Sätze sind erfunden und stehen so nicht in der Quelle.",
     "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft.",
-    "Überarbeitet (Einleitung geprüft): Der Auszug beginnt schon mit dem ersten Satz des Artikels, Auszug und Stellen bleiben. Verständlichkeit: „Seine Aufgabe …“ heißt jetzt „Die Aufgabe des Blutkreislaufs …“, „Das gilt …“ heißt „Diese Bezeichnungen gelten …“."
+    "Überarbeitet (Einleitung geprüft): Der Auszug beginnt schon mit dem ersten Satz des Artikels, Auszug und Stellen bleiben. Verständlichkeit: „Seine Aufgabe …“ heißt jetzt „Die Aufgabe des Blutkreislaufs …“, „Das gilt …“ heißt „Diese Bezeichnungen gelten …“.",
+    "Auszug leicht vereinfacht auf Wunsch des Erstellers: zwei Nebenbezeichnungen im ersten Satz gestrichen. Die Auszugssätze stehen dort nicht mehr überall wörtlich im Artikel (erste Notiz gilt für diese Stellen nicht mehr); der Satzanfang ist unverändert."
   ]
 }

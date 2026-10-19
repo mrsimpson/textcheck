@@ -20,7 +20,7 @@
   },
   "excerpt": [
     {
-      "text": "Als Winterschlaf oder Hibernation bezeichnet man einen saisonalen mehrtägigen Torpor in manchen Säugetieren und einer Vogelart, der durch eine Herabsetzung der Stoffwechselaktivität und Körpertemperatur definiert ist."
+      "text": "Als Winterschlaf oder Hibernation bezeichnet man einen saisonalen mehrtägigen Ruhezustand (Torpor) bei manchen Säugetieren und einer Vogelart, bei dem der Stoffwechsel und die Körpertemperatur herabgesetzt sind."
     },
     {
       "text": "Für gleichwarme Tiere ist es die wirksamste Methode um Energie zu sparen."
@@ -69,14 +69,14 @@
   "rendition": [
     {
       "sentence": [
-        "Als Winterschlaf oder Hibernation bezeichnet man einen Torpor, der jedes Jahr in einer bestimmten Jahreszeit auftritt und ",
+        "Als Winterschlaf oder Hibernation bezeichnet man einen Ruhezustand (Torpor), der jedes Jahr in einer bestimmten Jahreszeit auftritt und ",
         {
           "slot": "n1"
         },
         " dauert."
       ],
       "evidence": {
-        "quote": "einen saisonalen mehrtägigen Torpor"
+        "quote": "einen saisonalen mehrtägigen Ruhezustand (Torpor)"
       }
     },
     {
@@ -88,13 +88,13 @@
         " Säugetieren und einer Vogelart."
       ],
       "evidence": {
-        "quote": "in manchen Säugetieren und einer Vogelart"
+        "quote": "bei manchen Säugetieren und einer Vogelart"
       }
     },
     {
       "sentence": ["Dabei sind der Stoffwechsel und die Körpertemperatur herabgesetzt."],
       "evidence": {
-        "quote": "der durch eine Herabsetzung der Stoffwechselaktivität und Körpertemperatur definiert ist"
+        "quote": "bei dem der Stoffwechsel und die Körpertemperatur herabgesetzt sind"
       }
     },
     {
@@ -431,8 +431,8 @@
           "errorClass": "factual_error",
           "basis": "comparison",
           "conspicuousness": 2,
-          "explanation": "Im Original steht: „… einen saisonalen mehrtägigen Torpor …“. Der Zustand dauert mehrere Tage, nicht nur wenige Stunden.",
-          "evidence": "Als Winterschlaf oder Hibernation bezeichnet man einen saisonalen mehrtägigen Torpor in manchen Säugetieren und einer Vogelart, der durch eine Herabsetzung der Stoffwechselaktivität und Körpertemperatur definiert ist."
+          "explanation": "Im Original steht: „… einen saisonalen mehrtägigen Ruhezustand (Torpor) …“. Der Zustand dauert mehrere Tage, nicht nur wenige Stunden.",
+          "evidence": "Als Winterschlaf oder Hibernation bezeichnet man einen saisonalen mehrtägigen Ruhezustand (Torpor) bei manchen Säugetieren und einer Vogelart, bei dem der Stoffwechsel und die Körpertemperatur herabgesetzt sind."
         },
         {
           "text": "mehre Tage",
@@ -451,8 +451,8 @@
           "errorClass": "quantity_degree",
           "basis": "comparison",
           "conspicuousness": 1,
-          "explanation": "Im Original steht: „… in manchen Säugetieren und einer Vogelart …“. Winterschlaf gibt es bei manchen Säugetieren, nicht bei allen.",
-          "evidence": "Als Winterschlaf oder Hibernation bezeichnet man einen saisonalen mehrtägigen Torpor in manchen Säugetieren und einer Vogelart, der durch eine Herabsetzung der Stoffwechselaktivität und Körpertemperatur definiert ist."
+          "explanation": "Im Original steht: „… bei manchen Säugetieren und einer Vogelart …“. Winterschlaf gibt es bei manchen Säugetieren, nicht bei allen.",
+          "evidence": "Als Winterschlaf oder Hibernation bezeichnet man einen saisonalen mehrtägigen Ruhezustand (Torpor) bei manchen Säugetieren und einer Vogelart, bei dem der Stoffwechsel und die Körpertemperatur herabgesetzt sind."
         },
         {
           "text": "mancen",
@@ -491,6 +491,7 @@
     "Fehlerarten: Die Falschschreibungen sind konstruiert (Dehnungs-h, Konsonantenverdopplung, nach den Schwerpunkten der IQB-Handreichung); die Klassen ab Klasse 7 (Menge/Grad, Verallgemeinerung, falsche Folgerung, Meinung als Tatsache) sind abgeleitet, nicht belegt.",
     "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Biologie.",
     "Die Quelle liegt als PDF unter public/quellen/de/winterschlaf.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
-    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit den ersten beiden Sätzen des Artikels (vorher mit dem Winterquartier). Gestrichen: „Alle Körperfunktionen …“ und „Die Atmung ist schwach …“ samt den Stellen „alle“ und „langsam“. Neu: drei Stellen in der Einleitung der Variante."
+    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit den ersten beiden Sätzen des Artikels (vorher mit dem Winterquartier). Gestrichen: „Alle Körperfunktionen …“ und „Die Atmung ist schwach …“ samt den Stellen „alle“ und „langsam“. Neu: drei Stellen in der Einleitung der Variante.",
+    "Auszug leicht vereinfacht auf Wunsch des Erstellers: erster Satz umgebaut („Ruhezustand (Torpor)“, „bei dem der Stoffwechsel und die Körpertemperatur herabgesetzt sind“). Die Auszugssätze stehen dort nicht mehr überall wörtlich im Artikel (erste Notiz gilt für diese Stellen nicht mehr); der Satzanfang ist unverändert."
   ]
 }
