@@ -24,6 +24,23 @@ test.describe("Original and Variante as sheets on a wide screen", () => {
     await expect(original).toBeHidden();
   });
 
+  test("keeps the switch on top while a sheet turns, so a quick tap hits the button", async ({ page }) => {
+    await open(page, "./app/?seed=1#klasse-5-6");
+    await page.getByRole("button", { name: "Original", exact: true }).click();
+    // the sheet swings out over the switch for 0.4 s; at no moment may it take the place of the button under a finger
+    for (let step = 0; step < 10; step++) {
+      const top = await page.evaluate(() => {
+        const button = document.querySelectorAll(".switch button")[1];
+        if (!button) return "no button";
+        const box = button.getBoundingClientRect();
+        const element = document.elementFromPoint(box.x + box.width / 2, box.y + box.height / 2);
+        return element?.closest(".switch") ? "button" : "sheet";
+      });
+      expect(top).toBe("button");
+      await page.waitForTimeout(40);
+    }
+  });
+
   test("never shows both sheets, and keeps the marks when turning", async ({ page }) => {
     await open(page, "./app/?seed=1#klasse-5-6");
     await page.getByRole("listbox").getByRole("option").nth(3).click();
