@@ -37,11 +37,23 @@ Lernende können sich bei einer schwierigen Runde Schritt für Schritt Hinweise 
 
 ## Key decisions
 
-<!-- One line each: decision, reason. Own choice without the creator: mark "(guess)". -->
+- Hinweise kommen in Stufen, jede zeigt mehr, nie das Wort selbst. (Ersteller: letzte Stufe „zu genau“)
+- Stufe 1: zeigt die Fehlerklassen der Runde, wenn sie verdeckt sind (`announceClasses: false`). Sind sie schon sichtbar, entfällt die Stufe. (Ersteller)
+- Stufe 2: markiert die Sätze der Variante, in denen ein Fehler steckt, und schreibt die Fehlerklasse dazu. Satzebene. (Ersteller: „Satzebene“)
+- Kein Hinweis zeigt das Wort oder die Stelle im Satz. (Ersteller)
+- Alles gefunden ohne Hinweis: Feuerwerk. Mit Hinweis: Konfetti. Bei „Bewegung reduzieren“ keine Effekte, wie heute. (Ersteller)
+- Die Auflösung nennt bei Hinweisen einen ermutigenden Satz: beim nächsten Mal klappt es vielleicht ohne. (Ersteller)
+- Der Kern zählt die Hinweisstufe pro Runde (Aktion `hint`); eine neue Runde setzt sie zurück. Das Ergebnis (gefunden, übersehen) ändert sich nicht, es gibt keine Punkte. (guess)
+- Im Modus `choose` gibt es Hinweise erst nach der Wahl des Textes, weil Sätze mit Fehlern sonst die Variante verraten. (guess)
+- Der Knopf „Hinweis“ steht unter dem Text neben „Prüfen“; ein Hinweis bleibt bis zum Ende der Runde sichtbar und lässt sich nicht zurücknehmen. (guess)
 
 ## Notes
 
-<!-- Sources and licences, links, open questions, curriculum, new competencies by chapter. -->
+Reine Hilfe in der Bedienung: kein neuer Lehrplanbezug, keine neue Kompetenz, keine neuen Texte oder Quellen. Hinweise nutzen die vorhandenen Daten (Fehlerklassen und Slots je Satz). Betroffen sind `src/core` (Aktion `hint`, Zustand), `src/ui` (Knopf, Anzeige, Feuerwerk), `src/messages/de.json` und `en.json`, Playthroughs, e2e, arc42 und der Abschnitt zur Anzeige im Skill `app-content`.
+
+Didaktik: Gestuftes Helfen (erst Art des Fehlers, dann Ort), damit Lernende selbst suchen und das Wort selbst finden; Umfang: Hinweise nur in den Modi `mark`, `source` und (nach der Wahl) `choose`, Deutsch und Englisch, alle Stufen. Nicht dabei: Hinweise nach dem Prüfen, Wort-Hinweise.
+
+Ungeprüft: Die Hinweise sind nicht mit Kindern getestet.
 
 ## Explore
 
@@ -54,13 +66,13 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 - [x] Skills are in `.agents/skills/`. Only if missing: `npx skills add lernapps/tooling#exp/compact-guidance`.
 - [x] Load the content guide `.agents/skills/app-content/SKILL.md` and skill `lernapps-content-growth`; read the
       plans in `.vibe/plans/` (what the app teaches, how content is made, what is open).
-- [ ] Interview, as in the first plan: one topic per question, the creator's words under "Answers"; no answer →
+- [x] Interview, as in the first plan: one topic per question, the creator's words under "Answers"; no answer →
       ask once more, then "(guess)", shown at the checkpoint. Topics: which competencies, chapters or rounds, for
       which school years; hurdles and examples; amount; anything of look and feel or terms that changes.
-- [ ] Research: the guide's curriculum and sources; skill `lernapps-content-research` for the rest. Under "Notes":
+- [x] Research: the guide's curriculum and sources; skill `lernapps-content-research` for the rest. Under "Notes":
       curriculum orientation (Lehrplan cited where used), new competencies by chapter as Ich-kann-Sätze, verified
       sources.
-- [ ] Under "Notes": the didactic approach per competency and the scope (in, out, data range).
+- [x] Under "Notes": the didactic approach per competency and the scope (in, out, data range).
 - [ ] **Checkpoint:** research. Show in plain words: curriculum orientation, new competencies by chapter, didactic
       approach, scope, sources and how checked, what is unchecked. Stop and wait. Changes → change, ask again.
 - [ ] Set `phase: plan`: change the value line (`grep '^phase:'` prints `phase: plan`).
@@ -68,6 +80,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 ### Answers
 
 - Stufen: Die letzte Stufe „Stelle im Satz eingrenzen“ wäre zu genau. Stufe 1: sind die Fehlerklassen verdeckt, werden sie sichtbar. Danach: Eingrenzung auf den jeweiligen Absatz und die Fehlerklassen dort annotieren.
+- Eingrenzung auf Satzebene (nicht Abschnitt). Alles ohne Hinweis gefunden: Feuerwerk. Alles mit Hinweis gefunden: Konfetti.
 - Auflösung: Eine Motivation, dass es beim nächsten Mal vielleicht auch ohne Hinweise klappt. Ohne Hinweis gelöst: Feuerwerk statt Konfetti.
 
 <!-- Creator's answers, their words, one bullet each. -->
