@@ -16,7 +16,10 @@
 
 ## Excerpt (the Original)
 
-- Verbatim sentences of the source, unchanged, in the source's order. You may leave out whole sentences, never edit
+- Verbatim sentences of the source, in the source's order. The creator allowed light smoothing for hard first
+  sentences (grade 7-8 packs: foreign words, brackets, a side clause left out or explained). Do it only where a sentence
+  would not be understood otherwise, keep the beginning of the sentence, and say in `notes` what you changed (the check
+  `check-lead.mjs` and the PDF comparison then show those sentences as not verbatim; that is known). You may leave out whole sentences, never edit
   words. No headings, lists or tables unless they are sentences.
 - Size: pilot (grades 5-6) uses 10 sentences. Guide: grade 3-4 about 6-8 short sentences, 5-6 about 10, 7+ increase by
   1-2 sentences or 20 % per pair. Every sentence must carry something that a variant can change. IGLU texts for grade 4
