@@ -16,6 +16,8 @@ const props = defineProps<{
   status: readonly Status[];
   label: string;
   lang: string;
+  /** The label of the sentences a hint marks, by sentence index. */
+  tags?: Readonly<Record<number, string>>;
 }>();
 const emit = defineEmits<{ input: [input: Input] }>();
 const t = translatorOf(props.lang);
@@ -32,6 +34,7 @@ const sentences = computed(() => {
   return groups;
 });
 
+const tagOf = (group: readonly Token[]): string | undefined => props.tags?.[group[0]?.sentence ?? -1];
 const isMarked = (id: number): boolean => props.marked.includes(id);
 
 const KEYS: Readonly<Record<string, string>> = {
@@ -87,7 +90,12 @@ defineExpose({ focus: () => list.value?.focus() });
     :aria-activedescendant="`word-${cursor}`"
     @keydown="onKey"
   >
-    <p v-for="group in sentences" :key="group[0]?.id">
+    <p
+      v-for="group in sentences"
+      :key="group[0]?.id"
+      :class="{ tagged: tagOf(group) !== undefined }"
+      :data-tag="tagOf(group)"
+    >
       <span
         v-for="token in group"
         :id="`word-${token.id}`"
@@ -120,6 +128,20 @@ defineExpose({ focus: () => list.value?.focus() });
   line-height: var(--tc-line-height);
   font-weight: var(--tc-font-weight);
   font-variation-settings: var(--tc-font-variation);
+}
+
+.tagged {
+  border-left: 4px solid var(--tc-tol);
+  padding-left: 0.75rem;
+}
+
+.tagged::before {
+  content: attr(data-tag);
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--tc-tol);
 }
 
 .words:focus-visible {

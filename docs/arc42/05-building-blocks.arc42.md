@@ -670,8 +670,9 @@ flowchart TB
 ### Round state and inputs
 
 Built. `src/core/index.ts` holds the core's contract and its state machine: `start` builds a round, `step` takes the
-actions of the UI (mark, unmark, clear, move, check, again) and returns the next state; unknown inputs leave the state
-as it is. `src/core/types.ts` has the types of the data and of the state.
+actions of the UI (mark, unmark, clear, move, check, hint, again) and returns the next state; `tick` lets the wait before
+the next hint run down (10 s plus 5 s for the hint that is next in line: 15 s, then 20 s) and leaves the state as it is
+when there is nothing to count; unknown inputs leave the state as it is. `src/core/types.ts` has the types of the data and of the state.
 
 ```arc42
 :::building-block
@@ -687,8 +688,8 @@ path: src/core/index.ts
 #### Actions interface
 
 The root component hands every action of the learner to `step` as an action input with a name and optionally a value:
-`toggle` (a word id), `move` (next, prev, next-sentence, prev-sentence, first, last), `clear`, `check`, `choose` (a text
-in the mode Original erkennen), `again`, `language` (the page's language) and `round` (`{ seed, route }`: the round an
+`toggle` (a word id), `move` (next, prev, next-sentence, prev-sentence, first, last), `clear`, `check`, `hint` (the next
+hint, refused until the wait is over), `choose` (a text in the mode Original erkennen), `again`, `language` (the page's language) and `round` (`{ seed, route }`: the round an
 address names, because the learner picked another age group or mode, asked for the next round, or went back or forward
 in the history).
 
@@ -706,7 +707,9 @@ path: src/core/index.ts
 
 Built. Picks the text pack of the route's school years and the slots to corrupt from the seed (a seeded shuffle, within
 the classes, bases and error count of the level), and splits the Variante into words, each word belonging to the slot it
-overlaps. The random numbers come only from the seed (`src/core/random.ts`), so the same seed gives the same round.
+overlaps. It also finds the sentences the hints may point to: those of the Variante with an error whose evidence quote
+stands in a sentence of the Original; inserted sentences have no quote and no counterpart, so they are never part of a
+hint. The random numbers come only from the seed (`src/core/random.ts`), so the same seed gives the same round.
 
 ```arc42
 :::building-block
@@ -883,6 +886,9 @@ flowchart TB
         bb-textcheck-ui-texts["UI texts"]
         bb-textcheck-reading-settings["Reading settings"]
         bb-textcheck-reading["Reading values"]
+        bb-textcheck-hint-button["Hint button"]
+        bb-textcheck-hint-note["Hint note"]
+        bb-textcheck-hints["Hint texts"]
     end
     bb-interactive-messages["Messages"]
     bb-textcheck-root -->|"if-textcheck-wordlist"| bb-textcheck-wordlist
@@ -899,6 +905,9 @@ flowchart TB
     bb-textcheck-reading-settings -->|"if-textcheck-reading"| bb-textcheck-reading
     bb-textcheck-reading-settings -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
     bb-textcheck-reading -->|"if-device-storage"| bb-tooling
+    bb-textcheck-root -->|"if-textcheck-hints"| bb-textcheck-hint-button
+    bb-textcheck-root -->|"if-textcheck-hints"| bb-textcheck-hint-note
+    bb-textcheck-hint-note -->|"if-textcheck-hints"| bb-textcheck-hints
 ```
 
 ### Root component
@@ -909,7 +918,7 @@ starting with the Original: a switch turns from one to the other with a short pa
 switches off, and the hidden one is not in the page, so the learner cannot compare them side by side; the source PDF is
 no sheet and has no switch: where it is embedded (a wide screen of 1300 px and more with a mouse) it stands next to the
 Variante, in a frame widened to 80 rem while it shows, so that an A4 page is wide enough to read; elsewhere only the
-button that opens it stands above the Variante, which has the whole width), the keyboard hint and the buttons below the sheets, so that both sheets are of the same height (one font size
+button that opens it stands above the Variante, which has the whole width), the keyboard hint and the buttons below the sheets (among them the button for the next hint, which waits and shows the seconds left; the hints taken stay on the page until the round ends and mark the sentences with an error at the edge, in the mode Original erkennen in both texts), so that both sheets are of the same height (one font size
 and one line height for every text), the button for the settings for reading (font style, weight, size, line spacing, kept on the device) and, after checking, the result. It announces every change through the live region, moves the focus
 to the result heading after checking and back to the words after a new round, and emits the learner's actions. The address is the round (`?seed=<n>#<route>`) and the only place the seed is taken from, so
 that a round can be reloaded and shared. Without a valid seed in the address, the root component works one out when the
@@ -930,7 +939,7 @@ id: bb-textcheck-root
 title: Root component
 parent: bb-interactive-ui
 technology: Vue single-file component
-requires: if-textcheck-wordlist, if-textcheck-choose, if-textcheck-result, if-textcheck-ui-texts, if-textcheck-reading-settings, if-textcheck-reading, if-a11y
+requires: if-textcheck-wordlist, if-textcheck-choose, if-textcheck-result, if-textcheck-ui-texts, if-textcheck-reading-settings, if-textcheck-reading, if-textcheck-hints, if-a11y
 path: src/ui/App.vue
 :::
 ```
@@ -1124,6 +1133,62 @@ title: Reading settings, load, save and styleOf
 provider: bb-textcheck-reading
 protocol: TypeScript module export
 path: src/ui/reading.ts
+:::
+```
+
+### Hints
+
+Built. `src/ui/HintButton.vue` is the button that takes the next hint: it is off until the core's wait is over and says
+how many seconds are left, and after the last hint it says there are none. `src/ui/HintNote.vue` lists the sentences of
+the hints taken so far, and `src/ui/hints.ts` works them out from the state: the kinds of error of the round (only where
+the level hides them) and the label of each sentence a hint marks, by the sentence's index in the Variante or in the
+Original. A hint never shows a word and never names an inserted sentence. The components hold no state of their own.
+
+```arc42
+:::building-block
+id: bb-textcheck-hint-button
+title: Hint button
+parent: bb-interactive-ui
+technology: Vue single-file component
+requires: if-textcheck-ui-texts
+path: src/ui/HintButton.vue
+:::
+```
+
+```arc42
+:::building-block
+id: bb-textcheck-hint-note
+title: Hint note
+parent: bb-interactive-ui
+technology: Vue single-file component
+requires: if-textcheck-hints, if-textcheck-ui-texts
+path: src/ui/HintNote.vue
+:::
+```
+
+```arc42
+:::building-block
+id: bb-textcheck-hints
+title: Hint texts
+parent: bb-interactive-ui
+technology: TypeScript
+requires: if-textcheck-ui-texts
+path: src/ui/hints.ts
+:::
+```
+
+#### Hints interface
+
+The root component and the choose view give the button and the note the core's state and the language; the word list
+takes the labels of the marked sentences as its prop `tags`.
+
+```arc42
+:::interface
+id: if-textcheck-hints
+title: Hint texts and tags from the state
+provider: bb-textcheck-hints
+protocol: TypeScript module export
+path: src/ui/hints.ts
 :::
 ```
 

@@ -130,7 +130,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 - [ ] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
 - [x] Slice 1 Kern: Aktion `hint` mit Wartezeit (Aktion `tick`), Zustand, Sätze mit Fehler und Klasse je Satz (ohne eingefügte), Stufe 1 entfällt bei `announceClasses`; Playthroughs und Tests. Check, Commit.
-- [ ] Slice 2 Anzeige: Knopf mit Restzeit, Stufe 1 und 2 in den Modi `mark`, `source` und `choose` (beide Texte), Meldungen de/en, Sprachausgabe (`announce`). e2e. Check, Commit.
+- [x] Slice 2 Anzeige: Knopf mit Restzeit, Stufe 1 und 2 in den Modi `mark`, `source` und `choose` (beide Texte), Meldungen de/en, Sprachausgabe (`announce`). e2e. Check, Commit.
 - [ ] Slice 3 Auflösung: Feuerwerk ohne Hinweis, Konfetti mit Hinweis, ermutigender Satz, keine Effekte bei reduzierter Bewegung; Tests, arc42, Skill `app-content`. Check, Commit.
 - [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.

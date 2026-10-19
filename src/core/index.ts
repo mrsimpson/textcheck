@@ -142,6 +142,12 @@ function inRound(state: State, round: unknown): State {
   return start(seed, route, state.language);
 }
 
+/** Whether the hint of `stage` has been taken. */
+export function hintShown(state: State, stage: HintStage): boolean {
+  const index = state.hintStages.indexOf(stage);
+  return index >= 0 && state.hintLevel > index;
+}
+
 /** The learner takes the next hint, once the wait is over; each hint shows one more stage and stays until the round ends. */
 function hint(state: State): State {
   if (state.hintWait > 0 || state.hintLevel >= state.hintStages.length) return state;
