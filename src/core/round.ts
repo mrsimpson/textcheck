@@ -2,7 +2,7 @@
 // limits of the level), and the words of the Variante as learners see them.
 import { ERROR_CLASSES } from "./data.ts";
 import { random } from "./random.ts";
-import type { Corruption, Level, TextPack, Token, Variant } from "./types.ts";
+import type { Corruption, HintSentence, Level, TextPack, Token, Variant } from "./types.ts";
 
 /** A slot with the variants the level allows for it. */
 interface Candidate {
@@ -112,4 +112,28 @@ export function buildRound(packs: readonly TextPack[], level: Level, seed: numbe
   const chosen = chooseVariants(candidatesOf(pack, level), level, next);
   const tokens = tokensOf(pack, chosen);
   return { pack, tokens, corruptions: corruptionsOf(pack, chosen, tokens) };
+}
+
+/**
+ * The sentences a hint may point to: those of the Variante with an error whose evidence quote stands in a sentence of
+ * the Original. A sentence without a quote is inserted (nothing in the Original says it); pointing at it in one text
+ * only would give the Variante away, so it is left out, in every mode.
+ */
+export function hintSentencesOf(
+  pack: TextPack,
+  corruptions: readonly Corruption[],
+  tokens: readonly Token[],
+): HintSentence[] {
+  const found = new Map<number, HintSentence>();
+  for (const corruption of corruptions) {
+    const sentence = tokens.find((token) => token.slot === corruption.slot)?.sentence;
+    const quote = sentence === undefined ? undefined : pack.rendition[sentence]?.evidence?.quote;
+    if (sentence === undefined || quote === undefined) continue;
+    const original = pack.excerpt.findIndex((entry) => entry.text.includes(quote));
+    if (original < 0) continue;
+    const held = found.get(sentence) ?? { sentence, original, classes: [] };
+    if (!held.classes.includes(corruption.errorClass)) held.classes.push(corruption.errorClass);
+    found.set(sentence, held);
+  }
+  return [...found.values()].sort((a, b) => a.sentence - b.sentence);
 }

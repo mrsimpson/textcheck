@@ -101,5 +101,13 @@
   "switchCancel": "Bleiben",
   "readingDone": "Fertig",
   "appTitle": "Textcheck",
-  "readingButton": "Schrift"
+  "readingButton": "Schrift",
+  "tip": "Hinweis",
+  "tipWait": "Hinweis in {seconds} s",
+  "tipNone": "Keine weiteren Hinweise",
+  "tipClasses": "Hinweis: In dieser Runde stecken diese Fehlerarten im Text: {classes}.",
+  "tipSentences": "Hinweis: Die Sätze mit einem Fehler sind am Rand markiert, mit der Fehlerart.",
+  "tipSentencesChoose": "Hinweis: In den markierten Sätzen steckt in einem der beiden Texte ein Fehler. Die Fehlerart steht am Rand. Vergleiche beide Texte.",
+  "announceTipReady": "Der nächste Hinweis ist bereit.",
+  "praiseHints": "Du hast Hinweise genutzt, das ist völlig in Ordnung. Beim nächsten Mal klappt es vielleicht auch ohne."
 }

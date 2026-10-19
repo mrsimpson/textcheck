@@ -12,10 +12,13 @@ import { LEVELS, parseRoute, routeOf } from "../core/data.ts";
 import { markable, type State } from "../core/index.ts";
 import type { Mode } from "../core/types.ts";
 import ChooseView from "./ChooseView.vue";
+import HintButton from "./HintButton.vue";
+import HintNote from "./HintNote.vue";
 import ReadingSettings from "./ReadingSettings.vue";
 import ResultView from "./ResultView.vue";
 import WordList from "./WordList.vue";
 import { translatorOf } from "./messages.ts";
+import { hintTags, hintTextsOf } from "./hints.ts";
 import { loadReading, saveReading, styleOf } from "./reading.ts";
 
 const props = defineProps<{ state: State; lang: string }>();
@@ -192,7 +195,15 @@ const goal = computed(() =>
 );
 
 watch(
-  () => [props.state.last, props.state.marked.length, props.state.seed, props.state.phase, props.state.choice] as const,
+  () =>
+    [
+      props.state.last,
+      props.state.marked.length,
+      props.state.seed,
+      props.state.phase,
+      props.state.choice,
+      props.state.hintLevel,
+    ] as const,
   () => {
     const { state } = props;
     const word = state.tokens[state.changed]?.text ?? "";
@@ -201,10 +212,19 @@ watch(
     else if (state.last === "mark") announce(t("announceMark", { word, count }));
     else if (state.last === "unmark") announce(t("announceUnmark", { word, count }));
     else if (state.last === "clear") announce(t("announceClear"));
+    else if (state.last === "hint") announce(hintTextsOf(state, t).at(-1) ?? "");
     else if (state.last === "choose")
       announce(t("announceChoose", { name: t(state.choice === "a" ? "textA" : "textB") }));
     else if (state.result !== null)
       announce(t("announceCheck", { found: state.result.found, total: state.result.total, wrong: state.result.wrong }));
+  },
+);
+
+// the next hint is ready: tell it once, not every second of the wait
+watch(
+  () => props.state.hintWait === 0 && props.state.hintLevel < props.state.hintStages.length,
+  (ready, before) => {
+    if (ready && !before) announce(t("announceTipReady"));
   },
 );
 
@@ -345,14 +365,17 @@ const choiceNote = computed(() => {
           :status="state.result?.status ?? []"
           :label="t('rendition')"
           :lang="lang"
+          :tags="hintTags(state, t, false)"
           @input="(input) => emit('input', input)"
         />
       </section>
     </div>
+    <HintNote v-if="state.mode !== 'choose' && !checking" :state="state" :lang="lang" />
     <p v-if="state.mode !== 'choose' && !checking" id="words-hint" class="hint">{{ t("hint") }}</p>
     <div v-if="state.mode !== 'choose' && !checking" class="bar">
       <span aria-hidden="true">{{ t("marked", { count: state.marked.length }) }}</span>
       <span class="buttons">
+        <HintButton :state="state" :lang="lang" @input="(input) => emit('input', input)" />
         <button type="button" @click="emit('input', { kind: 'action', name: 'clear' })">{{ t("clear") }}</button>
         <button type="button" class="primary" @click="emit('input', { kind: 'action', name: 'check' })">
           {{ t("check") }}
@@ -372,6 +395,7 @@ const choiceNote = computed(() => {
       :result="state.result"
       :tokens="checked"
       :choice-note="choiceNote"
+      :hints="state.hintLevel"
       :lang="lang"
       @input="onResultInput"
     />
