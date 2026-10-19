@@ -907,7 +907,8 @@ no sheet and has no switch: where it is embedded (a wide screen of 1300 px and m
 Variante, in a frame widened to 80 rem while it shows, so that an A4 page is wide enough to read; elsewhere only the
 button that opens it stands above the Variante, which has the whole width), the keyboard hint and the buttons below the sheets, so that both sheets are of the same height (one font size
 and one line height for every text), the folded settings for reading (font style, weight, size, line spacing, kept on the device) and, after checking, the result. It announces every change through the live region, moves the focus
-to the result heading after checking and back to the words after a new round, and emits the learner's actions. A new age group or mode, chosen with the two selects, starts a new round with a new
+to the result heading after checking and back to the words after a new round, and emits the learner's actions. The seed of the round stands in the address (`?seed=<n>`, written with `history.replaceState`, no new history entry), so
+that a round can be reloaded or shared. A new age group or mode, chosen with the two selects, starts a new round with a new
 seed (the action `reseed`), so that the same text with the same errors does not come back; where marks are set, a
 dialog asks first and the selects keep showing the round that goes on if the learner stays. The
 panel that is shown is its only state of its own. The route decides the mode: the Original, the PDF of the

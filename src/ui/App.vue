@@ -39,10 +39,20 @@ let query: MediaQueryList | null = null;
 const onChange = (): void => {
   embed.value = query?.matches ?? false;
 };
+// the round's seed stands in the address (?seed=<n>), so that a round can be reloaded and shared; the address and the
+// history only inside onMounted
+let showSeed: (seed: number) => void = () => undefined;
 onMounted(() => {
   go = (route) => {
     location.hash = route;
   };
+  showSeed = (seed) => {
+    const url = new URL(location.href);
+    if (url.searchParams.get("seed") === String(seed)) return;
+    url.searchParams.set("seed", String(seed));
+    history.replaceState(history.state, "", url);
+  };
+  showSeed(props.state.seed);
   query = matchMedia(WIDE);
   onChange();
   query.addEventListener("change", onChange);
@@ -121,6 +131,10 @@ function onDialogClose(): void {
   switching = false;
   pending = null;
 }
+watch(
+  () => props.state.seed,
+  (seed) => showSeed(seed),
+);
 watch(
   () => props.state.route,
   (_route, before) => {

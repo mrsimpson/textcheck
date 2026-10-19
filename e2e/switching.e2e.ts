@@ -66,4 +66,30 @@ test.describe("Switching the age group or the mode", () => {
     expect(await stateOf(page)).toMatchObject({ marked: [], phase: "marking" });
     await expect(page.getByLabel("Altersstufe")).toHaveValue("klasse-7-8");
   });
+
+  test("shows the seed of the round in the address, and a reload gives the same round", async ({ page }) => {
+    await open(page);
+    expect(new URL(page.url()).searchParams.get("seed")).toBe("1");
+    await page.getByLabel("Modus").selectOption("choose");
+    await expect.poll(async () => (await stateOf(page))["route"]).toBe("klasse-5-6-original");
+    const seed = String((await stateOf(page))["seed"]);
+    expect(seed).not.toBe("1");
+    expect(new URL(page.url()).searchParams.get("seed")).toBe(seed);
+    expect(new URL(page.url()).hash).toBe("#klasse-5-6-original");
+    await page.reload();
+    await expect(page.locator(".interactive-app")).toHaveAttribute("data-mounted", "");
+    expect(await stateOf(page)).toMatchObject({ route: "klasse-5-6-original", seed: Number(seed) });
+  });
+
+  test("puts the seed of the next round in the address, also where none was given", async ({ page }) => {
+    await page.goto("./app/#klasse-5-6");
+    await expect(page.locator(".interactive-app")).toHaveAttribute("data-mounted", "");
+    const first = String((await stateOf(page))["seed"]);
+    expect(new URL(page.url()).searchParams.get("seed")).toBe(first);
+    await page.getByRole("button", { name: "Variante", exact: true }).click();
+    await page.getByRole("button", { name: "Prüfen" }).click();
+    await page.getByRole("button", { name: "Neue Runde" }).click();
+    await expect.poll(async () => String((await stateOf(page))["seed"])).toBe(String(Number(first) + 1));
+    expect(new URL(page.url()).searchParams.get("seed")).toBe(String(Number(first) + 1));
+  });
 });
