@@ -4,7 +4,7 @@
 # Archetype as in the app's first plan; set it when you start. Never changes.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: code
+phase: commit
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
@@ -117,14 +117,14 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 - [ ] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
 - [ ] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
-- [ ] Slice 1, Hinweis: Nachricht `renditionNote` in `src/messages/de.json` („Die Variante enthält bewusst andere Formulierungen. Diese sind nicht zwangsläufig Fehler.“) und `en.json` (sinngemäß); und `renditionNoteChoose` (neutral, „Einer der beiden Texte enthält bewusst andere Formulierungen. Diese sind nicht zwangsläufig Fehler.“); in `src/ui/App.vue` als Absatz über dem Variantentext (Modi `mark`, `source`) und über beiden Texten (Modus `choose`); Playthrough/Test ergänzen; `npx lernapps check`; commit.
-- [ ] Slice 2, Hedgehog: „Another word for spines is quills“ ersetzen durch einen Satz, der nur das Original sagt („Hedgehogs have long spines, or quills.“, Slot `s6` bleibt); `notes` anpassen; Pack-Prüfung und Tests; commit.
-- [ ] Slice 3, übrige Packs: alle Packs (de, en) auf Sätze prüfen, die etwas ergänzen, was nicht im Original steht (zuerst `sonnensystem`); Funde korrigieren und im Log `.vibe/texts-log.md` vermerken; commit.
-- [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
+- [x] Slice 1, Hinweis: Nachricht `renditionNote` in `src/messages/de.json` („Die Variante enthält bewusst andere Formulierungen. Diese sind nicht zwangsläufig Fehler.“) und `en.json` (sinngemäß); und `renditionNoteChoose` (neutral, „Einer der beiden Texte enthält bewusst andere Formulierungen. Diese sind nicht zwangsläufig Fehler.“); in `src/ui/App.vue` als Absatz über dem Variantentext (Modi `mark`, `source`) und über beiden Texten (Modus `choose`); (kein neuer Test: Nachrichten-Test vergleicht de/en, Oberfläche ohne Spiellogik); `npx lernapps check`; commit.
+- [x] Slice 2, Hedgehog: „Another word for spines is quills“ ersetzen durch einen Satz, der nur das Original sagt („Hedgehogs have long spines, or quills.“, Slot `s6` bleibt); `notes` anpassen; Pack-Prüfung und Tests; commit.
+- [x] Slice 3, übrige Packs: alle Packs (de, en) auf Sätze prüfen, die etwas ergänzen, was nicht im Original steht (zuerst `sonnensystem`); Funde korrigieren und im Log `.vibe/texts-log.md` vermerken; commit.
+- [x] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
-- [ ] `npx lernapps check` passes.
-- [ ] Every box of Explore, Plan and Code ticked.
-- [ ] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
+- [x] `npx lernapps check` passes.
+- [x] Every box of Explore, Plan and Code ticked.
+- [x] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
 
 ### Completed
 
