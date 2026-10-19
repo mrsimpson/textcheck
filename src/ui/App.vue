@@ -14,12 +14,11 @@ import type { Mode } from "../core/types.ts";
 import ChooseView from "./ChooseView.vue";
 import HintButton from "./HintButton.vue";
 import HintNote from "./HintNote.vue";
-import ReadingSettings from "./ReadingSettings.vue";
 import ResultView from "./ResultView.vue";
 import WordList from "./WordList.vue";
 import { translatorOf } from "./messages.ts";
 import { hintTags, hintTextsOf } from "./hints.ts";
-import { loadReading, saveReading, styleOf } from "./reading.ts";
+import { readingStyle } from "./reading.ts";
 
 const props = defineProps<{ state: State; lang: string }>();
 const emit = defineEmits<{ input: [input: Input] }>();
@@ -29,10 +28,8 @@ const words = ref<InstanceType<typeof WordList> | null>(null);
 const choose = ref<InstanceType<typeof ChooseView> | null>(null);
 const root = ref<HTMLElement | null>(null);
 
-// how the learner wants to read: kept on the device, applied to the texts as CSS custom properties of the root element
-const reading = ref(loadReading());
-const readingStyle = computed(() => styleOf(reading.value));
-watch(reading, (value) => saveReading(value), { deep: true });
+// how the learner wants to read (set in the controls of the heading line, kept on the device): applied to the texts as
+// CSS custom properties of the root element
 
 // the source PDF is embedded only where a PDF shows well in a frame: a wide screen with a mouse; elsewhere the link
 // to a new tab is all there is
@@ -261,10 +258,6 @@ const choiceNote = computed(() => {
 
 <template>
   <section ref="root" class="textcheck" :style="readingStyle" :aria-label="t('region')">
-    <div class="titlebar">
-      <h1>{{ t("appTitle") }}</h1>
-      <ReadingSettings v-model="reading" :lang="lang" />
-    </div>
     <div class="picker" @change="onPick">
       <label>
         {{ t("level") }}
@@ -404,23 +397,6 @@ const choiceNote = computed(() => {
 
 <style scoped>
 .textcheck {
-  --tc-bg: #ffffff;
-  --tc-card: #ffffff;
-  --tc-ink: #1f2430;
-  --tc-muted: #566074;
-  --tc-line: #d5d8df;
-  --tc-accent: #1d4ed8;
-  --tc-on-accent: #ffffff;
-  --tc-mark: #fde68a;
-  --tc-mark-ink: #1f2430;
-  --tc-found: #166534;
-  --tc-found-bg: #dcfce7;
-  --tc-missed: #9a3412;
-  --tc-missed-bg: #ffedd5;
-  --tc-false: #6b21a8;
-  --tc-false-bg: #f3e8ff;
-  --tc-tol: #1e3a8a;
-  --tc-tol-bg: #dbeafe;
   /* one size and one line height for every text, so that the sheets are of the same height */
   --tc-font-size: 1.125rem;
   --tc-line-height: 2.1;
@@ -434,48 +410,6 @@ const choiceNote = computed(() => {
   .textcheck {
     --tc-line-height: 2.45; /* a word is at least 2.75 rem high with a finger */
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  .textcheck {
-    --tc-bg: #14161b;
-    --tc-card: #1d2027;
-    --tc-ink: #e8eaf0;
-    --tc-muted: #a2abbd;
-    --tc-line: #343a47;
-    --tc-accent: #8ab4ff;
-    --tc-on-accent: #0b1020;
-    --tc-mark: #6b5b12;
-    --tc-mark-ink: #fff6d1;
-    --tc-found: #86efac;
-    --tc-found-bg: #12301e;
-    --tc-missed: #fdba74;
-    --tc-missed-bg: #3a2210;
-    --tc-false: #d8b4fe;
-    --tc-false-bg: #2b1a3d;
-    --tc-tol: #bfdbfe;
-    --tc-tol-bg: #1e2f5a;
-  }
-}
-
-.titlebar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin: 1.25rem 0 1rem;
-}
-
-.titlebar h1 {
-  margin: 0;
-  font-family:
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    sans-serif; /* the heading of the shell, which this one replaces */
-  font-size: 1.875rem;
-  line-height: 1.2;
 }
 
 .picker {
@@ -713,12 +647,6 @@ h2 {
   font-display: swap;
 }
 
-/* The heading of the page is part of the app's own first line, with the button for the reading settings next to it; the
-   shell's heading steps aside while the app runs (without JavaScript it stays). */
-body:has(.textcheck) .interactive > h1 {
-  display: none;
-}
-
 /* The two selects of the app replace the shell's list of route links; without JavaScript the list stays. */
 body:has(.textcheck) .interactive-routes {
   display: none;
@@ -729,12 +657,56 @@ body:has(.textcheck) .interactive-routes {
   display: none;
 }
 
+/* The colours of the app stand on the main element of the page, so that the controls in the heading line, which the
+   runtime mounts apart from the root component, have them too. */
+.interactive {
+  --tc-bg: #ffffff;
+  --tc-card: #ffffff;
+  --tc-ink: #1f2430;
+  --tc-muted: #566074;
+  --tc-line: #d5d8df;
+  --tc-accent: #1d4ed8;
+  --tc-on-accent: #ffffff;
+  --tc-mark: #fde68a;
+  --tc-mark-ink: #1f2430;
+  --tc-found: #166534;
+  --tc-found-bg: #dcfce7;
+  --tc-missed: #9a3412;
+  --tc-missed-bg: #ffedd5;
+  --tc-false: #6b21a8;
+  --tc-false-bg: #f3e8ff;
+  --tc-tol: #1e3a8a;
+  --tc-tol-bg: #dbeafe;
+}
+
+@media (prefers-color-scheme: dark) {
+  .interactive {
+    --tc-bg: #14161b;
+    --tc-card: #1d2027;
+    --tc-ink: #e8eaf0;
+    --tc-muted: #a2abbd;
+    --tc-line: #343a47;
+    --tc-accent: #8ab4ff;
+    --tc-on-accent: #0b1020;
+    --tc-mark: #6b5b12;
+    --tc-mark-ink: #fff6d1;
+    --tc-found: #86efac;
+    --tc-found-bg: #12301e;
+    --tc-missed: #fdba74;
+    --tc-missed-bg: #3a2210;
+    --tc-false: #d8b4fe;
+    --tc-false-bg: #2b1a3d;
+    --tc-tol: #bfdbfe;
+    --tc-tol-bg: #1e2f5a;
+  }
+}
+
 /* The source PDF is an A4 page (about 794 px at 100 %) and needs about 700 px to read, the Variante next to it about
-   500 px, but the frame of the shell is 44 rem (704 px) wide. While the PDF stands next to the Variante, the frame is
-   80 rem (header, page and footer alike, so that they stay aligned); every other mode keeps the narrow column, where
-   lines stay short enough to read. */
-body:has(.textcheck .panels.side) :is(.interactive-header, .interactive, .interactive-footer) {
-  max-width: 80rem;
+   500 px, but the frame of the page is 44 rem (704 px) wide. While the PDF stands next to the Variante, the frame is
+   80 rem (header, page and footer alike); every other mode keeps the narrow column, where lines stay short enough to
+   read. */
+:root:has(.panels.side) {
+  --interactive-max-width: 80rem;
 }
 
 /* The shell's page is light by default; follow the system setting so the dark card never sits on a white page. */

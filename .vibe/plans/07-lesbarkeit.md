@@ -8,7 +8,7 @@ phase: commit
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 1
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
-failedChecks: { checks-pass: 13 }
+failedChecks: { checks-pass: 14 }
 ---
 
 # Increment: Bessere Bedienung und einstellbare Schrift
@@ -150,20 +150,20 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Tasks
 
-- [ ] Push the branch; open a pull request to `main`. Pre-push runs the heavy checks; fix failures. See the pull
+- [x] Push the branch; open a pull request to `main`. (Pull Request #9). Pre-push runs the heavy checks; fix failures. See the pull
       request's checks to green. GitHub step fails or refused → skill `lernapps-github`.
-- [ ] **Checkpoint:** publish. Show what the increment adds and the preview link from the comment "Vorschau der
+- [x] **Checkpoint:** publish. (Freigabe durch den Ersteller; er hat #9 gemergt). Show what the increment adds and the preview link from the comment "Vorschau der
       App"; ask whether it may go online. Wait for the yes.
-- [ ] Merge the pull request into `main` (no pull request: merge the branch, push `main`). Watch the `Pages` run of
+- [x] Merge the pull request into `main` (vom Ersteller gemergt). (no pull request: merge the branch, push `main`). Watch the `Pages` run of
       that commit. Fails → read the failed step, fix, push.
 - [ ] Open the address the job `deploy` printed ("published at ...", run summary); confirm the new content. Never
       a derived address; follow redirects.
-- [ ] App listed and the entry changes (topics, school years, summary) → load skill `lernapps-listing`, write the
+- [x] App listed and the entry changes (entfällt: der Eintrag ändert sich nicht). (topics, school years, summary) → load skill `lernapps-listing`, write the
       changed entry. Else skip the next task.
-- [ ] **Checkpoint:** list. Ask before opening the pull request to the catalog; wait for the yes.
-- [ ] Fill the retrospective.
+- [x] **Checkpoint:** list. (entfällt). Ask before opening the pull request to the catalog; wait for the yes.
+- [x] Fill the retrospective.
 - [ ] Commit this plan on `main` and push it. A push of only `.vibe/` publishes nothing.
-- [ ] Catalog pull request opened → see it to "bestanden" as the skill says.
+- [x] Catalog pull request opened (entfällt). → see it to "bestanden" as the skill says.
 - [ ] Plan changed since its last push → commit on `main`, push again.
 
 ### Completed
@@ -174,12 +174,16 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Phases reached
 
-<!-- Last phase completed, checkpoints passed. E.g. "commit; confirmed, published". -->
+commit; Plan bestätigt, Veröffentlichen vom Ersteller freigegeben (Pull Request #9 gemergt).
 
 ### Creator turns after the plan
 
-<!-- Number of creator messages after the confirmation, topic of each. Target: max 3. -->
+Rund 20 Nachrichten nach der Bestätigung, über sechs Themen: PDF-Ansicht (Breite des Rahmens, kein Umschalter, nebeneinander ab 1300 px), neue Runde beim Wechsel von Stufe oder Modus mit Rückfrage, Seed in der Adresse (nur von dort, Verlauf), Schrift-Einstellungen (Knopf in der Titelzeile, Name „Schrift“), die doppelte Überschrift und das Tooling-Issue, Hinweis zur Umformulierung. Ziel war höchstens 3; die meisten waren Wünsche, die beim Ansehen der Bilder entstanden.
 
 ### Where I had to guess
 
-<!-- Each gap in plan, skills, content guide, messages or answers, and your choice. "None" if none. -->
+- Einstellbare Schrift: Auswahl der Stile (Normal, Rund, Festbreite) und die Grenzen der Regler (Gewicht 300–900, Größe 0,9–1,8 rem, Zeilenabstand 1,6–2,8); die Schriftdatei hat Latein mit den Achsen Gewicht, Casual und Mono (163 kB).
+- PDF: Der Rahmen des Tooling war mit 44 rem zu schmal; ich überschrieb ihn zuerst mit CSS (56 rem als Blatt), dann auf Wunsch nebeneinander ab 1300 px mit 80 rem Rahmen und sonst nur der Knopf über der Variante.
+- Neue Runde beim Wechsel: die Aktion `round` ersetzt `reseed`; ohne gültigen Seed in der Adresse rechnet die Seite einen aus. Zurück und Vor führen von Runde zu Runde; dabei gehen Markierungen ohne Rückfrage verloren.
+- Der Plan hieß zuerst 06; auf `main` kam parallel ein Plan 06, also wurde er 07.
+- Die Rückfrage-Dialoge und der Knopf „Schrift“ waren zuerst anders gedacht (eingeklappter Bereich, Teleport); der Ersteller wählte den kleinen Knopf oben.

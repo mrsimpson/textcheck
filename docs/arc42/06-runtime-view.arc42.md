@@ -1,6 +1,6 @@
 # Runtime View
 
-<!-- From @lernapps/app-templates f28d020 (the generic part and the interactive extension): lernapps update replaces this file except the app sections, between <!-- app: begin … --> and <!-- app: end … -->, which hold the app's own architecture. -->
+<!-- From @lernapps/app-templates 5df0763 (the generic part and the interactive extension): lernapps update replaces this file except the app sections, between <!-- app: begin … --> and <!-- app: end … -->, which hold the app's own architecture. -->
 
 Six scenarios every app shares: opening its pages, learning in the browser, an error path of the device storage,
 the assistant working with the skills, building with the checks, and the end-to-end tests before a push and in CI. Each extension adds its archetype's own
@@ -176,7 +176,7 @@ action `language`, on the first state and again after every route change; the co
 seed and route, with a pack of that language. The source PDFs lie at the site root, so the link from `/en/app/` goes
 two levels up.
 
-The learner can open "Schrift und Lesen" at any time and change the style of the font, its weight, the size and the line
+The learner can press the button "Schrift" in the heading line at any time, which opens the dialog "Schrift und Lesen", and change the style of the font, its weight, the size and the line
 spacing; the texts change at once, and the settings are kept on the device (through the storage of the tooling, under
 the app's own prefix) for the next visit.
 
@@ -190,7 +190,7 @@ texts. When every error is found, the result shows fireworks without a hint and 
 id: scenario-textcheck-round
 title: Playing a round of Textcheck
 trigger: The learner opens a route, marks words, checks, and asks for the next round
-involves: bb-shell, bb-tooling, bb-textcheck-root, bb-textcheck-wordlist, bb-textcheck-choose, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-reading-settings, bb-textcheck-reading, bb-textcheck-hint-button, bb-textcheck-hint-note, bb-textcheck-hints, bb-textcheck-state, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-packs, bb-textcheck-tables
+involves: bb-shell, bb-tooling, bb-textcheck-root, bb-textcheck-wordlist, bb-textcheck-choose, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-controls, bb-textcheck-reading, bb-textcheck-hint-button, bb-textcheck-hint-note, bb-textcheck-hints, bb-textcheck-state, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-packs, bb-textcheck-tables
 :::
 ```
 
