@@ -20,6 +20,14 @@
   },
   "excerpt": [
     {
+      "text": "Der Treibhauseffekt ist die Wirkung von Treibhausgasen, die in der Atmosphäre eines Planeten die Ausbreitung der Wärmestrahlung behindern und so eine höhere Temperatur auf der Planetenoberfläche bewirken.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Der Treibhauseffekt ist ein zunächst natürliches Phänomen; jedoch wird die Atmosphäre der Erde durch menschliche Aktivitäten mit zusätzlichen Treibhausgasen angereichert, die den Treibhauseffekt verstärken und zur globalen Erwärmung führen.",
+      "section": "Einleitung"
+    },
+    {
       "text": "Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt, verbunden mit der Annahme, dass die Erdatmosphäre isolierende Eigenschaften besitzt, die einen Teil der einfallenden Wärmestrahlung daran hindert, in den Weltraum reflektiert zu werden.",
       "section": "Geschichtliches – Entdeckung"
     },
@@ -32,7 +40,7 @@
       "section": "Geschichtliches – Entdeckung"
     },
     {
-      "text": "Foote schloss aus ihren Daten: „Wenn, wie manche annehmen, irgendwann in der Geschichte der Erde der Luft ein größerer Anteil davon [von Kohlendioxid] beigemischt war als heute, dann hätte sich daraus zwangsläufig eine erhöhte Temperatur ergeben müssen.",
+      "text": "Foote schloss aus ihren Daten: „Wenn, wie manche annehmen, irgendwann in der Geschichte der Erde der Luft ein größerer Anteil davon [von Kohlendioxid] beigemischt war als heute, dann hätte sich daraus zwangsläufig eine erhöhte Temperatur ergeben müssen.“",
       "section": "Geschichtliches – Entdeckung"
     },
     {
@@ -52,15 +60,7 @@
       "section": "Geschichtliches – Entdeckung"
     },
     {
-      "text": "Neben einem weltweiten Stationsnetz sind mehrere Erdbeobachtungssatelliten in Betrieb oder in Planung, deren Aufgabe unter anderem darin besteht, Daten zu Treibhausgas-Konzentrationen, Strahlungshaushalt oder Wolkenbildung beziehungsweise Aerosolverteilung zu sammeln.",
-      "section": "Geschichtliches – Entdeckung"
-    },
-    {
       "text": "Seit Beginn des Industriezeitalters wurden durch menschliche Aktivitäten zusätzliche Treibhausgas-Anteile in der Atmosphäre freigesetzt, hauptsächlich durch Verbrennung von fossilen Brennstoffen (Kohle, Erdöl und Erdgas), aber auch durch die Freisetzung in industriellen Prozessen und der Landwirtschaft.",
-      "section": "Geschichtliches – Historischer Verlauf"
-    },
-    {
-      "text": "Die Strahlungsantriebe stammen dabei, der Größe nach geordnet, von den Treibhausgasen: Kohlenstoffdioxid, Methan, Lachgas sowie die indirekt bewirkte Entstehung von troposphärischem Ozon.",
       "section": "Geschichtliches – Historischer Verlauf"
     },
     {
@@ -69,6 +69,48 @@
     }
   ],
   "rendition": [
+    {
+      "sentence": ["Der Treibhauseffekt ist die Wirkung von Treibhausgasen in der Atmosphäre eines Planeten."],
+      "evidence": {
+        "quote": "Der Treibhauseffekt ist die Wirkung von Treibhausgasen, die in der Atmosphäre eines Planeten die Ausbreitung der Wärmestrahlung behindern und so eine höhere Temperatur auf der Planetenoberfläche bewirken."
+      }
+    },
+    {
+      "sentence": [
+        "Diese Gase behindern die Ausbreitung der Wärmestrahlung und sorgen so für eine ",
+        {
+          "slot": "t1"
+        },
+        " Temperatur auf der Planetenoberfläche."
+      ],
+      "evidence": {
+        "quote": "Der Treibhauseffekt ist die Wirkung von Treibhausgasen, die in der Atmosphäre eines Planeten die Ausbreitung der Wärmestrahlung behindern und so eine höhere Temperatur auf der Planetenoberfläche bewirken."
+      }
+    },
+    {
+      "sentence": [
+        "Der Treibhauseffekt ist zunächst ein ",
+        {
+          "slot": "t2"
+        },
+        " Phänomen."
+      ],
+      "evidence": {
+        "quote": "Der Treibhauseffekt ist ein zunächst natürliches Phänomen; jedoch wird die Atmosphäre der Erde durch menschliche Aktivitäten mit zusätzlichen Treibhausgasen angereichert, die den Treibhauseffekt verstärken und zur globalen Erwärmung führen."
+      }
+    },
+    {
+      "sentence": [
+        "Durch menschliche Aktivitäten kommen aber zusätzliche Treibhausgase in die Atmosphäre, die den Effekt ",
+        {
+          "slot": "t3"
+        },
+        " und zur globalen Erwärmung führen."
+      ],
+      "evidence": {
+        "quote": "Der Treibhauseffekt ist ein zunächst natürliches Phänomen; jedoch wird die Atmosphäre der Erde durch menschliche Aktivitäten mit zusätzlichen Treibhausgasen angereichert, die den Treibhauseffekt verstärken und zur globalen Erwärmung führen."
+      }
+    },
     {
       "sentence": [
         "Der französische Mathematiker und Physiker Joseph ",
@@ -285,18 +327,6 @@
     },
     {
       "sentence": [
-        "Außerdem sammeln mehrere Erdbeobachtungssatelliten Daten zu ",
-        {
-          "slot": "s19"
-        },
-        ", Strahlungshaushalt, Wolkenbildung und Aerosolverteilung."
-      ],
-      "evidence": {
-        "quote": "Neben einem weltweiten Stationsnetz sind mehrere Erdbeobachtungssatelliten in Betrieb oder in Planung, deren Aufgabe unter anderem darin besteht, Daten zu Treibhausgas-Konzentrationen, Strahlungshaushalt oder Wolkenbildung beziehungsweise Aerosolverteilung zu sammeln."
-      }
-    },
-    {
-      "sentence": [
         "Seit Beginn des ",
         {
           "slot": "s20"
@@ -329,18 +359,6 @@
           "slot": "i6"
         }
       ]
-    },
-    {
-      "sentence": [
-        "Geordnet nach ihrer Wirkung sind es Kohlenstoffdioxid, ",
-        {
-          "slot": "s23"
-        },
-        " und das indirekt entstehende troposphärische Ozon."
-      ],
-      "evidence": {
-        "quote": "Die Strahlungsantriebe stammen dabei, der Größe nach geordnet, von den Treibhausgasen: Kohlenstoffdioxid, Methan, Lachgas sowie die indirekt bewirkte Entstehung von troposphärischem Ozon."
-      }
     },
     {
       "sentence": [
@@ -831,19 +849,6 @@
         }
       ]
     },
-    "s19": {
-      "correct": "Treibhausgas-Konzentrationen",
-      "variants": [
-        {
-          "text": "Meeresströmungen",
-          "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Daten zu Treibhausgas-Konzentrationen, Strahlungshaushalt oder Wolkenbildung beziehungsweise Aerosolverteilung zu sammeln“. Von Meeresströmungen steht dort nichts.",
-          "evidence": "Neben einem weltweiten Stationsnetz sind mehrere Erdbeobachtungssatelliten in Betrieb oder in Planung, deren Aufgabe unter anderem darin besteht, Daten zu Treibhausgas-Konzentrationen, Strahlungshaushalt oder Wolkenbildung beziehungsweise Aerosolverteilung zu sammeln."
-        }
-      ]
-    },
     "s20": {
       "correct": "Industriezeitalters",
       "variants": [
@@ -910,19 +915,6 @@
         }
       ]
     },
-    "s23": {
-      "correct": "Methan, Lachgas",
-      "variants": [
-        {
-          "text": "Lachgas, Methan",
-          "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 3,
-          "explanation": "Im Original steht: „der Größe nach geordnet, von den Treibhausgasen: Kohlenstoffdioxid, Methan, Lachgas“. Die Reihenfolge wurde vertauscht: Methan steht vor Lachgas.",
-          "evidence": "Die Strahlungsantriebe stammen dabei, der Größe nach geordnet, von den Treibhausgasen: Kohlenstoffdioxid, Methan, Lachgas sowie die indirekt bewirkte Entstehung von troposphärischem Ozon."
-        }
-      ]
-    },
     "s25": {
       "correct": "verursachen",
       "variants": [
@@ -974,6 +966,52 @@
           "evidence": "Diese anthropogenen Treibhausgase sind der Grund für die seit Beginn des Industriezeitalters auftretende und im bisherigen 21. Jahrhundert weiter zunehmende globale Erwärmung."
         }
       ]
+    },
+    "t1": {
+      "correct": "höhere",
+      "variants": [
+        {
+          "text": "niedrigere",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „so eine höhere Temperatur auf der Planetenoberfläche bewirken“. Treibhausgase machen es wärmer, nicht kälter.",
+          "evidence": "Der Treibhauseffekt ist die Wirkung von Treibhausgasen, die in der Atmosphäre eines Planeten die Ausbreitung der Wärmestrahlung behindern und so eine höhere Temperatur auf der Planetenoberfläche bewirken."
+        }
+      ]
+    },
+    "t2": {
+      "correct": "natürliches",
+      "variants": [
+        {
+          "text": "künstliches",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „ein zunächst natürliches Phänomen“. Der Treibhauseffekt ist von Natur aus da. Der Mensch verstärkt ihn nur.",
+          "evidence": "Der Treibhauseffekt ist ein zunächst natürliches Phänomen; jedoch wird die Atmosphäre der Erde durch menschliche Aktivitäten mit zusätzlichen Treibhausgasen angereichert, die den Treibhauseffekt verstärken und zur globalen Erwärmung führen."
+        }
+      ]
+    },
+    "t3": {
+      "correct": "verstärken",
+      "variants": [
+        {
+          "text": "abschwächen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „die den Treibhauseffekt verstärken und zur globalen Erwärmung führen“. Zusätzliche Treibhausgase verstärken den Effekt, sie schwächen ihn nicht ab.",
+          "evidence": "Der Treibhauseffekt ist ein zunächst natürliches Phänomen; jedoch wird die Atmosphäre der Erde durch menschliche Aktivitäten mit zusätzlichen Treibhausgasen angereichert, die den Treibhauseffekt verstärken und zur globalen Erwärmung führen."
+        },
+        {
+          "text": "verstärkn",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "In diesem Wort fehlt ein Buchstabe: verstärken."
+        }
+      ]
     }
   },
   "notes": [
@@ -984,6 +1022,7 @@
     "Der Auszug stammt aus dem Abschnitt „Geschichtliches“ und dem Anfang von „Historischer Verlauf“ (zwei Absätze und ein Teil des dritten, zusammenhängend). Die physikalischen Abschnitte des Artikels sind für diese Stufe nicht gewählt.",
     "Der eingefügte Satz „Foote durfte ihre Ergebnisse selbst bei der American Association vortragen.“ widerspricht dem richtigen Satz „Als Frau durfte Foote ihre Ergebnisse nicht selbst … vortragen“.",
     "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt; die Zahlen und Namen folgen dem Artikel, nicht anderen Quellen. Die falschen Varianten sind absichtlich verändert und stehen nicht in der Quelle.",
-    "Die Quelle liegt als PDF unter public/quellen/de/treibhauseffekt.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+    "Die Quelle liegt als PDF unter public/quellen/de/treibhauseffekt.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
+    "Überarbeitung Klasse 9–10: Der Auszug beginnt jetzt mit dem ersten Satz der Einleitung des Artikels (was der Treibhauseffekt ist) und dem Einleitungssatz zum natürlichen und vom Menschen verstärkten Effekt; die Sätze über die Erdbeobachtungssatelliten und über die Strahlungsantriebe (Fachbegriff) sind entfallen (zwölf Sätze). Bei dem Foote-Zitat ist jetzt das schließende Anführungszeichen des Artikels im Auszug. Jahre, Namen und Zahlen der Auszugssätze mit dem Artikel im PDF abgeglichen. Die Stellen der entfallenen Sätze sind entfallen, drei Stellen zur Einleitung sind neu."
   ]
 }

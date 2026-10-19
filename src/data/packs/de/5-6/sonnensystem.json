@@ -110,7 +110,7 @@
         {
           "slot": "s4b"
         },
-        "."
+        " des Sonnensystems."
       ],
       "evidence": {
         "quote": "Die Sonne befindet sich in der Mitte."
@@ -557,6 +557,7 @@
     "Die Falschschreibungen sind nach den Mustern der IQB-Handreichung und der AFRA-Kategorien (Ableitung, Dehnung, Konsonantverdopplung, Auslautverhärtung, Groß-/Kleinschreibung) konstruiert, nicht von Lernenden gesammelt.",
     "Weggelassen wurden die Sätze über andere Sternsysteme, Zwergplaneten, Meteoriten und Kometen sowie die Bildunterschriften, weil sie für diesen Auszug nicht gebraucht werden. Der Satz „Das sind 4.500.000.000 Jahre.“ wurde ausgelassen.",
     "Nicht geprüft: ob der Artikeltext des Klexikons fachlich vollständig stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Sachlage in der Welt.",
-    "Die Quelle liegt als PDF unter public/quellen/de/sonnensystem.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+    "Die Quelle liegt als PDF unter public/quellen/de/sonnensystem.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
+    "Durchsicht Überschrift/Einleitung: Auszug beginnt schon mit dem ersten Satz des Artikels (davor steht nur eine Bildunterschrift), unverändert. Variante: „in der Mitte“ ergänzt um „des Sonnensystems“, damit der Satz ohne den Vorsatz verständlich ist."
   ]
 }

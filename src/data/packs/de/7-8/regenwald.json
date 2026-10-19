@@ -6,7 +6,7 @@
     "from": 7,
     "to": 8
   },
-  "topic": "Tropischer Regenwald: Tageslauf, Regen und Temperatur",
+  "topic": "Tropischer Regenwald: Lage, Tageslauf und Regen",
   "source": {
     "title": "Tropischer Regenwald – Wikipedia",
     "url": "https://de.wikipedia.org/w/index.php?title=Tropischer_Regenwald&oldid=267803170",
@@ -20,19 +20,25 @@
   },
   "excerpt": [
     {
+      "text": "Tropischer Regenwald ist der Oberbegriff für die immerfeuchten Wälder der tropischen Klimazone."
+    },
+    {
+      "text": "Dieser Waldtyp liegt am Äquator, großflächig bis ungefähr zum 10. Breitengrad, regional auch deutlich darüber hinaus."
+    },
+    {
       "text": "Aufgrund der Nähe zum Äquator bleibt die Tageslänge im Jahreslauf weitgehend konstant."
     },
     {
       "text": "Die Sonne steht täglich etwa zwölf Stunden am Himmel, wobei die Dämmerung nicht einmal eine halbe Stunde dauert."
     },
     {
-      "text": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen durch ihre Transpiration abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen."
+      "text": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen."
     },
     {
       "text": "Nachmittags oder abends regnen diese Wolken in der Regel aus, häufig in Verbindung mit einem Gewitter."
     },
     {
-      "text": "Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht."
+      "text": "Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht."
     },
     {
       "text": "Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder."
@@ -45,22 +51,40 @@
     },
     {
       "text": "An der Luv-Seite tropischer Berghänge können die Niederschläge sogar auf Jahreswerte zwischen 6.000 mm und 12.000 mm (am hawaiianischen Waiʻaleʻale) ansteigen."
-    },
-    {
-      "text": "Insbesondere dort, wo feuchte Passatwinde das ganze Jahr über aus der gleichen Richtung wehen, fällt auch der Steigungsregen stets auf der gleichen Bergseite (Somit ergeben sich an den Bergkämmen sehr ausgeprägte Wetterscheiden)."
-    },
-    {
-      "text": "Der Wechsel vom Tiefland- zum Bergregenwald ist fließend und in den meisten Fällen nicht eindeutig festlegbar."
     }
   ],
   "rendition": [
     {
       "sentence": [
-        "Der Regenwald liegt ",
+        "Der tropische Regenwald ist der Oberbegriff für die ",
         {
-          "slot": "s1"
+          "slot": "n1"
         },
-        ", darum bleibt die Tageslänge im Lauf des Jahres fast gleich."
+        " Wälder der tropischen Klimazone."
+      ],
+      "evidence": {
+        "quote": "Tropischer Regenwald ist der Oberbegriff für die immerfeuchten Wälder der tropischen Klimazone."
+      }
+    },
+    {
+      "sentence": [
+        "Dieser Waldtyp liegt am Äquator, großflächig bis ungefähr zum ",
+        {
+          "slot": "n2"
+        },
+        ", regional auch deutlich darüber hinaus."
+      ],
+      "evidence": {
+        "quote": "Dieser Waldtyp liegt am Äquator, großflächig bis ungefähr zum 10. Breitengrad, regional auch deutlich darüber hinaus."
+      }
+    },
+    {
+      "sentence": [
+        "Weil der Regenwald so nah am Äquator liegt, bleibt die Tageslänge im Lauf des Jahres ",
+        {
+          "slot": "n3"
+        },
+        "."
       ],
       "evidence": {
         "quote": "Aufgrund der Nähe zum Äquator bleibt die Tageslänge im Jahreslauf weitgehend konstant."
@@ -94,7 +118,7 @@
         " Vormittag erwärmen sich Luft und Boden rasch, und feucht-warme Luft steigt nach oben."
       ],
       "evidence": {
-        "quote": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen durch ihre Transpiration abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen."
+        "quote": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen."
       }
     },
     {
@@ -106,7 +130,7 @@
         " Wolken zusammen."
       ],
       "evidence": {
-        "quote": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen durch ihre Transpiration abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen."
+        "quote": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen."
       }
     },
     {
@@ -146,10 +170,10 @@
         {
           "slot": "s6"
         },
-        " des Jahres ein humides Klima."
+        " des Jahres ein feuchtes (humides) Klima."
       ],
       "evidence": {
-        "quote": "führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht"
+        "quote": "führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht"
       }
     },
     {
@@ -235,65 +259,9 @@
           "slot": "i5"
         }
       ]
-    },
-    {
-      "sentence": [
-        "Wo feuchte Passatwinde ",
-        {
-          "slot": "s14"
-        },
-        " aus der gleichen Richtung wehen, fällt der Steigungsregen immer auf der gleichen Bergseite."
-      ],
-      "evidence": {
-        "quote": "Insbesondere dort, wo feuchte Passatwinde das ganze Jahr über aus der gleichen Richtung wehen, fällt auch der Steigungsregen stets auf der gleichen Bergseite"
-      }
-    },
-    {
-      "sentence": [
-        "So ergeben sich an den Bergkämmen ",
-        {
-          "slot": "s15"
-        },
-        " Wetterscheiden."
-      ],
-      "evidence": {
-        "quote": "Somit ergeben sich an den Bergkämmen sehr ausgeprägte Wetterscheiden"
-      }
-    },
-    {
-      "sentence": [
-        "Der Wechsel vom Tiefland- zum Bergregenwald ist ",
-        {
-          "slot": "s16"
-        },
-        ", und man kann ihn meist nicht eindeutig festlegen."
-      ],
-      "evidence": {
-        "quote": "Der Wechsel vom Tiefland- zum Bergregenwald ist fließend und in den meisten Fällen nicht eindeutig festlegbar."
-      }
     }
   ],
   "slots": {
-    "s1": {
-      "correct": "nahe am Äquator",
-      "variants": [
-        {
-          "text": "weit weg vom Äquator",
-          "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Aufgrund der Nähe zum Äquator bleibt die Tageslänge im Jahreslauf weitgehend konstant.“ Der Regenwald liegt nahe am Äquator, nicht weit davon entfernt.",
-          "evidence": "Aufgrund der Nähe zum Äquator bleibt die Tageslänge im Jahreslauf weitgehend konstant."
-        },
-        {
-          "text": "nahe am Äquatro",
-          "errorClass": "slip",
-          "basis": "text",
-          "conspicuousness": 2,
-          "explanation": "Hier sind zwei Buchstaben vertauscht: „Äquatro“ statt „Äquator“. Das ist ein Flüchtigkeitsfehler."
-        }
-      ]
-    },
     "s2": {
       "correct": "zwölf Stunden",
       "variants": [
@@ -443,16 +411,16 @@
           "errorClass": "number_name_date",
           "basis": "comparison",
           "conspicuousness": 2,
-          "explanation": "Im Original steht: „führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht“. Es sind mindestens zehn Monate, nicht zwei.",
-          "evidence": "führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht"
+          "explanation": "Im Original steht: „führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht“. Es sind mindestens zehn Monate, nicht zwei.",
+          "evidence": "führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht"
         },
         {
           "text": "zwölf Monaten",
           "errorClass": "number_name_date",
           "basis": "comparison",
           "conspicuousness": 3,
-          "explanation": "Im Original steht: „führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht“. Es sind mindestens zehn Monate, nicht zwölf.",
-          "evidence": "führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht"
+          "explanation": "Im Original steht: „führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht“. Es sind mindestens zehn Monate, nicht zwölf.",
+          "evidence": "führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht"
         }
       ]
     },
@@ -464,8 +432,8 @@
           "errorClass": "connective_negation",
           "basis": "text",
           "conspicuousness": 2,
-          "explanation": "Im Original steht: „Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht. Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder.“ Das Verdunsten ist kein Grund für den vielen Regen, sondern ein Gegensatz dazu. „Gleichwohl“ zeigt das, „deshalb“ nicht.",
-          "evidence": "Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht. Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder."
+          "explanation": "Im Original steht: „Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht. Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder.“ Das Verdunsten ist kein Grund für den vielen Regen, sondern ein Gegensatz dazu. „Gleichwohl“ zeigt das, „deshalb“ nicht.",
+          "evidence": "Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht. Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder."
         },
         {
           "text": "Gleichwol",
@@ -637,65 +605,65 @@
         }
       ]
     },
-    "s14": {
-      "correct": "das ganze Jahr über",
+    "n1": {
+      "correct": "immerfeuchten",
       "variants": [
         {
-          "text": "nur im Sommer",
+          "text": "immertrockenen",
           "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Insbesondere dort, wo feuchte Passatwinde das ganze Jahr über aus der gleichen Richtung wehen“. Die Passatwinde wehen das ganze Jahr über aus der gleichen Richtung, nicht nur im Sommer.",
-          "evidence": "Insbesondere dort, wo feuchte Passatwinde das ganze Jahr über aus der gleichen Richtung wehen, fällt auch der Steigungsregen stets auf der gleichen Bergseite"
-        },
-        {
-          "text": "ab und zu",
-          "errorClass": "quantity_degree",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Insbesondere dort, wo feuchte Passatwinde das ganze Jahr über aus der gleichen Richtung wehen“. Die Winde wehen das ganze Jahr über, nicht nur ab und zu.",
-          "evidence": "Insbesondere dort, wo feuchte Passatwinde das ganze Jahr über aus der gleichen Richtung wehen, fällt auch der Steigungsregen stets auf der gleichen Bergseite"
-        }
-      ]
-    },
-    "s15": {
-      "correct": "sehr ausgeprägte",
-      "variants": [
-        {
-          "text": "kaum erkennbare",
-          "errorClass": "quantity_degree",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Somit ergeben sich an den Bergkämmen sehr ausgeprägte Wetterscheiden“. Die Wetterscheiden sind sehr ausgeprägt, nicht kaum erkennbar.",
-          "evidence": "Somit ergeben sich an den Bergkämmen sehr ausgeprägte Wetterscheiden"
-        },
-        {
-          "text": "völlig unbedeutende",
-          "errorClass": "quantity_degree",
           "basis": "comparison",
           "conspicuousness": 1,
-          "explanation": "Im Original steht: „Somit ergeben sich an den Bergkämmen sehr ausgeprägte Wetterscheiden“. Sie sind sehr ausgeprägt. „Völlig unbedeutend“ ist das Gegenteil.",
-          "evidence": "Somit ergeben sich an den Bergkämmen sehr ausgeprägte Wetterscheiden"
+          "explanation": "Im Original steht: „Tropischer Regenwald ist der Oberbegriff für die immerfeuchten Wälder der tropischen Klimazone.“ Es geht um immerfeuchte Wälder, nicht um trockene.",
+          "evidence": "Tropischer Regenwald ist der Oberbegriff für die immerfeuchten Wälder der tropischen Klimazone."
+        },
+        {
+          "text": "imerfeuchten",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort besteht aus „immer“ und „feucht“. Nach dem kurzen „i“ steht „mm“: immerfeuchten."
         }
       ]
     },
-    "s16": {
-      "correct": "fließend",
+    "n2": {
+      "correct": "10. Breitengrad",
       "variants": [
         {
-          "text": "plötzlich",
-          "errorClass": "factual_error",
+          "text": "30. Breitengrad",
+          "errorClass": "number_name_date",
           "basis": "comparison",
           "conspicuousness": 2,
-          "explanation": "Im Original steht: „Der Wechsel vom Tiefland- zum Bergregenwald ist fließend und in den meisten Fällen nicht eindeutig festlegbar.“ Der Wechsel ist fließend, nicht plötzlich. Darum lässt er sich nicht eindeutig festlegen.",
-          "evidence": "Der Wechsel vom Tiefland- zum Bergregenwald ist fließend und in den meisten Fällen nicht eindeutig festlegbar."
+          "explanation": "Im Original steht: „… großflächig bis ungefähr zum 10. Breitengrad, regional auch deutlich darüber hinaus.“ Die Zahl ist 10, nicht 30.",
+          "evidence": "Dieser Waldtyp liegt am Äquator, großflächig bis ungefähr zum 10. Breitengrad, regional auch deutlich darüber hinaus."
         },
         {
-          "text": "fliessend",
-          "errorClass": "spelling_rule",
-          "basis": "text",
-          "conspicuousness": 3,
-          "explanation": "Das Wort hat ein langes „ie“. Nach einem langen Vokal oder Doppellaut schreibt man oft „ß“: fließend."
+          "text": "100. Breitengrad",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „… großflächig bis ungefähr zum 10. Breitengrad …“. Einen 100. Breitengrad gibt es nicht, die Zahl ist 10.",
+          "evidence": "Dieser Waldtyp liegt am Äquator, großflächig bis ungefähr zum 10. Breitengrad, regional auch deutlich darüber hinaus."
+        }
+      ]
+    },
+    "n3": {
+      "correct": "fast gleich",
+      "variants": [
+        {
+          "text": "stark verschieden",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Aufgrund der Nähe zum Äquator bleibt die Tageslänge im Jahreslauf weitgehend konstant.“ Die Tageslänge bleibt fast gleich, sie ist nicht stark verschieden.",
+          "evidence": "Aufgrund der Nähe zum Äquator bleibt die Tageslänge im Jahreslauf weitgehend konstant."
+        },
+        {
+          "text": "genau gleich",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „… bleibt die Tageslänge im Jahreslauf weitgehend konstant.“ „Weitgehend“ heißt fast gleich, nicht genau gleich.",
+          "evidence": "Aufgrund der Nähe zum Äquator bleibt die Tageslänge im Jahreslauf weitgehend konstant."
         }
       ]
     }
@@ -704,6 +672,8 @@
     "Quelle gelesen: Wikipedia-Artikel Tropischer Regenwald, Revision 267803170 (abgerufen am 18.10.2026, Abschnitt „Klimatische Bedingungen“); die elf Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
     "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite, Link auf die Lizenz); die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Fehlerarten: Die Falschschreibungen sind konstruiert (Konsonantenverdopplung, Dehnung, nach den Schwerpunkten der IQB-Handreichung); die Klassen ab Klasse 7 (Menge/Grad, Verallgemeinerung, falsche Folgerung, Meinung als Tatsache) sind abgeleitet, nicht belegt. Die eingefügten Sätze sind erfunden und stehen so nicht in der Quelle.",
-    "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft."
+    "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft.",
+    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit den ersten beiden Sätzen des Artikels (vorher mit der Tageslänge). Gestrichen: die Sätze zu Passatwinden und zum Wechsel vom Tiefland- zum Bergregenwald samt Stellen. Die Stelle „nahe am Äquator“ ist durch die Einleitung ersetzt. Neu: drei Stellen am Anfang der Variante.",
+    "Auszug leicht vereinfacht auf Wunsch des Erstellers: „durch ihre Transpiration“ gestrichen, „humides“ mit „(feuchtes)“ erklärt. Die Auszugssätze stehen dort nicht mehr überall wörtlich im Artikel (erste Notiz gilt für diese Stellen nicht mehr); der Satzanfang ist unverändert."
   ]
 }

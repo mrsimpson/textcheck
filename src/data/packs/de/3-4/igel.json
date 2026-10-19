@@ -20,6 +20,12 @@
   },
   "excerpt": [
     {
+      "text": "Igel sind kleine Säugetiere."
+    },
+    {
+      "text": "Es gibt 25 Arten, die in Europa, Asien und Afrika leben."
+    },
+    {
       "text": "Igel schlafen am Tag unter Laub und Ästen.",
       "section": "Wie leben unsere Igel und was fressen sie?"
     },
@@ -46,13 +52,37 @@
     {
       "text": "Bei der Geburt sind sie taub und blind und haben ganz weiche Stacheln.",
       "section": "Wie vermehren sich Igel?"
-    },
-    {
-      "text": "Sechs Wochen lang trinken sie Milch bei ihrer Mutter.",
-      "section": "Wie vermehren sich Igel?"
     }
   ],
   "rendition": [
+    {
+      "sentence": [
+        "Igel sind kleine ",
+        {
+          "slot": "n1"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Igel sind kleine Säugetiere."
+      }
+    },
+    {
+      "sentence": [
+        "Es gibt ",
+        {
+          "slot": "n2"
+        },
+        " Arten von Igeln, die in Europa, Asien und ",
+        {
+          "slot": "n3"
+        },
+        " leben."
+      ],
+      "evidence": {
+        "quote": "Es gibt 25 Arten, die in Europa, Asien und Afrika leben."
+      }
+    },
     {
       "sentence": [
         "Igel schlafen am Tag unter Laub und ",
@@ -143,21 +173,6 @@
       ],
       "evidence": {
         "quote": "Bei der Geburt sind sie taub und blind und haben ganz weiche Stacheln."
-      }
-    },
-    {
-      "sentence": [
-        {
-          "slot": "s9"
-        },
-        " Wochen lang trinken die Kleinen Milch bei ihrer ",
-        {
-          "slot": "s9b"
-        },
-        "."
-      ],
-      "evidence": {
-        "quote": "Sechs Wochen lang trinken sie Milch bei ihrer Mutter."
       }
     }
   ],
@@ -282,36 +297,65 @@
         }
       ]
     },
-    "s9": {
-      "correct": "Sechs",
+    "n1": {
+      "correct": "Säugetiere",
       "variants": [
         {
-          "text": "Zehn",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Sechs Wochen lang trinken sie Milch bei ihrer Mutter.“ Es sind sechs Wochen.",
-          "evidence": "Sechs Wochen lang trinken sie Milch bei ihrer Mutter."
-        }
-      ]
-    },
-    "s9b": {
-      "correct": "Mutter",
-      "variants": [
-        {
-          "text": "Muter",
+          "text": "Seugetiere",
           "errorClass": "spelling_rule",
           "basis": "text",
           "conspicuousness": 2,
-          "explanation": "Nach dem kurzen „u“ steht „tt“: Mutter. Das Wort hat zwei „t“."
+          "explanation": "Das Wort kommt von „säugen“. Darum schreibt man es mit „äu“."
+        },
+        {
+          "text": "Säugetire",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Im Wort fehlt ein „e“: Säugetiere."
+        }
+      ]
+    },
+    "n2": {
+      "correct": "25",
+      "variants": [
+        {
+          "text": "52",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Es gibt 25 Arten, die in Europa, Asien und Afrika leben.“ Es gibt 25 Arten, nicht 52.",
+          "evidence": "Es gibt 25 Arten, die in Europa, Asien und Afrika leben."
+        },
+        {
+          "text": "250",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Es gibt 25 Arten, die in Europa, Asien und Afrika leben.“ Es sind 25 Arten, nicht 250.",
+          "evidence": "Es gibt 25 Arten, die in Europa, Asien und Afrika leben."
+        }
+      ]
+    },
+    "n3": {
+      "correct": "Afrika",
+      "variants": [
+        {
+          "text": "Amerika",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Es gibt 25 Arten, die in Europa, Asien und Afrika leben.“ Die Arten leben in Europa, Asien und Afrika, nicht in Amerika.",
+          "evidence": "Es gibt 25 Arten, die in Europa, Asien und Afrika leben."
         }
       ]
     }
   },
   "notes": [
-    "Quelle gelesen: Klexikon-Artikel Igel, Revision 161750 (abgerufen am 18.10.2026, Abschnitte „Wie leben unsere Igel und was fressen sie?“ und „Wie vermehren sich Igel?“); die acht Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Quelle gelesen: Klexikon-Artikel Igel, Revision 161750 (abgerufen am 18.10.2026, Abschnitte „Wie leben unsere Igel und was fressen sie?“ und „Wie vermehren sich Igel?“); die 9 Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
     "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de; die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Nur Klassen, die ab Klasse 3 vorkommen: Rechtschreibung (Ableitung, Doppelkonsonant, tz, ck), Flüchtigkeitsfehler, Zeichensetzung, Zahl/Ort. Die Falschschreibungen sind konstruiert, nach den Schwerpunkten der IQB-Handreichung.",
+    "Geändert (Einleitung): Der Auszug beginnt jetzt mit den ersten zwei Sätzen des Artikels; gestrichen ist der Satz zur Milch der Mutter (Ende des Abschnitts).",
     "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt.",
     "Die Quelle liegt als PDF unter public/quellen/de/igel.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
   ]

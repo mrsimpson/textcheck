@@ -166,5 +166,10 @@ competencies, and at least one pack; a playthrough for the route if its rules di
   classes from grade 7 into a pack for grades 5-6, the checker caught it.
 - Tolerance only works when the slot has neighbouring words in the same sentence; an inserted sentence has none.
 - In the mode `choose` no spelling errors: a misspelt word shows at once which text is the Variante.
+- A route plays one of several packs per level, chosen by the seed. The playthroughs (`src/playthroughs/`) pin the pack
+  `fledermaeuse` and its word ids for grades 5-6: after a pack is added or changed in that level, check them
+  (`npx lernapps check` fails otherwise).
+- Every text has a heading (`title`, shown above the Original and the Variante) and begins with the introduction of its
+  article (`check-lead.mjs`).
 - Do not show hints in the text after checking (a superscript "gefunden" disturbed reading): colour and line style in
   the text, the same colours with a legend below.

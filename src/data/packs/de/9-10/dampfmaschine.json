@@ -20,6 +20,18 @@
   },
   "excerpt": [
     {
+      "text": "Eine Dampfmaschine ist (im engeren Sinne) eine Kolben-Wärmekraftmaschine.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "In einem beheizten Dampferzeuger, der als Bestandteil der Maschine gilt, wird Wasser verdampft.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Der unter Druck gesetzte Dampf wandelt die in ihm enthaltene Wärmeenergie (auch Druckenergie) durch Verschieben eines in einem Zylinder beweglichen Kolbens in Bewegungsenergie um.",
+      "section": "Einleitung"
+    },
+    {
       "text": "Der Ingenieur Jerónimo de Ayanz y Beaumont ließ 1606 als erster eine Dampfmaschine patentieren.",
       "section": "Geschichte der Dampfmaschine – Die Anfänge"
     },
@@ -40,10 +52,6 @@
       "section": "Geschichte der Dampfmaschine – Die Anfänge"
     },
     {
-      "text": "Dieses Schiff fand nach der Ankunft jedoch ein unrühmliches Ende.",
-      "section": "Geschichte der Dampfmaschine – Die Anfänge"
-    },
-    {
       "text": "Die erste verwendbare Dampfmaschine wurde 1712 von Thomas Newcomen konstruiert und diente zur Wasserhaltung in Bergwerken.",
       "section": "Geschichte der Dampfmaschine – Die Anfänge"
     },
@@ -56,15 +64,47 @@
       "section": "Geschichte der Dampfmaschine – Die Anfänge"
     },
     {
-      "text": "Die Kraftübertragung zwischen Kolbenstange und Balancier erfolgte mittels einer Kette.",
-      "section": "Geschichte der Dampfmaschine – Die Anfänge"
-    },
-    {
       "text": "Der Wirkungsgrad dieser newcomenschen Maschine lag bei 0,5 Prozent und begrenzte ihre Anwendung auf diesen Pumpvorgang.",
       "section": "Geschichte der Dampfmaschine – Die Anfänge"
     }
   ],
   "rendition": [
+    {
+      "sentence": [
+        "Eine Dampfmaschine ist im engeren Sinne eine Wärmekraftmaschine mit einem ",
+        {
+          "slot": "d1"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Eine Dampfmaschine ist (im engeren Sinne) eine Kolben-Wärmekraftmaschine."
+      }
+    },
+    {
+      "sentence": [
+        "In einem ",
+        {
+          "slot": "d2"
+        },
+        " Dampferzeuger wird Wasser verdampft."
+      ],
+      "evidence": {
+        "quote": "In einem beheizten Dampferzeuger, der als Bestandteil der Maschine gilt, wird Wasser verdampft."
+      }
+    },
+    {
+      "sentence": [
+        "Der unter Druck gesetzte Dampf verschiebt einen Kolben in einem Zylinder und wandelt so seine ",
+        {
+          "slot": "d3"
+        },
+        " in Bewegungsenergie um."
+      ],
+      "evidence": {
+        "quote": "Der unter Druck gesetzte Dampf wandelt die in ihm enthaltene Wärmeenergie (auch Druckenergie) durch Verschieben eines in einem Zylinder beweglichen Kolbens in Bewegungsenergie um."
+      }
+    },
     {
       "sentence": [
         "Der Ingenieur Jerónimo de Ayanz y Beaumont ließ ",
@@ -207,18 +247,6 @@
     },
     {
       "sentence": [
-        "Nach der Ankunft nahm das Schiff jedoch ein ",
-        {
-          "slot": "s15"
-        },
-        " Ende."
-      ],
-      "evidence": {
-        "quote": "Dieses Schiff fand nach der Ankunft jedoch ein unrühmliches Ende."
-      }
-    },
-    {
-      "sentence": [
         "Die ",
         {
           "slot": "s16"
@@ -306,22 +334,6 @@
       ],
       "evidence": {
         "quote": "anschließend durch das Eigengewicht der anzutreibenden Pumpenstange wieder nach oben in die Ausgangsposition gezogen"
-      }
-    },
-    {
-      "sentence": [
-        "Die Kraftübertragung zwischen Kolbenstange und ",
-        {
-          "slot": "s26"
-        },
-        " erfolgte mittels einer ",
-        {
-          "slot": "s25"
-        },
-        "."
-      ],
-      "evidence": {
-        "quote": "Die Kraftübertragung zwischen Kolbenstange und Balancier erfolgte mittels einer Kette."
       }
     },
     {
@@ -530,11 +542,11 @@
           "explanation": "Das ist eine Meinung. „Die beste Erfindung“ lässt sich nicht messen. Im Original steht nur, dass Papin es erfand."
         },
         {
-          "text": "Weil das Schiff ein unrühmliches Ende fand, erfand Papin nie wieder etwas.",
+          "text": "Weil Papin das Sicherheitsventil erfand, war danach jede Explosion einer Dampfmaschine ausgeschlossen.",
           "errorClass": "faulty_inference",
           "basis": "text",
           "conspicuousness": 3,
-          "explanation": "Hier wird aus einem Ereignis eine Folge gemacht, die nicht im Text steht. Im Original geht es nur um das Ende des Schiffs. Von weiteren Erfindungen steht nichts."
+          "explanation": "Hier wird aus einer Erfindung eine Folge gemacht, die nicht im Text steht. Im Original steht nur, dass Papin das Sicherheitsventil erfand. Dass nie wieder etwas explodierte, folgt daraus nicht."
         }
       ]
     },
@@ -690,26 +702,6 @@
           "basis": "comparison",
           "conspicuousness": 1,
           "explanation": "Dieser Satz steht nicht im Original. Dort wird die Fulda nur als Fahrtstrecke des Bootes genannt."
-        }
-      ]
-    },
-    "s15": {
-      "correct": "unrühmliches",
-      "variants": [
-        {
-          "text": "glorreiches",
-          "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 1,
-          "explanation": "Im Original steht: „Dieses Schiff fand nach der Ankunft jedoch ein unrühmliches Ende.“ Das Ende war unrühmlich, nicht glorreich.",
-          "evidence": "Dieses Schiff fand nach der Ankunft jedoch ein unrühmliches Ende."
-        },
-        {
-          "text": "unrümliches",
-          "errorClass": "spelling_rule",
-          "basis": "text",
-          "conspicuousness": 3,
-          "explanation": "Das Wort kommt von „Ruhm“. Darum schreibt man ein „h“: unrühmliches."
         }
       ]
     },
@@ -872,47 +864,6 @@
         }
       ]
     },
-    "s26": {
-      "correct": "Balancier",
-      "variants": [
-        {
-          "text": "Schwungrad",
-          "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 3,
-          "explanation": "Im Original steht: „zwischen Kolbenstange und Balancier“. Ein Schwungrad wird in diesem Abschnitt nicht genannt.",
-          "evidence": "Die Kraftübertragung zwischen Kolbenstange und Balancier erfolgte mittels einer Kette."
-        },
-        {
-          "text": "Ballancier",
-          "errorClass": "spelling_rule",
-          "basis": "text",
-          "conspicuousness": 2,
-          "explanation": "Das Wort „Balancier“ schreibt man mit einem „l“."
-        }
-      ]
-    },
-    "s25": {
-      "correct": "Kette",
-      "variants": [
-        {
-          "text": "Welle",
-          "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „erfolgte mittels einer Kette“. Die Kraft wurde mit einer Kette übertragen.",
-          "evidence": "Die Kraftübertragung zwischen Kolbenstange und Balancier erfolgte mittels einer Kette."
-        },
-        {
-          "text": "Schnur",
-          "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 1,
-          "explanation": "Im Original steht: „erfolgte mittels einer Kette“. Für die Kraftübertragung reichte keine Schnur. Es war eine Kette.",
-          "evidence": "Die Kraftübertragung zwischen Kolbenstange und Balancier erfolgte mittels einer Kette."
-        }
-      ]
-    },
     "i6": {
       "correct": "",
       "variants": [
@@ -985,6 +936,52 @@
           "explanation": "Hier wird aus einem Fall ein Gesetz gemacht. Im Original geht es um eine Maschine mit einem Wirkungsgrad von 0,5 Prozent. „Immer“ steht dort nicht."
         }
       ]
+    },
+    "d1": {
+      "correct": "Kolben",
+      "variants": [
+        {
+          "text": "Rad",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „eine Kolben-Wärmekraftmaschine“. Die Dampfmaschine im engeren Sinne hat einen Kolben, kein Rad.",
+          "evidence": "Eine Dampfmaschine ist (im engeren Sinne) eine Kolben-Wärmekraftmaschine."
+        }
+      ]
+    },
+    "d2": {
+      "correct": "beheizten",
+      "variants": [
+        {
+          "text": "gekühlten",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „In einem beheizten Dampferzeuger … wird Wasser verdampft“. Um Wasser zu verdampfen, muss man es heizen, nicht kühlen.",
+          "evidence": "In einem beheizten Dampferzeuger, der als Bestandteil der Maschine gilt, wird Wasser verdampft."
+        }
+      ]
+    },
+    "d3": {
+      "correct": "Wärmeenergie",
+      "variants": [
+        {
+          "text": "Lichtenergie",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „wandelt die in ihm enthaltene Wärmeenergie (auch Druckenergie) … in Bewegungsenergie um“. Es ist die Wärmeenergie des Dampfes, nicht Lichtenergie.",
+          "evidence": "Der unter Druck gesetzte Dampf wandelt die in ihm enthaltene Wärmeenergie (auch Druckenergie) durch Verschieben eines in einem Zylinder beweglichen Kolbens in Bewegungsenergie um."
+        },
+        {
+          "text": "Wärmeernergie",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "In diesem Wort hat sich ein Buchstabe zu viel eingeschlichen: Wärmeenergie."
+        }
+      ]
     }
   },
   "notes": [
@@ -995,6 +992,7 @@
     "Der Auszug stammt aus dem Abschnitt „Die Anfänge“ der Geschichte (zwei zusammenhängende Absätze). Die technischen Abschnitte des Artikels sind für diese Stufe nicht gewählt.",
     "Der eingefügte Satz „Newcomens Maschine diente nicht der Wasserhaltung.“ widerspricht dem richtigen Satz „Sie diente zur Wasserhaltung in Bergwerken.“",
     "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt; die Zahlen und Namen folgen dem Artikel, nicht anderen Quellen. Die falschen Varianten sind absichtlich verändert und stehen nicht in der Quelle.",
-    "Die Quelle liegt als PDF unter public/quellen/de/dampfmaschine.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+    "Die Quelle liegt als PDF unter public/quellen/de/dampfmaschine.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
+    "Überarbeitung Klasse 9–10: Der Auszug beginnt jetzt mit den ersten drei Sätzen der Einleitung des Artikels (was eine Dampfmaschine ist) statt mit der Patentgeschichte; die Sätze über das Ende des Papin-Schiffs und über die Kette zwischen Kolbenstange und Balancier sind entfallen (zwölf Sätze). Jahre, Namen und Zahlen der Auszugssätze mit dem Artikel im PDF abgeglichen. Die Stellen der entfallenen Sätze sind entfallen, drei Stellen zur Einleitung sind neu."
   ]
 }

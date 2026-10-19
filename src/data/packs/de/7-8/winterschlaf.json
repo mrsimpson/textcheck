@@ -6,7 +6,7 @@
     "from": 7,
     "to": 8
   },
-  "topic": "Winterschlaf: Was im Körper der Tiere passiert",
+  "topic": "Winterschlaf: Was er ist und was im Körper der Tiere passiert",
   "source": {
     "title": "Winterschlaf – Wikipedia",
     "url": "https://de.wikipedia.org/w/index.php?title=Winterschlaf&oldid=265605273",
@@ -20,15 +20,13 @@
   },
   "excerpt": [
     {
+      "text": "Als Winterschlaf oder Hibernation bezeichnet man einen saisonalen mehrtägigen Ruhezustand (Torpor) bei manchen Säugetieren und einer Vogelart, bei dem der Stoffwechsel und die Körpertemperatur herabgesetzt sind."
+    },
+    {
+      "text": "Für gleichwarme Tiere ist es die wirksamste Methode um Energie zu sparen."
+    },
+    {
       "text": "Die Winterschläfer suchen im Herbst isolierte Winterquartiere auf, an denen sie vor der strengen Kälte geschützt sind (hohle Baumstämme, Erdhöhlen und dergleichen).",
-      "section": "Das Verhalten der Winterschläfer in den kalten Jahreszeiten"
-    },
-    {
-      "text": "Alle Körperfunktionen sind in diesem Zustand stark vermindert.",
-      "section": "Das Verhalten der Winterschläfer in den kalten Jahreszeiten"
-    },
-    {
-      "text": "Die Atmung ist schwach, der Herzschlag verlangsamt.",
       "section": "Das Verhalten der Winterschläfer in den kalten Jahreszeiten"
     },
     {
@@ -71,6 +69,48 @@
   "rendition": [
     {
       "sentence": [
+        "Als Winterschlaf oder Hibernation bezeichnet man einen Ruhezustand (Torpor), der jedes Jahr in einer bestimmten Jahreszeit auftritt und ",
+        {
+          "slot": "n1"
+        },
+        " dauert."
+      ],
+      "evidence": {
+        "quote": "einen saisonalen mehrtägigen Ruhezustand (Torpor)"
+      }
+    },
+    {
+      "sentence": [
+        "Winterschlaf gibt es bei ",
+        {
+          "slot": "n2"
+        },
+        " Säugetieren und einer Vogelart."
+      ],
+      "evidence": {
+        "quote": "bei manchen Säugetieren und einer Vogelart"
+      }
+    },
+    {
+      "sentence": ["Dabei sind der Stoffwechsel und die Körpertemperatur herabgesetzt."],
+      "evidence": {
+        "quote": "bei dem der Stoffwechsel und die Körpertemperatur herabgesetzt sind"
+      }
+    },
+    {
+      "sentence": [
+        "Für gleichwarme Tiere ist der Winterschlaf die ",
+        {
+          "slot": "n3"
+        },
+        " Methode, Energie zu sparen."
+      ],
+      "evidence": {
+        "quote": "Für gleichwarme Tiere ist es die wirksamste Methode um Energie zu sparen."
+      }
+    },
+    {
+      "sentence": [
         {
           "slot": "s1"
         },
@@ -82,22 +122,6 @@
       ],
       "evidence": {
         "quote": "Die Winterschläfer suchen im Herbst isolierte Winterquartiere auf, an denen sie vor der strengen Kälte geschützt sind (hohle Baumstämme, Erdhöhlen und dergleichen)."
-      }
-    },
-    {
-      "sentence": [
-        "Im Winterschlaf sind ",
-        {
-          "slot": "s3"
-        },
-        " Körperfunktionen stark vermindert: Die Atmung ist schwach und der Herzschlag ",
-        {
-          "slot": "s4"
-        },
-        "."
-      ],
-      "evidence": {
-        "quote": "Alle Körperfunktionen sind in diesem Zustand stark vermindert."
       }
     },
     {
@@ -236,39 +260,6 @@
           "basis": "text",
           "conspicuousness": 2,
           "explanation": "Das Wort kommt von „hohl“. Der Vokal ist lang, darum schreibt man ein Dehnungs-h: Höhle."
-        }
-      ]
-    },
-    "s3": {
-      "correct": "alle",
-      "variants": [
-        {
-          "text": "einige",
-          "errorClass": "quantity_degree",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Alle Körperfunktionen sind in diesem Zustand stark vermindert.“ Es sind alle Körperfunktionen, nicht nur einige.",
-          "evidence": "Alle Körperfunktionen sind in diesem Zustand stark vermindert."
-        }
-      ]
-    },
-    "s4": {
-      "correct": "langsam",
-      "variants": [
-        {
-          "text": "schnell",
-          "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 1,
-          "explanation": "Im Original steht: „Die Atmung ist schwach, der Herzschlag verlangsamt.“ Der Herzschlag ist verlangsamt, nicht schnell.",
-          "evidence": "Die Atmung ist schwach, der Herzschlag verlangsamt."
-        },
-        {
-          "text": "langsahm",
-          "errorClass": "spelling_rule",
-          "basis": "text",
-          "conspicuousness": 1,
-          "explanation": "Der Vokal vor „m“ ist hier lang, trotzdem steht kein Dehnungs-h: langsam. Das Wort hat keine Verlängerung, die das zeigt; man merkt es sich."
         }
       ]
     },
@@ -431,6 +422,67 @@
           "explanation": "Dieser Vergleich steht nicht im Original. Dort geht es nur um eine Körpertemperatur von 39 auf bis zu 7 °C."
         }
       ]
+    },
+    "n1": {
+      "correct": "mehrere Tage",
+      "variants": [
+        {
+          "text": "nur wenige Stunden",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „… einen saisonalen mehrtägigen Ruhezustand (Torpor) …“. Der Zustand dauert mehrere Tage, nicht nur wenige Stunden.",
+          "evidence": "Als Winterschlaf oder Hibernation bezeichnet man einen saisonalen mehrtägigen Ruhezustand (Torpor) bei manchen Säugetieren und einer Vogelart, bei dem der Stoffwechsel und die Körpertemperatur herabgesetzt sind."
+        },
+        {
+          "text": "mehre Tage",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein Buchstabe: „mehre“ statt „mehrere“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
+    },
+    "n2": {
+      "correct": "manchen",
+      "variants": [
+        {
+          "text": "allen",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „… bei manchen Säugetieren und einer Vogelart …“. Winterschlaf gibt es bei manchen Säugetieren, nicht bei allen.",
+          "evidence": "Als Winterschlaf oder Hibernation bezeichnet man einen saisonalen mehrtägigen Ruhezustand (Torpor) bei manchen Säugetieren und einer Vogelart, bei dem der Stoffwechsel und die Körpertemperatur herabgesetzt sind."
+        },
+        {
+          "text": "mancen",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein Buchstabe: „mancen“ statt „manchen“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
+    },
+    "n3": {
+      "correct": "wirksamste",
+      "variants": [
+        {
+          "text": "einzige",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Für gleichwarme Tiere ist es die wirksamste Methode um Energie zu sparen.“ Es ist die wirksamste Methode, nicht die einzige.",
+          "evidence": "Für gleichwarme Tiere ist es die wirksamste Methode um Energie zu sparen."
+        },
+        {
+          "text": "unwirksamste",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Für gleichwarme Tiere ist es die wirksamste Methode um Energie zu sparen.“ Der Winterschlaf ist die wirksamste Methode, nicht die unwirksamste.",
+          "evidence": "Für gleichwarme Tiere ist es die wirksamste Methode um Energie zu sparen."
+        }
+      ]
     }
   },
   "notes": [
@@ -438,6 +490,8 @@
     "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite, Link auf die Lizenz); die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Fehlerarten: Die Falschschreibungen sind konstruiert (Dehnungs-h, Konsonantenverdopplung, nach den Schwerpunkten der IQB-Handreichung); die Klassen ab Klasse 7 (Menge/Grad, Verallgemeinerung, falsche Folgerung, Meinung als Tatsache) sind abgeleitet, nicht belegt.",
     "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Biologie.",
-    "Die Quelle liegt als PDF unter public/quellen/de/winterschlaf.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+    "Die Quelle liegt als PDF unter public/quellen/de/winterschlaf.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
+    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit den ersten beiden Sätzen des Artikels (vorher mit dem Winterquartier). Gestrichen: „Alle Körperfunktionen …“ und „Die Atmung ist schwach …“ samt den Stellen „alle“ und „langsam“. Neu: drei Stellen in der Einleitung der Variante.",
+    "Auszug leicht vereinfacht auf Wunsch des Erstellers: erster Satz umgebaut („Ruhezustand (Torpor)“, „bei dem der Stoffwechsel und die Körpertemperatur herabgesetzt sind“). Die Auszugssätze stehen dort nicht mehr überall wörtlich im Artikel (erste Notiz gilt für diese Stellen nicht mehr); der Satzanfang ist unverändert."
   ]
 }

@@ -158,7 +158,7 @@
     },
     {
       "sentence": [
-        "Im heutigen Deutschland kamen sie bis an ",
+        "Im heutigen Deutschland kamen die Römer bis an ",
         {
           "slot": "s7a"
         },
@@ -611,6 +611,7 @@
     "Die Falschschreibungen sind nach den Mustern der IQB-Handreichung und der AFRA-Kategorien (Ableitung, Dehnung, Konsonantverdopplung, Auslautverhärtung, Groß-/Kleinschreibung) konstruiert, nicht von Lernenden gesammelt.",
     "Weggelassen wurden der Satz über das Mittelmeer, die Abschnitte zu Herrschern, Alltag, Erfindungen, Römerzeit im deutschsprachigen Raum und zum Untergang sowie die Bildunterschriften, weil sie für diesen Auszug nicht gebraucht werden.",
     "Nicht geprüft: ob der Artikeltext des Klexikons fachlich vollständig stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Sachlage in der Welt.",
-    "Die Quelle liegt als PDF unter public/quellen/de/roemisches-reich.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+    "Die Quelle liegt als PDF unter public/quellen/de/roemisches-reich.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
+    "Durchsicht Überschrift/Einleitung: Auszug beginnt schon mit dem ersten Satz des Artikels (davor steht nur eine Bildunterschrift), unverändert. Variante: „sie“ durch „die Römer“ ersetzt, weil im Satz davor kein Nomen dafür steht."
   ]
 }
