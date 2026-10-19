@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // The round: the goal line, the Original and the Variante (like two sheets, one on top of the other: a switch turns
-// from one to the other, so the eye cannot compare them side by side; the source PDF is a sheet too, and may reach
-// beyond the narrow column to be wide enough to read), the words to mark, the keyboard hint and the buttons (both
+// from one to the other, so the eye cannot compare them side by side; the source PDF is a sheet too, in a wider frame
+// to be wide enough to read), the words to mark, the keyboard hint and the buttons (both
 // below the sheets, so that the sheets are of the same height), and after checking the result. It announces every
 // change for screen readers and moves the focus to the result and back to the words. The runtime gives it the core's state; what the learner does goes back
 // as input. The only state of its own is which panel is shown.
@@ -363,13 +363,6 @@ const choiceNote = computed(() => {
   perspective: 1600px;
 }
 
-/* The source PDF is an A4 page (about 794 px at 100 %) and needs about 700 px to read. The column of the page is 704 px
-   at most, so this sheet reaches out of it, up to 52 rem, centred on the column; on a narrow screen it is as wide as it. */
-.panels.pdf {
-  width: min(52rem, calc(100vw - 2rem));
-  margin-left: calc(50% - min(26rem, calc(50vw - 1rem)));
-}
-
 .panels.sheets[data-view="rendition"] > .original,
 .panels.sheets[data-view="original"] > .rendition {
   display: none;
@@ -494,6 +487,13 @@ body:has(.textcheck) .interactive-routes {
 /* The start page lists every route (15 links). The selects of the app page do that job, so the list is left out. */
 .interactive-section:has(> .interactive-route-list) {
   display: none;
+}
+
+/* The source PDF is an A4 page (about 794 px at 100 %) and needs about 700 px to read, but the frame of the shell is
+   44 rem (704 px) wide. While the round shows the PDF, the frame is wider (header, page and footer alike, so that they
+   stay aligned); every other mode keeps the narrow column, where lines stay short enough to read. */
+body:has(.textcheck .panels.pdf) :is(.interactive-header, .interactive, .interactive-footer) {
+  max-width: 56rem;
 }
 
 /* The shell's page is light by default; follow the system setting so the dark card never sits on a white page. */

@@ -44,7 +44,7 @@ Die App beginnt mit dem Original, beide Blätter sind gleich hoch, der Tastaturh
 - Eine Schrift für alles: Recursive (Variable Font, SIL OFL 1.1), zugeschnitten auf Latein mit Umlauten und nur die Achsen Gewicht, Casual und Mono; in der App gebündelt, keine Anfrage nach außen. (Ersteller: „Recursive als Standard“)
 - Einstellungen: Schriftstil (Normal, Rund, Festbreite), Strichstärke, Größe, Zeilenabstand, mit Zurücksetzen. Standard ist Recursive, normal (guess für die Auswahl).
 - Die Einstellung bleibt auf dem Gerät erhalten, über den Storage-Wrapper des Tooling, mit eigenem Schlüsselpräfix; ist Speichern gesperrt, funktioniert die App mit den Standardwerten. (Ersteller: „Einstellung merken“)
-- Quelle als PDF (A4, ca. 794 px bei 100 %): das PDF braucht mindestens ca. 700 px Breite, um lesbar zu sein. Gemessen: der Rahmen der App ist höchstens 44 rem (ca. 704 px) breit, nebeneinander wird also nie lesbar. Deshalb ist auch das PDF ein Blatt; es darf über den Rahmen hinaus bis 52 rem breit werden (ca. 830 px, auf kleinen Bildschirmen so breit wie der Bildschirm). Das ersetzt die Entscheidung aus Plan 05 „bei PDF nebeneinander ab 960 px“. (Ersteller: „PDF ist viel zu schmal“, „mach das abhängig vom Viewport“)
+- Quelle als PDF (A4, ca. 794 px bei 100 %): das PDF braucht mindestens ca. 700 px Breite, um lesbar zu sein. Gemessen: der Rahmen der App ist höchstens 44 rem (ca. 704 px) breit, nebeneinander wird also nie lesbar. Deshalb ist auch das PDF ein Blatt; der Rahmen der Seite wird dafür auf 56 rem geweitet, solange das PDF-Blatt zu sehen ist (App überschreibt dazu die Breite der Laufzeit; andere Modi bleiben schmal; Ersteller: „Können wir das nicht einfach überschreiben?“). Das ersetzt die Entscheidung aus Plan 05 „bei PDF nebeneinander ab 960 px“. (Ersteller: „PDF ist viel zu schmal“, „mach das abhängig vom Viewport“)
 - Keine Warnung beim Wechsel von Stufe oder Modus (Ersteller hat sie nicht gewünscht; guess).
 
 ## Notes
@@ -124,7 +124,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 - [x] `git switch -c increment/06-lesbarkeit` from `main`. Commit this plan on it.
 - [x] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
-- [x] Slice 1 Bedienung: Start mit Original; gleiche Höhe (ein Zeilenabstand für Original, Variante und Wählmodus); Hinweis unter den Text und in den Wählmodus; PDF als Blatt über die Rahmenbreite hinaus (bis 52 rem). Playthroughs und e2e anpassen. Check, Commit.
+- [x] Slice 1 Bedienung: Start mit Original; gleiche Höhe (ein Zeilenabstand für Original, Variante und Wählmodus); Hinweis unter den Text und in den Wählmodus; PDF als Blatt in einem auf 56 rem geweiteten Rahmen. Playthroughs und e2e anpassen. Check, Commit.
 - [ ] Slice 2 Schrift: Recursive zuschneiden und messen (Größe, Quota); in `public/` bündeln samt Lizenz; Einstellungen mit Speichern über den Wrapper; Meldungen de/en; arc42 und Skill `app-content` anpassen; Tests. Check, Commit.
 - [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.

@@ -896,7 +896,7 @@ flowchart TB
 Built. `src/ui/App.vue` shows the goal line, the Original and the Variante (like two sheets, one on top of the other,
 starting with the Original: a switch turns from one to the other with a short page-turn animation, which reduced motion
 switches off, and the hidden one is not in the page, so the learner cannot compare them side by side; the source PDF is
-a sheet too, which reaches out of the narrow column of the page up to 52 rem, so that an A4 page is wide enough to
+a sheet too, in a frame widened to 56 rem while it shows, so that an A4 page is wide enough to
 read), the keyboard hint and the buttons below the sheets, so that both sheets are of the same height (one font size
 and one line height for every text), and, after checking, the result. It announces every change through the live region, moves the focus
 to the result heading after checking and back to the words after a new round, and emits the learner's actions. The

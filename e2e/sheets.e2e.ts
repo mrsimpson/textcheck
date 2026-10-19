@@ -96,9 +96,7 @@ test.describe("Original and Variante as sheets on a wide screen", () => {
     await expect(page.getByRole("button", { name: "Text B hat die Fehler" })).toHaveAttribute("aria-pressed", "true");
   });
 
-  test("lays the source PDF out as a sheet, wide enough to read, and beyond the column of the page", async ({
-    page,
-  }) => {
+  test("lays the source PDF out as a sheet, wide enough to read, in a wider frame", async ({ page }) => {
     await open(page, "./app/?seed=1#klasse-5-6-quelle");
     const pdf = page.locator(".panel.original");
     await expect(pdf).toBeVisible();
