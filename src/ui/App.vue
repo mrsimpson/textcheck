@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // The round: the goal line, the Original and the Variante (like two sheets, one on top of the other: a switch turns
-// from one to the other, so the eye cannot compare them side by side; the source PDF is a sheet too, in a wider frame
-// to be wide enough to read), the words to mark, the keyboard hint and the buttons (both
+// from one to the other, so the eye cannot compare them side by side; the source PDF stands next to the Variante on a wide screen,
+// in a wider frame, and elsewhere only its button stands above the Variante), the words to mark, the keyboard hint and the buttons (both
 // below the sheets, so that the sheets are of the same height), and after checking the result. It announces every
 // change for screen readers and moves the focus to the result and back to the words. The runtime gives it the core's state; what the learner does goes back
 // as input. The only state of its own is which panel is shown.
@@ -33,17 +33,16 @@ watch(reading, (value) => saveReading(value), { deep: true });
 
 // the source PDF is embedded only where a PDF shows well in a frame: a wide screen with a mouse; elsewhere the link
 // to a new tab is all there is
-const WIDE = "(min-width: 960px) and (pointer: fine)";
+const WIDE = "(min-width: 1300px) and (pointer: fine)";
 const embed = ref(false);
 let query: MediaQueryList | null = null;
 const onChange = (): void => {
   embed.value = query?.matches ?? false;
 };
 onMounted(() => {
-  picker.value?.addEventListener("change", () => {
-    if (levelSelect.value !== null && modeSelect.value !== null)
-      location.hash = routeOf(levelSelect.value.value, modeSelect.value.value as Mode);
-  });
+  go = (route) => {
+    location.hash = route;
+  };
   query = matchMedia(WIDE);
   onChange();
   query.addEventListener("change", onChange);
@@ -75,14 +74,59 @@ const modeOptions: { id: Mode; label: string }[] = [
   { id: "choose", label: t("modeChoose") },
 ];
 const picked = computed(() => parseRoute(props.state.route));
-const picker = ref<HTMLElement | null>(null);
 const levelSelect = ref<HTMLSelectElement | null>(null);
 const modeSelect = ref<HTMLSelectElement | null>(null);
 const sourceMode = computed(() => props.state.mode === "source");
-// the PDF is a sheet of its own only where it is embedded; where it is not (too narrow, or a finger), the button that
-// opens it stands above the Variante, which has the whole width
-const pdfSheet = computed(() => sourceMode.value && embed.value && pdfUrl.value !== null);
-const linkOnly = computed(() => sourceMode.value && !pdfSheet.value);
+// the PDF stands next to the Variante only where it is embedded (a wide screen with a mouse: it needs about 700 px to
+// read); where it is not, the button that opens it stands above the Variante, which has the whole width
+const sideBySide = computed(() => sourceMode.value && embed.value && pdfUrl.value !== null);
+const linkOnly = computed(() => sourceMode.value && !sideBySide.value);
+
+// A new age group or mode starts a new round with a new seed: with the same seed the round would be the same text with
+// the same errors, and switching to the mode "Original erkennen" and back would show which text is the Original. Marks
+// that are set are lost, so the learner is asked first.
+const dialog = ref<HTMLDialogElement | null>(null);
+let pending: string | null = null;
+let switching = false;
+// the route goes to the address, where the runtime picks it up; the address only inside onMounted
+let go: (route: string) => void = () => undefined;
+const newSeed = (): number => 1 + Math.floor(Math.random() * (2 ** 31 - 1));
+const showPicked = (): void => {
+  if (levelSelect.value !== null) levelSelect.value.value = picked.value.level;
+  if (modeSelect.value !== null) modeSelect.value.value = picked.value.mode;
+};
+function onPick(): void {
+  if (levelSelect.value === null || modeSelect.value === null) return;
+  const route = routeOf(levelSelect.value.value, modeSelect.value.value as Mode);
+  if (route === props.state.route) return;
+  if (props.state.phase === "marking" && props.state.marked.length > 0) {
+    pending = route;
+    dialog.value?.showModal();
+  } else go(route);
+}
+function confirmSwitch(): void {
+  const route = pending;
+  pending = null;
+  switching = true;
+  dialog.value?.close();
+  if (route !== null) go(route);
+}
+function cancelSwitch(): void {
+  pending = null;
+  dialog.value?.close();
+}
+// closed without the switch (button or Escape): the selects show the round that goes on
+function onDialogClose(): void {
+  if (!switching) showPicked();
+  switching = false;
+  pending = null;
+}
+watch(
+  () => props.state.route,
+  (_route, before) => {
+    if (before !== undefined) emit("input", { kind: "action", name: "reseed", value: newSeed() });
+  },
+);
 
 const goal = computed(() =>
   props.state.mode === "choose"
@@ -146,7 +190,7 @@ const choiceNote = computed(() => {
 
 <template>
   <section ref="root" class="textcheck" :style="readingStyle" :aria-label="t('region')">
-    <div ref="picker" class="picker">
+    <div class="picker" @change="onPick">
       <label>
         {{ t("level") }}
         <select ref="levelSelect" :value="picked.level">
@@ -170,9 +214,9 @@ const choiceNote = computed(() => {
       :lang="lang"
       @input="(input) => emit('input', input)"
     />
-    <div v-else-if="!linkOnly" class="switch" role="group" :aria-label="t('view')">
+    <div v-else-if="!sourceMode" class="switch" role="group" :aria-label="t('view')">
       <button type="button" :aria-pressed="view === 'original'" @click="view = 'original'">
-        {{ sourceMode ? t("sourceTab") : t("original") }}
+        {{ t("original") }}
       </button>
       <button type="button" :aria-pressed="view === 'rendition'" @click="view = 'rendition'">
         {{ t("renditionTab") }}
@@ -196,11 +240,11 @@ const choiceNote = computed(() => {
     </div>
     <div
       v-if="state.mode !== 'choose'"
-      class="panels sheets"
-      :class="{ pdf: pdfSheet }"
-      :data-view="linkOnly ? 'rendition' : view"
+      class="panels"
+      :class="sourceMode ? { side: sideBySide } : 'sheets'"
+      :data-view="sourceMode ? undefined : view"
     >
-      <section v-if="pdfSheet" class="panel original pdf" aria-labelledby="original-heading">
+      <section v-if="sideBySide" class="panel original pdf" aria-labelledby="original-heading">
         <h2 id="original-heading">{{ t("sourceHeading") }}</h2>
         <p v-if="pdfUrl !== null">
           <a class="open" :href="pdfUrl" target="_blank" rel="noopener noreferrer">{{ t("openPdf") }}</a>
@@ -261,6 +305,14 @@ const choiceNote = computed(() => {
         </button>
       </span>
     </div>
+    <dialog ref="dialog" class="confirm" aria-labelledby="switch-title" @close="onDialogClose">
+      <h2 id="switch-title">{{ t("switchTitle") }}</h2>
+      <p>{{ t("switchText") }}</p>
+      <div class="buttons">
+        <button type="button" @click="cancelSwitch">{{ t("switchCancel") }}</button>
+        <button type="button" class="primary" @click="confirmSwitch">{{ t("switchConfirm") }}</button>
+      </div>
+    </dialog>
     <ResultView
       v-if="state.result !== null"
       :result="state.result"
@@ -405,6 +457,12 @@ const choiceNote = computed(() => {
   perspective: 1600px;
 }
 
+.panels.side {
+  grid-template-columns: minmax(700px, 1.25fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
 .panels.sheets[data-view="rendition"] > .original,
 .panels.sheets[data-view="original"] > .rendition {
   display: none;
@@ -488,6 +546,31 @@ h2 {
   line-height: 1.5 !important;
 }
 
+.confirm {
+  max-width: min(28rem, calc(100vw - 2rem));
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--tc-line);
+  border-radius: 12px;
+  background: var(--tc-card);
+  color: var(--tc-ink);
+}
+
+.confirm::backdrop {
+  background: rgb(0 0 0 / 0.45);
+}
+
+.confirm h2 {
+  margin: 0 0 0.5rem;
+}
+
+.confirm p {
+  margin: 0 0 1rem;
+}
+
+.confirm .buttons {
+  justify-content: flex-end;
+}
+
 .bar {
   display: flex;
   flex-wrap: wrap;
@@ -542,11 +625,12 @@ body:has(.textcheck) .interactive-routes {
   display: none;
 }
 
-/* The source PDF is an A4 page (about 794 px at 100 %) and needs about 700 px to read, but the frame of the shell is
-   44 rem (704 px) wide. While the round shows the PDF, the frame is wider (header, page and footer alike, so that they
-   stay aligned); every other mode keeps the narrow column, where lines stay short enough to read. */
-body:has(.textcheck .panels.pdf) :is(.interactive-header, .interactive, .interactive-footer) {
-  max-width: 56rem;
+/* The source PDF is an A4 page (about 794 px at 100 %) and needs about 700 px to read, the Variante next to it about
+   500 px, but the frame of the shell is 44 rem (704 px) wide. While the PDF stands next to the Variante, the frame is
+   80 rem (header, page and footer alike, so that they stay aligned); every other mode keeps the narrow column, where
+   lines stay short enough to read. */
+body:has(.textcheck .panels.side) :is(.interactive-header, .interactive, .interactive-footer) {
+  max-width: 80rem;
 }
 
 /* The shell's page is light by default; follow the system setting so the dark card never sits on a white page. */

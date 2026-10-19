@@ -94,5 +94,9 @@
   "fontSize": "Size",
   "lineSpacing": "Line spacing",
   "readingReset": "Reset",
-  "sample": "Read carefully: 1,234 metres, May 1969, Cologne, Illegal."
+  "sample": "Read carefully: 1,234 metres, May 1969, Cologne, Illegal.",
+  "switchTitle": "Start a new round?",
+  "switchText": "You have already marked words. If you change the age group or the mode, a new round begins and your marks are lost.",
+  "switchConfirm": "Change",
+  "switchCancel": "Stay"
 }

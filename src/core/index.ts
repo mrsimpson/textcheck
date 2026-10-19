@@ -108,6 +108,15 @@ function inLanguage(state: State, language: unknown): State {
   return start(state.seed, state.route, language);
 }
 
+/**
+ * A new round of the route with a seed the page chose: switching the age group or the mode must not give the same text
+ * with the same errors again.
+ */
+function reseeded(state: State, seed: unknown): State {
+  if (typeof seed !== "number" || !Number.isInteger(seed) || seed <= 0 || seed === state.seed) return state;
+  return start(seed, state.route, state.language);
+}
+
 export function step(state: State, input: Input): State {
   if (input.kind === "key") {
     // 1 and 2 pick the text in the mode `choose`; the root component does not use other keys
@@ -117,6 +126,7 @@ export function step(state: State, input: Input): State {
   if (input.kind !== "action") return state;
   if (input.name === "again") return start(state.seed + 1, state.route, state.language);
   if (input.name === "language") return inLanguage(state, input.value);
+  if (input.name === "reseed") return reseeded(state, input.value);
   if (state.phase !== "marking") return state;
   switch (input.name) {
     case "choose":

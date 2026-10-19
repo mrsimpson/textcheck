@@ -124,6 +124,20 @@ describe("marking and checking", () => {
     expect(state.result?.wrong).toBe(1);
   });
 
+  it("starts a new round of the same route and language with the action reseed", () => {
+    const state = step(start(3, route), action("toggle", 2));
+    const next = step(state, action("reseed", 99));
+    expect(next).toEqual(start(99, route));
+    expect(next.marked).toEqual([]);
+    expect(step(start(3, "klasse-9-10", "en"), action("reseed", 99)).language).toBe("en");
+  });
+
+  it("ignores a reseed without a new whole positive seed", () => {
+    const state = start(3, route);
+    for (const value of [3, 0, -4, 1.5, "7", undefined])
+      expect(step(state, action("reseed", value as number))).toBe(state);
+  });
+
   it("starts the next round with the action again, from any phase", () => {
     const state = step(start(4, route), action("check"));
     const next = step(state, action("again"));
