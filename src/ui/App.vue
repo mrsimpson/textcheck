@@ -320,6 +320,8 @@ const choiceNote = computed(() => {
 }
 
 .switch {
+  position: relative;
+  z-index: 1; /* above the sheet that turns: it swings out over the buttons and must not take their taps */
   display: flex;
   gap: 0.5rem;
   margin-bottom: 0.75rem;
