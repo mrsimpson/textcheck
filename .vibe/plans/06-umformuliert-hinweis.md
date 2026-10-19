@@ -4,7 +4,7 @@
 # Archetype as in the app's first plan; set it when you start. Never changes.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: explore
+phase: plan
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
@@ -43,7 +43,9 @@ Lernende wissen vor dem Prüfen, dass die Variante in eigenen Worten umformulier
 
 ## Notes
 
-<!-- Sources and licences, links, open questions, curriculum, new competencies by chapter. -->
+Kein neuer Lehrplanbezug, keine neue Kompetenz, keine neue Quelle: Es ändert sich nur der Hinweis und der Wortlaut einzelner Sätze.
+Umfang: Hinweis in den Modi `mark` und `source`, Deutsch und Englisch; Satz „Another word for spines is quills“ im Hedgehog; Prüfung der übrigen Packs auf Sätze, die das Original ergänzen (Verdacht: `sonnensystem`, „Man nennt diese Brocken …“).
+Ungeprüft: Der Hinweis wird nicht mit Kindern getestet.
 
 ## Explore
 
@@ -56,20 +58,22 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 - [x] Skills are in `.agents/skills/`. Only if missing: `npx skills add lernapps/tooling#exp/compact-guidance`.
 - [x] Load the content guide `.agents/skills/app-content/SKILL.md` and skill `lernapps-content-growth`; read the
       plans in `.vibe/plans/` (what the app teaches, how content is made, what is open).
-- [ ] Interview, as in the first plan: one topic per question, the creator's words under "Answers"; no answer →
+- [x] Interview, as in the first plan: one topic per question, the creator's words under "Answers"; no answer →
       ask once more, then "(guess)", shown at the checkpoint. Topics: which competencies, chapters or rounds, for
       which school years; hurdles and examples; amount; anything of look and feel or terms that changes.
-- [ ] Research: the guide's curriculum and sources; skill `lernapps-content-research` for the rest. Under "Notes":
+- [x] Research: the guide's curriculum and sources; skill `lernapps-content-research` for the rest. Under "Notes":
       curriculum orientation (Lehrplan cited where used), new competencies by chapter as Ich-kann-Sätze, verified
       sources.
-- [ ] Under "Notes": the didactic approach per competency and the scope (in, out, data range).
-- [ ] **Checkpoint:** research. Show in plain words: curriculum orientation, new competencies by chapter, didactic
+- [x] Under "Notes": the didactic approach per competency and the scope (in, out, data range).
+- [x] **Checkpoint:** research. Show in plain words: curriculum orientation, new competencies by chapter, didactic
       approach, scope, sources and how checked, what is unchecked. Stop and wait. Changes → change, ask again.
-- [ ] Set `phase: plan`: change the value line (`grep '^phase:'` prints `phase: plan`).
+- [x] Set `phase: plan`: change the value line (`grep '^phase:'` prints `phase: plan`).
 
 ### Answers
 
-<!-- Creator's answers, their words, one bullet each. -->
+- Hinweis über dem Text: „Die Variante enthält bewusst andere Formulierungen. Diese sind nicht zwangsläufig Fehler“
+- „Wir sollten keine Inhalte neu ergänzen (another word for spines is quills).“
+- Offen, von mir angenommen (guess): Der Hinweis steht nicht im Modus „Original erkennen“; Englisch wird sinngemäß übersetzt.
 
 ### Completed
 
@@ -79,13 +83,13 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Tasks
 
-- [ ] Write the Code tasks: one slice per competency (skill `lernapps-content-growth`), in the guide's order; each
+- [x] Write the Code tasks: one slice per competency (skill `lernapps-content-growth`), in the guide's order; each
       ends in a commit.
-- [ ] Write "Content method": the guide's patterns, figures, components per slice; anything new, with why the
+- [x] Write "Content method": the guide's patterns, figures, components per slice; anything new, with why the
       guide's patterns do not fit.
-- [ ] Show the creator, short: goal, new competencies by chapter, slices; in plain words what learners see and do,
+- [x] Show the creator, short: goal, new competencies by chapter, slices; in plain words what learners see and do,
       and what is new. Max 2 questions.
-- [ ] Each new component or interactive exercise: show a sketch (static SVG or image, or the steps). Words alone are
+- [x] Each new component or interactive exercise (keine neue: nur ein Textabsatz): show a sketch (static SVG or image, or the steps). Words alone are
       not enough.
 - [ ] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes → change,
       ask again.
@@ -93,8 +97,9 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Content method
 
-<!-- One line each: guide patterns, figures, components used, and where; anything new, what it does and cannot.
-New things go into the guide in the slice that adds them. -->
+- Muster unverändert: „Mark deviations in a rendition against a known original“ (Modi `mark`, `source`).
+- Neu im Leitfaden: Regel „Die Variante ergänzt nichts, was im Original nicht steht; Umformulieren ja, Hinzufügen nein“ und die Nachricht `renditionNote`.
+- Keine Figuren, keine neue Komponente.
 
 ### Completed
 
@@ -112,7 +117,9 @@ New things go into the guide in the slice that adds them. -->
 - [ ] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
 - [ ] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
-- [ ] <the slices written in Plan, each: competency, content, exercise, the entry's topic, check, commit>
+- [ ] Slice 1, Hinweis: Nachricht `renditionNote` in `src/messages/de.json` („Die Variante enthält bewusst andere Formulierungen. Diese sind nicht zwangsläufig Fehler.“) und `en.json` (sinngemäß); in `src/ui/App.vue` als Absatz über dem Variantentext, nur in den Modi `mark` und `source`; Playthrough/Test ergänzen; `npx lernapps check`; commit.
+- [ ] Slice 2, Hedgehog: „Another word for spines is quills“ ersetzen durch einen Satz, der nur das Original sagt („Hedgehogs have long spines, or quills.“, Slot `s6` bleibt); `notes` anpassen; Pack-Prüfung und Tests; commit.
+- [ ] Slice 3, übrige Packs: alle Packs (de, en) auf Sätze prüfen, die etwas ergänzen, was nicht im Original steht (zuerst `sonnensystem`); Funde korrigieren und im Log `.vibe/texts-log.md` vermerken; commit.
 - [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
 - [ ] `npx lernapps check` passes.
