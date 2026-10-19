@@ -1,8 +1,9 @@
 <script setup lang="ts">
 // The mode "Original erkennen": two texts, A and B, one of them the Original and the other the Variante with the
 // errors; which is which stays hidden until checking. The learner picks the text that has the errors and marks the
-// words there, like in the other modes. A narrow screen shows one text at a time. It holds no state of its own except
-// which text a narrow screen shows; the pick and the marks are actions the root component hands on.
+// words there, like in the other modes. The two texts lie like sheets, one on top of the other, on every screen: the
+// learner turns from one to the other and cannot compare them side by side. It holds no state of its own except which
+// text is shown; the pick and the marks are actions the root component hands on.
 import { computed, ref } from "vue";
 import type { Input } from "@lernapps/app-templates/interactive";
 import type { Side, State, Token } from "../core/types.ts";
@@ -119,7 +120,7 @@ defineExpose({ focus: () => words.value?.[0]?.focus() });
 
 <style scoped>
 .switch {
-  display: none;
+  display: flex;
   gap: 0.5rem;
   margin-bottom: 0.75rem;
 }
@@ -160,24 +161,42 @@ button:disabled {
   margin-top: 0.75rem;
 }
 
+/* two sheets: only one shows, the other is not in the page at all; the sheet that comes up turns over from its left
+   edge */
 .panels {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
+  perspective: 1600px;
 }
 
-@media (max-width: 720px) {
-  .switch {
-    display: flex;
+.panels[data-view="b"] > .a,
+.panels[data-view="a"] > .b {
+  display: none;
+}
+
+.panels > .panel {
+  transform-origin: left center;
+  animation: turn 0.4s ease-out;
+}
+
+@keyframes turn {
+  from {
+    transform: rotateY(-80deg);
+    opacity: 0.3;
+    box-shadow: 0 0 2rem rgb(0 0 0 / 0.35);
   }
 
-  .panels {
-    grid-template-columns: 1fr;
+  to {
+    transform: none;
+    opacity: 1;
+    box-shadow: none;
   }
+}
 
-  .panels[data-view="b"] > .a,
-  .panels[data-view="a"] > .b {
-    display: none;
+@media (prefers-reduced-motion: reduce) {
+  .panels > .panel {
+    animation: none;
   }
 }
 

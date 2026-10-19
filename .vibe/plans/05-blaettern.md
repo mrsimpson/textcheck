@@ -4,11 +4,11 @@
 # Archetype as in the app's first plan; set it when you start. Never changes.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: code
+phase: commit
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
-failedChecks: {}
+failedChecks: { checks-pass: 2 }
 ---
 
 # Increment: Original und Variante als Blätter, die man umblättert
@@ -119,20 +119,34 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 - [x] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
 - [x] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
-- [ ] Slice 1, Modus „Fehler markieren (mit Original)“ (`App.vue`): Umschalter und Blätter auf allen Bildschirmen; Umblätter-Effekt; „weniger Bewegung“; verdecktes Blatt nicht fokussierbar. Tests und Playthroughs anpassen. Check, commit.
-- [ ] Slice 2, Modus „Original erkennen“ (`ChooseView.vue`): dasselbe für Text A und B; Markierungen und Wahl bleiben beim Umblättern. Check, commit.
-- [ ] Slice 3, Modus mit PDF bleibt nebeneinander am Desktop (Test dafür); Schmalbildschirm wie bisher. Check, commit.
-- [ ] Browser-Test (Playwright) am Desktop und Handy: Blätter wechseln, Effekt an und aus, Tastatur. Commit.
-- [ ] Skill `app-content` (Abschnitte „Content structure“ und Muster: „side by side“ → Blätter, PDF nebeneinander) und arc42-Texte zur Anzeige anpassen, im selben Commit wie die Änderung.
-- [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
+- [x] Slice 1, Modus „Fehler markieren (mit Original)“ (`App.vue`): Umschalter und Blätter auf allen Bildschirmen; Umblätter-Effekt; „weniger Bewegung“; verdecktes Blatt nicht fokussierbar. Tests und Playthroughs anpassen. Check, commit.
+- [x] Slice 2, Modus „Original erkennen“ (`ChooseView.vue`): dasselbe für Text A und B; Markierungen und Wahl bleiben beim Umblättern. Check, commit.
+- [x] Slice 3, Modus mit PDF bleibt nebeneinander am Desktop (Test dafür); Schmalbildschirm wie bisher. Check, commit.
+- [x] Browser-Test (Playwright) am Desktop und Handy: Blätter wechseln, Effekt an und aus, Tastatur. Commit.
+- [x] Skill `app-content` (Abschnitte „Content structure“ und Muster: „side by side“ → Blätter, PDF nebeneinander) und arc42-Texte zur Anzeige anpassen, im selben Commit wie die Änderung.
+- [x] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
-- [ ] `npx lernapps check` passes.
-- [ ] Every box of Explore, Plan and Code ticked.
-- [ ] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
+- [x] `npx lernapps check` passes.
+- [x] Every box of Explore, Plan and Code ticked.
+- [x] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
 
 ### Completed
 
-, fix, push.
+## Commit
+
+<!--
+- Push to `main` = publish (workflow `Pages`, job `deploy`). A pull request to `main` runs the same checks without
+  publishing.
+-->
+
+### Tasks
+
+- [ ] Push the branch; open a pull request to `main`. Pre-push runs the heavy checks; fix failures. See the pull
+      request's checks to green. GitHub step fails or refused → skill `lernapps-github`.
+- [ ] **Checkpoint:** publish. Show what the increment adds and the preview link from the comment "Vorschau der
+      App"; ask whether it may go online. Wait for the yes.
+- [ ] Merge the pull request into `main` (no pull request: merge the branch, push `main`). Watch the `Pages` run of
+      that commit. Fails → read the failed step, fix, push.
 - [ ] Open the address the job `deploy` printed ("published at ...", run summary); confirm the new content. Never
       a derived address; follow redirects.
 - [ ] App listed and the entry changes (topics, school years, summary) → load skill `lernapps-listing`, write the
