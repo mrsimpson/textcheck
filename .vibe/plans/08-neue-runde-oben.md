@@ -33,12 +33,12 @@ a correction.
 
 ## Goal
 
-Nach dem Prüfen finden Lernende sofort den Knopf für eine neue Runde: er steht oben im Ergebnis, über den Auflösungen, und die Seite scrollt nach dem Prüfen dorthin.
+Nach dem Prüfen finden Lernende sofort den Knopf für eine neue Runde: er steht neben der Überschrift „Ergebnis“, über den Auflösungen, und die Seite scrollt nach dem Prüfen dorthin.
 
 ## Key decisions
 
 - Der vorhandene Knopf „Neue Runde“ bleibt (Ersteller: „den Button gibt es ja schon“); die Leiste mit „Prüfen“ bleibt wie sie ist, ein zweiter Knopf „Nochmal“ entfällt. Das ersetzt meinen ersten Entwurf.
-- Der Knopf steht im Ergebnis direkt unter der Zusammenfassung („x von y gefunden“) und über den Auflösungen nach Fehlerklasse, nicht mehr am Ende. (Ersteller: „oberhalb der Auflösungen“)
+- Der Knopf „Neue Runde“ steht direkt neben der Überschrift „Ergebnis“ (Überschrift links, Knopf rechts), über den Auflösungen. Auf schmalen Bildschirmen steht er unter der Überschrift und füllt die Breite. (Ersteller: „direkt unter Ergebnis nebendran … Mobil untendrunter, die Breite füllend“)
 - Nach dem Prüfen scrollt die Seite zum Knopf. Heute geht der Fokus auf die Überschrift „Ergebnis“; die Zusammenfassung steht direkt darunter und bleibt sichtbar, der Knopf ist also fast ohne Scrollen sichtbar (guess: Fokus bleibt auf der Überschrift, damit Screenreader zuerst das Ergebnis hören; gescrollt wird so, dass der Knopf im Bild steht).
 
 ## Notes
@@ -112,7 +112,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 - [ ] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
 - [ ] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
-- [ ] Slice Knopf nach oben: „Neue Runde“ im Ergebnis unter die Zusammenfassung, nach dem Prüfen zum Knopf scrollen (auch im Modus „Original erkennen“); e2e anpassen. Check, Commit.
+- [ ] Slice Knopf nach oben: „Neue Runde“ im Ergebnis neben die Überschrift (schmal: darunter, volle Breite), nach dem Prüfen zum Knopf scrollen (auch im Modus „Original erkennen“); e2e anpassen. Check, Commit.
 - [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
 - [ ] `npx lernapps check` passes.
