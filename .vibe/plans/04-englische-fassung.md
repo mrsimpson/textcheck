@@ -28,6 +28,8 @@ a correction.
 
 *Gestartet am 18.10.2026. Explore, Plan, Code, Commit.*
 
+Nummer 04: Der Plan hieß zuerst 03; `main` bekam inzwischen einen eigenen Plan 03 („weitere Texte“, fünf weitere deutsche Texte je Stufe). Beim Zusammenführen wurde dieser Plan zu 04.
+
 ## Goal
 
 Lernende im deutschen Schulsystem können die App auf Englisch üben: dieselben Klassenstufen und Modi, Texte und Oberfläche auf Englisch, je Stufe zwei Artikel.

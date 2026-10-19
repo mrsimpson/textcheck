@@ -20,9 +20,9 @@ language of its pack: German and English.
 - Version 1 ships one text for each of the grades 3-4, 5-6, 7-8, 9-10 and 11-13, a route each (`klasse-3-4` ...).
   A route ending in `-quelle` plays the same level in the mode `source` (all five levels have one). The ceiling for each error class (`fromGrade` in
   `src/data/error-classes.json`) is a setting of the creator and the assistant, not a finding of a source.
-- English (plan `.vibe/plans/03-englische-fassung.md`): the same school system, levels, routes, modes and error classes;
+- English (plan `.vibe/plans/04-englische-fassung.md`): the same school system, levels, routes, modes and error classes;
   only the language differs (the creator: "nur andere Sprache, gleiche Stufen"). The grades stay "Grades 3 to 4" and so on.
-  English has two packs per level (ten), German one (five); the seed picks the pack among those of the page's language.
+  English has two packs per level (ten), German six (thirty); the seed picks the pack among those of the page's language.
 - The language is the page's: the app has pages per language (German at the root, English below `/en/`), switched by the
   switcher of the frame (default: the browser's language); the root component tells the core by the action `language`.
   The routes are the same in both languages.

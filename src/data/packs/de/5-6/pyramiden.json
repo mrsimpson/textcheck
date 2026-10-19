@@ -1,0 +1,552 @@
+{
+  "id": "pyramiden",
+  "title": "Pyramiden",
+  "language": "de",
+  "grades": {
+    "from": 5,
+    "to": 6
+  },
+  "topic": "Pyramiden: Form und die Cheops-Pyramide",
+  "source": {
+    "title": "Pyramide – Klexikon – das Kinderlexikon",
+    "url": "https://klexikon.zum.de/index.php?title=Pyramide&oldid=157433",
+    "revision": "157433",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://klexikon.zum.de/index.php?title=Pyramide&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/pyramiden.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Eine Pyramide ist zunächst eine bestimmte Form, die auch in der Mathematik vorkommt.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Oft denkt man bei diesem Ausdruck aber an ein Bauwerk, das diese Form hat.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Dabei ist die Grundfläche viereckig.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Die Ecken kommen oben spitz in einer einzigen Ecke zusammen.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Verschiedene Hochkulturen auf der Erde haben solche Gebäude gebaut, ohne voneinander zu wissen.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Die größte und bekannteste Pyramide ist die Cheops-Pyramide aus dem Alten Ägypten.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Pharao Cheops hat sie vor über 4500 Jahren bauen lassen.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Sie ist das einzige der Sieben Weltwunder, das heute noch zu sehen ist.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "In Ägypten hat man ungefähr 80 Pyramiden gefunden, die meistens viel kleiner sind.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "In einer Pyramide wurde ein König begraben.",
+      "section": "Einleitung"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Eine Pyramide ist erst einmal eine ",
+        {
+          "slot": "s1a"
+        },
+        ", die auch in der ",
+        {
+          "slot": "s1b"
+        },
+        " vorkommt."
+      ],
+      "evidence": {
+        "quote": "Eine Pyramide ist zunächst eine bestimmte Form, die auch in der Mathematik vorkommt."
+      }
+    },
+    {
+      "sentence": [
+        "Viele Menschen meinen mit dem Wort aber ein ",
+        {
+          "slot": "s2"
+        },
+        " mit dieser Form."
+      ],
+      "evidence": {
+        "quote": "Oft denkt man bei diesem Ausdruck aber an ein Bauwerk, das diese Form hat."
+      }
+    },
+    {
+      "sentence": [
+        "Die Grundfläche ist ",
+        {
+          "slot": "s3"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Dabei ist die Grundfläche viereckig."
+      }
+    },
+    {
+      "sentence": [
+        "Die Ecken laufen oben in ",
+        {
+          "slot": "s4"
+        },
+        " zusammen."
+      ],
+      "evidence": {
+        "quote": "Die Ecken kommen oben spitz in einer einzigen Ecke zusammen."
+      }
+    },
+    {
+      "sentence": [
+        "Verschiedene Hochkulturen haben solche Gebäude gebaut",
+        {
+          "slot": "s5"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Verschiedene Hochkulturen auf der Erde haben solche Gebäude gebaut, ohne voneinander zu wissen."
+      }
+    },
+    {
+      "sentence": [
+        "Die größte und bekannteste Pyramide ist die ",
+        {
+          "slot": "s6a"
+        },
+        " aus dem Alten ",
+        {
+          "slot": "s6b"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Die größte und bekannteste Pyramide ist die Cheops-Pyramide aus dem Alten Ägypten."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "a1"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Der ",
+        {
+          "slot": "s7p"
+        },
+        " Cheops ließ sie vor über ",
+        {
+          "slot": "s7"
+        },
+        " Jahren bauen."
+      ],
+      "evidence": {
+        "quote": "Pharao Cheops hat sie vor über 4500 Jahren bauen lassen."
+      }
+    },
+    {
+      "sentence": [
+        "Von den Sieben Weltwundern ist sie das ",
+        {
+          "slot": "s8"
+        },
+        ", das man heute noch sehen kann."
+      ],
+      "evidence": {
+        "quote": "Sie ist das einzige der Sieben Weltwunder, das heute noch zu sehen ist."
+      }
+    },
+    {
+      "sentence": [
+        "In Ägypten kennt man ungefähr ",
+        {
+          "slot": "s9a"
+        },
+        " Pyramiden, die meistens viel ",
+        {
+          "slot": "s9b"
+        },
+        " sind."
+      ],
+      "evidence": {
+        "quote": "In Ägypten hat man ungefähr 80 Pyramiden gefunden, die meistens viel kleiner sind."
+      }
+    },
+    {
+      "sentence": [
+        "Ein ",
+        {
+          "slot": "s10"
+        },
+        " wurde in einer Pyramide begraben."
+      ],
+      "evidence": {
+        "quote": "In einer Pyramide wurde ein König begraben."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "a2"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "s1a": {
+      "correct": "Form",
+      "variants": [
+        {
+          "text": "Farm",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Farm“ gibt es als Wort (ein Bauernhof), gemeint ist aber „Form“. Ein Rechtschreibprogramm findet diesen Fehler nicht."
+        }
+      ]
+    },
+    "s1b": {
+      "correct": "Mathematik",
+      "variants": [
+        {
+          "text": "Musik",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Eine Pyramide ist zunächst eine bestimmte Form, die auch in der Mathematik vorkommt.“ Von Musik steht dort nichts.",
+          "evidence": "Eine Pyramide ist zunächst eine bestimmte Form, die auch in der Mathematik vorkommt."
+        },
+        {
+          "text": "Mathemathik",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das „th“ steht nur einmal, in „Mathe“. Am Ende heißt es „tik“, ohne „h“: Mathematik."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "Bauwerk",
+      "variants": [
+        {
+          "text": "Gemälde",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Oft denkt man bei diesem Ausdruck aber an ein Bauwerk, das diese Form hat.“ Mit dem Wort ist meist ein Bauwerk gemeint, kein Bild.",
+          "evidence": "Oft denkt man bei diesem Ausdruck aber an ein Bauwerk, das diese Form hat."
+        },
+        {
+          "text": "Bauwerck",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach dem „r“ steht kein „ck“. Man schreibt: Bauwerk."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "viereckig",
+      "variants": [
+        {
+          "text": "dreieckig",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Dabei ist die Grundfläche viereckig.“ Die Grundfläche hat vier Ecken.",
+          "evidence": "Dabei ist die Grundfläche viereckig."
+        },
+        {
+          "text": "rund",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Dabei ist die Grundfläche viereckig.“ Die Grundfläche ist nicht rund.",
+          "evidence": "Dabei ist die Grundfläche viereckig."
+        },
+        {
+          "text": "fiereckig",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort kommt von „vier“. Darum schreibt man es mit „v“: viereckig."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "einer einzigen Spitze",
+      "variants": [
+        {
+          "text": "zwei Spitzen",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „in einer einzigen Ecke zusammen“ Die Ecken treffen sich in einer einzigen Spitze.",
+          "evidence": "Die Ecken kommen oben spitz in einer einzigen Ecke zusammen."
+        },
+        {
+          "text": "mehreren Spitzen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „in einer einzigen Ecke zusammen“ Es ist nur eine einzige Spitze.",
+          "evidence": "Die Ecken kommen oben spitz in einer einzigen Ecke zusammen."
+        }
+      ]
+    },
+    "s5": {
+      "correct": ", ohne voneinander zu wissen",
+      "variants": [
+        {
+          "text": ", weil sie voneinander wussten",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht „ohne voneinander zu wissen“. Die Kulturen kannten sich nicht. Mit „weil“ steht das Gegenteil da.",
+          "tolerance": 2,
+          "evidence": "Verschiedene Hochkulturen auf der Erde haben solche Gebäude gebaut, ohne voneinander zu wissen."
+        },
+        {
+          "text": " und wussten voneinander",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht „ohne voneinander zu wissen“. Hier ist die Verneinung verschwunden. Das Gegenteil steht im Satz.",
+          "tolerance": 1,
+          "evidence": "Verschiedene Hochkulturen auf der Erde haben solche Gebäude gebaut, ohne voneinander zu wissen."
+        },
+        {
+          "text": " ohne voneinander zu wissen",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Vor „ohne … zu“ mit einem Verb steht ein Komma: gebaut, ohne voneinander zu wissen."
+        }
+      ]
+    },
+    "s6a": {
+      "correct": "Cheops-Pyramide",
+      "variants": [
+        {
+          "text": "Kukulcán-Pyramide",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „die Cheops-Pyramide aus dem Alten Ägypten“ Der Name wurde verändert.",
+          "evidence": "Die größte und bekannteste Pyramide ist die Cheops-Pyramide aus dem Alten Ägypten."
+        },
+        {
+          "text": "Cheops-Piramide",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort „Pyramide“ schreibt man mit „y“. Es ist ein Fremdwort aus dem Griechischen."
+        }
+      ]
+    },
+    "s6b": {
+      "correct": "Ägypten",
+      "variants": [
+        {
+          "text": "Mexiko",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „die Cheops-Pyramide aus dem Alten Ägypten“ Der Ort wurde verändert.",
+          "evidence": "Die größte und bekannteste Pyramide ist die Cheops-Pyramide aus dem Alten Ägypten."
+        },
+        {
+          "text": "Mesopotamien",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „die Cheops-Pyramide aus dem Alten Ägypten“ Der Ort wurde verändert.",
+          "evidence": "Die größte und bekannteste Pyramide ist die Cheops-Pyramide aus dem Alten Ägypten."
+        }
+      ]
+    },
+    "a1": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Sie steht in der Nähe von Kairo.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht im Original. Dort steht nur, dass die Pyramide im Alten Ägypten gebaut wurde."
+        }
+      ]
+    },
+    "s7p": {
+      "correct": "Pharao",
+      "variants": [
+        {
+          "text": "Pharoa",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Hier sind zwei Buchstaben vertauscht: Pharao. Solche Fehler passieren schnell beim Schreiben."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "4500",
+      "variants": [
+        {
+          "text": "2500",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „vor über 4500 Jahren“ Die Zahl wurde verändert.",
+          "evidence": "Pharao Cheops hat sie vor über 4500 Jahren bauen lassen."
+        },
+        {
+          "text": "450",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „vor über 4500 Jahren“ Die Zahl wurde verändert.",
+          "evidence": "Pharao Cheops hat sie vor über 4500 Jahren bauen lassen."
+        },
+        {
+          "text": "45.000",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „vor über 4500 Jahren“ Die Zahl wurde verändert.",
+          "evidence": "Pharao Cheops hat sie vor über 4500 Jahren bauen lassen."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "einzige",
+      "variants": [
+        {
+          "text": "erste",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Sie ist das einzige der Sieben Weltwunder, das heute noch zu sehen ist.“ Sie ist das einzige, das noch zu sehen ist, nicht das erste.",
+          "evidence": "Sie ist das einzige der Sieben Weltwunder, das heute noch zu sehen ist."
+        },
+        {
+          "text": "größte",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Sie ist das einzige der Sieben Weltwunder, das heute noch zu sehen ist.“ Sie ist das einzige, das noch zu sehen ist. Von der Größe steht dort nichts.",
+          "evidence": "Sie ist das einzige der Sieben Weltwunder, das heute noch zu sehen ist."
+        }
+      ]
+    },
+    "s9a": {
+      "correct": "80",
+      "variants": [
+        {
+          "text": "800",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „ungefähr 80 Pyramiden gefunden“ Die Zahl wurde verändert.",
+          "evidence": "In Ägypten hat man ungefähr 80 Pyramiden gefunden, die meistens viel kleiner sind."
+        },
+        {
+          "text": "18",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „ungefähr 80 Pyramiden gefunden“ Die Zahl wurde verändert.",
+          "evidence": "In Ägypten hat man ungefähr 80 Pyramiden gefunden, die meistens viel kleiner sind."
+        }
+      ]
+    },
+    "s9b": {
+      "correct": "kleiner",
+      "variants": [
+        {
+          "text": "größer",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Weiter oben steht, dass die Cheops-Pyramide die größte Pyramide ist. Dass die anderen „viel größer“ sind, widerspricht dem.",
+          "evidence": "In Ägypten hat man ungefähr 80 Pyramiden gefunden, die meistens viel kleiner sind."
+        },
+        {
+          "text": "kleinner",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach dem langen „ei“ steht nur ein „n“. Man schreibt: kleiner."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "König",
+      "variants": [
+        {
+          "text": "Bauer",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „In einer Pyramide wurde ein König begraben.“ Dort wurde ein König begraben.",
+          "evidence": "In einer Pyramide wurde ein König begraben."
+        },
+        {
+          "text": "Kaufmann",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „In einer Pyramide wurde ein König begraben.“ Dort wurde ein König begraben.",
+          "evidence": "In einer Pyramide wurde ein König begraben."
+        },
+        {
+          "text": "Könnig",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Der Vokal „ö“ ist lang. Nach einem langen Vokal steht kein doppeltes „n“. Man schreibt: König."
+        }
+      ]
+    },
+    "a2": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Die Pyramiden wurden von Sklaven gebaut.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht im Original. Dort steht nicht, wer die Pyramiden gebaut hat."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Klexikon-Artikel Pyramide (Revision 157433), am 2026-10-18 abgerufen und lokal gespeichert; die Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de (rel=license). Das Paket steht unter derselben Lizenz (CC BY-SA 4.0).",
+    "Die Falschschreibungen sind nach den Mustern der IQB-Handreichung und der AFRA-Kategorien (Ableitung, Dehnung, Konsonantverdopplung, Auslautverhärtung, Groß-/Kleinschreibung) konstruiert, nicht von Lernenden gesammelt.",
+    "Weggelassen wurden die Sätze über Mesopotamien, Amerika, die späteren Pyramiden (Karlsruhe) und der Abschnitt „Warum gibt es überall auf der Welt Pyramiden?“, weil der Auszug sich auf Form und Cheops-Pyramide beschränkt.",
+    "Nicht geprüft: ob der Artikeltext des Klexikons fachlich vollständig stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Sachlage in der Welt.",
+    "Die Quelle liegt als PDF unter public/quellen/de/pyramiden.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+  ]
+}

@@ -1,0 +1,709 @@
+{
+  "id": "regenwald",
+  "title": "Tropischer Regenwald",
+  "language": "de",
+  "grades": {
+    "from": 7,
+    "to": 8
+  },
+  "topic": "Tropischer Regenwald: Tageslauf, Regen und Temperatur",
+  "source": {
+    "title": "Tropischer Regenwald – Wikipedia",
+    "url": "https://de.wikipedia.org/w/index.php?title=Tropischer_Regenwald&oldid=267803170",
+    "revision": "267803170",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Tropischer_Regenwald&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/regenwald.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Aufgrund der Nähe zum Äquator bleibt die Tageslänge im Jahreslauf weitgehend konstant."
+    },
+    {
+      "text": "Die Sonne steht täglich etwa zwölf Stunden am Himmel, wobei die Dämmerung nicht einmal eine halbe Stunde dauert."
+    },
+    {
+      "text": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen durch ihre Transpiration abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen."
+    },
+    {
+      "text": "Nachmittags oder abends regnen diese Wolken in der Regel aus, häufig in Verbindung mit einem Gewitter."
+    },
+    {
+      "text": "Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht."
+    },
+    {
+      "text": "Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder."
+    },
+    {
+      "text": "Dieser Effekt wird durch das Blattwerk der Vegetation verstärkt, sodass die Vegetation selbst neuerlichen Niederschlag hervorruft."
+    },
+    {
+      "text": "Die Niederschlagsmenge liegt in den Tieflandregenwäldern mit jährlich 2000 bis 4000 mm fünfmal höher als in Mitteleuropa, wo die Werte bei 400 bis 800 mm liegen."
+    },
+    {
+      "text": "An der Luv-Seite tropischer Berghänge können die Niederschläge sogar auf Jahreswerte zwischen 6.000 mm und 12.000 mm (am hawaiianischen Waiʻaleʻale) ansteigen."
+    },
+    {
+      "text": "Insbesondere dort, wo feuchte Passatwinde das ganze Jahr über aus der gleichen Richtung wehen, fällt auch der Steigungsregen stets auf der gleichen Bergseite (Somit ergeben sich an den Bergkämmen sehr ausgeprägte Wetterscheiden)."
+    },
+    {
+      "text": "Der Wechsel vom Tiefland- zum Bergregenwald ist fließend und in den meisten Fällen nicht eindeutig festlegbar."
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Der Regenwald liegt ",
+        {
+          "slot": "s1"
+        },
+        ", darum bleibt die Tageslänge im Lauf des Jahres fast gleich."
+      ],
+      "evidence": {
+        "quote": "Aufgrund der Nähe zum Äquator bleibt die Tageslänge im Jahreslauf weitgehend konstant."
+      }
+    },
+    {
+      "sentence": [
+        "Die Sonne steht dort täglich etwa ",
+        {
+          "slot": "s2"
+        },
+        " am Himmel, und die Dämmerung dauert nicht einmal eine halbe Stunde."
+      ],
+      "evidence": {
+        "quote": "Die Sonne steht täglich etwa zwölf Stunden am Himmel, wobei die Dämmerung nicht einmal eine halbe Stunde dauert."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i1"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Am ",
+        {
+          "slot": "s3"
+        },
+        " Vormittag erwärmen sich Luft und Boden rasch, und feucht-warme Luft steigt nach oben."
+      ],
+      "evidence": {
+        "quote": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen durch ihre Transpiration abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen."
+      }
+    },
+    {
+      "sentence": [
+        "Am Himmel ballt sich diese Luft zu immer ",
+        {
+          "slot": "s4"
+        },
+        " Wolken zusammen."
+      ],
+      "evidence": {
+        "quote": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen durch ihre Transpiration abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen."
+      }
+    },
+    {
+      "sentence": [
+        "Nachmittags oder abends regnen diese Wolken ",
+        {
+          "slot": "s5"
+        },
+        " aus, häufig mit einem Gewitter."
+      ],
+      "evidence": {
+        "quote": "Nachmittags oder abends regnen diese Wolken in der Regel aus, häufig in Verbindung mit einem Gewitter."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i2"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Es regnet das ganze Jahr, besonders stark im ",
+        {
+          "slot": "s7"
+        },
+        " und im Herbst, in den so genannten Regenzeiten."
+      ],
+      "evidence": {
+        "quote": "Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind"
+      }
+    },
+    {
+      "sentence": [
+        "Darum herrscht mindestens in ",
+        {
+          "slot": "s6"
+        },
+        " des Jahres ein humides Klima."
+      ],
+      "evidence": {
+        "quote": "führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s8"
+        },
+        " verdunstet eine erhebliche Menge des Regens rasch wieder."
+      ],
+      "evidence": {
+        "quote": "Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder."
+      }
+    },
+    {
+      "sentence": [
+        "Das Blattwerk der Pflanzen ",
+        {
+          "slot": "s9"
+        },
+        " diesen Effekt, sodass die Vegetation selbst neuen Niederschlag hervorruft."
+      ],
+      "evidence": {
+        "quote": "Dieser Effekt wird durch das Blattwerk der Vegetation verstärkt, sodass die Vegetation selbst neuerlichen Niederschlag hervorruft."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i3"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "In den Tieflandregenwäldern fallen jährlich ",
+        {
+          "slot": "s10"
+        },
+        " Niederschlag."
+      ],
+      "evidence": {
+        "quote": "Die Niederschlagsmenge liegt in den Tieflandregenwäldern mit jährlich 2000 bis 4000 mm"
+      }
+    },
+    {
+      "sentence": [
+        "Das ist ",
+        {
+          "slot": "s11"
+        },
+        " so viel wie in Mitteleuropa, wo es nur ",
+        {
+          "slot": "s12"
+        },
+        " sind."
+      ],
+      "evidence": {
+        "quote": "fünfmal höher als in Mitteleuropa, wo die Werte bei 400 bis 800 mm liegen"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i4"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "An der Luv-Seite tropischer Berghänge können die Niederschläge sogar auf Jahreswerte zwischen ",
+        {
+          "slot": "s13"
+        },
+        " ansteigen."
+      ],
+      "evidence": {
+        "quote": "An der Luv-Seite tropischer Berghänge können die Niederschläge sogar auf Jahreswerte zwischen 6.000 mm und 12.000 mm"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i5"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Wo feuchte Passatwinde ",
+        {
+          "slot": "s14"
+        },
+        " aus der gleichen Richtung wehen, fällt der Steigungsregen immer auf der gleichen Bergseite."
+      ],
+      "evidence": {
+        "quote": "Insbesondere dort, wo feuchte Passatwinde das ganze Jahr über aus der gleichen Richtung wehen, fällt auch der Steigungsregen stets auf der gleichen Bergseite"
+      }
+    },
+    {
+      "sentence": [
+        "So ergeben sich an den Bergkämmen ",
+        {
+          "slot": "s15"
+        },
+        " Wetterscheiden."
+      ],
+      "evidence": {
+        "quote": "Somit ergeben sich an den Bergkämmen sehr ausgeprägte Wetterscheiden"
+      }
+    },
+    {
+      "sentence": [
+        "Der Wechsel vom Tiefland- zum Bergregenwald ist ",
+        {
+          "slot": "s16"
+        },
+        ", und man kann ihn meist nicht eindeutig festlegen."
+      ],
+      "evidence": {
+        "quote": "Der Wechsel vom Tiefland- zum Bergregenwald ist fließend und in den meisten Fällen nicht eindeutig festlegbar."
+      }
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "nahe am Äquator",
+      "variants": [
+        {
+          "text": "weit weg vom Äquator",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Aufgrund der Nähe zum Äquator bleibt die Tageslänge im Jahreslauf weitgehend konstant.“ Der Regenwald liegt nahe am Äquator, nicht weit davon entfernt.",
+          "evidence": "Aufgrund der Nähe zum Äquator bleibt die Tageslänge im Jahreslauf weitgehend konstant."
+        },
+        {
+          "text": "nahe am Äquatro",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier sind zwei Buchstaben vertauscht: „Äquatro“ statt „Äquator“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "zwölf Stunden",
+      "variants": [
+        {
+          "text": "acht Stunden",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Die Sonne steht täglich etwa zwölf Stunden am Himmel, wobei die Dämmerung nicht einmal eine halbe Stunde dauert.“ Die Sonne steht zwölf Stunden am Himmel, nicht acht.",
+          "evidence": "Die Sonne steht täglich etwa zwölf Stunden am Himmel, wobei die Dämmerung nicht einmal eine halbe Stunde dauert."
+        },
+        {
+          "text": "zwölf Minuten",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Die Sonne steht täglich etwa zwölf Stunden am Himmel, wobei die Dämmerung nicht einmal eine halbe Stunde dauert.“ Es sind zwölf Stunden, nicht Minuten. Zwölf Minuten Sonne am Tag wären viel zu wenig.",
+          "evidence": "Die Sonne steht täglich etwa zwölf Stunden am Himmel, wobei die Dämmerung nicht einmal eine halbe Stunde dauert."
+        }
+      ]
+    },
+    "i1": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Das gleichmäßige Wetter dort ist angenehmer als jedes Wetter in Europa.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das ist eine Meinung, keine Tatsache. Wörter wie „angenehmer“ und „jedes“ bewerten. Im Original steht nur, wie lang der Tag ist und wie das Wetter abläuft."
+        },
+        {
+          "text": "Die Tiere dort stehen mit der Sonne auf.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht im Original. Dort steht nur, wie lang die Sonne scheint und wie lang die Dämmerung dauert. Vom Verhalten der Tiere steht nichts im Text."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "frühen",
+      "variants": [
+        {
+          "text": "späten",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen“. Es geht um den frühen Vormittag, nicht um den späten.",
+          "evidence": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen"
+        },
+        {
+          "text": "früen",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort kommt von „früh“. Der Vokal ist lang, darum schreibt man ein Dehnungs-h: frühen."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "dichteren",
+      "variants": [
+        {
+          "text": "dünneren",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „und ballt sich am Himmel in zunehmend dichteren Wolken zusammen“. Die Luft ballt sich zu immer dichteren Wolken zusammen, nicht zu dünneren.",
+          "evidence": "und ballt sich am Himmel in zunehmend dichteren Wolken zusammen"
+        },
+        {
+          "text": "dichtern",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Hier ist eine Silbe verrutscht: „dichtern“ statt „dichteren“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "in der Regel",
+      "variants": [
+        {
+          "text": "nur selten",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Nachmittags oder abends regnen diese Wolken in der Regel aus, häufig in Verbindung mit einem Gewitter.“ Die Wolken regnen in der Regel aus, nicht nur selten.",
+          "evidence": "Nachmittags oder abends regnen diese Wolken in der Regel aus, häufig in Verbindung mit einem Gewitter."
+        },
+        {
+          "text": "immer",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Nachmittags oder abends regnen diese Wolken in der Regel aus, häufig in Verbindung mit einem Gewitter.“ Es steht „in der Regel“, nicht „immer“. Eine Regel kann Ausnahmen haben.",
+          "evidence": "Nachmittags oder abends regnen diese Wolken in der Regel aus, häufig in Verbindung mit einem Gewitter."
+        }
+      ]
+    },
+    "i2": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Weil die Sonne täglich zwölf Stunden scheint, regnet es im Regenwald fast nie.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht im Original. Aus der Sonnenzeit folgt nicht, dass es kaum regnet. Im Original regnen die Wolken nachmittags oder abends aus, und es regnet das ganze Jahr."
+        },
+        {
+          "text": "Die Wolken regnen im Regenwald nie aus.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Dieser Satz widerspricht dem Satz davor. Dort regnen die Wolken nachmittags oder abends aus."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "Frühjahr",
+      "variants": [
+        {
+          "text": "Sommer",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind“. Besonders stark regnet es im Frühjahr und im Herbst.",
+          "evidence": "Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind"
+        },
+        {
+          "text": "Winter",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind“. Besonders stark regnet es im Frühjahr und im Herbst, nicht im Winter.",
+          "evidence": "Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind"
+        }
+      ]
+    },
+    "s6": {
+      "correct": "zehn Monaten",
+      "variants": [
+        {
+          "text": "zwei Monaten",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht“. Es sind mindestens zehn Monate, nicht zwei.",
+          "evidence": "führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht"
+        },
+        {
+          "text": "zwölf Monaten",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht“. Es sind mindestens zehn Monate, nicht zwölf.",
+          "evidence": "führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht"
+        }
+      ]
+    },
+    "s8": {
+      "correct": "Gleichwohl",
+      "variants": [
+        {
+          "text": "Deshalb",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht. Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder.“ Das Verdunsten ist kein Grund für den vielen Regen, sondern ein Gegensatz dazu. „Gleichwohl“ zeigt das, „deshalb“ nicht.",
+          "evidence": "Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides Klima herrscht. Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder."
+        },
+        {
+          "text": "Gleichwol",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das Wort enthält „wohl“ mit Dehnungs-h. Man schreibt: Gleichwohl."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "verstärkt",
+      "variants": [
+        {
+          "text": "verhindert",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Dieser Effekt wird durch das Blattwerk der Vegetation verstärkt, sodass die Vegetation selbst neuerlichen Niederschlag hervorruft.“ Das Blattwerk verstärkt den Effekt, es verhindert ihn nicht.",
+          "evidence": "Dieser Effekt wird durch das Blattwerk der Vegetation verstärkt, sodass die Vegetation selbst neuerlichen Niederschlag hervorruft."
+        },
+        {
+          "text": "verstärt",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Hier fehlt ein Buchstabe: „verstärt“ statt „verstärkt“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
+    },
+    "i3": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Darum sehen die Blätter dort nach einem Regen besonders glänzend aus.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht im Original. Dort steht nur, dass das Blattwerk den Effekt verstärkt und die Vegetation selbst Niederschlag hervorruft. Von glänzenden Blättern steht nichts im Text."
+        },
+        {
+          "text": "Alle Pflanzen auf der Erde erzeugen so ihren eigenen Regen.",
+          "errorClass": "overgeneralization",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht im Original. Im Original geht es um die Vegetation des Regenwaldes. Aus diesem Fall wird hier eine Regel für alle Pflanzen gemacht."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "2000 bis 4000 mm",
+      "variants": [
+        {
+          "text": "200 bis 400 mm",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Die Niederschlagsmenge liegt in den Tieflandregenwäldern mit jährlich 2000 bis 4000 mm fünfmal höher als in Mitteleuropa“. Es sind 2000 bis 4000 Millimeter, nicht 200 bis 400.",
+          "evidence": "Die Niederschlagsmenge liegt in den Tieflandregenwäldern mit jährlich 2000 bis 4000 mm"
+        },
+        {
+          "text": "4000 bis 6000 mm",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „Die Niederschlagsmenge liegt in den Tieflandregenwäldern mit jährlich 2000 bis 4000 mm fünfmal höher als in Mitteleuropa“. Die Zahlen heißen 2000 bis 4000.",
+          "evidence": "Die Niederschlagsmenge liegt in den Tieflandregenwäldern mit jährlich 2000 bis 4000 mm"
+        }
+      ]
+    },
+    "s11": {
+      "correct": "fünfmal",
+      "variants": [
+        {
+          "text": "zweimal",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „fünfmal höher als in Mitteleuropa, wo die Werte bei 400 bis 800 mm liegen“. Es ist fünfmal so viel, nicht zweimal.",
+          "evidence": "fünfmal höher als in Mitteleuropa, wo die Werte bei 400 bis 800 mm liegen"
+        },
+        {
+          "text": "zehnmal",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „fünfmal höher als in Mitteleuropa, wo die Werte bei 400 bis 800 mm liegen“. Es ist fünfmal so viel, nicht zehnmal.",
+          "evidence": "fünfmal höher als in Mitteleuropa, wo die Werte bei 400 bis 800 mm liegen"
+        }
+      ]
+    },
+    "s12": {
+      "correct": "400 bis 800 mm",
+      "variants": [
+        {
+          "text": "40 bis 80 mm",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „fünfmal höher als in Mitteleuropa, wo die Werte bei 400 bis 800 mm liegen“. In Mitteleuropa sind es 400 bis 800 Millimeter, nicht 40 bis 80.",
+          "evidence": "fünfmal höher als in Mitteleuropa, wo die Werte bei 400 bis 800 mm liegen"
+        },
+        {
+          "text": "4000 bis 8000 mm",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „fünfmal höher als in Mitteleuropa, wo die Werte bei 400 bis 800 mm liegen“. In Mitteleuropa sind es 400 bis 800 Millimeter. Mit 4000 bis 8000 wäre es dort mehr Regen als im Regenwald.",
+          "evidence": "fünfmal höher als in Mitteleuropa, wo die Werte bei 400 bis 800 mm liegen"
+        }
+      ]
+    },
+    "i4": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Auf der ganzen Erde regnet es in Wäldern deutlich mehr als in Mitteleuropa.",
+          "errorClass": "overgeneralization",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht im Original. Dort geht es um die Tieflandregenwälder. Aus diesem Fall wird hier eine Regel für alle Wälder der Erde gemacht."
+        },
+        {
+          "text": "Ein Regenwald mit so viel Regen ist schöner als jeder europäische Wald.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das ist eine Meinung, keine Tatsache. Wörter wie „schöner“ bewerten. Im Original stehen nur Zahlen zur Regenmenge."
+        }
+      ]
+    },
+    "s13": {
+      "correct": "6.000 mm und 12.000 mm",
+      "variants": [
+        {
+          "text": "600 mm und 1.200 mm",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „An der Luv-Seite tropischer Berghänge können die Niederschläge sogar auf Jahreswerte zwischen 6.000 mm und 12.000 mm (am hawaiianischen Waiʻaleʻale) ansteigen.“ Die Werte liegen zwischen 6.000 und 12.000 Millimetern.",
+          "evidence": "An der Luv-Seite tropischer Berghänge können die Niederschläge sogar auf Jahreswerte zwischen 6.000 mm und 12.000 mm (am hawaiianischen Waiʻaleʻale) ansteigen."
+        },
+        {
+          "text": "6.000 mm und 21.000 mm",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „An der Luv-Seite tropischer Berghänge können die Niederschläge sogar auf Jahreswerte zwischen 6.000 mm und 12.000 mm (am hawaiianischen Waiʻaleʻale) ansteigen.“ Die obere Zahl ist 12.000, nicht 21.000.",
+          "evidence": "An der Luv-Seite tropischer Berghänge können die Niederschläge sogar auf Jahreswerte zwischen 6.000 mm und 12.000 mm (am hawaiianischen Waiʻaleʻale) ansteigen."
+        }
+      ]
+    },
+    "i5": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Auf Berghängen regnet es deshalb immer weniger als im Tiefland.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz widerspricht dem Satz davor. Dort steigen die Niederschläge an Berghängen sogar auf sehr hohe Werte."
+        },
+        {
+          "text": "Weil es an Berghängen so viel regnet, gibt es dort keine Wolken.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Dieser Satz steht nicht im Original. Aus viel Regen folgt nicht, dass es keine Wolken gibt. Im Original ballen sich Wolken am Himmel zusammen und regnen aus."
+        }
+      ]
+    },
+    "s14": {
+      "correct": "das ganze Jahr über",
+      "variants": [
+        {
+          "text": "nur im Sommer",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Insbesondere dort, wo feuchte Passatwinde das ganze Jahr über aus der gleichen Richtung wehen“. Die Passatwinde wehen das ganze Jahr über aus der gleichen Richtung, nicht nur im Sommer.",
+          "evidence": "Insbesondere dort, wo feuchte Passatwinde das ganze Jahr über aus der gleichen Richtung wehen, fällt auch der Steigungsregen stets auf der gleichen Bergseite"
+        },
+        {
+          "text": "ab und zu",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Insbesondere dort, wo feuchte Passatwinde das ganze Jahr über aus der gleichen Richtung wehen“. Die Winde wehen das ganze Jahr über, nicht nur ab und zu.",
+          "evidence": "Insbesondere dort, wo feuchte Passatwinde das ganze Jahr über aus der gleichen Richtung wehen, fällt auch der Steigungsregen stets auf der gleichen Bergseite"
+        }
+      ]
+    },
+    "s15": {
+      "correct": "sehr ausgeprägte",
+      "variants": [
+        {
+          "text": "kaum erkennbare",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Somit ergeben sich an den Bergkämmen sehr ausgeprägte Wetterscheiden“. Die Wetterscheiden sind sehr ausgeprägt, nicht kaum erkennbar.",
+          "evidence": "Somit ergeben sich an den Bergkämmen sehr ausgeprägte Wetterscheiden"
+        },
+        {
+          "text": "völlig unbedeutende",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Somit ergeben sich an den Bergkämmen sehr ausgeprägte Wetterscheiden“. Sie sind sehr ausgeprägt. „Völlig unbedeutend“ ist das Gegenteil.",
+          "evidence": "Somit ergeben sich an den Bergkämmen sehr ausgeprägte Wetterscheiden"
+        }
+      ]
+    },
+    "s16": {
+      "correct": "fließend",
+      "variants": [
+        {
+          "text": "plötzlich",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Der Wechsel vom Tiefland- zum Bergregenwald ist fließend und in den meisten Fällen nicht eindeutig festlegbar.“ Der Wechsel ist fließend, nicht plötzlich. Darum lässt er sich nicht eindeutig festlegen.",
+          "evidence": "Der Wechsel vom Tiefland- zum Bergregenwald ist fließend und in den meisten Fällen nicht eindeutig festlegbar."
+        },
+        {
+          "text": "fliessend",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das Wort hat ein langes „ie“. Nach einem langen Vokal oder Doppellaut schreibt man oft „ß“: fließend."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Wikipedia-Artikel Tropischer Regenwald, Revision 267803170 (abgerufen am 18.10.2026, Abschnitt „Klimatische Bedingungen“); die elf Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite, Link auf die Lizenz); die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Fehlerarten: Die Falschschreibungen sind konstruiert (Konsonantenverdopplung, Dehnung, nach den Schwerpunkten der IQB-Handreichung); die Klassen ab Klasse 7 (Menge/Grad, Verallgemeinerung, falsche Folgerung, Meinung als Tatsache) sind abgeleitet, nicht belegt. Die eingefügten Sätze sind erfunden und stehen so nicht in der Quelle.",
+    "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft."
+  ]
+}
