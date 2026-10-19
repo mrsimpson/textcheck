@@ -4,7 +4,7 @@
 # Archetype as in the app's first plan; set it when you start. Never changes.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: plan
+phase: code
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
@@ -43,6 +43,7 @@ Lernende können sich bei einer schwierigen Runde Schritt für Schritt Hinweise 
 - Kein Hinweis zeigt das Wort oder die Stelle im Satz. (Ersteller)
 - Alles gefunden ohne Hinweis: Feuerwerk. Mit Hinweis: Konfetti. Bei „Bewegung reduzieren“ keine Effekte, wie heute. (Ersteller)
 - Die Auflösung nennt bei Hinweisen einen ermutigenden Satz: beim nächsten Mal klappt es vielleicht ohne. (Ersteller)
+- Bremse: Mein Verständnis von „denounce“: eine Wartezeit vor jedem Hinweis, damit man nicht gleich alle Stufen anklickt. Der n-te Hinweis wird 10 s + 5 s × n nach dem Start der Runde oder dem vorigen Hinweis freigegeben (1. Hinweis nach 15 s, 2. nach 20 s). Bis dahin ist der Knopf gesperrt und zeigt die Restzeit. Sprachausgabe ohne Sekundentakt: nur „Hinweis in n Sekunden möglich“ beim Anklicken und „Hinweis bereit“. Die Uhr gehört zur Laufzeit; der Kern bekommt sie als Aktion `tick` und lehnt einen zu frühen `hint` ab. (Ersteller: „10s + 5*n-ter Tipp“; Auslegung guess)
 - Der Kern zählt die Hinweisstufe pro Runde (Aktion `hint`); eine neue Runde setzt sie zurück. Das Ergebnis (gefunden, übersehen) ändert sich nicht, es gibt keine Punkte. (guess)
 - Eingefügte Sätze (nur ein Slot, ohne Gegenstück im Original) kommen in den Hinweisen nicht vor: Stufe 2 markiert sie in keinem Modus. Im Modus `choose` markiert Stufe 2 den betroffenen Satz in beiden Texten (der Satz des Originals über `evidence.quote`), so verrät der Hinweis nicht, welcher Text die Variante ist; Stufe 1 gilt ohnehin vor der Wahl. (Ersteller: „in beiden Varianten hervorheben“, „Nimm eingefügte Sätze aus den Tipps raus“)
 - Der Knopf „Hinweis“ steht unter dem Text neben „Prüfen“; ein Hinweis bleibt bis zum Ende der Runde sichtbar und lässt sich nicht zurücknehmen. (guess)
@@ -101,9 +102,9 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
       and what is new. Max 2 questions.
 - [x] Each new component or interactive exercise: show a sketch (static SVG or image, or the steps). Words alone are
       not enough.
-- [ ] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes → change,
+- [x] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes → change,
       ask again.
-- [ ] Set `phase: code`: change the value line (`grep '^phase:'` prints `phase: code`).
+- [x] Set `phase: code`: change the value line (`grep '^phase:'` prints `phase: code`).
 
 ### Content method
 
@@ -128,8 +129,8 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 - [x] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
 - [ ] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
-- [ ] Slice 1 Kern: Aktion `hint`, Zustand, Sätze mit Fehler und Klasse je Satz (ohne eingefügte), Stufe 1 entfällt bei `announceClasses`; Playthroughs und Tests. Check, Commit.
-- [ ] Slice 2 Anzeige: Knopf, Stufe 1 und 2 in den Modi `mark`, `source` und `choose` (beide Texte), Meldungen de/en, Sprachausgabe (`announce`). e2e. Check, Commit.
+- [ ] Slice 1 Kern: Aktion `hint` mit Wartezeit (Aktion `tick`), Zustand, Sätze mit Fehler und Klasse je Satz (ohne eingefügte), Stufe 1 entfällt bei `announceClasses`; Playthroughs und Tests. Check, Commit.
+- [ ] Slice 2 Anzeige: Knopf mit Restzeit, Stufe 1 und 2 in den Modi `mark`, `source` und `choose` (beide Texte), Meldungen de/en, Sprachausgabe (`announce`). e2e. Check, Commit.
 - [ ] Slice 3 Auflösung: Feuerwerk ohne Hinweis, Konfetti mit Hinweis, ermutigender Satz, keine Effekte bei reduzierter Bewegung; Tests, arc42, Skill `app-content`. Check, Commit.
 - [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
