@@ -20,6 +20,9 @@
   },
   "excerpt": [
     {
+      "text": "Biber sind Säugetiere und Nagetiere, die im Süßwasser oder am Ufer leben, also in Flüssen und Seen."
+    },
+    {
       "text": "Biber werden etwa 80 bis 100 Zentimeter lang.",
       "section": "Wie sehen Biber aus?"
     },
@@ -36,10 +39,6 @@
       "section": "Wie sehen Biber aus?"
     },
     {
-      "text": "Weibchen sind etwas größer als männliche Biber.",
-      "section": "Wie sehen Biber aus?"
-    },
-    {
       "text": "Der Pelz ist meist braun und sehr dicht.",
       "section": "Wie sehen Biber aus?"
     },
@@ -53,6 +52,22 @@
     }
   ],
   "rendition": [
+    {
+      "sentence": [
+        "Biber leben im ",
+        {
+          "slot": "n1"
+        },
+        " und am Ufer, also in Flüssen und ",
+        {
+          "slot": "n2"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Biber sind Säugetiere und Nagetiere, die im Süßwasser oder am Ufer leben, also in Flüssen und Seen."
+      }
+    },
     {
       "sentence": [
         "Ein Biber ist etwa ",
@@ -111,18 +126,6 @@
       ],
       "evidence": {
         "quote": "Ein Biber wird außerdem um die 30 Kilogramm schwer."
-      }
-    },
-    {
-      "sentence": [
-        "Die Weibchen sind etwas ",
-        {
-          "slot": "s8"
-        },
-        " als die Männchen."
-      ],
-      "evidence": {
-        "quote": "Weibchen sind etwas größer als männliche Biber."
       }
     },
     {
@@ -297,18 +300,6 @@
         }
       ]
     },
-    "s8": {
-      "correct": "größer",
-      "variants": [
-        {
-          "text": "gröser",
-          "errorClass": "spelling_rule",
-          "basis": "text",
-          "conspicuousness": 2,
-          "explanation": "Nach dem langen „ö“ steht „ß“: größer. Das Wort kommt von „groß“."
-        }
-      ]
-    },
     "s9": {
       "correct": "Pelz",
       "variants": [
@@ -391,12 +382,38 @@
           "evidence": "Sie wachsen ein Leben lang nach und werden dreieinhalb Zentimeter lang."
         }
       ]
+    },
+    "n1": {
+      "correct": "Süßwasser",
+      "variants": [
+        {
+          "text": "Süswasser",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach dem langen „ü“ steht „ß“: Süßwasser. Das Wort ist aus „süß“ und „Wasser“ gemacht."
+        }
+      ]
+    },
+    "n2": {
+      "correct": "Seen",
+      "variants": [
+        {
+          "text": "Meeren",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Biber sind Säugetiere und Nagetiere, die im Süßwasser oder am Ufer leben, also in Flüssen und Seen.“ Biber leben in Flüssen und Seen, nicht in Meeren.",
+          "evidence": "Biber sind Säugetiere und Nagetiere, die im Süßwasser oder am Ufer leben, also in Flüssen und Seen."
+        }
+      ]
     }
   },
   "notes": [
-    "Quelle gelesen: Klexikon-Artikel Biber, Revision 164414 (abgerufen am 18.10.2026, Abschnitt „Wie sehen Biber aus?“); die acht Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Quelle gelesen: Klexikon-Artikel Biber, Revision 164414 (abgerufen am 18.10.2026, Abschnitt „Wie sehen Biber aus?“); die 8 Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
     "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de; die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Nur Klassen, die ab Klasse 3 vorkommen: Rechtschreibung (Ableitung, Doppelkonsonant, tz, ck, ß), Flüchtigkeitsfehler, Zeichensetzung, Zahl/Name/Ort. Die Falschschreibungen sind konstruiert, nach den Schwerpunkten der IQB-Handreichung.",
+    "Geändert (Einleitung): Der Auszug beginnt jetzt mit dem ersten Satz des Artikels; gestrichen ist der Satz zu Weibchen und Männchen. Der erste Variantensatz sagt in eigenen Worten, wo Biber leben.",
     "Ausgelassen: die Sätze zum Einfetten des Pelzes im Auszug (Original: nicht Teil des Auszugs); „Capybaras“ steht im Original und bleibt unverändert.",
     "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt.",
     "Die Quelle liegt als PDF unter public/quellen/de/biber.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."

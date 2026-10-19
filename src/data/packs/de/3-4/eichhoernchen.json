@@ -20,6 +20,12 @@
   },
   "excerpt": [
     {
+      "text": "Eichhörnchen sind Nagetiere."
+    },
+    {
+      "text": "Sie bilden eine Gattung mit 29 verschiedenen Arten."
+    },
+    {
       "text": "Die erste Zeit für die Fortpflanzung ist der Januar, die zweite etwa der April.",
       "section": "Wie vermehren sich Eichhörnchen?"
     },
@@ -36,14 +42,6 @@
       "section": "Wie vermehren sich Eichhörnchen?"
     },
     {
-      "text": "Eichhörnchen sind Säugetiere.",
-      "section": "Wie vermehren sich Eichhörnchen?"
-    },
-    {
-      "text": "Die Mutter gibt den Jungen also ihre Milch zu trinken.",
-      "section": "Wie vermehren sich Eichhörnchen?"
-    },
-    {
       "text": "Nach acht bis zehn Wochen suchen sie sich alleine Futter.",
       "section": "Wie vermehren sich Eichhörnchen?"
     },
@@ -53,6 +51,30 @@
     }
   ],
   "rendition": [
+    {
+      "sentence": [
+        "Eichhörnchen gehören zu den ",
+        {
+          "slot": "n1"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Eichhörnchen sind Nagetiere."
+      }
+    },
+    {
+      "sentence": [
+        "Es gibt ",
+        {
+          "slot": "n2"
+        },
+        " verschiedene Arten von ihnen."
+      ],
+      "evidence": {
+        "quote": "Sie bilden eine Gattung mit 29 verschiedenen Arten."
+      }
+    },
     {
       "sentence": [
         "Die erste Zeit für Nachwuchs ist der ",
@@ -111,30 +133,6 @@
       ],
       "evidence": {
         "quote": "Die Jungtiere sind bei der Geburt etwa sechs bis neun Zentimeter lang."
-      }
-    },
-    {
-      "sentence": [
-        "Eichhörnchen sind ",
-        {
-          "slot": "s8"
-        },
-        "."
-      ],
-      "evidence": {
-        "quote": "Eichhörnchen sind Säugetiere."
-      }
-    },
-    {
-      "sentence": [
-        "Die Jungen trinken die Milch ihrer ",
-        {
-          "slot": "s9"
-        },
-        "."
-      ],
-      "evidence": {
-        "quote": "Die Mutter gibt den Jungen also ihre Milch zu trinken."
       }
     },
     {
@@ -301,45 +299,6 @@
         }
       ]
     },
-    "s8": {
-      "correct": "Säugetiere",
-      "variants": [
-        {
-          "text": "Seugetiere",
-          "errorClass": "spelling_rule",
-          "basis": "text",
-          "conspicuousness": 2,
-          "explanation": "Das Wort kommt von „säugen“. Darum schreibt man es mit „äu“."
-        },
-        {
-          "text": "Säugetire",
-          "errorClass": "slip",
-          "basis": "text",
-          "conspicuousness": 3,
-          "explanation": "Im Wort fehlt ein „e“: Säugetiere."
-        }
-      ]
-    },
-    "s9": {
-      "correct": "Mutter",
-      "variants": [
-        {
-          "text": "Vater",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Die Mutter gibt den Jungen also ihre Milch zu trinken.“ Die Mutter gibt den Jungen ihre Milch.",
-          "evidence": "Die Mutter gibt den Jungen also ihre Milch zu trinken."
-        },
-        {
-          "text": "Muter",
-          "errorClass": "spelling_rule",
-          "basis": "text",
-          "conspicuousness": 2,
-          "explanation": "Nach dem kurzen „u“ steht „tt“: Mutter. Das Wort hat zwei „t“."
-        }
-      ]
-    },
     "s10": {
       "correct": "acht bis zehn",
       "variants": [
@@ -407,12 +366,46 @@
           "explanation": "Das Wort kommt von „alt“. Darum schreibt man es mit „ä“: älter."
         }
       ]
+    },
+    "n1": {
+      "correct": "Nagetieren",
+      "variants": [
+        {
+          "text": "Nagetiren",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Im Wort fehlt ein „e“: Nagetieren."
+        }
+      ]
+    },
+    "n2": {
+      "correct": "29",
+      "variants": [
+        {
+          "text": "92",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Sie bilden eine Gattung mit 29 verschiedenen Arten.“ Es gibt 29 verschiedene Arten, nicht 92.",
+          "evidence": "Sie bilden eine Gattung mit 29 verschiedenen Arten."
+        },
+        {
+          "text": "290",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Sie bilden eine Gattung mit 29 verschiedenen Arten.“ Es sind 29 Arten, nicht 290.",
+          "evidence": "Sie bilden eine Gattung mit 29 verschiedenen Arten."
+        }
+      ]
     }
   },
   "notes": [
-    "Quelle gelesen: Klexikon-Artikel Eichhörnchen, Revision 157835 (abgerufen am 18.10.2026, Abschnitt „Wie vermehren sich Eichhörnchen?“); die acht Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Quelle gelesen: Klexikon-Artikel Eichhörnchen, Revision 157835 (abgerufen am 18.10.2026, Abschnitt „Wie vermehren sich Eichhörnchen?“); die 8 Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
     "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de; die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Nur Klassen, die ab Klasse 3 vorkommen: Rechtschreibung (Ableitung, Doppelkonsonant, tz, ck, ß), Flüchtigkeitsfehler, Zeichensetzung, Zahl/Name/Ort. Die Falschschreibungen sind konstruiert, nach den Schwerpunkten der IQB-Handreichung.",
+    "Geändert (Einleitung): Der Auszug beginnt jetzt mit den ersten zwei Sätzen des Artikels; gestrichen sind die Sätze zu Säugetieren und zur Milch der Mutter. Der Artikel-Satz „Eichhörnchen sind Säugetiere“ aus dem Abschnitt „Wie vermehren sich Eichhörnchen?“ entfällt damit.",
     "Ausgelassen: die Sätze zum Männchen, zum Fell der Jungen und zum Kobel, weil sie ohne Erklärung schwer zu verstehen sind. Der letzte Auszugssatz steht im selben Abschnitt weiter hinten.",
     "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt.",
     "Die Quelle liegt als PDF unter public/quellen/de/eichhoernchen.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
