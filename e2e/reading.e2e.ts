@@ -72,4 +72,17 @@ test.describe("Settings for reading", () => {
     await expect(button).toBeFocused();
     expect((await button.boundingBox())?.height ?? 99).toBeLessThan(60);
   });
+
+  test("puts the button in the line of the heading, at its right edge", async ({ page }) => {
+    await open(page);
+    const heading = await page.locator(".interactive h1").boundingBox();
+    const button = await page.getByRole("button", { name: "Schrift und Lesen" }).boundingBox();
+    const column = await page.locator(".interactive").boundingBox();
+    const middle = (box: { y: number; height: number } | null): number => (box?.y ?? 0) + (box?.height ?? 0) / 2;
+    expect(Math.abs(middle(heading) - middle(button))).toBeLessThan(6);
+    expect((column?.x ?? 0) + (column?.width ?? 0) - ((button?.x ?? 0) + (button?.width ?? 0))).toBeLessThan(24);
+    // it does not push the rest of the page down: the age group comes straight under the heading
+    const picker = await page.locator(".picker").boundingBox();
+    expect((picker?.y ?? 0) - ((heading?.y ?? 0) + (heading?.height ?? 0))).toBeLessThan(40);
+  });
 });

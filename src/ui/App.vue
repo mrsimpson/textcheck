@@ -662,6 +662,11 @@ h2 {
   font-display: swap;
 }
 
+/* The button for the reading settings stands in the line of the page's heading: the main element is its frame. */
+body:has(.textcheck) .interactive {
+  position: relative;
+}
+
 /* The two selects of the app replace the shell's list of route links; without JavaScript the list stays. */
 body:has(.textcheck) .interactive-routes {
   display: none;
