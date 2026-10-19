@@ -4,7 +4,7 @@
 # Archetype as in the app's first plan; set it when you start. Never changes.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: code
+phase: commit
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
@@ -127,7 +127,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 ### Tasks
 
 - [x] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
-- [ ] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
+- [x] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
 - [x] Slice 1 Kern: Aktion `hint` mit Wartezeit (Aktion `tick`), Zustand, Sätze mit Fehler und Klasse je Satz (ohne eingefügte), Stufe 1 entfällt bei `announceClasses`; Playthroughs und Tests. Check, Commit.
 - [x] Slice 2 Anzeige: Knopf mit Restzeit, Stufe 1 und 2 in den Modi `mark`, `source` und `choose` (beide Texte), Meldungen de/en, Sprachausgabe (`announce`). e2e. Check, Commit.
@@ -135,8 +135,8 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 - [x] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
 - [x] `npx lernapps check` passes.
-- [ ] Every box of Explore, Plan and Code ticked.
-- [ ] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
+- [x] Every box of Explore, Plan and Code ticked.
+- [x] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
 
 ### Completed
 
