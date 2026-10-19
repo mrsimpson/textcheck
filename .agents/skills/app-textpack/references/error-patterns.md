@@ -65,3 +65,20 @@ Stance (7+ / 10+; harmless topics only):
 
 - Real examples of spelling errors (IQB, Schmellentin & Lindauer) tell what is typical; the pack's misspellings are
   constructed on those patterns. Say so in `notes`.
+
+## English packs
+
+The same classes, the same school years; only the patterns of the form family differ. Wording of a variant and of its
+explanation is English; the explanation quotes the Original in "..." as in German.
+
+- **spelling_rule**: rule-based misspellings a pupil makes: ie/ei (*recieve), doubled consonants (*begining, *occured),
+  silent letters (*wich, *neigbour), -able/-ible, -ant/-ent. Not the German rules.
+- **slip**: a word typed twice, a missing letter or word, swapped letters (*teh, *becuase). Same as German.
+- **real_word**: another real word a spell checker passes: their/there/they're, its/it's, than/then, affect/effect,
+  to/too, lose/loose, were/where.
+- **punctuation**: a missing or extra comma only where a rule applies (list, after an introductory clause, before a
+  non-defining relative clause); a missing apostrophe in a possessive. Remember that English has fewer comma rules than
+  German: pick places where a reader would notice.
+- All other classes: as above, with English connectives (because/although, therefore/nevertheless) and quantifiers
+  (some/all, often/always, mostly/never).
+- Keep British or American spelling as the source has it, in the whole pack.

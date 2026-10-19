@@ -1,8 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { ERROR_CLASSES, LEVELS, parseRoute, routeOf } from "./data.ts";
+import { ERROR_CLASSES, LEVELS, PACKS, parseRoute, routeOf } from "./data.ts";
 import { start, step, type State } from "./index.ts";
 
 const route = "klasse-5-6";
+const languages = [...new Set(PACKS.map((pack) => pack.language))].sort();
 const action = (name: string, value?: number | string) =>
   ({ kind: "action", name, ...(value === undefined ? {} : { value }) }) as const;
 const wordsOf = (state: State, slot: string): number[] =>
@@ -221,9 +222,55 @@ describe("the routes", () => {
         expect(parseRoute(routeOf(level, mode))).toEqual({ level, mode });
   });
 
-  it("give every mode enough errors in every level", () => {
-    for (const level of Object.keys(LEVELS))
-      for (const mode of ["mark", "source", "choose"] as const)
-        expect(start(1, routeOf(level, mode)).corruptions.length, `${level} ${mode}`).toBe(LEVELS[level]?.errors);
+  it("give every mode enough errors in every level and language", () => {
+    for (const language of languages)
+      for (const level of Object.keys(LEVELS))
+        for (const mode of ["mark", "source", "choose"] as const)
+          expect(start(1, routeOf(level, mode), language).corruptions.length, `${language} ${level} ${mode}`).toBe(
+            LEVELS[level]?.errors,
+          );
+  });
+});
+
+describe("the language", () => {
+  it("has the packs of the language, two or more for every level in English", () => {
+    for (const level of Object.values(LEVELS)) {
+      const count = PACKS.filter(
+        (pack) =>
+          pack.language === "en" && pack.grades.from === level.grades.from && pack.grades.to === level.grades.to,
+      ).length;
+      expect(count, `English packs for grades ${level.grades.from} to ${level.grades.to}`).toBe(2);
+    }
+  });
+
+  it("is set by the action language: the same seed and route, the packs of the language", () => {
+    for (const language of languages) {
+      const state = step(start(3, route), action("language", language));
+      expect(state.language).toBe(language);
+      expect([state.seed, state.route]).toEqual([3, route]);
+      expect(PACKS.find((pack) => pack.id === state.packId)?.language).toBe(language);
+    }
+  });
+
+  it("is kept in the next round and in every mode", () => {
+    const english = step(start(1, "klasse-7-8-original"), action("language", "en"));
+    expect(english.mode).toBe("choose");
+    expect(step(english, action("again")).language).toBe("en");
+    expect(step(start(1, "klasse-9-10-quelle", "en"), action("again")).pdf).toMatch(/^quellen\/en\//);
+  });
+
+  it("stays as it is for a language without packs, and for the language it already has", () => {
+    const state = start(1, route);
+    expect(step(state, action("language", "xx"))).toBe(state);
+    expect(step(state, action("language", "de"))).toBe(state);
+    expect(step(state, action("language"))).toBe(state);
+  });
+
+  it("changes the language after checking, too, with a new round of the same seed", () => {
+    const checked = step(start(1, route), action("check"));
+    expect(checked.phase).toBe("result");
+    const english = step(checked, action("language", "en"));
+    expect(english.phase).toBe("marking");
+    expect(english.language).toBe("en");
   });
 });

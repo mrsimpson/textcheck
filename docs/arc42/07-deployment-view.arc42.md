@@ -181,9 +181,7 @@ hosts: bb-component-rules, bb-interactive-description, bb-interactive-core, bb-i
 
 ## Interactive app page
 
-The shell, the core and the UI run in the learner's browser on the app page. The PDFs of the sources (`public/quellen/`) are static files beside the
-app page, copied to the site by the build; the app page links to them and, on a wide screen, embeds them in a frame of
-the same site.
+The shell, the core and the UI run in the learner's browser on the app page.
 
 ```arc42
 :::deployment-node

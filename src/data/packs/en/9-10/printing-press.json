@@ -1,0 +1,698 @@
+{
+  "id": "printing-press",
+  "title": "Printing press",
+  "language": "en",
+  "grades": {
+    "from": 9,
+    "to": 10
+  },
+  "topic": "The printing press in Europe: spread and output in the 15th and 16th centuries",
+  "source": {
+    "title": "Printing press – Wikipedia",
+    "url": "https://en.wikipedia.org/w/index.php?title=Printing_press&oldid=1379445153",
+    "revision": "1379445153",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "authorsUrl": "https://en.wikipedia.org/w/index.php?title=Printing_press&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/en/printing-press.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "In Italy, a center of early printing, print shops existed in 77 cities and towns by 1500, while 151 locations in Italy had hosted printing at some point by 1600.",
+      "section": "Mass production and spread in Europe"
+    },
+    {
+      "text": "In 1600, nearly 3,000 printers are known to have been active in Italy.",
+      "section": "Mass production and spread in Europe"
+    },
+    {
+      "text": "However, printing centers soon emerged, and one third of the Italian printers published in Venice.",
+      "section": "Mass production and spread in Europe"
+    },
+    {
+      "text": "By 1500, printing presses throughout Western Europe had produced over 20 million copies.",
+      "section": "Mass production and spread in Europe"
+    },
+    {
+      "text": "Their output grew to an estimated 150–200 million copies by 1600.",
+      "section": "Mass production and spread in Europe"
+    },
+    {
+      "text": "European printing presses c. 1600 could produce between 1,500 and 3,600 impressions per workday.",
+      "section": "Mass production and spread in Europe"
+    },
+    {
+      "text": "By comparison, with manual woodblock printing, a skilled printer could print 1,500 to 2,000 double sheets per day.",
+      "section": "Mass production and spread in Europe"
+    },
+    {
+      "text": "A printing block could be used for up to 25,000 prints with repairs.",
+      "section": "Mass production and spread in Europe"
+    },
+    {
+      "text": "The Korean Kabin font metal movable type developed in 1434 could print 40 sheets per day.",
+      "section": "Mass production and spread in Europe"
+    },
+    {
+      "text": "At least 750,000 copies of Erasmus's works were sold during his lifetime (1469–1536), while Martin Luther became Europe's most published author c. 1520, at the start of the Reformation.",
+      "section": "Mass production and spread in Europe"
+    },
+    {
+      "text": "Printers across Germany reprinted 291 editions of Luther's 45 original works, and between 1518 and 1520 they distributed 300,000 printed copies of his works, with the widespread printing surprising both the pope and secular rulers.",
+      "section": "Mass production and spread in Europe"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Italy was a center of early printing, and by 1500 print shops existed in ",
+        {
+          "slot": "s1"
+        },
+        " cities and towns."
+      ],
+      "evidence": {
+        "quote": "In Italy, a center of early printing, print shops existed in 77 cities and towns by 1500"
+      }
+    },
+    {
+      "sentence": [
+        "By 1600, ",
+        {
+          "slot": "s2"
+        },
+        " had hosted printing at some point."
+      ],
+      "evidence": {
+        "quote": "while 151 locations in Italy had hosted printing at some point by 1600"
+      }
+    },
+    {
+      "sentence": [
+        "In 1600, nearly ",
+        {
+          "slot": "s3"
+        },
+        " printers are known to have been active in Italy."
+      ],
+      "evidence": {
+        "quote": "In 1600, nearly 3,000 printers are known to have been active in Italy."
+      }
+    },
+    {
+      "sentence": [
+        "Printing centers soon emerged, and ",
+        {
+          "slot": "s4"
+        },
+        " of the Italian printers published in Venice."
+      ],
+      "evidence": {
+        "quote": "However, printing centers soon emerged, and one third of the Italian printers published in Venice."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s16"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "By 1500, printing presses throughout Western Europe had produced ",
+        {
+          "slot": "s5"
+        },
+        " copies."
+      ],
+      "evidence": {
+        "quote": "By 1500, printing presses throughout Western Europe had produced over 20 million copies."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s6"
+        },
+        " output grew to an estimated 150–200 million copies by 1600."
+      ],
+      "evidence": {
+        "quote": "Their output grew to an estimated 150–200 million copies by 1600."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s17"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Around 1600, European printing presses could produce between ",
+        {
+          "slot": "s7"
+        },
+        " impressions in a working day."
+      ],
+      "evidence": {
+        "quote": "European printing presses c. 1600 could produce between 1,500 and 3,600 impressions per workday."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s8"
+        },
+        " a skilled printer using manual woodblock printing could print 1,500 to 2,000 double sheets per day."
+      ],
+      "evidence": {
+        "quote": "By comparison, with manual woodblock printing, a skilled printer could print 1,500 to 2,000 double sheets per day."
+      }
+    },
+    {
+      "sentence": [
+        "A printing block could be used for up to 25,000 prints ",
+        {
+          "slot": "s9"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "A printing block could be used for up to 25,000 prints with repairs."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s20"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "The Korean Kabin font, a metal movable type developed in ",
+        {
+          "slot": "s10"
+        },
+        ", could print 40 sheets per day."
+      ],
+      "evidence": {
+        "quote": "The Korean Kabin font metal movable type developed in 1434 could print 40 sheets per day."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s11"
+        },
+        " copies of Erasmus's works were sold during his lifetime (1469–1536)."
+      ],
+      "evidence": {
+        "quote": "At least 750,000 copies of Erasmus's works were sold during his lifetime (1469–1536)"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s18"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Martin Luther became ",
+        {
+          "slot": "s12"
+        },
+        " around 1520, at the start of the Reformation."
+      ],
+      "evidence": {
+        "quote": "Martin Luther became Europe's most published author c. 1520, at the start of the Reformation"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s19"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s13"
+        },
+        " across Germany reprinted 291 editions of Luther's 45 original works."
+      ],
+      "evidence": {
+        "quote": "Printers across Germany reprinted 291 editions of Luther's 45 original works"
+      }
+    },
+    {
+      "sentence": [
+        "Between ",
+        {
+          "slot": "s14"
+        },
+        " they distributed 300,000 printed copies of his works."
+      ],
+      "evidence": {
+        "quote": "between 1518 and 1520 they distributed 300,000 printed copies of his works"
+      }
+    },
+    {
+      "sentence": [
+        "The widespread printing ",
+        {
+          "slot": "s15"
+        },
+        " both the pope and secular rulers."
+      ],
+      "evidence": {
+        "quote": "with the widespread printing surprising both the pope and secular rulers"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s21"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "77",
+      "variants": [
+        {
+          "text": "87",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The Original says: \"In Italy, a center of early printing, print shops existed in 77 cities and towns by 1500\". The number is 77, not 87.",
+          "evidence": "In Italy, a center of early printing, print shops existed in 77 cities and towns by 1500, while 151 locations in Italy had hosted printing at some point by 1600."
+        },
+        {
+          "text": "177",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The Original says: \"In Italy, a center of early printing, print shops existed in 77 cities and towns by 1500\". There were 77 cities and towns, not 177.",
+          "evidence": "In Italy, a center of early printing, print shops existed in 77 cities and towns by 1500, while 151 locations in Italy had hosted printing at some point by 1600."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "151 places in Italy",
+      "variants": [
+        {
+          "text": "every place in Italy",
+          "errorClass": "overgeneralization",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The Original says: \"... while 151 locations in Italy had hosted printing at some point by 1600.\" Only 151 places had hosted printing. Saying \"every place\" turns a number into a rule for all.",
+          "evidence": "In Italy, a center of early printing, print shops existed in 77 cities and towns by 1500, while 151 locations in Italy had hosted printing at some point by 1600.",
+          "tolerance": 1
+        },
+        {
+          "text": "115 places in Italy",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The Original says: \"... while 151 locations in Italy had hosted printing at some point by 1600.\" The number is 151. Two digits were swapped.",
+          "evidence": "In Italy, a center of early printing, print shops existed in 77 cities and towns by 1500, while 151 locations in Italy had hosted printing at some point by 1600.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s3": {
+      "correct": "3,000",
+      "variants": [
+        {
+          "text": "30,000",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The Original says: \"In 1600, nearly 3,000 printers are known to have been active in Italy.\" It was nearly 3,000 printers, not 30,000.",
+          "evidence": "In 1600, nearly 3,000 printers are known to have been active in Italy."
+        },
+        {
+          "text": "300",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The Original says: \"In 1600, nearly 3,000 printers are known to have been active in Italy.\" It was nearly 3,000 printers, not 300.",
+          "evidence": "In 1600, nearly 3,000 printers are known to have been active in Italy."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "one third",
+      "variants": [
+        {
+          "text": "almost all",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The Original says: \"... one third of the Italian printers published in Venice.\" It was one third, not almost all. A large share is not the same as nearly everyone.",
+          "evidence": "However, printing centers soon emerged, and one third of the Italian printers published in Venice."
+        },
+        {
+          "text": "one tenth",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The Original says: \"... one third of the Italian printers published in Venice.\" It was one third, not one tenth.",
+          "evidence": "However, printing centers soon emerged, and one third of the Italian printers published in Venice."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "over 20 million",
+      "variants": [
+        {
+          "text": "over 2 million",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The Original says: \"By 1500, printing presses throughout Western Europe had produced over 20 million copies.\" It was over 20 million, not over 2 million.",
+          "evidence": "By 1500, printing presses throughout Western Europe had produced over 20 million copies.",
+          "tolerance": 1
+        },
+        {
+          "text": "over 200 million",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The Original says: \"By 1500, printing presses throughout Western Europe had produced over 20 million copies.\" It was over 20 million. Also, the next sentence gives 150-200 million copies only for 1600, so 200 million by 1500 does not fit.",
+          "evidence": "By 1500, printing presses throughout Western Europe had produced over 20 million copies.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s6": {
+      "correct": "Their",
+      "variants": [
+        {
+          "text": "There",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "\"There\" is a real word, but it names a place. Here you need \"their\", which shows that the output belongs to the presses."
+        },
+        {
+          "text": "They're",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "\"They're\" means \"they are\". The sentence needs \"their\", which shows that the output belongs to the presses."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "1,500 and 3,600",
+      "variants": [
+        {
+          "text": "15,000 and 36,000",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The Original says: \"European printing presses c. 1600 could produce between 1,500 and 3,600 impressions per workday.\" The numbers are 1,500 and 3,600.",
+          "evidence": "European printing presses c. 1600 could produce between 1,500 and 3,600 impressions per workday.",
+          "tolerance": 1
+        },
+        {
+          "text": "2,500 and 3,600",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The Original says: \"European printing presses c. 1600 could produce between 1,500 and 3,600 impressions per workday.\" The lower number is 1,500, not 2,500.",
+          "evidence": "European printing presses c. 1600 could produce between 1,500 and 3,600 impressions per workday.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s8": {
+      "correct": "By comparison,",
+      "variants": [
+        {
+          "text": "Because of this,",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The Original says: \"By comparison, with manual woodblock printing, a skilled printer could print 1,500 to 2,000 double sheets per day.\" Woodblock printing is compared with the presses. It is not a result of them. This is a false cause: two facts are linked as if one led to the other.",
+          "evidence": "By comparison, with manual woodblock printing, a skilled printer could print 1,500 to 2,000 double sheets per day."
+        },
+        {
+          "text": "By comparison",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "An introductory phrase like \"By comparison\" is followed by a comma."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "with repairs",
+      "variants": [
+        {
+          "text": "without any repairs",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The Original says: \"A printing block could be used for up to 25,000 prints with repairs.\" The block needed repairs. \"Without any repairs\" turns this around.",
+          "tolerance": 1
+        },
+        {
+          "text": "wiht repairs",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Two letters are swapped: \"with\"."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "1434",
+      "variants": [
+        {
+          "text": "1344",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The Original says: \"The Korean Kabin font metal movable type developed in 1434 could print 40 sheets per day.\" The year is 1434. Two digits were swapped.",
+          "evidence": "The Korean Kabin font metal movable type developed in 1434 could print 40 sheets per day."
+        },
+        {
+          "text": "1534",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The Original says: \"The Korean Kabin font metal movable type developed in 1434 could print 40 sheets per day.\" The year is 1434, not 1534.",
+          "evidence": "The Korean Kabin font metal movable type developed in 1434 could print 40 sheets per day."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "At least 750,000",
+      "variants": [
+        {
+          "text": "At most 750,000",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The Original says: \"At least 750,000 copies of Erasmus's works were sold during his lifetime (1469–1536) ...\" \"At least\" names a minimum. \"At most\" names a maximum, which is the opposite.",
+          "evidence": "At least 750,000 copies of Erasmus's works were sold during his lifetime (1469–1536), while Martin Luther became Europe's most published author c. 1520, at the start of the Reformation.",
+          "tolerance": 1
+        },
+        {
+          "text": "At least 7,500,000",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The Original says: \"At least 750,000 copies of Erasmus's works were sold during his lifetime (1469–1536) ...\" The number is 750,000.",
+          "evidence": "At least 750,000 copies of Erasmus's works were sold during his lifetime (1469–1536), while Martin Luther became Europe's most published author c. 1520, at the start of the Reformation.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s12": {
+      "correct": "Europe's most published author",
+      "variants": [
+        {
+          "text": "the most published author of all time",
+          "errorClass": "overgeneralization",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The Original says: \"... Martin Luther became Europe's most published author c. 1520 ...\" This holds for Europe around 1520 only. \"Of all time\" stretches one case to every time. That is an overgeneralization.",
+          "evidence": "At least 750,000 copies of Erasmus's works were sold during his lifetime (1469–1536), while Martin Luther became Europe's most published author c. 1520, at the start of the Reformation.",
+          "tolerance": 1
+        },
+        {
+          "text": "Europe's most gifted author",
+          "errorClass": "opinion_as_fact",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The Original says: \"... Martin Luther became Europe's most published author c. 1520 ...\" \"Most published\" can be counted. \"Most gifted\" is a judgement that is presented as a fact.",
+          "evidence": "At least 750,000 copies of Erasmus's works were sold during his lifetime (1469–1536), while Martin Luther became Europe's most published author c. 1520, at the start of the Reformation.",
+          "tolerance": 1
+        },
+        {
+          "text": "Europes most published author",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The possessive needs an apostrophe: \"Europe's\"."
+        }
+      ]
+    },
+    "s13": {
+      "correct": "Printers",
+      "variants": [
+        {
+          "text": "Greedy printers",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "\"Greedy\" is a loaded word. It judges the printers and gives you a feeling. The Original only says what they did: \"Printers across Germany reprinted 291 editions ...\""
+        },
+        {
+          "text": "Printres",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Two letters are swapped: \"Printers\"."
+        }
+      ]
+    },
+    "s14": {
+      "correct": "1518 and 1520",
+      "variants": [
+        {
+          "text": "1528 and 1530",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The Original says: \"... between 1518 and 1520 they distributed 300,000 printed copies of his works ...\" The years are 1518 and 1520.",
+          "evidence": "Printers across Germany reprinted 291 editions of Luther's 45 original works, and between 1518 and 1520 they distributed 300,000 printed copies of his works, with the widespread printing surprising both the pope and secular rulers.",
+          "tolerance": 1
+        },
+        {
+          "text": "1518 and 1580",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The Original says: \"... between 1518 and 1520 they distributed 300,000 printed copies of his works ...\" The period ends in 1520, not 1580.",
+          "evidence": "Printers across Germany reprinted 291 editions of Luther's 45 original works, and between 1518 and 1520 they distributed 300,000 printed copies of his works, with the widespread printing surprising both the pope and secular rulers.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s15": {
+      "correct": "surprised",
+      "variants": [
+        {
+          "text": "delighted",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The Original says: \"... with the widespread printing surprising both the pope and secular rulers.\" They were surprised, not delighted.",
+          "evidence": "Printers across Germany reprinted 291 editions of Luther's 45 original works, and between 1518 and 1520 they distributed 300,000 printed copies of his works, with the widespread printing surprising both the pope and secular rulers."
+        },
+        {
+          "text": "surprized",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word ends in \"-ed\": \"surprised\". The \"s\" stays, only the \"d\" is added."
+        }
+      ]
+    },
+    "s16": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Experts say that Venice was the most important printing city in Europe.",
+          "errorClass": "false_authority",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The sentence refers to \"experts\" without a name or a source. This is an appeal to an unnamed authority. The Original only says: \"... one third of the Italian printers published in Venice.\"",
+          "evidence": "However, printing centers soon emerged, and one third of the Italian printers published in Venice."
+        }
+      ]
+    },
+    "s17": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Since over 150 million copies existed by 1600, every person in Europe must have been able to read.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "The number of copies does not show that everyone could read. The Original gives only the output: \"Their output grew to an estimated 150–200 million copies by 1600.\" The conclusion does not follow from it."
+        }
+      ]
+    },
+    "s18": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Erasmus earned a large fortune from these sales.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "This sentence is not in the Original. It only says: \"At least 750,000 copies of Erasmus's works were sold during his lifetime (1469–1536) ...\" Nothing is said about his income.",
+          "evidence": "At least 750,000 copies of Erasmus's works were sold during his lifetime (1469–1536), while Martin Luther became Europe's most published author c. 1520, at the start of the Reformation."
+        }
+      ]
+    },
+    "s19": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Luther was without doubt the most brilliant writer of his age.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "This is an opinion. \"Without doubt\" and \"most brilliant\" judge, they do not count anything. The Original says only how widely his works were printed."
+        }
+      ]
+    },
+    "s20": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "In 1600, printing was still rare in Italy.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "This sentence contradicts the Variante itself. It said that \"nearly 3,000 printers\" were active in Italy in 1600 and that print shops existed in 77 cities and towns by 1500. The Original says: \"In 1600, nearly 3,000 printers are known to have been active in Italy.\""
+        }
+      ]
+    },
+    "s21": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Luther's printed works were a terrifying flood that swamped the helpless authorities.",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "\"Terrifying flood\" and \"helpless\" are loaded words that aim at your feelings. The Original is neutral: \"... with the widespread printing surprising both the pope and secular rulers.\""
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Source read: English Wikipedia article Printing press, revision 1379445153 (retrieved 2026-10-18), saved text read in full; the eleven excerpt sentences come from the section \"Mass production and spread in Europe\" (paragraphs 2 and 3) and were compared with the saved article text by script (whitespace squeezed); every evidence quote is a substring of the excerpt.",
+    "Licence: Wikipedia text under CC BY-SA 4.0 (page footer); the data of this pack is under the same licence.",
+    "All 15 error classes of the level occur. Classes from grade 7 and from grade 10 are derived, not documented. Misspellings (surprized, Printres, wiht, Europes) are constructed on typical English patterns, not taken from a corpus.",
+    "The inserted sentences (experts, inference, added claim, opinion, contradiction, loaded wording) are invented, harmless and not in the Original; the explanation says so.",
+    "Not verified: whether the article's figures are right in the world; the numbers follow the article, not other sources. Sentences of the two paragraphs were left out (never changed), and the first paragraph of the section (Gutenberg's shop, 270 cities, 1480) is not used, so that the excerpt stays within two neighbouring paragraphs.",
+    "The source is saved as PDF under public/quellen/en/printing-press.pdf (made by the lead) for the mode source."
+  ]
+}

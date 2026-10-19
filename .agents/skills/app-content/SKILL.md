@@ -8,7 +8,7 @@ description: Use for any content work in this app - researching, writing, extend
 Textcheck trains careful reading. Learners compare a text (the "Variante") with a source excerpt (the "Original") and
 mark the words that do not match or do not hold. The texts are text packs; a seed decides in every round which slots of
 a pack are corrupted and with which variant. Code, ids and file names are English; everything learners read is in the
-language of its pack (version 1: German only).
+language of its pack: German and English.
 
 ## Curriculum
 
@@ -20,6 +20,12 @@ language of its pack (version 1: German only).
 - Version 1 ships one text for each of the grades 3-4, 5-6, 7-8, 9-10 and 11-13, a route each (`klasse-3-4` ...).
   A route ending in `-quelle` plays the same level in the mode `source` (all five levels have one). The ceiling for each error class (`fromGrade` in
   `src/data/error-classes.json`) is a setting of the creator and the assistant, not a finding of a source.
+- English (plan `.vibe/plans/04-englische-fassung.md`): the same school system, levels, routes, modes and error classes;
+  only the language differs (the creator: "nur andere Sprache, gleiche Stufen"). The grades stay "Grades 3 to 4" and so on.
+  English has two packs per level (ten), German six (thirty); the seed picks the pack among those of the page's language.
+- The language is the page's: the app has pages per language (German at the root, English below `/en/`), switched by the
+  switcher of the frame (default: the browser's language); the root component tells the core by the action `language`.
+  The routes are the same in both languages.
 - The plan `.vibe/plans/01-sorgfaeltig-lesen.md` holds the research: sources, competencies, didactics.
 
 ## Competencies
@@ -67,6 +73,9 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
   and never shown to learners. Learners see "Variante" only for the whole text they check; the wrong versions of a
   slot are `variants` in code and data and never shown by that word.
 - Learners are addressed with "du". Plain language: short sentences, active voice, no jargon.
+- English: "Original" and "Variant" (the Variante); "mark", "error"; learners are addressed with "you". The same
+  rules: never "summary", never a shaming word, plain short sentences. The messages are in `src/messages/en.json`,
+  complete in the keys and placeholders of `de.json` (a test compares them).
 - The result never shames: "Übersehen" and "Fälschlich markiert" describe, they do not judge.
 - Status words on the page "Wie diese Übung begründet ist": "belegt" (a source we read names it) and "abgeleitet"
   (our own inference).
@@ -123,6 +132,9 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
   date, licence, licence URL, author list URL and `retrieved`; `verified: true` only when every evidence quote was
   found in the opened source. The checker (`src/core/pack-check.ts`, run by `npx vp test run`) checks that quotes are verbatim
   in the excerpt, not that the excerpt matches the source: that check is yours.
+- English packs: Simple English Wikipedia for grades 3-8, English Wikipedia for 9-13 (CC BY-SA 4.0), a fixed revision,
+  opened and read in full like the German ones. The class names and explanations are English, the pack's `language` is
+  `en`. The error classes carry `en` in `languages` (patterns for English: `app-textpack`, error-patterns).
 - Texts under CC BY-SA need the licence and the author link next to the Original. Wikipedia and Klexikon content stays
   under its licence; the pack data is under the same licence.
 - The creator's own material: none; nothing private is committed.
@@ -131,7 +143,7 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
 
 To add a text pack (a new "round" source):
 
-1. Choose grades (adjacent pair, e.g. 5-6) and a harmless topic that fits the age. Open and read the source; note the
+1. Choose grades (adjacent pair, e.g. 5-6), a language and a harmless topic that fits the age. Open and read the source; note the
    revision and the licence.
 2. Follow the skill `app-textpack` (`.agents/skills/app-textpack/SKILL.md`): research, draft, error slots, checks, hand-in; classes only up to the pack's upper grade.
 3. Save as `src/data/packs/<language>/<from>-<to>/<id>.json`; the id equals the file name. Make the source PDF with the
@@ -139,6 +151,10 @@ To add a text pack (a new "round" source):
 4. Run `npx vp test run`: the schema and the pack checks must pass. Read warnings.
 5. Play it: `app/?seed=<n>#klasse-<from>-<to>` with several seeds. Add it to the log `.vibe/texts-log.md`.
 6. Commit pack and log together. The core finds packs by file name; no code changes.
+
+To add a language: all learner texts of `src/app.yaml` as maps `{ de: …, en: … }`, a complete
+`src/messages/<language>.json`, the language in `languages` of `src/app.yaml` and in `languages` of the error classes it
+suits, two packs per level, a playthrough in that language. The tests compare messages and packs per level.
 
 To add a route (a new grade pair): add its entry to `src/data/levels.json`, its route and its `-quelle` route to `src/app.yaml`, its
 competencies, and at least one pack; a playthrough for the route if its rules differ.
