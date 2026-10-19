@@ -6,7 +6,7 @@
     "from": 7,
     "to": 8
   },
-  "topic": "Gezeiten: Warum das Meer steigt und fällt",
+  "topic": "Gezeiten: Was sie sind und warum das Meer steigt und fällt",
   "source": {
     "title": "Gezeiten – Wikipedia",
     "url": "https://de.wikipedia.org/w/index.php?title=Gezeiten&oldid=270979665",
@@ -19,6 +19,9 @@
     "verified": true
   },
   "excerpt": [
+    {
+      "text": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“; Pl. Tiden, Tieden [tiːdən] „Zeiten“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
+    },
     {
       "text": "Die Gezeitenkräfte entstehen dadurch, dass Mond und Sonne trotz ihrer großen Entfernung mit ihrer Anziehungskraft nicht ganz gleichmäßig auf die Erde einwirken, sondern auf der ihnen gerade zugewandten Seite etwas stärker und auf der abgewandten Seite etwas schwächer als im Durchschnitt."
     },
@@ -47,9 +50,6 @@
       "text": "Viel stärker wirken sich die Gezeitenströmungen aus, die in der ganzen Tiefe des Ozeans von der horizontalen Komponente der Gezeitenkräfte angeregt werden."
     },
     {
-      "text": "Diese Komponente ist am stärksten in zwei Bändern, die sich mit 45° Winkelabstand von den eben genannten Punkten stärkster Hebung und Senkung um die Erde ziehen."
-    },
-    {
       "text": "Die Gezeitenströmungen werden mit periodisch wechselnder Richtung angetrieben und in ihrer Form stark durch die Corioliskraft und die Kontinente beeinflusst."
     },
     {
@@ -57,6 +57,30 @@
     }
   ],
   "rendition": [
+    {
+      "sentence": [
+        "Die Gezeiten, auch Tiden genannt, sind die Wasserbewegungen der ",
+        {
+          "slot": "n1"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "sind die Wasserbewegungen der Ozeane"
+      }
+    },
+    {
+      "sentence": [
+        "Sie entstehen durch Gezeitenkräfte, die von ",
+        {
+          "slot": "n2"
+        },
+        " erzeugt werden, im Zusammenspiel mit der Erddrehung."
+      ],
+      "evidence": {
+        "quote": "die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden"
+      }
+    },
     {
       "sentence": [
         "Die Gezeitenkräfte entstehen, weil Mond und Sonne die Erde ",
@@ -118,7 +142,7 @@
     },
     {
       "sentence": [
-        "Beim Mond ist die Periode etwa ",
+        "Beim Einfluss des Mondes ist diese Periode etwa ",
         {
           "slot": "s6"
         },
@@ -210,18 +234,6 @@
       ],
       "evidence": {
         "quote": "Viel stärker wirken sich die Gezeitenströmungen aus, die in der ganzen Tiefe des Ozeans von der horizontalen Komponente der Gezeitenkräfte angeregt werden"
-      }
-    },
-    {
-      "sentence": [
-        "Diese Komponente ist am stärksten in zwei Bändern, die sich mit ",
-        {
-          "slot": "s13"
-        },
-        " Winkelabstand von den Punkten stärkster Hebung und Senkung um die Erde ziehen."
-      ],
-      "evidence": {
-        "quote": "Diese Komponente ist am stärksten in zwei Bändern, die sich mit 45° Winkelabstand von den eben genannten Punkten stärkster Hebung und Senkung um die Erde ziehen"
       }
     },
     {
@@ -596,27 +608,6 @@
         }
       ]
     },
-    "s13": {
-      "correct": "45°",
-      "variants": [
-        {
-          "text": "90°",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Diese Komponente ist am stärksten in zwei Bändern, die sich mit 45° Winkelabstand von den eben genannten Punkten stärkster Hebung und Senkung um die Erde ziehen.“ Der Winkelabstand ist 45°, nicht 90°.",
-          "evidence": "Diese Komponente ist am stärksten in zwei Bändern, die sich mit 45° Winkelabstand von den eben genannten Punkten stärkster Hebung und Senkung um die Erde ziehen."
-        },
-        {
-          "text": "54°",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 3,
-          "explanation": "Im Original steht: „Diese Komponente ist am stärksten in zwei Bändern, die sich mit 45° Winkelabstand von den eben genannten Punkten stärkster Hebung und Senkung um die Erde ziehen.“ Der Winkelabstand ist 45°, nicht 54°.",
-          "evidence": "Diese Komponente ist am stärksten in zwei Bändern, die sich mit 45° Winkelabstand von den eben genannten Punkten stärkster Hebung und Senkung um die Erde ziehen."
-        }
-      ]
-    },
     "i4": {
       "correct": "",
       "variants": [
@@ -717,12 +708,54 @@
           "explanation": "Dieser Satz steht nicht im Original. Dort steht nur, wie die Wasserstände an den Küsten schwanken. Von Fischern steht nichts im Text."
         }
       ]
+    },
+    "n1": {
+      "correct": "Ozeane",
+      "variants": [
+        {
+          "text": "Flüsse",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Die Gezeiten oder Tiden … sind die Wasserbewegungen der Ozeane …“. Es sind die Wasserbewegungen der Ozeane, nicht der Flüsse.",
+          "evidence": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“; Pl. Tiden, Tieden [tiːdən] „Zeiten“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
+        },
+        {
+          "text": "Ozäne",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort kommt aus dem Griechischen und wird „Ozean“ geschrieben, mit „e“: der Ozean, die Ozeane."
+        }
+      ]
+    },
+    "n2": {
+      "correct": "Mond und Sonne",
+      "variants": [
+        {
+          "text": "dem Mond allein",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „… die durch die von Mond und Sonne erzeugten Gezeitenkräfte …“. Die Gezeitenkräfte kommen von Mond und Sonne, nicht nur vom Mond.",
+          "evidence": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“; Pl. Tiden, Tieden [tiːdən] „Zeiten“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
+        },
+        {
+          "text": "Wind und Sonne",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „… die durch die von Mond und Sonne erzeugten Gezeitenkräfte …“. Die Gezeitenkräfte kommen von Mond und Sonne, nicht vom Wind.",
+          "evidence": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“; Pl. Tiden, Tieden [tiːdən] „Zeiten“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
+        }
+      ]
     }
   },
   "notes": [
     "Quelle gelesen: Wikipedia-Artikel Gezeiten, Revision 270979665 (abgerufen am 18.10.2026, Abschnitt „Einfache Erklärung“); die zwölf Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
     "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite, Link auf die Lizenz); die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Fehlerarten: Die Falschschreibungen sind konstruiert (Konsonantenverdopplung, Dehnung, nach den Schwerpunkten der IQB-Handreichung); die Klassen ab Klasse 7 (Menge/Grad, Verallgemeinerung, falsche Folgerung, Meinung als Tatsache) sind abgeleitet, nicht belegt. Die eingefügten Sätze sind erfunden und stehen so nicht in der Quelle.",
-    "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft."
+    "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft.",
+    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit dem ersten Satz des Artikels (vorher mit „Die Gezeitenkräfte entstehen …“). Gestrichen: „Diese Komponente ist am stärksten in zwei Bändern …“ samt der Stelle „45°“. Neu: zwei Stellen in der Einleitung der Variante. Verständlichkeit: Der Satz „Beim Mond ist die Periode …“ heißt jetzt „Beim Einfluss des Mondes ist diese Periode …“."
   ]
 }

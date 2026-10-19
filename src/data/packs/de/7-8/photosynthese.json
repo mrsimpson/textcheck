@@ -6,7 +6,7 @@
     "from": 7,
     "to": 8
   },
-  "topic": "Photosynthese: Wie Forscher den Vorgang entdeckten",
+  "topic": "Photosynthese: Was sie ist und wie Forscher sie entdeckten",
   "source": {
     "title": "Photosynthese – Wikipedia",
     "url": "https://de.wikipedia.org/w/index.php?title=Photosynthese&oldid=271344923",
@@ -19,6 +19,12 @@
     "verified": true
   },
   "excerpt": [
+    {
+      "text": "Die Photosynthese (altgriechisch φῶς phō̂s, deutsch ‚Licht‘ und σύνθεσις sýnthesis, deutsch ‚Zusammensetzung‘, auch Fotosynthese geschrieben) ist ein physiologischer Prozess zur Erzeugung energiereicher Biomoleküle aus energieärmeren Stoffen mit Hilfe von Lichtenergie."
+    },
+    {
+      "text": "Sie wird von Pflanzen, Algen und manchen Bakterien betrieben."
+    },
     {
       "text": "Seit der Antike (Aristoteles) herrschte die Vorstellung, dass die Pflanze ihre Nahrung aus der Erde entnimmt."
     },
@@ -41,9 +47,6 @@
       "text": "In den 1860er Jahren beschrieb Julius von Sachs, dass Chloroplasten im Licht Stärke ansammeln, die vermutlich aus Zucker als dem primären Produkt der Photosynthese gebildet wird."
     },
     {
-      "text": "Wie die Assimilation des Kohlendioxids vor sich geht und wie dieser Vorgang mit der Einwirkung des Lichts zusammenhängt, blieb noch lange Zeit unklar."
-    },
-    {
       "text": "Neben der Annahme, dass das Kohlendioxid direkt durch das Chlorophyll photolytisch gespalten wird, postulierten Frederick Blackman und Gabrielle Matthaei 1905, dass zwischen einer photochemischen Lichtreaktion und einer enzymatischen Dunkelreaktion zu unterscheiden sei."
     },
     {
@@ -54,6 +57,30 @@
     }
   ],
   "rendition": [
+    {
+      "sentence": [
+        "Die Photosynthese ist ein Vorgang, bei dem mit Hilfe von ",
+        {
+          "slot": "n1"
+        },
+        " aus energieärmeren Stoffen energiereiche Biomoleküle entstehen."
+      ],
+      "evidence": {
+        "quote": "ist ein physiologischer Prozess zur Erzeugung energiereicher Biomoleküle aus energieärmeren Stoffen mit Hilfe von Lichtenergie"
+      }
+    },
+    {
+      "sentence": [
+        "Pflanzen, Algen und ",
+        {
+          "slot": "n2"
+        },
+        " Bakterien betreiben diesen Vorgang."
+      ],
+      "evidence": {
+        "quote": "Sie wird von Pflanzen, Algen und manchen Bakterien betrieben."
+      }
+    },
     {
       "sentence": [
         {
@@ -196,18 +223,6 @@
       ],
       "evidence": {
         "quote": "die vermutlich aus Zucker als dem primären Produkt der Photosynthese gebildet wird"
-      }
-    },
-    {
-      "sentence": [
-        "Wie die Pflanze das Kohlendioxid verarbeitet und was das Licht dabei tut, blieb noch ",
-        {
-          "slot": "s12"
-        },
-        " unklar."
-      ],
-      "evidence": {
-        "quote": "Wie die Assimilation des Kohlendioxids vor sich geht und wie dieser Vorgang mit der Einwirkung des Lichts zusammenhängt, blieb noch lange Zeit unklar."
       }
     },
     {
@@ -564,26 +579,6 @@
         }
       ]
     },
-    "s12": {
-      "correct": "lange Zeit",
-      "variants": [
-        {
-          "text": "kurze Zeit",
-          "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Wie die Assimilation des Kohlendioxids vor sich geht und wie dieser Vorgang mit der Einwirkung des Lichts zusammenhängt, blieb noch lange Zeit unklar.“ Es blieb lange unklar, nicht kurz.",
-          "evidence": "Wie die Assimilation des Kohlendioxids vor sich geht und wie dieser Vorgang mit der Einwirkung des Lichts zusammenhängt, blieb noch lange Zeit unklar."
-        },
-        {
-          "text": "für immer",
-          "errorClass": "contradiction",
-          "basis": "text",
-          "conspicuousness": 2,
-          "explanation": "Dieser Satz widerspricht dem Rest der Variante. Danach beschreiben Forscher ab 1905 die Lichtreaktion und die Dunkelreaktion. Die Frage blieb also nicht für immer unklar."
-        }
-      ]
-    },
     "s13": {
       "correct": "1905",
       "variants": [
@@ -684,12 +679,53 @@
           "explanation": "Nach dem kurzen „o“ steht „ff“: Sauerstoff. Das Wort besteht aus „Sauer“ und „Stoff“."
         }
       ]
+    },
+    "n1": {
+      "correct": "Lichtenergie",
+      "variants": [
+        {
+          "text": "Wärmeenergie",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „… ist ein physiologischer Prozess zur Erzeugung energiereicher Biomoleküle aus energieärmeren Stoffen mit Hilfe von Lichtenergie.“ Die Photosynthese braucht Lichtenergie, nicht Wärmeenergie.",
+          "evidence": "Die Photosynthese (altgriechisch φῶς phō̂s, deutsch ‚Licht‘ und σύνθεσις sýnthesis, deutsch ‚Zusammensetzung‘, auch Fotosynthese geschrieben) ist ein physiologischer Prozess zur Erzeugung energiereicher Biomoleküle aus energieärmeren Stoffen mit Hilfe von Lichtenergie."
+        },
+        {
+          "text": "Lichenergie",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Hier fehlt ein Buchstabe: „Lichenergie“ statt „Lichtenergie“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
+    },
+    "n2": {
+      "correct": "manche",
+      "variants": [
+        {
+          "text": "alle",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „Sie wird von Pflanzen, Algen und manchen Bakterien betrieben.“ Nur manche Bakterien betreiben Photosynthese, nicht alle.",
+          "evidence": "Sie wird von Pflanzen, Algen und manchen Bakterien betrieben."
+        },
+        {
+          "text": "mache",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein Buchstabe: „mache“ statt „manche“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
     }
   },
   "notes": [
     "Quelle gelesen: Wikipedia-Artikel Photosynthese, Revision 271344923 (abgerufen am 18.10.2026, Abschnitt „Forschungsgeschichte“); die elf Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
     "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite, Link auf die Lizenz); die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Fehlerarten: Die Falschschreibungen sind konstruiert (Konsonantenverdopplung, Dehnung, nach den Schwerpunkten der IQB-Handreichung); die Klassen ab Klasse 7 (Menge/Grad, Verallgemeinerung, falsche Folgerung, Meinung als Tatsache) sind abgeleitet, nicht belegt. Die eingefügten Sätze sind erfunden und stehen so nicht in der Quelle.",
-    "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft."
+    "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft.",
+    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit den ersten beiden Sätzen des Artikels (vorher mit der Forschungsgeschichte, Satz „Seit der Antike …“). Gestrichen: der Satz „Wie die Assimilation des Kohlendioxids …“ und die zugehörige Stelle. Neu: zwei Stellen in der Einleitung der Variante. Der Satz der Einleitung mit griechischen Wörtern steht unverändert im Artikel."
   ]
 }
