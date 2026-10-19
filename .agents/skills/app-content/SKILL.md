@@ -61,7 +61,8 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
   - At least 6 slots and 3 error classes; the level's `errors` per round plus three in reserve.
 - A **level** (`src/data/levels.json`): `route`, `grades`, allowed `classes` and `bases`, `errors` per round,
   `announceClasses` (whether the goal line names the error classes in the round).
-- The learner sees: the goal line, the Original and the Variante (side by side; on a phone a switch), the marked words,
+- The learner sees: the goal line, the Original and the Variante (like two sheets, one on top of the other, with a switch and a short page-turn animation, so that the eye cannot
+  compare them side by side; the mode `source` keeps them side by side on a wide screen, a switch on a phone), the marked words,
   then the result grouped by error class (found, missed, wrongly marked, within tolerance) with the explanation.
 - Length of a pack: the excerpt has 6 to 10 sentences. Guide values per grade pair are fixed after the pilot.
 
@@ -105,7 +106,7 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
   - Competency: Ich kann zwei Texte vergleichen und erkennen, welcher Fehler hat.
   - Form: two texts, A and B: the Original (the verbatim excerpt) and the Variante with the errors of the round. Which
     one is which stays hidden until checking. The learner picks the text with the errors and marks the words there; the
-    picked text is the one that can be marked. On a phone a switch shows one text at a time.
+    picked text is the one that can be marked. The two texts lie like sheets on every screen: a switch shows one at a time (the creator: no side by side, no peeking).
   - Fixed: excerpt, Variante, slots, level. Varies per use: the errors (seed) and the side of the Variante (own draw
     from the seed). No errors of the family `form` (spelling, slip, real word, punctuation): they would give the
     Variante away in a comparison of two texts (the creator: too easy). So a pack needs enough slots with variants of

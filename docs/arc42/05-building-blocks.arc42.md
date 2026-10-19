@@ -893,10 +893,12 @@ flowchart TB
 
 ### Root component
 
-Built. `src/ui/App.vue` shows the goal line, the Original and the Variante (side by side; on a narrow screen a switch
-shows one of them) and, after checking, the result. It announces every change through the live region, moves the focus
+Built. `src/ui/App.vue` shows the goal line, the Original and the Variante (like two sheets, one on top of the other: a
+switch turns from one to the other with a short page-turn animation, which reduced motion switches off, and the hidden
+one is not in the page, so the learner cannot compare them side by side; only with the source PDF they stay side by
+side on a wide screen, and a narrow one has the switch) and, after checking, the result. It announces every change through the live region, moves the focus
 to the result heading after checking and back to the words after a new round, and emits the learner's actions. The
-panel a narrow screen shows is its only state of its own. The route decides the mode: the Original, the PDF of the
+panel that is shown is its only state of its own. The route decides the mode: the Original, the PDF of the
 source (a link to a new tab and, on a wide screen with a mouse, the PDF in a frame of the same site) or the two texts
 of the mode Original erkennen, which the choose view shows.
 
@@ -947,8 +949,8 @@ path: src/ui/WordList.vue
 
 Built. `src/ui/ChooseView.vue` shows the two texts of the mode Original erkennen, A and B, one the Original and the other
 the Variante; which is which stays hidden until checking. The learner picks the text that has the errors (a button under
-each text, or the keys 1 and 2) and marks the words there with the word list. A narrow screen shows one text at a time;
-the text shown is its only state of its own.
+each text, or the keys 1 and 2) and marks the words there with the word list. The two texts lie like sheets on every
+screen, one at a time with the same page-turn animation; the text shown is its only state of its own.
 
 ```arc42
 :::building-block

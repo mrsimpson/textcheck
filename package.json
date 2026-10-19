@@ -11,7 +11,7 @@
   "devDependencies": {
     "@doctc/arc42": "0.36.1",
     "@lernapps/app-templates": "github:lernapps/app-templates#f28d02036d0fdff868a56c5e5458a56de1a684c5",
-    "@lernapps/tooling": "github:lernapps/tooling#66e21d407e105a70fe08704ba62bb844ce35f0e2",
+    "@lernapps/tooling": "github:lernapps/tooling#b11eb86efe4cf8bcfda5f4077346c4bdb9b0195f",
     "ajv": "^8.20.0",
     "typescript": "6.0.3",
     "vite-plus": "1.0.0",

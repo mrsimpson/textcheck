@@ -6,7 +6,7 @@
       "sourceType": "github",
       "ref": "exp/compact-guidance",
       "skillPath": "skills/lernapps-app/SKILL.md",
-      "computedHash": "2dfd837f7a01fcae4501a922e96df95c47f8eaad23fc47d89fb433bd054bb0c3"
+      "computedHash": "239da24572c3b36f2a55b806546efe624c2a2b7cc06d515a686362d4b3d0d443"
     },
     "lernapps-content-growth": {
       "source": "lernapps/tooling",
@@ -55,7 +55,7 @@
       "sourceType": "github",
       "ref": "exp/compact-guidance",
       "skillPath": "skills/lernapps-listing/SKILL.md",
-      "computedHash": "da87af8599b20b19f472e54a5dc87748d58402577cb6a52c613f8a805cd91662"
+      "computedHash": "98ed8f6e2168abe39f83d0ca0593beecc56850c1e4d7833b6ea4e9e8a002d4ca"
     },
     "lernapps-quiz": {
       "source": "lernapps/tooling",

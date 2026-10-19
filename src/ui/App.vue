@@ -1,8 +1,9 @@
 <script setup lang="ts">
-// The round: the goal line, the Original and the Variante (side by side; on a narrow screen a switch shows one of
-// them), the words to mark, and after checking the result. It announces every change for screen readers and moves the
+// The round: the goal line, the Original and the Variante (like two sheets, one on top of the other: a switch turns
+// from one to the other, so the eye cannot compare them side by side; only with the source PDF they stand side by side
+// on a wide screen, and on a narrow one a switch shows one of them), the words to mark, and after checking the result. It announces every change for screen readers and moves the
 // focus to the result and back to the words. The runtime gives it the core's state; what the learner does goes back
-// as input. The only state of its own is which panel a narrow screen shows.
+// as input. The only state of its own is which panel is shown.
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import { announce, moveFocus } from "@lernapps/tooling/a11y";
 import type { Input } from "@lernapps/app-templates/interactive";
@@ -155,7 +156,7 @@ const choiceNote = computed(() => {
       :lang="lang"
       @input="(input) => emit('input', input)"
     />
-    <div v-else class="switch" role="group" :aria-label="t('view')">
+    <div v-else class="switch" :class="{ 'narrow-only': sourceMode }" role="group" :aria-label="t('view')">
       <button type="button" :aria-pressed="view === 'original'" @click="view = 'original'">
         {{ sourceMode ? t("sourceTab") : t("original") }}
       </button>
@@ -163,7 +164,7 @@ const choiceNote = computed(() => {
         {{ t("renditionTab") }}
       </button>
     </div>
-    <div v-if="state.mode !== 'choose'" class="panels" :data-view="view">
+    <div v-if="state.mode !== 'choose'" class="panels" :class="{ sheets: !sourceMode }" :data-view="view">
       <section v-if="sourceMode" class="panel original pdf" aria-labelledby="original-heading">
         <h2 id="original-heading">{{ t("sourceHeading") }}</h2>
         <p v-if="pdfUrl !== null">
@@ -319,9 +320,13 @@ const choiceNote = computed(() => {
 }
 
 .switch {
-  display: none;
+  display: flex;
   gap: 0.5rem;
   margin-bottom: 0.75rem;
+}
+
+.switch.narrow-only {
+  display: none;
 }
 
 .switch button {
@@ -348,8 +353,45 @@ const choiceNote = computed(() => {
   gap: 1rem;
 }
 
+/* two sheets: only one shows, the other is not in the page at all (no display of both, no focus in the hidden one);
+   the sheet that comes up turns over from its left edge */
+.panels.sheets {
+  grid-template-columns: 1fr;
+  perspective: 1600px;
+}
+
+.panels.sheets[data-view="rendition"] > .original,
+.panels.sheets[data-view="original"] > .rendition {
+  display: none;
+}
+
+.panels.sheets > .panel {
+  transform-origin: left center;
+  animation: turn 0.4s ease-out;
+}
+
+@keyframes turn {
+  from {
+    transform: rotateY(-80deg);
+    opacity: 0.3;
+    box-shadow: 0 0 2rem rgb(0 0 0 / 0.35);
+  }
+
+  to {
+    transform: none;
+    opacity: 1;
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panels.sheets > .panel {
+    animation: none;
+  }
+}
+
 @media (max-width: 720px) {
-  .switch {
+  .switch.narrow-only {
     display: flex;
   }
 
