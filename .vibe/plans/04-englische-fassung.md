@@ -156,21 +156,21 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Tasks
 
-- [ ] Push the branch; open a pull request to `main`. Pre-push runs the heavy checks; fix failures. See the pull
+- [x] Push the branch; open a pull request to `main`. Pre-push runs the heavy checks; fix failures. See the pull
       request's checks to green. GitHub step fails or refused → skill `lernapps-github`.
-- [ ] **Checkpoint:** publish. Show what the increment adds and the preview link from the comment "Vorschau der
+- [x] **Checkpoint:** publish. (Der Ersteller hatte vorab gesagt: „Dann merge“, sobald die Vorschau die englischen Artikel zeigt und alles wie auf Deutsch funktioniert; ich habe die Vorschau im Browser durchgespielt: fünf Stufen, drei Modi, beide Sprachen.) Show what the increment adds and the preview link from the comment "Vorschau der
       App"; ask whether it may go online. Wait for the yes.
-- [ ] Merge the pull request into `main` (no pull request: merge the branch, push `main`). Watch the `Pages` run of
+- [x] Merge the pull request into `main` (no pull request: merge the branch, push `main`). Watch the `Pages` run of
       that commit. Fails → read the failed step, fix, push.
-- [ ] Open the address the job `deploy` printed ("published at ...", run summary); confirm the new content. Never
+- [x] Open the address the job `deploy` printed ("published at ...", run summary); confirm the new content. Never
       a derived address; follow redirects.
-- [ ] App listed and the entry changes (topics, school years, summary) → load skill `lernapps-listing`, write the
+- [x] App listed and the entry changes (der Eintrag ändert sich nicht: übersprungen) (topics, school years, summary) → load skill `lernapps-listing`, write the
       changed entry. Else skip the next task.
-- [ ] **Checkpoint:** list. Ask before opening the pull request to the catalog; wait for the yes.
-- [ ] Fill the retrospective.
-- [ ] Commit this plan on `main` and push it. A push of only `.vibe/` publishes nothing.
-- [ ] Catalog pull request opened → see it to "bestanden" as the skill says.
-- [ ] Plan changed since its last push → commit on `main`, push again.
+- [x] **Checkpoint:** list. (übersprungen: kein neuer Eintrag) Ask before opening the pull request to the catalog; wait for the yes.
+- [x] Fill the retrospective.
+- [x] Commit this plan on `main` and push it. A push of only `.vibe/` publishes nothing.
+- [x] Catalog pull request opened (keiner) → see it to "bestanden" as the skill says.
+- [x] Plan changed since its last push → commit on `main`, push again.
 
 ### Completed
 
@@ -180,16 +180,23 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Phases reached
 
-<!-- Last phase completed, checkpoints passed. E.g. "commit; confirmed, published". -->
+commit; Plan und Inhaltsmethode mit „Passt“ bestätigt, Vorschau geprüft, gemerged und veröffentlicht (Pull Request 4, Pages-Lauf grün, die veröffentlichte Seite im Browser durchgespielt).
 
 ### Failed checks
 
-<!-- Each failed check: rule id, count. E.g. "`no-request-before-click`: 2". Not the pre-push count. -->
+- `checks-pass`: 5 (Format beim ersten Commit; eine liegengebliebene Hilfsdatei eines Agenten beim Commit eines Pakets; drei Läufe der Browser-Tests, in denen meine neuen Tests auf der englischen Seite falsche Annahmen hatten: Auswahl der Wörter, Sichtbarkeit von Umschalter und PDF-Link, ein fest angenommenes Paket).
 
 ### Creator turns after the plan
 
-<!-- Number of creator messages after the confirmation, topic of each. Target: max 3. -->
+1: „Merge conflict“ (`main` hatte inzwischen einen eigenen Plan 03 mit weiteren deutschen Texten; der Konflikt lag im Textprotokoll, mein Plan wurde zu 04).
 
 ### Where I had to guess
 
-<!-- Each gap in plan, skills, content guide, messages or answers, and your choice. "None" if none. -->
+- Die Themen der neuen englischen Texte (Giraffe, Vulkan, Photosynthese, Großer Brand von London, Schwarzer Tod) wählte ich selbst; der Ersteller bestätigte den Vorschlag „bisheriges Thema plus ein neues“, nicht die einzelnen Namen.
+- „Tannen“ gelesen als „Texten“.
+- Quellen: Simple English Wikipedia für Klasse 3 bis 8, englische Wikipedia für 9 bis 13 (Skill-Vorgabe, auf Englisch übertragen).
+- Der Leitfaden nennt keine englischen Fehlermuster; ich ergänzte „English packs“ im Skill `app-textpack` und setzte `en` bei den Fehlerklassen (eigene Anpassung, steht auf der Seite „Wie diese Übung begründet ist“).
+- Englisch „Variante“ = „Variant“, Klassen „Grades 3 to 4“ (Erstellerwunsch: gleiche Stufen).
+- Die Voreinstellung nach der Browsersprache gibt es nicht: Der Rahmen hat einen Umschalter aus Links und lädt auf der Startseite kein Skript. Dem Ersteller melden.
+- Plan 03 → 04 beim Zusammenführen; der Branch heißt weiter `increment/03-englische-fassung`.
+- Der Eintrag im Katalog blieb unverändert.
