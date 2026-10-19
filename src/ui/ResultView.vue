@@ -37,14 +37,14 @@ const pieces = Array.from({ length: 28 }, (_, index) => ({
         :style="{ left: piece.left, animationDelay: piece.delay, '--hue': piece.hue, '--turn': piece.turn }"
       ></span>
     </div>
-    <div class="head">
-      <h2 id="result-heading" tabindex="-1">{{ t("resultHeading") }}</h2>
+    <h2 id="result-heading" tabindex="-1">{{ t("resultHeading") }}</h2>
+    <p v-if="choiceNote" class="choice">{{ choiceNote }}</p>
+    <p v-if="allFound" class="praise">{{ result.wrong === 0 ? t("praiseClean") : t("praiseAll") }}</p>
+    <p class="again-row">
       <button type="button" class="primary again" @click="emit('input', { kind: 'action', name: 'again' })">
         {{ t("again") }}
       </button>
-    </div>
-    <p v-if="choiceNote" class="choice">{{ choiceNote }}</p>
-    <p v-if="allFound" class="praise">{{ result.wrong === 0 ? t("praiseClean") : t("praiseAll") }}</p>
+    </p>
     <p class="summary">
       {{ t("resultSummary", { found: result.found, total: result.total }) }}
       <template v-if="result.wrong > 0"> · {{ t("resultWrong", { count: result.wrong }) }}</template>
@@ -87,23 +87,19 @@ const pieces = Array.from({ length: 28 }, (_, index) => ({
   margin-top: 1rem;
 }
 
-/* the heading and the button for the next round share a line; on a narrow screen the button stands below, full width */
-.head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem 1rem;
+h2 {
+  font-size: 1.25rem;
 }
 
-h2 {
-  margin: 0.5rem 0;
-  font-size: 1.25rem;
+/* the button for the next round stands right below the heading (and the praise); on a narrow screen it fills the width */
+.again-row {
+  margin: 0.75rem 0 1rem;
 }
 
 @media (max-width: 40rem) {
   .again {
-    flex: 1 1 100%;
+    display: block;
+    width: 100%;
   }
 }
 

@@ -38,7 +38,7 @@ Nach dem Prüfen finden Lernende sofort den Knopf für eine neue Runde: er steht
 ## Key decisions
 
 - Der vorhandene Knopf „Neue Runde“ bleibt (Ersteller: „den Button gibt es ja schon“); die Leiste mit „Prüfen“ bleibt wie sie ist, ein zweiter Knopf „Nochmal“ entfällt. Das ersetzt meinen ersten Entwurf.
-- Der Knopf „Neue Runde“ steht direkt neben der Überschrift „Ergebnis“ (Überschrift links, Knopf rechts), über den Auflösungen. Auf schmalen Bildschirmen steht er unter der Überschrift und füllt die Breite. (Ersteller: „direkt unter Ergebnis nebendran … Mobil untendrunter, die Breite füllend“)
+- Der Knopf „Neue Runde“ steht direkt direkt unter dem Lob („Stark! …“, sonst unter der Überschrift „Ergebnis“), über Zusammenfassung und Auflösungen. Auf schmalen Bildschirmen füllt er die Breite, mit etwas Abstand. (Ersteller, später: „Besser direkt unter ‚Stark! …‘. Mobile die Breite füllend, etwas margin“) (Ersteller: „direkt unter Ergebnis nebendran … Mobil untendrunter, die Breite füllend“)
 - Nach dem Prüfen scrollt die Seite zum Knopf. Heute geht der Fokus auf die Überschrift „Ergebnis“; die Zusammenfassung steht direkt darunter und bleibt sichtbar, der Knopf ist also fast ohne Scrollen sichtbar (guess: Fokus bleibt auf der Überschrift, damit Screenreader zuerst das Ergebnis hören; gescrollt wird so, dass der Knopf im Bild steht).
 
 ## Notes
