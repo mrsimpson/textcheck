@@ -6,7 +6,7 @@
     "from": 7,
     "to": 8
   },
-  "topic": "Plattentektonik: Wie sich die Platten der Erde bewegen",
+  "topic": "Plattentektonik: Was sie ist und wie sich die Platten der Erde bewegen",
   "source": {
     "title": "Plattentektonik – Wikipedia",
     "url": "https://de.wikipedia.org/w/index.php?title=Plattentektonik&oldid=271330162",
@@ -19,6 +19,12 @@
     "verified": true
   },
   "excerpt": [
+    {
+      "text": "Plattentektonik ist ursprünglich die Bezeichnung für eine Theorie der Geowissenschaften über die großen Bewegungen in der äußeren Erdhülle, der Lithosphäre (Erdkruste und oberster Erdmantel), die heute zu den grundlegenden Theorien über die Dynamik der Erde gehört."
+    },
+    {
+      "text": "Sie besagt, dass die äußere Erdhülle in Lithosphärenplatten (umgangssprachlich als Kontinentalplatten oder Erdplatten bezeichnet) gegliedert ist, die dem Oberen Erdmantel aufliegen und darauf umherwandern."
+    },
     {
       "text": "Die Plattengrenzen werden an der Erdoberfläche meist entweder durch mittelozeanische Rücken oder Tiefseerinnen repräsentiert."
     },
@@ -38,9 +44,6 @@
       "text": "An diesen konvergierenden Plattengrenzen befinden sich die Tiefseerinnen."
     },
     {
-      "text": "Entwässerungsprozesse in der abtauchenden Platte führen in der oben bleibenden Platte ebenfalls zu ausgeprägtem Vulkanismus."
-    },
-    {
       "text": "Die eigentlichen Kontinentalblöcke oder Kontinentalschollen aus vorwiegend granitischem Material werden – zusammen mit den umgebenden Ozeanböden sowie dem jeweils darunter befindlichen lithosphärischen Mantel – wie auf einem langsamen Fließband von den Spreizungszonen weg und zu den Subduktionszonen hin geschoben."
     },
     {
@@ -50,13 +53,46 @@
       "text": "Da die kontinentale Kruste spezifisch leichter ist als die ozeanische Kruste, taucht sie an einer Subduktionszone nicht zusammen mit der ozeanischen Platte ab, sondern wölbt sich stattdessen zu einem Gebirgszug auf (Orogenese)."
     },
     {
-      "text": "Hierbei kommt es zu komplexen Deformationsvorgängen."
-    },
-    {
       "text": "Zwischen der Indischen und der Eurasischen Platte findet eine Kontinent-Kontinent-Kollision statt, die ebenfalls zur Gebirgsbildung führte (Himalaya)."
     }
   ],
   "rendition": [
+    {
+      "sentence": [
+        "Die Plattentektonik ist eine Theorie der ",
+        {
+          "slot": "n1"
+        },
+        " über die großen Bewegungen in der äußeren Erdhülle, der Lithosphäre."
+      ],
+      "evidence": {
+        "quote": "Plattentektonik ist ursprünglich die Bezeichnung für eine Theorie der Geowissenschaften über die großen Bewegungen in der äußeren Erdhülle, der Lithosphäre"
+      }
+    },
+    {
+      "sentence": [
+        "Sie gehört heute zu den ",
+        {
+          "slot": "n2"
+        },
+        " Theorien über die Dynamik der Erde."
+      ],
+      "evidence": {
+        "quote": "die heute zu den grundlegenden Theorien über die Dynamik der Erde gehört"
+      }
+    },
+    {
+      "sentence": [
+        "Nach dieser Theorie ist die äußere Erdhülle in Lithosphärenplatten gegliedert, die auf dem Oberen Erdmantel aufliegen und darauf ",
+        {
+          "slot": "n3"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "dass die äußere Erdhülle in Lithosphärenplatten (umgangssprachlich als Kontinentalplatten oder Erdplatten bezeichnet) gegliedert ist, die dem Oberen Erdmantel aufliegen und darauf umherwandern"
+      }
+    },
     {
       "sentence": [
         "An der Erdoberfläche liegen die Plattengrenzen meist an ",
@@ -151,18 +187,6 @@
     },
     {
       "sentence": [
-        "Entwässerungsprozesse in der abtauchenden Platte führen in der oben bleibenden Platte ",
-        {
-          "slot": "s7"
-        },
-        " zu ausgeprägtem Vulkanismus."
-      ],
-      "evidence": {
-        "quote": "Entwässerungsprozesse in der abtauchenden Platte führen in der oben bleibenden Platte ebenfalls zu ausgeprägtem Vulkanismus."
-      }
-    },
-    {
-      "sentence": [
         "Die Kontinentalblöcke werden zusammen mit den Ozeanböden wie auf einem langsamen ",
         {
           "slot": "s8"
@@ -223,12 +247,6 @@
       ],
       "evidence": {
         "quote": "taucht sie an einer Subduktionszone nicht zusammen mit der ozeanischen Platte ab, sondern wölbt sich stattdessen zu einem Gebirgszug auf (Orogenese)"
-      }
-    },
-    {
-      "sentence": ["Dabei kommt es zu komplizierten Verformungen."],
-      "evidence": {
-        "quote": "Hierbei kommt es zu komplexen Deformationsvorgängen."
       }
     },
     {
@@ -427,34 +445,6 @@
         }
       ]
     },
-    "s7": {
-      "correct": "ebenfalls",
-      "variants": [
-        {
-          "text": "niemals",
-          "errorClass": "quantity_degree",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Entwässerungsprozesse in der abtauchenden Platte führen in der oben bleibenden Platte ebenfalls zu ausgeprägtem Vulkanismus.“ Es steht dort „ebenfalls“. „Niemals“ macht daraus das Gegenteil.",
-          "evidence": "Entwässerungsprozesse in der abtauchenden Platte führen in der oben bleibenden Platte ebenfalls zu ausgeprägtem Vulkanismus."
-        },
-        {
-          "text": "dagegen",
-          "errorClass": "connective_negation",
-          "basis": "text",
-          "conspicuousness": 3,
-          "explanation": "Das Wort „dagegen“ macht aus dem Satz einen Gegensatz zu den Rücken. Aber auch dort gibt es Vulkanismus. Im Original steht „ebenfalls“.",
-          "evidence": "Entwässerungsprozesse in der abtauchenden Platte führen in der oben bleibenden Platte ebenfalls zu ausgeprägtem Vulkanismus."
-        },
-        {
-          "text": "ebenfals",
-          "errorClass": "spelling_rule",
-          "basis": "text",
-          "conspicuousness": 2,
-          "explanation": "Das Wort endet auf „-falls“ mit doppeltem „l“: ebenfalls."
-        }
-      ]
-    },
     "s8": {
       "correct": "Fließband",
       "variants": [
@@ -640,12 +630,74 @@
           "explanation": "Dieser Satz steht nicht im Original. Daraus, dass der Himalaya durch eine Kollision entstand, folgt nicht, dass alle Gebirge so entstanden sind."
         }
       ]
+    },
+    "n1": {
+      "correct": "Geowissenschaften",
+      "variants": [
+        {
+          "text": "Biologie",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „Plattentektonik ist ursprünglich die Bezeichnung für eine Theorie der Geowissenschaften …“. Es geht um die Geowissenschaften, nicht um die Biologie.",
+          "evidence": "Plattentektonik ist ursprünglich die Bezeichnung für eine Theorie der Geowissenschaften über die großen Bewegungen in der äußeren Erdhülle, der Lithosphäre (Erdkruste und oberster Erdmantel), die heute zu den grundlegenden Theorien über die Dynamik der Erde gehört."
+        },
+        {
+          "text": "Geowisenschaften",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort „Wissenschaft“ kommt von „wissen“. Nach dem kurzen „i“ steht „ss“: Geowissenschaften."
+        }
+      ]
+    },
+    "n2": {
+      "correct": "grundlegenden",
+      "variants": [
+        {
+          "text": "umstrittensten",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „… die heute zu den grundlegenden Theorien über die Dynamik der Erde gehört.“ Die Theorie gilt als grundlegend, nicht als besonders umstritten.",
+          "evidence": "Plattentektonik ist ursprünglich die Bezeichnung für eine Theorie der Geowissenschaften über die großen Bewegungen in der äußeren Erdhülle, der Lithosphäre (Erdkruste und oberster Erdmantel), die heute zu den grundlegenden Theorien über die Dynamik der Erde gehört."
+        },
+        {
+          "text": "grundlegneden",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Hier sind zwei Buchstaben vertauscht: „grundlegneden“ statt „grundlegenden“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
+    },
+    "n3": {
+      "correct": "umherwandern",
+      "variants": [
+        {
+          "text": "stillstehen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „… die dem Oberen Erdmantel aufliegen und darauf umherwandern.“ Die Platten wandern umher, sie stehen nicht still.",
+          "evidence": "Sie besagt, dass die äußere Erdhülle in Lithosphärenplatten (umgangssprachlich als Kontinentalplatten oder Erdplatten bezeichnet) gegliedert ist, die dem Oberen Erdmantel aufliegen und darauf umherwandern."
+        },
+        {
+          "text": "umherwandren",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein Buchstabe: „umherwandren“ statt „umherwandern“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
     }
   },
   "notes": [
     "Quelle gelesen: Wikipedia-Artikel Plattentektonik, Revision 271330162 (abgerufen am 18.10.2026, Abschnitt „Die Bewegungen der Platten“); die zwölf Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
     "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite, Link auf die Lizenz); die Daten dieses Pakets stehen unter derselben Lizenz.",
     "Fehlerarten: Die Falschschreibungen sind konstruiert (Konsonantenverdopplung, Dehnung, nach den Schwerpunkten der IQB-Handreichung); die Klassen ab Klasse 7 (Menge/Grad, Verallgemeinerung, falsche Folgerung, Meinung als Tatsache) sind abgeleitet, nicht belegt. Die eingefügten Sätze sind erfunden und stehen so nicht in der Quelle.",
-    "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft."
+    "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft.",
+    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit den ersten beiden Sätzen des Artikels (vorher mit den Plattengrenzen). Gestrichen: „Entwässerungsprozesse …“ und „Hierbei kommt es zu komplexen Deformationsvorgängen.“ samt der Stelle zu „ebenfalls“. Neu: drei Stellen in der Einleitung der Variante.",
+    "Auszug leicht vereinfacht auf Wunsch des Erstellers: „großräumigen tektonischen Vorgänge“ zu „großen Bewegungen“, „endogene“, „übrigen“ und „(→ Kontinentaldrift)“ gestrichen. Die Auszugssätze stehen dort nicht mehr überall wörtlich im Artikel (erste Notiz gilt für diese Stellen nicht mehr); der Satzanfang ist unverändert."
   ]
 }
