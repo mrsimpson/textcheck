@@ -4,7 +4,7 @@
 # Archetype as in the app's first plan; set it when you start. Never changes.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: plan
+phase: code
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
@@ -24,7 +24,7 @@ a correction.
   so at the checkpoints.
 - One phase at a time, tasks in order. Done → tick `[x]` at once, move it to "Completed". New task → add it.
 - Checkpoint task: stop, ask, wait for the creator's answer.
-- Work on the branch `increment/06-lesbarkeit` until the yes to publish; push only that branch. A failing check:
+- Work on the branch `increment/<NN>-<short name>` until the yes to publish; push only that branch. A failing check:
   tell the creator, do not push.
 - Plan in the creator's language. Keep headings and front matter keys. Delete a comment once its part is filled.
 -->
@@ -44,6 +44,7 @@ Die App beginnt mit dem Original, beide Blätter sind gleich hoch, der Tastaturh
 - Eine Schrift für alles: Recursive (Variable Font, SIL OFL 1.1), zugeschnitten auf Latein mit Umlauten und nur die Achsen Gewicht, Casual und Mono; in der App gebündelt, keine Anfrage nach außen. (Ersteller: „Recursive als Standard“)
 - Einstellungen: Schriftstil (Normal, Rund, Festbreite), Strichstärke, Größe, Zeilenabstand, mit Zurücksetzen. Standard ist Recursive, normal (guess für die Auswahl).
 - Die Einstellung bleibt auf dem Gerät erhalten, über den Storage-Wrapper des Tooling, mit eigenem Schlüsselpräfix; ist Speichern gesperrt, funktioniert die App mit den Standardwerten. (Ersteller: „Einstellung merken“)
+- Quelle als PDF (A4, ca. 794 px bei 100 %): das PDF braucht mindestens ca. 700 px Breite, um lesbar zu sein. Nebeneinander (PDF und Variante) nur ab ca. 1280 px nutzbarer Breite der App und mit Maus; darunter Blätter mit dem PDF in voller Breite. Die Zahl wird an der echten Breite des Rahmens gemessen. Das ersetzt die Entscheidung aus Plan 05 „bei PDF nebeneinander ab 960 px“. (Ersteller: „PDF ist viel zu schmal“, „mach das abhängig vom Viewport“)
 - Keine Warnung beim Wechsel von Stufe oder Modus (Ersteller hat sie nicht gewünscht; guess).
 
 ## Notes
@@ -96,9 +97,9 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
       and what is new. Max 2 questions.
 - [x] Each new component or interactive exercise: show a sketch (static SVG or image, or the steps). Words alone are
       not enough.
-- [ ] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes → change,
+- [x] **Checkpoint:** confirm the plan and the content method. Stop and wait for an explicit yes. Changes → change,
       ask again.
-- [ ] Set `phase: code`: change the value line (`grep '^phase:'` prints `phase: code`).
+- [x] Set `phase: code`: change the value line (`grep '^phase:'` prints `phase: code`).
 
 ### Content method
 
@@ -120,10 +121,10 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Tasks
 
-- [ ] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
-- [ ] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
+- [x] `git switch -c increment/06-lesbarkeit` from `main`. Commit this plan on it.
+- [x] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
-- [ ] Slice 1 Bedienung: Start mit Original; gleiche Höhe (ein Zeilenabstand für Original, Variante und Wählmodus); Hinweis unter den Text und in den Wählmodus; Fokus nach dem Umblättern; „Blatt x von 2“. Playthroughs und e2e anpassen. Check, Commit.
+- [ ] Slice 1 Bedienung: Start mit Original; gleiche Höhe (ein Zeilenabstand für Original, Variante und Wählmodus); Hinweis unter den Text und in den Wählmodus; PDF-Modus nach Breite (nebeneinander ab ca. 1280 px, sonst Blätter, Breite messen); Fokus nach dem Umblättern; „Blatt x von 2“. Playthroughs und e2e anpassen. Check, Commit.
 - [ ] Slice 2 Schrift: Recursive zuschneiden und messen (Größe, Quota); in `public/` bündeln samt Lizenz; Einstellungen mit Speichern über den Wrapper; Meldungen de/en; arc42 und Skill `app-content` anpassen; Tests. Check, Commit.
 - [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
