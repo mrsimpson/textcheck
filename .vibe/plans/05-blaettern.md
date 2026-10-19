@@ -39,8 +39,8 @@ Auch am Desktop liegen Original und Variante wie Blätter übereinander; man bl�
 
 - Nebeneinander entfällt auf allen Bildschirmen; die Umschalter „Original“/„Variante“ (bisher nur Handy) gelten überall. (Ersteller: „auch auf dem Desktop eine andere Darstellung“)
 - Kurzer Umblätter-Effekt beim Wechsel (Seite kippt kurz weg, ca. 0,4 s); bei „weniger Bewegung“ im System ohne Effekt, nur Wechsel. (Ersteller: „gerne optisch ansprechend“; Bewegung abschaltbar wegen Barrierefreiheit, guess)
-- Gilt für alle drei Modi (markieren mit Original, mit Quelle als PDF, Original erkennen). (guess: „Fehler finden“ gelesen als alle Modi)
-- Im Modus mit Quelle als PDF: auf dem Desktop wird das PDF nicht mehr neben der Variante eingebettet, sondern ist das andere Blatt. (guess)
+- Gilt für „Fehler markieren (mit Original)“ und „Original erkennen“; ob auch für „Original erkennen“, ist offen (Frage an den Ersteller).
+- Im Modus mit Quelle als PDF bleibt es am Desktop nebeneinander (PDF neben der Variante), weil man dort das PDF nicht als Text abgleicht. (Ersteller: „Bei PDF-Quelle ist nebeneinander besser“)
 - Das markierte Blatt bleibt beim Umblättern unverändert (Markierungen bleiben).
 
 ## Notes
@@ -71,7 +71,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Answers
 
-<!-- Creator's answers, their words, one bullet each. -->
+- „Bei PDF-Quelle ist nebeneinander besser und. Ich verführerisch“ (Satz bricht ab; der Rest ist unklar, nachgefragt)
 
 ### Completed
 
