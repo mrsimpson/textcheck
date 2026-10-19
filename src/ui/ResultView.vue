@@ -40,6 +40,11 @@ const pieces = Array.from({ length: 28 }, (_, index) => ({
     <h2 id="result-heading" tabindex="-1">{{ t("resultHeading") }}</h2>
     <p v-if="choiceNote" class="choice">{{ choiceNote }}</p>
     <p v-if="allFound" class="praise">{{ result.wrong === 0 ? t("praiseClean") : t("praiseAll") }}</p>
+    <p class="again-row">
+      <button type="button" class="primary again" @click="emit('input', { kind: 'action', name: 'again' })">
+        {{ t("again") }}
+      </button>
+    </p>
     <p class="summary">
       {{ t("resultSummary", { found: result.found, total: result.total }) }}
       <template v-if="result.wrong > 0"> · {{ t("resultWrong", { count: result.wrong }) }}</template>
@@ -74,11 +79,6 @@ const pieces = Array.from({ length: 28 }, (_, index) => ({
       <li class="false">{{ t("legendFalse") }}</li>
       <li class="tolerated">{{ t("legendTolerated") }}</li>
     </ul>
-    <p>
-      <button type="button" class="primary" @click="emit('input', { kind: 'action', name: 'again' })">
-        {{ t("again") }}
-      </button>
-    </p>
   </section>
 </template>
 
@@ -89,6 +89,18 @@ const pieces = Array.from({ length: 28 }, (_, index) => ({
 
 h2 {
   font-size: 1.25rem;
+}
+
+/* the button for the next round stands right below the heading (and the praise); on a narrow screen it fills the width */
+.again-row {
+  margin: 0.75rem 0 1rem;
+}
+
+@media (max-width: 40rem) {
+  .again {
+    display: block;
+    width: 100%;
+  }
 }
 
 h3 {
