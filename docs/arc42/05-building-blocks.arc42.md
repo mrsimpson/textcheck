@@ -1019,8 +1019,8 @@ path: src/ui/ChooseView.vue
 
 Built. `src/ui/ResultView.vue` shows the counts, the errors grouped by class with what stands in the Variante and in the
 Original and the explanation, the words marked wrongly or within tolerance, and the legend. When every error is
-found it shows fireworks if no hint was taken and confetti if hints were (both calm, nothing flashes, and off when the
-system asks for less motion); where hints were taken, a sentence says that next time it may work without them. It
+found it shows big fireworks on a dimmed page if no hint was taken and confetti if hints were (both calm, the dimming
+fades in and out and nothing flashes, and both are off when the system asks for less motion); where hints were taken, a sentence says that next time it may work without them. It
 emits the action `again`.
 
 ```arc42

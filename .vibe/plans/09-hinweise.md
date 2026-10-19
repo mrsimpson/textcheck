@@ -50,6 +50,10 @@ Lernende können sich bei einer schwierigen Runde Schritt für Schritt Hinweise 
 
 ## Notes
 
+Nummer: Auf `main` kam parallel der Plan 08 (Nochmal statt Prüfen); dieser Plan wurde deshalb zu 09. Der Branch heißt weiter `increment/08-hinweise`, weil der Pull Request schon offen war.
+
+Feuerwerk (Ersteller: „Großes Feuerwerk, abgedunkelter Hintergrund“): fünf große Bursts auf einer abgedunkelten Seite; die Abdunklung blendet langsam ein und aus, nichts blinkt, bei reduzierter Bewegung gibt es beides nicht.
+
 Reine Hilfe in der Bedienung: kein neuer Lehrplanbezug, keine neue Kompetenz, keine neuen Texte oder Quellen. Hinweise nutzen die vorhandenen Daten (Fehlerklassen und Slots je Satz). Betroffen sind `src/core` (Aktion `hint`, Zustand), `src/ui` (Knopf, Anzeige, Feuerwerk), `src/messages/de.json` und `en.json`, Playthroughs, e2e, arc42 und der Abschnitt zur Anzeige im Skill `app-content`.
 
 Didaktik: Gestuftes Helfen (erst Art des Fehlers, dann Ort), damit Lernende selbst suchen und das Wort selbst finden; Umfang: Hinweise nur in den Modi `mark`, `source` und (nach der Wahl) `choose`, Deutsch und Englisch, alle Stufen. Nicht dabei: Hinweise nach dem Prüfen, Wort-Hinweise.
