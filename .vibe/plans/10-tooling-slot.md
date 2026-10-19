@@ -158,18 +158,18 @@ bundle. A pull request to `main` runs the same checks without publishing.
       load the skill `lernapps-github`.
 - [x] **Checkpoint:** publish. (Vorschau und Bilder gezeigt, Freigabe: „merge ohne weiteres“). Show the creator what the increment adds and the link to its preview from the comment
       "Vorschau der App" on the pull request, and ask whether it may go online. Wait for their yes.
-- [ ] Merge the pull request into `main` (or, without a pull request, merge the branch into `main` and push `main`).
+- [x] Merge the pull request into `main` (Pull Request #13, Merge `37d7c39`; der Lauf `Pages` endete grün: app, deploy erfolgreich, preview übersprungen). (or, without a pull request, merge the branch into `main` and push `main`).
       Watch the run of the workflow `Pages` for that commit until it ends. If it fails, read the message of the
       failed step, fix what you can and push again.
-- [ ] Open the address the job `deploy` printed ("published at ...", also in the run's summary) and confirm that it
+- [x] Open the address the job `deploy` printed (https://mrsimpson.github.io/textcheck/app/, Antwort 200, zuletzt geändert 20:03:48 UTC; die Seite hat die Titelzeile mit dem Slot, keinen Link mit dem App-Namen in der Kopfzeile, genau ein `<h1>`; das Bundle enthält „Schrift und Lesen“ und „Hinweis in“). ("published at ...", also in the run's summary) and confirm that it
       shows the new content. Take that address, never one you derive; follow its redirects.
 - [x] If the app is listed and the increment changes (entfällt: der Eintrag ändert sich nicht, nur die Darstellung). what its entry says (topics, school years, summary): load the
       skill `lernapps-listing` and write the changed entry. Otherwise skip the next task.
 - [x] **Checkpoint:** list. (entfällt). Ask the creator before you open the pull request to the catalog, and wait for their yes.
 - [x] Fill the retrospective.
-- [ ] Commit this plan on `main` and push it. A push that changes only `.vibe/` publishes nothing again.
+- [x] Commit this plan on `main` and push it. (dieser Commit). A push that changes only `.vibe/` publishes nothing again.
 - [x] If you opened a pull request to the catalog (entfällt)., see it through to "bestanden" as the skill says.
-- [ ] If this plan changed since its last push, commit it on `main` and push it again.
+- [x] If this plan changed since its last push (nein: dieser Commit ist der letzte)., commit it on `main` and push it again.
 
 ### Completed
 
