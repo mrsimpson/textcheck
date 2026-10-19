@@ -128,4 +128,29 @@ test.describe("Switching the age group or the mode", () => {
     await expect(page.getByLabel("Altersstufe")).toHaveValue("klasse-7-8");
     await expect(page.getByLabel("Modus")).toHaveValue("choose");
   });
+
+  test("takes the seed from the address only: without a valid one, it works one out, writes it, and plays it", async ({
+    page,
+  }) => {
+    for (const address of ["./app/#klasse-5-6", "./app/?seed=abc#klasse-5-6", "./app/?seed=-3#klasse-5-6", "./app/"]) {
+      await page.goto(address);
+      await expect(page.locator(".interactive-app")).toHaveAttribute("data-mounted", "");
+      const written = new URL(page.url());
+      const seed = Number(written.searchParams.get("seed"));
+      expect(Number.isInteger(seed) && seed > 0, address).toBe(true);
+      expect(written.hash, address).toMatch(/^#klasse-/);
+      expect(await stateOf(page), address).toMatchObject({ seed });
+    }
+  });
+
+  test("plays the round of the address, whatever seed the page would have drawn", async ({ page }) => {
+    await page.goto("./app/?seed=424242#klasse-5-6");
+    await expect(page.locator(".interactive-app")).toHaveAttribute("data-mounted", "");
+    expect(await stateOf(page)).toMatchObject({ seed: 424242, route: "klasse-5-6" });
+    await page.getByRole("button", { name: "Variante", exact: true }).click();
+    await page.getByRole("button", { name: "Prüfen" }).click();
+    await page.getByRole("button", { name: "Neue Runde" }).click();
+    await expect.poll(async () => (await stateOf(page))["seed"]).toBe(424243);
+    expect(new URL(page.url()).searchParams.get("seed")).toBe("424243");
+  });
 });

@@ -910,13 +910,15 @@ no sheet and has no switch: where it is embedded (a wide screen of 1300 px and m
 Variante, in a frame widened to 80 rem while it shows, so that an A4 page is wide enough to read; elsewhere only the
 button that opens it stands above the Variante, which has the whole width), the keyboard hint and the buttons below the sheets, so that both sheets are of the same height (one font size
 and one line height for every text), the folded settings for reading (font style, weight, size, line spacing, kept on the device) and, after checking, the result. It announces every change through the live region, moves the focus
-to the result heading after checking and back to the words after a new round, and emits the learner's actions. The address is the round (`?seed=<n>#<route>`), so that a round can be reloaded and
-shared. The learner's own steps push a history entry (`history.pushState`): a new age group or mode, chosen with the two
-selects, starts a round with a new seed, so that the same text with the same errors does not come back (where marks are
-set, a dialog asks first and the selects keep showing the round that goes on if the learner stays), and so does the next
-round. When the address changes by the back or forward button, the root component emits the action `round`
-(`{ seed, route }`) for the round the address names; the state stays as it is for the round it shows and for an address
-it does not know. The
+to the result heading after checking and back to the words after a new round, and emits the learner's actions. The address is the round (`?seed=<n>#<route>`) and the only place the seed is taken from, so
+that a round can be reloaded and shared. Without a valid seed in the address, the root component works one out when the
+page opens, writes it into the address and takes it from there. The learner's own steps write the address first
+(`history.pushState`) and then apply it: a new age group or mode, chosen with the two selects, starts a round with a new
+seed, so that the same text with the same errors does not come back (where marks are set, a dialog asks first and the
+selects keep showing the round that goes on if the learner stays), and the next round takes the seed after the one in
+the address. Applying the address is the action `round` (`{ seed, route }`), which the root component also emits when
+the back or forward button changes the address; the state stays as it is for the round it shows and for an address it
+does not know. The
 panel that is shown is its only state of its own. The route decides the mode: the Original, the PDF of the
 source (a link to a new tab and, on a wide screen with a mouse, the PDF in a frame of the same site) or the two texts
 of the mode Original erkennen, which the choose view shows.
