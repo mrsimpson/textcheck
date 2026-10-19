@@ -93,6 +93,19 @@ test.describe("Switching the age group or the mode", () => {
     expect(new URL(page.url()).searchParams.get("seed")).toBe(String(Number(first) + 1));
   });
 
+  test("scrolls to the button for the next round after checking, above the explanations", async ({ page }) => {
+    await open(page);
+    await page.getByRole("button", { name: "Variante", exact: true }).click();
+    await page.getByRole("button", { name: "Prüfen" }).click();
+    const again = page.getByRole("button", { name: "Neue Runde" });
+    await expect(again).toBeInViewport();
+    const [again_, first] = await Promise.all([
+      again.boundingBox(),
+      page.locator(".result .class").first().boundingBox(),
+    ]);
+    expect(again_!.y).toBeLessThan(first!.y);
+  });
+
   test("leads from round to round with the back and forward buttons of the browser", async ({ page }) => {
     await open(page);
     await page.getByLabel("Modus").selectOption("choose");

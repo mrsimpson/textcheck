@@ -3,7 +3,7 @@
 // from one to the other, so the eye cannot compare them side by side; the source PDF stands next to the Variante on a wide screen,
 // in a wider frame, and elsewhere only its button stands above the Variante), the words to mark, the keyboard hint and the buttons (both
 // below the sheets, so that the sheets are of the same height), and after checking the result. It announces every
-// change for screen readers and moves the focus to the result and back to the words. The runtime gives it the core's state; what the learner does goes back
+// change for screen readers and moves the focus to the result (and scrolls to its first line, with the button for the next round) and back to the words. The runtime gives it the core's state; what the learner does goes back
 // as input. The only state of its own is which panel is shown.
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import { announce, moveFocus } from "@lernapps/tooling/a11y";
@@ -215,7 +215,11 @@ watch(
     await nextTick();
     if (phase === "result") {
       const heading = root.value?.querySelector<HTMLElement>("#result-heading");
-      if (heading) moveFocus(heading);
+      if (heading) {
+        moveFocus(heading);
+        // the line with the button for the next round is the top of what is shown
+        root.value?.querySelector(".result .head")?.scrollIntoView({ block: "start" });
+      }
     } else if (before === "result") (words.value ?? choose.value)?.focus();
   },
 );

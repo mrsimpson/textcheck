@@ -37,7 +37,12 @@ const pieces = Array.from({ length: 28 }, (_, index) => ({
         :style="{ left: piece.left, animationDelay: piece.delay, '--hue': piece.hue, '--turn': piece.turn }"
       ></span>
     </div>
-    <h2 id="result-heading" tabindex="-1">{{ t("resultHeading") }}</h2>
+    <div class="head">
+      <h2 id="result-heading" tabindex="-1">{{ t("resultHeading") }}</h2>
+      <button type="button" class="primary again" @click="emit('input', { kind: 'action', name: 'again' })">
+        {{ t("again") }}
+      </button>
+    </div>
     <p v-if="choiceNote" class="choice">{{ choiceNote }}</p>
     <p v-if="allFound" class="praise">{{ result.wrong === 0 ? t("praiseClean") : t("praiseAll") }}</p>
     <p class="summary">
@@ -74,11 +79,6 @@ const pieces = Array.from({ length: 28 }, (_, index) => ({
       <li class="false">{{ t("legendFalse") }}</li>
       <li class="tolerated">{{ t("legendTolerated") }}</li>
     </ul>
-    <p>
-      <button type="button" class="primary" @click="emit('input', { kind: 'action', name: 'again' })">
-        {{ t("again") }}
-      </button>
-    </p>
   </section>
 </template>
 
@@ -87,8 +87,24 @@ const pieces = Array.from({ length: 28 }, (_, index) => ({
   margin-top: 1rem;
 }
 
+/* the heading and the button for the next round share a line; on a narrow screen the button stands below, full width */
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
 h2 {
+  margin: 0.5rem 0;
   font-size: 1.25rem;
+}
+
+@media (max-width: 40rem) {
+  .again {
+    flex: 1 1 100%;
+  }
 }
 
 h3 {
