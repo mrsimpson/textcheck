@@ -20,6 +20,14 @@
   },
   "excerpt": [
     {
+      "text": "Die Penicilline (Singular: Penicillin, auch Penizillin; von lateinisch penicillium, ‚Pinselschimmel‘) sind eine Gruppe von antibiotisch wirksamen Substanzen, die sich strukturell von der 6-Aminopenicillansäure ableiten.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Das zuerst entdeckte natürlich vorkommende Penicillin wurde aus der Pinselschimmelart Penicillium notatum isoliert und ab 1942 therapeutisch eingesetzt.",
+      "section": "Einleitung"
+    },
+    {
       "text": "Im Jahre 1939 interessierten sich Howard Walter Florey und Ernst Boris Chain für das Penicillin.",
       "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
     },
@@ -37,10 +45,6 @@
     },
     {
       "text": "Die Ratten der anderen Gruppe starben alle innerhalb weniger Stunden.",
-      "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
-    },
-    {
-      "text": "Dieses Tierexperiment stellte überraschend die kraftvolle Wirkung des Penicillins heraus, die bei diesem aggressiven Bakterienstamm nicht erwartet wurde.",
       "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
     },
     {
@@ -62,13 +66,43 @@
     {
       "text": "Dies ließ retrospektiv vermuten, dass das Penicillin hätte länger eingenommen werden müssen, als die sichtbaren Beschwerden andauern.",
       "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
-    },
-    {
-      "text": "Der erste Patient hätte nach heutigem Wissensstand fünf bis zehn Tage behandelt werden müssen.",
-      "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
     }
   ],
   "rendition": [
+    {
+      "sentence": ["Penicilline, auch Penizillin genannt, sind eine Gruppe von Stoffen, die antibiotisch wirken."],
+      "evidence": {
+        "quote": "Die Penicilline (Singular: Penicillin, auch Penizillin; von lateinisch penicillium, ‚Pinselschimmel‘) sind eine Gruppe von antibiotisch wirksamen Substanzen, die sich strukturell von der 6-Aminopenicillansäure ableiten."
+      }
+    },
+    {
+      "sentence": [
+        "Der Name kommt vom lateinischen Wort für ",
+        {
+          "slot": "a1"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Die Penicilline (Singular: Penicillin, auch Penizillin; von lateinisch penicillium, ‚Pinselschimmel‘) sind eine Gruppe von antibiotisch wirksamen Substanzen, die sich strukturell von der 6-Aminopenicillansäure ableiten."
+      }
+    },
+    {
+      "sentence": [
+        "Das zuerst entdeckte natürliche Penicillin wurde aus der Pinselschimmelart Penicillium ",
+        {
+          "slot": "a2"
+        },
+        " gewonnen und ab ",
+        {
+          "slot": "a3"
+        },
+        " in der Medizin eingesetzt."
+      ],
+      "evidence": {
+        "quote": "Das zuerst entdeckte natürlich vorkommende Penicillin wurde aus der Pinselschimmelart Penicillium notatum isoliert und ab 1942 therapeutisch eingesetzt."
+      }
+    },
     {
       "sentence": [
         {
@@ -152,6 +186,13 @@
     },
     {
       "sentence": [
+        {
+          "slot": "i4b"
+        }
+      ]
+    },
+    {
+      "sentence": [
         "Die Ratten der anderen Gruppe starben ",
         {
           "slot": "s8"
@@ -164,37 +205,6 @@
       ],
       "evidence": {
         "quote": "Die Ratten der anderen Gruppe starben alle innerhalb weniger Stunden."
-      }
-    },
-    {
-      "sentence": [
-        {
-          "slot": "i4b"
-        }
-      ]
-    },
-    {
-      "sentence": [
-        "Dieses Tierexperiment zeigte ",
-        {
-          "slot": "s10"
-        },
-        " die kraftvolle Wirkung des Penicillins."
-      ],
-      "evidence": {
-        "quote": "Dieses Tierexperiment stellte überraschend die kraftvolle Wirkung des Penicillins heraus"
-      }
-    },
-    {
-      "sentence": [
-        "Bei diesem ",
-        {
-          "slot": "s11"
-        },
-        " Bakterienstamm hatte man eine so starke Wirkung nicht erwartet."
-      ],
-      "evidence": {
-        "quote": "die bei diesem aggressiven Bakterienstamm nicht erwartet wurde"
       }
     },
     {
@@ -340,18 +350,6 @@
           "slot": "i6"
         }
       ]
-    },
-    {
-      "sentence": [
-        "Der erste Patient hätte nach heutigem Wissensstand ",
-        {
-          "slot": "s25"
-        },
-        " behandelt werden müssen."
-      ],
-      "evidence": {
-        "quote": "Der erste Patient hätte nach heutigem Wissensstand fünf bis zehn Tage behandelt werden müssen."
-      }
     }
   ],
   "slots": {
@@ -570,46 +568,6 @@
           "basis": "text",
           "conspicuousness": 1,
           "explanation": "Dieser Satz widerspricht dem Text. Dort steht, dass die Ratten der anderen Gruppe alle starben."
-        }
-      ]
-    },
-    "s10": {
-      "correct": "überraschend",
-      "variants": [
-        {
-          "text": "erwartungsgemäß",
-          "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „Dieses Tierexperiment stellte überraschend die kraftvolle Wirkung des Penicillins heraus“. Die Wirkung war überraschend, man hatte sie nicht erwartet.",
-          "evidence": "Dieses Tierexperiment stellte überraschend die kraftvolle Wirkung des Penicillins heraus"
-        },
-        {
-          "text": "sensationell",
-          "errorClass": "loaded_language",
-          "basis": "text",
-          "conspicuousness": 2,
-          "explanation": "„Sensationell“ ist ein Gefühlswort. Das Original sagt nüchtern: „überraschend“. Solche Wörter sollen beeindrucken, sie belegen nichts."
-        }
-      ]
-    },
-    "s11": {
-      "correct": "aggressiven",
-      "variants": [
-        {
-          "text": "harmlosen",
-          "errorClass": "factual_error",
-          "basis": "comparison",
-          "conspicuousness": 1,
-          "explanation": "Im Original steht: „bei diesem aggressiven Bakterienstamm“. Der Stamm war aggressiv, nicht harmlos.",
-          "evidence": "die bei diesem aggressiven Bakterienstamm nicht erwartet wurde"
-        },
-        {
-          "text": "agressiven",
-          "errorClass": "spelling_rule",
-          "basis": "text",
-          "conspicuousness": 2,
-          "explanation": "Das Wort „aggressiv“ schreibt man mit zwei „g“. Nach dem kurzen „a“ folgt ein doppelter Konsonant."
         }
       ]
     },
@@ -890,48 +848,6 @@
         }
       ]
     },
-    "i6": {
-      "correct": "",
-      "variants": [
-        {
-          "text": "Norman Heatley war der klügste Forscher im ganzen Team.",
-          "errorClass": "opinion_as_fact",
-          "basis": "text",
-          "conspicuousness": 2,
-          "explanation": "Das ist eine Meinung. „Der klügste“ lässt sich nicht messen. Im Original steht nur, was Heatley gelang: das Antibiotikum zu extrahieren und zu reinigen."
-        },
-        {
-          "text": "Heatleys Arbeit war einfach unfassbar großartig.",
-          "errorClass": "loaded_language",
-          "basis": "text",
-          "conspicuousness": 1,
-          "explanation": "„Unfassbar großartig“ ist ein Gefühlswort. Das Original sagt nüchtern, was Heatley gelang."
-        }
-      ]
-    },
-    "s25": {
-      "correct": "fünf bis zehn Tage",
-      "variants": [
-        {
-          "text": "fünf bis zehn Wochen",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „fünf bis zehn Tage behandelt werden müssen“. Es waren Tage, nicht Wochen.",
-          "evidence": "Der erste Patient hätte nach heutigem Wissensstand fünf bis zehn Tage behandelt werden müssen.",
-          "tolerance": 1
-        },
-        {
-          "text": "ein bis zwei Tage",
-          "errorClass": "number_name_date",
-          "basis": "comparison",
-          "conspicuousness": 2,
-          "explanation": "Im Original steht: „fünf bis zehn Tage behandelt werden müssen“. Es waren fünf bis zehn Tage.",
-          "evidence": "Der erste Patient hätte nach heutigem Wissensstand fünf bis zehn Tage behandelt werden müssen.",
-          "tolerance": 1
-        }
-      ]
-    },
     "i1": {
       "correct": "",
       "variants": [
@@ -960,7 +876,7 @@
           "errorClass": "opinion_as_fact",
           "basis": "text",
           "conspicuousness": 2,
-          "explanation": "Das ist eine Meinung. „Der wichtigste Moment“ lässt sich nicht messen. Im Original steht, was der Versuch zeigte, nicht wie wichtig er war."
+          "explanation": "Das ist eine Meinung. „Der wichtigste Moment“ lässt sich nicht messen. Im Original steht, was bei dem Versuch geschah, nicht wie wichtig er war."
         },
         {
           "text": "Die armen Ratten mussten dafür furchtbar leiden.",
@@ -968,6 +884,72 @@
           "basis": "text",
           "conspicuousness": 1,
           "explanation": "„Arm“ und „furchtbar“ sind Gefühlswörter. Das Original beschreibt nüchtern, was bei dem Versuch geschah."
+        }
+      ]
+    },
+    "i6": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Norman Heatley war der klügste Forscher im ganzen Team.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das ist eine Meinung. „Der klügste“ lässt sich nicht messen. Im Original steht nur, was Heatley gelang: das Antibiotikum zu extrahieren und zu reinigen."
+        },
+        {
+          "text": "Heatleys Arbeit war einfach unfassbar großartig.",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "„Unfassbar großartig“ ist ein Gefühlswort. Das Original sagt nüchtern, was Heatley gelang."
+        }
+      ]
+    },
+    "a1": {
+      "correct": "Pinselschimmel",
+      "variants": [
+        {
+          "text": "Brotschimmel",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „von lateinisch penicillium, ‚Pinselschimmel‘“. Der Name kommt von „Pinselschimmel“, nicht von „Brotschimmel“.",
+          "evidence": "Die Penicilline (Singular: Penicillin, auch Penizillin; von lateinisch penicillium, ‚Pinselschimmel‘) sind eine Gruppe von antibiotisch wirksamen Substanzen, die sich strukturell von der 6-Aminopenicillansäure ableiten."
+        }
+      ]
+    },
+    "a2": {
+      "correct": "notatum",
+      "variants": [
+        {
+          "text": "chrysogenum",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Im Original steht: „aus der Pinselschimmelart Penicillium notatum isoliert“. Die Art heißt Penicillium notatum, nicht Penicillium chrysogenum.",
+          "evidence": "Das zuerst entdeckte natürlich vorkommende Penicillin wurde aus der Pinselschimmelart Penicillium notatum isoliert und ab 1942 therapeutisch eingesetzt."
+        }
+      ]
+    },
+    "a3": {
+      "correct": "1942",
+      "variants": [
+        {
+          "text": "1924",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Im Original steht: „ab 1942 therapeutisch eingesetzt“. Das Jahr war 1942, nicht 1924.",
+          "evidence": "Das zuerst entdeckte natürlich vorkommende Penicillin wurde aus der Pinselschimmelart Penicillium notatum isoliert und ab 1942 therapeutisch eingesetzt."
+        },
+        {
+          "text": "1892",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Im Original steht: „ab 1942 therapeutisch eingesetzt“. Das Jahr war 1942, nicht 1892. Das liegt auch weit vor der Forschung von 1939.",
+          "evidence": "Das zuerst entdeckte natürlich vorkommende Penicillin wurde aus der Pinselschimmelart Penicillium notatum isoliert und ab 1942 therapeutisch eingesetzt."
         }
       ]
     }
@@ -980,6 +962,7 @@
     "Der Auszug nennt einen echten Patienten, der starb. Die Varianten bleiben sachlich; es werden nur Zahlen, Namen und Aussagen verändert. Das Paket gibt keine medizinischen Ratschläge.",
     "Der eingefügte Satz „Der Patient lebte danach noch viele Jahre.“ widerspricht dem richtigen Satz „Der Patient starb am 15. März 1941.“; ist dort das Datum verändert, bleibt es ein Widerspruch zum Original.",
     "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt; die Zahlen und Namen folgen dem Artikel, nicht anderen Quellen. Die falschen Varianten sind absichtlich verändert und stehen nicht in der Quelle.",
-    "Die Quelle liegt als PDF unter public/quellen/de/penicillin.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+    "Die Quelle liegt als PDF unter public/quellen/de/penicillin.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
+    "Überarbeitung Klasse 9–10: Der Auszug beginnt jetzt mit den ersten beiden Sätzen der Einleitung des Artikels (Fußnotenzeichen weggelassen); die Sätze über die Wirkung im Tierversuch („Dieses Tierexperiment stellte überraschend …“) und über die Behandlungsdauer („Der erste Patient hätte …“) sind entfallen, damit der Auszug bei zwölf Sätzen bleibt. Fakten (Jahre, Namen, Zahlen) aller Auszugssätze mit dem Artikel im PDF abgeglichen; die Stellen der gestrichenen Sätze sind entfallen, drei Stellen zur Einleitung sind neu."
   ]
 }
