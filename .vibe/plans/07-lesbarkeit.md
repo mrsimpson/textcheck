@@ -8,7 +8,7 @@ phase: commit
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 1
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
-failedChecks: { checks-pass: 13 }
+failedChecks: { checks-pass: 14 }
 ---
 
 # Increment: Bessere Bedienung und einstellbare Schrift

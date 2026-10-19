@@ -889,7 +889,7 @@ flowchart TB
         bb-textcheck-choose["Choose view"]
         bb-textcheck-result["Result view"]
         bb-textcheck-ui-texts["UI texts"]
-        bb-textcheck-reading-settings["Reading settings"]
+        bb-textcheck-controls["Controls"]
         bb-textcheck-reading["Reading values"]
     end
     bb-interactive-messages["Messages"]
@@ -902,23 +902,22 @@ flowchart TB
     bb-textcheck-wordlist -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
     bb-textcheck-result -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
     bb-textcheck-ui-texts -->|"if-messages"| bb-interactive-messages
-    bb-textcheck-root -->|"if-textcheck-reading-settings"| bb-textcheck-reading-settings
     bb-textcheck-root -->|"if-textcheck-reading"| bb-textcheck-reading
-    bb-textcheck-reading-settings -->|"if-textcheck-reading"| bb-textcheck-reading
-    bb-textcheck-reading-settings -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
+    bb-textcheck-controls -->|"if-textcheck-reading"| bb-textcheck-reading
+    bb-textcheck-controls -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
     bb-textcheck-reading -->|"if-device-storage"| bb-tooling
 ```
 
 ### Root component
 
-Built. `src/ui/App.vue` draws the heading line of the page itself, with the button for the reading settings at its right
-edge (the shell's own heading steps aside by CSS while the app runs), and shows the goal line, the Original and the Variante (like two sheets, one on top of the other,
+Built. `src/ui/App.vue` shows the round (the heading line of the page, with the controls for the reading settings
+beside it, is the runtime's and the `Controls` component's), the goal line, the Original and the Variante (like two sheets, one on top of the other,
 starting with the Original: a switch turns from one to the other with a short page-turn animation, which reduced motion
 switches off, and the hidden one is not in the page, so the learner cannot compare them side by side; the source PDF is
 no sheet and has no switch: where it is embedded (a wide screen of 1300 px and more with a mouse) it stands next to the
 Variante, in a frame widened to 80 rem while it shows, so that an A4 page is wide enough to read; elsewhere only the
 button that opens it stands above the Variante, which has the whole width), the keyboard hint and the buttons below the sheets, so that both sheets are of the same height (one font size
-and one line height for every text), the button for the settings for reading (font style, weight, size, line spacing, kept on the device) and, after checking, the result. It announces every change through the live region, moves the focus
+and one line height for every text), the texts in the font and size the learner set (font style, weight, size, line spacing, kept on the device) and, after checking, the result. It announces every change through the live region, moves the focus
 to the result heading after checking and back to the words after a new round, and emits the learner's actions. The address is the round (`?seed=<n>#<route>`) and the only place the seed is taken from, so
 that a round can be reloaded and shared. Without a valid seed in the address, the root component works one out when the
 page opens, writes it into the address and takes it from there. The learner's own steps write the address first
@@ -938,7 +937,7 @@ id: bb-textcheck-root
 title: Root component
 parent: bb-interactive-ui
 technology: Vue single-file component
-requires: if-textcheck-wordlist, if-textcheck-choose, if-textcheck-result, if-textcheck-ui-texts, if-textcheck-reading-settings, if-textcheck-reading, if-a11y
+requires: if-textcheck-wordlist, if-textcheck-choose, if-textcheck-result, if-textcheck-ui-texts, if-textcheck-reading, if-a11y
 path: src/ui/App.vue
 :::
 ```
@@ -1069,42 +1068,44 @@ path: src/ui/messages.ts
 :::
 ```
 
-### Reading settings
+### Controls
 
-Built. `src/ui/ReadingSettings.vue` is one small button "Schrift" in the line of the heading, at its right edge, which opens a
-dialog with the style of the font (normal, round, fixed width), the weight, the size and the line spacing, a line of
-sample text, a button for the defaults and one to close it; the texts change while the learner sets. It holds
-no state of its own: the root component gives it the settings and keeps what the learner changes.
+Built. `src/ui/Controls.vue` is what the app puts into the heading line of the page, where the runtime mounts it beside
+the h1 (the option `title` of `startInteractive`, in `src/main.ts`): one small button "Schrift", which opens a dialog
+with the style of the font (normal, round, fixed width), the weight, the size and the line spacing, a line of sample
+text, a button for the defaults and one to close it. The texts change while the learner sets. The settings are the
+shared ones of `reading.ts`; the component gets the props and the input event of the root component and uses neither.
 
 ```arc42
 :::building-block
-id: bb-textcheck-reading-settings
-title: Reading settings
+id: bb-textcheck-controls
+title: Controls
 parent: bb-interactive-ui
 technology: Vue single-file component
 requires: if-textcheck-reading, if-textcheck-ui-texts
-path: src/ui/ReadingSettings.vue
+path: src/ui/Controls.vue
 :::
 ```
 
-#### Reading settings interface
+#### Controls interface
 
-The root component binds the settings with `v-model` and the language as a prop.
+The runtime mounts the component into the slot of the heading line with the state and the language as props; it takes
+nothing else and emits nothing the app uses.
 
 ```arc42
 :::interface
-id: if-textcheck-reading-settings
-title: Reading settings v-model
-provider: bb-textcheck-reading-settings
-protocol: Vue props and events
-path: src/ui/ReadingSettings.vue
+id: if-textcheck-controls
+title: Controls component for the heading slot
+provider: bb-textcheck-controls
+protocol: Vue props and events, option title of startInteractive
+path: src/ui/Controls.vue
 :::
 ```
 
 ### Reading values
 
-Built. `src/ui/reading.ts` holds the settings for reading, their limits and defaults, turns them into CSS custom
-properties of the root element and keeps them on the device through `createStorage("textcheck")`. A saved value that is
+Built. `src/ui/reading.ts` holds the settings for reading as one shared value, with their limits and defaults, turns
+them into CSS custom properties and keeps them on the device through `createStorage("textcheck")`. A saved value that is
 out of range or of another shape is ignored; where the browser blocks storage the defaults hold and the settings
 work for this visit only. The font itself, Recursive (SIL Open Font License 1.1, with its licence beside it in
 `src/ui/fonts/`), is bundled at build time, cut to Latin and the axes weight, MONO and CASL.
@@ -1122,8 +1123,9 @@ path: src/ui/reading.ts
 
 #### Reading values interface
 
-The root component loads the settings once, saves them after every change and turns them into CSS custom properties; the
-settings component takes the limits and the defaults from it.
+The settings are one reactive value that the root component (for the texts) and the controls (for the dialog) share; it is
+loaded once, saved after every change and turned into CSS custom properties; the controls take the limits and the
+defaults from it.
 
 ```arc42
 :::interface

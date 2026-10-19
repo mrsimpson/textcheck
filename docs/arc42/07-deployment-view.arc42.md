@@ -197,7 +197,7 @@ hosts: bb-shell, bb-interactive-core, bb-interactive-ui, bb-interactive-data, bb
 
 ## Textcheck in the learner's browser
 
-The core's parts, the UI's components and the data that are bundled with them run in the learner's browser on the app page. The font Recursive and its licence are bundled with the app (`src/ui/fonts/`), and the reading settings are kept in the
+The core's parts, the UI's components and the data that are bundled with them run in the learner's browser on the app page. The font Recursive and its licence are bundled with the app (`src/ui/fonts/`), and the reading settings (set in the controls of the heading line) are kept in the
 browser of the learner under the app's own prefix; nothing is loaded from elsewhere. The PDFs of the sources (`public/quellen/`) are static files beside the
 app page, copied to the site by the build; the app page links to them and, on a wide screen, embeds them in a frame of
 the same site.
@@ -208,7 +208,7 @@ id: dn-textcheck-browser
 title: Textcheck app page
 type: container
 parent: dn-interactive-app-page
-hosts: bb-textcheck-state, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-root, bb-textcheck-wordlist, bb-textcheck-choose, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-reading-settings, bb-textcheck-reading, bb-textcheck-packs, bb-textcheck-tables
+hosts: bb-textcheck-state, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-root, bb-textcheck-wordlist, bb-textcheck-choose, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-controls, bb-textcheck-reading, bb-textcheck-packs, bb-textcheck-tables
 :::
 ```
 

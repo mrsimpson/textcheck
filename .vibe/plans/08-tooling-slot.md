@@ -4,12 +4,12 @@
 # archetype: the kind of app, as in the app's first plan: set it when you start this plan. It never changes.
 archetype: interactive
 # phase: the phase you work in now: explore, plan, code or commit. Change it when you enter the next phase.
-phase: plan
+phase: commit
 # prePushFailures: failed runs of the pre-push hook during this increment. The hook counts them. Never change it.
 prePushFailures: 0
 # failedChecks: the rules that failed in a run of lernapps check (hooks included), with the number of runs. The check
 # writes it. Never change it.
-failedChecks: { checks-pass: 1 }
+failedChecks: { checks-pass: 2 }
 ---
 
 # Increment: Neues Tooling, Titelzeile über den Slot
@@ -106,9 +106,9 @@ creator's turns from here to the end are counted in the retrospective (target: a
       learners will see and do, and anything new in how the content is made.
 - [x] For every new component and interactive exercise, show a sketch: a static SVG or image of what learners see,
       or the steps (what they do, what they see after each). A description in words alone is not enough.
-- [ ] **Checkpoint:** confirm the plan and the content method. Stop and wait for the creator. Change the plan if they
+- [x] **Checkpoint:** confirm the plan and the content method. Stop and wait for the creator. Change the plan if they
       ask, then ask again.
-- [ ] Set `phase: code`.
+- [x] Set `phase: code`.
 
 ### Content method
 
@@ -133,11 +133,11 @@ something, choose, mark it "(guess)" under "Key decisions" and go on.
 - [x] Update the app to the newest tooling and runtime: `npx --yes github:lernapps/tooling#main update`, then
       `npm install`. It also replaces the `lernapps-*` skills: read the ones you use again. (Der Check meldet danach
       zwei `<h1>`; Update und Umstellung kommen deshalb in einen Commit, siehe Key decisions.)
-- [ ] Slice 1: `reading.ts` hält die Einstellungen gemeinsam; neu `Controls.vue` (Knopf „Schrift“ und Dialog) aus `ReadingSettings.vue`; `src/main.ts` übergibt `{ title: Controls }`; eigene Titelzeile, `appTitle` und die Ausblende-Regel entfallen; Farben am `main`; Rahmenbreite über `--interactive-max-width`. Tests (`e2e/reading.e2e.ts`: eine Überschrift, Knopf in ihrer Zeile), arc42 und Skill `app-content`. `lernapps check` grün, Commit zusammen mit dem Update.
-- [ ] The content guide describes the app as it is now: its competencies, chapters and patterns, and its procedure
+- [x] Slice 1: `reading.ts` hält die Einstellungen gemeinsam; neu `Controls.vue` (Knopf „Schrift“ und Dialog) aus `ReadingSettings.vue`; `src/main.ts` übergibt `{ title: Controls }`; eigene Titelzeile, `appTitle` und die Ausblende-Regel entfallen; Farben am `main`; Rahmenbreite über `--interactive-max-width`. Tests (`e2e/reading.e2e.ts`: eine Überschrift, Knopf in ihrer Zeile), arc42 und Skill `app-content`. `lernapps check` grün, Commit zusammen mit dem Update.
+- [x] The content guide describes the app as it is now: its competencies, chapters and patterns, and its procedure
       for the next increment (`app-content-matches`).
-- [ ] `npx lernapps check` passes.
-- [ ] Set `phase: commit`.
+- [x] `npx lernapps check` passes.
+- [x] Set `phase: commit`.
 
 ### Completed
 

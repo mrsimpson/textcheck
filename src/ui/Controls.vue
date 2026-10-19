@@ -1,13 +1,17 @@
 <script setup lang="ts">
-// The settings for reading behind one small button (it stands in the line of the page's heading), in a dialog: the style of the font, its weight, the size and the
-// line spacing, with a line of sample text and a button to go back to the defaults. The texts change while the learner
-// sets. It holds no state of its own; the root component gives it the settings and keeps what the learner changes.
+// What the app puts into the heading line of the page, where the runtime mounts it beside the h1 (the option `title`
+// of startInteractive; it gets the props and the input event of the root component, and uses none of them): one small
+// button "Schrift", and behind it a dialog for the settings for reading: the style of the font, its weight, the size
+// and the line spacing, with a line of sample text and a button to go back to the defaults. The texts change while the
+// learner sets; the settings are shared with the root component (reading.ts) and kept on the device.
 import { computed, ref } from "vue";
-import { DEFAULT_READING, LIMITS, type FontStyle, type Reading } from "./reading.ts";
+import type { Input } from "@lernapps/app-templates/interactive";
+import type { State } from "../core/index.ts";
+import { DEFAULT_READING, LIMITS, reading, readingStyle, type FontStyle, type Reading } from "./reading.ts";
 import { translatorOf } from "./messages.ts";
 
-const props = defineProps<{ modelValue: Reading; lang: string }>();
-const emit = defineEmits<{ "update:modelValue": [reading: Reading] }>();
+const props = defineProps<{ state: State; lang: string }>();
+defineEmits<{ input: [input: Input] }>();
 const t = translatorOf(props.lang);
 
 const dialog = ref<HTMLDialogElement | null>(null);
@@ -16,19 +20,21 @@ const styles: { id: FontStyle; label: string }[] = [
   { id: "round", label: t("styleRound") },
   { id: "mono", label: t("styleMono") },
 ];
-const change = (patch: Partial<Reading>): void => emit("update:modelValue", { ...props.modelValue, ...patch });
+const change = (patch: Partial<Reading>): void => {
+  reading.value = { ...reading.value, ...patch };
+};
 const number = (event: Event): number => Number((event.target as HTMLInputElement).value);
 const isDefault = computed(
   () =>
-    props.modelValue.style === DEFAULT_READING.style &&
-    props.modelValue.weight === DEFAULT_READING.weight &&
-    props.modelValue.size === DEFAULT_READING.size &&
-    props.modelValue.spacing === DEFAULT_READING.spacing,
+    reading.value.style === DEFAULT_READING.style &&
+    reading.value.weight === DEFAULT_READING.weight &&
+    reading.value.size === DEFAULT_READING.size &&
+    reading.value.spacing === DEFAULT_READING.spacing,
 );
 </script>
 
 <template>
-  <div>
+  <div class="controls" :style="readingStyle">
     <button type="button" class="open" aria-haspopup="dialog" @click="dialog?.showModal()">
       {{ t("readingButton") }}
     </button>
@@ -42,7 +48,7 @@ const isDefault = computed(
               type="radio"
               name="font-style"
               :value="style.id"
-              :checked="modelValue.style === style.id"
+              :checked="reading.style === style.id"
               @change="change({ style: style.id })"
             />
             {{ style.label }}
@@ -53,26 +59,26 @@ const isDefault = computed(
           <input
             type="range"
             v-bind="LIMITS.weight"
-            :value="modelValue.weight"
+            :value="reading.weight"
             @input="change({ weight: number($event) })"
           />
         </label>
         <label class="slider">
           <span>{{ t("fontSize") }}</span>
-          <input type="range" v-bind="LIMITS.size" :value="modelValue.size" @input="change({ size: number($event) })" />
+          <input type="range" v-bind="LIMITS.size" :value="reading.size" @input="change({ size: number($event) })" />
         </label>
         <label class="slider">
           <span>{{ t("lineSpacing") }}</span>
           <input
             type="range"
             v-bind="LIMITS.spacing"
-            :value="modelValue.spacing ?? 2.1"
+            :value="reading.spacing ?? 2.1"
             @input="change({ spacing: number($event) })"
           />
         </label>
         <p class="sample">{{ t("sample") }}</p>
         <div class="buttons">
-          <button type="button" :disabled="isDefault" @click="emit('update:modelValue', { ...DEFAULT_READING })">
+          <button type="button" :disabled="isDefault" @click="reading = { ...DEFAULT_READING }">
             {{ t("readingReset") }}
           </button>
           <button type="button" class="primary" @click="dialog?.close()">{{ t("readingDone") }}</button>
@@ -83,6 +89,12 @@ const isDefault = computed(
 </template>
 
 <style scoped>
+/* the controls stand outside the root component: the font and the colours are theirs to say */
+.controls {
+  font-family: "Recursive TC", system-ui, sans-serif;
+  color: var(--tc-ink);
+}
+
 .open {
   min-height: 2.75rem;
   padding: 0.4rem 0.9rem;
@@ -162,10 +174,10 @@ legend {
   margin: 0;
   padding: 0.5rem 0.75rem;
   border-left: 4px solid var(--tc-line);
-  font-size: var(--tc-font-size);
-  line-height: var(--tc-line-height);
-  font-weight: var(--tc-font-weight);
-  font-variation-settings: var(--tc-font-variation);
+  font-size: var(--tc-font-size, 1.125rem);
+  line-height: var(--tc-line-height, 2.1);
+  font-weight: var(--tc-font-weight, 400);
+  font-variation-settings: var(--tc-font-variation, "MONO" 0, "CASL" 0);
 }
 
 .buttons {

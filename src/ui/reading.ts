@@ -2,6 +2,7 @@
 // and the line spacing. The values are kept on the device through the tooling's storage; where that is blocked, the
 // defaults hold and the settings work for this visit only.
 import { createStorage } from "@lernapps/tooling/storage";
+import { computed, ref, watch } from "vue";
 
 export type FontStyle = "normal" | "round" | "mono";
 
@@ -60,3 +61,13 @@ export function styleOf(reading: Reading): Record<string, string> {
   if (reading.spacing !== null) style["--tc-line-height"] = String(reading.spacing);
   return style;
 }
+
+/**
+ * The settings of this visit, one for every component that shows them: the root component (the texts) and the controls
+ * in the heading line, which the runtime mounts apart from it. A change is kept on the device.
+ */
+export const reading = ref<Reading>(loadReading());
+watch(reading, (value) => saveReading(value), { deep: true });
+
+/** The settings as CSS custom properties. */
+export const readingStyle = computed(() => styleOf(reading.value));
