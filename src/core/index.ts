@@ -6,13 +6,18 @@ import type { Input } from "@lernapps/app-templates/interactive";
 import { ERROR_CLASSES, LEVELS, levelOf, packsFor, parseRoute } from "./data.ts";
 import { evaluate } from "./evaluate.ts";
 import { random } from "./random.ts";
-import { buildRound, originalTokensOf } from "./round.ts";
-import type { Side, State, Token } from "./types.ts";
+import { buildRound, hintSentencesOf, originalTokensOf } from "./round.ts";
+import type { HintStage, Side, State, Token } from "./types.ts";
 
 export type { State } from "./types.ts";
 
 /** The language a round starts in; the page sets its own by the action "language" (see `step`). */
 const DEFAULT_LANGUAGE = "de";
+
+/** The wait before hint `taken + 1`, in milliseconds: 10 s plus 5 s for every hint that is next in line (15 s, 20 s). */
+export function hintWaitAfter(taken: number): number {
+  return (10 + 5 * (taken + 1)) * 1000;
+}
 
 export function start(seed: number, route: string, language: string = DEFAULT_LANGUAGE): State {
   const { mode } = parseRoute(route);
@@ -26,6 +31,13 @@ export function start(seed: number, route: string, language: string = DEFAULT_LA
   // the side of the Variante in the mode `choose` comes from its own draw, so that every mode plays the same round
   const variantSide: Side = random((seed ^ 0x5bd1e995) >>> 0)() < 0.5 ? "a" : "b";
   const classes = [...new Set(corruptions.map((corruption) => corruption.errorClass))];
+  const hintSentences = hintSentencesOf(pack, corruptions, tokens);
+  const hintClasses = [...new Set(hintSentences.flatMap((entry) => entry.classes))];
+  // the classes are a hint only where the level hides them; a stage with nothing to show is left out
+  const hintStages: HintStage[] = [
+    ...(level.announceClasses || hintClasses.length === 0 ? [] : (["classes"] as const)),
+    ...(hintSentences.length === 0 ? [] : (["sentences"] as const)),
+  ];
   return {
     seed,
     route,
@@ -45,6 +57,11 @@ export function start(seed: number, route: string, language: string = DEFAULT_LA
     marked: [],
     cursor: 0,
     changed: -1,
+    hintStages,
+    hintClasses,
+    hintSentences,
+    hintLevel: 0,
+    hintWait: hintWaitAfter(0),
     phase: "marking",
     result: null,
     last: "start",
@@ -125,6 +142,19 @@ function inRound(state: State, round: unknown): State {
   return start(seed, route, state.language);
 }
 
+/** The learner takes the next hint, once the wait is over; each hint shows one more stage and stays until the round ends. */
+function hint(state: State): State {
+  if (state.hintWait > 0 || state.hintLevel >= state.hintStages.length) return state;
+  const hintLevel = state.hintLevel + 1;
+  return { ...state, hintLevel, hintWait: hintWaitAfter(hintLevel), last: "hint" };
+}
+
+/** Time passes: the wait before the next hint runs down while the learner marks; otherwise the state is the same. */
+export function tick(state: State, dt: number): State {
+  if (state.phase !== "marking" || state.hintWait === 0 || state.hintLevel >= state.hintStages.length) return state;
+  return { ...state, hintWait: Math.max(0, state.hintWait - dt) };
+}
+
 export function step(state: State, input: Input): State {
   if (input.kind === "key") {
     // 1 and 2 pick the text in the mode `choose`; the root component does not use other keys
@@ -150,6 +180,8 @@ export function step(state: State, input: Input): State {
       const cursor = moved(state, input.value);
       return cursor === state.cursor ? state : { ...state, cursor };
     }
+    case "hint":
+      return hint(state);
     case "clear":
       return state.marked.length === 0 ? state : { ...state, marked: [], changed: -1, last: "clear" };
     case "check": {

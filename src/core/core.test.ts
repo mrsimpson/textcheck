@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { ERROR_CLASSES, LEVELS, PACKS, parseRoute, routeOf } from "./data.ts";
-import { start, step, type State } from "./index.ts";
+import { hintWaitAfter, start, step, tick, type State } from "./index.ts";
 
 const route = "klasse-5-6";
 const languages = [...new Set(PACKS.map((pack) => pack.language))].sort();
@@ -300,5 +300,66 @@ describe("the language", () => {
     const english = step(checked, action("language", "en"));
     expect(english.phase).toBe("marking");
     expect(english.language).toBe("en");
+  });
+});
+
+describe("hints", () => {
+  const waited = (state: State): State => tick(state, state.hintWait);
+
+  it("start with nothing shown and a wait of 15 s, then 20 s", () => {
+    const state = start(1, route);
+    expect([state.hintLevel, state.hintWait]).toEqual([0, 15000]);
+    expect(hintWaitAfter(1)).toBe(20000);
+  });
+
+  it("are refused until the wait is over, and the wait runs down by the ticks", () => {
+    const state = start(1, route);
+    expect(step(state, action("hint"))).toBe(state);
+    const later = tick(state, 20);
+    expect(later.hintWait).toBe(14980);
+    expect(step(tick(state, 14980), action("hint"))).toEqual(tick(state, 14980));
+    expect(step(waited(state), action("hint")).hintLevel).toBe(1);
+  });
+
+  it("give one stage each, wait longer for the next, and stop after the last", () => {
+    let state = start(1, "klasse-5-6");
+    const stages = state.hintStages.length;
+    expect(stages).toBeGreaterThan(0);
+    for (let taken = 1; taken <= stages; taken++) {
+      state = step(waited(state), action("hint"));
+      expect([state.hintLevel, state.last, state.hintWait]).toEqual([taken, "hint", hintWaitAfter(taken)]);
+    }
+    expect(step(waited(state), action("hint"))).toEqual(waited(state));
+  });
+
+  it("name the classes only where the level hides them, and the sentences always", () => {
+    for (let seed = 1; seed <= 40; seed++) {
+      for (const level of Object.keys(LEVELS)) {
+        const state = start(seed, level);
+        const hidden = state.announced === null;
+        expect(state.hintStages.includes("classes")).toBe(hidden && state.hintClasses.length > 0);
+        expect(state.hintStages.includes("sentences")).toBe(state.hintSentences.length > 0);
+      }
+    }
+  });
+
+  it("point only at sentences with a counterpart in the Original, never at inserted ones", () => {
+    for (let seed = 1; seed <= 60; seed++) {
+      const state = start(seed, "klasse-7-8-original");
+      for (const entry of state.hintSentences) {
+        expect(state.original[entry.original]).toBeDefined();
+        const slots = state.tokens.filter((token) => token.sentence === entry.sentence).map((token) => token.slot);
+        expect(slots.some((slot) => slot !== null)).toBe(true);
+        expect(entry.classes.length).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it("stand still after checking, and a new round starts without them", () => {
+    let state = step(waited(start(1, route)), action("hint"));
+    state = step(state, action("check"));
+    expect(tick(state, 20)).toBe(state);
+    expect(step(state, action("hint"))).toBe(state);
+    expect(step(state, action("again")).hintLevel).toBe(0);
   });
 });

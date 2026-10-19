@@ -142,7 +142,21 @@ export interface Result {
 export type Mode = "mark" | "source" | "choose";
 
 /** What the last input changed; the root component announces it. */
-export type Last = "start" | "mark" | "unmark" | "clear" | "check" | "choose";
+export type Last = "start" | "mark" | "unmark" | "clear" | "check" | "choose" | "hint";
+
+/** What a hint shows: the error classes of the round, or the sentences that hold an error. */
+export type HintStage = "classes" | "sentences";
+
+/**
+ * A sentence of the Variante that holds an error and has a counterpart in the Original (inserted sentences have none and
+ * are no part of the hints): its index in the rendition, the index of the Original's sentence it renders, and the error
+ * classes in it.
+ */
+export interface HintSentence {
+  sentence: number;
+  original: number;
+  classes: string[];
+}
 
 /** The two texts of the mode `choose`. */
 export type Side = "a" | "b";
@@ -178,6 +192,15 @@ export interface State {
   cursor: number;
   /** The token the last mark or unmark changed, else -1. */
   changed: number;
+  /** The hints of this round, in the order they are given; hint n shows the first n stages. */
+  hintStages: HintStage[];
+  /** The error classes of the round that stand in sentences with a counterpart in the Original. */
+  hintClasses: string[];
+  hintSentences: HintSentence[];
+  /** How many hints the learner has taken. */
+  hintLevel: number;
+  /** The milliseconds until the next hint can be taken; 0 when it can. */
+  hintWait: number;
   phase: "marking" | "result";
   result: Result | null;
   last: Last;
