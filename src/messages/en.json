@@ -108,5 +108,6 @@
   "tipClasses": "Hint: these kinds of errors are in the text this round: {classes}.",
   "tipSentences": "Hint: the sentences with an error are marked at the edge, with the kind of error.",
   "tipSentencesChoose": "Hint: in the marked sentences, one of the two texts has an error. The kind of error is shown at the edge. Compare both texts.",
-  "announceTipReady": "The next hint is ready."
+  "announceTipReady": "The next hint is ready.",
+  "praiseHints": "You used hints, and that is perfectly fine. Next time you may manage without them."
 }

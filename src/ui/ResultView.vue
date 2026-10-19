@@ -1,13 +1,21 @@
 <script setup lang="ts">
 // The result of a round: the counts, the errors grouped by class (found or missed, how to detect it, what stands in
 // the Variante and in the Original, why), the words marked wrongly or within tolerance, and the legend of the colours.
-// It shows the core's result and emits "again" for the next round.
+// It shows the core's result and emits "again" for the next round. Every error found: fireworks when no hint was taken,
+// confetti when hints were; with hints, a sentence that encourages the next round without.
 import { computed } from "vue";
 import type { Input } from "@lernapps/app-templates/interactive";
 import type { Result, Token } from "../core/types.ts";
 import { translatorOf } from "./messages.ts";
 
-const props = defineProps<{ result: Result; tokens: readonly Token[]; lang: string; choiceNote?: string | null }>();
+const props = defineProps<{
+  result: Result;
+  tokens: readonly Token[];
+  lang: string;
+  choiceNote?: string | null;
+  /** How many hints the learner took. */
+  hints: number;
+}>();
 const emit = defineEmits<{ input: [input: Input] }>();
 const t = translatorOf(props.lang);
 
@@ -19,6 +27,12 @@ const wordsWith = (status: string): string =>
 const wrongWords = computed(() => wordsWith("false"));
 const toleratedWords = computed(() => wordsWith("tolerated"));
 const allFound = computed(() => props.result.total > 0 && props.result.found === props.result.total);
+// Fireworks: three bursts, each of sparks that fly out from a point and fade (nothing flashes); fixed by index, too.
+const bursts = [
+  { left: "22%", top: "30%", delay: "0s", hue: 20 },
+  { left: "74%", top: "24%", delay: "0.5s", hue: 200 },
+  { left: "48%", top: "42%", delay: "1s", hue: 320 },
+].map((burst) => ({ ...burst, sparks: Array.from({ length: 14 }, (_, index) => `${index * (360 / 14)}deg`) }));
 // Confetti pieces: fixed positions, delays and colours by index, so a round looks the same every time.
 const pieces = Array.from({ length: 28 }, (_, index) => ({
   left: `${(index * 37) % 100}%`,
@@ -30,7 +44,17 @@ const pieces = Array.from({ length: 28 }, (_, index) => ({
 
 <template>
   <section class="result" aria-labelledby="result-heading">
-    <div v-if="allFound" class="confetti" aria-hidden="true">
+    <div v-if="allFound && hints === 0" class="fireworks" aria-hidden="true">
+      <span
+        v-for="(burst, index) in bursts"
+        :key="index"
+        class="burst"
+        :style="{ left: burst.left, top: burst.top, '--hue': burst.hue }"
+      >
+        <i v-for="angle in burst.sparks" :key="angle" :style="{ '--angle': angle, animationDelay: burst.delay }"></i>
+      </span>
+    </div>
+    <div v-if="allFound && hints > 0" class="confetti" aria-hidden="true">
       <span
         v-for="(piece, index) in pieces"
         :key="index"
@@ -40,6 +64,7 @@ const pieces = Array.from({ length: 28 }, (_, index) => ({
     <h2 id="result-heading" tabindex="-1">{{ t("resultHeading") }}</h2>
     <p v-if="choiceNote" class="choice">{{ choiceNote }}</p>
     <p v-if="allFound" class="praise">{{ result.wrong === 0 ? t("praiseClean") : t("praiseAll") }}</p>
+    <p v-if="hints > 0" class="praise">{{ t("praiseHints") }}</p>
     <p class="summary">
       {{ t("resultSummary", { found: result.found, total: result.total }) }}
       <template v-if="result.wrong > 0"> · {{ t("resultWrong", { count: result.wrong }) }}</template>
@@ -257,6 +282,46 @@ dd {
   font-weight: 700;
 }
 
+.fireworks {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.burst {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.burst i {
+  position: absolute;
+  left: -0.25rem;
+  top: -0.25rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: hsl(var(--hue) 85% 55%);
+  opacity: 0;
+  animation: spark 1.8s ease-out forwards;
+}
+
+@keyframes spark {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--angle)) translateX(0);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--angle)) translateX(min(9rem, 28vw));
+  }
+}
+
 .confetti {
   position: fixed;
   inset: 0;
@@ -283,6 +348,7 @@ dd {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .fireworks,
   .confetti {
     display: none;
   }

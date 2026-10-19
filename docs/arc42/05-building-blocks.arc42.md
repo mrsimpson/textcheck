@@ -1012,8 +1012,10 @@ path: src/ui/ChooseView.vue
 ### Result view
 
 Built. `src/ui/ResultView.vue` shows the counts, the errors grouped by class with what stands in the Variante and in the
-Original and the explanation, the words marked wrongly or within tolerance, and the legend. It emits the action
-`again`.
+Original and the explanation, the words marked wrongly or within tolerance, and the legend. When every error is
+found it shows fireworks if no hint was taken and confetti if hints were (both calm, nothing flashes, and off when the
+system asks for less motion); where hints were taken, a sentence says that next time it may work without them. It
+emits the action `again`.
 
 ```arc42
 :::building-block

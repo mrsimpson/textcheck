@@ -391,6 +391,7 @@ const choiceNote = computed(() => {
       :result="state.result"
       :tokens="checked"
       :choice-note="choiceNote"
+      :hints="state.hintLevel"
       :lang="lang"
       @input="onResultInput"
     />
