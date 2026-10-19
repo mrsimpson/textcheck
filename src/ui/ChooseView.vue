@@ -65,6 +65,7 @@ defineExpose({ focus: () => words.value?.[0]?.focus() });
           {{ text.name }}
           <template v-if="checking">– {{ text.isVariant ? t("isVariant") : t("isOriginal") }}</template>
         </h2>
+        <h3 class="text-title">{{ state.title }}</h3>
         <WordList
           v-if="text.chosen"
           ref="words"
@@ -190,6 +191,12 @@ button:disabled {
 h2 {
   margin: 0 0 0.5rem;
   font-size: 1.05rem;
+}
+
+.text-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
+  line-height: 1.3;
 }
 
 .plain {

@@ -171,6 +171,7 @@ const choiceNote = computed(() => {
       </section>
       <section v-else class="panel original" aria-labelledby="original-heading">
         <h2 id="original-heading">{{ t("original") }}</h2>
+        <h3 class="text-title">{{ state.title }}</h3>
         <p v-for="(sentence, index) in state.original" :key="index">{{ sentence }}</p>
         <p class="source">
           {{ t("source") }} {{ state.source.title }}, {{ state.source.license }}
@@ -186,6 +187,7 @@ const choiceNote = computed(() => {
       </section>
       <section class="panel rendition" aria-labelledby="rendition-heading">
         <h2 id="rendition-heading">{{ t("rendition") }}</h2>
+        <h3 class="text-title">{{ state.title }}</h3>
         <p v-if="!checking" id="words-hint" class="hint">{{ t("hint") }}</p>
         <WordList
           ref="words"
@@ -358,6 +360,12 @@ const choiceNote = computed(() => {
 h2 {
   margin: 0 0 0.5rem;
   font-size: 1.05rem;
+}
+
+.text-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
+  line-height: 1.3;
 }
 
 .original p {

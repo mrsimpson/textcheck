@@ -19,11 +19,13 @@ Do the steps in order. Read the reference when you reach the step.
    `src/data/levels.json` for the allowed error classes, bases and errors per round of these school years.
 2. **Research** - [references/research.md](references/research.md). Find a source you may reuse, open it completely,
    fix the revision, note licence and authors. No source read in full, no pack.
-3. **Draft** - [references/drafting.md](references/drafting.md). Choose the excerpt, write the rendition sentence by
-   sentence with evidence quotes. Length and wording fit the school years.
+3. **Draft** - [references/drafting.md](references/drafting.md). Choose the excerpt (it begins with the introduction of
+   the article; the pack's `title` is the heading), write the rendition sentence by sentence with evidence quotes.
+   Length and wording fit the school years.
 4. **Error slots** - [references/error-patterns.md](references/error-patterns.md). Pick places, build several
    variants per place from the patterns of the allowed classes; write explanations.
-5. **Check** - `npx vp test run src/core/pack-check.test.ts` (schema + pack checks). Then do what no check does:
+5. **Check** - `npx vp test run src/core/pack-check.test.ts` (schema + pack checks) and
+   `node .agents/skills/app-textpack/scripts/check-lead.mjs <pack.json>` (the text begins with the introduction). Then do what no check does:
    compare excerpt and quotes with the opened source (`verified: true` only after that), and read each variant in its
    sentence aloud. Never weaken a check.
 6. **Source PDF** - [references/pdf.md](references/pdf.md). Required: `public/quellen/<language>/<id>.pdf` and
