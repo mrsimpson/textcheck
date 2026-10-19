@@ -12,6 +12,8 @@
   "original": "Original",
   "rendition": "Variante: Markiere, was nicht stimmt",
   "renditionTab": "Variante",
+  "renditionNote": "Die Variante enthält bewusst andere Formulierungen. Diese sind nicht zwangsläufig Fehler.",
+  "renditionNoteChoose": "Einer der beiden Texte enthält bewusst andere Formulierungen. Diese sind nicht zwangsläufig Fehler.",
   "sourceTab": "Quelle",
   "textA": "Text A",
   "textB": "Text B",

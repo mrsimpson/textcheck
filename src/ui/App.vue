@@ -149,6 +149,7 @@ const choiceNote = computed(() => {
       </label>
     </div>
     <p class="goal">{{ goal }}</p>
+    <p v-if="state.mode === 'choose'" class="hint note">{{ t("renditionNoteChoose") }}</p>
     <ChooseView
       v-if="state.mode === 'choose'"
       ref="choose"
@@ -202,6 +203,7 @@ const choiceNote = computed(() => {
       <section class="panel rendition" aria-labelledby="rendition-heading">
         <h2 id="rendition-heading">{{ t("rendition") }}</h2>
         <h3 class="text-title">{{ state.title }}</h3>
+        <p class="hint note">{{ t("renditionNote") }}</p>
         <p v-if="!checking" id="words-hint" class="hint">{{ t("hint") }}</p>
         <WordList
           ref="words"
