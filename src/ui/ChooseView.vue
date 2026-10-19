@@ -8,6 +8,9 @@ import { computed, ref } from "vue";
 import type { Input } from "@lernapps/app-templates/interactive";
 import type { Side, State, Token } from "../core/types.ts";
 import WordList from "./WordList.vue";
+import HintButton from "./HintButton.vue";
+import HintNote from "./HintNote.vue";
+import { hintTags } from "./hints.ts";
 import { translatorOf } from "./messages.ts";
 
 const props = defineProps<{ state: State; lang: string }>();
@@ -27,22 +30,19 @@ const texts = computed(() =>
       tokens: isVariant ? props.state.tokens : props.state.originalTokens,
       isVariant,
       chosen: props.state.choice === side,
+      tags: hintTags(props.state, t, !isVariant),
     };
   }),
 );
 
-/** The sentences of a text as plain paragraphs. */
-function sentencesOf(tokens: readonly Token[]): string[] {
-  const grouped: string[][] = [];
-  let sentence = -1;
+/** The sentences of a text as plain paragraphs, each with its index in the text. */
+function sentencesOf(tokens: readonly Token[]): { index: number; text: string }[] {
+  const grouped: { index: number; words: string[] }[] = [];
   for (const token of tokens) {
-    if (token.sentence !== sentence) {
-      grouped.push([]);
-      sentence = token.sentence;
-    }
-    grouped[grouped.length - 1]?.push(token.text);
+    if (grouped[grouped.length - 1]?.index !== token.sentence) grouped.push({ index: token.sentence, words: [] });
+    grouped[grouped.length - 1]?.words.push(token.text);
   }
-  return grouped.map((row) => row.join(" "));
+  return grouped.map(({ index, words }) => ({ index, text: words.join(" ") }));
 }
 
 defineExpose({ focus: () => words.value?.[0]?.focus() });
@@ -77,10 +77,19 @@ defineExpose({ focus: () => words.value?.[0]?.focus() });
           :status="state.result?.status ?? []"
           :label="text.name"
           :lang="lang"
+          :tags="text.tags"
           @input="(input) => emit('input', input)"
         />
         <template v-else>
-          <p v-for="(sentence, index) in sentencesOf(text.tokens)" :key="index" class="plain">{{ sentence }}</p>
+          <p
+            v-for="sentence in sentencesOf(text.tokens)"
+            :key="sentence.index"
+            class="plain"
+            :class="{ tagged: text.tags[sentence.index] !== undefined }"
+            :data-tag="text.tags[sentence.index]"
+          >
+            {{ sentence.text }}
+          </p>
         </template>
         <button
           v-if="!checking"
@@ -93,12 +102,14 @@ defineExpose({ focus: () => words.value?.[0]?.focus() });
         </button>
       </section>
     </div>
+    <HintNote v-if="!checking" :state="state" :lang="lang" />
     <p v-if="!checking && state.choice !== null" id="words-hint" class="hint">{{ t("hint") }}</p>
     <div v-if="!checking" class="bar">
       <span aria-hidden="true">{{
         state.choice === null ? t("pickFirst") : t("marked", { count: state.marked.length })
       }}</span>
       <span class="buttons">
+        <HintButton :state="state" :lang="lang" @input="(input) => emit('input', input)" />
         <button
           type="button"
           :disabled="state.choice === null"
@@ -227,6 +238,20 @@ h2 {
   line-height: var(--tc-line-height);
   font-weight: var(--tc-font-weight);
   font-variation-settings: var(--tc-font-variation);
+}
+
+.tagged {
+  border-left: 4px solid var(--tc-tol);
+  padding-left: 0.75rem;
+}
+
+.tagged::before {
+  content: attr(data-tag);
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--tc-tol);
 }
 
 .hint {

@@ -3,7 +3,7 @@
 // from one to the other, so the eye cannot compare them side by side; the source PDF stands next to the Variante on a wide screen,
 // in a wider frame, and elsewhere only its button stands above the Variante), the words to mark, the keyboard hint and the buttons (both
 // below the sheets, so that the sheets are of the same height), and after checking the result. It announces every
-// change for screen readers and moves the focus to the result and back to the words. The runtime gives it the core's state; what the learner does goes back
+// change for screen readers and moves the focus to the result (and scrolls to its heading, with the button for the next round right below) and back to the words. The runtime gives it the core's state; what the learner does goes back
 // as input. The only state of its own is which panel is shown.
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import { announce, moveFocus } from "@lernapps/tooling/a11y";
@@ -12,9 +12,12 @@ import { LEVELS, parseRoute, routeOf } from "../core/data.ts";
 import { markable, type State } from "../core/index.ts";
 import type { Mode } from "../core/types.ts";
 import ChooseView from "./ChooseView.vue";
+import HintButton from "./HintButton.vue";
+import HintNote from "./HintNote.vue";
 import ResultView from "./ResultView.vue";
 import WordList from "./WordList.vue";
 import { translatorOf } from "./messages.ts";
+import { hintTags, hintTextsOf } from "./hints.ts";
 import { readingStyle } from "./reading.ts";
 
 const props = defineProps<{ state: State; lang: string }>();
@@ -189,7 +192,15 @@ const goal = computed(() =>
 );
 
 watch(
-  () => [props.state.last, props.state.marked.length, props.state.seed, props.state.phase, props.state.choice] as const,
+  () =>
+    [
+      props.state.last,
+      props.state.marked.length,
+      props.state.seed,
+      props.state.phase,
+      props.state.choice,
+      props.state.hintLevel,
+    ] as const,
   () => {
     const { state } = props;
     const word = state.tokens[state.changed]?.text ?? "";
@@ -198,10 +209,19 @@ watch(
     else if (state.last === "mark") announce(t("announceMark", { word, count }));
     else if (state.last === "unmark") announce(t("announceUnmark", { word, count }));
     else if (state.last === "clear") announce(t("announceClear"));
+    else if (state.last === "hint") announce(hintTextsOf(state, t).at(-1) ?? "");
     else if (state.last === "choose")
       announce(t("announceChoose", { name: t(state.choice === "a" ? "textA" : "textB") }));
     else if (state.result !== null)
       announce(t("announceCheck", { found: state.result.found, total: state.result.total, wrong: state.result.wrong }));
+  },
+);
+
+// the next hint is ready: tell it once, not every second of the wait
+watch(
+  () => props.state.hintWait === 0 && props.state.hintLevel < props.state.hintStages.length,
+  (ready, before) => {
+    if (ready && !before) announce(t("announceTipReady"));
   },
 );
 
@@ -212,7 +232,11 @@ watch(
     await nextTick();
     if (phase === "result") {
       const heading = root.value?.querySelector<HTMLElement>("#result-heading");
-      if (heading) moveFocus(heading);
+      if (heading) {
+        moveFocus(heading);
+        // the heading is the top of what is shown, the button for the next round stands right below it (and the praise)
+        heading.scrollIntoView({ block: "start" });
+      }
     } else if (before === "result") (words.value ?? choose.value)?.focus();
   },
 );
@@ -334,14 +358,17 @@ const choiceNote = computed(() => {
           :status="state.result?.status ?? []"
           :label="t('rendition')"
           :lang="lang"
+          :tags="hintTags(state, t, false)"
           @input="(input) => emit('input', input)"
         />
       </section>
     </div>
+    <HintNote v-if="state.mode !== 'choose' && !checking" :state="state" :lang="lang" />
     <p v-if="state.mode !== 'choose' && !checking" id="words-hint" class="hint">{{ t("hint") }}</p>
     <div v-if="state.mode !== 'choose' && !checking" class="bar">
       <span aria-hidden="true">{{ t("marked", { count: state.marked.length }) }}</span>
       <span class="buttons">
+        <HintButton :state="state" :lang="lang" @input="(input) => emit('input', input)" />
         <button type="button" @click="emit('input', { kind: 'action', name: 'clear' })">{{ t("clear") }}</button>
         <button type="button" class="primary" @click="emit('input', { kind: 'action', name: 'check' })">
           {{ t("check") }}
@@ -361,6 +388,7 @@ const choiceNote = computed(() => {
       :result="state.result"
       :tokens="checked"
       :choice-note="choiceNote"
+      :hints="state.hintLevel"
       :lang="lang"
       @input="onResultInput"
     />

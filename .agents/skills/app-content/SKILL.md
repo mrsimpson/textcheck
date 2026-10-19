@@ -67,11 +67,21 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
   (`renditionNote`, over the Variante in the modes `mark` and `source`; `renditionNoteChoose` over both texts in the mode
   `choose`, where it must not name the Variante). It belongs to the app, not to a pack.
 - The learner sees: the goal line, the Original and the Variante (like two sheets, one on top of the other, with a switch and a short page-turn animation, so that the eye cannot
-  compare them side by side; the round starts with the Original; the mode `source` has no switch: the PDF stands next to the Variante on a wide screen of 1300 px and more, in a frame of 80 rem; elsewhere the button that opens the PDF stands above the Variante). The address is the round (`?seed=<n>#<route>`) and the only place the seed is taken from (without one the page works one out and writes it into the address), so a round can be reloaded and shared, and back and forward lead from round to round. A new age group or mode always starts a round with a new seed, so that switching never shows the same text and errors again, the marked words,
+  compare them side by side; the round starts with the Original; the mode `source` has no switch: the PDF stands next to the Variante on a wide screen of 1300 px and more, in a frame of 80 rem; elsewhere the button that opens the PDF stands above the Variante). The address is the round (`?seed=<n>#<route>`) and the only place the seed is taken from (without one the page works one out and writes it into the address), so a round can be reloaded and shared, and back and forward lead from round to round. After checking, the button "Neue Runde" stands in the result right below its heading and the praise (full width, with some space, on a narrow screen), above the summary and the explanations, and the page scrolls to the heading; it starts the round with the next seed. A new age group or mode always starts a round with a new seed, so that switching never shows the same text and errors again, the marked words,
   then the result grouped by error class (found, missed, wrongly marked, within tolerance) with the explanation.
 - The learner can set how the texts look (small button "Schrift" in the slot of the heading line of the page (`src/ui/Controls.vue`), with a dialog "Schrift und Lesen": style normal, round or fixed width,
   weight, size, line spacing; kept on the device). The font is Recursive (SIL Open Font License 1.1), bundled in
   `src/ui/fonts/` with its licence; it changes how a text looks, never what it says.
+- The learner can take hints (button "Hinweis" next to "Prüfen"; `src/core/index.ts` `hint`, `tick`). The first hint comes
+  15 s after the round starts, the next 20 s after the one before (10 s plus 5 s for the hint that is next in line); the
+  button shows the seconds left. Stage 1 names the error classes of the round, only where the level hides them
+  (`announceClasses: false`: grades 9 to 13); stage 2 marks, at the edge of the sentence and with the class, the sentences
+  of the Variante that hold an error. A hint never shows a word. Inserted sentences (a rendition sentence without
+  `evidence.quote`, so nothing in the Original says it) are no part of any hint: in the mode `choose` pointing at them in
+  one text only would give the Variante away. In `choose` stage 2 marks the sentence in both texts (the Original's
+  sentence is the one that holds the sentence's `evidence.quote`). A new pack therefore needs `evidence.quote` on every
+  sentence that holds a slot, unless it is an inserted sentence. Every error found: big fireworks on a dimmed page (the dimming fades in and out, nothing flashes) without a hint, confetti with a
+  hint, and the sentence "Beim nächsten Mal klappt es vielleicht auch ohne." (the creator).
 - Length of a pack: the excerpt has 6 to 10 sentences. Guide values per grade pair are fixed after the pilot.
 
 ## Terminology
@@ -182,5 +192,6 @@ competencies, and at least one pack; a playthrough for the route if its rules di
   (`npx lernapps check` fails otherwise).
 - Every text has a heading (`title`, shown above the Original and the Variante) and begins with the introduction of its
   article (`check-lead.mjs`).
+- Hints never say which word is wrong and never mention inserted sentences (the creator). After checking no hint stays in the text.
 - Do not show hints in the text after checking (a superscript "gefunden" disturbed reading): colour and line style in
   the text, the same colours with a legend below.

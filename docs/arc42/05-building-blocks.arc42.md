@@ -678,8 +678,9 @@ flowchart TB
 ### Round state and inputs
 
 Built. `src/core/index.ts` holds the core's contract and its state machine: `start` builds a round, `step` takes the
-actions of the UI (mark, unmark, clear, move, check, again) and returns the next state; unknown inputs leave the state
-as it is. `src/core/types.ts` has the types of the data and of the state.
+actions of the UI (mark, unmark, clear, move, check, hint, again) and returns the next state; `tick` lets the wait before
+the next hint run down (10 s plus 5 s for the hint that is next in line: 15 s, then 20 s) and leaves the state as it is
+when there is nothing to count; unknown inputs leave the state as it is. `src/core/types.ts` has the types of the data and of the state.
 
 ```arc42
 :::building-block
@@ -695,8 +696,8 @@ path: src/core/index.ts
 #### Actions interface
 
 The root component hands every action of the learner to `step` as an action input with a name and optionally a value:
-`toggle` (a word id), `move` (next, prev, next-sentence, prev-sentence, first, last), `clear`, `check`, `choose` (a text
-in the mode Original erkennen), `again`, `language` (the page's language) and `round` (`{ seed, route }`: the round an
+`toggle` (a word id), `move` (next, prev, next-sentence, prev-sentence, first, last), `clear`, `check`, `hint` (the next
+hint, refused until the wait is over), `choose` (a text in the mode Original erkennen), `again`, `language` (the page's language) and `round` (`{ seed, route }`: the round an
 address names, because the learner picked another age group or mode, asked for the next round, or went back or forward
 in the history).
 
@@ -714,7 +715,9 @@ path: src/core/index.ts
 
 Built. Picks the text pack of the route's school years and the slots to corrupt from the seed (a seeded shuffle, within
 the classes, bases and error count of the level), and splits the Variante into words, each word belonging to the slot it
-overlaps. The random numbers come only from the seed (`src/core/random.ts`), so the same seed gives the same round.
+overlaps. It also finds the sentences the hints may point to: those of the Variante with an error whose evidence quote
+stands in a sentence of the Original; inserted sentences have no quote and no counterpart, so they are never part of a
+hint. The random numbers come only from the seed (`src/core/random.ts`), so the same seed gives the same round.
 
 ```arc42
 :::building-block
@@ -891,6 +894,9 @@ flowchart TB
         bb-textcheck-ui-texts["UI texts"]
         bb-textcheck-controls["Controls"]
         bb-textcheck-reading["Reading values"]
+        bb-textcheck-hint-button["Hint button"]
+        bb-textcheck-hint-note["Hint note"]
+        bb-textcheck-hints["Hint texts"]
     end
     bb-interactive-messages["Messages"]
     bb-textcheck-root -->|"if-textcheck-wordlist"| bb-textcheck-wordlist
@@ -906,6 +912,15 @@ flowchart TB
     bb-textcheck-controls -->|"if-textcheck-reading"| bb-textcheck-reading
     bb-textcheck-controls -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
     bb-textcheck-reading -->|"if-device-storage"| bb-tooling
+    bb-textcheck-root -->|"if-textcheck-hint-button"| bb-textcheck-hint-button
+    bb-textcheck-root -->|"if-textcheck-hint-note"| bb-textcheck-hint-note
+    bb-textcheck-root -->|"if-textcheck-hints"| bb-textcheck-hints
+    bb-textcheck-choose -->|"if-textcheck-hint-button"| bb-textcheck-hint-button
+    bb-textcheck-choose -->|"if-textcheck-hint-note"| bb-textcheck-hint-note
+    bb-textcheck-choose -->|"if-textcheck-hints"| bb-textcheck-hints
+    bb-textcheck-hint-note -->|"if-textcheck-hints"| bb-textcheck-hints
+    bb-textcheck-hint-button -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
+    bb-textcheck-hints -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
 ```
 
 ### Root component
@@ -916,8 +931,8 @@ starting with the Original: a switch turns from one to the other with a short pa
 switches off, and the hidden one is not in the page, so the learner cannot compare them side by side; the source PDF is
 no sheet and has no switch: where it is embedded (a wide screen of 1300 px and more with a mouse) it stands next to the
 Variante, in a frame widened to 80 rem while it shows, so that an A4 page is wide enough to read; elsewhere only the
-button that opens it stands above the Variante, which has the whole width), the keyboard hint and the buttons below the sheets, so that both sheets are of the same height (one font size
-and one line height for every text), the texts in the font and size the learner set (font style, weight, size, line spacing, kept on the device) and, after checking, the result. It announces every change through the live region, moves the focus
+button that opens it stands above the Variante, which has the whole width), the keyboard hint and the buttons below the sheets (among them the button for the next hint, which waits and shows the seconds left; the hints taken stay on the page until the round ends and mark the sentences with an error at the edge, in the mode Original erkennen in both texts), so that both sheets are of the same height (one font size
+and one line height for every text; the root component also gives the hint button and the hint note their state), the texts in the font and size the learner set (font style, weight, size, line spacing, kept on the device) and, after checking, the result. It announces every change through the live region, moves the focus
 to the result heading after checking and back to the words after a new round, and emits the learner's actions. The address is the round (`?seed=<n>#<route>`) and the only place the seed is taken from, so
 that a round can be reloaded and shared. Without a valid seed in the address, the root component works one out when the
 page opens, writes it into the address and takes it from there. The learner's own steps write the address first
@@ -937,7 +952,7 @@ id: bb-textcheck-root
 title: Root component
 parent: bb-interactive-ui
 technology: Vue single-file component
-requires: if-textcheck-wordlist, if-textcheck-choose, if-textcheck-result, if-textcheck-ui-texts, if-textcheck-reading, if-a11y
+requires: if-textcheck-wordlist, if-textcheck-choose, if-textcheck-result, if-textcheck-ui-texts, if-textcheck-reading, if-textcheck-hint-button, if-textcheck-hint-note, if-textcheck-hints, if-a11y
 path: src/ui/App.vue
 :::
 ```
@@ -979,7 +994,7 @@ path: src/ui/WordList.vue
 Built. `src/ui/ChooseView.vue` shows the two texts of the mode Original erkennen, A and B, one the Original and the other
 the Variante; which is which stays hidden until checking. The learner picks the text that has the errors (a button under
 each text, or the keys 1 and 2) and marks the words there with the word list. The two texts lie like sheets on every
-screen, one at a time with the same page-turn animation; the text shown is its only state of its own.
+screen, one at a time with the same page-turn animation; under the texts it shows the hint button and the hint note, and a hint marks the same sentences in both texts; the text shown is its only state of its own.
 
 ```arc42
 :::building-block
@@ -987,7 +1002,7 @@ id: bb-textcheck-choose
 title: Choose view
 parent: bb-interactive-ui
 technology: Vue single-file component
-requires: if-textcheck-wordlist, if-textcheck-ui-texts
+requires: if-textcheck-wordlist, if-textcheck-hint-button, if-textcheck-hint-note, if-textcheck-hints, if-textcheck-ui-texts
 path: src/ui/ChooseView.vue
 :::
 ```
@@ -1010,8 +1025,10 @@ path: src/ui/ChooseView.vue
 ### Result view
 
 Built. `src/ui/ResultView.vue` shows the counts, the errors grouped by class with what stands in the Variante and in the
-Original and the explanation, the words marked wrongly or within tolerance, and the legend. It emits the action
-`again`.
+Original and the explanation, the words marked wrongly or within tolerance, and the legend. When every error is
+found it shows big fireworks on a dimmed page if no hint was taken and confetti if hints were (both calm, the dimming
+fades in and out and nothing flashes, and both are off when the system asks for less motion); where hints were taken, a sentence says that next time it may work without them. It
+emits the action `again`.
 
 ```arc42
 :::building-block
@@ -1134,6 +1151,99 @@ title: Reading settings, load, save and styleOf
 provider: bb-textcheck-reading
 protocol: TypeScript module export
 path: src/ui/reading.ts
+:::
+```
+
+### Hint button
+
+Built. `src/ui/HintButton.vue` is the button that takes the next hint: it is off until the core's wait is over and says
+how many seconds are left, and after the last hint it says there are none. It holds no state of its own; the hint is an
+action the root component and the choose view hand on.
+
+```arc42
+:::building-block
+id: bb-textcheck-hint-button
+title: Hint button
+parent: bb-interactive-ui
+technology: Vue single-file component
+requires: if-textcheck-ui-texts
+path: src/ui/HintButton.vue
+:::
+```
+
+#### Hint button interface
+
+The root component and the choose view give the button the state and the language as props and take its `input` event on.
+
+```arc42
+:::interface
+id: if-textcheck-hint-button
+title: Hint button props and input event
+provider: bb-textcheck-hint-button
+protocol: Vue props and events
+path: src/ui/HintButton.vue
+:::
+```
+
+### Hint note
+
+Built. `src/ui/HintNote.vue` lists the sentences of the hints taken so far, in the order they were given; they stay on the
+page until the round ends. It takes the texts from the hint texts and holds no state of its own.
+
+```arc42
+:::building-block
+id: bb-textcheck-hint-note
+title: Hint note
+parent: bb-interactive-ui
+technology: Vue single-file component
+requires: if-textcheck-hints, if-textcheck-ui-texts
+path: src/ui/HintNote.vue
+:::
+```
+
+#### Hint note interface
+
+The root component and the choose view give the note the state and the language as props.
+
+```arc42
+:::interface
+id: if-textcheck-hint-note
+title: Hint note props
+provider: bb-textcheck-hint-note
+protocol: Vue props
+path: src/ui/HintNote.vue
+:::
+```
+
+### Hint texts
+
+Built. `src/ui/hints.ts` works out from the state what the hints show: the kinds of error of the round (only where the
+level hides them) and the label of each sentence a hint marks, by the sentence's index in the Variante or in the
+Original. A hint never shows a word and never names an inserted sentence.
+
+```arc42
+:::building-block
+id: bb-textcheck-hints
+title: Hint texts
+parent: bb-interactive-ui
+technology: TypeScript
+requires: if-textcheck-ui-texts
+path: src/ui/hints.ts
+:::
+```
+
+#### Hint texts interface
+
+The note takes the sentences of the hints from it, and the root component and the choose view the labels of the marked
+sentences, which they hand to the list of words as its prop `tags`.
+
+```arc42
+:::interface
+id: if-textcheck-hints
+title: Hint texts and tags from the state
+provider: bb-textcheck-hints
+protocol: TypeScript module export
+path: src/ui/hints.ts
 :::
 ```
 

@@ -56,6 +56,8 @@ Die App läuft auf dem neuen Tooling und den neuen Templates. Die Titelzeile mit
 
 Reine Darstellung, kein neuer Inhalt. Betroffen: `package.json`, `package-lock.json`, `.github/workflows/`, `.agents/`, `.claude/`, `skills-lock.json`, `docs/arc42/` (Referenz der Templates), `src/main.ts` (Option `title`), `src/ui/App.vue`, neu `src/ui/Controls.vue`, `src/ui/ReadingSettings.vue`, `src/ui/reading.ts`, die Meldungsdateien, `e2e/reading.e2e.ts`, arc42-Texte der App und der Abschnitt zur Anzeige im Skill `app-content`.
 
+Nummer: Dieser Plan hieß zuerst 08; auf `main` kamen parallel die Pläne 08 (Nochmal statt Prüfen) und 09 (Hinweise), er wurde deshalb zu 10. Der Branch heißt weiter `increment/08-tooling-slot`, weil der Pull Request #13 schon offen war.
+
 Offen aus Plan 07: Die Aufgaben der Phase Commit sind dort nicht abgehakt (Retrospektive, Plan auf `main`), obwohl der Pull Request #9 gemergt ist.
 
 ## Explore
