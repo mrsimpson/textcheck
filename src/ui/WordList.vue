@@ -116,8 +116,10 @@ defineExpose({ focus: () => list.value?.focus() });
 <style scoped>
 .words p {
   margin: 0 0 0.6em;
-  font-size: 1.125rem;
-  line-height: 2.1;
+  font-size: var(--tc-font-size);
+  line-height: var(--tc-line-height);
+  font-weight: var(--tc-font-weight);
+  font-variation-settings: var(--tc-font-variation);
 }
 
 .words:focus-visible {
@@ -137,7 +139,6 @@ defineExpose({ focus: () => list.value?.focus() });
 @media (pointer: coarse) {
   .word {
     min-height: 2.75rem;
-    line-height: 2.75rem;
     padding: 0 0.3em;
   }
 }

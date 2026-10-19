@@ -124,6 +124,34 @@ describe("marking and checking", () => {
     expect(state.result?.wrong).toBe(1);
   });
 
+  it("starts the round of an address with the action round, in the language it has", () => {
+    const state = step(start(3, route), action("toggle", 2));
+    const next = step(state, { kind: "action", name: "round", value: { seed: 99, route: "klasse-7-8-original" } });
+    expect(next).toEqual(start(99, "klasse-7-8-original"));
+    expect(next.marked).toEqual([]);
+    const english = start(3, "klasse-9-10", "en");
+    expect(step(english, { kind: "action", name: "round", value: { seed: 99, route } }).language).toBe("en");
+  });
+
+  it("leaves the state as it is for the round it shows, an unknown route, or a seed that is not a whole positive number", () => {
+    const state = start(3, route);
+    const give = (value: unknown) => step(state, { kind: "action", name: "round", value } as never);
+    for (const value of [
+      { seed: 3, route },
+      { seed: 4, route: "klasse-99" },
+      { seed: 0, route },
+      { seed: -4, route },
+      { seed: 1.5, route },
+      { seed: "7", route },
+      { seed: 7 },
+      { route },
+      [7, route],
+      null,
+      7,
+    ])
+      expect(give(value)).toBe(state);
+  });
+
   it("starts the next round with the action again, from any phase", () => {
     const state = step(start(4, route), action("check"));
     const next = step(state, action("again"));

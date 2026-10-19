@@ -13,20 +13,39 @@ test.describe("Original and Variante as sheets on a wide screen", () => {
     await open(page, "./app/?seed=1#klasse-5-6");
     const original = page.locator(".panel.original");
     const rendition = page.locator(".panel.rendition");
-    await expect(rendition).toBeVisible();
-    await expect(original).toBeHidden();
-    await page.getByRole("button", { name: "Original", exact: true }).click();
+    // the round starts with the Original
     await expect(original).toBeVisible();
     await expect(rendition).toBeHidden();
     await expect(page.getByRole("button", { name: "Original", exact: true })).toHaveAttribute("aria-pressed", "true");
     await page.getByRole("button", { name: "Variante", exact: true }).click();
     await expect(rendition).toBeVisible();
     await expect(original).toBeHidden();
+    await page.getByRole("button", { name: "Original", exact: true }).click();
+    await expect(original).toBeVisible();
+    await expect(rendition).toBeHidden();
+  });
+
+  test("gives the Original and the Variante the same height, and one keyboard hint below them", async ({ page }) => {
+    await open(page, "./app/?seed=1#klasse-5-6");
+    const lineHeights = await page.evaluate(() => {
+      const variant = document.querySelector(".panel.rendition .words p");
+      return variant ? getComputedStyle(variant).lineHeight : "";
+    });
+    const originalLine = await page.evaluate(() => {
+      const el = document.querySelector(".panel.original p");
+      return el ? getComputedStyle(el).lineHeight : "";
+    });
+    expect(lineHeights).toBe(originalLine);
+    // the hint is below the sheets, not between the heading and the text
+    await page.waitForTimeout(500);
+    const hint = await page.locator("#words-hint").boundingBox();
+    const sheet = await page.locator(".panel.rendition").boundingBox();
+    expect((hint?.y ?? 0) >= (sheet?.y ?? 0) + (sheet?.height ?? 0)).toBe(true);
   });
 
   test("keeps the switch on top while a sheet turns, so a quick tap hits the button", async ({ page }) => {
     await open(page, "./app/?seed=1#klasse-5-6");
-    await page.getByRole("button", { name: "Original", exact: true }).click();
+    await page.getByRole("button", { name: "Variante", exact: true }).click();
     // the sheet swings out over the switch for 0.4 s; at no moment may it take the place of the button under a finger
     for (let step = 0; step < 10; step++) {
       const top = await page.evaluate(() => {
@@ -43,6 +62,7 @@ test.describe("Original and Variante as sheets on a wide screen", () => {
 
   test("never shows both sheets, and keeps the marks when turning", async ({ page }) => {
     await open(page, "./app/?seed=1#klasse-5-6");
+    await page.getByRole("button", { name: "Variante", exact: true }).click();
     await page.getByRole("listbox").getByRole("option").nth(3).click();
     await expect(page.getByText("1 markiert", { exact: true })).toBeVisible();
     await page.getByRole("button", { name: "Original", exact: true }).click();
@@ -76,10 +96,27 @@ test.describe("Original and Variante as sheets on a wide screen", () => {
     await expect(page.getByRole("button", { name: "Text B hat die Fehler" })).toHaveAttribute("aria-pressed", "true");
   });
 
-  test("keeps the source PDF side by side with the Variante", async ({ page }) => {
+  test("puts the source PDF next to the Variante where it is embedded, and its button above the Variante where it is not", async ({
+    page,
+  }) => {
     await open(page, "./app/?seed=1#klasse-5-6-quelle");
-    await expect(page.locator(".panel.original")).toBeVisible();
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    const embedded = await page.evaluate(() => matchMedia("(min-width: 1300px) and (pointer: fine)").matches);
+    // no switch for the PDF, in either case
+    await expect(page.locator(".switch")).toHaveCount(0);
     await expect(page.locator(".panel.rendition")).toBeVisible();
-    await expect(page.locator(".switch")).toBeHidden();
+    if (embedded) {
+      const pdf = page.locator(".panel.original");
+      await expect(pdf).toBeVisible();
+      expect((await pdf.boundingBox())?.width ?? 0).toBeGreaterThanOrEqual(700);
+      expect((await page.locator(".panel.rendition").boundingBox())?.width ?? 0).toBeGreaterThanOrEqual(480);
+    } else {
+      await expect(page.locator(".panel.original")).toHaveCount(0);
+      const link = await page.locator("a.open").boundingBox();
+      const sheet = await page.locator(".panel.rendition").boundingBox();
+      expect((link?.y ?? 1) < (sheet?.y ?? 0)).toBe(true);
+      const column = await page.locator(".interactive").boundingBox();
+      expect((sheet?.width ?? 0) >= (column?.width ?? 1) - 40).toBe(true);
+    }
   });
 });

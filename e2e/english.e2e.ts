@@ -27,6 +27,7 @@ test.describe("the English app page", () => {
     expect(await stateOf(page)).toMatchObject({ route: "klasse-5-6", seed: 1, phase: "marking" });
     await expect(page.getByRole("button", { name: "Check" })).toBeVisible();
     await expect(page.getByLabel("Age group")).toBeVisible();
+    await page.getByRole("button", { name: "Variant", exact: true }).click();
     await page.getByRole("listbox").getByRole("option").first().click();
     await page.getByRole("button", { name: "Check" }).click();
     await expect(page.getByRole("heading", { name: "Result" })).toBeVisible();

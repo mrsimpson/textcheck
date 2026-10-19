@@ -3,7 +3,7 @@
 // and how every word counts. Pure TypeScript without DOM; the runtime keeps the state and calls start and step
 // (@lernapps/app-templates/interactive). Every input is an action; unknown ones leave the state as it is.
 import type { Input } from "@lernapps/app-templates/interactive";
-import { ERROR_CLASSES, levelOf, packsFor, parseRoute } from "./data.ts";
+import { ERROR_CLASSES, LEVELS, levelOf, packsFor, parseRoute } from "./data.ts";
 import { evaluate } from "./evaluate.ts";
 import { random } from "./random.ts";
 import { buildRound, originalTokensOf } from "./round.ts";
@@ -108,6 +108,23 @@ function inLanguage(state: State, language: unknown): State {
   return start(state.seed, state.route, language);
 }
 
+/**
+ * The round of an address (`?seed=<n>#<route>`): the page tells the core when the address names another round, whether
+ * the learner picked a new age group or mode (with a new seed: the same seed would give the same text with the same
+ * errors in the next mode and show which text is the Original), asked for the next round, or went back or forward in the
+ * history. The round the state already shows, an unknown route and a seed that is no whole positive number leave the
+ * state as it is.
+ */
+function inRound(state: State, round: unknown): State {
+  if (typeof round !== "object" || round === null || Array.isArray(round)) return state;
+  const { seed, route } = round as Record<string, unknown>;
+  if (typeof seed !== "number" || !Number.isInteger(seed) || seed <= 0 || typeof route !== "string") return state;
+  if (seed === state.seed && route === state.route) return state;
+  const level = LEVELS[parseRoute(route).level];
+  if (level === undefined || packsFor(state.language, level).length === 0) return state;
+  return start(seed, route, state.language);
+}
+
 export function step(state: State, input: Input): State {
   if (input.kind === "key") {
     // 1 and 2 pick the text in the mode `choose`; the root component does not use other keys
@@ -117,6 +134,7 @@ export function step(state: State, input: Input): State {
   if (input.kind !== "action") return state;
   if (input.name === "again") return start(state.seed + 1, state.route, state.language);
   if (input.name === "language") return inLanguage(state, input.value);
+  if (input.name === "round") return inRound(state, input.value);
   if (state.phase !== "marking") return state;
   switch (input.name) {
     case "choose":

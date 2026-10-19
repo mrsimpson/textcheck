@@ -1,8 +1,9 @@
 <script setup lang="ts">
 // The round: the goal line, the Original and the Variante (like two sheets, one on top of the other: a switch turns
-// from one to the other, so the eye cannot compare them side by side; only with the source PDF they stand side by side
-// on a wide screen, and on a narrow one a switch shows one of them), the words to mark, and after checking the result. It announces every change for screen readers and moves the
-// focus to the result and back to the words. The runtime gives it the core's state; what the learner does goes back
+// from one to the other, so the eye cannot compare them side by side; the source PDF stands next to the Variante on a wide screen,
+// in a wider frame, and elsewhere only its button stands above the Variante), the words to mark, the keyboard hint and the buttons (both
+// below the sheets, so that the sheets are of the same height), and after checking the result. It announces every
+// change for screen readers and moves the focus to the result and back to the words. The runtime gives it the core's state; what the learner does goes back
 // as input. The only state of its own is which panel is shown.
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import { announce, moveFocus } from "@lernapps/tooling/a11y";
@@ -11,36 +12,93 @@ import { LEVELS, parseRoute, routeOf } from "../core/data.ts";
 import { markable, type State } from "../core/index.ts";
 import type { Mode } from "../core/types.ts";
 import ChooseView from "./ChooseView.vue";
+import ReadingSettings from "./ReadingSettings.vue";
 import ResultView from "./ResultView.vue";
 import WordList from "./WordList.vue";
 import { translatorOf } from "./messages.ts";
+import { loadReading, saveReading, styleOf } from "./reading.ts";
 
 const props = defineProps<{ state: State; lang: string }>();
 const emit = defineEmits<{ input: [input: Input] }>();
 const t = translatorOf(props.lang);
-const view = ref<"original" | "rendition">("rendition");
+const view = ref<"original" | "rendition">("original");
 const words = ref<InstanceType<typeof WordList> | null>(null);
 const choose = ref<InstanceType<typeof ChooseView> | null>(null);
 const root = ref<HTMLElement | null>(null);
 
+// how the learner wants to read: kept on the device, applied to the texts as CSS custom properties of the root element
+const reading = ref(loadReading());
+const readingStyle = computed(() => styleOf(reading.value));
+watch(reading, (value) => saveReading(value), { deep: true });
+
 // the source PDF is embedded only where a PDF shows well in a frame: a wide screen with a mouse; elsewhere the link
 // to a new tab is all there is
-const WIDE = "(min-width: 960px) and (pointer: fine)";
+const WIDE = "(min-width: 1300px) and (pointer: fine)";
 const embed = ref(false);
 let query: MediaQueryList | null = null;
 const onChange = (): void => {
   embed.value = query?.matches ?? false;
 };
+// The address is the round: ?seed=<n>#<route>, and the only place the seed is taken from. Without a seed in the address
+// the page works one out, writes it into the address, and takes it from there like any other. A round can be reloaded
+// and shared, and the back and forward buttons of the browser lead from round to round. Every step that starts a round
+// (a new age group or mode, the next round) writes the address first and then applies it; when the browser changes the
+// address, it is applied as it stands. Applying means telling the core the round the address names. The address and the
+// history only inside onMounted.
+let openRound: (route: string) => void = () => undefined;
+let nextRound: () => void = () => undefined;
+let stopListening: () => void = () => undefined;
+const newSeed = (): number => 1 + Math.floor(Math.random() * (2 ** 31 - 1));
 onMounted(() => {
-  picker.value?.addEventListener("change", () => {
-    if (levelSelect.value !== null && modeSelect.value !== null)
-      location.hash = routeOf(levelSelect.value.value, modeSelect.value.value as Mode);
-  });
+  /** The round the address names: the seed if it is a whole positive number, the route if the app has it. */
+  const addressOf = (): { seed: number | null; route: string | null } => {
+    const url = new URL(location.href);
+    const seed = Number(url.searchParams.get("seed"));
+    const route = decodeURIComponent(url.hash.slice(1));
+    return {
+      seed: Number.isInteger(seed) && seed > 0 ? seed : null,
+      route: LEVELS[parseRoute(route).level] === undefined ? null : route,
+    };
+  };
+  const write = (seed: number, route: string, push: boolean): void => {
+    const url = new URL(location.href);
+    url.searchParams.set("seed", String(seed));
+    url.hash = route;
+    if (url.href === location.href) return;
+    if (push) history.pushState(null, "", url);
+    else history.replaceState(history.state, "", url);
+  };
+  const apply = (): void => {
+    const { seed, route } = addressOf();
+    if (seed !== null && route !== null) emit("input", { kind: "action", name: "round", value: { seed, route } });
+  };
+  openRound = (route) => {
+    write(newSeed(), route, true);
+    apply();
+  };
+  nextRound = () => {
+    const { seed, route } = addressOf();
+    write((seed ?? newSeed()) + 1, route ?? props.state.route, true);
+    apply();
+  };
+  // the page was opened: a seed or a route the address lacks is added (the route the runtime opened, if none)
+  const opened = addressOf();
+  write(opened.seed ?? newSeed(), opened.route ?? props.state.route, false);
+  apply();
+  addEventListener("popstate", apply);
+  addEventListener("hashchange", apply);
+  stopListening = () => {
+    removeEventListener("popstate", apply);
+    removeEventListener("hashchange", apply);
+  };
   query = matchMedia(WIDE);
   onChange();
   query.addEventListener("change", onChange);
 });
-onUnmounted(() => query?.removeEventListener("change", onChange));
+onUnmounted(() => {
+  query?.removeEventListener("change", onChange);
+  stopListening();
+});
 // the app page is one level below its language's root (German at the site root, every other language below /<lang>/),
 // the PDFs lie at the site root
 const pdfUrl = computed(() =>
@@ -57,7 +115,7 @@ watch(
   { immediate: true },
 );
 
-// the two selects: the age group and the mode; a change goes to the route in the address, where the runtime picks it up
+// the two selects: the age group and the mode; a change starts a new round (see below)
 const levelOptions = Object.entries(LEVELS)
   .sort(([, a], [, b]) => a.grades.from - b.grades.from)
   .map(([id, level]) => ({ id, label: t("levelOption", { from: level.grades.from, to: level.grades.to }) }));
@@ -67,10 +125,55 @@ const modeOptions: { id: Mode; label: string }[] = [
   { id: "choose", label: t("modeChoose") },
 ];
 const picked = computed(() => parseRoute(props.state.route));
-const picker = ref<HTMLElement | null>(null);
 const levelSelect = ref<HTMLSelectElement | null>(null);
 const modeSelect = ref<HTMLSelectElement | null>(null);
 const sourceMode = computed(() => props.state.mode === "source");
+// the PDF stands next to the Variante only where it is embedded (a wide screen with a mouse: it needs about 700 px to
+// read); where it is not, the button that opens it stands above the Variante, which has the whole width
+const sideBySide = computed(() => sourceMode.value && embed.value && pdfUrl.value !== null);
+const linkOnly = computed(() => sourceMode.value && !sideBySide.value);
+
+// A new age group or mode starts a new round with a new seed: with the same seed the round would be the same text with
+// the same errors, and switching to the mode "Original erkennen" and back would show which text is the Original. Marks
+// that are set are lost, so the learner is asked first.
+const dialog = ref<HTMLDialogElement | null>(null);
+let pending: string | null = null;
+let switching = false;
+const showPicked = (): void => {
+  if (levelSelect.value !== null) levelSelect.value.value = picked.value.level;
+  if (modeSelect.value !== null) modeSelect.value.value = picked.value.mode;
+};
+function onPick(): void {
+  if (levelSelect.value === null || modeSelect.value === null) return;
+  const route = routeOf(levelSelect.value.value, modeSelect.value.value as Mode);
+  if (route === props.state.route) return;
+  if (props.state.phase === "marking" && props.state.marked.length > 0) {
+    pending = route;
+    dialog.value?.showModal();
+  } else openRound(route);
+}
+function confirmSwitch(): void {
+  const route = pending;
+  pending = null;
+  switching = true;
+  dialog.value?.close();
+  if (route !== null) openRound(route);
+}
+function cancelSwitch(): void {
+  pending = null;
+  dialog.value?.close();
+}
+// closed without the switch (button or Escape): the selects show the round that goes on
+function onDialogClose(): void {
+  if (!switching) showPicked();
+  switching = false;
+  pending = null;
+}
+// the next round is a round of the address too: the seed after the one in the address
+function onResultInput(input: Input): void {
+  if (input.kind === "action" && input.name === "again") nextRound();
+  else emit("input", input);
+}
 
 const goal = computed(() =>
   props.state.mode === "choose"
@@ -133,8 +236,12 @@ const choiceNote = computed(() => {
 </script>
 
 <template>
-  <section ref="root" class="textcheck" :aria-label="t('region')">
-    <div ref="picker" class="picker">
+  <section ref="root" class="textcheck" :style="readingStyle" :aria-label="t('region')">
+    <div class="titlebar">
+      <h1>{{ t("appTitle") }}</h1>
+      <ReadingSettings v-model="reading" :lang="lang" />
+    </div>
+    <div class="picker" @change="onPick">
       <label>
         {{ t("level") }}
         <select ref="levelSelect" :value="picked.level">
@@ -157,16 +264,37 @@ const choiceNote = computed(() => {
       :lang="lang"
       @input="(input) => emit('input', input)"
     />
-    <div v-else class="switch" :class="{ 'narrow-only': sourceMode }" role="group" :aria-label="t('view')">
+    <div v-else-if="!sourceMode" class="switch" role="group" :aria-label="t('view')">
       <button type="button" :aria-pressed="view === 'original'" @click="view = 'original'">
-        {{ sourceMode ? t("sourceTab") : t("original") }}
+        {{ t("original") }}
       </button>
       <button type="button" :aria-pressed="view === 'rendition'" @click="view = 'rendition'">
         {{ t("renditionTab") }}
       </button>
     </div>
-    <div v-if="state.mode !== 'choose'" class="panels" :class="{ sheets: !sourceMode }" :data-view="view">
-      <section v-if="sourceMode" class="panel original pdf" aria-labelledby="original-heading">
+    <div v-if="linkOnly" class="pdf-link">
+      <p v-if="pdfUrl !== null">
+        <a class="open" :href="pdfUrl" target="_blank" rel="noopener noreferrer">{{ t("openPdf") }}</a>
+      </p>
+      <p class="source">
+        {{ t("source") }} {{ state.source.title }}, {{ state.source.license }}
+        <template v-if="state.source.licenseUrl !== null">
+          ·
+          <a :href="state.source.licenseUrl" target="_blank" rel="noopener noreferrer">{{ t("license") }}</a>
+        </template>
+        <template v-if="state.source.authorsUrl !== null">
+          ·
+          <a :href="state.source.authorsUrl" target="_blank" rel="noopener noreferrer">{{ t("authors") }}</a>
+        </template>
+      </p>
+    </div>
+    <div
+      v-if="state.mode !== 'choose'"
+      class="panels"
+      :class="sourceMode ? { side: sideBySide } : 'sheets'"
+      :data-view="sourceMode ? undefined : view"
+    >
+      <section v-if="sideBySide" class="panel original pdf" aria-labelledby="original-heading">
         <h2 id="original-heading">{{ t("sourceHeading") }}</h2>
         <p v-if="pdfUrl !== null">
           <a class="open" :href="pdfUrl" target="_blank" rel="noopener noreferrer">{{ t("openPdf") }}</a>
@@ -184,7 +312,7 @@ const choiceNote = computed(() => {
           </template>
         </p>
       </section>
-      <section v-else class="panel original" aria-labelledby="original-heading">
+      <section v-else-if="!sourceMode" class="panel original" aria-labelledby="original-heading">
         <h2 id="original-heading">{{ t("original") }}</h2>
         <h3 class="text-title">{{ state.title }}</h3>
         <p v-for="(sentence, index) in state.original" :key="index">{{ sentence }}</p>
@@ -204,7 +332,6 @@ const choiceNote = computed(() => {
         <h2 id="rendition-heading">{{ t("rendition") }}</h2>
         <h3 class="text-title">{{ state.title }}</h3>
         <p class="hint note">{{ t("renditionNote") }}</p>
-        <p v-if="!checking" id="words-hint" class="hint">{{ t("hint") }}</p>
         <WordList
           ref="words"
           :tokens="state.tokens"
@@ -216,24 +343,33 @@ const choiceNote = computed(() => {
           :lang="lang"
           @input="(input) => emit('input', input)"
         />
-        <div v-if="!checking" class="bar">
-          <span aria-hidden="true">{{ t("marked", { count: state.marked.length }) }}</span>
-          <span class="buttons">
-            <button type="button" @click="emit('input', { kind: 'action', name: 'clear' })">{{ t("clear") }}</button>
-            <button type="button" class="primary" @click="emit('input', { kind: 'action', name: 'check' })">
-              {{ t("check") }}
-            </button>
-          </span>
-        </div>
       </section>
     </div>
+    <p v-if="state.mode !== 'choose' && !checking" id="words-hint" class="hint">{{ t("hint") }}</p>
+    <div v-if="state.mode !== 'choose' && !checking" class="bar">
+      <span aria-hidden="true">{{ t("marked", { count: state.marked.length }) }}</span>
+      <span class="buttons">
+        <button type="button" @click="emit('input', { kind: 'action', name: 'clear' })">{{ t("clear") }}</button>
+        <button type="button" class="primary" @click="emit('input', { kind: 'action', name: 'check' })">
+          {{ t("check") }}
+        </button>
+      </span>
+    </div>
+    <dialog ref="dialog" class="confirm" aria-labelledby="switch-title" @close="onDialogClose">
+      <h2 id="switch-title">{{ t("switchTitle") }}</h2>
+      <p>{{ t("switchText") }}</p>
+      <div class="buttons">
+        <button type="button" @click="cancelSwitch">{{ t("switchCancel") }}</button>
+        <button type="button" class="primary" @click="confirmSwitch">{{ t("switchConfirm") }}</button>
+      </div>
+    </dialog>
     <ResultView
       v-if="state.result !== null"
       :result="state.result"
       :tokens="checked"
       :choice-note="choiceNote"
       :lang="lang"
-      @input="(input) => emit('input', input)"
+      @input="onResultInput"
     />
   </section>
 </template>
@@ -257,7 +393,19 @@ const choiceNote = computed(() => {
   --tc-false-bg: #f3e8ff;
   --tc-tol: #1e3a8a;
   --tc-tol-bg: #dbeafe;
+  /* one size and one line height for every text, so that the sheets are of the same height */
+  --tc-font-size: 1.125rem;
+  --tc-line-height: 2.1;
+  --tc-font-weight: 400;
+  --tc-font-variation: "MONO" 0, "CASL" 0;
+  font-family: "Recursive TC", system-ui, sans-serif;
   color: var(--tc-ink);
+}
+
+@media (pointer: coarse) {
+  .textcheck {
+    --tc-line-height: 2.45; /* a word is at least 2.75 rem high with a finger */
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -280,6 +428,26 @@ const choiceNote = computed(() => {
     --tc-tol: #bfdbfe;
     --tc-tol-bg: #1e2f5a;
   }
+}
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 1.25rem 0 1rem;
+}
+
+.titlebar h1 {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif; /* the heading of the shell, which this one replaces */
+  font-size: 1.875rem;
+  line-height: 1.2;
 }
 
 .picker {
@@ -329,8 +497,8 @@ const choiceNote = computed(() => {
   margin-bottom: 0.75rem;
 }
 
-.switch.narrow-only {
-  display: none;
+.pdf-link p {
+  margin: 0 0 0.5rem;
 }
 
 .switch button {
@@ -351,17 +519,18 @@ const choiceNote = computed(() => {
   color: var(--tc-on-accent);
 }
 
-.panels {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
 /* two sheets: only one shows, the other is not in the page at all (no display of both, no focus in the hidden one);
    the sheet that comes up turns over from its left edge */
-.panels.sheets {
+.panels {
+  display: grid;
   grid-template-columns: 1fr;
   perspective: 1600px;
+}
+
+.panels.side {
+  grid-template-columns: minmax(700px, 1.25fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
 }
 
 .panels.sheets[data-view="rendition"] > .original,
@@ -394,21 +563,6 @@ const choiceNote = computed(() => {
   }
 }
 
-@media (max-width: 720px) {
-  .switch.narrow-only {
-    display: flex;
-  }
-
-  .panels {
-    grid-template-columns: 1fr;
-  }
-
-  .panels[data-view="rendition"] > .original,
-  .panels[data-view="original"] > .rendition {
-    display: none;
-  }
-}
-
 .panel {
   padding: 0.75rem 1rem;
   border: 1px solid var(--tc-line);
@@ -429,8 +583,10 @@ h2 {
 
 .original p {
   margin: 0 0 0.6em;
-  font-size: 1.125rem;
-  line-height: 1.8;
+  font-size: var(--tc-font-size);
+  line-height: var(--tc-line-height);
+  font-weight: var(--tc-font-weight);
+  font-variation-settings: var(--tc-font-variation);
 }
 
 .open {
@@ -446,8 +602,8 @@ h2 {
 
 .pdf iframe {
   width: 100%;
-  height: 70vh;
-  min-height: 28rem;
+  height: 80vh;
+  min-height: 32rem;
   border: 1px solid var(--tc-line);
   border-radius: 8px;
   background: #ffffff;
@@ -458,6 +614,31 @@ h2 {
   color: var(--tc-muted);
   font-size: 0.85rem !important;
   line-height: 1.5 !important;
+}
+
+.confirm {
+  max-width: min(28rem, calc(100vw - 2rem));
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--tc-line);
+  border-radius: 12px;
+  background: var(--tc-card);
+  color: var(--tc-ink);
+}
+
+.confirm::backdrop {
+  background: rgb(0 0 0 / 0.45);
+}
+
+.confirm h2 {
+  margin: 0 0 0.5rem;
+}
+
+.confirm p {
+  margin: 0 0 1rem;
+}
+
+.confirm .buttons {
+  justify-content: flex-end;
 }
 
 .bar {
@@ -495,6 +676,21 @@ h2 {
 </style>
 
 <style>
+/* Recursive, a variable font (SIL Open Font License 1.1, see fonts/OFL.txt) cut to Latin and the axes weight, MONO
+   and CASL; it is bundled with the app, nothing is loaded from elsewhere. */
+@font-face {
+  font-family: "Recursive TC";
+  src: url("./fonts/recursive-textcheck.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+/* The heading of the page is part of the app's own first line, with the button for the reading settings next to it; the
+   shell's heading steps aside while the app runs (without JavaScript it stays). */
+body:has(.textcheck) .interactive > h1 {
+  display: none;
+}
+
 /* The two selects of the app replace the shell's list of route links; without JavaScript the list stays. */
 body:has(.textcheck) .interactive-routes {
   display: none;
@@ -503,6 +699,14 @@ body:has(.textcheck) .interactive-routes {
 /* The start page lists every route (15 links). The selects of the app page do that job, so the list is left out. */
 .interactive-section:has(> .interactive-route-list) {
   display: none;
+}
+
+/* The source PDF is an A4 page (about 794 px at 100 %) and needs about 700 px to read, the Variante next to it about
+   500 px, but the frame of the shell is 44 rem (704 px) wide. While the PDF stands next to the Variante, the frame is
+   80 rem (header, page and footer alike, so that they stay aligned); every other mode keeps the narrow column, where
+   lines stay short enough to read. */
+body:has(.textcheck .panels.side) :is(.interactive-header, .interactive, .interactive-footer) {
+  max-width: 80rem;
 }
 
 /* The shell's page is light by default; follow the system setting so the dark card never sits on a white page. */
