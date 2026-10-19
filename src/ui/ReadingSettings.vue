@@ -1,8 +1,8 @@
 <script setup lang="ts">
-// The settings for reading, folded away under one heading: the style of the font, its weight, the size and the line
-// spacing, with a line of sample text and a button to go back to the defaults. It holds no state of its own; the root
-// component gives it the settings and keeps what the learner changes.
-import { computed } from "vue";
+// The settings for reading behind one small button, in a dialog: the style of the font, its weight, the size and the
+// line spacing, with a line of sample text and a button to go back to the defaults. The texts change while the learner
+// sets. It holds no state of its own; the root component gives it the settings and keeps what the learner changes.
+import { computed, ref } from "vue";
 import { DEFAULT_READING, LIMITS, type FontStyle, type Reading } from "./reading.ts";
 import { translatorOf } from "./messages.ts";
 
@@ -10,6 +10,7 @@ const props = defineProps<{ modelValue: Reading; lang: string }>();
 const emit = defineEmits<{ "update:modelValue": [reading: Reading] }>();
 const t = translatorOf(props.lang);
 
+const dialog = ref<HTMLDialogElement | null>(null);
 const styles: { id: FontStyle; label: string }[] = [
   { id: "normal", label: t("styleNormal") },
   { id: "round", label: t("styleRound") },
@@ -27,72 +28,101 @@ const isDefault = computed(
 </script>
 
 <template>
-  <details class="reading">
-    <summary>{{ t("readingTitle") }}</summary>
-    <div class="body">
-      <fieldset>
-        <legend>{{ t("fontStyle") }}</legend>
-        <label v-for="style in styles" :key="style.id" class="choice">
+  <div class="tools">
+    <button type="button" class="open" aria-haspopup="dialog" @click="dialog?.showModal()">
+      {{ t("readingTitle") }}
+    </button>
+    <dialog ref="dialog" class="reading" aria-labelledby="reading-title">
+      <h2 id="reading-title">{{ t("readingTitle") }}</h2>
+      <div class="body">
+        <fieldset>
+          <legend>{{ t("fontStyle") }}</legend>
+          <label v-for="style in styles" :key="style.id" class="choice">
+            <input
+              type="radio"
+              name="font-style"
+              :value="style.id"
+              :checked="modelValue.style === style.id"
+              @change="change({ style: style.id })"
+            />
+            {{ style.label }}
+          </label>
+        </fieldset>
+        <label class="slider">
+          <span>{{ t("fontWeight") }}</span>
           <input
-            type="radio"
-            name="font-style"
-            :value="style.id"
-            :checked="modelValue.style === style.id"
-            @change="change({ style: style.id })"
+            type="range"
+            v-bind="LIMITS.weight"
+            :value="modelValue.weight"
+            @input="change({ weight: number($event) })"
           />
-          {{ style.label }}
         </label>
-      </fieldset>
-      <label class="slider">
-        <span>{{ t("fontWeight") }}</span>
-        <input
-          type="range"
-          v-bind="LIMITS.weight"
-          :value="modelValue.weight"
-          @input="change({ weight: number($event) })"
-        />
-      </label>
-      <label class="slider">
-        <span>{{ t("fontSize") }}</span>
-        <input type="range" v-bind="LIMITS.size" :value="modelValue.size" @input="change({ size: number($event) })" />
-      </label>
-      <label class="slider">
-        <span>{{ t("lineSpacing") }}</span>
-        <input
-          type="range"
-          v-bind="LIMITS.spacing"
-          :value="modelValue.spacing ?? 2.1"
-          @input="change({ spacing: number($event) })"
-        />
-      </label>
-      <p class="sample">{{ t("sample") }}</p>
-      <button type="button" :disabled="isDefault" @click="emit('update:modelValue', { ...DEFAULT_READING })">
-        {{ t("readingReset") }}
-      </button>
-    </div>
-  </details>
+        <label class="slider">
+          <span>{{ t("fontSize") }}</span>
+          <input type="range" v-bind="LIMITS.size" :value="modelValue.size" @input="change({ size: number($event) })" />
+        </label>
+        <label class="slider">
+          <span>{{ t("lineSpacing") }}</span>
+          <input
+            type="range"
+            v-bind="LIMITS.spacing"
+            :value="modelValue.spacing ?? 2.1"
+            @input="change({ spacing: number($event) })"
+          />
+        </label>
+        <p class="sample">{{ t("sample") }}</p>
+        <div class="buttons">
+          <button type="button" :disabled="isDefault" @click="emit('update:modelValue', { ...DEFAULT_READING })">
+            {{ t("readingReset") }}
+          </button>
+          <button type="button" class="primary" @click="dialog?.close()">{{ t("readingDone") }}</button>
+        </div>
+      </div>
+    </dialog>
+  </div>
 </template>
 
 <style scoped>
-.reading {
-  margin: 0 0 1rem;
+.tools {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 0.5rem;
+}
+
+.open {
+  min-height: 2.75rem;
+  padding: 0.4rem 0.9rem;
   border: 1px solid var(--tc-line);
   border-radius: 8px;
   background: var(--tc-card);
+  color: var(--tc-ink);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
 }
 
-summary {
-  min-height: 2.75rem;
-  padding: 0.6rem 0.8rem;
+.reading {
+  width: min(28rem, calc(100vw - 2rem));
   box-sizing: border-box;
-  font-weight: 600;
-  cursor: pointer;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--tc-line);
+  border-radius: 12px;
+  background: var(--tc-card);
+  color: var(--tc-ink);
+}
+
+.reading::backdrop {
+  background: rgb(0 0 0 / 0.45);
+}
+
+h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
 }
 
 .body {
   display: grid;
   gap: 0.75rem;
-  padding: 0 0.8rem 0.8rem;
 }
 
 fieldset {
@@ -144,8 +174,14 @@ legend {
   font-variation-settings: var(--tc-font-variation);
 }
 
-button {
-  justify-self: start;
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.buttons button {
   min-height: 2.75rem;
   padding: 0.5rem 1rem;
   border: 1px solid var(--tc-line);
@@ -156,7 +192,14 @@ button {
   cursor: pointer;
 }
 
-button:disabled {
+.buttons .primary {
+  border-color: var(--tc-accent);
+  background: var(--tc-accent);
+  color: var(--tc-on-accent);
+  font-weight: 700;
+}
+
+.buttons button:disabled {
   opacity: 0.55;
   cursor: default;
 }

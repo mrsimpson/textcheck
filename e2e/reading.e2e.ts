@@ -15,7 +15,7 @@ test.describe("Settings for reading", () => {
   test("loads the bundled font, and sets style, size and spacing for the texts", async ({ page }) => {
     await open(page);
     await expect.poll(() => page.evaluate(() => document.fonts.check('16px "Recursive TC"'))).toBe(true);
-    await page.getByText("Schrift und Lesen", { exact: true }).click();
+    await page.getByRole("button", { name: "Schrift und Lesen" }).click();
     await page.getByRole("radio", { name: "Festbreite" }).check();
     await expect.poll(() => textStyle(page, "font-variation-settings")).toContain('"MONO" 1');
     await page.getByRole("radio", { name: "Rund" }).check();
@@ -28,13 +28,13 @@ test.describe("Settings for reading", () => {
 
   test("keeps the settings on the device, and goes back to the defaults", async ({ page }) => {
     await open(page);
-    await page.getByText("Schrift und Lesen", { exact: true }).click();
+    await page.getByRole("button", { name: "Schrift und Lesen" }).click();
     await page.getByLabel("Strichstärke").fill("700");
     await expect.poll(() => textStyle(page, "font-weight")).toBe("700");
     await page.reload();
     await expect(page.locator(".interactive-app")).toHaveAttribute("data-mounted", "");
     await expect.poll(() => textStyle(page, "font-weight")).toBe("700");
-    await page.getByText("Schrift und Lesen", { exact: true }).click();
+    await page.getByRole("button", { name: "Schrift und Lesen" }).click();
     await page.getByRole("button", { name: "Zurücksetzen" }).click();
     await expect.poll(() => textStyle(page, "font-weight")).toBe("400");
     await expect(page.getByRole("button", { name: "Zurücksetzen" })).toBeDisabled();
@@ -49,8 +49,27 @@ test.describe("Settings for reading", () => {
       });
     });
     await open(page);
-    await page.getByText("Schrift und Lesen", { exact: true }).click();
+    await page.getByRole("button", { name: "Schrift und Lesen" }).click();
     await page.getByLabel("Strichstärke").fill("600");
     await expect.poll(() => textStyle(page, "font-weight")).toBe("600");
+  });
+
+  test("keeps the settings out of the way: one small button, a dialog that closes with Done or Escape", async ({
+    page,
+  }) => {
+    await open(page);
+    const button = page.getByRole("button", { name: "Schrift und Lesen" });
+    await expect(page.getByRole("dialog")).toHaveCount(0);
+    await button.click();
+    const dialog = page.getByRole("dialog", { name: "Schrift und Lesen" });
+    await expect(dialog).toBeVisible();
+    await dialog.getByRole("button", { name: "Fertig" }).click();
+    await expect(dialog).toBeHidden();
+    await expect(button).toBeFocused();
+    await button.click();
+    await page.keyboard.press("Escape");
+    await expect(dialog).toBeHidden();
+    await expect(button).toBeFocused();
+    expect((await button.boundingBox())?.height ?? 99).toBeLessThan(60);
   });
 });

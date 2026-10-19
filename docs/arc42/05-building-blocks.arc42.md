@@ -909,7 +909,7 @@ switches off, and the hidden one is not in the page, so the learner cannot compa
 no sheet and has no switch: where it is embedded (a wide screen of 1300 px and more with a mouse) it stands next to the
 Variante, in a frame widened to 80 rem while it shows, so that an A4 page is wide enough to read; elsewhere only the
 button that opens it stands above the Variante, which has the whole width), the keyboard hint and the buttons below the sheets, so that both sheets are of the same height (one font size
-and one line height for every text), the folded settings for reading (font style, weight, size, line spacing, kept on the device) and, after checking, the result. It announces every change through the live region, moves the focus
+and one line height for every text), the button for the settings for reading (font style, weight, size, line spacing, kept on the device) and, after checking, the result. It announces every change through the live region, moves the focus
 to the result heading after checking and back to the words after a new round, and emits the learner's actions. The address is the round (`?seed=<n>#<route>`) and the only place the seed is taken from, so
 that a round can be reloaded and shared. Without a valid seed in the address, the root component works one out when the
 page opens, writes it into the address and takes it from there. The learner's own steps write the address first
@@ -1062,8 +1062,9 @@ path: src/ui/messages.ts
 
 ### Reading settings
 
-Built. `src/ui/ReadingSettings.vue` is the folded section "Schrift und Lesen" with the style of the font (normal, round,
-fixed width), the weight, the size and the line spacing, a line of sample text and a button for the defaults. It holds
+Built. `src/ui/ReadingSettings.vue` is one small button "Schrift und Lesen" above the age group and mode, which opens a
+dialog with the style of the font (normal, round, fixed width), the weight, the size and the line spacing, a line of
+sample text, a button for the defaults and one to close it; the texts change while the learner sets. It holds
 no state of its own: the root component gives it the settings and keeps what the learner changes.
 
 ```arc42

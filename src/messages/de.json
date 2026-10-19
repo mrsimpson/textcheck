@@ -98,5 +98,6 @@
   "switchTitle": "Neue Runde beginnen?",
   "switchText": "Du hast schon Wörter markiert. Wenn du die Altersstufe oder den Modus wechselst, beginnt eine neue Runde, und deine Markierungen gehen verloren.",
   "switchConfirm": "Wechseln",
-  "switchCancel": "Bleiben"
+  "switchCancel": "Bleiben",
+  "readingDone": "Fertig"
 }
