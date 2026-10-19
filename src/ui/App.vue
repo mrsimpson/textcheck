@@ -39,25 +39,42 @@ let query: MediaQueryList | null = null;
 const onChange = (): void => {
   embed.value = query?.matches ?? false;
 };
-// the round's seed stands in the address (?seed=<n>), so that a round can be reloaded and shared; the address and the
-// history only inside onMounted
-let showSeed: (seed: number) => void = () => undefined;
+// The address is the round: ?seed=<n>#<route>, so that a round can be reloaded and shared, and the back and forward
+// buttons of the browser lead from round to round. The learner's own steps (a new age group or mode, the next round)
+// push an entry; when the address changes by the browser, the core is told the round it names. The address and the
+// history only inside onMounted.
+let navigate: (round: { seed: number; route: string }, push: boolean) => void = () => undefined;
+let stopListening: () => void = () => undefined;
 onMounted(() => {
-  go = (route) => {
-    location.hash = route;
-  };
-  showSeed = (seed) => {
+  navigate = ({ seed, route }, push) => {
     const url = new URL(location.href);
-    if (url.searchParams.get("seed") === String(seed)) return;
     url.searchParams.set("seed", String(seed));
-    history.replaceState(history.state, "", url);
+    url.hash = route;
+    if (url.href === location.href) return;
+    if (push) history.pushState(null, "", url);
+    else history.replaceState(history.state, "", url);
   };
-  showSeed(props.state.seed);
+  navigate({ seed: props.state.seed, route: props.state.route }, false);
+  const applyAddress = (): void => {
+    const url = new URL(location.href);
+    const seed = Number(url.searchParams.get("seed"));
+    const route = decodeURIComponent(url.hash.slice(1));
+    emit("input", { kind: "action", name: "round", value: { seed, route } });
+  };
+  addEventListener("popstate", applyAddress);
+  addEventListener("hashchange", applyAddress);
+  stopListening = () => {
+    removeEventListener("popstate", applyAddress);
+    removeEventListener("hashchange", applyAddress);
+  };
   query = matchMedia(WIDE);
   onChange();
   query.addEventListener("change", onChange);
 });
-onUnmounted(() => query?.removeEventListener("change", onChange));
+onUnmounted(() => {
+  query?.removeEventListener("change", onChange);
+  stopListening();
+});
 // the app page is one level below its language's root (German at the site root, every other language below /<lang>/),
 // the PDFs lie at the site root
 const pdfUrl = computed(() =>
@@ -74,7 +91,7 @@ watch(
   { immediate: true },
 );
 
-// the two selects: the age group and the mode; a change goes to the route in the address, where the runtime picks it up
+// the two selects: the age group and the mode; a change starts a new round (see below)
 const levelOptions = Object.entries(LEVELS)
   .sort(([, a], [, b]) => a.grades.from - b.grades.from)
   .map(([id, level]) => ({ id, label: t("levelOption", { from: level.grades.from, to: level.grades.to }) }));
@@ -98,9 +115,12 @@ const linkOnly = computed(() => sourceMode.value && !sideBySide.value);
 const dialog = ref<HTMLDialogElement | null>(null);
 let pending: string | null = null;
 let switching = false;
-// the route goes to the address, where the runtime picks it up; the address only inside onMounted
-let go: (route: string) => void = () => undefined;
 const newSeed = (): number => 1 + Math.floor(Math.random() * (2 ** 31 - 1));
+function startRound(route: string): void {
+  const seed = newSeed();
+  navigate({ seed, route }, true);
+  emit("input", { kind: "action", name: "round", value: { seed, route } });
+}
 const showPicked = (): void => {
   if (levelSelect.value !== null) levelSelect.value.value = picked.value.level;
   if (modeSelect.value !== null) modeSelect.value.value = picked.value.mode;
@@ -112,14 +132,14 @@ function onPick(): void {
   if (props.state.phase === "marking" && props.state.marked.length > 0) {
     pending = route;
     dialog.value?.showModal();
-  } else go(route);
+  } else startRound(route);
 }
 function confirmSwitch(): void {
   const route = pending;
   pending = null;
   switching = true;
   dialog.value?.close();
-  if (route !== null) go(route);
+  if (route !== null) startRound(route);
 }
 function cancelSwitch(): void {
   pending = null;
@@ -131,16 +151,12 @@ function onDialogClose(): void {
   switching = false;
   pending = null;
 }
-watch(
-  () => props.state.seed,
-  (seed) => showSeed(seed),
-);
-watch(
-  () => props.state.route,
-  (_route, before) => {
-    if (before !== undefined) emit("input", { kind: "action", name: "reseed", value: newSeed() });
-  },
-);
+// the next round: its seed goes to the address too
+function onResultInput(input: Input): void {
+  if (input.kind === "action" && input.name === "again")
+    navigate({ seed: props.state.seed + 1, route: props.state.route }, true);
+  emit("input", input);
+}
 
 const goal = computed(() =>
   props.state.mode === "choose"
@@ -333,7 +349,7 @@ const choiceNote = computed(() => {
       :tokens="checked"
       :choice-note="choiceNote"
       :lang="lang"
-      @input="(input) => emit('input', input)"
+      @input="onResultInput"
     />
   </section>
 </template>

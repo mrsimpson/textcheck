@@ -6,9 +6,9 @@ archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
 phase: commit
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
-prePushFailures: 0
+prePushFailures: 1
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
-failedChecks: { checks-pass: 8 }
+failedChecks: { checks-pass: 13 }
 ---
 
 # Increment: Bessere Bedienung und einstellbare Schrift
@@ -46,8 +46,8 @@ Die App beginnt mit dem Original, beide Blätter sind gleich hoch, der Tastaturh
 - Die Einstellung bleibt auf dem Gerät erhalten, über den Storage-Wrapper des Tooling, mit eigenem Schlüsselpräfix; ist Speichern gesperrt, funktioniert die App mit den Standardwerten. (Ersteller: „Einstellung merken“)
 - Quelle als PDF (A4, ca. 794 px bei 100 %): das PDF braucht mindestens ca. 700 px Breite, um lesbar zu sein. Gemessen: der Rahmen der App ist höchstens 44 rem (ca. 704 px) breit, nebeneinander wird also nie lesbar. Die App überschreibt deshalb die Breite der Laufzeit, solange das PDF neben der Variante steht (Ersteller: „Können wir das nicht einfach überschreiben?“). Nebeneinander mit 80 rem Rahmen ab 1300 px Fensterbreite mit Maus, PDF-Spalte mindestens 700 px, Variante ca. 530 px; andere Modi bleiben schmal. Beim PDF gibt es keinen Umschalter (Ersteller: „Bei PDF brauchen wir kein Tab“). Das ersetzt die Entscheidung aus Plan 05 „bei PDF nebeneinander ab 960 px“ (zu schmal) und meinen Zwischenstand „PDF als Blatt“. (Ersteller: „PDF ist viel zu schmal“, „mach das abhängig vom Viewport“)
 - Wo das PDF nicht eingebettet wird (schmaler Bildschirm oder Touch), gibt es keinen Umschalter: der Button „PDF öffnen“ steht über der Variante, die die volle Breite hat. (Ersteller: „der Button zum Öffnen des PDFs sollte nicht die Spalte einnehmen“)
-- Der Seed der Runde steht in der Adresse (`?seed=<n>`, `history.replaceState`), damit man eine Runde neu laden und weitergeben kann. (Ersteller: „der Seed soll auch in der URL angezeigt werden“)
-- Wechsel von Stufe oder Modus startet immer eine neue Runde mit neuem Seed (Aktion `reseed`); sonst käme derselbe Text mit denselben Fehlern wieder und das Umschalten auf „Original erkennen“ verriete das Original. Sind schon Wörter markiert, fragt ein Dialog nach („Wechseln“ / „Bleiben“); bei „Bleiben“ und Escape zeigen die Auswahlfelder wieder die laufende Runde. (Ersteller: „muss ein neuer Seed erzeugt werden … muss ein Dialog zur Bestätigung kommen“)
+- Die Adresse ist die Runde (`?seed=<n>#<route>`): man kann sie neu laden und weitergeben, und Zurück/Vor führen von Runde zu Runde. Neue Runde und Wechsel von Stufe oder Modus legen einen Verlaufseintrag an (`history.pushState`); ändert der Browser die Adresse, sagt die Seite dem Kern die Runde mit der Aktion `round`. (Ersteller: „der Seed soll auch in der URL angezeigt werden“, „wir müssen den Seed auch aus der URL lesen lassen, sonst ist die URL nicht teilbar“)
+- Wechsel von Stufe oder Modus startet immer eine neue Runde mit neuem Seed (Aktion `round` mit neuem Seed); sonst käme derselbe Text mit denselben Fehlern wieder und das Umschalten auf „Original erkennen“ verriete das Original. Sind schon Wörter markiert, fragt ein Dialog nach („Wechseln“ / „Bleiben“); bei „Bleiben“ und Escape zeigen die Auswahlfelder wieder die laufende Runde. (Ersteller: „muss ein neuer Seed erzeugt werden … muss ein Dialog zur Bestätigung kommen“)
 
 ## Notes
 
@@ -130,8 +130,8 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
       the ones you use. Commit the update alone; fix its check findings before content.
 - [x] Slice 1 Bedienung: Start mit Original; gleiche Höhe (ein Zeilenabstand für Original, Variante und Wählmodus); Hinweis unter den Text und in den Wählmodus; PDF neben der Variante ab 1300 px in einem auf 80 rem geweiteten Rahmen, sonst Button über der Variante. Playthroughs und e2e anpassen. Check, Commit.
 - [x] Slice 2 Schrift: Recursive zuschneiden und messen (Größe, Quota); in `public/` bündeln samt Lizenz; Einstellungen mit Speichern über den Wrapper; Meldungen de/en; arc42 und Skill `app-content` anpassen; Tests. Check, Commit.
-- [x] Slice 3 Neue Runde beim Wechsel: Aktion `reseed` im Kern, Dialog bei gesetzten Markierungen, Tests (Kern, e2e), arc42 und Skill `app-content`. Check, Commit.
-- [x] Slice 4 Seed in der Adresse: `?seed=<n>` wird bei jeder neuen Runde in die Adresse geschrieben (ohne neuen Verlaufseintrag), Neuladen ergibt dieselbe Runde; Tests, arc42, Skill `app-content`. Check, Commit.
+- [x] Slice 3 Neue Runde beim Wechsel: Aktion `round` im Kern, Dialog bei gesetzten Markierungen, Tests (Kern, e2e), arc42 und Skill `app-content`. Check, Commit.
+- [x] Slice 4 Seed in der Adresse: `?seed=<n>` wird bei jeder neuen Runde in die Adresse geschrieben (mit Verlaufseintrag), Neuladen und Zurück/Vor führen zur Runde der Adresse; Tests, arc42, Skill `app-content`. Check, Commit.
 - [x] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
 - [x] `npx lernapps check` passes.

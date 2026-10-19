@@ -92,4 +92,40 @@ test.describe("Switching the age group or the mode", () => {
     await expect.poll(async () => String((await stateOf(page))["seed"])).toBe(String(Number(first) + 1));
     expect(new URL(page.url()).searchParams.get("seed")).toBe(String(Number(first) + 1));
   });
+
+  test("leads from round to round with the back and forward buttons of the browser", async ({ page }) => {
+    await open(page);
+    await page.getByLabel("Modus").selectOption("choose");
+    await expect.poll(async () => (await stateOf(page))["route"]).toBe("klasse-5-6-original");
+    const second = (await stateOf(page))["seed"];
+    expect(second).not.toBe(1);
+    await page.goBack();
+    await expect.poll(async () => (await stateOf(page))["route"]).toBe("klasse-5-6");
+    expect(await stateOf(page)).toMatchObject({ seed: 1 });
+    expect(new URL(page.url()).searchParams.get("seed")).toBe("1");
+    await expect(page.getByLabel("Modus")).toHaveValue("mark");
+    await page.goForward();
+    await expect.poll(async () => (await stateOf(page))["route"]).toBe("klasse-5-6-original");
+    expect(await stateOf(page)).toMatchObject({ seed: second });
+    await expect(page.getByLabel("Modus")).toHaveValue("choose");
+  });
+
+  test("leads back from the next round to the round before", async ({ page }) => {
+    await open(page);
+    await page.getByRole("button", { name: "Variante", exact: true }).click();
+    await page.getByRole("button", { name: "Prüfen" }).click();
+    await page.getByRole("button", { name: "Neue Runde" }).click();
+    await expect.poll(async () => (await stateOf(page))["seed"]).toBe(2);
+    await page.goBack();
+    await expect.poll(async () => (await stateOf(page))["seed"]).toBe(1);
+    expect(new URL(page.url()).searchParams.get("seed")).toBe("1");
+  });
+
+  test("opens the round of a shared address", async ({ page }) => {
+    await page.goto("./app/?seed=5#klasse-7-8-original");
+    await expect(page.locator(".interactive-app")).toHaveAttribute("data-mounted", "");
+    expect(await stateOf(page)).toMatchObject({ seed: 5, route: "klasse-7-8-original" });
+    await expect(page.getByLabel("Altersstufe")).toHaveValue("klasse-7-8");
+    await expect(page.getByLabel("Modus")).toHaveValue("choose");
+  });
 });

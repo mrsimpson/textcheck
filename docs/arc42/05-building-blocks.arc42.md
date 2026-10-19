@@ -687,14 +687,17 @@ path: src/core/index.ts
 #### Actions interface
 
 The root component hands every action of the learner to `step` as an action input with a name and optionally a value:
-`toggle` (a word id), `move` (next, prev, next-sentence, prev-sentence, first, last), `clear`, `check` and `again`.
+`toggle` (a word id), `move` (next, prev, next-sentence, prev-sentence, first, last), `clear`, `check`, `choose` (a text
+in the mode Original erkennen), `again`, `language` (the page's language) and `round` (`{ seed, route }`: the round an
+address names, because the learner picked another age group or mode, asked for the next round, or went back or forward
+in the history).
 
 ```arc42
 :::interface
 id: if-textcheck-actions
 title: Learner actions as inputs
 provider: bb-textcheck-state
-protocol: Typed action inputs (contract.ts)
+protocol: Typed action inputs (contract.ts); the action round carries { seed, route }
 path: src/core/index.ts
 :::
 ```
@@ -907,10 +910,13 @@ no sheet and has no switch: where it is embedded (a wide screen of 1300 px and m
 Variante, in a frame widened to 80 rem while it shows, so that an A4 page is wide enough to read; elsewhere only the
 button that opens it stands above the Variante, which has the whole width), the keyboard hint and the buttons below the sheets, so that both sheets are of the same height (one font size
 and one line height for every text), the folded settings for reading (font style, weight, size, line spacing, kept on the device) and, after checking, the result. It announces every change through the live region, moves the focus
-to the result heading after checking and back to the words after a new round, and emits the learner's actions. The seed of the round stands in the address (`?seed=<n>`, written with `history.replaceState`, no new history entry), so
-that a round can be reloaded or shared. A new age group or mode, chosen with the two selects, starts a new round with a new
-seed (the action `reseed`), so that the same text with the same errors does not come back; where marks are set, a
-dialog asks first and the selects keep showing the round that goes on if the learner stays. The
+to the result heading after checking and back to the words after a new round, and emits the learner's actions. The address is the round (`?seed=<n>#<route>`), so that a round can be reloaded and
+shared. The learner's own steps push a history entry (`history.pushState`): a new age group or mode, chosen with the two
+selects, starts a round with a new seed, so that the same text with the same errors does not come back (where marks are
+set, a dialog asks first and the selects keep showing the round that goes on if the learner stays), and so does the next
+round. When the address changes by the back or forward button, the root component emits the action `round`
+(`{ seed, route }`) for the round the address names; the state stays as it is for the round it shows and for an address
+it does not know. The
 panel that is shown is its only state of its own. The route decides the mode: the Original, the PDF of the
 source (a link to a new tab and, on a wide screen with a mouse, the PDF in a frame of the same site) or the two texts
 of the mode Original erkennen, which the choose view shows.
