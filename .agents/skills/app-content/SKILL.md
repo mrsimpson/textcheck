@@ -64,6 +64,9 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
 - The learner sees: the goal line, the Original and the Variante (like two sheets, one on top of the other, with a switch and a short page-turn animation, so that the eye cannot
   compare them side by side; the round starts with the Original; the mode `source` lays the PDF out as a sheet too, wide enough to read, in a frame of 56 rem, where it is embedded; elsewhere the button that opens the PDF stands above the Variante), the marked words,
   then the result grouped by error class (found, missed, wrongly marked, within tolerance) with the explanation.
+- The learner can set how the texts look (folded section "Schrift und Lesen": style normal, round or fixed width,
+  weight, size, line spacing; kept on the device). The font is Recursive (SIL Open Font License 1.1), bundled in
+  `src/ui/fonts/` with its licence; it changes how a text looks, never what it says.
 - Length of a pack: the excerpt has 6 to 10 sentences. Guide values per grade pair are fixed after the pilot.
 
 ## Terminology

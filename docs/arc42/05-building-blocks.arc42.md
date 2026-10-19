@@ -878,6 +878,8 @@ flowchart TB
         bb-textcheck-choose["Choose view"]
         bb-textcheck-result["Result view"]
         bb-textcheck-ui-texts["UI texts"]
+        bb-textcheck-reading-settings["Reading settings"]
+        bb-textcheck-reading["Reading values"]
     end
     bb-interactive-messages["Messages"]
     bb-textcheck-root -->|"if-textcheck-wordlist"| bb-textcheck-wordlist
@@ -889,6 +891,11 @@ flowchart TB
     bb-textcheck-wordlist -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
     bb-textcheck-result -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
     bb-textcheck-ui-texts -->|"if-messages"| bb-interactive-messages
+    bb-textcheck-root -->|"if-textcheck-reading-settings"| bb-textcheck-reading-settings
+    bb-textcheck-root -->|"if-textcheck-reading"| bb-textcheck-reading
+    bb-textcheck-reading-settings -->|"if-textcheck-reading"| bb-textcheck-reading
+    bb-textcheck-reading-settings -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
+    bb-textcheck-reading -->|"if-device-storage"| bb-tooling
 ```
 
 ### Root component
@@ -898,7 +905,7 @@ starting with the Original: a switch turns from one to the other with a short pa
 switches off, and the hidden one is not in the page, so the learner cannot compare them side by side; the source PDF is
 a sheet too where it is embedded (a wide screen with a mouse), in a frame widened to 56 rem while it shows; elsewhere the button that opens it stands above the Variante, which has the whole width, so that an A4 page is wide enough to
 read), the keyboard hint and the buttons below the sheets, so that both sheets are of the same height (one font size
-and one line height for every text), and, after checking, the result. It announces every change through the live region, moves the focus
+and one line height for every text), the folded settings for reading (font style, weight, size, line spacing, kept on the device) and, after checking, the result. It announces every change through the live region, moves the focus
 to the result heading after checking and back to the words after a new round, and emits the learner's actions. The
 panel that is shown is its only state of its own. The route decides the mode: the Original, the PDF of the
 source (a link to a new tab and, on a wide screen with a mouse, the PDF in a frame of the same site) or the two texts
@@ -910,7 +917,7 @@ id: bb-textcheck-root
 title: Root component
 parent: bb-interactive-ui
 technology: Vue single-file component
-requires: if-textcheck-wordlist, if-textcheck-choose, if-textcheck-result, if-textcheck-ui-texts, if-a11y
+requires: if-textcheck-wordlist, if-textcheck-choose, if-textcheck-result, if-textcheck-ui-texts, if-textcheck-reading-settings, if-textcheck-reading, if-a11y
 path: src/ui/App.vue
 :::
 ```
@@ -1038,6 +1045,71 @@ title: Translator of a language
 provider: bb-textcheck-ui-texts
 protocol: TypeScript module export
 path: src/ui/messages.ts
+:::
+```
+
+### Reading settings
+
+Built. `src/ui/ReadingSettings.vue` is the folded section "Schrift und Lesen" with the style of the font (normal, round,
+fixed width), the weight, the size and the line spacing, a line of sample text and a button for the defaults. It holds
+no state of its own: the root component gives it the settings and keeps what the learner changes.
+
+```arc42
+:::building-block
+id: bb-textcheck-reading-settings
+title: Reading settings
+parent: bb-interactive-ui
+technology: Vue single-file component
+requires: if-textcheck-reading, if-textcheck-ui-texts
+path: src/ui/ReadingSettings.vue
+:::
+```
+
+#### Reading settings interface
+
+The root component binds the settings with `v-model` and the language as a prop.
+
+```arc42
+:::interface
+id: if-textcheck-reading-settings
+title: Reading settings v-model
+provider: bb-textcheck-reading-settings
+protocol: Vue props and events
+path: src/ui/ReadingSettings.vue
+:::
+```
+
+### Reading values
+
+Built. `src/ui/reading.ts` holds the settings for reading, their limits and defaults, turns them into CSS custom
+properties of the root element and keeps them on the device through `createStorage("textcheck")`. A saved value that is
+out of range or of another shape is ignored; where the browser blocks storage the defaults hold and the settings
+work for this visit only. The font itself, Recursive (SIL Open Font License 1.1, with its licence beside it in
+`src/ui/fonts/`), is bundled at build time, cut to Latin and the axes weight, MONO and CASL.
+
+```arc42
+:::building-block
+id: bb-textcheck-reading
+title: Reading values
+parent: bb-interactive-ui
+technology: TypeScript
+requires: if-device-storage
+path: src/ui/reading.ts
+:::
+```
+
+#### Reading values interface
+
+The root component loads the settings once, saves them after every change and turns them into CSS custom properties; the
+settings component takes the limits and the defaults from it.
+
+```arc42
+:::interface
+id: if-textcheck-reading
+title: Reading settings, load, save and styleOf
+provider: bb-textcheck-reading
+protocol: TypeScript module export
+path: src/ui/reading.ts
 :::
 ```
 

@@ -82,5 +82,15 @@
   "errorClass.faulty_inference": "Falsche Folgerung oder Ursache",
   "errorClass.opinion_as_fact": "Meinung als Tatsache",
   "errorClass.false_authority": "Falsche Autorität oder Quelle",
-  "errorClass.loaded_language": "Wertende, emotionalisierende Beeinflussung"
+  "errorClass.loaded_language": "Wertende, emotionalisierende Beeinflussung",
+  "readingTitle": "Schrift und Lesen",
+  "fontStyle": "Schriftstil",
+  "styleNormal": "Normal",
+  "styleRound": "Rund",
+  "styleMono": "Festbreite",
+  "fontWeight": "Strichstärke",
+  "fontSize": "Größe",
+  "lineSpacing": "Zeilenabstand",
+  "readingReset": "Zurücksetzen",
+  "sample": "Sorgfältig lesen: 1 234 Meter, Mai 1969, Köln, Illegal."
 }

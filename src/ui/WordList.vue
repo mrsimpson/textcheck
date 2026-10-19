@@ -118,6 +118,8 @@ defineExpose({ focus: () => list.value?.focus() });
   margin: 0 0 0.6em;
   font-size: var(--tc-font-size);
   line-height: var(--tc-line-height);
+  font-weight: var(--tc-font-weight);
+  font-variation-settings: var(--tc-font-variation);
 }
 
 .words:focus-visible {

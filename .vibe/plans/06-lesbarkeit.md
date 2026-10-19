@@ -4,11 +4,11 @@
 # Archetype as in the app's first plan; set it when you start. Never changes.
 archetype: interactive
 # Current phase. Allowed values: explore, plan, code, commit. Change the value line below, never this comment.
-phase: code
+phase: commit
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
-failedChecks: { checks-pass: 2 }
+failedChecks: { checks-pass: 7 }
 ---
 
 # Increment: Bessere Bedienung und einstellbare Schrift
@@ -126,12 +126,12 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 - [x] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
 - [x] Slice 1 Bedienung: Start mit Original; gleiche Höhe (ein Zeilenabstand für Original, Variante und Wählmodus); Hinweis unter den Text und in den Wählmodus; PDF als Blatt in einem auf 56 rem geweiteten Rahmen. Playthroughs und e2e anpassen. Check, Commit.
-- [ ] Slice 2 Schrift: Recursive zuschneiden und messen (Größe, Quota); in `public/` bündeln samt Lizenz; Einstellungen mit Speichern über den Wrapper; Meldungen de/en; arc42 und Skill `app-content` anpassen; Tests. Check, Commit.
-- [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
+- [x] Slice 2 Schrift: Recursive zuschneiden und messen (Größe, Quota); in `public/` bündeln samt Lizenz; Einstellungen mit Speichern über den Wrapper; Meldungen de/en; arc42 und Skill `app-content` anpassen; Tests. Check, Commit.
+- [x] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
-- [ ] `npx lernapps check` passes.
-- [ ] Every box of Explore, Plan and Code ticked.
-- [ ] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
+- [x] `npx lernapps check` passes.
+- [x] Every box of Explore, Plan and Code ticked.
+- [x] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
 
 ### Completed
 

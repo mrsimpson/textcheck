@@ -12,9 +12,11 @@ import { LEVELS, parseRoute, routeOf } from "../core/data.ts";
 import { markable, type State } from "../core/index.ts";
 import type { Mode } from "../core/types.ts";
 import ChooseView from "./ChooseView.vue";
+import ReadingSettings from "./ReadingSettings.vue";
 import ResultView from "./ResultView.vue";
 import WordList from "./WordList.vue";
 import { translatorOf } from "./messages.ts";
+import { loadReading, saveReading, styleOf } from "./reading.ts";
 
 const props = defineProps<{ state: State; lang: string }>();
 const emit = defineEmits<{ input: [input: Input] }>();
@@ -23,6 +25,11 @@ const view = ref<"original" | "rendition">("original");
 const words = ref<InstanceType<typeof WordList> | null>(null);
 const choose = ref<InstanceType<typeof ChooseView> | null>(null);
 const root = ref<HTMLElement | null>(null);
+
+// how the learner wants to read: kept on the device, applied to the texts as CSS custom properties of the root element
+const reading = ref(loadReading());
+const readingStyle = computed(() => styleOf(reading.value));
+watch(reading, (value) => saveReading(value), { deep: true });
 
 // the source PDF is embedded only where a PDF shows well in a frame: a wide screen with a mouse; elsewhere the link
 // to a new tab is all there is
@@ -138,7 +145,7 @@ const choiceNote = computed(() => {
 </script>
 
 <template>
-  <section ref="root" class="textcheck" :aria-label="t('region')">
+  <section ref="root" class="textcheck" :style="readingStyle" :aria-label="t('region')">
     <div ref="picker" class="picker">
       <label>
         {{ t("level") }}
@@ -153,6 +160,7 @@ const choiceNote = computed(() => {
         </select>
       </label>
     </div>
+    <ReadingSettings v-model="reading" :lang="lang" />
     <p class="goal">{{ goal }}</p>
     <ChooseView
       v-if="state.mode === 'choose'"
@@ -284,6 +292,9 @@ const choiceNote = computed(() => {
   /* one size and one line height for every text, so that the sheets are of the same height */
   --tc-font-size: 1.125rem;
   --tc-line-height: 2.1;
+  --tc-font-weight: 400;
+  --tc-font-variation: "MONO" 0, "CASL" 0;
+  font-family: "Recursive TC", system-ui, sans-serif;
   color: var(--tc-ink);
 }
 
@@ -444,6 +455,8 @@ h2 {
   margin: 0 0 0.6em;
   font-size: var(--tc-font-size);
   line-height: var(--tc-line-height);
+  font-weight: var(--tc-font-weight);
+  font-variation-settings: var(--tc-font-variation);
 }
 
 .open {
@@ -508,6 +521,15 @@ h2 {
 </style>
 
 <style>
+/* Recursive, a variable font (SIL Open Font License 1.1, see fonts/OFL.txt) cut to Latin and the axes weight, MONO
+   and CASL; it is bundled with the app, nothing is loaded from elsewhere. */
+@font-face {
+  font-family: "Recursive TC";
+  src: url("./fonts/recursive-textcheck.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
 /* The two selects of the app replace the shell's list of route links; without JavaScript the list stays. */
 body:has(.textcheck) .interactive-routes {
   display: none;
