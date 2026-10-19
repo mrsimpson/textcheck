@@ -45,6 +45,7 @@ Die App beginnt mit dem Original, beide Blätter sind gleich hoch, der Tastaturh
 - Einstellungen: Schriftstil (Normal, Rund, Festbreite), Strichstärke, Größe, Zeilenabstand, mit Zurücksetzen. Standard ist Recursive, normal (guess für die Auswahl).
 - Die Einstellung bleibt auf dem Gerät erhalten, über den Storage-Wrapper des Tooling, mit eigenem Schlüsselpräfix; ist Speichern gesperrt, funktioniert die App mit den Standardwerten. (Ersteller: „Einstellung merken“)
 - Quelle als PDF (A4, ca. 794 px bei 100 %): das PDF braucht mindestens ca. 700 px Breite, um lesbar zu sein. Gemessen: der Rahmen der App ist höchstens 44 rem (ca. 704 px) breit, nebeneinander wird also nie lesbar. Deshalb ist auch das PDF ein Blatt; der Rahmen der Seite wird dafür auf 56 rem geweitet, solange das PDF-Blatt zu sehen ist (App überschreibt dazu die Breite der Laufzeit; andere Modi bleiben schmal; Ersteller: „Können wir das nicht einfach überschreiben?“). Das ersetzt die Entscheidung aus Plan 05 „bei PDF nebeneinander ab 960 px“. (Ersteller: „PDF ist viel zu schmal“, „mach das abhängig vom Viewport“)
+- Wo das PDF nicht eingebettet wird (schmaler Bildschirm oder Touch), gibt es kein PDF-Blatt und keinen Umschalter: der Button „PDF öffnen“ steht über der Variante, die die volle Breite hat. (Ersteller: „der Button zum Öffnen des PDFs sollte nicht die Spalte einnehmen“)
 - Keine Warnung beim Wechsel von Stufe oder Modus (Ersteller hat sie nicht gewünscht; guess).
 
 ## Notes

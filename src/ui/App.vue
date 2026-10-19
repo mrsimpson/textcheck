@@ -72,6 +72,10 @@ const picker = ref<HTMLElement | null>(null);
 const levelSelect = ref<HTMLSelectElement | null>(null);
 const modeSelect = ref<HTMLSelectElement | null>(null);
 const sourceMode = computed(() => props.state.mode === "source");
+// the PDF is a sheet of its own only where it is embedded; where it is not (too narrow, or a finger), the button that
+// opens it stands above the Variante, which has the whole width
+const pdfSheet = computed(() => sourceMode.value && embed.value && pdfUrl.value !== null);
+const linkOnly = computed(() => sourceMode.value && !pdfSheet.value);
 
 const goal = computed(() =>
   props.state.mode === "choose"
@@ -157,7 +161,7 @@ const choiceNote = computed(() => {
       :lang="lang"
       @input="(input) => emit('input', input)"
     />
-    <div v-else class="switch" role="group" :aria-label="t('view')">
+    <div v-else-if="!linkOnly" class="switch" role="group" :aria-label="t('view')">
       <button type="button" :aria-pressed="view === 'original'" @click="view = 'original'">
         {{ sourceMode ? t("sourceTab") : t("original") }}
       </button>
@@ -165,8 +169,29 @@ const choiceNote = computed(() => {
         {{ t("renditionTab") }}
       </button>
     </div>
-    <div v-if="state.mode !== 'choose'" class="panels sheets" :class="{ pdf: sourceMode }" :data-view="view">
-      <section v-if="sourceMode" class="panel original pdf" aria-labelledby="original-heading">
+    <div v-if="linkOnly" class="pdf-link">
+      <p v-if="pdfUrl !== null">
+        <a class="open" :href="pdfUrl" target="_blank" rel="noopener noreferrer">{{ t("openPdf") }}</a>
+      </p>
+      <p class="source">
+        {{ t("source") }} {{ state.source.title }}, {{ state.source.license }}
+        <template v-if="state.source.licenseUrl !== null">
+          ·
+          <a :href="state.source.licenseUrl" target="_blank" rel="noopener noreferrer">{{ t("license") }}</a>
+        </template>
+        <template v-if="state.source.authorsUrl !== null">
+          ·
+          <a :href="state.source.authorsUrl" target="_blank" rel="noopener noreferrer">{{ t("authors") }}</a>
+        </template>
+      </p>
+    </div>
+    <div
+      v-if="state.mode !== 'choose'"
+      class="panels sheets"
+      :class="{ pdf: pdfSheet }"
+      :data-view="linkOnly ? 'rendition' : view"
+    >
+      <section v-if="pdfSheet" class="panel original pdf" aria-labelledby="original-heading">
         <h2 id="original-heading">{{ t("sourceHeading") }}</h2>
         <p v-if="pdfUrl !== null">
           <a class="open" :href="pdfUrl" target="_blank" rel="noopener noreferrer">{{ t("openPdf") }}</a>
@@ -184,7 +209,7 @@ const choiceNote = computed(() => {
           </template>
         </p>
       </section>
-      <section v-else class="panel original" aria-labelledby="original-heading">
+      <section v-else-if="!sourceMode" class="panel original" aria-labelledby="original-heading">
         <h2 id="original-heading">{{ t("original") }}</h2>
         <h3 class="text-title">{{ state.title }}</h3>
         <p v-for="(sentence, index) in state.original" :key="index">{{ sentence }}</p>
@@ -335,6 +360,10 @@ const choiceNote = computed(() => {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 0.75rem;
+}
+
+.pdf-link p {
+  margin: 0 0 0.5rem;
 }
 
 .switch button {

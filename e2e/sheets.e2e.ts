@@ -96,17 +96,29 @@ test.describe("Original and Variante as sheets on a wide screen", () => {
     await expect(page.getByRole("button", { name: "Text B hat die Fehler" })).toHaveAttribute("aria-pressed", "true");
   });
 
-  test("lays the source PDF out as a sheet, wide enough to read, in a wider frame", async ({ page }) => {
+  test("lays the source PDF out as a sheet where it is embedded, and as a button above the Variante where it is not", async ({
+    page,
+  }) => {
     await open(page, "./app/?seed=1#klasse-5-6-quelle");
-    const pdf = page.locator(".panel.original");
-    await expect(pdf).toBeVisible();
-    await expect(page.locator(".panel.rendition")).toBeHidden();
-    await expect(page.locator(".switch")).toBeVisible();
-    await page.waitForTimeout(500); // the sheet turns in
-    expect((await pdf.boundingBox())?.width ?? 0).toBeGreaterThanOrEqual(700);
-    await page.setViewportSize({ width: 390, height: 800 });
-    await page.waitForTimeout(100);
-    const narrow = await pdf.boundingBox();
-    expect((narrow?.x ?? -1) >= 0 && (narrow?.x ?? 0) + (narrow?.width ?? 0) <= 390).toBe(true);
+    const embedded = await page.evaluate(() => matchMedia("(min-width: 960px) and (pointer: fine)").matches);
+    if (embedded) {
+      const pdf = page.locator(".panel.original");
+      await expect(pdf).toBeVisible();
+      await expect(page.locator(".panel.rendition")).toBeHidden();
+      await expect(page.locator(".switch")).toBeVisible();
+      await page.waitForTimeout(500); // the sheet turns in
+      expect((await pdf.boundingBox())?.width ?? 0).toBeGreaterThanOrEqual(700);
+    } else {
+      // no sheet for a link: the button stands above the Variante, which has the whole width
+      await expect(page.locator(".switch")).toHaveCount(0);
+      await expect(page.locator(".panel.original")).toHaveCount(0);
+      await expect(page.locator(".panel.rendition")).toBeVisible();
+      const link = await page.locator("a.open").boundingBox();
+      await page.waitForTimeout(500);
+      const sheet = await page.locator(".panel.rendition").boundingBox();
+      expect((link?.y ?? 1) < (sheet?.y ?? 0)).toBe(true);
+      const column = await page.locator(".interactive").boundingBox();
+      expect((sheet?.width ?? 0) >= (column?.width ?? 1) - 40).toBe(true);
+    }
   });
 });
