@@ -8,7 +8,7 @@ phase: code
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
-failedChecks: {}
+failedChecks: { checks-pass: 2 }
 ---
 
 # Increment: Hinweise Schritt für Schritt
@@ -134,7 +134,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 - [x] Slice 3 Auflösung: Feuerwerk ohne Hinweis, Konfetti mit Hinweis, ermutigender Satz, keine Effekte bei reduzierter Bewegung; Tests, arc42, Skill `app-content`. Check, Commit.
 - [x] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
-- [ ] `npx lernapps check` passes.
+- [x] `npx lernapps check` passes.
 - [ ] Every box of Explore, Plan and Code ticked.
 - [ ] Set `phase: commit`: change the value line (`grep '^phase:'` prints `phase: commit`).
 

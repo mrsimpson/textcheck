@@ -180,12 +180,17 @@ The learner can open "Schrift und Lesen" at any time and change the style of the
 spacing; the texts change at once, and the settings are kept on the device (through the storage of the tooling, under
 the app's own prefix) for the next visit.
 
+The learner can take hints. The button "Hinweis" waits: the runtime's ticks run the core's wait down (15 s after the round
+starts, then 20 s after each hint), and the button shows the seconds left. The first hint names the kinds of error of the
+round where the level hides them; the next marks the sentences with an error, in the mode Original erkennen in both
+texts. When every error is found, the result shows fireworks without a hint and confetti with one.
+
 ```arc42
 :::runtime-scenario
 id: scenario-textcheck-round
 title: Playing a round of Textcheck
 trigger: The learner opens a route, marks words, checks, and asks for the next round
-involves: bb-shell, bb-tooling, bb-textcheck-root, bb-textcheck-wordlist, bb-textcheck-choose, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-reading-settings, bb-textcheck-reading, bb-textcheck-state, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-packs, bb-textcheck-tables
+involves: bb-shell, bb-tooling, bb-textcheck-root, bb-textcheck-wordlist, bb-textcheck-choose, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-reading-settings, bb-textcheck-reading, bb-textcheck-hint-button, bb-textcheck-hint-note, bb-textcheck-hints, bb-textcheck-state, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-packs, bb-textcheck-tables
 :::
 ```
 
