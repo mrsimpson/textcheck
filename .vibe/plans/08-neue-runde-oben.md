@@ -33,21 +33,17 @@ a correction.
 
 ## Goal
 
-Nach dem Prüfen starten Lernende mit einem Knopf „Nochmal“ direkt an der Stelle von „Prüfen“ eine neue Variante (neuer Seed). Das Neuladen behält den Seed, deshalb braucht es diesen Weg.
-
+Nach dem Prüfen finden Lernende sofort den Knopf für eine neue Runde: er steht oben im Ergebnis, über den Auflösungen, und die Seite scrollt nach dem Prüfen dorthin.
 
 ## Key decisions
 
-- Nach dem Prüfen bleibt die Leiste unter dem Text stehen: „Prüfen“ wird durch „Nochmal“ ersetzt, „Löschen“ entfällt dann. Gilt für alle drei Modi. (Ersteller: „den Prüfen-Button nach Prüfen durch einen ‚Nochmal‘-Button ersetzen“)
-- „Nochmal“ macht dasselbe wie bisher „Neue Runde“ im Ergebnis: Seed der Adresse + 1, neuer Verlaufseintrag, gleiche Stufe und gleicher Modus (guess).
-- Der Knopf „Neue Runde“ im Ergebnis entfällt, damit es nicht zwei Knöpfe für dasselbe gibt (guess).
-- Der Fokus geht wie bisher nach einer neuen Runde zu den Wörtern zurück.
-
+- Der vorhandene Knopf „Neue Runde“ bleibt (Ersteller: „den Button gibt es ja schon“); die Leiste mit „Prüfen“ bleibt wie sie ist, ein zweiter Knopf „Nochmal“ entfällt. Das ersetzt meinen ersten Entwurf.
+- Der Knopf steht im Ergebnis direkt unter der Zusammenfassung („x von y gefunden“) und über den Auflösungen nach Fehlerklasse, nicht mehr am Ende. (Ersteller: „oberhalb der Auflösungen“)
+- Nach dem Prüfen scrollt die Seite zum Knopf. Heute geht der Fokus auf die Überschrift „Ergebnis“; die Zusammenfassung steht direkt darunter und bleibt sichtbar, der Knopf ist also fast ohne Scrollen sichtbar (guess: Fokus bleibt auf der Überschrift, damit Screenreader zuerst das Ergebnis hören; gescrollt wird so, dass der Knopf im Bild steht).
 
 ## Notes
 
-Reine Bedienung: keine neuen Inhalte, Texte oder Quellen. Betroffen: `src/ui/App.vue`, `ChooseView.vue`, `ResultView.vue`, `src/messages/de.json` und `en.json` (Text „Nochmal“ / „Again“), e2e-Tests; arc42 und Skill `app-content` nur, wenn sie „Neue Runde“ nennen. Plan 07 ist noch nicht abgeschlossen (Commit-Phase offen); diese Änderung ist ein eigener Plan.
-
+Reine Bedienung: keine neuen Inhalte, Texte oder Quellen. Betroffen: `src/ui/ResultView.vue` (Knopf nach oben), `src/ui/App.vue` (Scrollen nach dem Prüfen), e2e-Tests. Plan 07 ist noch nicht abgeschlossen (Commit-Phase offen); diese Änderung ist ein eigener Plan.
 
 ## Explore
 
@@ -74,6 +70,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 ### Answers
 
 - „Nach dem Abschluss einer Übung brauchen wir eine Möglichkeit, eine neue Variante zu starten. Dazu können wir den Prüfen-Button nach Prüfen durch einen ‚Nochmal‘-Button ersetzen.“
+- „Oh, den Button gibt es ja schon. Hatte ich übersehen. Er sollte besser oberhalb der Auflösungen stehen und nach dem Prüfen sollte zu ihm gescrollt werden.“
 
 ### Completed
 
@@ -97,7 +94,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 
 ### Content method
 
-- Kein Inhalt ändert sich, kein neues Muster, keine neue Komponente. Skizze: vor dem Prüfen `[Löschen] [Prüfen]`, nach dem Prüfen `[Nochmal]` an derselben Stelle unter dem Text, darunter das Ergebnis.
+- Kein Inhalt ändert sich, kein neues Muster, keine neue Komponente. Skizze Ergebnis: Überschrift „Ergebnis“ / Zusammenfassung / `[Neue Runde]` / Auflösungen nach Fehlerklasse / Legende.
 
 ### Completed
 
@@ -115,7 +112,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 - [ ] `git switch -c increment/<NN>-<short name>` from `main`. Commit this plan on it.
 - [ ] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
-- [ ] Slice Nochmal: Leiste bleibt nach dem Prüfen (alle Modi), „Prüfen“ → „Nochmal“, „Löschen“ weg, „Neue Runde“ im Ergebnis weg; Meldungen de/en; e2e und Playthroughs anpassen. Check, Commit.
+- [ ] Slice Knopf nach oben: „Neue Runde“ im Ergebnis unter die Zusammenfassung, nach dem Prüfen zum Knopf scrollen (auch im Modus „Original erkennen“); e2e anpassen. Check, Commit.
 - [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.
 - [ ] `npx lernapps check` passes.
