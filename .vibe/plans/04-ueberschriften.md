@@ -128,21 +128,21 @@ New things go into the guide in the slice that adds them. -->
 
 ### Tasks
 
-- [ ] Push the branch; open a pull request to `main`. Pre-push runs the heavy checks; fix failures. See the pull
+- [x] Push the branch; open a pull request to `main`. Pre-push runs the heavy checks; fix failures. See the pull
       request's checks to green. GitHub step fails or refused → skill `lernapps-github`.
-- [ ] **Checkpoint:** publish. Show what the increment adds and the preview link from the comment "Vorschau der
+- [x] **Checkpoint:** publish. Show what the increment adds and the preview link from the comment "Vorschau der
       App"; ask whether it may go online. Wait for the yes.
-- [ ] Merge the pull request into `main` (no pull request: merge the branch, push `main`). Watch the `Pages` run of
+- [x] Merge the pull request into `main` (no pull request: merge the branch, push `main`). Watch the `Pages` run of
       that commit. Fails → read the failed step, fix, push.
-- [ ] Open the address the job `deploy` printed ("published at ...", run summary); confirm the new content. Never
+- [x] Open the address the job `deploy` printed ("published at ...", run summary); confirm the new content. Never
       a derived address; follow redirects.
-- [ ] App listed and the entry changes (topics, school years, summary) → load skill `lernapps-listing`, write the
+- [x] App listed and the entry changes (topics, school years, summary) → load skill `lernapps-listing`, write the
       changed entry. Else skip the next task.
-- [ ] **Checkpoint:** list. Ask before opening the pull request to the catalog; wait for the yes.
-- [ ] Fill the retrospective.
-- [ ] Commit this plan on `main` and push it. A push of only `.vibe/` publishes nothing.
-- [ ] Catalog pull request opened → see it to "bestanden" as the skill says.
-- [ ] Plan changed since its last push → commit on `main`, push again.
+- [x] **Checkpoint:** list. Ask before opening the pull request to the catalog; wait for the yes.
+- [x] Fill the retrospective.
+- [x] Commit this plan on `main` and push it. A push of only `.vibe/` publishes nothing.
+- [x] Catalog pull request opened → see it to "bestanden" as the skill says.
+- [x] Plan changed since its last push → commit on `main`, push again.
 
 ### Completed
 
@@ -153,15 +153,19 @@ New things go into the guide in the slice that adds them. -->
 ### Phases reached
 
 <!-- Last phase completed, checkpoints passed. E.g. "commit; confirmed, published". -->
+commit; Auftrag des Erstellers, Veröffentlichung ausdrücklich bestätigt („Passt“), Pull Request #5 zusammengeführt, Seite geprüft. Der Katalogeintrag ändert sich nicht (keine neuen Einstiege).
 
 ### Failed checks
 
 <!-- Each failed check: rule id, count. E.g. "`no-request-before-click`: 2". Not the pre-push count. -->
+Keine.
 
 ### Creator turns after the plan
 
 <!-- Number of creator messages after the confirmation, topic of each. Target: max 3. -->
+2: „Fertig“ (Sitzungen), „Passt, Wörtlichkeit ist kein Muss“ (Veröffentlichung); dazu zwei Nachrichten direkt an Sitzung 7–8 („Anfang von Photosynthese“, „Originale leicht vereinfachen“).
 
 ### Where I had to guess
 
 <!-- Each gap in plan, skills, content guide, messages or answers, and your choice. "None" if none. -->
+Die Prüfung des Anfangs durch das Skript ist eine Näherung (Infokästen vor dem Text); Entscheidung: Treffer von Hand lesen. Wörtlichkeit der Originale ist kein Muss (Ersteller); die Prüfung gegen die PDFs bleibt als Hinweis.
