@@ -1,6 +1,6 @@
 # Building Blocks
 
-<!-- From @lernapps/app-templates f28d020 (the generic part and the interactive extension): lernapps update replaces this file except the app sections, between <!-- app: begin … --> and <!-- app: end … -->, which hold the app's own architecture. -->
+<!-- From @lernapps/app-templates 5df0763 (the generic part and the interactive extension): lernapps update replaces this file except the app sections, between <!-- app: begin … --> and <!-- app: end … -->, which hold the app's own architecture. -->
 
 The generic part has three roots that every app shares, whatever its archetype: the shared runtime of
 `@lernapps/app-templates`, the tooling helpers of `@lernapps/tooling` and the skills the app commits. Each archetype's extension adds the rest of
@@ -409,6 +409,14 @@ again on a new route, calls `tick(state, 20)` every 20 ms when the core has `tic
 Ctrl, Alt or Meta, and every input the root component emits as `input` (an action, or a key it stands for). When the
 end-to-end tests' clock is on the page (`if-test-clock`), it starts no interval and steps the ticks the tests ask for.
 
+The app page has a heading line: the h1, the app's title, and a slot beside it, hidden and empty. An app that wants a
+small control there (help, sound off) passes a component as `startInteractive(core, App, { title })`; the shell
+mounts it into the slot with the props `state` and `lang` and the same `input` event as the root component, and shows
+the slot. The header of both pages holds the language switch and nothing else, and an app with one language has none:
+the title is the h1, and the way back to the catalog is the platform's. The frame of the header, the page and the
+footer is as wide as the custom property `--interactive-max-width` (default `44rem`), which an app sets in its own
+`:root` rule.
+
 ```arc42
 :::ignore H014 installed package @lernapps/app-templates (arc42 cannot resolve untracked paths, docToolchain/arc42-language#128)
 :::
@@ -424,14 +432,14 @@ implements: concept-core-and-shell, concept-hash-routes, concept-determinism
 
 #### Start interface
 
-The app's `src/main.ts` imports the runtime's style, the core and the root component and calls `startInteractive`.
+The app's `src/main.ts` imports the runtime's style, the core and the root component and calls `startInteractive`, with the component for the slot in the heading line as the option `title` if it has one.
 
 ```arc42
 :::ignore H014 installed package @lernapps/app-templates (arc42 cannot resolve untracked paths, docToolchain/arc42-language#128)
 :::
 :::interface
 id: if-start
-title: startInteractive(core, root)
+title: startInteractive(core, root, options?)
 provider: bb-shell
 protocol: TypeScript import, @lernapps/app-templates/interactive
 :::

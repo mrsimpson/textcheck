@@ -1,8 +1,10 @@
 # Workflow rules
 
-The plan holds the workflow; these rules say what each step must meet.
+How you work with the creator, from the plan file: `AGENTS.md` and the current plan in `.vibe/plans/` hold the
+workflow; these rules say what each step must meet. Each rule is a section headed by its rule block (`id`, `scope`,
+`severity`).
 
-## Plan
+## The plan
 
 ### `plan-file`: Keep the plan file
 
@@ -12,10 +14,9 @@ scope: tooling
 severity: error
 ```
 
-- Each plan in `.vibe/plans/`, every section and front matter key of its template kept.
-- Never change the plan of an earlier piece of work.
-- Update `phase` on entering a phase. Tick each task box when done.
-- Never edit `prePushFailures` or `failedChecks`: the hook and the check write them.
+Keep each plan in `.vibe/plans/` as its template has it, with every section and front matter key; never change the
+plan of an earlier piece of work. Update `phase` when you enter a
+phase. Never edit `prePushFailures` or `failedChecks`: the hook and the check write them.
 
 ### `explore-before-code`: No code before the plan is confirmed
 
@@ -25,7 +26,7 @@ scope: tooling
 severity: error
 ```
 
-- No code, no `lernapps create`, until the creator has confirmed the plan with a yes.
+Write no code and generate nothing until the creator has confirmed the plan.
 
 ### `stop-at-checkpoints`: Stop at the creator's checkpoints
 
@@ -35,9 +36,9 @@ scope: tooling
 severity: error
 ```
 
-- Checkpoints: research, confirm the plan and content method, publish, list. Stop at each; wait for the answer.
-- A message sent before the checkpoint's question is no yes.
-- Example: "Die App ist fertig und geprüft. Soll ich sie jetzt veröffentlichen?"
+Stop at each checkpoint (research, confirm the plan and the content method, publish, list) and wait for the
+creator's answer. Example: "Die App ist fertig und geprüft. Soll ich sie jetzt veröffentlichen?" A message the
+creator sent before you asked the checkpoint's question is not a yes.
 
 ### `few-turns-after-plan`: Work on your own after the plan
 
@@ -47,8 +48,8 @@ scope: tooling
 severity: hint
 ```
 
-- After the confirmation ask only what you cannot decide.
-- Else choose, mark "(guess)" under "Key decisions", list it in the retrospective.
+After the plan is confirmed, ask the creator only what you cannot decide. Otherwise choose, mark it "(guess)" under
+"Key decisions" and list it in the retrospective.
 
 ### `retrospective-filled`: Fill the retrospective
 
@@ -58,10 +59,10 @@ scope: tooling
 severity: error
 ```
 
-- End of Commit: every part filled with facts: phases reached, creator turns after the plan, where you guessed.
-  No names. Failed checks need no entry: the check counts them in `failedChecks`.
+At the end of Commit, fill every part of the retrospective with facts: phases reached, the creator's turns after the
+plan, where you had to guess. Failed checks need no entry: the check counts them in `failedChecks`. No names of people.
 
-## Content guide
+## The content guide
 
 ### `app-content-guide`: Keep the app's content guide
 
@@ -71,12 +72,14 @@ scope: tooling
 severity: error
 ```
 
-- Keep `.agents/skills/app-content/SKILL.md` with its fixed headings.
-- After the plan is confirmed, before content: replace every placeholder ("FILL IN") with concrete instructions:
-  files, ids, data files, an example of this app. No general advice.
-- Content decision changes (pattern, figure type, source rule) → change the guide in the same commit.
-- `lernapps check`: file and headings always; no placeholder once the plan is in Commit.
-- App older than the guide: `npx --yes github:lernapps/tooling#exp/compact-guidance update` adds the skeleton.
+Keep `.agents/skills/app-content/SKILL.md` with its fixed headings. Fill in every placeholder ("FILL IN") once the
+creator has confirmed the plan, before you build the content, with precise, concrete instructions: the files, ids,
+data files and an example of this app, not general advice. Whenever a content decision changes (a new pattern, a
+figure type, a source rule), change the guide in the same commit. The plan file records one run; the guide is what
+the agents after you follow. `lernapps check` checks an app from the generator: the file and its headings always,
+and that no placeholder is left once the app has content, which is when its plan is in Commit: by then the
+creator's questions (quiz) or chapters (explainer) are built in place of the generated example. An app made before
+the guide existed gets its skeleton from `npx --yes github:lernapps/tooling#main update`.
 
 ### `app-content-matches`: The content guide says what was built
 
@@ -86,7 +89,7 @@ scope: tooling
 severity: error
 ```
 
-- Every pattern it names is used; no pattern used that it does not name.
-- Curriculum, competencies, chapters, pages or rounds match the content.
-- Procedure for a new chapter or round names the current files.
-- An agent without your conversation can add the next chapter or round from it alone.
+The guide describes the app as it is: every exercise pattern it names is used, and the app uses no pattern it does
+not name; the curriculum, the competencies and their chapters, pages or rounds match the content; the procedure for a
+new chapter or round names the files as they are now. Write it so that an agent who never saw your conversation can
+add the next chapter or round from it alone.
