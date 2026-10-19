@@ -893,10 +893,12 @@ flowchart TB
 
 ### Root component
 
-Built. `src/ui/App.vue` shows the goal line, the Original and the Variante (like two sheets, one on top of the other: a
-switch turns from one to the other with a short page-turn animation, which reduced motion switches off, and the hidden
-one is not in the page, so the learner cannot compare them side by side; only with the source PDF they stay side by
-side on a wide screen, and a narrow one has the switch) and, after checking, the result. It announces every change through the live region, moves the focus
+Built. `src/ui/App.vue` shows the goal line, the Original and the Variante (like two sheets, one on top of the other,
+starting with the Original: a switch turns from one to the other with a short page-turn animation, which reduced motion
+switches off, and the hidden one is not in the page, so the learner cannot compare them side by side; the source PDF is
+a sheet too, which reaches out of the narrow column of the page up to 52 rem, so that an A4 page is wide enough to
+read), the keyboard hint and the buttons below the sheets, so that both sheets are of the same height (one font size
+and one line height for every text), and, after checking, the result. It announces every change through the live region, moves the focus
 to the result heading after checking and back to the words after a new round, and emits the learner's actions. The
 panel that is shown is its only state of its own. The route decides the mode: the Original, the PDF of the
 source (a link to a new tab and, on a wide screen with a mouse, the PDF in a frame of the same site) or the two texts

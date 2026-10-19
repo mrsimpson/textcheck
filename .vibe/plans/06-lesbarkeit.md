@@ -8,7 +8,7 @@ phase: code
 # prePushFailures: failed pre-push runs of this increment, written by the hook. Never change it.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks. Never change it.
-failedChecks: {}
+failedChecks: { checks-pass: 2 }
 ---
 
 # Increment: Bessere Bedienung und einstellbare Schrift
@@ -40,11 +40,11 @@ Die App beginnt mit dem Original, beide Blätter sind gleich hoch, der Tastaturh
 - Start mit dem Original (Modus mit Quelle: das Original/die Quelle zuerst). (Ersteller: „Es sollte mit dem Original anfangen“)
 - Original und Variante teilen sich dieselbe Schriftgröße und denselben Zeilenabstand; bisher 1,8 gegen 2,1, auf Touchgeräten noch höher. Die Markierfläche der Wörter bleibt gleich hoch wie das Original.
 - Der Tastaturhinweis steht unter dem Text statt zwischen Überschrift und Text und gilt auch im Modus „Original erkennen“, wo er bisher fehlte (guess).
-- Nach dem Umblättern geht der Fokus ans neue Blatt, und die Umschalter sagen „Blatt 1 von 2“ für Screenreader (guess).
+- Der Fokus bleibt beim Umblättern auf dem Umschalter (kein Verlust, geprüft am Code); „Blatt 1 von 2“ entfällt, weil es den Namen der Umschalter ändern würde (guess).
 - Eine Schrift für alles: Recursive (Variable Font, SIL OFL 1.1), zugeschnitten auf Latein mit Umlauten und nur die Achsen Gewicht, Casual und Mono; in der App gebündelt, keine Anfrage nach außen. (Ersteller: „Recursive als Standard“)
 - Einstellungen: Schriftstil (Normal, Rund, Festbreite), Strichstärke, Größe, Zeilenabstand, mit Zurücksetzen. Standard ist Recursive, normal (guess für die Auswahl).
 - Die Einstellung bleibt auf dem Gerät erhalten, über den Storage-Wrapper des Tooling, mit eigenem Schlüsselpräfix; ist Speichern gesperrt, funktioniert die App mit den Standardwerten. (Ersteller: „Einstellung merken“)
-- Quelle als PDF (A4, ca. 794 px bei 100 %): das PDF braucht mindestens ca. 700 px Breite, um lesbar zu sein. Nebeneinander (PDF und Variante) nur ab ca. 1280 px nutzbarer Breite der App und mit Maus; darunter Blätter mit dem PDF in voller Breite. Die Zahl wird an der echten Breite des Rahmens gemessen. Das ersetzt die Entscheidung aus Plan 05 „bei PDF nebeneinander ab 960 px“. (Ersteller: „PDF ist viel zu schmal“, „mach das abhängig vom Viewport“)
+- Quelle als PDF (A4, ca. 794 px bei 100 %): das PDF braucht mindestens ca. 700 px Breite, um lesbar zu sein. Gemessen: der Rahmen der App ist höchstens 44 rem (ca. 704 px) breit, nebeneinander wird also nie lesbar. Deshalb ist auch das PDF ein Blatt; es darf über den Rahmen hinaus bis 52 rem breit werden (ca. 830 px, auf kleinen Bildschirmen so breit wie der Bildschirm). Das ersetzt die Entscheidung aus Plan 05 „bei PDF nebeneinander ab 960 px“. (Ersteller: „PDF ist viel zu schmal“, „mach das abhängig vom Viewport“)
 - Keine Warnung beim Wechsel von Stufe oder Modus (Ersteller hat sie nicht gewünscht; guess).
 
 ## Notes
@@ -124,7 +124,7 @@ one topic each. Skip what earlier answers or the app tell. Never tick a question
 - [x] `git switch -c increment/06-lesbarkeit` from `main`. Commit this plan on it.
 - [x] `npx --yes github:lernapps/tooling#exp/compact-guidance update`, then `npm install`. It replaces the `lernapps-*` skills: reread
       the ones you use. Commit the update alone; fix its check findings before content.
-- [ ] Slice 1 Bedienung: Start mit Original; gleiche Höhe (ein Zeilenabstand für Original, Variante und Wählmodus); Hinweis unter den Text und in den Wählmodus; PDF-Modus nach Breite (nebeneinander ab ca. 1280 px, sonst Blätter, Breite messen); Fokus nach dem Umblättern; „Blatt x von 2“. Playthroughs und e2e anpassen. Check, Commit.
+- [x] Slice 1 Bedienung: Start mit Original; gleiche Höhe (ein Zeilenabstand für Original, Variante und Wählmodus); Hinweis unter den Text und in den Wählmodus; PDF als Blatt über die Rahmenbreite hinaus (bis 52 rem). Playthroughs und e2e anpassen. Check, Commit.
 - [ ] Slice 2 Schrift: Recursive zuschneiden und messen (Größe, Quota); in `public/` bündeln samt Lizenz; Einstellungen mit Speichern über den Wrapper; Meldungen de/en; arc42 und Skill `app-content` anpassen; Tests. Check, Commit.
 - [ ] The content guide describes the app as it is now: competencies, chapters, patterns, procedure for the next
       increment (`app-content-matches`). `grep -c "FILL IN" .agents/skills/app-content/SKILL.md` prints 0.

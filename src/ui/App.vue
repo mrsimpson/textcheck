@@ -1,8 +1,9 @@
 <script setup lang="ts">
 // The round: the goal line, the Original and the Variante (like two sheets, one on top of the other: a switch turns
-// from one to the other, so the eye cannot compare them side by side; only with the source PDF they stand side by side
-// on a wide screen, and on a narrow one a switch shows one of them), the words to mark, and after checking the result. It announces every change for screen readers and moves the
-// focus to the result and back to the words. The runtime gives it the core's state; what the learner does goes back
+// from one to the other, so the eye cannot compare them side by side; the source PDF is a sheet too, and may reach
+// beyond the narrow column to be wide enough to read), the words to mark, the keyboard hint and the buttons (both
+// below the sheets, so that the sheets are of the same height), and after checking the result. It announces every
+// change for screen readers and moves the focus to the result and back to the words. The runtime gives it the core's state; what the learner does goes back
 // as input. The only state of its own is which panel is shown.
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import { announce, moveFocus } from "@lernapps/tooling/a11y";
@@ -18,7 +19,7 @@ import { translatorOf } from "./messages.ts";
 const props = defineProps<{ state: State; lang: string }>();
 const emit = defineEmits<{ input: [input: Input] }>();
 const t = translatorOf(props.lang);
-const view = ref<"original" | "rendition">("rendition");
+const view = ref<"original" | "rendition">("original");
 const words = ref<InstanceType<typeof WordList> | null>(null);
 const choose = ref<InstanceType<typeof ChooseView> | null>(null);
 const root = ref<HTMLElement | null>(null);
@@ -156,7 +157,7 @@ const choiceNote = computed(() => {
       :lang="lang"
       @input="(input) => emit('input', input)"
     />
-    <div v-else class="switch" :class="{ 'narrow-only': sourceMode }" role="group" :aria-label="t('view')">
+    <div v-else class="switch" role="group" :aria-label="t('view')">
       <button type="button" :aria-pressed="view === 'original'" @click="view = 'original'">
         {{ sourceMode ? t("sourceTab") : t("original") }}
       </button>
@@ -164,7 +165,7 @@ const choiceNote = computed(() => {
         {{ t("renditionTab") }}
       </button>
     </div>
-    <div v-if="state.mode !== 'choose'" class="panels" :class="{ sheets: !sourceMode }" :data-view="view">
+    <div v-if="state.mode !== 'choose'" class="panels sheets" :class="{ pdf: sourceMode }" :data-view="view">
       <section v-if="sourceMode" class="panel original pdf" aria-labelledby="original-heading">
         <h2 id="original-heading">{{ t("sourceHeading") }}</h2>
         <p v-if="pdfUrl !== null">
@@ -202,7 +203,6 @@ const choiceNote = computed(() => {
       <section class="panel rendition" aria-labelledby="rendition-heading">
         <h2 id="rendition-heading">{{ t("rendition") }}</h2>
         <h3 class="text-title">{{ state.title }}</h3>
-        <p v-if="!checking" id="words-hint" class="hint">{{ t("hint") }}</p>
         <WordList
           ref="words"
           :tokens="state.tokens"
@@ -214,16 +214,17 @@ const choiceNote = computed(() => {
           :lang="lang"
           @input="(input) => emit('input', input)"
         />
-        <div v-if="!checking" class="bar">
-          <span aria-hidden="true">{{ t("marked", { count: state.marked.length }) }}</span>
-          <span class="buttons">
-            <button type="button" @click="emit('input', { kind: 'action', name: 'clear' })">{{ t("clear") }}</button>
-            <button type="button" class="primary" @click="emit('input', { kind: 'action', name: 'check' })">
-              {{ t("check") }}
-            </button>
-          </span>
-        </div>
       </section>
+    </div>
+    <p v-if="state.mode !== 'choose' && !checking" id="words-hint" class="hint">{{ t("hint") }}</p>
+    <div v-if="state.mode !== 'choose' && !checking" class="bar">
+      <span aria-hidden="true">{{ t("marked", { count: state.marked.length }) }}</span>
+      <span class="buttons">
+        <button type="button" @click="emit('input', { kind: 'action', name: 'clear' })">{{ t("clear") }}</button>
+        <button type="button" class="primary" @click="emit('input', { kind: 'action', name: 'check' })">
+          {{ t("check") }}
+        </button>
+      </span>
     </div>
     <ResultView
       v-if="state.result !== null"
@@ -255,7 +256,16 @@ const choiceNote = computed(() => {
   --tc-false-bg: #f3e8ff;
   --tc-tol: #1e3a8a;
   --tc-tol-bg: #dbeafe;
+  /* one size and one line height for every text, so that the sheets are of the same height */
+  --tc-font-size: 1.125rem;
+  --tc-line-height: 2.1;
   color: var(--tc-ink);
+}
+
+@media (pointer: coarse) {
+  .textcheck {
+    --tc-line-height: 2.45; /* a word is at least 2.75 rem high with a finger */
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -327,10 +337,6 @@ const choiceNote = computed(() => {
   margin-bottom: 0.75rem;
 }
 
-.switch.narrow-only {
-  display: none;
-}
-
 .switch button {
   flex: 1;
   min-height: 2.75rem;
@@ -349,17 +355,19 @@ const choiceNote = computed(() => {
   color: var(--tc-on-accent);
 }
 
-.panels {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
 /* two sheets: only one shows, the other is not in the page at all (no display of both, no focus in the hidden one);
    the sheet that comes up turns over from its left edge */
-.panels.sheets {
+.panels {
+  display: grid;
   grid-template-columns: 1fr;
   perspective: 1600px;
+}
+
+/* The source PDF is an A4 page (about 794 px at 100 %) and needs about 700 px to read. The column of the page is 704 px
+   at most, so this sheet reaches out of it, up to 52 rem, centred on the column; on a narrow screen it is as wide as it. */
+.panels.pdf {
+  width: min(52rem, calc(100vw - 2rem));
+  margin-left: calc(50% - min(26rem, calc(50vw - 1rem)));
 }
 
 .panels.sheets[data-view="rendition"] > .original,
@@ -392,21 +400,6 @@ const choiceNote = computed(() => {
   }
 }
 
-@media (max-width: 720px) {
-  .switch.narrow-only {
-    display: flex;
-  }
-
-  .panels {
-    grid-template-columns: 1fr;
-  }
-
-  .panels[data-view="rendition"] > .original,
-  .panels[data-view="original"] > .rendition {
-    display: none;
-  }
-}
-
 .panel {
   padding: 0.75rem 1rem;
   border: 1px solid var(--tc-line);
@@ -427,8 +420,8 @@ h2 {
 
 .original p {
   margin: 0 0 0.6em;
-  font-size: 1.125rem;
-  line-height: 1.8;
+  font-size: var(--tc-font-size);
+  line-height: var(--tc-line-height);
 }
 
 .open {
@@ -444,8 +437,8 @@ h2 {
 
 .pdf iframe {
   width: 100%;
-  height: 70vh;
-  min-height: 28rem;
+  height: 80vh;
+  min-height: 32rem;
   border: 1px solid var(--tc-line);
   border-radius: 8px;
   background: #ffffff;

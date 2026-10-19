@@ -62,7 +62,7 @@ Four chapters, one per stage of the school years; version 1 builds chapter 2.
 - A **level** (`src/data/levels.json`): `route`, `grades`, allowed `classes` and `bases`, `errors` per round,
   `announceClasses` (whether the goal line names the error classes in the round).
 - The learner sees: the goal line, the Original and the Variante (like two sheets, one on top of the other, with a switch and a short page-turn animation, so that the eye cannot
-  compare them side by side; the mode `source` keeps them side by side on a wide screen, a switch on a phone), the marked words,
+  compare them side by side; the round starts with the Original; the mode `source` lays the PDF out as a sheet too, wide enough to read, up to 52 rem), the marked words,
   then the result grouped by error class (found, missed, wrongly marked, within tolerance) with the explanation.
 - Length of a pack: the excerpt has 6 to 10 sentences. Guide values per grade pair are fixed after the pilot.
 

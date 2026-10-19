@@ -93,6 +93,7 @@ defineExpose({ focus: () => words.value?.[0]?.focus() });
         </button>
       </section>
     </div>
+    <p v-if="!checking && state.choice !== null" id="words-hint" class="hint">{{ t("hint") }}</p>
     <div v-if="!checking" class="bar">
       <span aria-hidden="true">{{
         state.choice === null ? t("pickFirst") : t("marked", { count: state.marked.length })
@@ -222,8 +223,15 @@ h2 {
 
 .plain {
   margin: 0 0 0.6em;
-  font-size: 1.125rem;
-  line-height: 1.8;
+  font-size: var(--tc-font-size);
+  line-height: var(--tc-line-height);
+}
+
+.hint {
+  margin: 0.75rem 0 0;
+  color: var(--tc-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
 .bar {
