@@ -187,6 +187,13 @@
     {
       "sentence": [
         {
+          "slot": "i5"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        {
           "slot": "s11"
         },
         " blieb im Kommandomodul des Raumschiffs ",
@@ -282,11 +289,11 @@
     },
     {
       "sentence": [
-        "Das Bergungsschiff Hornet war rund ",
+        "Das Bergungsschiff Hornet lag rund ",
         {
           "slot": "s20"
         },
-        " entfernt."
+        " von der Columbia entfernt."
       ],
       "evidence": {
         "quote": "rund 25 km vom Bergungsschiff Hornet entfernt"
@@ -370,13 +377,6 @@
       "sentence": [
         {
           "slot": "i6"
-        }
-      ]
-    },
-    {
-      "sentence": [
-        {
-          "slot": "i5"
         }
       ]
     }
@@ -1063,11 +1063,11 @@
           "evidence": "Am 4. Oktober 1957 startete die Sowjetunion Sputnik 1, den ersten künstlichen Satelliten."
         },
         {
-          "text": "Das Raumschiff Columbia hatte den schönsten Namen aller Raumschiffe.",
+          "text": "Sputnik 1 war der bedeutendste Satellit aller Zeiten.",
           "errorClass": "opinion_as_fact",
           "basis": "text",
           "conspicuousness": 2,
-          "explanation": "Das ist eine Meinung. „Den schönsten Namen“ lässt sich nicht messen. Im Original steht nur, wie das Raumschiff hieß."
+          "explanation": "Das ist eine Meinung. „Der bedeutendste“ lässt sich nicht messen. Im Original steht nur, dass Sputnik 1 der erste künstliche Satellit war."
         }
       ]
     },
@@ -1092,6 +1092,7 @@
     "Der Auszug umfasst die Einleitung (zehn Sätze) und die ersten beiden Sätze des Abschnitts „Hintergrund“; der Satz „Dieser Artikel behandelt die Raumfahrtmission …“ und die Bildunterschriften sind nicht Teil des Auszugs.",
     "Der eingefügte Satz „Nur wenige Menschen sahen die Fernsehübertragung der Mondlandung.“ widerspricht dem richtigen Satz zur Zahl der Zuschauer; „Collins landete zusammen mit Armstrong auf dem Mond.“ widerspricht dem richtigen Satz zu Collins im Kommandomodul.",
     "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt; die Zahlen und Namen folgen dem Artikel, nicht anderen Quellen. Die falschen Varianten sind absichtlich verändert und stehen nicht in der Quelle.",
-    "Die Quelle liegt als PDF unter public/quellen/de/apollo-11.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+    "Die Quelle liegt als PDF unter public/quellen/de/apollo-11.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
+    "Überarbeitung Klasse 9–10: Der Auszug beginnt bereits mit den ersten beiden Sätzen der Einleitung des Artikels (die Treffer-Meldung des Skripts kommt von der Infobox vor dem Text) und bleibt unverändert. Jahre, Namen und Zahlen aller Auszugssätze mit dem Artikel im PDF abgeglichen. In der Variante: Satz zur Hornet verständlicher gefasst, zwei eingefügte Sätze an passendere Stellen gesetzt, die Meinung zu Sputnik neu gefasst."
   ]
 }
