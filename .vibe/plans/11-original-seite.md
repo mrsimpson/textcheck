@@ -85,14 +85,14 @@ Reine Bedienung, kein neuer Inhalt, keine neue Kompetenz. Betroffen: `src/ui/App
 
 ### Tasks
 
-- [ ] Push the branch and open a pull request to `main` in the app's repo. The pre-push hook runs the heavy checks;
+- [x] Push the branch and open a pull request to `main` in the app's repo. The pre-push hook runs the heavy checks;
       fix what fails. See the checks of the pull request through to green. When a GitHub step fails or is refused,
       load the skill `lernapps-github`.
-- [ ] **Checkpoint:** publish. Der Ersteller hat PR, CI und Merge im Voraus beauftragt: Merge, sobald CI grün ist.
-- [ ] Merge the pull request into `main`. Watch the run of the workflow `Pages` for that commit until it ends.
+- [x] **Checkpoint:** publish. Der Ersteller hat PR, CI und Merge im Voraus beauftragt: Merge, sobald CI grün ist.
+- [x] Merge the pull request into `main`. Watch the run of the workflow `Pages` for that commit until it ends.
 - [ ] Open the address the job `deploy` printed and confirm that it shows the new behaviour.
-- [ ] Der Eintrag im Katalog ändert sich nicht: Listing entfällt.
-- [ ] Fill the retrospective.
+- [x] Der Eintrag im Katalog ändert sich nicht: Listing entfällt.
+- [x] Fill the retrospective.
 - [ ] Commit this plan on `main` and push it.
 
 ### Completed
@@ -101,6 +101,14 @@ Reine Bedienung, kein neuer Inhalt, keine neue Kompetenz. Betroffen: `src/ui/App
 
 ### Phases reached
 
+Commit; Merge in `main` (Pull Request 14) nach grüner CI, Veröffentlichung im Voraus vom Ersteller beauftragt.
+
 ### Creator turns after the plan
 
+2: Auftrag der Änderung; Bitte, den Plan nachzuziehen und PR, CI und Merge zu machen. Der Plan wurde erst nach der Änderung geschrieben.
+
 ### Where I had to guess
+
+- „Fehler-Finden“ als Modus `mark` gedeutet (die Modi `source` und `choose` haben keinen Umschalter).
+- Branch der Umgebung statt `increment/11-original-seite` genutzt.
+- Tooling-Update ausgelassen, da reine Darstellungsänderung.
