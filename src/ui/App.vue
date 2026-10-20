@@ -237,7 +237,11 @@ watch(
         // the heading is the top of what is shown, the button for the next round stands right below it (and the praise)
         heading.scrollIntoView({ block: "start" });
       }
-    } else if (before === "result") (words.value ?? choose.value)?.focus();
+    } else if (before === "result") {
+      // a new round in the mode "Fehler markieren (mit Original)" starts on the Original's page
+      if (props.state.mode === "mark") view.value = "original";
+      (words.value ?? choose.value)?.focus();
+    }
   },
 );
 
