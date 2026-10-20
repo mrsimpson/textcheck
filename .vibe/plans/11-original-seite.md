@@ -90,7 +90,7 @@ Reine Bedienung, kein neuer Inhalt, keine neue Kompetenz. Betroffen: `src/ui/App
       load the skill `lernapps-github`.
 - [x] **Checkpoint:** publish. Der Ersteller hat PR, CI und Merge im Voraus beauftragt: Merge, sobald CI grün ist.
 - [x] Merge the pull request into `main`. Watch the run of the workflow `Pages` for that commit until it ends.
-- [ ] Open the address the job `deploy` printed and confirm that it shows the new behaviour.
+- [x] Open the address the job `deploy` printed and confirm that it shows the new behaviour.
 - [x] Der Eintrag im Katalog ändert sich nicht: Listing entfällt.
 - [x] Fill the retrospective.
 - [ ] Commit this plan on `main` and push it.
