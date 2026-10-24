@@ -88,7 +88,7 @@
   "stageDone": "geschafft",
   "stageReset": "Häkchen löschen",
   "cardText": "Text",
-  "cardTextValue": "{words} Wörter in {sentences} Sätzen, der längste Satz hat {longest} Wörter",
+  "cardTextValue": "etwa {wordsFrom} bis {wordsTo} Wörter in {sentencesFrom} bis {sentencesTo} Sätzen",
   "cardErrors": "Fehler",
   "cardErrorsValue": "{count} je Runde",
   "cardClasses": "Fehlerarten",

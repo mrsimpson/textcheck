@@ -116,14 +116,13 @@ export function packsFor(language: string, kind: Kind, stage: number): TextPack[
   return PACKS.filter((pack) => pack.language === language && fits(pack, kind, stage));
 }
 
-const mean = (values: number[]): number =>
-  values.length === 0 ? 0 : Math.round(values.reduce((sum, value) => sum + value, 0) / values.length);
-
 /** The cards of the stages of a kind of exercise, for the texts of a language. */
 export function cardsOf(kind: Kind, language: string): StageCard[] {
   return STAGES[kind].map((rules, index) => {
     const stage = index + 1;
     const lengths = packsFor(language, kind, stage).map(lengthOf);
+    const words = lengths.map((length) => length.words);
+    const sentences = lengths.map((length) => length.sentences);
     return {
       stage,
       route: roundRoute(kind, stage),
@@ -134,9 +133,10 @@ export function cardsOf(kind: Kind, language: string): StageCard[] {
       tip: rules.tip,
       material: rules.material,
       texts: lengths.length,
-      words: mean(lengths.map((length) => length.words)),
-      sentences: mean(lengths.map((length) => length.sentences)),
-      longest: mean(lengths.map((length) => length.longest)),
+      wordsFrom: Math.floor(Math.min(...words) / 10) * 10,
+      wordsTo: Math.ceil(Math.max(...words) / 10) * 10,
+      sentencesFrom: Math.min(...sentences),
+      sentencesTo: Math.max(...sentences),
     };
   });
 }

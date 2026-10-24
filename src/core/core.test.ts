@@ -67,15 +67,21 @@ describe("the choice and the stages", () => {
           expect(card.errors).toBe(rules.errors);
           expect([...card.before, ...card.adds]).toEqual(classesOf(kind, card.stage));
           expect(card.texts, `${language} ${kind} ${card.stage}`).toBeGreaterThanOrEqual(2);
-          expect(card.words).toBeGreaterThan(0);
+          expect(card.wordsFrom).toBeGreaterThan(0);
+          expect(card.wordsTo).toBeGreaterThanOrEqual(card.wordsFrom);
+          expect(card.sentencesTo).toBeGreaterThanOrEqual(card.sentencesFrom);
         }
       }
   });
 
   it("get longer texts with every stage", () => {
     for (const kind of KINDS) {
-      const words = start(1, kind).cards.map((card) => card.words);
+      const cards = start(1, kind).cards;
+      const words = cards.map((card) => card.wordsTo);
       expect(words).toEqual([...words].sort((a, b) => a - b));
+      // the ranges of two stages may touch at the limit, never cross
+      for (const [index, card] of cards.entries())
+        expect(card.wordsFrom).toBeGreaterThanOrEqual((cards[index - 1]?.wordsTo ?? 0) - 10);
     }
   });
 });

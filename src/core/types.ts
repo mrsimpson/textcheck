@@ -95,11 +95,12 @@ export interface StageCard {
   announce: boolean;
   tip: Tip;
   material: Material;
-  /** Texts of this stage in the page's language, and their average length in words, sentences and the longest sentence. */
+  /** Texts of this stage in the page's language, and how long they are: the range in words (rounded out to tens) and in sentences. */
   texts: number;
-  words: number;
-  sentences: number;
-  longest: number;
+  wordsFrom: number;
+  wordsTo: number;
+  sentencesFrom: number;
+  sentencesTo: number;
 }
 
 export interface ErrorClass {

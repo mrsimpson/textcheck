@@ -88,7 +88,7 @@
   "stageDone": "done",
   "stageReset": "Clear ticks",
   "cardText": "Text",
-  "cardTextValue": "{words} words in {sentences} sentences, the longest sentence has {longest} words",
+  "cardTextValue": "about {wordsFrom} to {wordsTo} words in {sentencesFrom} to {sentencesTo} sentences",
   "cardErrors": "Errors",
   "cardErrorsValue": "{count} per round",
   "cardClasses": "Kinds of error",

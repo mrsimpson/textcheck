@@ -47,7 +47,16 @@ const anyPassed = computed(() => props.state.cards.some((card) => passed.value.i
       </button>
       <dl>
         <dt>{{ t("cardText") }}</dt>
-        <dd>{{ t("cardTextValue", { words: card.words, sentences: card.sentences, longest: card.longest }) }}</dd>
+        <dd>
+          {{
+            t("cardTextValue", {
+              wordsFrom: card.wordsFrom,
+              wordsTo: card.wordsTo,
+              sentencesFrom: card.sentencesFrom,
+              sentencesTo: card.sentencesTo,
+            })
+          }}
+        </dd>
         <dt>{{ t("cardErrors") }}</dt>
         <dd>{{ t("cardErrorsValue", { count: card.errors }) }}</dd>
         <dt>{{ t("cardClasses") }}</dt>

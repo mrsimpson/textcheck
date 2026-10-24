@@ -35,7 +35,7 @@ test.describe("The way through the app: exercise, stage, tip, round", () => {
     await expect(cards.nth(2).locator(".chip.added")).toContainText("Widerspruch im Text");
     // the older kinds of error stay on the card, so a stage shows all it holds
     await expect(cards.nth(2).locator(".chip")).toHaveCount(5);
-    await expect(cards.nth(0)).toContainText("Wörter in");
+    await expect(cards.nth(0)).toContainText(/etwa \d+ bis \d+ Wörter in \d+ bis \d+ Sätzen/);
     await expect(cards.nth(2)).toContainText("Die Aufgabe nennt die Fehlerarten nicht.");
     await expect(cards.nth(0)).toContainText("Ein Lesetipp vorab.");
   });
