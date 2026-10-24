@@ -4,7 +4,7 @@
 # archetype: the kind of app, as in the app's first plan: set it when you start this plan. It never changes.
 archetype: interactive
 # phase: the phase you work in now: explore, plan, code or commit. Change it when you enter the next phase.
-phase: plan
+phase: code
 # prePushFailures: failed runs of the pre-push hook during this increment. The hook counts them. Never change it.
 prePushFailures: 0
 # failedChecks: the rules that failed in a run of lernapps check (hooks included), with the number of runs. The check
@@ -47,15 +47,20 @@ andere Art des gründlichen Lesens und sagt das auch. Die Auswahl nach Klassen u
 - Nur Didaktik und Bedienung. Die Texte (zu lang, zu schwer, vor allem ab Klasse 7) bleiben, wie sie sind; sie werden in
   einem eigenen Schritt gekürzt und vereinfacht. (Ersteller: „erst einmal auf die Didaktik und die Benutzerführung
   konzentrieren“)
-- Routen: `text-1`, `text-2`, `text-3`, `quelle-1`, `quelle-2`, `quelle-3`; die Auswahlseiten `text` und `quelle`. Alte
-  Adressen (`klasse-…`) führen zur ersten Auswahl. (guess)
+- Keine Abwärtskompatibilität, radikal aufräumen, Änderungen an der Architektur sind gewollt. (Ersteller) Daraus folgt:
+  alte Routen (`klasse-…`), `levels.json`, Modus `choose`, PDF-Einbettung, Klassen in Paketen und Fehlerarten,
+  Nachrichten und Tests der alten Oberfläche fallen ersatzlos weg; die Pakete liegen künftig ohne Klassenverzeichnis
+  unter `src/data/packs/<Sprache>/`, das Feld `grades` entfällt aus Schema und Paketen; veraltete Skizzen in
+  `.vibe/mockups/` werden gelöscht (die Pläne bleiben als Protokoll). Was die Schriftwahl auf dem Gerät speichert, bleibt.
+- Routen: `text-1`, `text-2`, `text-3`, `quelle-1`, `quelle-2`, `quelle-3`; die Auswahlseiten `text` und `quelle`.
+  Eine unbekannte Adresse zeigt die erste Auswahl.
 - Das PDF bleibt in `public/quellen/` und wird in Stufe 3 der Quelle als zweiter, kleiner Link angeboten („Artikel
   nicht erreichbar oder anders? Quelle als PDF“). (guess)
 - „Geschafft“ je Stufe (alle Fehler gefunden, höchstens ein Wort zu viel) wird auf dem Gerät gemerkt, mit
   `createStorage`; der Eintrag wechselt dafür von `storage: none` zu `storage: device`. Ohne Speicher läuft alles weiter. (guess)
 - Welche Stufe ein Text bekommt, wird aus seiner gemessenen Länge (Sätze, Wörter je Satz) und aus den Fehlerstellen
   berechnet, die er für die Fehlerarten der Stufe hat. Ein Text, dem Stellen fehlen, wird für diese Stufe nicht gewählt.
-  Die Verzeichnisse `packs/<Sprache>/<Klassen>/` bleiben, wie sie sind. (guess)
+  Die Texte liegen ohne Klassenverzeichnis unter `packs/<Sprache>/`.
 - „Widerspruch im Text“ gehört zu „Fehler im Text finden“, Stufe 3: man sieht ihn ohne Vorlage, er braucht aber das
   Verständnis des ganzen Textes. Stellen, die als Widerspruch eingestuft sind, aber nur mit der Quelle erkennbar sind
   (etwa ein falsches Datum), wandern zu den Quellen-Fehlerarten. (guess)
@@ -128,14 +133,14 @@ andere Art des gründlichen Lesens und sagt das auch. Die Auswahl nach Klassen u
       Scheiben (siehe Code).
 - [x] Write the content method under "Content method": which patterns, figures and components of the guide each
       slice uses, and anything new, with the reason the guide's patterns do not fit.
-- [ ] Show the creator the goal, the new competencies by chapter and the slices, short. Explain in plain words what
+- [x] Show the creator the goal, the new competencies by chapter and the slices, short. Explain in plain words what
       learners will see and do, and anything new in how the content is made.
-- [ ] For every new component and interactive exercise, show a sketch: a static SVG or image of what learners see,
+- [x] For every new component and interactive exercise, show a sketch: a static SVG or image of what learners see,
       or the steps (what they do, what they see after each). A description in words alone is not enough. Der Mock
       `.vibe/mockups/lernweg-mock.html` ist der Entwurf, den der Ersteller schon ausprobiert hat.
-- [ ] **Checkpoint:** confirm the plan and the content method. Stop and wait for the creator. Change the plan if they
-      ask, then ask again.
-- [ ] Set `phase: code`.
+- [x] **Checkpoint:** confirm the plan and the content method. Der Ersteller hat auf die Vorstellung des Plans mit der
+      Ergänzung „keine Abwärtskompatibilität, radikal aufräumen“ geantwortet und die Umsetzung damit beauftragt.
+- [x] Set `phase: code`.
 
 ### Content method
 
@@ -159,7 +164,7 @@ andere Art des gründlichen Lesens und sagt das auch. Die Auswahl nach Klassen u
 
 ### Tasks
 
-- [ ] Switch to a new branch from `main`: `git switch -c increment/12-lernweg`. Commit this plan and the mock on it.
+- [x] Switch to a new branch from `main`: `git switch -c increment/12-lernweg`. Commit this plan and the mock on it.
 - [ ] Update the app to the newest tooling and runtime: `npx --yes github:lernapps/tooling#main update`, then
       `npm install`. It also replaces the `lernapps-*` skills: read the ones you use again. Commit the update on its
       own, and fix what its checks report before you add content.
