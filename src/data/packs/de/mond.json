@@ -232,10 +232,11 @@
         },
         {
           "text": "John F. Kenedy",
-          "errorClass": "slip",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 3,
-          "explanation": "Im Namen fehlt ein „n“: Kennedy mit zwei „n“."
+          "explanation": "In der Quelle steht: „Im Jahr 1961 sagte der amerikanische Präsident John F. Kennedy, dass die USA einen Mann zum Mond schicken sollen.“. Richtig geschrieben ist „John F. Kennedy“, nicht „John F. Kenedy“.",
+          "evidence": "Im Jahr 1961 sagte der amerikanische Präsident John F. Kennedy, dass die USA einen Mann zum Mond schicken sollen."
         }
       ]
     },
@@ -307,10 +308,11 @@
         },
         {
           "text": "Neil Amstrong",
-          "errorClass": "slip",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 3,
-          "explanation": "Im Namen fehlt ein „r“: Armstrong."
+          "explanation": "In der Quelle steht: „Neil Armstrong hieß der Astronaut, der als erster den Mond betreten hat.“. Richtig geschrieben ist „Neil Armstrong“, nicht „Neil Amstrong“.",
+          "evidence": "Neil Armstrong hieß der Astronaut, der als erster den Mond betreten hat."
         }
       ]
     },
@@ -331,10 +333,11 @@
       "variants": [
         {
           "text": "Edwin Alrdin",
-          "errorClass": "slip",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 3,
-          "explanation": "Im Namen sind zwei Buchstaben vertauscht: Aldrin."
+          "explanation": "In der Quelle steht: „Er und Edwin Aldrin waren knapp einen Tag auf der Mondoberfläche und sammelten auch einige Mondsteine auf.“. Richtig geschrieben ist „Edwin Aldrin“, nicht „Edwin Alrdin“.",
+          "evidence": "Er und Edwin Aldrin waren knapp einen Tag auf der Mondoberfläche und sammelten auch einige Mondsteine auf."
         }
       ]
     },

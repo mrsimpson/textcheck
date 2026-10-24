@@ -286,10 +286,11 @@
         },
         {
           "text": "Normanen",
-          "errorClass": "spelling_rule",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 2,
-          "explanation": "Das Wort kommt von „Norden“ und „Mann“. Darum schreibt man „nn“: Normannen."
+          "explanation": "In der Quelle steht: „In anderen Ländern hat man die Wikinger auch „Normannen“ genannt, also Männer aus dem Norden.“. Richtig geschrieben ist „Normannen“, nicht „Normanen“.",
+          "evidence": "In anderen Ländern hat man die Wikinger auch „Normannen“ genannt, also Männer aus dem Norden."
         }
       ]
     },
@@ -568,10 +569,11 @@
         },
         {
           "text": "Normandi",
-          "errorClass": "slip",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 3,
-          "explanation": "Hier fehlt ein Buchstabe: Normandie. Solche Fehler passieren schnell beim Schreiben."
+          "explanation": "In der Quelle steht: „Eine Gegend im Norden von Frankreich heißt nach den früheren Einwanderern heute Normandie.“. Richtig geschrieben ist „Normandie“, nicht „Normandi“.",
+          "evidence": "Eine Gegend im Norden von Frankreich heißt nach den früheren Einwanderern heute Normandie."
         }
       ]
     },

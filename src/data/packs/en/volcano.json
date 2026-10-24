@@ -423,10 +423,11 @@
         },
         {
           "text": "Mount Rainer",
-          "errorClass": "slip",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 3,
-          "explanation": "A letter is missing: \"Rainier\"."
+          "explanation": "The source says: \"Mount Rainier in the United States is considered dormant.\" The correct spelling is \"Mount Rainier\", not \"Mount Rainer\".",
+          "evidence": "Mount Rainier in the United States is considered dormant."
         }
       ]
     },

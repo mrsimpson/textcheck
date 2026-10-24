@@ -675,10 +675,11 @@
         },
         {
           "text": "Kasel",
-          "errorClass": "slip",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 2,
-          "explanation": "Hier fehlt ein „s“: Kassel."
+          "explanation": "In der Quelle steht: „mit dem er auf der Fulda von Kassel bis nach Münden fuhr“. Richtig geschrieben ist „Kassel“, nicht „Kasel“.",
+          "evidence": "mit dem er auf der Fulda von Kassel bis nach Münden fuhr"
         }
       ]
     },

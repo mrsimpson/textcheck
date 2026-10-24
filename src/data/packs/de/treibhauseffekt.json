@@ -391,10 +391,11 @@
         },
         {
           "text": "Fournier",
-          "errorClass": "slip",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 3,
-          "explanation": "Der Name ist falsch geschrieben: Joseph Fourier."
+          "explanation": "In der Quelle steht: „Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt“. Richtig geschrieben ist „Fourier“, nicht „Fournier“.",
+          "evidence": "Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt"
         }
       ]
     },
@@ -818,10 +819,11 @@
         },
         {
           "text": "Hawai.",
-          "errorClass": "spelling_rule",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 3,
-          "explanation": "Hier fehlt ein „i“: Hawaii schreibt man mit zwei „i“ am Ende."
+          "explanation": "In der Quelle steht: „die bekannteste befindet sich auf dem Mauna Loa auf Hawaii“. Richtig geschrieben ist „Hawaii“, nicht „Hawai“.",
+          "evidence": "die bekannteste befindet sich auf dem Mauna Loa auf Hawaii"
         }
       ]
     },

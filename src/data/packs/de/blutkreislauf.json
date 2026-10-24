@@ -529,10 +529,11 @@
         },
         {
           "text": "Kappilaren",
-          "errorClass": "spelling_rule",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 2,
-          "explanation": "Das Wort hat nur ein „p“, aber zwei „l“: Kapillaren."
+          "explanation": "In der Quelle steht: „Bei Tieren mit einem geschlossenen Kreislaufsystem werden Arterien zuerst zu Arteriolen und diese zu Kapillaren, in welchen der größte Teil des Stoffaustausches mit den Geweben stattfindet.“. Richtig geschrieben ist „Kapillaren“, nicht „Kappilaren“.",
+          "evidence": "Bei Tieren mit einem geschlossenen Kreislaufsystem werden Arterien zuerst zu Arteriolen und diese zu Kapillaren, in welchen der größte Teil des Stoffaustausches mit den Geweben stattfindet."
         }
       ]
     },
@@ -578,10 +579,11 @@
         },
         {
           "text": "Hämolymfe",
-          "errorClass": "spelling_rule",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 2,
-          "explanation": "Das Wort wird mit „ph“ geschrieben (aus dem Griechischen): Hämolymphe."
+          "explanation": "In der Quelle steht: „Bei Tieren mit einem offenen Kreislaufsystem ergießt sich die Flüssigkeit, die hier nicht Blut, sondern Hämolymphe genannt wird“. Richtig geschrieben ist „Hämolymphe“, nicht „Hämolymfe“.",
+          "evidence": "Bei Tieren mit einem offenen Kreislaufsystem ergießt sich die Flüssigkeit, die hier nicht Blut, sondern Hämolymphe genannt wird"
         }
       ]
     },

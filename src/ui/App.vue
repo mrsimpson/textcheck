@@ -25,7 +25,6 @@ import { readingStyle } from "./reading.ts";
 const props = defineProps<{ state: State; lang: string }>();
 const emit = defineEmits<{ input: [input: Input] }>();
 const t = translatorOf(props.lang);
-const round = ref<InstanceType<typeof RoundView> | null>(null);
 const root = ref<HTMLElement | null>(null);
 
 // whether the learner has moved by now: the page that opens with the address takes no focus, a page the learner opens does
@@ -146,38 +145,34 @@ watch(
   },
 );
 
-// the focus: after checking to the result's heading, to the heading of a page that opens, back to the words after a new
-// round, and with the sheet that turns to what it shows
-watch(
-  [() => props.state.phase, () => props.state.route, () => props.state.seed],
-  async ([phase, route], [before, beforeRoute]) => {
-    if (!moved) return;
-    await nextTick();
-    if (phase === "result") {
-      const heading = root.value?.querySelector<HTMLElement>("#result-heading");
-      if (heading) {
-        moveFocus(heading);
-        // the heading is the top of what is shown, what to do next stands right below it (and the praise)
-        heading.scrollIntoView({ block: "start" });
-      }
-    } else if (before === "result" && route === beforeRoute) {
-      round.value?.focusWords();
-    } else {
-      const heading = root.value?.querySelector<HTMLElement>("#page-heading");
-      if (heading) moveFocus(heading);
+// the focus and the scroll: after checking to the result's heading; a page that opens, a new round and a sheet that turns
+// start at the top of the exercise, with the focus on the heading of what shows (never on a word: a word in focus is
+// marked as the one the keyboard is on, and focusing it scrolls down to it)
+/** Shows the beginning of the exercise and puts the focus on a heading there. */
+function toStart(heading: string): void {
+  root.value?.querySelector<HTMLElement>(heading)?.focus({ preventScroll: true });
+  root.value?.scrollIntoView({ block: "start" });
+}
+watch([() => props.state.phase, () => props.state.route, () => props.state.seed], async ([phase]) => {
+  if (!moved) return;
+  await nextTick();
+  if (phase === "result") {
+    const heading = root.value?.querySelector<HTMLElement>("#result-heading");
+    if (heading) {
+      moveFocus(heading);
+      // the heading is the top of what is shown, what to do next stands right below it (and the praise)
+      heading.scrollIntoView({ block: "start" });
     }
-  },
-);
+  } else {
+    toStart("#page-heading");
+  }
+});
 watch(
   () => props.state.view,
   async (view) => {
     await nextTick();
     if (props.state.last !== "view") return;
-    if (view === "rendition") round.value?.focusWords();
-    else {
-      const heading = root.value?.querySelector<HTMLElement>("#sheet-source");
-      if (heading) moveFocus(heading);
-    }
+    toStart(view === "rendition" ? "#sheet-words" : "#sheet-source");
   },
 );
 </script>
@@ -193,7 +188,7 @@ watch(
       @input="onInput"
       @open="(route) => openRound(route)"
     />
-    <RoundView v-else ref="round" :state="state" :lang="lang" @input="onInput" @open="(route) => openRound(route)" />
+    <RoundView v-else :state="state" :lang="lang" @input="onInput" @open="(route) => openRound(route)" />
   </section>
 </template>
 

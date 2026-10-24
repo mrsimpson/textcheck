@@ -19,7 +19,6 @@ import { questionOf, tipLines } from "./reading-tip.ts";
 const props = defineProps<{ state: State; lang: string }>();
 const emit = defineEmits<{ input: [input: Input]; open: [route: string] }>();
 const t = translatorOf(props.lang);
-const words = ref<InstanceType<typeof WordList> | null>(null);
 const tipOpen = ref(false);
 
 const kind = computed(() => props.state.kind ?? "text");
@@ -43,8 +42,6 @@ const goal = computed(() => {
 const sheetLabel = computed(() => t(kind.value === "text" ? "sheetText" : "sheetRendition"));
 const say = (name: string, value?: string): void =>
   emit("input", { kind: "action", name, ...(value ? { value } : {}) });
-
-defineExpose({ focusWords: () => words.value?.focus() });
 
 /** The stage after this one, as the number its title shows. */
 const nextStage = computed(() => {
@@ -104,11 +101,10 @@ const nextStage = computed(() => {
       :class="{ turn: material === 'sheet' }"
       aria-labelledby="sheet-words"
     >
-      <h3 id="sheet-words" class="label">{{ sheetLabel }}</h3>
+      <h3 id="sheet-words" tabindex="-1" class="label">{{ sheetLabel }}</h3>
       <h3 class="text-title">{{ state.title }}</h3>
       <p v-if="kind === 'quelle'" class="note">{{ t("renditionNote") }}</p>
       <WordList
-        ref="words"
         :tokens="state.tokens"
         :marked="state.marked"
         :cursor="state.cursor"

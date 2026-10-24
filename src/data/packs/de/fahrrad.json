@@ -248,10 +248,11 @@
         },
         {
           "text": "Karlsrue",
-          "errorClass": "slip",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 3,
-          "explanation": "Im Namen fehlt ein „h“: Karlsruhe."
+          "explanation": "In der Quelle steht: „Erfinder der ersten Laufmaschine im Jahr 1817 war Karl Drais aus Karlsruhe.“. Richtig geschrieben ist „Karlsruhe“, nicht „Karlsrue“.",
+          "evidence": "Erfinder der ersten Laufmaschine im Jahr 1817 war Karl Drais aus Karlsruhe."
         }
       ]
     },

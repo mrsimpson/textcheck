@@ -386,10 +386,11 @@
         },
         {
           "text": "J. P. Morgen, Jr.",
-          "errorClass": "slip",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 2,
-          "explanation": "The name is spelled \"Morgan\", with an \"a\". A letter was changed."
+          "explanation": "The source says: \"One, in June 1922, was organized by US investment banker J. P. Morgan, Jr.\" The correct spelling is \"J. P. Morgan, Jr\", not \"J. P. Morgen, Jr\".",
+          "evidence": "One, in June 1922, was organized by US investment banker J. P. Morgan, Jr."
         }
       ]
     },

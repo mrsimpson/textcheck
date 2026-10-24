@@ -473,10 +473,11 @@
         },
         {
           "text": "Streptokoken",
-          "errorClass": "spelling_rule",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 3,
-          "explanation": "In „Kokken“ schreibt man ein doppeltes „k“: Streptokokken."
+          "explanation": "In der Quelle steht: „die mit einer tödlichen Dosis Streptokokken infiziert wurden“. Richtig geschrieben ist „Streptokokken“, nicht „Streptokoken“.",
+          "evidence": "die mit einer tödlichen Dosis Streptokokken infiziert wurden"
         }
       ]
     },

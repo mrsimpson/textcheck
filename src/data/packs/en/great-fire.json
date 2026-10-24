@@ -347,10 +347,11 @@
         },
         {
           "text": "Puding Lane",
-          "errorClass": "slip",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 1,
-          "explanation": "One \"d\" is missing: \"Pudding Lane\"."
+          "explanation": "The source says: \"The fire started in a bakery in Pudding Lane shortly after midnight on Sunday 2 September and spread rapidly.\" The correct spelling is \"Pudding Lane\", not \"Puding Lane\".",
+          "evidence": "The fire started in a bakery in Pudding Lane shortly after midnight on Sunday 2 September and spread rapidly."
         }
       ]
     },

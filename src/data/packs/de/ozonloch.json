@@ -429,10 +429,11 @@
         },
         {
           "text": "Alfred-Wegner-Instituts",
-          "errorClass": "slip",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 3,
-          "explanation": "Hier fehlt ein Buchstabe im Namen: Alfred-Wegener-Instituts."
+          "explanation": "In der Quelle steht: „Anfang 2020 nach einem Bericht des Alfred-Wegener-Instituts zum ersten Mal auch über der Arktis“. Richtig geschrieben ist „Alfred-Wegener-Instituts“, nicht „Alfred-Wegner-Instituts“.",
+          "evidence": "Anfang 2020 nach einem Bericht des Alfred-Wegener-Instituts zum ersten Mal auch über der Arktis"
         }
       ]
     },

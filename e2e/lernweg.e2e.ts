@@ -136,6 +136,38 @@ test.describe("The way through the app: exercise, stage, tip, round", () => {
     await expect.poll(async () => (await stateOf(page))["seed"]).toBe(424242);
   });
 
+  test("starts the next round at the top of the exercise, with the focus on its heading and on no word", async ({
+    page,
+  }) => {
+    const top = (): Promise<number> =>
+      page.locator(".textcheck").evaluate((element) => Math.round(element.getBoundingClientRect().top));
+    await openRound(page, "./app/?seed=1#text-1");
+    await page.getByRole("button", { name: "Prüfen" }).click();
+    await expect(page.locator("#result-heading")).toBeInViewport();
+    await page.getByRole("button", { name: "Noch eine Runde" }).click();
+    await expect.poll(async () => (await stateOf(page))["seed"]).toBe(2);
+    await expect.poll(top).toBeGreaterThanOrEqual(-1);
+    expect(await top()).toBeLessThanOrEqual(2);
+    await expect(page.locator("#page-heading")).toBeFocused();
+    await expect(page.locator(".words:focus")).toHaveCount(0);
+    await expect(page.locator("#sheet-words")).toBeInViewport();
+  });
+
+  test("starts a comparison with a source at the beginning of the source, also after another round", async ({
+    page,
+  }) => {
+    await openRound(page, "./app/?seed=1#quelle-1");
+    await page.getByRole("button", { name: "Weiter zur Wiedergabe" }).click();
+    await expect(page.locator("#sheet-words")).toBeFocused();
+    await page.getByRole("button", { name: "Prüfen" }).click();
+    await page.getByRole("button", { name: "Noch eine Runde" }).click();
+    await expect.poll(async () => (await stateOf(page))["seed"]).toBe(2);
+    expect(await stateOf(page)).toMatchObject({ view: "source" });
+    await expect(page.locator("#page-heading")).toBeFocused();
+    await expect(page.locator("#sheet-source")).toBeInViewport();
+    await expect(page.getByRole("button", { name: "Weiter zur Wiedergabe" })).toBeVisible();
+  });
+
   test("scrolls to what to do next after checking, above the explanations", async ({ page }) => {
     await openRound(page, "./app/?seed=1#text-1");
     await page.getByRole("button", { name: "Prüfen" }).click();

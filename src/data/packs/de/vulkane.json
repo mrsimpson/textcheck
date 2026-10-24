@@ -424,10 +424,11 @@
         },
         {
           "text": "Kilimanscharo",
-          "errorClass": "slip",
-          "basis": "text",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
           "conspicuousness": 3,
-          "explanation": "Hier fehlt ein Buchstabe: Kilimandscharo. Solche Fehler passieren schnell beim Schreiben."
+          "explanation": "In der Quelle steht: „Der höchste Berg Afrikas ist ebenfalls ein Vulkan, der Kilimandscharo.“. Richtig geschrieben ist „Kilimandscharo“, nicht „Kilimanscharo“.",
+          "evidence": "Der höchste Berg Afrikas ist ebenfalls ein Vulkan, der Kilimandscharo."
         }
       ]
     },
