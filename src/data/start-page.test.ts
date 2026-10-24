@@ -2,6 +2,7 @@ import { placeOf, ROUTES, STAGES, firstStageOf, KINDS } from "../core/stages.ts"
 import { parse } from "yaml";
 import { describe, expect, it } from "vitest";
 import appYaml from "../app.yaml?raw";
+import readme from "../../README.md?raw";
 import classes from "./error-classes.json" with { type: "json" };
 import de from "../messages/de.json" with { type: "json" };
 import en from "../messages/en.json" with { type: "json" };
@@ -11,53 +12,38 @@ type Text = Record<string, string>;
 interface Description {
   languages: string[];
   routes: { id: string; title: Text; description: Text }[];
-  sections: { id: string; text: Text }[];
 }
 
 const app = parse(appYaml) as Description;
 const messages: Record<string, Record<string, string>> = { de, en };
-/** How a line of the section "begruendung" names the status and the place of an error class, by language. */
-const LINES: Record<
-  string,
-  (
-    status: "documented" | "derived",
-    kind: string,
-    stage: number,
-    names: Record<string, string>,
-  ) => { status: string; place: string }
-> = {
-  de: (status, kind, stage, names) => ({
-    status: status === "documented" ? "belegt" : "abgeleitet",
-    place: `${names[`kind.${kind}`]}, Stufe ${stage}`,
-  }),
-  en: (status, kind, stage, names) => ({ status, place: `${names[`kind.${kind}`]}, stage ${stage}` }),
-};
+/** How a line of the README's list of the error classes names the status and the place of a class (German). */
+const line = (status: "documented" | "derived", kind: string, stage: number): { status: string; place: string } => ({
+  status: status === "documented" ? "belegt" : "abgeleitet",
+  place: `${de[`kind.${kind}` as keyof typeof de]}, Stufe ${stage}`,
+});
 
-describe.each(app.languages)("the start page in %s", (language) => {
-  const names = messages[language] ?? {};
-  const section = app.sections.find((entry) => entry.id === "begruendung")?.text[language] ?? "";
+describe("the README", () => {
+  const list = readme.slice(readme.indexOf("Die Fehlerarten:"), readme.indexOf("Was wir nicht belegen können:"));
 
   it("lists every error class with its status and the exercise and stage that adds it, as the data say", () => {
     for (const [id, info] of Object.entries(classes)) {
-      const name = names[`errorClass.${id}`];
-      expect(name, `a name for ${id} in src/messages/${language}.json`).toBeDefined();
+      const name = de[`errorClass.${id}` as keyof typeof de];
+      expect(name, `a name for ${id} in src/messages/de.json`).toBeDefined();
       const kind = KINDS.find((candidate) => firstStageOf(candidate, id) !== null) ?? "";
-      const { status, place } = LINES[language]?.(
+      const { status, place } = line(
         info.status as "documented" | "derived",
         kind,
         firstStageOf(kind as "text" | "quelle", id) ?? 0,
-        names,
-      ) ?? { status: "", place: "" };
-      const line = section.split("\n").find((row) => row.includes(`**${name}**`));
-      expect(line, `a line for ${name} in the section begruendung`).toBeDefined();
-      expect(line, `${name}: status and place`).toContain(`**, ${status}, ${place}:`);
+      );
+      const row = list.split("\n").find((entry) => entry.includes(`**${name}**`));
+      expect(row, `a line for ${name} in the README`).toBeDefined();
+      expect(row, `${name}: status and place`).toContain(`**, ${status}, ${place}:`);
     }
   });
 
   it("has no line for a class that does not exist", () => {
-    const marker = language === "de" ? ", Stufe " : ", stage ";
-    const lines = section.split("\n").filter((row) => row.startsWith("- **") && row.includes(marker));
-    expect(lines).toHaveLength(Object.keys(classes).length);
+    const rows = list.split("\n").filter((entry) => entry.startsWith("- **"));
+    expect(rows).toHaveLength(Object.keys(classes).length);
   });
 });
 

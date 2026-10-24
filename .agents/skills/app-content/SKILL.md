@@ -22,8 +22,7 @@ everything learners read is in the language of its pack: German and English.
   - Allgemeine Hochschulreife, Beschluss vom 18.10.2012, section 2.3 Lesen.
 - The page says "ab Klasse 3 bis zum Abitur" for whom the app is. Early stages put form first (spelling, punctuation),
   late stages content (claims, conclusions, opinions); this order, the length of the texts and the number of errors per
-  round are settings of the creator and the assistant, not findings of a source (the page "Wie diese Übung begründet ist"
-  says so).
+  round are settings of the creator and the assistant, not findings of a source (the README says so).
 - Stages (`src/data/stages.json`, the only place that says what a stage holds):
   - `text`: 1 spelling rule, slip; 2 adds punctuation, real word; 3 adds contradiction. Errors per round 3, 4, 5.
   - `quelle`: 1 number/name/date/place; 2 adds factual error, added claim, connective/negation, quantity/degree;
@@ -113,7 +112,7 @@ Add a competency to `src/app.yaml` when a stage or error class that practises it
   learners are addressed with "you". Never "summary", never a shaming word. The messages are in `src/messages/en.json`,
   complete in the keys and placeholders of `de.json` (a test compares them).
 - The result never shames: "Übersehen" and "Fälschlich markiert" describe, they do not judge.
-- Status words on the page "Wie diese Übung begründet ist": "belegt" (a source we read names it) and "abgeleitet" (our own
+- Status words in the README, section "Wie die Übung begründet ist": "belegt" (a source we read names it) and "abgeleitet" (our own
   inference); each line names the exercise and stage that adds the class (a test compares them with `stages.json`).
 - Names of the error classes live in `src/messages/de.json` under `errorClass.<id>`; the German names are those of
   plan 01 (section Fehlerklassen).
@@ -150,8 +149,9 @@ Add a competency to `src/app.yaml` when a stage or error class that practises it
 
 ## Sources
 
-- Research sources are listed in plan 01 (Methodische Quellen) and on the page "Wie diese Übung begründet ist"
-  (`src/app.yaml`, section `begruendung`). Verified by opening them and reading what is cited; the PISA framework was not
+- Research sources are listed in plan 01 (Methodische Quellen) and in the README (section "Wie die Übung begründet
+  ist"). The method is not on the app page and not in the catalog entry: the entry and the start page say compactly what the app
+  does, for teachers and pupils alike. Verified by opening them and reading what is cited; the PISA framework was not
   obtainable and is not cited.
 - A pack's source is opened and read completely before the pack is written. `source` holds title, URL (the fixed
   revision), revision, licence, licence URL, author list URL and `retrieved`; `verified: true` only when every evidence
@@ -183,11 +183,11 @@ To add a text pack:
 
 To add a stage or change what a stage holds: change `src/data/stages.json` (classes it adds, errors, tip, material, length
 limit), the matching `stageTitle.<n>`, `stageName.<n>` messages in German and English, the routes in `src/app.yaml`
-(`routes`), the line for every added class in the section `begruendung`, and run the tests: they compare routes, classes and
+(`routes`), the line for every added class in the README, and run the tests: they compare routes, classes and
 messages with the rules. Check which texts the stage gets (the card says how many).
 
 To add an error class: the entry in `src/data/error-classes.json` and the schema enum, its name `errorClass.<id>`, its tip
-`classTip.<id>` in both message files, the stage that adds it in `stages.json`, its line in `begruendung`, variants in the
+`classTip.<id>` in both message files, the stage that adds it in `stages.json`, its line in the README, variants in the
 packs.
 
 To add a language: all learner texts of `src/app.yaml` as maps `{ de: …, en: … }`, a complete `src/messages/<language>.json`,

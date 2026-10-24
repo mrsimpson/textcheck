@@ -68,6 +68,8 @@ andere Art des gründlichen Lesens und sagt das auch. Die Auswahl nach Klassen u
 
 ## Notes
 
+- Auf Wunsch des Erstellers nach der Umsetzung: Der Katalogeintrag und die Startseite sagen nur kompakt, was die App leistet (für Lehrkräfte und Lernende). Die methodische Herleitung (Fehlerarten mit Status und Quellen, was nicht belegt ist) steht im `README.md`; der Abschnitt „Wie diese Übung begründet ist“ ist aus `src/app.yaml` entfernt. Ein Test vergleicht die Liste im README mit `error-classes.json` und `stages.json`.
+
 - Beim Umsetzen gefunden: Die englischen Texte hatten für Stufe 2 und 3 knapp genug Plätze; die Paketprüfung verlangt zwei Texte je Sprache, Übung und Stufe und besteht. Im Text-Übungsteil gibt es pro Stufe wenig Plätze mit neuen Fehlerarten (Stufe 3: meist ein Widerspruch je Text, Stufe 2: Zeichensetzung und Fehler mit echten Wörtern in den langen Texten selten). Das ist ein Inhaltsthema für den späteren Schritt „Texte überarbeiten“, nicht für diesen.
 - Die Pakete 3 bis 6 haben je Text höchstens einen Widerspruch-Platz; sie wiederholen sich in Stufe 3 öfter als wünschenswert.
 - Nicht umgesetzt, bewusst für den Inhaltsschritt: Stellen der Art „Widerspruch im Text“, die man in Wahrheit nur mit der Quelle erkennt (etwa ein falsches Datum), wurden nicht zu den Fehlerarten der Quellen-Übung umgehängt; ihre Erklärungen sagen jetzt nur, was im Text selbst widerspricht.
@@ -186,7 +188,7 @@ andere Art des gründlichen Lesens und sagt das auch. Die Auswahl nach Klassen u
 - [x] **Scheibe 2, Auswahl und Stufenkarten.** Neue Ansichten in `src/ui/`: Wahl der Übungsart (zwei Karten) und
       Stufenkarten (Text: Sätze, Wörter je Satz, längster Satz, aus den Texten gemessen; Fehler je Runde; Fehlerarten mit
       „neu“; Hilfen aus den Regeln erzeugt), Lesetipp-Seite („So liest du hier“, ein Tipp als Satz). Auswahl nach Klassen
-      und Modus raus. `src/app.yaml`: Routen, Anleitung, Kompetenzen, Seite „Wie diese Übung begründet ist“ (Arten statt
+      und Modus raus. `src/app.yaml`: Routen, Anleitung, Kompetenzen, Seite „Wie diese Übung begründet ist“ (später ins README verschoben, Arten statt
       „ab Klasse“, was Stufe und Fehlerart verbindet). Texte in `src/messages/de.json` und `en.json`, gleiche Schlüssel.
       Arc42-Block `ui`. Prüfen, Commit.
 - [x] **Scheibe 3, Die Runde.** „Fehler im Text finden“: ein Blatt mit Leitfrage und Fehlerzahl. „Mit der Quelle

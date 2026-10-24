@@ -3,11 +3,9 @@ title: Textcheck
 subject: Deutsch
 grades: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 summary: >-
-  Du übst, genau zu lesen, auf zwei Arten: Du findest Fehler in einem Text, den du allein vor dir hast, von
-  der Rechtschreibung bis zum Widerspruch im Text. Oder du vergleichst eine Wiedergabe mit ihrer Quelle und
-  findest, was beim Übertragen falsch geworden ist: Zahlen, Namen, hinzugefügte Sätze, Verallgemeinerungen und
-  Meinungen, die wie Tatsachen klingen. Jede Art hat drei Stufen mit längeren Texten, mehr Fehlerarten und
-  weniger Hilfen. Nach dem Prüfen siehst du, welche Fehler du gefunden hast, und warum sie falsch sind.
+  Genau lesen üben, auf zwei Arten: Fehler in einem Text finden, von der Rechtschreibung bis zum Widerspruch,
+  oder eine Wiedergabe mit ihrer Quelle vergleichen und Falsches finden, etwa geänderte Zahlen, hinzugefügte Sätze
+  und Meinungen, die wie Tatsachen klingen. Jede Übung hat drei Stufen. Nach dem Prüfen erklärt die App jeden Fehler.
 url: https://mrsimpson.github.io/textcheck/
 keywords: [Lesen, Textverständnis, Fehlersuche, Korrekturlesen, Lesekompetenz, genau lesen]
 creator: { name: Oliver }
