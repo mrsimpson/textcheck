@@ -3,11 +3,14 @@
 import { ERROR_CLASSES } from "./data.ts";
 import type { ClassResult, Corruption, Result, Status, Token } from "./types.ts";
 
+/** The result without the advice, which depends on the stage (see `step` in index.ts). */
+export type Counted = Omit<Result, "advice">;
+
 export function evaluate(
   tokens: readonly Token[],
   corruptions: readonly Corruption[],
   marked: readonly number[],
-): Result {
+): Counted {
   const isMarked = new Set(marked);
   const spans = new Map<string, Token[]>();
   for (const corruption of corruptions) {
@@ -68,6 +71,5 @@ export function evaluate(
     tolerated: status.filter((value) => value === "tolerated").length,
     status,
     classes,
-    chosenRight: null,
   };
 }

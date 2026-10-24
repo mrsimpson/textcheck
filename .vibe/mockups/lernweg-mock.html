@@ -1,0 +1,2869 @@
+<title>Textcheck Lernweg</title>
+<meta name="claude:viewport-fit-sides" content="cover" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,MONO@-15..0,300..800,0..1,0..1&display=swap"
+/>
+<style>
+  /* Layout: one reading column of 46rem, like the app; the learning path is a two-lane staircase. */
+  :root {
+    --bg: #fbfbfd;
+    --surface: #ffffff;
+    --fg: #1b1d24;
+    --muted: #5b6070;
+    --line: #d9dce6;
+    --accent: #1d4ed8;
+    --accent-fg: #ffffff;
+    --accent-soft: #e8eefc;
+    --lane-text: #0f766e;
+    --lane-text-soft: #e3f4f2;
+    --lane-src: #9a3412;
+    --lane-src-soft: #fbece3;
+    --found: #15803d;
+    --missed: #c2410c;
+    --wrong: #7c3aed;
+    --tol: #2563eb;
+    --sans: "Recursive", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14161c;
+      --surface: #1c1f27;
+      --fg: #e8eaf0;
+      --muted: #a3a8b8;
+      --line: #343846;
+      --accent: #7aa2ff;
+      --accent-fg: #0d1430;
+      --accent-soft: #232c45;
+      --lane-text: #5eead4;
+      --lane-text-soft: #17302d;
+      --lane-src: #fdba74;
+      --lane-src-soft: #3a261a;
+      --found: #4ade80;
+      --missed: #fb923c;
+      --wrong: #c4b5fd;
+      --tol: #93c5fd;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14161c;
+    --surface: #1c1f27;
+    --fg: #e8eaf0;
+    --muted: #a3a8b8;
+    --line: #343846;
+    --accent: #7aa2ff;
+    --accent-fg: #0d1430;
+    --accent-soft: #232c45;
+    --lane-text: #5eead4;
+    --lane-text-soft: #17302d;
+    --lane-src: #fdba74;
+    --lane-src-soft: #3a261a;
+    --found: #4ade80;
+    --missed: #fb923c;
+    --wrong: #c4b5fd;
+    --tol: #93c5fd;
+    color-scheme: dark;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  body {
+    font-variation-settings:
+      "MONO" 0,
+      "CASL" 0.3;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.55;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  main {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding-block: 1.5rem 3rem;
+    display: grid;
+    gap: 1.25rem;
+  }
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 750;
+  }
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 650;
+  }
+  p {
+    margin: 0;
+  }
+  .mock {
+    font-size: 0.8rem;
+    color: var(--muted);
+    border: 1px dashed var(--line);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+  .lead {
+    color: var(--muted);
+    max-width: 40rem;
+  }
+  button,
+  .btn {
+    font: inherit;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--fg);
+    padding: 0.55rem 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+  button.primary,
+  .btn.primary {
+    background: var(--accent);
+    color: var(--accent-fg);
+    border-color: var(--accent);
+    font-weight: 650;
+  }
+  button:focus-visible,
+  .btn:focus-visible,
+  .w:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+  button:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+  }
+  .back {
+    justify-self: start;
+    border: none;
+    background: none;
+    color: var(--accent);
+    padding: 0;
+  }
+
+  /* choice: two modes, then three stages */
+  .modes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .mode {
+    text-align: left;
+    display: grid;
+    gap: 0.5rem;
+    align-content: start;
+    padding: 1.1rem 1.2rem;
+    border-radius: 0.9rem;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-top: 6px solid var(--lane-text);
+  }
+  .mode.quelle {
+    border-top-color: var(--lane-src);
+  }
+  .mode .q {
+    font-weight: 650;
+  }
+  .mode .d {
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+  .stages {
+    display: grid;
+    gap: 0.9rem;
+  }
+  .stagecard {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.6rem 1rem;
+    align-items: start;
+    padding: 1rem 1.1rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .stagecard h3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+  .stagecard .done {
+    font-size: 0.78rem;
+    color: var(--found);
+    font-weight: 650;
+  }
+  .stagecard dl {
+    grid-column: 1 / -1;
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.3rem 0.9rem;
+    font-size: 0.92rem;
+  }
+  .stagecard dt {
+    color: var(--muted);
+  }
+  .stagecard dd {
+    margin: 0;
+    min-width: 0;
+  }
+  .chip {
+    display: inline-block;
+    font-size: 0.82rem;
+    padding: 0.05rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    margin: 0 0.25rem 0.25rem 0;
+  }
+  .chip.new {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    font-weight: 650;
+  }
+  .chip.new::after {
+    content: " neu";
+    font-size: 0.72rem;
+    color: var(--accent);
+  }
+  @media (max-width: 34rem) {
+    .modes {
+      grid-template-columns: 1fr;
+    }
+    .stagecard dl {
+      grid-template-columns: 1fr;
+    }
+    .stagecard dt {
+      margin-top: 0.3rem;
+    }
+  }
+
+  /* round */
+  .badge {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+  }
+  .badge.text {
+    background: var(--lane-text-soft);
+    color: var(--lane-text);
+  }
+  .badge.quelle {
+    background: var(--lane-src-soft);
+    color: var(--lane-src);
+  }
+  .question {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .goal {
+    border-left: 4px solid var(--accent);
+    padding: 0.5rem 0.9rem;
+    background: var(--accent-soft);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .tip {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 0.75rem;
+    padding: 1rem 1.1rem;
+    display: grid;
+    gap: 0.6rem;
+  }
+  .tip ol {
+    margin: 0;
+    padding-left: 1.3rem;
+    display: grid;
+    gap: 0.35rem;
+  }
+  .tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .tabs button[aria-pressed="true"] {
+    background: var(--accent);
+    color: var(--accent-fg);
+    border-color: var(--accent);
+    font-weight: 650;
+  }
+  .sheet {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 0.75rem;
+    padding: 1rem 1.1rem;
+    display: grid;
+    gap: 0.7rem;
+  }
+  .sheet .label {
+    font-size: 0.85rem;
+    font-weight: 650;
+    color: var(--muted);
+  }
+  .sheet p.s {
+    font-size: 1.08rem;
+    line-height: 2;
+  }
+  .note {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .src {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .src a,
+  .linkbox a {
+    color: var(--accent);
+  }
+  .linkbox {
+    border: 2px dashed var(--lane-src);
+    border-radius: 0.75rem;
+    padding: 1rem 1.1rem;
+    display: grid;
+    gap: 0.5rem;
+    background: var(--lane-src-soft);
+  }
+  .w {
+    border-radius: 0.25rem;
+    padding: 0.05rem 0.1rem;
+    cursor: pointer;
+  }
+  .w:hover {
+    background: var(--accent-soft);
+  }
+  .w.m {
+    background: var(--accent);
+    color: var(--accent-fg);
+  }
+  .w.found {
+    color: var(--found);
+    text-decoration: underline 2px;
+    font-weight: 650;
+  }
+  .w.missed {
+    color: var(--missed);
+    text-decoration: underline dashed 2px;
+    font-weight: 650;
+  }
+  .w.wrong {
+    color: var(--wrong);
+    text-decoration: line-through 2px;
+  }
+  .w.tol {
+    color: var(--tol);
+    text-decoration: underline dotted 2px;
+  }
+  .checked .w {
+    cursor: default;
+  }
+  .checked .w:hover {
+    background: none;
+  }
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .bar .count {
+    margin-right: auto;
+    color: var(--muted);
+  }
+
+  /* result */
+  .result {
+    display: grid;
+    gap: 1rem;
+  }
+  .advice {
+    border-radius: 0.75rem;
+    padding: 1rem 1.1rem;
+    display: grid;
+    gap: 0.7rem;
+    background: var(--accent-soft);
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  .item {
+    border-top: 1px solid var(--line);
+    padding-top: 0.6rem;
+    display: grid;
+    gap: 0.2rem;
+  }
+  .item .cls {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+</style>
+
+<main id="app" aria-live="polite"></main>
+
+<script id="data" type="application/json">
+  {
+    "steps": [
+      {
+        "id": "text-1",
+        "kind": "text",
+        "stage": 1,
+        "title": "Igel",
+        "source": {
+          "title": "Igel – Klexikon – das Kinderlexikon",
+          "url": "https://klexikon.zum.de/index.php?title=Igel&oldid=161750",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+          "authorsUrl": "https://klexikon.zum.de/index.php?title=Igel&action=history",
+          "retrieved": "2026-10-18"
+        },
+        "excerpt": [
+          { "text": "Igel sind kleine Säugetiere.", "section": null },
+          { "text": "Es gibt 25 Arten, die in Europa, Asien und Afrika leben.", "section": null },
+          {
+            "text": "Igel schlafen am Tag unter Laub und Ästen.",
+            "section": "Wie leben unsere Igel und was fressen sie?"
+          },
+          {
+            "text": "Sehr gerne fressen sie auch Schnecken, aber nur selten solche mit Gehäuse.",
+            "section": "Wie leben unsere Igel und was fressen sie?"
+          },
+          {
+            "text": "Deshalb sind Igel in einem Garten sehr nützlich.",
+            "section": "Wie leben unsere Igel und was fressen sie?"
+          },
+          {
+            "text": "Vom Frühling bis zum Sommer treffen sie sich zur Paarung.",
+            "section": "Wie vermehren sich Igel?"
+          },
+          {
+            "text": "Die Mutter trägt dann die Jungen fünf Wochen lang in ihrem Bauch.",
+            "section": "Wie vermehren sich Igel?"
+          },
+          { "text": "Das können zwei bis zehn Babys sein.", "section": "Wie vermehren sich Igel?" },
+          {
+            "text": "Bei der Geburt sind sie taub und blind und haben ganz weiche Stacheln.",
+            "section": "Wie vermehren sich Igel?"
+          }
+        ],
+        "rendition": [
+          ["Igel sind kleine ", { "slot": "n1" }, "."],
+          ["Es gibt ", { "slot": "n2" }, " Arten von Igeln, die in Europa, Asien und ", { "slot": "n3" }, " leben."],
+          ["Igel schlafen am Tag unter Laub und ", { "slot": "s1" }, "."],
+          ["Igel fressen sehr gern ", { "slot": "s2" }, ", ", { "slot": "s3" }, " nur selten solche mit Gehäuse."],
+          ["Darum sind Igel im Garten sehr ", { "slot": "s4" }, "."],
+          ["Im ", { "slot": "s5" }, " und im Sommer treffen sich die Igel zur Paarung."],
+          ["Die Mutter trägt die Jungen ", { "slot": "s6" }, " Wochen lang im Bauch."],
+          ["Es können ", { "slot": "s7" }, " Babys sein."],
+          [
+            "Bei der ",
+            { "slot": "s8" },
+            " sind die Jungen taub und blind. Ihre ",
+            { "slot": "s8b" },
+            " sind ganz weich."
+          ]
+        ],
+        "slots": {
+          "s1": {
+            "correct": "Ästen",
+            "variants": [
+              {
+                "text": "Steinen",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Igel schlafen am Tag unter Laub und Ästen.“ Igel schlafen unter Laub und Ästen, nicht unter Steinen."
+              },
+              {
+                "text": "Esten",
+                "errorClass": "spelling_rule",
+                "explanation": "Das Wort kommt von „Ast“. Darum schreibt man es mit „Ä“: Äste."
+              }
+            ]
+          },
+          "s2": {
+            "correct": "Schnecken",
+            "variants": [
+              {
+                "text": "Schneken",
+                "errorClass": "spelling_rule",
+                "explanation": "Nach dem kurzen „e“ steht „ck“: Schnecken. Das hörst du, wenn du das Wort langsam sprichst."
+              }
+            ]
+          },
+          "s3": {
+            "correct": "aber",
+            "variants": [
+              {
+                "text": "aber aber",
+                "errorClass": "slip",
+                "explanation": "Hier steht ein Wort doppelt. Solche Fehler passieren schnell beim Schreiben."
+              }
+            ]
+          },
+          "s4": {
+            "correct": "nützlich",
+            "variants": [
+              {
+                "text": "nüzlich",
+                "errorClass": "spelling_rule",
+                "explanation": "Das Wort kommt von „nutzen“. Nach dem kurzen „ü“ steht „tz“: nützlich."
+              }
+            ]
+          },
+          "s5": {
+            "correct": "Frühling",
+            "variants": [
+              {
+                "text": "Herbst",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Vom Frühling bis zum Sommer treffen sie sich zur Paarung.“ Die Paarung ist im Frühling und im Sommer."
+              }
+            ]
+          },
+          "s6": {
+            "correct": "fünf",
+            "variants": [
+              {
+                "text": "acht",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Die Mutter trägt dann die Jungen fünf Wochen lang in ihrem Bauch.“ Die Mutter trägt die Jungen fünf Wochen lang."
+              }
+            ]
+          },
+          "s7": {
+            "correct": "zwei bis zehn",
+            "variants": [
+              {
+                "text": "zwei bis zwanzig",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Das können zwei bis zehn Babys sein.“ Es sind höchstens zehn Babys.",
+                "tolerance": 1
+              }
+            ]
+          },
+          "s8": {
+            "correct": "Geburt",
+            "variants": [
+              {
+                "text": "Geburt,",
+                "errorClass": "punctuation",
+                "explanation": "Vor „sind“ steht hier kein Komma. Der Satz hat nur eine Aussage."
+              }
+            ]
+          },
+          "s8b": {
+            "correct": "Stacheln",
+            "variants": [
+              { "text": "Stachlen", "errorClass": "slip", "explanation": "Zwei Buchstaben sind vertauscht: Stacheln." }
+            ]
+          },
+          "n1": {
+            "correct": "Säugetiere",
+            "variants": [
+              {
+                "text": "Seugetiere",
+                "errorClass": "spelling_rule",
+                "explanation": "Das Wort kommt von „säugen“. Darum schreibt man es mit „äu“."
+              },
+              { "text": "Säugetire", "errorClass": "slip", "explanation": "Im Wort fehlt ein „e“: Säugetiere." }
+            ]
+          },
+          "n2": {
+            "correct": "25",
+            "variants": [
+              {
+                "text": "52",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Es gibt 25 Arten, die in Europa, Asien und Afrika leben.“ Es gibt 25 Arten, nicht 52."
+              },
+              {
+                "text": "250",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Es gibt 25 Arten, die in Europa, Asien und Afrika leben.“ Es sind 25 Arten, nicht 250."
+              }
+            ]
+          },
+          "n3": {
+            "correct": "Afrika",
+            "variants": [
+              {
+                "text": "Amerika",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Es gibt 25 Arten, die in Europa, Asien und Afrika leben.“ Die Arten leben in Europa, Asien und Afrika, nicht in Amerika."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "quelle-1",
+        "kind": "quelle",
+        "stage": 1,
+        "title": "Biber",
+        "source": {
+          "title": "Biber – Klexikon – das Kinderlexikon",
+          "url": "https://klexikon.zum.de/index.php?title=Biber&oldid=164414",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+          "authorsUrl": "https://klexikon.zum.de/index.php?title=Biber&action=history",
+          "retrieved": "2026-10-18"
+        },
+        "excerpt": [
+          {
+            "text": "Biber sind Säugetiere und Nagetiere, die im Süßwasser oder am Ufer leben, also in Flüssen und Seen.",
+            "section": null
+          },
+          { "text": "Biber werden etwa 80 bis 100 Zentimeter lang.", "section": "Wie sehen Biber aus?" },
+          { "text": "Hinzu kommt der Schwanz, der um die 30 Zentimeter lang wird.", "section": "Wie sehen Biber aus?" },
+          {
+            "text": "Unter den Nagetieren sind Biber fast die größten: Nur Capybaras werden größer.",
+            "section": "Wie sehen Biber aus?"
+          },
+          { "text": "Ein Biber wird außerdem um die 30 Kilogramm schwer.", "section": "Wie sehen Biber aus?" },
+          { "text": "Der Pelz ist meist braun und sehr dicht.", "section": "Wie sehen Biber aus?" },
+          { "text": "Als Nagetier hat der Biber Nagezähne.", "section": "Wie sehen Biber aus?" },
+          {
+            "text": "Sie wachsen ein Leben lang nach und werden dreieinhalb Zentimeter lang.",
+            "section": "Wie sehen Biber aus?"
+          }
+        ],
+        "rendition": [
+          ["Biber leben im ", { "slot": "n1" }, " und am Ufer, also in Flüssen und ", { "slot": "n2" }, "."],
+          ["Ein Biber ist etwa ", { "slot": "s1" }, " Zentimeter lang."],
+          ["Dazu kommt noch der ", { "slot": "s2" }, ". Er wird etwa ", { "slot": "s3" }, " Zentimeter lang."],
+          ["Unter allen ", { "slot": "s4" }, " sind nur die ", { "slot": "s5" }, " größer als der Biber."],
+          ["Außerdem wiegt ein Biber ungefähr ", { "slot": "s6" }, " ", { "slot": "s7" }, "."],
+          ["Der ", { "slot": "s9" }, " ist meistens braun und sehr dicht."],
+          ["Weil der Biber ein Nagetier ", { "slot": "s10" }, " hat er ", { "slot": "s11" }, "."],
+          [
+            "Diese Zähne ",
+            { "slot": "s12" },
+            " ",
+            { "slot": "s13" },
+            " nach und werden ",
+            { "slot": "s14" },
+            " Zentimeter lang."
+          ]
+        ],
+        "slots": {
+          "s1": {
+            "correct": "80 bis 100",
+            "variants": [
+              {
+                "text": "60 bis 80",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Biber werden etwa 80 bis 100 Zentimeter lang.“ Biber werden etwa 80 bis 100 Zentimeter lang.",
+                "tolerance": 1
+              },
+              {
+                "text": "80 bis 200",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Biber werden etwa 80 bis 100 Zentimeter lang.“ Ein Biber ist höchstens etwa 100 Zentimeter lang.",
+                "tolerance": 1
+              }
+            ]
+          },
+          "s2": {
+            "correct": "Schwanz",
+            "variants": [
+              {
+                "text": "Schwans",
+                "errorClass": "spelling_rule",
+                "explanation": "Das Wort endet mit „z“. Wenn du das Wort verlängerst, hörst du ein „ts“: Schwänze. Darum schreibt man „z“."
+              }
+            ]
+          },
+          "s3": {
+            "correct": "30",
+            "variants": [
+              {
+                "text": "50",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Hinzu kommt der Schwanz, der um die 30 Zentimeter lang wird.“ Der Schwanz wird um die 30 Zentimeter lang."
+              },
+              {
+                "text": "3",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Hinzu kommt der Schwanz, der um die 30 Zentimeter lang wird.“ Der Schwanz wird um die 30 Zentimeter lang, nicht nur 3."
+              }
+            ]
+          },
+          "s4": {
+            "correct": "Nagetieren",
+            "variants": [
+              {
+                "text": "Nagetiren",
+                "errorClass": "slip",
+                "explanation": "Im Wort fehlt ein Buchstabe: Nagetieren. Es kommt von „Tier“."
+              }
+            ]
+          },
+          "s5": {
+            "correct": "Capybaras",
+            "variants": [
+              {
+                "text": "Murmeltiere",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Unter den Nagetieren sind Biber fast die größten: Nur Capybaras werden größer.“ Nur Capybaras werden größer als Biber."
+              },
+              {
+                "text": "Mäuse",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Unter den Nagetieren sind Biber fast die größten: Nur Capybaras werden größer.“ Biber sind fast die größten Nagetiere. Mäuse sind viel kleiner."
+              }
+            ]
+          },
+          "s6": {
+            "correct": "30",
+            "variants": [
+              {
+                "text": "300",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Ein Biber wird außerdem um die 30 Kilogramm schwer.“ Ein Biber wird um die 30 Kilogramm schwer."
+              },
+              {
+                "text": "13",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Ein Biber wird außerdem um die 30 Kilogramm schwer.“ Es sind um die 30 Kilogramm, nicht 13."
+              }
+            ]
+          },
+          "s7": {
+            "correct": "Kilogramm",
+            "variants": [
+              {
+                "text": "Kilogram",
+                "errorClass": "slip",
+                "explanation": "Am Ende fehlt ein „m“: Kilogramm. Das Wort hat zwei „m“."
+              }
+            ]
+          },
+          "s9": {
+            "correct": "Pelz",
+            "variants": [
+              {
+                "text": "Pels",
+                "errorClass": "spelling_rule",
+                "explanation": "Das Wort endet mit „lz“. Ein Wort mit gleichem Ende ist Salz."
+              }
+            ]
+          },
+          "s10": {
+            "correct": "ist,",
+            "variants": [
+              {
+                "text": "ist",
+                "errorClass": "punctuation",
+                "explanation": "Nach „Weil der Biber ein Nagetier ist“ steht ein Komma. Es trennt den Nebensatz vom Rest."
+              }
+            ]
+          },
+          "s11": {
+            "correct": "Nagezähne",
+            "variants": [
+              {
+                "text": "Nagezehne",
+                "errorClass": "spelling_rule",
+                "explanation": "Das Wort kommt von „Zahn“. Darum schreibt man es mit „ä“: Zähne."
+              }
+            ]
+          },
+          "s12": {
+            "correct": "wachsen",
+            "variants": [
+              {
+                "text": "waksen",
+                "errorClass": "spelling_rule",
+                "explanation": "In „wachsen“ hörst du ein „ks“. Man schreibt es aber mit „chs“."
+              }
+            ]
+          },
+          "s13": {
+            "correct": "ein Leben lang",
+            "variants": [
+              {
+                "text": "ein Jahr lang",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Sie wachsen ein Leben lang nach und werden dreieinhalb Zentimeter lang.“ Die Nagezähne wachsen ein Leben lang nach.",
+                "tolerance": 1
+              }
+            ]
+          },
+          "s14": {
+            "correct": "dreieinhalb",
+            "variants": [
+              {
+                "text": "zweieinhalb",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Sie wachsen ein Leben lang nach und werden dreieinhalb Zentimeter lang.“ Sie werden dreieinhalb Zentimeter lang."
+              },
+              {
+                "text": "dreizehn",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Sie wachsen ein Leben lang nach und werden dreieinhalb Zentimeter lang.“ Die Zähne werden dreieinhalb Zentimeter lang, nicht dreizehn."
+              }
+            ]
+          },
+          "n1": {
+            "correct": "Süßwasser",
+            "variants": [
+              {
+                "text": "Süswasser",
+                "errorClass": "spelling_rule",
+                "explanation": "Nach dem langen „ü“ steht „ß“: Süßwasser. Das Wort ist aus „süß“ und „Wasser“ gemacht."
+              }
+            ]
+          },
+          "n2": {
+            "correct": "Seen",
+            "variants": [
+              {
+                "text": "Meeren",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Biber sind Säugetiere und Nagetiere, die im Süßwasser oder am Ufer leben, also in Flüssen und Seen.“ Biber leben in Flüssen und Seen, nicht in Meeren."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "text-2",
+        "kind": "text",
+        "stage": 2,
+        "title": "Fledermäuse",
+        "source": {
+          "title": "Fledermäuse – Klexikon – das Kinderlexikon",
+          "url": "https://klexikon.zum.de/index.php?title=Flederm%C3%A4use&oldid=157941",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+          "authorsUrl": "https://klexikon.zum.de/index.php?title=Flederm%C3%A4use&action=history",
+          "retrieved": "2026-10-18"
+        },
+        "excerpt": [
+          { "text": "Fledermäuse sind eine Gruppe von Säugetieren, die fliegen können.", "section": "Einleitung" },
+          { "text": "Sie haben nämlich Flügel, aber ohne Federn.", "section": "Einleitung" },
+          { "text": "Die meisten Arten von Fledermäusen fressen Insekten.", "section": "Einleitung" },
+          { "text": "In Europa sind alle Fledermausarten gefährdet.", "section": "Einleitung" },
+          { "text": "Sie sind deshalb streng geschützt.", "section": "Einleitung" },
+          { "text": "Eine Mutter hat nur ein Jungtier im Jahr.", "section": "Einleitung" },
+          { "text": "Fledermäuse sind nachts wach und schlafen am Tag.", "section": "Wie leben Fledermäuse?" },
+          {
+            "text": "Dabei hängen sie kopfüber in Bäumen, Höhlen oder auf Dachböden.",
+            "section": "Wie leben Fledermäuse?"
+          },
+          {
+            "text": "Nach der Paarung trägt das Muttertier ihr Junges sechs bis zehn Wochen im Bauch.",
+            "section": "Wie leben Fledermäuse?"
+          },
+          {
+            "text": "Im Frühling bringt das Muttertier ein einziges Junges zur Welt.",
+            "section": "Wie leben Fledermäuse?"
+          }
+        ],
+        "rendition": [
+          ["Fledermäuse gehören zu den ", { "slot": "s1" }, ", die fliegen können."],
+          ["Sie haben Flügel, aber ", { "slot": "s2" }, " Federn."],
+          ["Die meisten Arten fressen ", { "slot": "s3" }, "."],
+          ["In ", { "slot": "s4a" }, " sind alle ", { "slot": "s4b" }, " gefährdet."],
+          ["Sie sind ", { "slot": "s5" }, " streng ", { "slot": "s5b" }, "."],
+          ["Eine Mutter bekommt nur ", { "slot": "s6" }, " im Jahr."],
+          ["Fledermäuse sind ", { "slot": "s7" }, "."],
+          ["Dabei hängen sie ", { "slot": "s8a" }, " in Bäumen, ", { "slot": "s8b" }, " oder auf Dachböden."],
+          ["Nach der Paarung trägt das Muttertier ihr Junges ", { "slot": "s9" }, " im Bauch."],
+          ["Im ", { "slot": "s10a" }, " bringt das Muttertier ", { "slot": "s10b" }, " zur Welt."],
+          [{ "slot": "s11" }]
+        ],
+        "slots": {
+          "s1": {
+            "correct": "Säugetieren",
+            "variants": [
+              {
+                "text": "Vögeln",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Fledermäuse sind eine Gruppe von Säugetieren.“ Fledermäuse sind keine Vögel."
+              },
+              {
+                "text": "Seugetieren",
+                "errorClass": "spelling_rule",
+                "explanation": "Das Wort kommt von „säugen“. Darum schreibt man es mit „äu“: Säugetieren. Wer ableitet, findet die richtige Schreibung."
+              }
+            ]
+          },
+          "s2": {
+            "correct": "keine",
+            "variants": [
+              {
+                "text": "viele",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Sie haben nämlich Flügel, aber ohne Federn.“ Fledermäuse haben keine Federn."
+              }
+            ]
+          },
+          "s3": {
+            "correct": "Insekten",
+            "variants": [
+              {
+                "text": "Fische",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Die meisten Arten von Fledermäusen fressen Insekten.“ Von Fischen als Hauptnahrung steht dort nichts."
+              },
+              {
+                "text": "Insecten",
+                "errorClass": "spelling_rule",
+                "explanation": "Das Wort schreibt man mit „k“: Insekten. Die Schreibung mit „c“ gibt es so nicht mehr."
+              }
+            ]
+          },
+          "s4a": {
+            "correct": "Europa",
+            "variants": [
+              {
+                "text": "Asien",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „In Europa sind alle Fledermausarten gefährdet.“ Der Ort wurde verändert."
+              },
+              {
+                "text": "Afrika",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „In Europa sind alle Fledermausarten gefährdet.“ Der Ort wurde verändert."
+              }
+            ]
+          },
+          "s4b": {
+            "correct": "Fledermausarten",
+            "variants": [
+              {
+                "text": "Fledermausaten",
+                "errorClass": "slip",
+                "explanation": "Hier fehlt ein Buchstabe: Fledermausarten. Solche Fehler passieren schnell beim Schreiben."
+              }
+            ]
+          },
+          "s5": {
+            "correct": "deshalb",
+            "variants": [
+              {
+                "text": "trotzdem",
+                "errorClass": "connective_negation",
+                "explanation": "Im Original steht „deshalb“: Weil die Fledermäuse gefährdet sind, werden sie geschützt. „Trotzdem“ passt nicht zum Satz davor."
+              }
+            ]
+          },
+          "s5b": {
+            "correct": "geschützt",
+            "variants": [
+              {
+                "text": "geschüzt",
+                "errorClass": "spelling_rule",
+                "explanation": "Nach dem kurzen „ü“ steht „tz“: geschützt. Wer das Wort verlängert („schützen“), hört das „tz“."
+              }
+            ]
+          },
+          "s6": {
+            "correct": "ein Jungtier",
+            "variants": [
+              {
+                "text": "zwei Jungtiere",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Eine Mutter hat nur ein Jungtier im Jahr.“ Die Zahl wurde verändert."
+              }
+            ]
+          },
+          "s7": {
+            "correct": "nachts wach und schlafen am Tag",
+            "variants": [
+              {
+                "text": "tagsüber wach und schlafen in der Nacht",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Fledermäuse sind nachts wach und schlafen am Tag.“ Hier ist es umgedreht.",
+                "tolerance": 2
+              },
+              {
+                "text": "nachts wach und schlaffen am Tag",
+                "errorClass": "real_word",
+                "explanation": "„Schlaffen“ gibt es als Wort (schlaff), gemeint ist aber „schlafen“. Ein Rechtschreibprogramm findet diesen Fehler nicht."
+              }
+            ]
+          },
+          "s8a": {
+            "correct": "kopfüber",
+            "variants": [
+              {
+                "text": "Kopfüber",
+                "errorClass": "spelling_rule",
+                "explanation": "Mitten im Satz schreibt man „kopfüber“ klein. Nur das erste Wort eines Satzes und Nomen schreibt man groß."
+              }
+            ]
+          },
+          "s8b": {
+            "correct": "Höhlen",
+            "variants": [
+              {
+                "text": "Höllen",
+                "errorClass": "real_word",
+                "explanation": "„Höllen“ gibt es als Wort, gemeint ist aber „Höhlen“. Die Tiere hängen in Höhlen. Ein Rechtschreibprogramm findet diesen Fehler nicht."
+              }
+            ]
+          },
+          "s9": {
+            "correct": "sechs bis zehn Wochen",
+            "variants": [
+              {
+                "text": "sechs bis zehn Monate",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „sechs bis zehn Wochen“. Die Zeitangabe wurde verändert.",
+                "tolerance": 2
+              }
+            ]
+          },
+          "s10a": {
+            "correct": "Frühling",
+            "variants": [
+              {
+                "text": "Herbst",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Im Frühling bringt das Muttertier ein einziges Junges zur Welt.“ Die Jahreszeit wurde verändert."
+              }
+            ]
+          },
+          "s10b": {
+            "correct": "ein einziges Junges",
+            "variants": [
+              {
+                "text": "mehrere Junge",
+                "errorClass": "contradiction",
+                "explanation": "Weiter oben steht, dass eine Mutter nur ein Jungtier im Jahr bekommt. „Mehrere Junge“ widerspricht dem."
+              }
+            ]
+          },
+          "s11": {
+            "correct": "",
+            "variants": [
+              {
+                "text": "Sie leben nur in Australien.",
+                "errorClass": "added_claim",
+                "explanation": "Dieser Satz steht nicht im Original. Dort geht es um Europa und um Fledermäuse allgemein."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "quelle-2",
+        "kind": "quelle",
+        "stage": 2,
+        "title": "Vulkane",
+        "source": {
+          "title": "Vulkan – Klexikon – das Kinderlexikon",
+          "url": "https://klexikon.zum.de/index.php?title=Vulkan&oldid=160319",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+          "authorsUrl": "https://klexikon.zum.de/index.php?title=Vulkan&action=history",
+          "retrieved": "2026-10-18"
+        },
+        "excerpt": [
+          { "text": "Ein Vulkan ist ein Berg.", "section": "Einleitung" },
+          { "text": "Aus ihm kommt Gestein aus dem Inneren der Erde an die Oberfläche.", "section": "Einleitung" },
+          { "text": "Der Name „Vulkan“ kommt von dem römischen Gott des Feuers, Vulcanus.", "section": "Einleitung" },
+          {
+            "text": "Auf der Erde gibt es etwa 1500 aktive Vulkane, die meisten davon dort, wo verschiedene Kontinente zusammentreffen.",
+            "section": "Einleitung"
+          },
+          {
+            "text": "Auch in Europa gibt es mehrere Vulkane, zum Beispiel auf Island oder in Italien.",
+            "section": "Einleitung"
+          },
+          { "text": "Der höchste Berg Afrikas ist ebenfalls ein Vulkan, der Kilimandscharo.", "section": "Einleitung" },
+          {
+            "text": "Tief im Innern der Erde ist es so heiß, dass alles Gestein schmilzt.",
+            "section": "Wie entstehen Vulkane?"
+          },
+          { "text": "Das geschmolzene Gestein nennt man Magma.", "section": "Wie entstehen Vulkane?" },
+          { "text": "Wenn das Magma heraustritt, nennt man es Lava.", "section": "Wie entstehen Vulkane?" },
+          { "text": "An der Luft kühlt die Lava ab und wird wieder fest.", "section": "Wie entstehen Vulkane?" }
+        ],
+        "rendition": [
+          ["Ein Vulkan ist ein ", { "slot": "s1" }, "."],
+          ["Aus diesem Berg tritt ", { "slot": "s2" }, " aus dem Erdinneren nach draußen."],
+          ["Das Wort „Vulkan“ geht auf den ", { "slot": "s3" }, " Gott des Feuers zurück, auf Vulcanus."],
+          ["Weltweit gibt es ungefähr ", { "slot": "s4" }, " aktive Vulkane."],
+          ["Die meisten davon liegen ", { "slot": "s5a" }, " ", { "slot": "s5b" }, " zusammentreffen."],
+          [{ "slot": "a1" }],
+          [
+            "Auch in Europa gibt es ",
+            { "slot": "s6a" },
+            " Vulkane, zum Beispiel auf ",
+            { "slot": "s6b" },
+            " oder in ",
+            { "slot": "s6c" },
+            "."
+          ],
+          ["Der ", { "slot": "s7a" }, " Berg Afrikas ist ebenfalls ein Vulkan, der ", { "slot": "s7b" }, "."],
+          ["Tief unter der Erde ist es so ", { "slot": "s8a" }, " dass jedes Gestein ", { "slot": "s8b" }, "."],
+          ["Geschmolzenes Gestein heißt ", { "slot": "s9" }, "."],
+          [{ "slot": "s10" }, " das Magma heraustritt, nennt man es Lava."],
+          ["Wenn Lava mit der Luft in Berührung kommt, wird sie kalt und ", { "slot": "s11" }, "."],
+          [{ "slot": "a2" }]
+        ],
+        "slots": {
+          "s1": {
+            "correct": "Berg",
+            "variants": [
+              {
+                "text": "Tal",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Ein Vulkan ist ein Berg.“ Ein Vulkan ist kein Tal."
+              },
+              {
+                "text": "Berk",
+                "errorClass": "spelling_rule",
+                "explanation": "Wer das Wort verlängert („Berge“), hört das „g“. Darum schreibt man am Ende „g“: Berg."
+              }
+            ]
+          },
+          "s2": {
+            "correct": "Gestein",
+            "variants": [
+              {
+                "text": "Wasser",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Aus ihm kommt Gestein aus dem Inneren der Erde an die Oberfläche.“ Von Wasser steht dort nichts."
+              },
+              {
+                "text": "Gesten",
+                "errorClass": "real_word",
+                "explanation": "„Gesten“ gibt es als Wort (eine Geste), gemeint ist aber „Gestein“. Ein Rechtschreibprogramm findet diesen Fehler nicht."
+              }
+            ]
+          },
+          "s3": {
+            "correct": "römischen",
+            "variants": [
+              {
+                "text": "griechischen",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Der Name „Vulkan“ kommt von dem römischen Gott des Feuers, Vulcanus.“ Der Gott war ein römischer, kein griechischer."
+              }
+            ]
+          },
+          "s4": {
+            "correct": "1500",
+            "variants": [
+              {
+                "text": "150",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Auf der Erde gibt es etwa 1500 aktive Vulkane“ Die Zahl wurde verändert."
+              },
+              {
+                "text": "15.000",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Auf der Erde gibt es etwa 1500 aktive Vulkane“ Die Zahl wurde verändert."
+              }
+            ]
+          },
+          "s5a": {
+            "correct": "dort, wo",
+            "variants": [
+              {
+                "text": "dort wo",
+                "errorClass": "punctuation",
+                "explanation": "Vor „wo“ beginnt ein Nebensatz. Vor einem Nebensatz steht ein Komma: dort, wo."
+              }
+            ]
+          },
+          "s5b": {
+            "correct": "verschiedene Kontinente",
+            "variants": [
+              {
+                "text": "verschiedene Meere",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „die meisten davon dort, wo verschiedene Kontinente zusammentreffen“ Von Meeren steht dort nichts."
+              }
+            ]
+          },
+          "a1": {
+            "correct": "",
+            "variants": [
+              {
+                "text": "Die meisten Vulkane brechen jedes Jahr aus.",
+                "errorClass": "added_claim",
+                "explanation": "Dieser Satz steht nicht im Original. Dort geht es darum, wo es Vulkane gibt, nicht darum, wie oft sie ausbrechen."
+              }
+            ]
+          },
+          "s6a": {
+            "correct": "mehrere",
+            "variants": [
+              {
+                "text": "keine",
+                "errorClass": "contradiction",
+                "explanation": "Im selben Satz stehen Island und Italien als Beispiele für Vulkane in Europa. Das passt nicht zu „keine“."
+              }
+            ]
+          },
+          "s6b": {
+            "correct": "Island",
+            "variants": [
+              {
+                "text": "Irland",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „zum Beispiel auf Island oder in Italien“ Der Ort wurde verändert."
+              },
+              {
+                "text": "Grönland",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „zum Beispiel auf Island oder in Italien“ Der Ort wurde verändert."
+              }
+            ]
+          },
+          "s6c": {
+            "correct": "Italien",
+            "variants": [
+              {
+                "text": "Polen",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „zum Beispiel auf Island oder in Italien“ Der Ort wurde verändert."
+              },
+              {
+                "text": "Norwegen",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „zum Beispiel auf Island oder in Italien“ Der Ort wurde verändert."
+              }
+            ]
+          },
+          "s7a": {
+            "correct": "höchste",
+            "variants": [
+              {
+                "text": "niedrigste",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Der höchste Berg Afrikas ist ebenfalls ein Vulkan“ Es geht um den höchsten Berg."
+              },
+              {
+                "text": "zweithöchste",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Der höchste Berg Afrikas ist ebenfalls ein Vulkan“ Es geht um den höchsten Berg, nicht um den zweithöchsten."
+              }
+            ]
+          },
+          "s7b": {
+            "correct": "Kilimandscharo",
+            "variants": [
+              {
+                "text": "Ätna",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „der Kilimandscharo“ Der Name wurde verändert."
+              },
+              {
+                "text": "Kilimanscharo",
+                "errorClass": "slip",
+                "explanation": "Hier fehlt ein Buchstabe: Kilimandscharo. Solche Fehler passieren schnell beim Schreiben."
+              }
+            ]
+          },
+          "s8a": {
+            "correct": "heiß,",
+            "variants": [
+              {
+                "text": "heiß",
+                "errorClass": "punctuation",
+                "explanation": "Nach „heiß“ beginnt mit „dass“ ein Nebensatz. Vor einem Nebensatz steht ein Komma: heiß, dass."
+              },
+              {
+                "text": "heis,",
+                "errorClass": "spelling_rule",
+                "explanation": "Wer das Wort verlängert („heiße Luft“), hört das lange „ei“ mit scharfem „s“. Darum schreibt man „ß“: heiß."
+              }
+            ]
+          },
+          "s8b": {
+            "correct": "schmilzt",
+            "variants": [
+              {
+                "text": "gefriert",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „dass alles Gestein schmilzt“ Das Gestein schmilzt."
+              },
+              {
+                "text": "schmiltzt",
+                "errorClass": "spelling_rule",
+                "explanation": "Nach dem kurzen „i“ steht kein „tz“. Man schreibt: schmilzt."
+              }
+            ]
+          },
+          "s9": {
+            "correct": "Magma",
+            "variants": [
+              {
+                "text": "Lava",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Das geschmolzene Gestein nennt man Magma.“ Als „Lava“ bezeichnet man es erst, wenn es heraustritt."
+              },
+              {
+                "text": "Mgama",
+                "errorClass": "slip",
+                "explanation": "Hier sind zwei Buchstaben vertauscht: Magma. Solche Fehler passieren schnell beim Schreiben."
+              }
+            ]
+          },
+          "s10": {
+            "correct": "Wenn",
+            "variants": [
+              {
+                "text": "Obwohl",
+                "errorClass": "connective_negation",
+                "explanation": "Im Original steht „Wenn“: Sobald das Magma heraustritt, heißt es Lava. „Obwohl“ passt nicht zu diesem Zusammenhang."
+              },
+              {
+                "text": "Bevor",
+                "errorClass": "connective_negation",
+                "explanation": "Im Original steht „Wenn“: Erst wenn das Magma heraustritt, nennt man es Lava. Mit „Bevor“ stimmt die Reihenfolge nicht."
+              }
+            ]
+          },
+          "s11": {
+            "correct": "wieder hart",
+            "variants": [
+              {
+                "text": "noch flüssiger",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „An der Luft kühlt die Lava ab und wird wieder fest.“ Die Lava wird nicht flüssiger, sondern fest."
+              },
+              {
+                "text": "wieder weich",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „An der Luft kühlt die Lava ab und wird wieder fest.“ Die Lava wird fest, nicht weich."
+              }
+            ]
+          },
+          "a2": {
+            "correct": "",
+            "variants": [
+              {
+                "text": "Vulkane gibt es nur auf der Erde.",
+                "errorClass": "added_claim",
+                "explanation": "Dieser Satz steht nicht im Original. Dort geht es um Vulkane auf der Erde, aber nicht darum, ob es sie nur hier gibt."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "text-3",
+        "kind": "text",
+        "stage": 3,
+        "title": "Penicillin",
+        "source": {
+          "title": "Penicillin – Wikipedia",
+          "url": "https://de.wikipedia.org/w/index.php?title=Penicillin&oldid=267453249",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+          "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Penicillin&action=history",
+          "retrieved": "2026-10-18"
+        },
+        "excerpt": [
+          {
+            "text": "Die Penicilline (Singular: Penicillin, auch Penizillin; von lateinisch penicillium, ‚Pinselschimmel‘) sind eine Gruppe von antibiotisch wirksamen Substanzen, die sich strukturell von der 6-Aminopenicillansäure ableiten.",
+            "section": "Einleitung"
+          },
+          {
+            "text": "Das zuerst entdeckte natürlich vorkommende Penicillin wurde aus der Pinselschimmelart Penicillium notatum isoliert und ab 1942 therapeutisch eingesetzt.",
+            "section": "Einleitung"
+          },
+          {
+            "text": "Im Jahre 1939 interessierten sich Howard Walter Florey und Ernst Boris Chain für das Penicillin.",
+            "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+          },
+          {
+            "text": "Norman Heatley gelang es, das Antibiotikum aus der Kulturflüssigkeit, in der man die Schimmelpilze züchtete, zu extrahieren und zu reinigen.",
+            "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+          },
+          {
+            "text": "Am 24. August 1940 fand ein Tierversuch an 50 Ratten statt, die mit einer tödlichen Dosis Streptokokken infiziert wurden.",
+            "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+          },
+          {
+            "text": "Die Hälfte von ihnen erhielt Penicillin, und nur eine aus dieser Gruppe starb.",
+            "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+          },
+          {
+            "text": "Die Ratten der anderen Gruppe starben alle innerhalb weniger Stunden.",
+            "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+          },
+          {
+            "text": "Am 12. Februar 1941 wurde der erste Patient mit dem gewonnenen Penicillin behandelt.",
+            "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+          },
+          {
+            "text": "Es handelte sich um den 43-jährigen Londoner Polizisten Albert Alexander, der sich beim Rosenschneiden verletzt und durch Infektion der Wunde eine Blutvergiftung erlitten hatte; ihm wurde eine Dosis von 160 Milligramm injiziert.",
+            "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+          },
+          {
+            "text": "Nach fünf Tagen Behandlung war das Fieber verschwunden, jedoch war der Penicillinvorrat aufgebraucht, weshalb die Behandlung abgebrochen werden musste.",
+            "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+          },
+          {
+            "text": "Der Patient starb am 15. März 1941.",
+            "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+          },
+          {
+            "text": "Dies ließ retrospektiv vermuten, dass das Penicillin hätte länger eingenommen werden müssen, als die sichtbaren Beschwerden andauern.",
+            "section": "Geschichte – Entwicklung bis zum Durchbruch in der medizinischen Praxis"
+          }
+        ],
+        "rendition": [
+          ["Penicilline, auch Penizillin genannt, sind eine Gruppe von Stoffen, die antibiotisch wirken."],
+          ["Der Name kommt vom lateinischen Wort für ", { "slot": "a1" }, "."],
+          [
+            "Das zuerst entdeckte natürliche Penicillin wurde aus der Pinselschimmelart Penicillium ",
+            { "slot": "a2" },
+            " gewonnen und ab ",
+            { "slot": "a3" },
+            " in der Medizin eingesetzt."
+          ],
+          [
+            { "slot": "s1" },
+            " wurde das Penicillin für Howard Walter ",
+            { "slot": "s1b" },
+            " und Ernst Boris Chain interessant."
+          ],
+          [
+            "Norman Heatley gelang es, das ",
+            { "slot": "s2" },
+            " aus der Kulturflüssigkeit zu ",
+            { "slot": "s3" },
+            " und zu reinigen."
+          ],
+          [{ "slot": "i1" }],
+          ["Am ", { "slot": "s4" }, " fand ein Tierversuch an ", { "slot": "s5" }, " Ratten statt."],
+          ["Die Tiere wurden mit einer tödlichen Dosis ", { "slot": "s6" }, " infiziert."],
+          [{ "slot": "s7b" }, " der Ratten erhielt Penicillin, und ", { "slot": "s7" }, " aus dieser Gruppe starb."],
+          [{ "slot": "i4b" }],
+          ["Die Ratten der anderen Gruppe starben ", { "slot": "s8" }, " innerhalb weniger ", { "slot": "s9" }, "."],
+          [{ "slot": "i2" }],
+          ["Der erste Patient wurde am ", { "slot": "s12" }, " mit dem gewonnenen Penicillin behandelt."],
+          ["Der Patient war der ", { "slot": "s13" }, " Londoner ", { "slot": "s14" }, " Albert Alexander."],
+          [
+            "Er hatte sich beim ",
+            { "slot": "s15" },
+            " verletzt und durch eine Infektion der Wunde eine ",
+            { "slot": "s16" },
+            " erlitten."
+          ],
+          ["Er bekam eine Spritze mit einer Dosis von ", { "slot": "s17" }, "."],
+          ["Das Fieber war nach ", { "slot": "s18" }, " Behandlung verschwunden."],
+          [{ "slot": "i3" }],
+          [
+            "Jedoch war der Penicillinvorrat ",
+            { "slot": "s19" },
+            " ",
+            { "slot": "s20" },
+            " die Behandlung abgebrochen werden musste."
+          ],
+          ["Am ", { "slot": "s22" }, " starb der Patient."],
+          [{ "slot": "i5" }],
+          [
+            "Im Nachhinein ",
+            { "slot": "s24" },
+            " ",
+            { "slot": "s24b" },
+            " das Penicillin ",
+            { "slot": "s23" },
+            " hätte eingenommen werden müssen, als die sichtbaren Beschwerden andauern."
+          ],
+          [{ "slot": "i6" }]
+        ],
+        "slots": {
+          "s1": {
+            "correct": "1939",
+            "variants": [
+              {
+                "text": "1929",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Im Jahre 1939 interessierten sich Howard Walter Florey und Ernst Boris Chain für das Penicillin.“ Es war 1939, nicht 1929."
+              },
+              {
+                "text": "1993",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Im Jahre 1939 interessierten sich Howard Walter Florey und Ernst Boris Chain für das Penicillin.“ Die Ziffern wurden vertauscht: 1939."
+              }
+            ]
+          },
+          "s1b": {
+            "correct": "Florey",
+            "variants": [
+              {
+                "text": "Fleming",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Howard Walter Florey und Ernst Boris Chain“. Der Name Fleming kommt in diesem Abschnitt nicht vor."
+              }
+            ]
+          },
+          "s2": {
+            "correct": "Antibiotikum",
+            "variants": [
+              {
+                "text": "Vitamin",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „das Antibiotikum aus der Kulturflüssigkeit“. Penicillin ist ein Antibiotikum, kein Vitamin."
+              },
+              {
+                "text": "Antibiodikum",
+                "errorClass": "spelling_rule",
+                "explanation": "Das Wort kommt aus dem Griechischen („biotikos“) und wird mit „t“ geschrieben: Antibiotikum. Ein „d“ ist hier falsch, auch wenn man es ähnlich spricht."
+              }
+            ]
+          },
+          "s3": {
+            "correct": "extrahieren",
+            "variants": [
+              {
+                "text": "vernichten",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „zu extrahieren und zu reinigen“. Heatley gewann den Stoff heraus. Vernichten und reinigen passen nicht zusammen."
+              }
+            ]
+          },
+          "s4": {
+            "correct": "24. August 1940",
+            "variants": [
+              {
+                "text": "24. August 1941",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Am 24. August 1940 fand ein Tierversuch an 50 Ratten statt“. Der Versuch war 1940, nicht 1941.",
+                "tolerance": 1
+              },
+              {
+                "text": "14. August 1940",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Am 24. August 1940 fand ein Tierversuch an 50 Ratten statt“. Der Tag war der 24., nicht der 14.",
+                "tolerance": 1
+              }
+            ]
+          },
+          "s5": {
+            "correct": "50",
+            "variants": [
+              {
+                "text": "500",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „ein Tierversuch an 50 Ratten“. Es waren 50 Ratten, nicht 500."
+              },
+              {
+                "text": "15",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „ein Tierversuch an 50 Ratten“. Die Ziffern wurden vertauscht: 50 Ratten."
+              }
+            ]
+          },
+          "s6": {
+            "correct": "Streptokokken",
+            "variants": [
+              {
+                "text": "Staphylokokken",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „mit einer tödlichen Dosis Streptokokken infiziert“. Die Ratten wurden mit Streptokokken infiziert, nicht mit Staphylokokken."
+              },
+              {
+                "text": "Streptokoken",
+                "errorClass": "spelling_rule",
+                "explanation": "In „Kokken“ schreibt man ein doppeltes „k“: Streptokokken."
+              }
+            ]
+          },
+          "s7b": {
+            "correct": "Die Hälfte",
+            "variants": [
+              {
+                "text": "Ein Drittel",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Die Hälfte von ihnen erhielt Penicillin“. Die Hälfte der Ratten bekam Penicillin, nicht ein Drittel."
+              }
+            ]
+          },
+          "s7": {
+            "correct": "nur eine",
+            "variants": [
+              {
+                "text": "keine",
+                "errorClass": "quantity_degree",
+                "explanation": "Im Original steht: „und nur eine aus dieser Gruppe starb“. Eine Ratte starb. „Keine“ sagt, dass alle überlebten."
+              },
+              {
+                "text": "jede",
+                "errorClass": "quantity_degree",
+                "explanation": "Im Original steht: „und nur eine aus dieser Gruppe starb“. Fast alle Ratten dieser Gruppe überlebten. „Jede“ sagt das Gegenteil."
+              }
+            ]
+          },
+          "s8": {
+            "correct": "alle",
+            "variants": [
+              {
+                "text": "einige",
+                "errorClass": "quantity_degree",
+                "explanation": "Im Original steht: „Die Ratten der anderen Gruppe starben alle innerhalb weniger Stunden.“ Es starben alle, nicht nur einige."
+              },
+              {
+                "text": "nicht",
+                "errorClass": "connective_negation",
+                "explanation": "Im Original steht: „Die Ratten der anderen Gruppe starben alle innerhalb weniger Stunden.“ Mit „nicht“ ist der Satz verneint und sagt das Gegenteil."
+              }
+            ]
+          },
+          "s9": {
+            "correct": "Stunden",
+            "variants": [
+              {
+                "text": "Tage",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „starben alle innerhalb weniger Stunden“. Es waren Stunden, nicht Tage."
+              },
+              {
+                "text": "Wochen",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „starben alle innerhalb weniger Stunden“. Es waren Stunden, nicht Wochen."
+              }
+            ]
+          },
+          "i4b": {
+            "correct": "",
+            "variants": [
+              {
+                "text": "Alle Ratten überlebten den Versuch.",
+                "errorClass": "contradiction",
+                "explanation": "Dieser Satz widerspricht dem Text. Dort steht, dass die Ratten der anderen Gruppe alle starben."
+              }
+            ]
+          },
+          "s12": {
+            "correct": "12. Februar 1941",
+            "variants": [
+              {
+                "text": "12. Februar 1914",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Am 12. Februar 1941 wurde der erste Patient mit dem gewonnenen Penicillin behandelt.“ Die Ziffern wurden vertauscht: 1941.",
+                "tolerance": 1
+              },
+              {
+                "text": "21. Februar 1941",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Am 12. Februar 1941 wurde der erste Patient mit dem gewonnenen Penicillin behandelt.“ Es war der 12., nicht der 21.",
+                "tolerance": 1
+              }
+            ]
+          },
+          "s13": {
+            "correct": "43-jährige",
+            "variants": [
+              {
+                "text": "34-jährige",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „den 43-jährigen Londoner Polizisten Albert Alexander“. Die Ziffern wurden vertauscht: 43."
+              },
+              {
+                "text": "63-jährige",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „den 43-jährigen Londoner Polizisten Albert Alexander“. Der Patient war 43, nicht 63."
+              }
+            ]
+          },
+          "s14": {
+            "correct": "Polizist",
+            "variants": [
+              {
+                "text": "Feuerwehrmann",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „den 43-jährigen Londoner Polizisten Albert Alexander“. Der Beruf wurde ausgetauscht."
+              },
+              { "text": "Polizst", "errorClass": "slip", "explanation": "Hier fehlt ein Buchstabe: Polizist." }
+            ]
+          },
+          "s15": {
+            "correct": "Rosenschneiden",
+            "variants": [
+              {
+                "text": "Holzhacken",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „der sich beim Rosenschneiden verletzt“. Er verletzte sich bei der Gartenarbeit mit den Rosen, nicht beim Holzhacken."
+              }
+            ]
+          },
+          "s16": {
+            "correct": "Blutvergiftung",
+            "variants": [
+              {
+                "text": "Lungenentzündung",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „durch Infektion der Wunde eine Blutvergiftung erlitten“. Es war eine Blutvergiftung, keine Lungenentzündung."
+              }
+            ]
+          },
+          "s17": {
+            "correct": "160 Milligramm",
+            "variants": [
+              {
+                "text": "160 Gramm",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „ihm wurde eine Dosis von 160 Milligramm injiziert“. Die Einheit wurde verändert. Ein Gramm ist tausendmal so viel wie ein Milligramm."
+              },
+              {
+                "text": "1600 Milligramm",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „ihm wurde eine Dosis von 160 Milligramm injiziert“. Es waren 160 Milligramm, nicht 1600."
+              }
+            ]
+          },
+          "s18": {
+            "correct": "fünf Tagen",
+            "variants": [
+              {
+                "text": "fünf Wochen",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Nach fünf Tagen Behandlung war das Fieber verschwunden“. Nach fünf Tagen, nicht nach fünf Wochen."
+              },
+              {
+                "text": "fünfzehn Tagen",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Nach fünf Tagen Behandlung war das Fieber verschwunden“. Es waren fünf Tage, nicht fünfzehn."
+              }
+            ]
+          },
+          "i3": {
+            "correct": "",
+            "variants": [
+              {
+                "text": "Weil das Fieber nach fünf Tagen weg war, war der Patient geheilt.",
+                "errorClass": "faulty_inference",
+                "explanation": "Das Fieber war weg, aber die Behandlung wurde abgebrochen und der Patient starb. Aus „kein Fieber mehr“ folgt nicht „geheilt“."
+              },
+              {
+                "text": "Daraus folgt: Wer Penicillin bekommt, wird immer gesund.",
+                "errorClass": "overgeneralization",
+                "explanation": "Hier wird aus einem Fall ein Gesetz gemacht. Im Original wird der erste Patient behandelt, und er starb. „Immer“ steht dort nicht."
+              }
+            ]
+          },
+          "s19": {
+            "correct": "aufgebraucht,",
+            "variants": [
+              {
+                "text": "aufgebracht,",
+                "errorClass": "real_word",
+                "explanation": "„Aufgebracht“ ist ein echtes Wort und heißt „wütend“. Gemeint ist „aufgebraucht“: Der Vorrat war leer."
+              },
+              {
+                "text": "aufgebraucht",
+                "errorClass": "punctuation",
+                "explanation": "Vor „weshalb“ beginnt ein Nebensatz. Dort setzt man ein Komma."
+              }
+            ]
+          },
+          "s20": {
+            "correct": "weshalb",
+            "variants": [
+              {
+                "text": "obwohl",
+                "errorClass": "connective_negation",
+                "explanation": "Im Original steht: „aufgebraucht, weshalb die Behandlung abgebrochen werden musste“. Der leere Vorrat ist der Grund. „Obwohl“ macht daraus einen Gegensatz."
+              },
+              {
+                "text": "weil",
+                "errorClass": "connective_negation",
+                "explanation": "Im Original steht: „aufgebraucht, weshalb die Behandlung abgebrochen werden musste“. Mit „weil“ wären Grund und Folge vertauscht."
+              }
+            ]
+          },
+          "s22": {
+            "correct": "15. März 1941",
+            "variants": [
+              {
+                "text": "15. April 1941",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Der Patient starb am 15. März 1941.“ Es war der 15. März, nicht der 15. April.",
+                "tolerance": 1
+              },
+              {
+                "text": "5. März 1941",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Der Patient starb am 15. März 1941.“ Es war der 15., nicht der 5.",
+                "tolerance": 1
+              }
+            ]
+          },
+          "i5": {
+            "correct": "",
+            "variants": [
+              {
+                "text": "Der Patient lebte danach noch viele Jahre.",
+                "errorClass": "contradiction",
+                "explanation": "Dieser Satz widerspricht dem Satz davor. Dort steht, dass der Patient am 15. März 1941 starb."
+              },
+              {
+                "text": "Die Forscher in Oxford arbeiteten oft bis spät in die Nacht.",
+                "errorClass": "added_claim",
+                "explanation": "Dieser Satz steht nicht im Original. Dort steht nichts darüber, wie lange die Forscher arbeiteten."
+              }
+            ]
+          },
+          "s24": {
+            "correct": "vermutete man,",
+            "variants": [
+              {
+                "text": "bewies man,",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Dies ließ retrospektiv vermuten“. Es war eine Vermutung, kein Beweis."
+              }
+            ]
+          },
+          "s24b": {
+            "correct": "dass",
+            "variants": [
+              {
+                "text": "das",
+                "errorClass": "real_word",
+                "explanation": "Hier beginnt ein Nebensatz mit einer Aussage. Man schreibt „dass“. „Das“ kann man durch „dieses“ ersetzen, hier geht das nicht."
+              }
+            ]
+          },
+          "s23": {
+            "correct": "länger",
+            "variants": [
+              {
+                "text": "kürzer",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „dass das Penicillin hätte länger eingenommen werden müssen“. Es hätte länger gegeben werden müssen, nicht kürzer."
+              },
+              {
+                "text": "früher",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „dass das Penicillin hätte länger eingenommen werden müssen“. Es ging um die Dauer, nicht um den Zeitpunkt."
+              }
+            ]
+          },
+          "i1": {
+            "correct": "",
+            "variants": [
+              {
+                "text": "Forscher sagen, dass Schimmelpilze zu den ältesten Lebewesen der Erde gehören.",
+                "errorClass": "false_authority",
+                "explanation": "Der Satz beruft sich auf „Forscher“, ohne einen Namen oder eine Quelle zu nennen. Im Original steht davon nichts. Dort geht es nur um die Kulturflüssigkeit der Schimmelpilze."
+              },
+              {
+                "text": "Die Ratten stammten aus einer Zucht in Oxford.",
+                "errorClass": "added_claim",
+                "explanation": "Dieser Satz steht nicht im Original. Dort steht nichts darüber, woher die Ratten kamen."
+              }
+            ]
+          },
+          "i2": {
+            "correct": "",
+            "variants": [
+              {
+                "text": "Dieser Tierversuch war der wichtigste Moment der ganzen Medizingeschichte.",
+                "errorClass": "opinion_as_fact",
+                "explanation": "Das ist eine Meinung. „Der wichtigste Moment“ lässt sich nicht messen. Im Original steht, was bei dem Versuch geschah, nicht wie wichtig er war."
+              },
+              {
+                "text": "Die armen Ratten mussten dafür furchtbar leiden.",
+                "errorClass": "loaded_language",
+                "explanation": "„Arm“ und „furchtbar“ sind Gefühlswörter. Das Original beschreibt nüchtern, was bei dem Versuch geschah."
+              }
+            ]
+          },
+          "i6": {
+            "correct": "",
+            "variants": [
+              {
+                "text": "Norman Heatley war der klügste Forscher im ganzen Team.",
+                "errorClass": "opinion_as_fact",
+                "explanation": "Das ist eine Meinung. „Der klügste“ lässt sich nicht messen. Im Original steht nur, was Heatley gelang: das Antibiotikum zu extrahieren und zu reinigen."
+              },
+              {
+                "text": "Heatleys Arbeit war einfach unfassbar großartig.",
+                "errorClass": "loaded_language",
+                "explanation": "„Unfassbar großartig“ ist ein Gefühlswort. Das Original sagt nüchtern, was Heatley gelang."
+              }
+            ]
+          },
+          "a1": {
+            "correct": "Pinselschimmel",
+            "variants": [
+              {
+                "text": "Brotschimmel",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „von lateinisch penicillium, ‚Pinselschimmel‘“. Der Name kommt von „Pinselschimmel“, nicht von „Brotschimmel“."
+              }
+            ]
+          },
+          "a2": {
+            "correct": "notatum",
+            "variants": [
+              {
+                "text": "chrysogenum",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „aus der Pinselschimmelart Penicillium notatum isoliert“. Die Art heißt Penicillium notatum, nicht Penicillium chrysogenum."
+              }
+            ]
+          },
+          "a3": {
+            "correct": "1942",
+            "variants": [
+              {
+                "text": "1924",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „ab 1942 therapeutisch eingesetzt“. Das Jahr war 1942, nicht 1924."
+              },
+              {
+                "text": "1892",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „ab 1942 therapeutisch eingesetzt“. Das Jahr war 1942, nicht 1892. Das liegt auch weit vor der Forschung von 1939."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "quelle-3",
+        "kind": "quelle",
+        "stage": 3,
+        "title": "Tropischer Regenwald",
+        "source": {
+          "title": "Tropischer Regenwald – Wikipedia",
+          "url": "https://de.wikipedia.org/w/index.php?title=Tropischer_Regenwald&oldid=267803170",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+          "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Tropischer_Regenwald&action=history",
+          "retrieved": "2026-10-18"
+        },
+        "excerpt": [
+          {
+            "text": "Tropischer Regenwald ist der Oberbegriff für die immerfeuchten Wälder der tropischen Klimazone.",
+            "section": null
+          },
+          {
+            "text": "Dieser Waldtyp liegt am Äquator, großflächig bis ungefähr zum 10. Breitengrad, regional auch deutlich darüber hinaus.",
+            "section": null
+          },
+          {
+            "text": "Aufgrund der Nähe zum Äquator bleibt die Tageslänge im Jahreslauf weitgehend konstant.",
+            "section": null
+          },
+          {
+            "text": "Die Sonne steht täglich etwa zwölf Stunden am Himmel, wobei die Dämmerung nicht einmal eine halbe Stunde dauert.",
+            "section": null
+          },
+          {
+            "text": "Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen, steigt das verdunstende Regenwasser und das Wasser, das die Pflanzen abgeben, als feucht-warme Luft nach oben und ballt sich am Himmel in zunehmend dichteren Wolken zusammen.",
+            "section": null
+          },
+          {
+            "text": "Nachmittags oder abends regnen diese Wolken in der Regel aus, häufig in Verbindung mit einem Gewitter.",
+            "section": null
+          },
+          {
+            "text": "Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht.",
+            "section": null
+          },
+          { "text": "Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder.", "section": null },
+          {
+            "text": "Dieser Effekt wird durch das Blattwerk der Vegetation verstärkt, sodass die Vegetation selbst neuerlichen Niederschlag hervorruft.",
+            "section": null
+          },
+          {
+            "text": "Die Niederschlagsmenge liegt in den Tieflandregenwäldern mit jährlich 2000 bis 4000 mm fünfmal höher als in Mitteleuropa, wo die Werte bei 400 bis 800 mm liegen.",
+            "section": null
+          },
+          {
+            "text": "An der Luv-Seite tropischer Berghänge können die Niederschläge sogar auf Jahreswerte zwischen 6.000 mm und 12.000 mm (am hawaiianischen Waiʻaleʻale) ansteigen.",
+            "section": null
+          }
+        ],
+        "rendition": [
+          [
+            "Der tropische Regenwald ist der Oberbegriff für die ",
+            { "slot": "n1" },
+            " Wälder der tropischen Klimazone."
+          ],
+          [
+            "Dieser Waldtyp liegt am Äquator, großflächig bis ungefähr zum ",
+            { "slot": "n2" },
+            ", regional auch deutlich darüber hinaus."
+          ],
+          [
+            "Weil der Regenwald so nah am Äquator liegt, bleibt die Tageslänge im Lauf des Jahres ",
+            { "slot": "n3" },
+            "."
+          ],
+          [
+            "Die Sonne steht dort täglich etwa ",
+            { "slot": "s2" },
+            " am Himmel, und die Dämmerung dauert nicht einmal eine halbe Stunde."
+          ],
+          [{ "slot": "i1" }],
+          [
+            "Am ",
+            { "slot": "s3" },
+            " Vormittag erwärmen sich Luft und Boden rasch, und feucht-warme Luft steigt nach oben."
+          ],
+          ["Am Himmel ballt sich diese Luft zu immer ", { "slot": "s4" }, " Wolken zusammen."],
+          ["Nachmittags oder abends regnen diese Wolken ", { "slot": "s5" }, " aus, häufig mit einem Gewitter."],
+          [{ "slot": "i2" }],
+          [
+            "Es regnet das ganze Jahr, besonders stark im ",
+            { "slot": "s7" },
+            " und im Herbst, in den so genannten Regenzeiten."
+          ],
+          ["Darum herrscht mindestens in ", { "slot": "s6" }, " des Jahres ein feuchtes (humides) Klima."],
+          [{ "slot": "s8" }, " verdunstet eine erhebliche Menge des Regens rasch wieder."],
+          [
+            "Das Blattwerk der Pflanzen ",
+            { "slot": "s9" },
+            " diesen Effekt, sodass die Vegetation selbst neuen Niederschlag hervorruft."
+          ],
+          [{ "slot": "i3" }],
+          ["In den Tieflandregenwäldern fallen jährlich ", { "slot": "s10" }, " Niederschlag."],
+          ["Das ist ", { "slot": "s11" }, " so viel wie in Mitteleuropa, wo es nur ", { "slot": "s12" }, " sind."],
+          [{ "slot": "i4" }],
+          [
+            "An der Luv-Seite tropischer Berghänge können die Niederschläge sogar auf Jahreswerte zwischen ",
+            { "slot": "s13" },
+            " ansteigen."
+          ],
+          [{ "slot": "i5" }]
+        ],
+        "slots": {
+          "s2": {
+            "correct": "zwölf Stunden",
+            "variants": [
+              {
+                "text": "acht Stunden",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Die Sonne steht täglich etwa zwölf Stunden am Himmel, wobei die Dämmerung nicht einmal eine halbe Stunde dauert.“ Die Sonne steht zwölf Stunden am Himmel, nicht acht."
+              },
+              {
+                "text": "zwölf Minuten",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Die Sonne steht täglich etwa zwölf Stunden am Himmel, wobei die Dämmerung nicht einmal eine halbe Stunde dauert.“ Es sind zwölf Stunden, nicht Minuten. Zwölf Minuten Sonne am Tag wären viel zu wenig."
+              }
+            ]
+          },
+          "i1": {
+            "correct": "",
+            "variants": [
+              {
+                "text": "Das gleichmäßige Wetter dort ist angenehmer als jedes Wetter in Europa.",
+                "errorClass": "opinion_as_fact",
+                "explanation": "Das ist eine Meinung, keine Tatsache. Wörter wie „angenehmer“ und „jedes“ bewerten. Im Original steht nur, wie lang der Tag ist und wie das Wetter abläuft."
+              },
+              {
+                "text": "Die Tiere dort stehen mit der Sonne auf.",
+                "errorClass": "added_claim",
+                "explanation": "Dieser Satz steht nicht im Original. Dort steht nur, wie lang die Sonne scheint und wie lang die Dämmerung dauert. Vom Verhalten der Tiere steht nichts im Text."
+              }
+            ]
+          },
+          "s3": {
+            "correct": "frühen",
+            "variants": [
+              {
+                "text": "späten",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Am frühen Vormittag, wenn sich bei zunehmender Sonneneinstrahlung Luft und Boden rasch erwärmen“. Es geht um den frühen Vormittag, nicht um den späten."
+              },
+              {
+                "text": "früen",
+                "errorClass": "spelling_rule",
+                "explanation": "Das Wort kommt von „früh“. Der Vokal ist lang, darum schreibt man ein Dehnungs-h: frühen."
+              }
+            ]
+          },
+          "s4": {
+            "correct": "dichteren",
+            "variants": [
+              {
+                "text": "dünneren",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „und ballt sich am Himmel in zunehmend dichteren Wolken zusammen“. Die Luft ballt sich zu immer dichteren Wolken zusammen, nicht zu dünneren."
+              },
+              {
+                "text": "dichtern",
+                "errorClass": "slip",
+                "explanation": "Hier ist eine Silbe verrutscht: „dichtern“ statt „dichteren“. Das ist ein Flüchtigkeitsfehler."
+              }
+            ]
+          },
+          "s5": {
+            "correct": "in der Regel",
+            "variants": [
+              {
+                "text": "nur selten",
+                "errorClass": "quantity_degree",
+                "explanation": "Im Original steht: „Nachmittags oder abends regnen diese Wolken in der Regel aus, häufig in Verbindung mit einem Gewitter.“ Die Wolken regnen in der Regel aus, nicht nur selten."
+              },
+              {
+                "text": "immer",
+                "errorClass": "quantity_degree",
+                "explanation": "Im Original steht: „Nachmittags oder abends regnen diese Wolken in der Regel aus, häufig in Verbindung mit einem Gewitter.“ Es steht „in der Regel“, nicht „immer“. Eine Regel kann Ausnahmen haben."
+              }
+            ]
+          },
+          "i2": {
+            "correct": "",
+            "variants": [
+              {
+                "text": "Weil die Sonne täglich zwölf Stunden scheint, regnet es im Regenwald fast nie.",
+                "errorClass": "faulty_inference",
+                "explanation": "Dieser Satz steht nicht im Original. Aus der Sonnenzeit folgt nicht, dass es kaum regnet. Im Original regnen die Wolken nachmittags oder abends aus, und es regnet das ganze Jahr."
+              },
+              {
+                "text": "Die Wolken regnen im Regenwald nie aus.",
+                "errorClass": "contradiction",
+                "explanation": "Dieser Satz widerspricht dem Satz davor. Dort regnen die Wolken nachmittags oder abends aus."
+              }
+            ]
+          },
+          "s7": {
+            "correct": "Frühjahr",
+            "variants": [
+              {
+                "text": "Sommer",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind“. Besonders stark regnet es im Frühjahr und im Herbst."
+              },
+              {
+                "text": "Winter",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind“. Besonders stark regnet es im Frühjahr und im Herbst, nicht im Winter."
+              }
+            ]
+          },
+          "s6": {
+            "correct": "zehn Monaten",
+            "variants": [
+              {
+                "text": "zwei Monaten",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht“. Es sind mindestens zehn Monate, nicht zwei."
+              },
+              {
+                "text": "zwölf Monaten",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht“. Es sind mindestens zehn Monate, nicht zwölf."
+              }
+            ]
+          },
+          "s8": {
+            "correct": "Gleichwohl",
+            "variants": [
+              {
+                "text": "Deshalb",
+                "errorClass": "connective_negation",
+                "explanation": "Im Original steht: „Diese ganzjährigen Niederschläge, die im Frühjahr und im Herbst – während der so genannten Regenzeiten – besonders intensiv sind, führen dazu, dass mindestens in zehn Monaten des Jahres ein humides (feuchtes) Klima herrscht. Gleichwohl verdunstet eine erhebliche Menge des Regens rasch wieder.“ Das Verdunsten ist kein Grund für den vielen Regen, sondern ein Gegensatz dazu. „Gleichwohl“ zeigt das, „deshalb“ nicht."
+              },
+              {
+                "text": "Gleichwol",
+                "errorClass": "spelling_rule",
+                "explanation": "Das Wort enthält „wohl“ mit Dehnungs-h. Man schreibt: Gleichwohl."
+              }
+            ]
+          },
+          "s9": {
+            "correct": "verstärkt",
+            "variants": [
+              {
+                "text": "verhindert",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Dieser Effekt wird durch das Blattwerk der Vegetation verstärkt, sodass die Vegetation selbst neuerlichen Niederschlag hervorruft.“ Das Blattwerk verstärkt den Effekt, es verhindert ihn nicht."
+              },
+              {
+                "text": "verstärt",
+                "errorClass": "slip",
+                "explanation": "Hier fehlt ein Buchstabe: „verstärt“ statt „verstärkt“. Das ist ein Flüchtigkeitsfehler."
+              }
+            ]
+          },
+          "i3": {
+            "correct": "",
+            "variants": [
+              {
+                "text": "Darum sehen die Blätter dort nach einem Regen besonders glänzend aus.",
+                "errorClass": "added_claim",
+                "explanation": "Dieser Satz steht nicht im Original. Dort steht nur, dass das Blattwerk den Effekt verstärkt und die Vegetation selbst Niederschlag hervorruft. Von glänzenden Blättern steht nichts im Text."
+              },
+              {
+                "text": "Alle Pflanzen auf der Erde erzeugen so ihren eigenen Regen.",
+                "errorClass": "overgeneralization",
+                "explanation": "Dieser Satz steht nicht im Original. Im Original geht es um die Vegetation des Regenwaldes. Aus diesem Fall wird hier eine Regel für alle Pflanzen gemacht."
+              }
+            ]
+          },
+          "s10": {
+            "correct": "2000 bis 4000 mm",
+            "variants": [
+              {
+                "text": "200 bis 400 mm",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Die Niederschlagsmenge liegt in den Tieflandregenwäldern mit jährlich 2000 bis 4000 mm fünfmal höher als in Mitteleuropa“. Es sind 2000 bis 4000 Millimeter, nicht 200 bis 400."
+              },
+              {
+                "text": "4000 bis 6000 mm",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „Die Niederschlagsmenge liegt in den Tieflandregenwäldern mit jährlich 2000 bis 4000 mm fünfmal höher als in Mitteleuropa“. Die Zahlen heißen 2000 bis 4000."
+              }
+            ]
+          },
+          "s11": {
+            "correct": "fünfmal",
+            "variants": [
+              {
+                "text": "zweimal",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „fünfmal höher als in Mitteleuropa, wo die Werte bei 400 bis 800 mm liegen“. Es ist fünfmal so viel, nicht zweimal."
+              },
+              {
+                "text": "zehnmal",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „fünfmal höher als in Mitteleuropa, wo die Werte bei 400 bis 800 mm liegen“. Es ist fünfmal so viel, nicht zehnmal."
+              }
+            ]
+          },
+          "s12": {
+            "correct": "400 bis 800 mm",
+            "variants": [
+              {
+                "text": "40 bis 80 mm",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „fünfmal höher als in Mitteleuropa, wo die Werte bei 400 bis 800 mm liegen“. In Mitteleuropa sind es 400 bis 800 Millimeter, nicht 40 bis 80."
+              },
+              {
+                "text": "4000 bis 8000 mm",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „fünfmal höher als in Mitteleuropa, wo die Werte bei 400 bis 800 mm liegen“. In Mitteleuropa sind es 400 bis 800 Millimeter. Mit 4000 bis 8000 wäre es dort mehr Regen als im Regenwald."
+              }
+            ]
+          },
+          "i4": {
+            "correct": "",
+            "variants": [
+              {
+                "text": "Auf der ganzen Erde regnet es in Wäldern deutlich mehr als in Mitteleuropa.",
+                "errorClass": "overgeneralization",
+                "explanation": "Dieser Satz steht nicht im Original. Dort geht es um die Tieflandregenwälder. Aus diesem Fall wird hier eine Regel für alle Wälder der Erde gemacht."
+              },
+              {
+                "text": "Ein Regenwald mit so viel Regen ist schöner als jeder europäische Wald.",
+                "errorClass": "opinion_as_fact",
+                "explanation": "Das ist eine Meinung, keine Tatsache. Wörter wie „schöner“ bewerten. Im Original stehen nur Zahlen zur Regenmenge."
+              }
+            ]
+          },
+          "s13": {
+            "correct": "6.000 mm und 12.000 mm",
+            "variants": [
+              {
+                "text": "600 mm und 1.200 mm",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „An der Luv-Seite tropischer Berghänge können die Niederschläge sogar auf Jahreswerte zwischen 6.000 mm und 12.000 mm (am hawaiianischen Waiʻaleʻale) ansteigen.“ Die Werte liegen zwischen 6.000 und 12.000 Millimetern."
+              },
+              {
+                "text": "6.000 mm und 21.000 mm",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „An der Luv-Seite tropischer Berghänge können die Niederschläge sogar auf Jahreswerte zwischen 6.000 mm und 12.000 mm (am hawaiianischen Waiʻaleʻale) ansteigen.“ Die obere Zahl ist 12.000, nicht 21.000."
+              }
+            ]
+          },
+          "i5": {
+            "correct": "",
+            "variants": [
+              {
+                "text": "Auf Berghängen regnet es deshalb immer weniger als im Tiefland.",
+                "errorClass": "contradiction",
+                "explanation": "Dieser Satz widerspricht dem Satz davor. Dort steigen die Niederschläge an Berghängen sogar auf sehr hohe Werte."
+              },
+              {
+                "text": "Weil es an Berghängen so viel regnet, gibt es dort keine Wolken.",
+                "errorClass": "faulty_inference",
+                "explanation": "Dieser Satz steht nicht im Original. Aus viel Regen folgt nicht, dass es keine Wolken gibt. Im Original ballen sich Wolken am Himmel zusammen und regnen aus."
+              }
+            ]
+          },
+          "n1": {
+            "correct": "immerfeuchten",
+            "variants": [
+              {
+                "text": "immertrockenen",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Tropischer Regenwald ist der Oberbegriff für die immerfeuchten Wälder der tropischen Klimazone.“ Es geht um immerfeuchte Wälder, nicht um trockene."
+              },
+              {
+                "text": "imerfeuchten",
+                "errorClass": "spelling_rule",
+                "explanation": "Das Wort besteht aus „immer“ und „feucht“. Nach dem kurzen „i“ steht „mm“: immerfeuchten."
+              }
+            ]
+          },
+          "n2": {
+            "correct": "10. Breitengrad",
+            "variants": [
+              {
+                "text": "30. Breitengrad",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „… großflächig bis ungefähr zum 10. Breitengrad, regional auch deutlich darüber hinaus.“ Die Zahl ist 10, nicht 30."
+              },
+              {
+                "text": "100. Breitengrad",
+                "errorClass": "number_name_date",
+                "explanation": "Im Original steht: „… großflächig bis ungefähr zum 10. Breitengrad …“. Einen 100. Breitengrad gibt es nicht, die Zahl ist 10."
+              }
+            ]
+          },
+          "n3": {
+            "correct": "fast gleich",
+            "variants": [
+              {
+                "text": "stark verschieden",
+                "errorClass": "factual_error",
+                "explanation": "Im Original steht: „Aufgrund der Nähe zum Äquator bleibt die Tageslänge im Jahreslauf weitgehend konstant.“ Die Tageslänge bleibt fast gleich, sie ist nicht stark verschieden."
+              },
+              {
+                "text": "genau gleich",
+                "errorClass": "quantity_degree",
+                "explanation": "Im Original steht: „… bleibt die Tageslänge im Jahreslauf weitgehend konstant.“ „Weitgehend“ heißt fast gleich, nicht genau gleich."
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "classNames": {
+      "spelling_rule": "Rechtschreibung (Regelfehler)",
+      "slip": "Flüchtigkeitsfehler",
+      "real_word": "Fehler mit echtem Wort (das/dass, das fahren)",
+      "punctuation": "Zeichensetzung",
+      "number_name_date": "Zahl, Name, Datum oder Ort verändert",
+      "factual_error": "Sachlich falsche Angabe",
+      "added_claim": "Hinzugefügte Aussage",
+      "connective_negation": "Verbindung oder Verneinung verändert",
+      "contradiction": "Widerspruch im Text",
+      "quantity_degree": "Menge oder Grad verändert",
+      "overgeneralization": "Verallgemeinerung",
+      "faulty_inference": "Falsche Folgerung oder Ursache",
+      "opinion_as_fact": "Meinung als Tatsache",
+      "false_authority": "Falsche Autorität oder Quelle",
+      "loaded_language": "Wertende, emotionalisierende Beeinflussung"
+    }
+  }
+</script>
+<script>
+  const DATA = JSON.parse(document.getElementById("data").textContent);
+  const STEPS = DATA.steps,
+    NAMES = DATA.classNames;
+  const app = document.getElementById("app");
+  const KIND = {
+    text: {
+      name: "Fehler im Text finden",
+      short: "Text",
+      question: (s) =>
+        s === 3 ? "Ist das richtig geschrieben? Passt das zu dem, was vorher stand?" : "Ist das richtig geschrieben?",
+    },
+    quelle: { name: "Mit der Quelle vergleichen", short: "Quelle", question: () => "Sagt die Quelle das wirklich so?" },
+  };
+  const STAGE = { 1: "Stufe 1 · leicht", 2: "Stufe 2 · mittel", 3: "Stufe 3 · schwer" };
+  // The rules of the stages are the only place that says what a stage holds. `adds` are the error classes a stage
+  // brings in; a stage holds its own and all earlier ones. The cards, the "neu" marks, the goal line, the hints and
+  // the choice of errors in a round are all derived from this.
+  const LEVELS = {
+    text: [
+      { adds: ["spelling_rule", "slip"], errors: 3, announce: true, tip: "full", source: null },
+      { adds: ["punctuation", "real_word"], errors: 4, announce: true, tip: "short", source: null },
+      { adds: ["contradiction"], errors: 5, announce: false, tip: "none", source: null },
+    ],
+    quelle: [
+      { adds: ["number_name_date"], errors: 3, announce: true, tip: "full", source: "sheet" },
+      {
+        adds: ["factual_error", "added_claim", "connective_negation", "quantity_degree"],
+        errors: 4,
+        announce: true,
+        tip: "short",
+        source: "sheet",
+      },
+      {
+        adds: ["overgeneralization", "faulty_inference", "opinion_as_fact", "false_authority", "loaded_language"],
+        errors: 5,
+        announce: false,
+        tip: "none",
+        source: "link",
+      },
+    ],
+  };
+  const levelOf = (kind, stage) => LEVELS[kind][stage - 1];
+  const classesOf = (kind, stage) => LEVELS[kind].slice(0, stage).flatMap((l) => l.adds);
+  const rulesOf = (step) => ({ ...levelOf(step.kind, step.stage), classes: classesOf(step.kind, step.stage) });
+  // Length of the text, measured on the text itself (in the real app: on the texts of the stage).
+  function measure(step) {
+    const lens = step.rendition.map(
+      (parts) =>
+        parts
+          .map((p) => (typeof p === "string" ? p : step.slots[p.slot].correct))
+          .join("")
+          .split(/\s+/)
+          .filter(Boolean).length,
+    );
+    return {
+      sentences: lens.length,
+      avg: Math.round(lens.reduce((a, b) => a + b, 0) / lens.length),
+      max: Math.max(...lens),
+    };
+  }
+  function helpOf(step) {
+    const r = rulesOf(step),
+      out = [];
+    out.push(
+      {
+        full: "Ein Lesetipp vorab.",
+        short: "Ein kurzer Lesetipp vorab.",
+        none: "Kein Lesetipp vorab, nur auf Wunsch.",
+      }[r.tip],
+    );
+    if (r.source === "sheet") out.push("Der Ausschnitt der Quelle liegt als eigenes Blatt dabei.");
+    if (r.source === "link") out.push("Die Quelle ist der echte Artikel als Link. Du suchst die Stelle selbst.");
+    out.push(r.announce ? "Die Aufgabe nennt die Fehlerarten." : "Die Aufgabe nennt die Fehlerarten nicht.");
+    return out.join(" ");
+  }
+  const TIPS = {
+    text: [
+      "Lies langsam, Wort für Wort. Sprich die Wörter in Gedanken mit.",
+      "Bleib bei jedem Wort kurz stehen: Fehlt ein Buchstabe? Steht ein Wort doppelt?",
+      "Schau auf jedes Satzende und jedes Komma.",
+    ],
+    quelle: [
+      "Lies zuerst die Quelle. Merk dir Zahlen, Namen und Orte.",
+      "Lies dann die Wiedergabe Satz für Satz. Geh nach jedem Satz zurück zur Quelle.",
+      "Andere Wörter sind noch kein Fehler. Frag dich: Sagt die Quelle dasselbe?",
+    ],
+  };
+  const CLASS_TIP = {
+    spelling_rule: "Sprich das Wort langsam. Hilft ein verwandtes Wort (Ast – Äste)?",
+    slip: "Lies Wort für Wort: Fehlt ein Buchstabe, steht ein Wort doppelt?",
+    real_word: "Das Wort gibt es, aber passt es hier? Achte auf das/dass und groß/klein.",
+    punctuation: "Schau auf jedes Satzende und jedes Komma.",
+    contradiction: "Frag bei jedem Satz: Passt das zu dem, was vorher stand?",
+    number_name_date: "Vergleiche jede Zahl, jeden Namen und jeden Ort mit der Quelle.",
+    factual_error: "Steht die Angabe genau so in der Quelle?",
+    added_claim: "Sagt die Quelle das überhaupt? Manche Sätze sind dazuerfunden.",
+    connective_negation: "Achte auf kleine Wörter: nicht, kein, aber, deshalb.",
+    quantity_degree: "Achte auf Mengen: einige, viele, alle, oft, immer.",
+    overgeneralization: "Wird aus „manche“ ein „alle“ oder aus „oft“ ein „immer“?",
+    faulty_inference: "Wird aus einem Nacheinander ein „weil“ oder „deshalb“?",
+    opinion_as_fact: "Ist das eine Tatsache aus der Quelle oder eine Meinung?",
+    false_authority: "Wer sagt das? Nennt die Quelle diese Fachleute?",
+    loaded_language: "Klingt die Wiedergabe wertender als die Quelle?",
+  };
+
+  let done = {};
+  try {
+    done = JSON.parse(localStorage.getItem("tc-mock-done") || "{}");
+  } catch (e) {}
+  function saveDone() {
+    try {
+      localStorage.setItem("tc-mock-done", JSON.stringify(done));
+    } catch (e) {}
+  }
+  let seenTip = {};
+
+  const esc = (s) =>
+    String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+  const shuffle = (a) => {
+    a = [...a];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+  const nextStep = (id) => {
+    const s = STEPS.find((x) => x.id === id);
+    return STEPS.find((x) => x.kind === s.kind && x.stage === s.stage + 1);
+  };
+  const MODE_TEXT = {
+    text: "Du bekommst einen Text, aber keine Vorlage. Wie beim Korrigieren eigener Texte suchst du Fehler, die man am Text selbst sieht.",
+    quelle:
+      "Du bekommst eine Wiedergabe und ihre Quelle. Wie beim Prüfen eines Referats suchst du, was beim Übertragen falsch geworden ist.",
+  };
+
+  // ---------- start: choose the mode ----------
+  function home() {
+    const mode = (k) => `<button class="mode ${k}" data-mode="${k}">
+      <span class="badge ${k}">${KIND[k].short}</span>
+      <h2>${KIND[k].name}</h2>
+      <span class="q">${KIND[k].question(1)}</span>
+      <span class="d">${MODE_TEXT[k]}</span></button>`;
+    app.innerHTML = `
+    <p class="mock">Mock-up zum Ausprobieren, nicht die App. Beispieltexte aus den vorhandenen Paketen; Hinweise, Schrift-Einstellungen und englische Fassung fehlen hier.</p>
+    <h1>Textcheck</h1>
+    <p class="lead">Hier übst du, genau zu lesen. Was willst du üben?</p>
+    <div class="modes">${mode("text")}${mode("quelle")}</div>`;
+    app.querySelectorAll("[data-mode]").forEach((b) => (b.onclick = () => stages(b.dataset.mode)));
+    window.scrollTo(0, 0);
+  }
+
+  // ---------- then the stage, with what it holds ----------
+  function stages(kind) {
+    const list = STEPS.filter((s) => s.kind === kind);
+    const card = (s) => {
+      const before = classesOf(kind, s.stage - 1),
+        added = levelOf(kind, s.stage).adds,
+        m = measure(s);
+      const chips = [
+        ...before.map((c) => `<span class="chip">${esc(NAMES[c])}</span>`),
+        ...added.map((c) => `<span class="chip${s.stage > 1 ? " new" : ""}">${esc(NAMES[c])}</span>`),
+      ].join("");
+      return `<div class="stagecard">
+      <h3>${STAGE[s.stage]}${done[s.id] ? '<span class="done">✓ geschafft</span>' : ""}</h3>
+      <button data-go="${s.id}">Üben</button>
+      <dl><dt>Text</dt><dd>${m.sentences} Sätze, im Schnitt ${m.avg} Wörter je Satz, der längste hat ${m.max}</dd>
+        <dt>Fehler</dt><dd>${levelOf(kind, s.stage).errors} je Runde</dd>
+        <dt>Fehlerarten</dt><dd>${chips}</dd>
+        <dt>Hilfen</dt><dd>${helpOf(s)}</dd></dl></div>`;
+    };
+    app.innerHTML = `
+    <button class="back" id="back">← Andere Übung wählen</button>
+    <div><span class="badge ${kind}">${KIND[kind].short}</span></div>
+    <h2>${KIND[kind].name}</h2>
+    <p class="lead">Wähl eine Stufe. Jede Stufe bringt neue Fehlerarten dazu, die Texte werden länger und die Hilfen weniger.</p>
+    <div class="stages">${list.map(card).join("")}</div>
+    ${list.some((s) => done[s.id]) ? '<div class="row"><button id="reset">Häkchen löschen</button></div>' : ""}`;
+    document.getElementById("back").onclick = home;
+    app.querySelectorAll("[data-go]").forEach((b) => (b.onclick = () => start(b.dataset.go)));
+    const r = document.getElementById("reset");
+    if (r)
+      r.onclick = () => {
+        list.forEach((s) => delete done[s.id]);
+        saveDone();
+        stages(kind);
+      };
+    window.scrollTo(0, 0);
+  }
+
+  // ---------- reading tip before the first round of a step ----------
+  function start(id) {
+    const step = STEPS.find((s) => s.id === id);
+    if (rulesOf(step).tip !== "none" && !seenTip[id]) return tipScreen(step);
+    play(step);
+  }
+  function tipList(step) {
+    const t = TIPS[step.kind];
+    const list = rulesOf(step).tip === "full" ? t : [t[t.length - 1]];
+    return list.length === 1 ? `<p>${esc(list[0])}</p>` : `<ol>${list.map((x) => `<li>${esc(x)}</li>`).join("")}</ol>`;
+  }
+  function tipScreen(step) {
+    app.innerHTML = `
+    <button class="back" id="back">← Stufe wählen</button>
+    <div><span class="badge ${step.kind}">${KIND[step.kind].short} · ${STAGE[step.stage]}</span></div>
+    <h2>So liest du hier</h2>
+    <div class="tip">
+      <p class="question">${KIND[step.kind].question(step.stage)}</p>
+      ${tipList(step)}
+    </div>
+    <div class="row"><button class="primary" id="go">Verstanden, los</button></div>`;
+    document.getElementById("back").onclick = () => stages(step.kind);
+    document.getElementById("go").onclick = () => {
+      seenTip[step.id] = true;
+      play(step);
+    };
+    window.scrollTo(0, 0);
+  }
+
+  // ---------- a round ----------
+  function buildRound(step) {
+    const rules = rulesOf(step);
+    const pick = (variants, from) => variants.filter((v) => from.includes(v.errorClass));
+    const cands = Object.entries(step.slots)
+      .map(([id, sl]) => [id, { ...sl, variants: pick(sl.variants, rules.classes) }])
+      .filter(([, sl]) => sl.variants.length);
+    // at least two errors from the classes this stage adds, the rest from all of its classes
+    const fresh = shuffle(cands.filter(([, sl]) => pick(sl.variants, rules.adds).length)).slice(
+      0,
+      Math.min(2, rules.errors),
+    );
+    const rest = shuffle(cands.filter((c) => !fresh.includes(c))).slice(0, rules.errors - fresh.length);
+    const chosen = new Map();
+    for (const [id, sl] of [...fresh, ...rest]) {
+      const pool = fresh.some((f) => f[0] === id) ? pick(sl.variants, rules.adds) : sl.variants;
+      chosen.set(id, pool[Math.floor(Math.random() * pool.length)]);
+    }
+    const tokens = [];
+    step.rendition.forEach((parts, sentence) => {
+      let text = "";
+      const ranges = [];
+      for (const p of parts) {
+        if (typeof p === "string") {
+          text += p;
+          continue;
+        }
+        const w = chosen.get(p.slot)?.text ?? step.slots[p.slot]?.correct ?? "";
+        ranges.push({ slot: p.slot, start: text.length, end: text.length + w.length });
+        text += w;
+      }
+      for (const m of text.matchAll(/\S+/g)) {
+        const s = m.index,
+          e = s + m[0].length;
+        const slot = ranges.find((r) => r.start < e && r.end > s)?.slot ?? null;
+        tokens.push({ id: tokens.length, text: m[0], sentence, slot });
+      }
+    });
+    return {
+      step,
+      chosen,
+      tokens,
+      marked: new Set(),
+      checked: false,
+      view: rules.source === "sheet" ? "quelle" : "text",
+    };
+  }
+  let round;
+  function play(step) {
+    round = buildRound(step);
+    renderRound();
+    window.scrollTo(0, 0);
+  }
+
+  function sentencesHtml(r) {
+    const by = {};
+    r.tokens.forEach((t) => (by[t.sentence] ??= []).push(t));
+    return Object.values(by)
+      .map(
+        (ts) =>
+          `<p class="s">${ts
+            .map((t) => {
+              const cls = r.checked ? r.result.status[t.id] || "" : r.marked.has(t.id) ? "m" : "";
+              const label = {
+                found: "gefunden",
+                missed: "übersehen",
+                wrong: "fälschlich markiert",
+                tol: "im Spielraum",
+              }[cls];
+              return `<span class="w ${cls}" role="option" tabindex="${r.checked ? -1 : 0}" aria-selected="${r.marked.has(t.id)}" data-t="${t.id}">${esc(t.text)}${label ? `<span class="sr"> (${label})</span>` : ""}</span>`;
+            })
+            .join(" ")}</p>`,
+      )
+      .join("");
+  }
+  function sourceLine(src) {
+    return `<p class="src">Quelle: ${esc(src.title)}, ${esc(src.license)} · <a href="${esc(src.licenseUrl)}" target="_blank" rel="noopener">Lizenz</a> · <a href="${esc(src.authorsUrl)}" target="_blank" rel="noopener">Autorenliste</a></p>`;
+  }
+  function renderRound() {
+    const r = round,
+      s = r.step,
+      k = KIND[s.kind];
+    const rules = rulesOf(s),
+      classes = [...new Set([...r.chosen.values()].map((v) => v.errorClass))];
+    const goal = rules.announce
+      ? `In diesem Text sind ${rules.errors} Fehler versteckt. Diese Arten kommen vor: ${classes.map((c) => NAMES[c]).join(", ")}.`
+      : `In diesem Text sind ${rules.errors} Fehler versteckt. Welche Arten, findest du selbst heraus.`;
+    let material = "";
+    if (s.kind === "text") {
+      material = `<section class="sheet" aria-label="Text"><span class="label">Text: Markiere, was falsch ist</span><h3>${esc(s.title)}</h3>
+      <div role="listbox" aria-multiselectable="true" aria-label="Wörter des Textes">${sentencesHtml(r)}</div></section>`;
+    } else if (rules.source === "sheet") {
+      const quelle = `<section class="sheet"><span class="label">Quelle (Ausschnitt)</span><h3>${esc(s.title)}</h3>
+      ${s.excerpt.map((e) => `<p class="s">${esc(e.text)}</p>`).join("")}${sourceLine(s.source)}</section>`;
+      const wieder = `<section class="sheet"><span class="label">Wiedergabe: Markiere, was nicht zur Quelle passt</span><h3>${esc(s.title)}</h3>
+      <p class="note">Die Wiedergabe sagt manches mit anderen Worten. Das ist kein Fehler.</p>
+      <div role="listbox" aria-multiselectable="true" aria-label="Wörter der Wiedergabe">${sentencesHtml(r)}</div></section>`;
+      material = r.view === "quelle" && !r.checked ? quelle : wieder;
+    } else {
+      const sections = [...new Set(s.excerpt.map((e) => e.section).filter(Boolean))];
+      material = `<div class="linkbox"><strong>Die Quelle ist der echte Artikel.</strong>
+        <p>Öffne ihn und such die Stellen, um die es geht${sections.length ? `: Abschnitte ${sections.map((x) => "„" + esc(x) + "“").join(", ")}` : ""}.</p>
+        <p><a class="btn" href="${esc(s.source.url)}" target="_blank" rel="noopener">Quelle öffnen (neuer Tab) ↗</a></p>
+        <p class="src">Du siehst die Fassung vom ${esc(s.source.retrieved)}. Oben auf der Seite steht vielleicht, dass es eine ältere Version ist. Das ist richtig so.</p>
+        ${sourceLine(s.source)}</div>
+      <section class="sheet"><span class="label">Wiedergabe: Markiere, was nicht zur Quelle passt</span><h3>${esc(s.title)}</h3>
+        <p class="note">Die Wiedergabe sagt manches mit anderen Worten. Das ist kein Fehler.</p>
+        <div role="listbox" aria-multiselectable="true" aria-label="Wörter der Wiedergabe">${sentencesHtml(r)}</div></section>`;
+    }
+    app.innerHTML = `
+    <button class="back" id="back">← Stufe wählen</button>
+    <div class="row"><span class="badge ${s.kind}">${k.short} · ${STAGE[s.stage]}</span>
+      ${rulesOf(s).tip === "none" || seenTip[s.id] ? '<button id="howto" style="padding:.2rem .6rem;font-size:.85rem">Wie lese ich hier?</button>' : ""}</div>
+    <p class="question">${k.question(s.stage)}</p>
+    <div id="howtobox" hidden class="tip">${tipList({ ...s, stage: 1, kind: s.kind })}</div>
+    <p class="goal">${goal}</p>
+    <div class="${r.checked ? "checked" : ""}" style="display:grid;gap:1rem">${material}</div>
+    ${
+      r.checked
+        ? ""
+        : r.view === "quelle" && rules.source === "sheet"
+          ? `<div class="bar"><button class="primary" id="toText">Weiter zur Wiedergabe</button></div>`
+          : `<div class="bar"><span class="count">${r.marked.size} markiert</span>
+      ${rules.source === "sheet" ? '<button id="toSource">Quelle ansehen</button>' : ""}
+      <button id="clear">Markierungen löschen</button><button class="primary" id="check">Prüfen</button></div>`
+    }
+    <div id="result"></div>`;
+    document.getElementById("back").onclick = () => stages(s.kind);
+    const h = document.getElementById("howto");
+    if (h)
+      h.onclick = () => {
+        const b = document.getElementById("howtobox");
+        b.hidden = !b.hidden;
+      };
+    const sw = (id, view) => {
+      const b = document.getElementById(id);
+      if (b)
+        b.onclick = () => {
+          r.view = view;
+          renderRound();
+          window.scrollTo(0, 0);
+        };
+    };
+    sw("toText", "text");
+    sw("toSource", "quelle");
+    if (!r.checked && document.getElementById("check")) {
+      app.querySelectorAll(".w").forEach((el) => {
+        const toggle = () => {
+          const id = +el.dataset.t;
+          r.marked.has(id) ? r.marked.delete(id) : r.marked.add(id);
+          const y = window.scrollY;
+          renderRound();
+          window.scrollTo(0, y);
+          app.querySelector(`[data-t="${id}"]`)?.focus();
+        };
+        el.onclick = toggle;
+        el.onkeydown = (e) => {
+          if (e.key === " " || e.key === "Enter") {
+            e.preventDefault();
+            toggle();
+          }
+        };
+      });
+      document.getElementById("clear").onclick = () => {
+        r.marked.clear();
+        renderRound();
+      };
+      document.getElementById("check").onclick = () => {
+        evaluate(r);
+        renderRound();
+        document.getElementById("result").scrollIntoView({ behavior: "smooth" });
+      };
+    } else if (r.checked) renderResult();
+  }
+
+  // ---------- check ----------
+  function evaluate(r) {
+    const status = {},
+      found = [],
+      missed = [];
+    for (const [slot, v] of r.chosen) {
+      const ids = r.tokens.filter((t) => t.slot === slot).map((t) => t.id);
+      const hit = ids.some((id) => r.marked.has(id));
+      ids.forEach((id) => (status[id] = hit ? "found" : "missed"));
+      (hit ? found : missed).push({ slot, v, words: ids.map((id) => r.tokens[id].text).join(" ") });
+    }
+    let wrong = 0;
+    for (const id of r.marked) {
+      if (status[id]) continue;
+      const t = r.tokens[id];
+      const near = [...r.chosen].some(([slot, v]) => {
+        if (!v.tolerance) return false;
+        const ids = r.tokens.filter((x) => x.slot === slot && x.sentence === t.sentence).map((x) => x.id);
+        return ids.length && id >= Math.min(...ids) - v.tolerance && id <= Math.max(...ids) + v.tolerance;
+      });
+      status[id] = near ? "tol" : "wrong";
+      if (!near) wrong++;
+    }
+    r.checked = true;
+    r.result = { status, found, missed, wrong };
+  }
+  function explain(step, v) {
+    return step.kind === "quelle"
+      ? v.explanation.replaceAll("Im Original", "In der Quelle").replaceAll("im Original", "in der Quelle")
+      : v.explanation;
+  }
+  function renderResult() {
+    const r = round,
+      s = r.step,
+      { found, missed, wrong } = r.result;
+    const all = found.length === r.chosen.size;
+    const nxt = nextStep(s.id);
+    let advice, actions;
+    if (all && wrong <= 1) {
+      done[s.id] = true;
+      saveDone();
+      advice = `<h3>Alle ${r.chosen.size} Fehler gefunden!</h3><p>${nxt ? `Du bist bereit für <strong>${STAGE[nxt.stage]}</strong>.` : "Das war die schwerste Stufe. Probier doch auch die andere Übung."}</p>`;
+      actions =
+        (nxt ? `<button class="primary" id="next">Weiter mit Stufe ${nxt.stage}</button>` : "") +
+        `<button id="again">Noch eine Runde hier</button>`;
+    } else {
+      const missedClass = missed[0]?.v.errorClass;
+      const tip =
+        s.kind === "quelle" && wrong >= 3
+          ? "Du hast viel markiert, was stimmt. Andere Wörter sind noch kein Fehler. Frag dich bei jedem Satz: Sagt die Quelle dasselbe?"
+          : missedClass
+            ? CLASS_TIP[missedClass]
+            : "Lies noch langsamer und markier nur, wo du sicher bist.";
+      advice = `<h3>${found.length} von ${r.chosen.size} Fehlern gefunden${wrong ? `, ${wrong} Wort${wrong > 1 ? "e" : ""} zu viel markiert` : ""}.</h3>
+      <p>${all ? "Gut gefunden. Versuch beim nächsten Mal, weniger zu viel zu markieren." : "Probier noch eine Runde auf dieser Stufe."}</p><p><strong>Tipp:</strong> ${esc(tip)}</p>`;
+      actions =
+        `<button class="primary" id="again">Noch eine Runde hier</button>` +
+        (all && nxt ? `<button id="next">Trotzdem weiter</button>` : "");
+    }
+    const items = [...found.map((x) => ({ ...x, k: "found" })), ...missed.map((x) => ({ ...x, k: "missed" }))]
+      .map(
+        (x) => `
+    <div class="item"><span class="cls">${x.k === "found" ? "✓ Gefunden" : "○ Übersehen"} · ${esc(NAMES[x.v.errorClass])}</span>
+      <p><strong>„${esc(x.words)}“</strong>${x.v.text === "" ? "" : ""}</p><p>${esc(explain(s, x.v))}</p></div>`,
+      )
+      .join("");
+    document.getElementById("result").innerHTML = `<section class="result">
+    <div class="advice">${advice}<div class="row">${actions}<button id="home">Stufe wählen</button></div></div>
+    <div class="legend"><span class="w found">gefunden</span><span class="w missed">übersehen</span><span class="w wrong">zu viel markiert</span><span class="w tol">im Spielraum</span></div>
+    ${items}</section>`;
+    const n = document.getElementById("next");
+    if (n) n.onclick = () => start(nxt.id);
+    document.getElementById("again").onclick = () => play(s);
+    document.getElementById("home").onclick = () => stages(s.kind);
+  }
+  home();
+</script>

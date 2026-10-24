@@ -1,182 +1,97 @@
 ---
 name: lernapps-interactive
-description: Use when you build or change an interactive app for lernapps.net (archetype interactive), or decide whether an app should be one. What an interactive app is and when to choose it, the principles its code follows (a pure deterministic core under a runtime that owns state and clock, typed inputs, components that only show the state, data apart, playthroughs with inputs and ticks as proof, libraries, storage, accessibility with declared limits, the frame and a full-screen game, low stimulation as advice, its architecture in arc42 with the app's own sections), and what is not built yet. Load it together with lernapps-app.
+description: Use in Code of a lernapps.net interactive app whenever you write or change its core, inputs, user interface, data, playthroughs, frame or arc42 architecture, or a build, playthrough or architecture check fails. What you write, the core's contract, the playthrough format, the frame and full-screen play, the architecture, and the technical rules.
 license: MIT
 ---
 
-# Building an interactive app
+# Interactive app
 
-In an interactive app the learner's doing is the content: they play, train or work, with no explanation pages. Its
-code is free, unlike the quiz and the explainer, whose notation fixes it. So this skill gives principles, not a
-notation. The rules of `lernapps-app` apply too.
+- Runtime: `@lernapps/app-templates` (`runtime/interactive/`); leave it untouched.
+- `create` writes a small example app: replace it with the planned parts.
 
-The runtime is in `@lernapps/app-templates` (`runtime/interactive/`, with a small template app in `interactive/`).
-`lernapps create --archetype interactive` makes the app from it.
+## What you write
 
-## Not built yet
+- `src/app.yaml` (schema `interactive.v1.schema.json`): what it does, how to play, competencies, languages, routes,
+  optional background sections. Rendered as the static start page and the app page `app/`.
+- Routes: `app/#<id>`; a seed: `app/?seed=<n>#<route>`, else random.
+- `src/core/`, `src/ui/` (root component), `src/data/`, `src/messages/`, `src/playthroughs/`, `src/main.ts`
+  (`startInteractive(core, App)`), and the app's part of `docs/arc42/`.
 
-Do not rely on these. Tell the creator when the app needs one of them.
-- The core's property tests over fixed seeds: decided, not built. Until then the build checks determinism by playing
-  every playthrough twice.
-- An IndexedDB wrapper for more than the small storage: built only when an app needs it.
-- A full-screen mode of the app page: the runtime always renders its frame. See "The frame and a full-screen game".
+## Read when
 
-## When to choose it
+- [references/frame.md](references/frame.md): before you build a control in the heading line, a wider frame,
+  full-screen play, keys or focus.
 
-- **Interactive:** the learner acts in one app page, by turns or in real time. A few background sections on the
-  start page, or an info view, stay interactive.
-- **Explainer:** the app needs explanation pages. Then it is an explainer, with a Vue component for the interactive
-  part (skill `lernapps-explainer`).
-- **Quiz:** questions with options and feedback are enough (skill `lernapps-quiz`).
+## Gotchas
 
-There is one interactive archetype for every kind of app; the principles below hold for all of them.
+- The generated `src/core/index.ts`, `src/ui/App.vue` and playthroughs follow the contract below: read them before you
+  replace them. The types are exported by `@lernapps/app-templates/interactive`.
+- Test a timer by ticks in a playthrough; never wait real time.
+- The arc42 hook fails on new code without a block: `git add` the new files and describe them. Never take back
+  architecture to get past the hook.
+- A check names an `interactive-*` rule: read its section under "Rules" below before you fix.
 
-## How an interactive app works
+## Core, components, data, playthroughs
 
-- `src/app.yaml` describes the app (schema `interactive.v1.schema.json` of the runtime): what it does, how to play,
-  the competencies, the languages, the routes and optional background sections. The runtime renders the static start
-  page from it, readable without JavaScript, and the app page `app/`.
-- Modes and levels are hash routes, `app/#<id>`, declared in `src/app.yaml`. The entry's topics point to them
-  (`entry-links-resolve`).
-- The seed comes from the address, `app/?seed=<n>#<route>`, else at random. The same address plays the same.
-- What you write: `src/core/` (the logic), `src/ui/` (Vue components, with the root component), `src/data/` (the
-  content as data), `src/messages/` (learner texts by language), `src/playthroughs/`, and `src/main.ts`, which calls
-  `startInteractive(core, App)`; and the app's own part of its architecture in `docs/arc42/`. Leave the runtime as it
-  is.
+### Core
 
-## Principles
-
-### A pure, deterministic core under the runtime
-
-The core in `src/core/index.ts` is pure TypeScript without DOM. Its state is plain JSON data. It exports
-`start(seed, route)`, `step(state, input)` and, when the app moves on its own, `tick(state, dt)`. The runtime owns the
-state and the clock: it starts the core, gives it every input and calls `tick(state, 20)` every 20 ms. Draw anything
-random from the seed, never from `Math.random` or the clock. Then the same seed, route and inputs give the same
-states, in Node at build and in the browser.
+- `src/core/index.ts`: pure TypeScript, no DOM; the state is plain JSON.
+- Exports `start(seed, route)`, `step(state, input)`, and `tick(state, dt)` if it moves on its own.
+- The runtime owns state and clock and calls `tick(state, 20)` every 20 ms.
+- Randomness only from the seed; never `Math.random` or the clock.
 
 ### Inputs
 
-`step(state, input)` takes a typed input: `{ kind: "key", key }` with the key as the browser names it
-(`KeyboardEvent.key`), or `{ kind: "action", name, value? }` for what the learner does with the pointer or by touch.
-The runtime turns keydown into key inputs; the root component emits `input` with an action (or a key). Handle the
-kinds you know and return the same state object for any other input and for a key you ignore: new kinds may come,
-and an ignored key keeps its default (Tab moves the focus).
+- `{ kind: "key", key }` (`KeyboardEvent.key`) or `{ kind: "action", name, value? }` (pointer, touch).
+- The runtime turns keydown into key inputs; the root component emits `input` (an action or a key).
+- Unknown kinds and ignored keys: return the same state object (Tab keeps moving the focus).
 
-### The frame and a full-screen game
+### Components
 
-What the runtime gives the app page: a header with the language switch only (none when the app has one language;
-there is no link with the app's name, the title is the h1), `<main>` with the heading line (the title as the h1, and
-a slot beside it), a `<noscript>` note, the routes as links and the element `.interactive-app` the root component is
-mounted into, and a footer with imprint and privacy notice; at most `--interactive-max-width` wide, 44rem by default.
-The start page is a page of its own, static and without script; nothing you do on the app page changes it.
+- `src/ui/`: show the `state` prop; turn actions into inputs.
+- Vue and TypeScript. The component rules apply to them and their imports: `vue-component-no-network`,
+  `vue-component-no-html-injection`, `vue-component-imports`, `vue-component-browser-globals`.
+- Learner texts from `src/messages/<language>.json` through `translator` (`@lernapps/tooling/i18n`), never strings
+  in code (`learner-text-german`).
+- Announce changes with `announce` (`@lernapps/tooling/a11y`); reduced motion with `prefersReducedMotion`.
 
-- **A control in the heading line.** Pass a component as `startInteractive(core, App, { title: Controls })`: the
-  runtime mounts it into the slot beside the h1, with the same props (`state`, `lang`) and the same `input` event as
-  the root component. Do not hide or rebuild the h1. Without `title` the slot stays hidden and empty.
-- **A wider frame.** Set `--interactive-max-width` in the app's own `:root` rule, for example `60rem`; it widens the
-  header, the page and the footer. Do not override the runtime's selectors.
+### Data
 
-- **Hide the frame only while playing, with an overlay of the app's own.** Give the root element a class from the
-  state, for example while `state.phase === "playing"`, and style it `position: fixed; inset: 0` with the page's
-  background: it covers the header and footer without changing them. Leave the runtime's markup and CSS as they are.
-- **Keep a way out.** In the overlay, show a visible button (for example "Pause") and let Escape end the overlay as
-  an input of the core; then the frame, its links and the routes are back. Declare a time limit or anything else the
-  overlay takes away in the entry's `limits` field.
-- **Keep the keys in the game.** The runtime gives a key to the core only when the focus is not on a link, button or
-  form field, which keep their keys. After a click on a route link or a start button, the focus stays there: make
-  the play area focusable (`tabindex="0"`, an `aria-label`) and move the focus to it with a template ref
-  (`area.value?.focus()`) when play starts. Keep focus visible.
-- **Space and arrows do not scroll.** The runtime prevents the default only for a key that changes the state. Let the
-  core take the keys of play while playing, or add `@keydown.space.prevent` (and the arrows) on the play area: the
-  key still reaches the runtime.
-- **The browser's full screen** (`element.requestFullscreen()`) is optional, only after a click, through a template
-  ref; the overlay must work without it. Browser globals only inside `onMounted` (`vue-component-browser-globals`).
+- `src/data/`, own format, imported by the core.
 
-### Components only show the state
+### Playthroughs
 
-The components in `src/ui/` show the state they get as a prop and turn the learner's actions into inputs. They keep
-no game state of their own. How they render is free: DOM, SVG or canvas. They are Vue with TypeScript, and the
-component rules of `lernapps-explainer` apply to them and to the modules they import: `vue-component-no-network`,
-`vue-component-no-html-injection`, `vue-component-imports` and `vue-component-browser-globals`. The build checks them.
-Learner texts come from the message files through `translator`, never from strings in code (`learner-text-german`).
-
-### Data apart from code
-
-Keep the content as data in `src/data/`, in a format of the app's own, and import it into the core. A new level or
-text is then a change of data.
-
-### Playthroughs as proof
-
-A playthrough in `src/playthroughs/<name>.yaml` is a seed, a route and steps. A step has `keys` (the short form of key
-inputs) or `inputs`, then `ticks` (how many 20 ms ticks pass after them), at least one of them, and expects the state
-(a part of it), the announcement, or both. No time passes but the ticks a step names, at build and in the browser. The
-build plays each one against the core twice; it fails when the plays differ or a state is not the expected one. The
-end-to-end tests play the same steps in the browser, at desktop width and at 360 px. Write a playthrough for every
-behaviour you want to keep, logic over time included, and expect only what the steps decide.
-
-### Vue and libraries
-
-Vue with TypeScript is fixed. A library is allowed: add it to `dependencies`, and the components and the core may
-import it; the build bundles it, never from a CDN, and its licence must be one the licence check accepts
-(`dependency-licence`). There is no size limit for interactive apps.
+- `src/playthroughs/<name>.yaml`: `seed`, `route`, `steps`.
+- A step: `keys` (short form) or `inputs`, then `ticks` (20 ms each), at least one of them; it expects a part of the
+  state, an announcement, or both. No time passes except the named ticks.
+- The build plays each twice against the core and fails on differing plays or a wrong state. The end-to-end test
+  plays the same in the browser, desktop and 360 px.
+- Expect only what the steps decide.
 
 ### Storage
 
-Keep only small data, through `createStorage` (`storage-through-wrapper`). All apps share the origin's `localStorage`,
-so an app keeps at most 100 kB: `save` returns false beyond it, as when storage is blocked, and the app keeps working
-without remembering. There is no settings dialog; do not build one.
+- `createStorage` (`storage-through-wrapper`, skill `lernapps-check`).
 
-### No request before a click
+## Architecture (arc42)
 
-Bundle everything. Load from another server only after the learner clicks for it (`no-request-before-click`).
-
-### Accessibility: the default, limits declared
-
-WCAG 2.1 AA and 360 px are the default (`accessible`, `usable-at-360px`). Announce changes through `announce` of
-`@lernapps/tooling/a11y`, and make every action possible by keyboard. An app may deviate where its idea needs it,
-for example a time limit that a screen reader cannot follow. Then it declares in its entry's `limits` field, in
-German, what it does not offer; with it, the findings of `accessible` and `usable-at-360px` are warnings for the app.
-The start page, which the runtime renders, meets both rules in any case.
-
-### Low stimulation: advice
-
-This is advice, not a rule or a check:
-- no flashing;
-- calm motion, and less of it when the learner's system asks for reduced motion (`prefersReducedMotion` of
-  `@lernapps/tooling/a11y`);
-- sound off by default.
-
-Why: the learners are children. Flashing and fast motion draw their attention away from what they learn, and flashing
-can trigger seizures.
-
-### The architecture in arc42
-
-The app's architecture lives in `docs/arc42/` in the arc42 DSL (`@doctc/arc42`), in English and minimal.
-`lernapps create` copies the generic part and the interactive extension of app-templates there, with the app's paths;
-`lernapps update` replaces them. Write the app's own part only between the markers `<!-- app: begin … -->` and
-`<!-- app: end … -->`, which `update` keeps as they are; never change anything outside them. In chapter 5, a part of the
-core, the UI or the data goes into the section named after it (`core`, `ui`, `data`) as a level-3 heading with
-`parent` and `path`, together with a diagram of that block and its parts; place each new leaf block on a deployment
-node in chapter 7. Write the concepts each part implements, the app's decisions (for example canvas or DOM) and its
-declared accessibility with the reasons into the sections at the end of the chapters. Per block and decision one or
-two sentences of responsibility and reason, nothing the code says.
-
-Update it with every change, in the same commit as the code. Before a commit that stages architecture or code,
-`lernapps check --pre-commit` runs `arc42 diff --staged`: a block changed without its prose (or prose naming a fact of
-a block without the block), or new code under `src/` that no block claims and `.arc42ignore` does not list, fails it;
-it reads what is staged, so `git add` the new files that belong to the commit. A hint to review an element (code
-changed under an interface's path) is a warning in the report: read the element and update it if the change alters
-what it says; it does not fail the commit. Fix a finding; accept one with `ARC42_CONSISTENT` only when it is a
-consistency finding you have read and judge intended, with a note in the plan why. Never set `ARC42_CONSISTENT`
-without a finding shown, e.g. to `$(git rev-parse HEAD)` in advance: that is a bypass like `--no-verify`. New code no
-block claims is never accepted: give it a block, or list configuration in `.arc42ignore`. `lernapps check` runs
-`arc42 validate --strict` on the working tree, files not added to git included: any error, warning or hint fails.
-This is your work, not the creator's: there is no checkpoint for the architecture.
+- `docs/arc42/`, arc42 DSL (`@doctc/arc42`), English, minimal.
+- `create` copies the generic part and the interactive extension; `update` replaces them.
+- Write only between `<!-- app: begin … -->` and `<!-- app: end … -->`; nothing outside.
+- Chapter 5: each part of core, UI, data as a level-3 heading in section `core`, `ui` or `data`, with `parent`,
+  `path` and a diagram of the block and its parts. Each new leaf block on a deployment node in chapter 7.
+- Concepts, decisions (canvas or DOM), declared accessibility with reasons: in the sections at the chapter ends.
+- 1–2 sentences per block or decision: responsibility, reason; nothing the code says.
+- Update with every change, same commit as the code.
+- Pre-commit `arc42 diff --staged` fails on: block changed without prose (or the reverse); new `src/` code no block
+  claims and not in `.arc42ignore`. It reads staged files: `git add` new files.
+- Review hint (code under an interface's path changed): warning; read and update if needed.
+- Accept a finding with `ARC42_CONSISTENT` only for a shown consistency finding judged intended, with a note in the
+  plan. Never preset it (e.g. `$(git rev-parse HEAD)`): a bypass like `--no-verify`.
+- Unclaimed new code is never accepted: give it a block, or list config in `.arc42ignore`.
+- `lernapps check` runs `arc42 validate --strict` on the working tree: any error, warning or hint fails.
+- Your work; no creator checkpoint.
 
 ## Rules
-
-Each rule is a section headed by its rule block. The runtime's build checks them, and its messages name them. All
-rules: <https://lernapps.net/tooling/rules/>.
 
 ### `interactive-app-valid`: The description and the playthroughs validate
 
@@ -186,9 +101,9 @@ scope: archetype:interactive
 severity: error
 ```
 
-`src/app.yaml` and every playthrough validate against their schemas. German comes first and every declared language
-is complete. Ids are unique, there is at least one playthrough, each step expects a state or an announcement, and a
-playthrough's route is one of the app's. The build names each problem in one line with file and line; fix it there.
+- `src/app.yaml` and every playthrough valid against their schemas; German first, every language complete.
+- Unique ids; at least one playthrough; each step expects a state or an announcement; playthrough routes exist.
+- Build names each problem with file and line.
 
 ### `interactive-core-contract`: The core keeps its contract
 
@@ -198,9 +113,9 @@ scope: archetype:interactive
 severity: error
 ```
 
-`src/core/index.ts` exports `start(seed, route)` and `step(state, input)`, and `tick(state, dt)` as a function when
-the app moves on its own. Every route starts, nothing throws, and the same seed, route, inputs and ticks give the same
-states.
+- `src/core/index.ts` exports `start(seed, route)`, `step(state, input)`; `tick(state, dt)` as a function if it
+  moves on its own.
+- Every route starts; nothing throws; same seed, route, inputs, ticks → same states.
 
 ### `interactive-playthroughs-pass`: Every playthrough plays as written
 
@@ -210,9 +125,8 @@ scope: archetype:interactive
 severity: error
 ```
 
-After each step of a playthrough, the core's state has the fields the step expects. The browser shows the
-announcement it expects. When one fails, fix the core or the playthrough, whichever is wrong; never delete a
-playthrough to make the build pass.
+- After each step the state has the expected fields; the browser shows the expected announcement.
+- Failure → fix core or playthrough, whichever is wrong; never delete a playthrough.
 
 ### `interactive-architecture-current`: The architecture is valid and current
 
@@ -222,7 +136,6 @@ scope: archetype:interactive
 severity: error
 ```
 
-`docs/arc42/` holds the generic part and the interactive extension as `lernapps create` or `lernapps update` wrote
-them, unchanged outside the app sections, and the app's own part inside them describes the code as it is: every part
-of `src/` has its block, every block its code. `arc42 validate --strict` in `lernapps check` and `arc42 diff --staged`
-before a commit pass; the review reads whether the architecture still says what the code does.
+- `docs/arc42/`: generic part and extension as `create`/`update` wrote them, unchanged outside the app sections.
+- App part describes the code: every part of `src/` has its block, every block its code.
+- `arc42 validate --strict` and `arc42 diff --staged` pass; the review checks it says what the code does.

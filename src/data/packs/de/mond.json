@@ -1,0 +1,400 @@
+{
+  "id": "mond",
+  "title": "Mond",
+  "language": "de",
+  "topic": "Mond: Die erste Landung",
+  "source": {
+    "title": "Mond – Klexikon – das Kinderlexikon",
+    "url": "https://klexikon.zum.de/index.php?title=Mond&oldid=162657",
+    "revision": "162657",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://klexikon.zum.de/index.php?title=Mond&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/mond.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Ein Mond ist ein natürlicher Satellit."
+    },
+    {
+      "text": "Ein solcher Begleiter kreist um einen Planeten."
+    },
+    {
+      "text": "Wenn man vom Mond spricht, meint man normalerweise den Mond der Erde."
+    },
+    {
+      "text": "Der Mond ist der einzige Himmelskörper, den Menschen schon einmal besucht haben.",
+      "section": "Waren Menschen schon dort?"
+    },
+    {
+      "text": "Im Jahr 1961 sagte der amerikanische Präsident John F. Kennedy, dass die USA einen Mann zum Mond schicken sollen.",
+      "section": "Waren Menschen schon dort?"
+    },
+    {
+      "text": "Im Jahr 1969 waren die USA so weit.",
+      "section": "Waren Menschen schon dort?"
+    },
+    {
+      "text": "Drei Männer gingen auf die Reise, die „Apollo 11“ hieß.",
+      "section": "Waren Menschen schon dort?"
+    },
+    {
+      "text": "Neil Armstrong hieß der Astronaut, der als erster den Mond betreten hat.",
+      "section": "Waren Menschen schon dort?"
+    },
+    {
+      "text": "Er und Edwin Aldrin waren knapp einen Tag auf der Mondoberfläche und sammelten auch einige Mondsteine auf.",
+      "section": "Waren Menschen schon dort?"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Ein Mond ist ein natürlicher ",
+        {
+          "slot": "n1"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Ein Mond ist ein natürlicher Satellit."
+      }
+    },
+    {
+      "sentence": [
+        "Er kreist als Begleiter um einen ",
+        {
+          "slot": "n2"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Ein solcher Begleiter kreist um einen Planeten."
+      }
+    },
+    {
+      "sentence": ["Wenn man „Mond“ sagt, meint man meistens den Mond der Erde."],
+      "evidence": {
+        "quote": "Wenn man vom Mond spricht, meint man normalerweise den Mond der Erde."
+      }
+    },
+    {
+      "sentence": [
+        "Der ",
+        {
+          "slot": "s1"
+        },
+        " ist der einzige ",
+        {
+          "slot": "s2"
+        },
+        ", den Menschen schon besucht haben."
+      ],
+      "evidence": {
+        "quote": "Der Mond ist der einzige Himmelskörper, den Menschen schon einmal besucht haben."
+      }
+    },
+    {
+      "sentence": [
+        "Im Jahr ",
+        {
+          "slot": "s3"
+        },
+        " sagte der amerikanische Präsident ",
+        {
+          "slot": "s4"
+        },
+        ": Die USA sollen einen Mann zum Mond schicken."
+      ],
+      "evidence": {
+        "quote": "Im Jahr 1961 sagte der amerikanische Präsident John F. Kennedy, dass die USA einen Mann zum Mond schicken sollen."
+      }
+    },
+    {
+      "sentence": [
+        "Im Jahr ",
+        {
+          "slot": "s5"
+        },
+        " waren die USA so weit."
+      ],
+      "evidence": {
+        "quote": "Im Jahr 1969 waren die USA so weit."
+      }
+    },
+    {
+      "sentence": [
+        "Drei ",
+        {
+          "slot": "s6"
+        },
+        " machten sich auf die Reise. Die Reise hieß „Apollo ",
+        {
+          "slot": "s7"
+        },
+        "“."
+      ],
+      "evidence": {
+        "quote": "Drei Männer gingen auf die Reise, die „Apollo 11“ hieß."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s8"
+        },
+        " hieß der ",
+        {
+          "slot": "s9"
+        },
+        " der als Erster den Mond betrat."
+      ],
+      "evidence": {
+        "quote": "Neil Armstrong hieß der Astronaut, der als erster den Mond betreten hat."
+      }
+    },
+    {
+      "sentence": [
+        "Er und ",
+        {
+          "slot": "s10"
+        },
+        " blieben knapp ",
+        {
+          "slot": "s11"
+        },
+        " auf dem Mond und sammelten Mondsteine."
+      ],
+      "evidence": {
+        "quote": "Er und Edwin Aldrin waren knapp einen Tag auf der Mondoberfläche und sammelten auch einige Mondsteine auf."
+      }
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "Mond",
+      "variants": [
+        {
+          "text": "Mars",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Der Mond ist der einzige Himmelskörper, den Menschen schon einmal besucht haben.“ Der Mond ist der einzige Himmelskörper, den Menschen schon besucht haben.",
+          "evidence": "Der Mond ist der einzige Himmelskörper, den Menschen schon einmal besucht haben."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "Himmelskörper",
+      "variants": [
+        {
+          "text": "Himmelkörper",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Im Wort fehlt ein „s“: Himmelskörper. Es besteht aus „Himmel“ und „Körper“ mit einem „s“ dazwischen."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "1961",
+      "variants": [
+        {
+          "text": "1951",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Im Jahr 1961 sagte der amerikanische Präsident John F. Kennedy, dass die USA einen Mann zum Mond schicken sollen.“ Das war im Jahr 1961.",
+          "evidence": "Im Jahr 1961 sagte der amerikanische Präsident John F. Kennedy, dass die USA einen Mann zum Mond schicken sollen."
+        },
+        {
+          "text": "1916",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Im Jahr 1961 sagte der amerikanische Präsident John F. Kennedy, dass die USA einen Mann zum Mond schicken sollen.“ Das war im Jahr 1961. Zwei Ziffern sind vertauscht.",
+          "evidence": "Im Jahr 1961 sagte der amerikanische Präsident John F. Kennedy, dass die USA einen Mann zum Mond schicken sollen."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "John F. Kennedy",
+      "variants": [
+        {
+          "text": "Neil Armstrong",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Im Jahr 1961 sagte der amerikanische Präsident John F. Kennedy, dass die USA einen Mann zum Mond schicken sollen.“ Der amerikanische Präsident hieß John F. Kennedy.",
+          "evidence": "Im Jahr 1961 sagte der amerikanische Präsident John F. Kennedy, dass die USA einen Mann zum Mond schicken sollen."
+        },
+        {
+          "text": "John F. Kenedy",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Im Jahr 1961 sagte der amerikanische Präsident John F. Kennedy, dass die USA einen Mann zum Mond schicken sollen.“. Richtig geschrieben ist „John F. Kennedy“, nicht „John F. Kenedy“.",
+          "evidence": "Im Jahr 1961 sagte der amerikanische Präsident John F. Kennedy, dass die USA einen Mann zum Mond schicken sollen."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "1969",
+      "variants": [
+        {
+          "text": "1959",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Im Jahr 1969 waren die USA so weit.“ Im Jahr 1969 waren die USA so weit.",
+          "evidence": "Im Jahr 1969 waren die USA so weit."
+        },
+        {
+          "text": "1996",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Im Jahr 1969 waren die USA so weit.“ Es war das Jahr 1969. Zwei Ziffern sind vertauscht.",
+          "evidence": "Im Jahr 1969 waren die USA so weit."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "Männer",
+      "variants": [
+        {
+          "text": "Mäner",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach dem kurzen „ä“ stehen zwei „n“: Männer. Das Wort kommt von „Mann“."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "11",
+      "variants": [
+        {
+          "text": "13",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Drei Männer gingen auf die Reise, die „Apollo 11“ hieß.“ Die Reise hieß „Apollo 11“.",
+          "evidence": "Drei Männer gingen auf die Reise, die „Apollo 11“ hieß."
+        },
+        {
+          "text": "111",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Drei Männer gingen auf die Reise, die „Apollo 11“ hieß.“ Die Reise hieß „Apollo 11“.",
+          "evidence": "Drei Männer gingen auf die Reise, die „Apollo 11“ hieß."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "Neil Armstrong",
+      "variants": [
+        {
+          "text": "John F. Kennedy",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Neil Armstrong hieß der Astronaut, der als erster den Mond betreten hat.“ Neil Armstrong war der Astronaut, der als erster den Mond betrat.",
+          "evidence": "Neil Armstrong hieß der Astronaut, der als erster den Mond betreten hat.",
+          "tolerance": 1
+        },
+        {
+          "text": "Neil Amstrong",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Neil Armstrong hieß der Astronaut, der als erster den Mond betreten hat.“. Richtig geschrieben ist „Neil Armstrong“, nicht „Neil Amstrong“.",
+          "evidence": "Neil Armstrong hieß der Astronaut, der als erster den Mond betreten hat."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "Astronaut,",
+      "variants": [
+        {
+          "text": "Astronaut",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Nach „Astronaut“ fehlt ein Komma. Es trennt den Nebensatz „der als Erster den Mond betrat“ ab."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "Edwin Aldrin",
+      "variants": [
+        {
+          "text": "Edwin Alrdin",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Er und Edwin Aldrin waren knapp einen Tag auf der Mondoberfläche und sammelten auch einige Mondsteine auf.“. Richtig geschrieben ist „Edwin Aldrin“, nicht „Edwin Alrdin“.",
+          "evidence": "Er und Edwin Aldrin waren knapp einen Tag auf der Mondoberfläche und sammelten auch einige Mondsteine auf."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "einen Tag",
+      "variants": [
+        {
+          "text": "eine Woche",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Er und Edwin Aldrin waren knapp einen Tag auf der Mondoberfläche und sammelten auch einige Mondsteine auf.“ Sie waren knapp einen Tag auf der Mondoberfläche.",
+          "evidence": "Er und Edwin Aldrin waren knapp einen Tag auf der Mondoberfläche und sammelten auch einige Mondsteine auf."
+        },
+        {
+          "text": "zehn Tage",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Er und Edwin Aldrin waren knapp einen Tag auf der Mondoberfläche und sammelten auch einige Mondsteine auf.“ Es war knapp ein Tag, nicht zehn Tage.",
+          "evidence": "Er und Edwin Aldrin waren knapp einen Tag auf der Mondoberfläche und sammelten auch einige Mondsteine auf."
+        }
+      ]
+    },
+    "n1": {
+      "correct": "Satellit",
+      "variants": [
+        {
+          "text": "Satelit",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "In „Satellit“ klingt das „e“ kurz. Darum steht „ll“ im Wort."
+        }
+      ]
+    },
+    "n2": {
+      "correct": "Planeten",
+      "variants": [
+        {
+          "text": "Stern",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Ein solcher Begleiter kreist um einen Planeten.“ Ein Mond kreist um einen Planeten, nicht um einen Stern.",
+          "evidence": "Ein solcher Begleiter kreist um einen Planeten."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Klexikon-Artikel Mond, Revision 162657 (abgerufen am 18.10.2026, Abschnitt „Waren Menschen schon dort?“); die 9 Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de; die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Nur Klassen, die ab Klasse 3 vorkommen: Rechtschreibung (Ableitung, Doppelkonsonant, tz, ck, ß), Flüchtigkeitsfehler, Zeichensetzung, Zahl/Name/Ort. Die Falschschreibungen sind konstruiert, nach den Schwerpunkten der IQB-Handreichung.",
+    "Geändert (Einleitung): Der Auszug beginnt jetzt mit den ersten zwei Sätzen des Artikels und einem dritten Satz, der klärt, welcher Mond gemeint ist; gestrichen sind die zwei letzten Sätze (Rückkehr der Astronauten, spätere Flüge bis 1972).",
+    "Ausgelassen: die Sätze zu Rakete und Landefähre und zum Zitat von Armstrong, am Ende die Sätze zur Rückkehr und zu den späteren Mondflügen. Der Auszug besteht aus dem Anfang des Artikels (drei Sätze) und aus Sätzen des Abschnitts „Waren Menschen schon dort?“, in der Reihenfolge der Quelle.",
+    "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt.",
+    "Die Quelle liegt als PDF unter public/quellen/de/mond.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+  ]
+}

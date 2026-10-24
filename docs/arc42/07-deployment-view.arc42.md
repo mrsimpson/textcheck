@@ -197,10 +197,7 @@ hosts: bb-shell, bb-interactive-core, bb-interactive-ui, bb-interactive-data, bb
 
 ## Textcheck in the learner's browser
 
-The core's parts, the UI's components and the data that are bundled with them run in the learner's browser on the app page. The font Recursive and its licence are bundled with the app (`src/ui/fonts/`), and the reading settings (set in the controls of the heading line) are kept in the
-browser of the learner under the app's own prefix; nothing is loaded from elsewhere. The hints, their wait and the effects of the result are computed and drawn in the browser as well. The PDFs of the sources (`public/quellen/`) are static files beside the
-app page, copied to the site by the build; the app page links to them and, on a wide screen, embeds them in a frame of
-the same site.
+The core's parts, the UI's components and the data that are bundled with them run in the learner's browser on the app page. The font Recursive and its licence are bundled with the app (`src/ui/fonts/`). The app keeps two things in the browser of the learner under its own prefix, through the storage of the tooling: the reading settings (set in the controls of the heading line) and the stages passed; nothing is loaded from elsewhere. The hints, their wait and the effects of the result are computed and drawn in the browser as well. The PDFs of the sources (`public/quellen/`) are static files beside the app page, copied to the site by the build; the last stage links to them as a reserve.
 
 ```arc42
 :::deployment-node
@@ -208,7 +205,7 @@ id: dn-textcheck-browser
 title: Textcheck app page
 type: container
 parent: dn-interactive-app-page
-hosts: bb-textcheck-state, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-root, bb-textcheck-wordlist, bb-textcheck-choose, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-controls, bb-textcheck-reading, bb-textcheck-hint-button, bb-textcheck-hint-note, bb-textcheck-hints, bb-textcheck-packs, bb-textcheck-tables
+hosts: bb-textcheck-state, bb-textcheck-stages, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-root, bb-textcheck-choose-page, bb-textcheck-stages-page, bb-textcheck-tip-page, bb-textcheck-round-view, bb-textcheck-wordlist, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-controls, bb-textcheck-reading, bb-textcheck-reading-tip, bb-textcheck-progress, bb-textcheck-hint-button, bb-textcheck-hint-note, bb-textcheck-hints, bb-textcheck-packs, bb-textcheck-stage-rules, bb-textcheck-error-classes
 :::
 ```
 

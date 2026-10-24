@@ -2,7 +2,7 @@
 
 A **slot** is a word or phrase of the rendition (`correct`) with one or more **variants** (wrong versions). Each variant
 has `errorClass`, `basis`, `conspicuousness`, `explanation`. Classes come from `src/data/error-classes.json`; use only
-classes whose `fromGrade` is at most the upper school year of the pack and which `src/data/levels.json` allows.
+classes that `src/data/stages.json` gives to a stage (the stages build on each other; a text of the exercise without a source needs places of the classes of that exercise, a text for the comparison with a source needs places of the other classes).
 
 Status in the file: **documented** = a source we read names the pattern; **derived** = our own inference from
 competency descriptions. The patterns below are craft advice for building variants; the status of each class is in the
@@ -10,8 +10,8 @@ error-class file and the page "Wie diese Übung begründet ist" (do not claim mo
 
 ## How many
 
-- At least 3 classes, at least 6 slots; enough slots so that a round's errors (from `levels.json`) can be chosen with
-  three in reserve. 2-3 variants for slots that allow it, from different classes where sensible.
+- At least 3 classes, at least 6 slots; enough slots so that a round's errors (`errors` of the stage in `stages.json`) can be chosen with
+  two in reserve, and at least one slot of a class the stage adds (the pack check says what a pack lacks). 2-3 variants for slots that allow it, from different classes where sensible.
 - `conspicuousness` 1 (obvious) to 3 (subtle): spread the values; a pack with only 3s is frustrating, with only 1s
   trivial.
 - A variant must keep the sentence grammatical (the pilot learned: "ein Jungtier" -> "zwei Jungtiere", not "ein" ->
@@ -38,7 +38,7 @@ Deviation from the Original (basis `comparison`, give `evidence`):
 
 Logic (grade 5-7+):
 - **connective_negation**: wrong connective (weil/obwohl, deshalb/trotzdem) or a negation that flips the meaning.
-- **contradiction**: a statement that contradicts another sentence of the same Variante; the other sentence must stay
+- **contradiction**: a statement that contradicts another sentence of the same text; the other sentence must stay
   correct and be quotable.
 - **quantity_degree** (7+): "einige" -> "alle", "oft" -> "immer", "meist" -> "nie".
 - **overgeneralization** (7+): from one case to all.

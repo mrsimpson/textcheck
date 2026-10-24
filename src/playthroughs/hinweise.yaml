@@ -1,13 +1,13 @@
 # yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/interactive/playthrough.v1.schema.json
-# Hints, Penicillin, grades 9 and 10, seed 2 (the level hides the error classes). A hint asked for too early changes
-# nothing; after 15 s the first hint names the classes, after another 20 s the second marks the sentences; then there
-# are no more. Playing on 749 ticks (14.98 s) leaves the hint locked, the 750th opens it.
-route: klasse-9-10
+# Hints, "Fehler im Text finden", stage 3, the Weimarer Verfassung text (seed 2; the stage hides the error classes). A hint
+# asked for too early changes nothing; after 15 s the first hint names the classes, after another 20 s the second marks
+# the sentences; then there are no more. Playing on 749 ticks (14.98 s) leaves the hint locked, the 750th opens it.
+route: text-3
 seed: 2
 steps:
   - inputs: [{ kind: action, name: hint }]
     ticks: 749
-    state: { hintLevel: 0, hintWait: 20 }
+    state: { hintLevel: 0, hintWait: 20, phase: marking }
   - inputs: [{ kind: action, name: hint }]
     state: { hintLevel: 0 }
   - ticks: 1
@@ -16,7 +16,7 @@ steps:
   - inputs: [{ kind: action, name: hint }]
     ticks: 999
     state: { hintLevel: 1, last: hint, hintWait: 20 }
-    announce: "Hinweis: In dieser Runde stecken diese Fehlerarten im Text: Sachlich falsche Angabe, Zahl, Name, Datum oder Ort verändert, Verbindung oder Verneinung verändert."
+    announce: "Hinweis: In dieser Runde stecken diese Fehlerarten im Text: Widerspruch im Text, Flüchtigkeitsfehler, Rechtschreibung (Regelfehler), Zeichensetzung."
   - ticks: 1
     state: { hintWait: 0 }
     announce: "Der nächste Hinweis ist bereit."

@@ -1,0 +1,558 @@
+{
+  "id": "hedgehog",
+  "title": "Hedgehog",
+  "language": "en",
+  "topic": "Hedgehogs: home, food and spines",
+  "source": {
+    "title": "Hedgehog – Simple English Wikipedia, the free encyclopedia",
+    "url": "https://simple.wikipedia.org/w/index.php?title=Hedgehog&oldid=10620091",
+    "revision": "10620091",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "authorsUrl": "https://simple.wikipedia.org/w/index.php?title=Hedgehog&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/en/hedgehog.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "There are hedgehogs in Europe, Asia, Africa, and New Zealand.",
+      "section": "Introduction"
+    },
+    {
+      "text": "Hedgehogs eat insects, snails, frogs and toads, snakes, bird eggs, carrion, mushrooms, berries and melons.",
+      "section": "Introduction"
+    },
+    {
+      "text": "Sometimes, hedgehogs will search for earthworms after rainstorms.",
+      "section": "Introduction"
+    },
+    {
+      "text": "Hedgehogs are nocturnal animals and they hibernate between November and March.",
+      "section": "Introduction"
+    },
+    {
+      "text": "Hedgehogs have long spines, or quills, made of keratin.",
+      "section": "Description"
+    },
+    {
+      "text": "They do not come off easily, unlike porcupines, but in baby hedgehogs, the baby quills drop off and are replaced with adult quills.",
+      "section": "Description"
+    },
+    {
+      "text": "When they are very stressed or sick, their quills can fall off, too.",
+      "section": "Description"
+    },
+    {
+      "text": "African pygmy hedgehogs are the most common type that are kept as pets.",
+      "section": "Pets"
+    },
+    {
+      "text": "They live 2–4 years in captivity.",
+      "section": "Pets"
+    },
+    {
+      "text": "Hedgehogs are exotic pets, which means they may not be legal to keep as pets in some places.",
+      "section": "Pets"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Hedgehogs live in Europe, Asia, Africa and ",
+        {
+          "slot": "s1"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "There are hedgehogs in Europe, Asia, Africa, and New Zealand"
+      }
+    },
+    {
+      "sentence": [
+        "Hedgehogs eat insects, ",
+        {
+          "slot": "s2"
+        },
+        " frogs, toads and snakes."
+      ],
+      "evidence": {
+        "quote": "Hedgehogs eat insects, snails, frogs and toads, snakes, bird eggs, carrion, mushrooms, berries and melons"
+      }
+    },
+    {
+      "sentence": ["They also eat bird eggs, mushrooms, berries and melons."],
+      "evidence": {
+        "quote": "Hedgehogs eat insects, snails, frogs and toads, snakes, bird eggs, carrion, mushrooms, berries and melons"
+      }
+    },
+    {
+      "sentence": [
+        "Sometimes a hedgehog looks for earthworms after ",
+        {
+          "slot": "s3"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Sometimes, hedgehogs will search for earthworms after rainstorms"
+      }
+    },
+    {
+      "sentence": [
+        "Hedgehogs are ",
+        {
+          "slot": "s4"
+        },
+        " animals."
+      ],
+      "evidence": {
+        "quote": "Hedgehogs are nocturnal animals and they hibernate between November and March"
+      }
+    },
+    {
+      "sentence": [
+        "They hibernate from November until ",
+        {
+          "slot": "s5"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Hedgehogs are nocturnal animals and they hibernate between November and March"
+      }
+    },
+    {
+      "sentence": [
+        "Hedgehogs have long spines, or ",
+        {
+          "slot": "s6"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Hedgehogs have long spines, or quills"
+      }
+    },
+    {
+      "sentence": [
+        "The spines are made of ",
+        {
+          "slot": "s7"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Hedgehogs have long spines, or quills, made of keratin"
+      }
+    },
+    {
+      "sentence": [
+        "Hedgehog spines do not come off easily, unlike the spines of ",
+        {
+          "slot": "s8"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "They do not come off easily, unlike porcupines"
+      }
+    },
+    {
+      "sentence": [
+        "Baby hedgehogs lose their baby quills, and ",
+        {
+          "slot": "s9"
+        },
+        " quills grow in their place."
+      ],
+      "evidence": {
+        "quote": "in baby hedgehogs, the baby quills drop off and are replaced with adult quills"
+      }
+    },
+    {
+      "sentence": [
+        "When hedgehogs are very stressed or ",
+        {
+          "slot": "s10"
+        },
+        " their quills can fall off, too."
+      ],
+      "evidence": {
+        "quote": "When they are very stressed or sick, their quills can fall off, too"
+      }
+    },
+    {
+      "sentence": [
+        "The most common pet hedgehogs are the ",
+        {
+          "slot": "s11"
+        },
+        " pygmy hedgehogs."
+      ],
+      "evidence": {
+        "quote": "African pygmy hedgehogs are the most common type that are kept as pets"
+      }
+    },
+    {
+      "sentence": [
+        "They live ",
+        {
+          "slot": "s12"
+        },
+        " years in captivity."
+      ],
+      "evidence": {
+        "quote": "They live 2–4 years in captivity"
+      }
+    },
+    {
+      "sentence": ["Hedgehogs are exotic pets."],
+      "evidence": {
+        "quote": "Hedgehogs are exotic pets"
+      }
+    },
+    {
+      "sentence": [
+        "In some places you may not be ",
+        {
+          "slot": "s13"
+        },
+        " to keep them."
+      ],
+      "evidence": {
+        "quote": "which means they may not be legal to keep as pets in some places"
+      }
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "New Zealand",
+      "variants": [
+        {
+          "text": "Australia",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"There are hedgehogs in Europe, Asia, Africa, and New Zealand.\" Hedgehogs live in New Zealand, not in Australia.",
+          "evidence": "There are hedgehogs in Europe, Asia, Africa, and New Zealand."
+        },
+        {
+          "text": "Antarctica",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"There are hedgehogs in Europe, Asia, Africa, and New Zealand.\" Hedgehogs live in New Zealand, not in Antarctica.",
+          "evidence": "There are hedgehogs in Europe, Asia, Africa, and New Zealand."
+        },
+        {
+          "text": "New Zeeland",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word Zealand is written with ea, not with ee."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "snails,",
+      "variants": [
+        {
+          "text": "snails",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "A comma is missing. The animals are listed in a row, so a comma comes after snails."
+        },
+        {
+          "text": "fish,",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Hedgehogs eat insects, snails, frogs and toads, snakes, bird eggs, carrion, mushrooms, berries and melons.\" Hedgehogs eat snails, not fish.",
+          "evidence": "Hedgehogs eat insects, snails, frogs and toads, snakes, bird eggs, carrion, mushrooms, berries and melons."
+        },
+        {
+          "text": "snials,",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Two letters are swapped. The word is snails."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "rainstorms",
+      "variants": [
+        {
+          "text": "snowstorms",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Sometimes, hedgehogs will search for earthworms after rainstorms.\" Hedgehogs search for earthworms after rainstorms, not after snowstorms.",
+          "evidence": "Sometimes, hedgehogs will search for earthworms after rainstorms."
+        },
+        {
+          "text": "rainstroms",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Two letters are swapped. The word is rainstorms."
+        },
+        {
+          "text": "sunshine",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"Sometimes, hedgehogs will search for earthworms after rainstorms.\" Hedgehogs search for earthworms after rainstorms, not after sunshine.",
+          "evidence": "Sometimes, hedgehogs will search for earthworms after rainstorms."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "nocturnal",
+      "variants": [
+        {
+          "text": "nocternal",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "The word nocturnal is written with u in the middle, like night: nocturnal."
+        },
+        {
+          "text": "noctrunal",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Two letters are swapped. The word is nocturnal."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "March",
+      "variants": [
+        {
+          "text": "May",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Hedgehogs are nocturnal animals and they hibernate between November and March.\" Hedgehogs hibernate between November and March, not until May.",
+          "evidence": "Hedgehogs are nocturnal animals and they hibernate between November and March."
+        },
+        {
+          "text": "June",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"Hedgehogs are nocturnal animals and they hibernate between November and March.\" Hedgehogs hibernate between November and March, not until June.",
+          "evidence": "Hedgehogs are nocturnal animals and they hibernate between November and March."
+        },
+        {
+          "text": "Marhc",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Two letters are swapped. The month is March."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "quills",
+      "variants": [
+        {
+          "text": "quils",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word quills has a double l."
+        },
+        {
+          "text": "qiulls",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Two letters are swapped. The word is quills."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "keratin",
+      "variants": [
+        {
+          "text": "bone",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Hedgehogs have long spines, or quills, made of keratin.\" The spines are made of keratin, not of bone.",
+          "evidence": "Hedgehogs have long spines, or quills, made of keratin."
+        },
+        {
+          "text": "metal",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"Hedgehogs have long spines, or quills, made of keratin.\" The spines are made of keratin, not of metal.",
+          "evidence": "Hedgehogs have long spines, or quills, made of keratin."
+        },
+        {
+          "text": "keratn",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "A letter is missing. The word is keratin."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "porcupines",
+      "variants": [
+        {
+          "text": "squirrels",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"They do not come off easily, unlike porcupines, but in baby hedgehogs, the baby quills drop off and are replaced with adult quills.\" The spines do not come off easily, unlike those of porcupines, not of squirrels.",
+          "evidence": "They do not come off easily, unlike porcupines, but in baby hedgehogs, the baby quills drop off and are replaced with adult quills."
+        },
+        {
+          "text": "porcupins",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word porcupines ends in -ines, like pine."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "adult",
+      "variants": [
+        {
+          "text": "adlut",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "A letter is in the wrong place. The word is adult."
+        },
+        {
+          "text": "adullt",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "The word adult has only one l."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "sick,",
+      "variants": [
+        {
+          "text": "sick",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "A comma is missing. After the first part of the sentence (\"When hedgehogs are very stressed or sick\") a comma comes before the main part."
+        },
+        {
+          "text": "tired,",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"When they are very stressed or sick, their quills can fall off, too.\" Hedgehogs lose their quills when they are very stressed or sick, not when they are tired.",
+          "evidence": "When they are very stressed or sick, their quills can fall off, too."
+        },
+        {
+          "text": "sik,",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word sick is written with ck at the end."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "African",
+      "variants": [
+        {
+          "text": "Asian",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"African pygmy hedgehogs are the most common type that are kept as pets.\" The most common pet hedgehogs are African pygmy hedgehogs, not Asian ones.",
+          "evidence": "African pygmy hedgehogs are the most common type that are kept as pets."
+        },
+        {
+          "text": "European",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"African pygmy hedgehogs are the most common type that are kept as pets.\" The most common pet hedgehogs are African pygmy hedgehogs, not European ones.",
+          "evidence": "African pygmy hedgehogs are the most common type that are kept as pets."
+        },
+        {
+          "text": "Afrcan",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "A letter is missing. The word is African."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "2–4",
+      "variants": [
+        {
+          "text": "6–8",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"They live 2–4 years in captivity.\" Hedgehogs live 2–4 years in captivity, not 6–8.",
+          "evidence": "They live 2–4 years in captivity."
+        },
+        {
+          "text": "10–12",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"They live 2–4 years in captivity.\" Hedgehogs live 2–4 years in captivity, not 10–12.",
+          "evidence": "They live 2–4 years in captivity."
+        },
+        {
+          "text": "3–5",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"They live 2–4 years in captivity.\" Hedgehogs live 2–4 years in captivity, not 3–5.",
+          "evidence": "They live 2–4 years in captivity."
+        }
+      ]
+    },
+    "s13": {
+      "correct": "allowed",
+      "variants": [
+        {
+          "text": "alowed",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word allowed has a double l."
+        },
+        {
+          "text": "allwoed",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Two letters are swapped. The word is allowed."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Source read: Simple English Wikipedia article Hedgehog, revision 10620091 (retrieved 18 Oct 2026), the whole article (introduction, Description, Pets) read completely; the ten excerpt sentences, every evidence quote and every Original quote in the explanations were compared with the saved article text by script (whitespace squeezed) and occur verbatim.",
+    "Left out on purpose: the first sentence (a missing comma in the source), the sentence with quotation marks (\"quilling\"), the sentence on poisonous quills, the reference list and the link sections.",
+    "Licence: Simple English Wikipedia text is CC BY-SA 4.0 (licence page linked above, author list = page history); the data of this pack is under the same licence.",
+    "Only classes that occur from grade 3: spelling, slip, punctuation, number/name. The misspellings (Zeeland, quils, porcupins, adullt, alowed, sik and others) and the slips (swapped or missing letters) are constructed on the patterns of common English school errors, not taken from a child corpus.",
+    "Not verified: whether the article is complete and correct in its facts (the pack checks the Variant against the article, not against the world). The rendition is an own-words retelling: it splits long sentences, keeps \"long spines, or quills\" and says \"not be allowed\" for \"may not be legal\".",
+    "The source is to be saved as a PDF under public/quellen/en/hedgehog.pdf (made by the lead for the mode source); the PDF test fails until then."
+  ]
+}

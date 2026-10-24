@@ -1,0 +1,409 @@
+{
+  "id": "eichhoernchen",
+  "title": "Eichhörnchen",
+  "language": "de",
+  "topic": "Eichhörnchen: Nachwuchs",
+  "source": {
+    "title": "Eichhörnchen – Klexikon – das Kinderlexikon",
+    "url": "https://klexikon.zum.de/index.php?title=Eichh%C3%B6rnchen&oldid=157835",
+    "revision": "157835",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://klexikon.zum.de/index.php?title=Eichh%C3%B6rnchen&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/eichhoernchen.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Eichhörnchen sind Nagetiere."
+    },
+    {
+      "text": "Sie bilden eine Gattung mit 29 verschiedenen Arten."
+    },
+    {
+      "text": "Die erste Zeit für die Fortpflanzung ist der Januar, die zweite etwa der April.",
+      "section": "Wie vermehren sich Eichhörnchen?"
+    },
+    {
+      "text": "Das Weibchen trägt dann meist etwa sechs Jungtiere in ihrem Bauch.",
+      "section": "Wie vermehren sich Eichhörnchen?"
+    },
+    {
+      "text": "Nach gut fünf Wochen kommt es zur Geburt.",
+      "section": "Wie vermehren sich Eichhörnchen?"
+    },
+    {
+      "text": "Die Jungtiere sind bei der Geburt etwa sechs bis neun Zentimeter lang.",
+      "section": "Wie vermehren sich Eichhörnchen?"
+    },
+    {
+      "text": "Nach acht bis zehn Wochen suchen sie sich alleine Futter.",
+      "section": "Wie vermehren sich Eichhörnchen?"
+    },
+    {
+      "text": "Frei lebend werden Eichhörnchen meistens nicht älter als drei Jahre.",
+      "section": "Wie vermehren sich Eichhörnchen?"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Eichhörnchen gehören zu den ",
+        {
+          "slot": "n1"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Eichhörnchen sind Nagetiere."
+      }
+    },
+    {
+      "sentence": [
+        "Es gibt ",
+        {
+          "slot": "n2"
+        },
+        " verschiedene Arten von ihnen."
+      ],
+      "evidence": {
+        "quote": "Sie bilden eine Gattung mit 29 verschiedenen Arten."
+      }
+    },
+    {
+      "sentence": [
+        "Die erste Zeit für Nachwuchs ist der ",
+        {
+          "slot": "s1"
+        },
+        " die zweite ist etwa der ",
+        {
+          "slot": "s2"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Die erste Zeit für die Fortpflanzung ist der Januar, die zweite etwa der April."
+      }
+    },
+    {
+      "sentence": [
+        "Das Weibchen trägt meistens etwa ",
+        {
+          "slot": "s3"
+        },
+        " Junge im Bauch."
+      ],
+      "evidence": {
+        "quote": "Das Weibchen trägt dann meist etwa sechs Jungtiere in ihrem Bauch."
+      }
+    },
+    {
+      "sentence": [
+        "Nach gut ",
+        {
+          "slot": "s4"
+        },
+        " Wochen werden die Jungen ",
+        {
+          "slot": "s5"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Nach gut fünf Wochen kommt es zur Geburt."
+      }
+    },
+    {
+      "sentence": [
+        "Bei der ",
+        {
+          "slot": "s6"
+        },
+        " sind sie etwa ",
+        {
+          "slot": "s7"
+        },
+        " Zentimeter lang."
+      ],
+      "evidence": {
+        "quote": "Die Jungtiere sind bei der Geburt etwa sechs bis neun Zentimeter lang."
+      }
+    },
+    {
+      "sentence": [
+        "Nach ",
+        {
+          "slot": "s10"
+        },
+        " Wochen suchen sie ihr ",
+        {
+          "slot": "s11"
+        },
+        " allein."
+      ],
+      "evidence": {
+        "quote": "Nach acht bis zehn Wochen suchen sie sich alleine Futter."
+      }
+    },
+    {
+      "sentence": [
+        "Frei lebende Eichhörnchen werden meistens nicht ",
+        {
+          "slot": "s13"
+        },
+        " als ",
+        {
+          "slot": "s12"
+        },
+        " Jahre."
+      ],
+      "evidence": {
+        "quote": "Frei lebend werden Eichhörnchen meistens nicht älter als drei Jahre."
+      }
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "Januar,",
+      "variants": [
+        {
+          "text": "Juli,",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Die erste Zeit für die Fortpflanzung ist der Januar, die zweite etwa der April.“ Die erste Zeit ist der Januar.",
+          "evidence": "Die erste Zeit für die Fortpflanzung ist der Januar, die zweite etwa der April."
+        },
+        {
+          "text": "Januar",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Zwischen den zwei Teilen des Satzes fehlt ein Komma. Es trennt die erste Zeit von der zweiten."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "April",
+      "variants": [
+        {
+          "text": "August",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Die erste Zeit für die Fortpflanzung ist der Januar, die zweite etwa der April.“ Die zweite Zeit ist etwa der April.",
+          "evidence": "Die erste Zeit für die Fortpflanzung ist der Januar, die zweite etwa der April."
+        },
+        {
+          "text": "Oktober",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Die erste Zeit für die Fortpflanzung ist der Januar, die zweite etwa der April.“ Die zweite Zeit ist etwa der April, nicht der Oktober.",
+          "evidence": "Die erste Zeit für die Fortpflanzung ist der Januar, die zweite etwa der April."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "sechs",
+      "variants": [
+        {
+          "text": "sechzig",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Das Weibchen trägt dann meist etwa sechs Jungtiere in ihrem Bauch.“ Das Weibchen trägt meist etwa sechs Jungtiere.",
+          "evidence": "Das Weibchen trägt dann meist etwa sechs Jungtiere in ihrem Bauch."
+        },
+        {
+          "text": "zwölf",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Das Weibchen trägt dann meist etwa sechs Jungtiere in ihrem Bauch.“ Es sind meist etwa sechs Jungtiere, nicht zwölf.",
+          "evidence": "Das Weibchen trägt dann meist etwa sechs Jungtiere in ihrem Bauch."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "fünf",
+      "variants": [
+        {
+          "text": "acht",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Nach gut fünf Wochen kommt es zur Geburt.“ Nach gut fünf Wochen kommt es zur Geburt.",
+          "evidence": "Nach gut fünf Wochen kommt es zur Geburt."
+        },
+        {
+          "text": "zwölf",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Nach gut fünf Wochen kommt es zur Geburt.“ Es sind gut fünf Wochen, nicht zwölf.",
+          "evidence": "Nach gut fünf Wochen kommt es zur Geburt."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "geboren",
+      "variants": [
+        {
+          "text": "gebohren",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort „geboren“ schreibt man ohne „h“."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "Geburt",
+      "variants": [
+        {
+          "text": "Geburd",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Am Ende hörst du ein „t“. Das gilt auch beim Verlängern: die Geburten. Darum schreibt man „t“: Geburt."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "sechs bis neun",
+      "variants": [
+        {
+          "text": "zwei bis vier",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Die Jungtiere sind bei der Geburt etwa sechs bis neun Zentimeter lang.“ Die Jungtiere sind bei der Geburt etwa sechs bis neun Zentimeter lang.",
+          "evidence": "Die Jungtiere sind bei der Geburt etwa sechs bis neun Zentimeter lang.",
+          "tolerance": 1
+        },
+        {
+          "text": "sechs bis neunzig",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Die Jungtiere sind bei der Geburt etwa sechs bis neun Zentimeter lang.“ Sie sind etwa sechs bis neun Zentimeter lang, nicht neunzig.",
+          "evidence": "Die Jungtiere sind bei der Geburt etwa sechs bis neun Zentimeter lang.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s10": {
+      "correct": "acht bis zehn",
+      "variants": [
+        {
+          "text": "zwei bis drei",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Nach acht bis zehn Wochen suchen sie sich alleine Futter.“ Nach acht bis zehn Wochen suchen sie sich alleine Futter.",
+          "evidence": "Nach acht bis zehn Wochen suchen sie sich alleine Futter.",
+          "tolerance": 1
+        },
+        {
+          "text": "acht bis zwölf",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Nach acht bis zehn Wochen suchen sie sich alleine Futter.“ Es sind acht bis zehn Wochen.",
+          "evidence": "Nach acht bis zehn Wochen suchen sie sich alleine Futter.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s11": {
+      "correct": "Futter",
+      "variants": [
+        {
+          "text": "Futer",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach dem kurzen „u“ steht „tt“: Futter. Das Wort hat zwei „t“."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "drei",
+      "variants": [
+        {
+          "text": "dreizehn",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Frei lebend werden Eichhörnchen meistens nicht älter als drei Jahre.“ Eichhörnchen werden meistens nicht älter als drei Jahre.",
+          "evidence": "Frei lebend werden Eichhörnchen meistens nicht älter als drei Jahre."
+        },
+        {
+          "text": "sieben",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Frei lebend werden Eichhörnchen meistens nicht älter als drei Jahre.“ Sie werden meistens nicht älter als drei Jahre.",
+          "evidence": "Frei lebend werden Eichhörnchen meistens nicht älter als drei Jahre."
+        }
+      ]
+    },
+    "s13": {
+      "correct": "älter",
+      "variants": [
+        {
+          "text": "elter",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das Wort kommt von „alt“. Darum schreibt man es mit „ä“: älter."
+        }
+      ]
+    },
+    "n1": {
+      "correct": "Nagetieren",
+      "variants": [
+        {
+          "text": "Nagetiren",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Im Wort fehlt ein „e“: Nagetieren."
+        }
+      ]
+    },
+    "n2": {
+      "correct": "29",
+      "variants": [
+        {
+          "text": "92",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Sie bilden eine Gattung mit 29 verschiedenen Arten.“ Es gibt 29 verschiedene Arten, nicht 92.",
+          "evidence": "Sie bilden eine Gattung mit 29 verschiedenen Arten."
+        },
+        {
+          "text": "290",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Sie bilden eine Gattung mit 29 verschiedenen Arten.“ Es sind 29 Arten, nicht 290.",
+          "evidence": "Sie bilden eine Gattung mit 29 verschiedenen Arten."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Klexikon-Artikel Eichhörnchen, Revision 157835 (abgerufen am 18.10.2026, Abschnitt „Wie vermehren sich Eichhörnchen?“); die 8 Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de; die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Nur Klassen, die ab Klasse 3 vorkommen: Rechtschreibung (Ableitung, Doppelkonsonant, tz, ck, ß), Flüchtigkeitsfehler, Zeichensetzung, Zahl/Name/Ort. Die Falschschreibungen sind konstruiert, nach den Schwerpunkten der IQB-Handreichung.",
+    "Geändert (Einleitung): Der Auszug beginnt jetzt mit den ersten zwei Sätzen des Artikels; gestrichen sind die Sätze zu Säugetieren und zur Milch der Mutter. Der Artikel-Satz „Eichhörnchen sind Säugetiere“ aus dem Abschnitt „Wie vermehren sich Eichhörnchen?“ entfällt damit.",
+    "Ausgelassen: die Sätze zum Männchen, zum Fell der Jungen und zum Kobel, weil sie ohne Erklärung schwer zu verstehen sind. Der letzte Auszugssatz steht im selben Abschnitt weiter hinten.",
+    "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt.",
+    "Die Quelle liegt als PDF unter public/quellen/de/eichhoernchen.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+  ]
+}

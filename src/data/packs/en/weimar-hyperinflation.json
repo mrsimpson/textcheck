@@ -1,0 +1,912 @@
+{
+  "id": "weimar-hyperinflation",
+  "title": "Hyperinflation in the Weimar Republic",
+  "language": "en",
+  "topic": "The hyperinflation of 1923 in the Weimar Republic: from the stable mark of early 1922 to the Ruhr occupation and passive resistance",
+  "source": {
+    "title": "Hyperinflation in the Weimar Republic – Wikipedia",
+    "url": "https://en.wikipedia.org/w/index.php?title=Hyperinflation_in_the_Weimar_Republic&oldid=1376495680",
+    "revision": "1376495680",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "authorsUrl": "https://en.wikipedia.org/w/index.php?title=Hyperinflation_in_the_Weimar_Republic&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/en/weimar-hyperinflation.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "In the first half of 1922, the mark stabilized at about 320 marks per dollar.",
+      "section": "Inflation immediately after the First World War"
+    },
+    {
+      "text": "International conferences were held.",
+      "section": "Inflation immediately after the First World War"
+    },
+    {
+      "text": "One, in June 1922, was organized by US investment banker J. P. Morgan, Jr.",
+      "section": "Inflation immediately after the First World War"
+    },
+    {
+      "text": "The meetings produced no workable solution.",
+      "section": "Inflation immediately after the First World War"
+    },
+    {
+      "text": "Further, the well-respected recent head of the Reich Ministry for Reconstruction and then-present German foreign minister Walther Rathenau was assassinated 22 June 1922, causing widespread national distress and protest.",
+      "section": "Inflation immediately after the First World War"
+    },
+    {
+      "text": "Inflation erupted into hyperinflation, the mark falling to 7,400 marks per US dollar by December 1922.",
+      "section": "Inflation immediately after the First World War"
+    },
+    {
+      "text": "The cost-of-living index was 41 in June 1922 and 685 in December, a nearly 17-fold increase.",
+      "section": "Inflation immediately after the First World War"
+    },
+    {
+      "text": "After Germany failed for the thirty-fourth time in thirty-six months to pay an installment of in-kind reparations of coal, in January 1923 French and Belgian troops occupied the Ruhr valley, Germany's main industrial region.",
+      "section": "Inflation immediately after the First World War"
+    },
+    {
+      "text": "900 million gold marks of reparations were ultimately secured this way.",
+      "section": "Inflation immediately after the First World War"
+    },
+    {
+      "text": "The German government's response was to order a policy of passive resistance in the Ruhr, with workers being told to do nothing which helped the French and Belgians in any way.",
+      "section": "Inflation immediately after the First World War"
+    },
+    {
+      "text": "While this policy, in practice, amounted to a general strike to protest the occupation, the striking workers still had to be given financial support.",
+      "section": "Inflation immediately after the First World War"
+    },
+    {
+      "text": "The government paid these workers by printing more and more banknotes, with Germany soon being swamped with paper money, exacerbating the hyperinflation even further.",
+      "section": "Inflation immediately after the First World War"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "During the first half of 1922, the mark stabilized at about ",
+        {
+          "slot": "s1"
+        },
+        " marks per dollar."
+      ],
+      "evidence": {
+        "quote": "In the first half of 1922, the mark stabilized at about 320 marks per dollar."
+      }
+    },
+    {
+      "sentence": [
+        "International conferences were held, and one of them, in June 1922, was organized by ",
+        {
+          "slot": "s2"
+        },
+        ", a US investment banker."
+      ],
+      "evidence": {
+        "quote": "One, in June 1922, was organized by US investment banker J. P. Morgan, Jr."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i1"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "The meetings ",
+        {
+          "slot": "s3"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "The meetings produced no workable solution."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i2"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Walther Rathenau, who had recently headed the Reich Ministry for Reconstruction and was then the German foreign minister, was assassinated on ",
+        {
+          "slot": "s4"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "the well-respected recent head of the Reich Ministry for Reconstruction and then-present German foreign minister Walther Rathenau was assassinated 22 June 1922"
+      }
+    },
+    {
+      "sentence": [
+        "The assassination caused ",
+        {
+          "slot": "s5"
+        },
+        " national distress and protest."
+      ],
+      "evidence": {
+        "quote": "causing widespread national distress and protest"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i3"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Inflation then ",
+        {
+          "slot": "s6"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Inflation erupted into hyperinflation"
+      }
+    },
+    {
+      "sentence": [
+        "By December 1922, the mark had fallen to ",
+        {
+          "slot": "s7"
+        },
+        " marks per US dollar."
+      ],
+      "evidence": {
+        "quote": "Inflation erupted into hyperinflation, the mark falling to 7,400 marks per US dollar by December 1922."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i4"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "The cost-of-living index rose from ",
+        {
+          "slot": "s8"
+        },
+        " in June 1922 to 685 in December."
+      ],
+      "evidence": {
+        "quote": "The cost-of-living index was 41 in June 1922 and 685 in December, a nearly 17-fold increase."
+      }
+    },
+    {
+      "sentence": [
+        "That was a ",
+        {
+          "slot": "s9"
+        },
+        " increase."
+      ],
+      "evidence": {
+        "quote": "a nearly 17-fold increase"
+      }
+    },
+    {
+      "sentence": [
+        "Germany had failed ",
+        {
+          "slot": "s10"
+        },
+        " to pay an installment of in-kind reparations of coal."
+      ],
+      "evidence": {
+        "quote": "After Germany failed for the thirty-fourth time in thirty-six months to pay an installment of in-kind reparations of coal"
+      }
+    },
+    {
+      "sentence": [
+        "Afterwards, French and Belgian troops occupied the Ruhr valley in ",
+        {
+          "slot": "s11"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "in January 1923 French and Belgian troops occupied the Ruhr valley"
+      }
+    },
+    {
+      "sentence": [
+        "The Ruhr valley was Germany's main ",
+        {
+          "slot": "s12"
+        },
+        " region."
+      ],
+      "evidence": {
+        "quote": "the Ruhr valley, Germany's main industrial region"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i5"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Ultimately, ",
+        {
+          "slot": "s13"
+        },
+        " gold marks of reparations were secured this way."
+      ],
+      "evidence": {
+        "quote": "900 million gold marks of reparations were ultimately secured this way."
+      }
+    },
+    {
+      "sentence": [
+        "The German government responded by ordering a policy of ",
+        {
+          "slot": "s14"
+        },
+        " in the Ruhr."
+      ],
+      "evidence": {
+        "quote": "The German government's response was to order a policy of passive resistance in the Ruhr"
+      }
+    },
+    {
+      "sentence": [
+        "Workers were told to do ",
+        {
+          "slot": "s15"
+        },
+        " that helped the French and Belgians in any way."
+      ],
+      "evidence": {
+        "quote": "with workers being told to do nothing which helped the French and Belgians in any way"
+      }
+    },
+    {
+      "sentence": [
+        "In practice, this policy amounted to a ",
+        {
+          "slot": "s16"
+        },
+        " to protest the occupation."
+      ],
+      "evidence": {
+        "quote": "While this policy, in practice, amounted to a general strike to protest the occupation"
+      }
+    },
+    {
+      "sentence": [
+        "The striking workers still ",
+        {
+          "slot": "s17"
+        },
+        " financial support."
+      ],
+      "evidence": {
+        "quote": "the striking workers still had to be given financial support"
+      }
+    },
+    {
+      "sentence": [
+        "The government paid these workers by ",
+        {
+          "slot": "s18"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "The government paid these workers by printing more and more banknotes"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i6"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Germany was soon swamped with paper money, which ",
+        {
+          "slot": "s19"
+        },
+        " the hyperinflation even further."
+      ],
+      "evidence": {
+        "quote": "with Germany soon being swamped with paper money, exacerbating the hyperinflation even further"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i7"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "320",
+      "variants": [
+        {
+          "text": "230",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"In the first half of 1922, the mark stabilized at about 320 marks per dollar.\" The number is 320, not 230.",
+          "evidence": "In the first half of 1922, the mark stabilized at about 320 marks per dollar."
+        },
+        {
+          "text": "3,200",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... the mark stabilized at about 320 marks per dollar.\" The number is 320, not 3,200. A rate of 3,200 would not be called stable at this point.",
+          "evidence": "In the first half of 1922, the mark stabilized at about 320 marks per dollar."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "J. P. Morgan, Jr.",
+      "variants": [
+        {
+          "text": "J. P. Morgan, Sr.",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"One, in June 1922, was organized by US investment banker J. P. Morgan, Jr.\" The name ends in \"Jr.\", not \"Sr.\".",
+          "evidence": "One, in June 1922, was organized by US investment banker J. P. Morgan, Jr."
+        },
+        {
+          "text": "J. D. Rockefeller, Jr.",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... organized by US investment banker J. P. Morgan, Jr.\" The banker is J. P. Morgan, Jr., not Rockefeller.",
+          "evidence": "One, in June 1922, was organized by US investment banker J. P. Morgan, Jr."
+        },
+        {
+          "text": "J. P. Morgen, Jr.",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"One, in June 1922, was organized by US investment banker J. P. Morgan, Jr.\" The correct spelling is \"J. P. Morgan, Jr\", not \"J. P. Morgen, Jr\".",
+          "evidence": "One, in June 1922, was organized by US investment banker J. P. Morgan, Jr."
+        }
+      ]
+    },
+    "i1": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Experts say that this conference came too late to change anything.",
+          "errorClass": "false_authority",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source only says: \"International conferences were held.\" and names no expert. \"Experts say\" gives a claim authority without naming anyone or giving evidence. The sentence is not in the source.",
+          "evidence": "International conferences were held."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "produced no workable solution",
+      "variants": [
+        {
+          "text": "produced a workable solution",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"The meetings produced no workable solution.\" A negation was dropped, so the meaning is turned around.",
+          "evidence": "The meetings produced no workable solution.",
+          "tolerance": 1
+        },
+        {
+          "text": "produced no workeable solution",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "\"Workable\" is spelled without an \"e\" in the middle: the final \"e\" of \"work-able\" is not kept."
+        }
+      ]
+    },
+    "i2": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "The meetings were obviously a waste of everybody's time.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The source only says: \"The meetings produced no workable solution.\" Calling the meetings \"obviously a waste of time\" is a judgement stated as a fact. Opinion presented as fact: nobody can measure it.",
+          "evidence": "The meetings produced no workable solution."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "22 June 1922",
+      "variants": [
+        {
+          "text": "22 June 1923",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... Walther Rathenau was assassinated 22 June 1922\". The year is 1922, not 1923.",
+          "evidence": "Further, the well-respected recent head of the Reich Ministry for Reconstruction and then-present German foreign minister Walther Rathenau was assassinated 22 June 1922, causing widespread national distress and protest.",
+          "tolerance": 1
+        },
+        {
+          "text": "2 June 1922",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"... Walther Rathenau was assassinated 22 June 1922\". The day is the 22nd, not the 2nd.",
+          "evidence": "Further, the well-respected recent head of the Reich Ministry for Reconstruction and then-present German foreign minister Walther Rathenau was assassinated 22 June 1922, causing widespread national distress and protest.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s5": {
+      "correct": "widespread",
+      "variants": [
+        {
+          "text": "limited",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... causing widespread national distress and protest.\" The distress was widespread, not limited. A degree word was changed.",
+          "evidence": "Further, the well-respected recent head of the Reich Ministry for Reconstruction and then-present German foreign minister Walther Rathenau was assassinated 22 June 1922, causing widespread national distress and protest."
+        },
+        {
+          "text": "widespred",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word \"widespread\" ends in \"-spread\". A letter is missing."
+        }
+      ]
+    },
+    "i3": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "The cold-blooded murder of the minister left the whole nation in terror.",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... causing widespread national distress and protest.\" It is neutral. \"Cold-blooded\" and \"terror\" are emotional words that push the reader to feel a certain way (loaded language). The sentence is not in the source.",
+          "evidence": "Further, the well-respected recent head of the Reich Ministry for Reconstruction and then-present German foreign minister Walther Rathenau was assassinated 22 June 1922, causing widespread national distress and protest."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "erupted into hyperinflation",
+      "variants": [
+        {
+          "text": "slowed down again",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"Inflation erupted into hyperinflation, the mark falling to 7,400 marks per US dollar by December 1922.\" Inflation did not slow down; it turned into hyperinflation.",
+          "evidence": "Inflation erupted into hyperinflation, the mark falling to 7,400 marks per US dollar by December 1922.",
+          "tolerance": 1
+        },
+        {
+          "text": "exploded into a catastrophic hyperinflation",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Inflation erupted into hyperinflation\". It does not call it \"catastrophic\" here. The added emotional adjective is loaded language.",
+          "evidence": "Inflation erupted into hyperinflation, the mark falling to 7,400 marks per US dollar by December 1922.",
+          "tolerance": 1
+        },
+        {
+          "text": "errupted into hyperinflation",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "\"Erupted\" has only one \"r\" in the middle. The doubled consonant is a typical spelling mistake."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "7,400",
+      "variants": [
+        {
+          "text": "74,000",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... the mark falling to 7,400 marks per US dollar by December 1922.\" The number is 7,400, not 74,000.",
+          "evidence": "Inflation erupted into hyperinflation, the mark falling to 7,400 marks per US dollar by December 1922."
+        },
+        {
+          "text": "4,700",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"... the mark falling to 7,400 marks per US dollar by December 1922.\" The number is 7,400. Two digits were swapped.",
+          "evidence": "Inflation erupted into hyperinflation, the mark falling to 7,400 marks per US dollar by December 1922."
+        }
+      ]
+    },
+    "i4": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Since the hyperinflation began right after the assassination, the assassination must have caused it.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The source only says that \"Inflation erupted into hyperinflation\" and mentions the assassination as another event of 1922. Treating \"after\" as \"because of\" is a post hoc fallacy: the text does not give this cause.",
+          "evidence": "Inflation erupted into hyperinflation, the mark falling to 7,400 marks per US dollar by December 1922."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "41",
+      "variants": [
+        {
+          "text": "14",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"The cost-of-living index was 41 in June 1922 and 685 in December, a nearly 17-fold increase.\" The number is 41. Two digits were swapped.",
+          "evidence": "The cost-of-living index was 41 in June 1922 and 685 in December, a nearly 17-fold increase."
+        },
+        {
+          "text": "141",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"The cost-of-living index was 41 in June 1922 ...\" The number is 41, not 141. With 141 the \"nearly 17-fold increase\" would not work out.",
+          "evidence": "The cost-of-living index was 41 in June 1922 and 685 in December, a nearly 17-fold increase."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "nearly 17-fold",
+      "variants": [
+        {
+          "text": "nearly 7-fold",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"... a nearly 17-fold increase.\" It was nearly 17-fold, not nearly 7-fold. From 41 to 685 is about 17 times.",
+          "evidence": "The cost-of-living index was 41 in June 1922 and 685 in December, a nearly 17-fold increase."
+        },
+        {
+          "text": "nearly 70-fold",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... a nearly 17-fold increase.\" It was nearly 17-fold, not nearly 70-fold.",
+          "evidence": "The cost-of-living index was 41 in June 1922 and 685 in December, a nearly 17-fold increase."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "for the thirty-fourth time in thirty-six months",
+      "variants": [
+        {
+          "text": "for the fourteenth time in thirty-six months",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"After Germany failed for the thirty-fourth time in thirty-six months to pay an installment ...\" It was the thirty-fourth time, not the fourteenth.",
+          "evidence": "After Germany failed for the thirty-fourth time in thirty-six months to pay an installment of in-kind reparations of coal, in January 1923 French and Belgian troops occupied the Ruhr valley, Germany's main industrial region.",
+          "tolerance": 1
+        },
+        {
+          "text": "for the thirty-fourth time in twenty-six months",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"... failed for the thirty-fourth time in thirty-six months\". The period was thirty-six months, not twenty-six.",
+          "evidence": "After Germany failed for the thirty-fourth time in thirty-six months to pay an installment of in-kind reparations of coal, in January 1923 French and Belgian troops occupied the Ruhr valley, Germany's main industrial region.",
+          "tolerance": 1
+        },
+        {
+          "text": "for the first time in thirty-six months",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... failed for the thirty-fourth time in thirty-six months\". It was the thirty-fourth failure, not the first.",
+          "evidence": "After Germany failed for the thirty-fourth time in thirty-six months to pay an installment of in-kind reparations of coal, in January 1923 French and Belgian troops occupied the Ruhr valley, Germany's main industrial region.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s11": {
+      "correct": "January 1923",
+      "variants": [
+        {
+          "text": "January 1922",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... in January 1923 French and Belgian troops occupied the Ruhr valley\". The year is 1923, not 1922.",
+          "evidence": "After Germany failed for the thirty-fourth time in thirty-six months to pay an installment of in-kind reparations of coal, in January 1923 French and Belgian troops occupied the Ruhr valley, Germany's main industrial region."
+        },
+        {
+          "text": "January 1924",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"... in January 1923 French and Belgian troops occupied the Ruhr valley\". The year is 1923, not 1924.",
+          "evidence": "After Germany failed for the thirty-fourth time in thirty-six months to pay an installment of in-kind reparations of coal, in January 1923 French and Belgian troops occupied the Ruhr valley, Germany's main industrial region."
+        },
+        {
+          "text": "Janurary 1923",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "\"January\" has no second \"r\" before the \"y\". It is a typical misspelling."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "industrial",
+      "variants": [
+        {
+          "text": "agricultural",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"... the Ruhr valley, Germany's main industrial region.\" It was an industrial region, not an agricultural one.",
+          "evidence": "After Germany failed for the thirty-fourth time in thirty-six months to pay an installment of in-kind reparations of coal, in January 1923 French and Belgian troops occupied the Ruhr valley, Germany's main industrial region."
+        },
+        {
+          "text": "financial",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... the Ruhr valley, Germany's main industrial region.\" It was the main industrial region, not the main financial one.",
+          "evidence": "After Germany failed for the thirty-fourth time in thirty-six months to pay an installment of in-kind reparations of coal, in January 1923 French and Belgian troops occupied the Ruhr valley, Germany's main industrial region."
+        },
+        {
+          "text": "industrail",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word \"industrial\" ends in \"-ial\". Two letters were swapped."
+        }
+      ]
+    },
+    "i5": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "The occupation soon led to fights between soldiers and workers in many towns.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says only that troops \"occupied the Ruhr valley\" and that \"900 million gold marks of reparations were ultimately secured this way.\" It does not mention fights. The sentence is added and cannot be checked in the text.",
+          "evidence": "900 million gold marks of reparations were ultimately secured this way."
+        }
+      ]
+    },
+    "s13": {
+      "correct": "900 million",
+      "variants": [
+        {
+          "text": "900 billion",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"900 million gold marks of reparations were ultimately secured this way.\" The amount is 900 million, not 900 billion.",
+          "evidence": "900 million gold marks of reparations were ultimately secured this way."
+        },
+        {
+          "text": "90 million",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"900 million gold marks of reparations were ultimately secured this way.\" The amount is 900 million, not 90 million.",
+          "evidence": "900 million gold marks of reparations were ultimately secured this way."
+        }
+      ]
+    },
+    "s14": {
+      "correct": "passive resistance",
+      "variants": [
+        {
+          "text": "active resistance",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... a policy of passive resistance in the Ruhr, with workers being told to do nothing ...\" The policy was passive resistance, not active resistance.",
+          "evidence": "The German government's response was to order a policy of passive resistance in the Ruhr, with workers being told to do nothing which helped the French and Belgians in any way."
+        },
+        {
+          "text": "armed resistance",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"... a policy of passive resistance in the Ruhr, with workers being told to do nothing ...\" The policy was passive, not armed.",
+          "evidence": "The German government's response was to order a policy of passive resistance in the Ruhr, with workers being told to do nothing which helped the French and Belgians in any way."
+        },
+        {
+          "text": "passive resistence",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "\"Resistance\" ends in \"-ance\", not \"-ence\"."
+        }
+      ]
+    },
+    "s15": {
+      "correct": "nothing",
+      "variants": [
+        {
+          "text": "everything",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"... with workers being told to do nothing which helped the French and Belgians in any way.\" The workers were told to do nothing that helped them, not everything.",
+          "evidence": "The German government's response was to order a policy of passive resistance in the Ruhr, with workers being told to do nothing which helped the French and Belgians in any way."
+        },
+        {
+          "text": "little",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"... told to do nothing which helped the French and Belgians in any way.\" It says \"nothing\", not \"little\". A degree word weakens the order.",
+          "evidence": "The German government's response was to order a policy of passive resistance in the Ruhr, with workers being told to do nothing which helped the French and Belgians in any way."
+        },
+        {
+          "text": "noting",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "\"Noting\" is a real word, so a spell checker passes it, but here you need \"nothing\"."
+        }
+      ]
+    },
+    "s16": {
+      "correct": "general strike",
+      "variants": [
+        {
+          "text": "limited strike",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"While this policy, in practice, amounted to a general strike to protest the occupation ...\" It was a general strike, not a limited one.",
+          "evidence": "While this policy, in practice, amounted to a general strike to protest the occupation, the striking workers still had to be given financial support."
+        },
+        {
+          "text": "hunger strike",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... amounted to a general strike to protest the occupation\". It was a general strike, not a hunger strike.",
+          "evidence": "While this policy, in practice, amounted to a general strike to protest the occupation, the striking workers still had to be given financial support."
+        },
+        {
+          "text": "genral strike",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "\"General\" has an \"e\" before the second \"r\". A letter is missing."
+        }
+      ]
+    },
+    "s17": {
+      "correct": "had to be given",
+      "variants": [
+        {
+          "text": "did not need",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... the striking workers still had to be given financial support.\" The workers needed support. The wording turns this into its opposite (a negation).",
+          "evidence": "While this policy, in practice, amounted to a general strike to protest the occupation, the striking workers still had to be given financial support.",
+          "tolerance": 1
+        },
+        {
+          "text": "had to give",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"... the striking workers still had to be given financial support.\" The workers received support; they did not have to give it.",
+          "evidence": "While this policy, in practice, amounted to a general strike to protest the occupation, the striking workers still had to be given financial support.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s18": {
+      "correct": "printing more and more banknotes",
+      "variants": [
+        {
+          "text": "raising taxes",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"The government paid these workers by printing more and more banknotes ...\" The money came from printing banknotes, not from raising taxes.",
+          "evidence": "The government paid these workers by printing more and more banknotes, with Germany soon being swamped with paper money, exacerbating the hyperinflation even further."
+        },
+        {
+          "text": "printing fewer and fewer banknotes",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"... by printing more and more banknotes\". It says \"more and more\", not \"fewer and fewer\".",
+          "evidence": "The government paid these workers by printing more and more banknotes, with Germany soon being swamped with paper money, exacerbating the hyperinflation even further.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "i6": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "The striking workers received no money from the government.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "This sentence contradicts the text's own sentences and the Two sentences of one text cannot both be right (contradiction).",
+          "evidence": "The government paid these workers by printing more and more banknotes, with Germany soon being swamped with paper money, exacerbating the hyperinflation even further."
+        }
+      ]
+    },
+    "s19": {
+      "correct": "exacerbated",
+      "variants": [
+        {
+          "text": "eased",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"... with Germany soon being swamped with paper money, exacerbating the hyperinflation even further.\" The paper money made things worse; it did not ease them.",
+          "evidence": "The government paid these workers by printing more and more banknotes, with Germany soon being swamped with paper money, exacerbating the hyperinflation even further."
+        },
+        {
+          "text": "exasperated",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "\"Exasperated\" is a real word, but it means \"annoyed\"., which means \"making worse\"."
+        }
+      ]
+    },
+    "i7": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Every government that prints money ends up with hyperinflation.",
+          "errorClass": "overgeneralization",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The source describes one case, Germany in 1923. Turning one case into a rule for \"every government\" is an overgeneralization.",
+          "evidence": "The government paid these workers by printing more and more banknotes, with Germany soon being swamped with paper money, exacerbating the hyperinflation even further."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Source read: English Wikipedia article Hyperinflation in the Weimar Republic, revision 1376495680 (retrieved 2026-10-18), saved text read in full (about 4,300 words, tables and boxes left out); the twelve excerpt sentences come from the section \"Inflation immediately after the First World War\" (the paragraphs on 1922, the Ruhr occupation and passive resistance, three neighbouring paragraphs) and were compared with the saved article text by script (whitespace squeezed); every evidence quote and every variant evidence is a substring of the excerpt.",
+    "Licence: Wikipedia text under CC BY-SA 4.0 (page footer); the data of this pack is under the same licence.",
+    "All 15 error classes of the level occur. Classes from grade 7 and from grade 10 are derived, not documented. Misspellings (Morgen, workeable, errupted, Janurary, industrail, resistence, genral, widespred) and real-word errors (noting, exasperated) are constructed on typical English patterns, not taken from a corpus.",
+    "The inserted sentences (experts, opinion, loaded wording, inference, added claim, contradiction, generalization) are invented, harmless and not in the Original; the explanation says so.",
+    "Not verified: whether the article's figures are right in the world; the numbers follow the article, not other sources. Sentences of the three paragraphs were left out (never changed); the double spaces of the source between sentences were squeezed to one space.",
+    "The source is saved as PDF under public/quellen/en/weimar-hyperinflation.pdf (made by the lead) for the mode source."
+  ]
+}

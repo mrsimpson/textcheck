@@ -1,0 +1,784 @@
+{
+  "id": "kubakrise-1962",
+  "title": "Die Kubakrise",
+  "language": "de",
+  "topic": "Kubakrise im Oktober 1962: Konfrontation von USA und Sowjetunion, Wettrüsten, Vorgeschichte",
+  "source": {
+    "title": "Kubakrise – Wikipedia",
+    "url": "https://de.wikipedia.org/w/index.php?title=Kubakrise&oldid=271176245",
+    "revision": "271176245",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Kubakrise&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/kubakrise-1962.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Die Kubakrise (in der Sowjetunion und im Sprachgebrauch der DDR auch als Karibische Krise, auf Kuba später als Oktoberkrise bezeichnet) im Oktober 1962 war eine Konfrontation zwischen den Vereinigten Staaten und der Sowjetunion, die sich aus der Stationierung sowjetischer Mittelstreckenraketen auf Kuba im Rahmen des nuklearen Wettrüstens entwickelte.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Die eigentliche Krise dauerte dreizehn Tage.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Ihr folgte eine Neuordnung der internationalen Beziehungen.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Mit der Kubakrise erreichte der Kalte Krieg eine neue Dimension.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Beide Supermächte kamen während dieser Krise einer direkten militärischen Konfrontation und somit einem möglichen Atomkrieg am nächsten.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Erstmals wurden daraufhin dessen ungeheure Gefahren einer breiten Öffentlichkeit bewusst.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Aus dem Zweiten Weltkrieg waren die USA und die UdSSR als Weltmächte hervorgegangen.",
+      "section": "Vorgeschichte"
+    },
+    {
+      "text": "Sie standen für zwei gegensätzliche Wirtschaftssysteme und Ideologien.",
+      "section": "Vorgeschichte"
+    },
+    {
+      "text": "Mit der Entwicklung immer neuer Waffentechnologien kam etwa ab Anfang der 1950er Jahre ein Wettrüsten in Gang.",
+      "section": "Vorgeschichte"
+    },
+    {
+      "text": "Vor der Einführung der ersten Interkontinentalraketen dienten Langstreckenbomber als Trägermittel für Nuklearwaffen.",
+      "section": "Vorgeschichte"
+    },
+    {
+      "text": "Standardmodelle wurden der Flugzeugtyp B-52 in den USA und die Tu-95 in der Sowjetunion.",
+      "section": "Vorgeschichte"
+    },
+    {
+      "text": "In den 1950er Jahren waren die USA mit der Bomberflotte des Strategic Air Command ihrem Kontrahenten sowohl in der Zahl der Atomwaffen als auch der Trägermittel stark überlegen.",
+      "section": "Vorgeschichte"
+    },
+    {
+      "text": "Als die Sowjetunion 1957 die erste funktionsfähige Interkontinentalrakete der Welt präsentierte, herrschte im Westen Alarmstimmung (Sputnikschock).",
+      "section": "Vorgeschichte"
+    },
+    {
+      "text": "Allerdings machten die langen Vorwarnzeiten einen Überraschungsangriff mit Flugzeugen wie auch mit Raketen nahezu unmöglich.",
+      "section": "Vorgeschichte"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Die Kubakrise im ",
+        {
+          "slot": "k1"
+        },
+        " war eine ",
+        {
+          "slot": "k2"
+        },
+        " zwischen den Vereinigten Staaten und der ",
+        {
+          "slot": "k3"
+        },
+        "; sie entwickelte sich aus der Stationierung sowjetischer ",
+        {
+          "slot": "k4"
+        },
+        " auf Kuba im Rahmen des nuklearen Wettrüstens."
+      ],
+      "evidence": {
+        "quote": "Die Kubakrise (in der Sowjetunion und im Sprachgebrauch der DDR auch als Karibische Krise, auf Kuba später als Oktoberkrise bezeichnet) im Oktober 1962 war eine Konfrontation zwischen den Vereinigten Staaten und der Sowjetunion, die sich aus der Stationierung sowjetischer Mittelstreckenraketen auf Kuba im Rahmen des nuklearen Wettrüstens entwickelte."
+      }
+    },
+    {
+      "sentence": [
+        "Die eigentliche Krise dauerte ",
+        {
+          "slot": "k5"
+        },
+        " Tage."
+      ],
+      "evidence": {
+        "quote": "Die eigentliche Krise dauerte dreizehn Tage."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "k6"
+        },
+        " der internationalen Beziehungen."
+      ],
+      "evidence": {
+        "quote": "Ihr folgte eine Neuordnung der internationalen Beziehungen."
+      }
+    },
+    {
+      "sentence": [
+        "Mit der Kubakrise erreichte der Kalte Krieg ",
+        {
+          "slot": "k7"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Mit der Kubakrise erreichte der Kalte Krieg eine neue Dimension."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "k8"
+        },
+        " waren die beiden Supermächte einer direkten ",
+        {
+          "slot": "k9"
+        },
+        " Konfrontation und damit einem möglichen Atomkrieg näher als in dieser Krise."
+      ],
+      "evidence": {
+        "quote": "Beide Supermächte kamen während dieser Krise einer direkten militärischen Konfrontation und somit einem möglichen Atomkrieg am nächsten."
+      }
+    },
+    {
+      "sentence": [
+        "Erstmals wurde daraufhin einer breiten Öffentlichkeit bewusst, ",
+        {
+          "slot": "k29"
+        },
+        " ein Atomkrieg ungeheure Gefahren birgt."
+      ],
+      "evidence": {
+        "quote": "Erstmals wurden daraufhin dessen ungeheure Gefahren einer breiten Öffentlichkeit bewusst."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "k10"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Aus dem Zweiten Weltkrieg waren ",
+        {
+          "slot": "k11"
+        },
+        " als Weltmächte hervorgegangen."
+      ],
+      "evidence": {
+        "quote": "Aus dem Zweiten Weltkrieg waren die USA und die UdSSR als Weltmächte hervorgegangen."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "k12"
+        },
+        " für zwei gegensätzliche Wirtschaftssysteme und Ideologien."
+      ],
+      "evidence": {
+        "quote": "Sie standen für zwei gegensätzliche Wirtschaftssysteme und Ideologien."
+      }
+    },
+    {
+      "sentence": [
+        "Mit der Entwicklung immer neuer ",
+        {
+          "slot": "k13"
+        },
+        " kam etwa ab Anfang der ",
+        {
+          "slot": "k14"
+        },
+        " ein Wettrüsten in Gang."
+      ],
+      "evidence": {
+        "quote": "Mit der Entwicklung immer neuer Waffentechnologien kam etwa ab Anfang der 1950er Jahre ein Wettrüsten in Gang."
+      }
+    },
+    {
+      "sentence": [
+        "Vor der Einführung der ersten Interkontinentalraketen dienten ",
+        {
+          "slot": "k15"
+        },
+        " als Trägermittel für Nuklearwaffen."
+      ],
+      "evidence": {
+        "quote": "Vor der Einführung der ersten Interkontinentalraketen dienten Langstreckenbomber als Trägermittel für Nuklearwaffen."
+      }
+    },
+    {
+      "sentence": [
+        "Standardmodelle waren der Flugzeugtyp ",
+        {
+          "slot": "k16"
+        },
+        " ",
+        {
+          "slot": "k17"
+        },
+        " und die Tu-95 in der Sowjetunion."
+      ],
+      "evidence": {
+        "quote": "Standardmodelle wurden der Flugzeugtyp B-52 in den USA und die Tu-95 in der Sowjetunion."
+      }
+    },
+    {
+      "sentence": [
+        "In den ",
+        {
+          "slot": "k18"
+        },
+        " Jahren waren die USA mit der Bomberflotte des Strategic Air Command ihrem Kontrahenten ",
+        {
+          "slot": "k19"
+        },
+        " überlegen, ",
+        {
+          "slot": "k20"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "In den 1950er Jahren waren die USA mit der Bomberflotte des Strategic Air Command ihrem Kontrahenten sowohl in der Zahl der Atomwaffen als auch der Trägermittel stark überlegen."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "k21"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Als die Sowjetunion ",
+        {
+          "slot": "k22"
+        },
+        " die erste funktionsfähige Interkontinentalrakete der Welt ",
+        {
+          "slot": "k23"
+        },
+        " herrschte im ",
+        {
+          "slot": "k24"
+        },
+        " ",
+        {
+          "slot": "k25"
+        },
+        " (Sputnikschock)."
+      ],
+      "evidence": {
+        "quote": "Als die Sowjetunion 1957 die erste funktionsfähige Interkontinentalrakete der Welt präsentierte, herrschte im Westen Alarmstimmung (Sputnikschock)."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "k26"
+        },
+        " machten die langen Vorwarnzeiten einen Überraschungsangriff mit Flugzeugen wie auch mit Raketen ",
+        {
+          "slot": "k27"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Allerdings machten die langen Vorwarnzeiten einen Überraschungsangriff mit Flugzeugen wie auch mit Raketen nahezu unmöglich."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "k28"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "k1": {
+      "correct": "Oktober 1962",
+      "variants": [
+        {
+          "text": "November 1962",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „im Oktober 1962“. Die Krise fand im Oktober statt, nicht im November.",
+          "evidence": "Die Kubakrise (in der Sowjetunion und im Sprachgebrauch der DDR auch als Karibische Krise, auf Kuba später als Oktoberkrise bezeichnet) im Oktober 1962 war eine Konfrontation zwischen den Vereinigten Staaten und der Sowjetunion, die sich aus der Stationierung sowjetischer Mittelstreckenraketen auf Kuba im Rahmen des nuklearen Wettrüstens entwickelte."
+        },
+        {
+          "text": "Oktober 1952",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „im Oktober 1962“. Das Jahr ist um zehn verschoben.",
+          "evidence": "Die Kubakrise (in der Sowjetunion und im Sprachgebrauch der DDR auch als Karibische Krise, auf Kuba später als Oktoberkrise bezeichnet) im Oktober 1962 war eine Konfrontation zwischen den Vereinigten Staaten und der Sowjetunion, die sich aus der Stationierung sowjetischer Mittelstreckenraketen auf Kuba im Rahmen des nuklearen Wettrüstens entwickelte."
+        }
+      ]
+    },
+    "k2": {
+      "correct": "Konfrontation",
+      "variants": [
+        {
+          "text": "Zusammenarbeit",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „war eine Konfrontation zwischen den Vereinigten Staaten und der Sowjetunion“. Die beiden Staaten arbeiteten nicht zusammen, sie standen sich gegenüber.",
+          "evidence": "Die Kubakrise (in der Sowjetunion und im Sprachgebrauch der DDR auch als Karibische Krise, auf Kuba später als Oktoberkrise bezeichnet) im Oktober 1962 war eine Konfrontation zwischen den Vereinigten Staaten und der Sowjetunion, die sich aus der Stationierung sowjetischer Mittelstreckenraketen auf Kuba im Rahmen des nuklearen Wettrüstens entwickelte."
+        },
+        {
+          "text": "Konfrontazion",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das Wort kommt aus dem Lateinischen und wird mit „tion“ geschrieben: Konfrontation."
+        }
+      ]
+    },
+    "k3": {
+      "correct": "Sowjetunion",
+      "variants": [
+        {
+          "text": "DDR",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „zwischen den Vereinigten Staaten und der Sowjetunion“. Die DDR kommt in der Quelle nur bei einem anderen Namen der Krise vor, sie war nicht der Gegner der USA.",
+          "evidence": "Die Kubakrise (in der Sowjetunion und im Sprachgebrauch der DDR auch als Karibische Krise, auf Kuba später als Oktoberkrise bezeichnet) im Oktober 1962 war eine Konfrontation zwischen den Vereinigten Staaten und der Sowjetunion, die sich aus der Stationierung sowjetischer Mittelstreckenraketen auf Kuba im Rahmen des nuklearen Wettrüstens entwickelte."
+        }
+      ]
+    },
+    "k4": {
+      "correct": "Mittelstreckenraketen",
+      "variants": [
+        {
+          "text": "Interkontinentalraketen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „der Stationierung sowjetischer Mittelstreckenraketen auf Kuba“. Interkontinentalraketen werden im Auszug erst später als neuere Waffe genannt.",
+          "evidence": "Die Kubakrise (in der Sowjetunion und im Sprachgebrauch der DDR auch als Karibische Krise, auf Kuba später als Oktoberkrise bezeichnet) im Oktober 1962 war eine Konfrontation zwischen den Vereinigten Staaten und der Sowjetunion, die sich aus der Stationierung sowjetischer Mittelstreckenraketen auf Kuba im Rahmen des nuklearen Wettrüstens entwickelte."
+        },
+        {
+          "text": "Mitelstreckenraketen",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Bestimmungswort ist „Mittel“. Nach dem kurzen „i“ steht ein doppeltes „t“: Mittelstreckenraketen."
+        }
+      ]
+    },
+    "k5": {
+      "correct": "dreizehn",
+      "variants": [
+        {
+          "text": "dreißig",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Die eigentliche Krise dauerte dreizehn Tage.“ Es waren dreizehn Tage, nicht dreißig.",
+          "evidence": "Die eigentliche Krise dauerte dreizehn Tage."
+        },
+        {
+          "text": "drei",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Die eigentliche Krise dauerte dreizehn Tage.“ Drei Tage wären viel kürzer gewesen.",
+          "evidence": "Die eigentliche Krise dauerte dreizehn Tage."
+        }
+      ]
+    },
+    "k6": {
+      "correct": "Auf sie folgte eine Neuordnung",
+      "variants": [
+        {
+          "text": "Sie war die Folge einer Neuordnung",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Hier sind Ursache und Wirkung vertauscht. In der Quelle steht: „Ihr folgte eine Neuordnung der internationalen Beziehungen.“ Die Neuordnung kam nach der Krise, sie löste sie nicht aus.",
+          "evidence": "Ihr folgte eine Neuordnung der internationalen Beziehungen."
+        },
+        {
+          "text": "Auf sie folgte keine Neuordnung",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Die Verneinung kehrt die Aussage um. In der Quelle steht: „Ihr folgte eine Neuordnung der internationalen Beziehungen.“ Im nächsten Satz erreicht der Kalte Krieg „eine neue Dimension“.",
+          "evidence": "Ihr folgte eine Neuordnung der internationalen Beziehungen."
+        }
+      ]
+    },
+    "k7": {
+      "correct": "eine neue Dimension",
+      "variants": [
+        {
+          "text": "sein vorläufiges Ende",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Mit der Kubakrise erreichte der Kalte Krieg eine neue Dimension.“ Der Kalte Krieg ging weiter, er endete nicht.",
+          "evidence": "Mit der Kubakrise erreichte der Kalte Krieg eine neue Dimension.",
+          "tolerance": 1
+        },
+        {
+          "text": "einen glorreichen Höhepunkt",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Glorreich“ ist ein Wort, das Stolz und Begeisterung weckt. In der Quelle steht nüchtern: „eine neue Dimension“. Eine Bedrohung durch Atomwaffen ist kein Grund zum Jubeln.",
+          "evidence": "Mit der Kubakrise erreichte der Kalte Krieg eine neue Dimension.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "k8": {
+      "correct": "Nie",
+      "variants": [
+        {
+          "text": "Oft",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Beide Supermächte kamen während dieser Krise einer direkten militärischen Konfrontation und somit einem möglichen Atomkrieg am nächsten.“ Gemeint ist: in dieser Krise war die Gefahr am größten. „Oft“ ergibt mit „näher als in dieser Krise“ keinen Sinn.",
+          "evidence": "Beide Supermächte kamen während dieser Krise einer direkten militärischen Konfrontation und somit einem möglichen Atomkrieg am nächsten."
+        }
+      ]
+    },
+    "k9": {
+      "correct": "militärischen",
+      "variants": [
+        {
+          "text": "wirtschaftlichen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „einer direkten militärischen Konfrontation und somit einem möglichen Atomkrieg“. Ein Atomkrieg ist keine wirtschaftliche Auseinandersetzung.",
+          "evidence": "Beide Supermächte kamen während dieser Krise einer direkten militärischen Konfrontation und somit einem möglichen Atomkrieg am nächsten."
+        }
+      ]
+    },
+    "k10": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Die Kubakrise war das spannendste Ereignis des gesamten Kalten Krieges.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht in der Quelle. „Das spannendste Ereignis“ ist eine persönliche Wertung und kein Befund. Der Auszug sagt nur, dass die Gefahr eines Atomkrieges hier am größten war."
+        }
+      ]
+    },
+    "k11": {
+      "correct": "die USA und die UdSSR",
+      "variants": [
+        {
+          "text": "nur die USA",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das passt nicht zu den Sätzen davor und danach: Dort ist von „beiden Supermächten“ die Rede und von „zwei gegensätzlichen Wirtschaftssystemen“.",
+          "evidence": "Aus dem Zweiten Weltkrieg waren die USA und die UdSSR als Weltmächte hervorgegangen.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "k12": {
+      "correct": "Sie standen",
+      "variants": [
+        {
+          "text": "Deshalb standen sie",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht nur: „Sie standen für zwei gegensätzliche Wirtschaftssysteme und Ideologien.“ Dass sie Weltmächte wurden, ist kein Grund dafür. „Deshalb“ stellt einen Zusammenhang her, den der Text nicht trägt.",
+          "evidence": "Sie standen für zwei gegensätzliche Wirtschaftssysteme und Ideologien."
+        }
+      ]
+    },
+    "k13": {
+      "correct": "Waffentechnologien",
+      "variants": [
+        {
+          "text": "Wafentechnologien",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach dem kurzen „a“ steht „ff“: Waffe, Waffentechnologien."
+        }
+      ]
+    },
+    "k14": {
+      "correct": "1950er Jahre",
+      "variants": [
+        {
+          "text": "1930er Jahre",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „etwa ab Anfang der 1950er Jahre ein Wettrüsten“. In den 1930er Jahren gab es noch keine Atomwaffen.",
+          "evidence": "Mit der Entwicklung immer neuer Waffentechnologien kam etwa ab Anfang der 1950er Jahre ein Wettrüsten in Gang."
+        },
+        {
+          "text": "1970er Jahre",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „etwa ab Anfang der 1950er Jahre“. In den 1970er Jahren war das Wettrüsten schon lange im Gang.",
+          "evidence": "Mit der Entwicklung immer neuer Waffentechnologien kam etwa ab Anfang der 1950er Jahre ein Wettrüsten in Gang."
+        }
+      ]
+    },
+    "k15": {
+      "correct": "Langstreckenbomber",
+      "variants": [
+        {
+          "text": "Panzer",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „dienten Langstreckenbomber als Trägermittel für Nuklearwaffen“. Panzer waren keine Trägermittel für Atomwaffen.",
+          "evidence": "Vor der Einführung der ersten Interkontinentalraketen dienten Langstreckenbomber als Trägermittel für Nuklearwaffen."
+        },
+        {
+          "text": "Langstreckenbomer",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Im Wort fehlt ein Buchstabe: Langstreckenbomber."
+        }
+      ]
+    },
+    "k16": {
+      "correct": "B-52",
+      "variants": [
+        {
+          "text": "B-25",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „der Flugzeugtyp B-52 in den USA“. Die Ziffern sind vertauscht.",
+          "evidence": "Standardmodelle wurden der Flugzeugtyp B-52 in den USA und die Tu-95 in der Sowjetunion."
+        }
+      ]
+    },
+    "k17": {
+      "correct": "in den USA",
+      "variants": [
+        {
+          "text": "in der Sowjetunion",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „der Flugzeugtyp B-52 in den USA und die Tu-95 in der Sowjetunion“. Die B-52 flog in den USA. Hier stehen beide Flugzeuge in der Sowjetunion.",
+          "evidence": "Standardmodelle wurden der Flugzeugtyp B-52 in den USA und die Tu-95 in der Sowjetunion.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "k18": {
+      "correct": "1950er",
+      "variants": [
+        {
+          "text": "1960er",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „In den 1950er Jahren waren die USA … stark überlegen.“ Gemeint sind die 1950er Jahre.",
+          "evidence": "In den 1950er Jahren waren die USA mit der Bomberflotte des Strategic Air Command ihrem Kontrahenten sowohl in der Zahl der Atomwaffen als auch der Trägermittel stark überlegen."
+        }
+      ]
+    },
+    "k19": {
+      "correct": "stark",
+      "variants": [
+        {
+          "text": "knapp",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „ihrem Kontrahenten … stark überlegen“. „Stark“ und „knapp“ beschreiben einen sehr verschiedenen Abstand.",
+          "evidence": "In den 1950er Jahren waren die USA mit der Bomberflotte des Strategic Air Command ihrem Kontrahenten sowohl in der Zahl der Atomwaffen als auch der Trägermittel stark überlegen."
+        },
+        {
+          "text": "kaum",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „stark überlegen“. „Kaum überlegen“ sagt fast das Gegenteil. Außerdem passt es nicht zur Alarmstimmung, die später im Text beschrieben wird.",
+          "evidence": "In den 1950er Jahren waren die USA mit der Bomberflotte des Strategic Air Command ihrem Kontrahenten sowohl in der Zahl der Atomwaffen als auch der Trägermittel stark überlegen."
+        }
+      ]
+    },
+    "k20": {
+      "correct": "sowohl in der Zahl der Atomwaffen als auch in der Zahl der Trägermittel",
+      "variants": [
+        {
+          "text": "in jeder Hinsicht",
+          "errorClass": "overgeneralization",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „sowohl in der Zahl der Atomwaffen als auch der Trägermittel“. Der Vorsprung gilt für diese beiden Punkte. „In jeder Hinsicht“ macht daraus eine Aussage über alles.",
+          "evidence": "In den 1950er Jahren waren die USA mit der Bomberflotte des Strategic Air Command ihrem Kontrahenten sowohl in der Zahl der Atomwaffen als auch der Trägermittel stark überlegen.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "k21": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Militärexperten sind sich einig, dass Bomber im Atomzeitalter von Anfang an nutzlos waren.",
+          "errorClass": "false_authority",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "„Militärexperten“ werden weder genannt noch belegt. In der Quelle steht das Gegenteil: „Vor der Einführung der ersten Interkontinentalraketen dienten Langstreckenbomber als Trägermittel für Nuklearwaffen.“",
+          "evidence": "Vor der Einführung der ersten Interkontinentalraketen dienten Langstreckenbomber als Trägermittel für Nuklearwaffen."
+        }
+      ]
+    },
+    "k22": {
+      "correct": "1957",
+      "variants": [
+        {
+          "text": "1947",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Als die Sowjetunion 1957 die erste funktionsfähige Interkontinentalrakete der Welt präsentierte“. Das war zehn Jahre später.",
+          "evidence": "Als die Sowjetunion 1957 die erste funktionsfähige Interkontinentalrakete der Welt präsentierte, herrschte im Westen Alarmstimmung (Sputnikschock)."
+        },
+        {
+          "text": "1967",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Als die Sowjetunion 1957 …“. 1967 wäre nach der Krise von 1962 gewesen. Der Text beschreibt aber die Zeit davor.",
+          "evidence": "Als die Sowjetunion 1957 die erste funktionsfähige Interkontinentalrakete der Welt präsentierte, herrschte im Westen Alarmstimmung (Sputnikschock)."
+        }
+      ]
+    },
+    "k23": {
+      "correct": "präsentierte,",
+      "variants": [
+        {
+          "text": "präsentierte",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach dem Nebensatz „Als die Sowjetunion … präsentierte“ steht ein Komma, bevor der Hauptsatz beginnt."
+        }
+      ]
+    },
+    "k24": {
+      "correct": "Westen",
+      "variants": [
+        {
+          "text": "Osten",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „herrschte im Westen Alarmstimmung“. Die Rakete war eine sowjetische. Alarm gab es im Westen, nicht im Osten.",
+          "evidence": "Als die Sowjetunion 1957 die erste funktionsfähige Interkontinentalrakete der Welt präsentierte, herrschte im Westen Alarmstimmung (Sputnikschock)."
+        }
+      ]
+    },
+    "k25": {
+      "correct": "Alarmstimmung",
+      "variants": [
+        {
+          "text": "blanke Panik",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Blanke Panik“ ist eine starke, gefühlsbetonte Wortwahl. In der Quelle steht nüchtern: „Alarmstimmung“.",
+          "evidence": "Als die Sowjetunion 1957 die erste funktionsfähige Interkontinentalrakete der Welt präsentierte, herrschte im Westen Alarmstimmung (Sputnikschock)."
+        }
+      ]
+    },
+    "k26": {
+      "correct": "Allerdings",
+      "variants": [
+        {
+          "text": "Deshalb",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Allerdings machten die langen Vorwarnzeiten einen Überraschungsangriff … nahezu unmöglich.“ Der Satz schränkt die Alarmstimmung ein. „Deshalb“ würde die lange Vorwarnzeit zum Grund für den Alarm machen, das ergibt keinen Sinn.",
+          "evidence": "Allerdings machten die langen Vorwarnzeiten einen Überraschungsangriff mit Flugzeugen wie auch mit Raketen nahezu unmöglich."
+        }
+      ]
+    },
+    "k27": {
+      "correct": "nahezu unmöglich",
+      "variants": [
+        {
+          "text": "völlig unmöglich",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „nahezu unmöglich“. „Nahezu“ lässt einen kleinen Rest offen, „völlig“ nicht.",
+          "evidence": "Allerdings machten die langen Vorwarnzeiten einen Überraschungsangriff mit Flugzeugen wie auch mit Raketen nahezu unmöglich."
+        },
+        {
+          "text": "leicht möglich",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „machten die langen Vorwarnzeiten einen Überraschungsangriff … nahezu unmöglich“. Die Wiedergabe sagt das Gegenteil.",
+          "evidence": "Allerdings machten die langen Vorwarnzeiten einen Überraschungsangriff mit Flugzeugen wie auch mit Raketen nahezu unmöglich."
+        }
+      ]
+    },
+    "k29": {
+      "correct": "dass",
+      "variants": [
+        {
+          "text": "das",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier leitet das Wort einen Nebensatz ein, deshalb schreibt man „dass“. „Das“ ist ein Artikel oder ein Pronomen."
+        }
+      ]
+    },
+    "k28": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Viele Menschen verfolgten die Nachrichten damals im Radio.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Der Auszug sagt nichts darüber, wie die Menschen die Nachrichten verfolgten."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Wikipedia-Artikel Kubakrise, Revision 271176245 (abgerufen am 18.10.2026), der gesamte Artikeltext; die 14 Auszugssätze aus Einleitung und Vorgeschichte stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft) und in der Quell-PDF.",
+    "Lizenz: Wikipedia-Text unter CC BY-SA 4.0; die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Alle 15 Fehlerklassen kommen vor. Die Klassen ab Klasse 7 und ab Klasse 10 sind abgeleitet, nicht belegt. Die Falschschreibungen sind konstruiert (Doppelkonsonanten, -tion).",
+    "Die eingefügten Sätze (Wertung, Radio, Militärexperten) stehen nicht im Auszug, sind harmlos und politisch neutral; die Erklärungen sagen das.",
+    "Bei „Sie war die Folge einer Neuordnung“ (faulty_inference, Basis text) hilft der Satz davor: Die Krise kommt vor der Neuordnung.",
+    "Nicht geprüft: ob der Artikeltext fachlich vollständig oder unumstritten ist; das Paket prüft den Vergleich mit dieser Quelle.",
+    "Die Quelle liegt als PDF unter public/quellen/de/kubakrise-1962.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
+    "Überarbeitung Anfang: Auszug und Variante beginnen bereits mit der Einleitung des Artikels (Anfang und Titel geprüft, verständlich), daher unverändert."
+  ]
+}

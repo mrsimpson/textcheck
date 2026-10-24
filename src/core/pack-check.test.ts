@@ -4,6 +4,7 @@ import schema from "../data/textpack.v1.schema.json" with { type: "json" };
 import classes from "../data/error-classes.json" with { type: "json" };
 import { PACKS } from "./data.ts";
 import { checkPack } from "./pack-check.ts";
+import { fits, KINDS, packsFor, STAGES } from "./stages.ts";
 import type { TextPack } from "./types.ts";
 
 const pdfs = Object.keys(import.meta.glob("../../public/quellen/**/*.pdf")).map((path) =>
@@ -41,10 +42,38 @@ describe("the text packs", () => {
   }
 });
 
+describe("the stages", () => {
+  const languages = [...new Set(PACKS.map((pack) => pack.language))].sort();
+
+  for (const language of languages)
+    for (const kind of KINDS)
+      STAGES[kind].forEach((_, index) => {
+        it(`have two or more ${language} texts for stage ${index + 1} of ${kind}`, () => {
+          expect(packsFor(language, kind, index + 1).length).toBeGreaterThanOrEqual(2);
+        });
+      });
+
+  it("use every text in at least one stage of each exercise, or the pack check says why not", () => {
+    for (const pack of PACKS)
+      for (const kind of KINDS) {
+        const used = STAGES[kind].some((_, index) => fits(pack, kind, index + 1));
+        const said = checkPack(pack).warnings.some((warning) => warning.startsWith(`${kind}, stage`));
+        expect(used || said, `${pack.id} in ${kind}`).toBe(true);
+      }
+  });
+});
+
 describe("the error classes", () => {
   it("are the ones the schema allows", () => {
     const allowed = (schema.$defs.errorClass.enum as string[]).sort();
     expect(Object.keys(classes).sort()).toEqual(allowed);
+  });
+
+  it("are each added by exactly one stage of an exercise, and by no more than one exercise", () => {
+    for (const name of Object.keys(classes)) {
+      const added = KINDS.flatMap((kind) => STAGES[kind].filter((rules) => rules.adds.includes(name)));
+      expect(added, name).toHaveLength(1);
+    }
   });
 });
 
@@ -68,24 +97,6 @@ describe("the pack checks", () => {
       ],
     };
     expect(checkPack(bad).errors.join("\n")).toContain("0 times");
-  });
-
-  it("reject an error class that starts after the pack's school years", () => {
-    const bad = copy(pack);
-    bad.grades = { from: 3, to: 4 };
-    expect(checkPack(bad).errors.join("\n")).toContain("starts at grade");
-  });
-
-  it("reject more than two school years", () => {
-    const bad = copy(pack);
-    bad.grades = { from: 5, to: 9 };
-    expect(checkPack(bad).errors.join("\n")).toContain("adjacent");
-  });
-
-  it("accept the Oberstufe as one range", () => {
-    const upper = copy(pack);
-    upper.grades = { from: 11, to: 13 };
-    expect(checkPack(upper).errors.join("\n")).not.toContain("adjacent");
   });
 
   it("reject a tolerance on a slot that has no neighbouring words", () => {

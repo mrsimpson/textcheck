@@ -1,0 +1,1026 @@
+{
+  "id": "treibhauseffekt",
+  "title": "Treibhauseffekt",
+  "language": "de",
+  "topic": "Treibhauseffekt: Entdeckung und Erforschung",
+  "source": {
+    "title": "Treibhauseffekt – Wikipedia",
+    "url": "https://de.wikipedia.org/w/index.php?title=Treibhauseffekt&oldid=271432023",
+    "revision": "271432023",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Treibhauseffekt&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/treibhauseffekt.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Der Treibhauseffekt ist die Wirkung von Treibhausgasen, die in der Atmosphäre eines Planeten die Ausbreitung der Wärmestrahlung behindern und so eine höhere Temperatur auf der Planetenoberfläche bewirken.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Der Treibhauseffekt ist ein zunächst natürliches Phänomen; jedoch wird die Atmosphäre der Erde durch menschliche Aktivitäten mit zusätzlichen Treibhausgasen angereichert, die den Treibhauseffekt verstärken und zur globalen Erwärmung führen.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt, verbunden mit der Annahme, dass die Erdatmosphäre isolierende Eigenschaften besitzt, die einen Teil der einfallenden Wärmestrahlung daran hindert, in den Weltraum reflektiert zu werden.",
+      "section": "Geschichtliches – Entdeckung"
+    },
+    {
+      "text": "Im Jahr 1856 untersuchte Eunice Foote die Treibhauswirkung verschiedener Gase.",
+      "section": "Geschichtliches – Entdeckung"
+    },
+    {
+      "text": "Foote durfte – als Frau – ihre Ergebnisse nicht selbst bei der American Association for the Advancement of Science vortragen, es gelang ihr aber die Publikation ihrer Forschung im Wissenschaftsjournal The American Journal of Science and Arts unterzubringen.",
+      "section": "Geschichtliches – Entdeckung"
+    },
+    {
+      "text": "Foote schloss aus ihren Daten: „Wenn, wie manche annehmen, irgendwann in der Geschichte der Erde der Luft ein größerer Anteil davon [von Kohlendioxid] beigemischt war als heute, dann hätte sich daraus zwangsläufig eine erhöhte Temperatur ergeben müssen.“",
+      "section": "Geschichtliches – Entdeckung"
+    },
+    {
+      "text": "Im Jahr 1862 konnte der britische Naturforscher John Tyndall mittels präziser Messungen einige für den Treibhauseffekt verantwortlichen Gase wie Wasserdampf und Kohlenstoffdioxid identifizieren.",
+      "section": "Geschichtliches – Entdeckung"
+    },
+    {
+      "text": "Dem schwedischen Physiker und Chemiker Svante Arrhenius (1859–1927) gelang es in einer 1896 veröffentlichten Publikation, den atmosphärischen Treibhauseffekt unter Berücksichtigung der Eis-Albedo-Rückkopplung erstmals quantitativ genauer zu beschreiben.",
+      "section": "Geschichtliches – Entdeckung"
+    },
+    {
+      "text": "Der erste Nachweis des Anstiegs der atmosphärischen Kohlenstoffdioxid-Konzentration und damit des anthropogenen Treibhauseffekts gelang 1958 Charles D. Keeling.",
+      "section": "Geschichtliches – Entdeckung"
+    },
+    {
+      "text": "Auf Keelings Initiative wurde eine Vielzahl von Messstationen für Kohlenstoffdioxid aufgebaut; die bekannteste befindet sich auf dem Mauna Loa auf Hawaii.",
+      "section": "Geschichtliches – Entdeckung"
+    },
+    {
+      "text": "Seit Beginn des Industriezeitalters wurden durch menschliche Aktivitäten zusätzliche Treibhausgas-Anteile in der Atmosphäre freigesetzt, hauptsächlich durch Verbrennung von fossilen Brennstoffen (Kohle, Erdöl und Erdgas), aber auch durch die Freisetzung in industriellen Prozessen und der Landwirtschaft.",
+      "section": "Geschichtliches – Historischer Verlauf"
+    },
+    {
+      "text": "Diese anthropogenen Treibhausgase sind der Grund für die seit Beginn des Industriezeitalters auftretende und im bisherigen 21. Jahrhundert weiter zunehmende globale Erwärmung.",
+      "section": "Geschichtliches – Historischer Verlauf"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": ["Der Treibhauseffekt ist die Wirkung von Treibhausgasen in der Atmosphäre eines Planeten."],
+      "evidence": {
+        "quote": "Der Treibhauseffekt ist die Wirkung von Treibhausgasen, die in der Atmosphäre eines Planeten die Ausbreitung der Wärmestrahlung behindern und so eine höhere Temperatur auf der Planetenoberfläche bewirken."
+      }
+    },
+    {
+      "sentence": [
+        "Diese Gase behindern die Ausbreitung der Wärmestrahlung und sorgen so für eine ",
+        {
+          "slot": "t1"
+        },
+        " Temperatur auf der Planetenoberfläche."
+      ],
+      "evidence": {
+        "quote": "Der Treibhauseffekt ist die Wirkung von Treibhausgasen, die in der Atmosphäre eines Planeten die Ausbreitung der Wärmestrahlung behindern und so eine höhere Temperatur auf der Planetenoberfläche bewirken."
+      }
+    },
+    {
+      "sentence": [
+        "Der Treibhauseffekt ist zunächst ein ",
+        {
+          "slot": "t2"
+        },
+        " Phänomen."
+      ],
+      "evidence": {
+        "quote": "Der Treibhauseffekt ist ein zunächst natürliches Phänomen; jedoch wird die Atmosphäre der Erde durch menschliche Aktivitäten mit zusätzlichen Treibhausgasen angereichert, die den Treibhauseffekt verstärken und zur globalen Erwärmung führen."
+      }
+    },
+    {
+      "sentence": [
+        "Durch menschliche Aktivitäten kommen aber zusätzliche Treibhausgase in die Atmosphäre, die den Effekt ",
+        {
+          "slot": "t3"
+        },
+        " und zur globalen Erwärmung führen."
+      ],
+      "evidence": {
+        "quote": "Der Treibhauseffekt ist ein zunächst natürliches Phänomen; jedoch wird die Atmosphäre der Erde durch menschliche Aktivitäten mit zusätzlichen Treibhausgasen angereichert, die den Treibhauseffekt verstärken und zur globalen Erwärmung führen."
+      }
+    },
+    {
+      "sentence": [
+        "Der französische Mathematiker und Physiker Joseph ",
+        {
+          "slot": "s1b"
+        },
+        " entdeckte den Treibhauseffekt im Jahr ",
+        {
+          "slot": "s1"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt"
+      }
+    },
+    {
+      "sentence": [
+        "Er nahm an, ",
+        {
+          "slot": "s1x"
+        },
+        " die Erdatmosphäre isolierende Eigenschaften besitzt und ",
+        {
+          "slot": "s2b"
+        },
+        " ",
+        {
+          "slot": "s2"
+        },
+        ", in den Weltraum zu gelangen."
+      ],
+      "evidence": {
+        "quote": "Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt, verbunden mit der Annahme, dass die Erdatmosphäre isolierende Eigenschaften besitzt, die einen Teil der einfallenden Wärmestrahlung daran hindert, in den Weltraum reflektiert zu werden."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i1"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Eunice ",
+        {
+          "slot": "s4"
+        },
+        " untersuchte im Jahr ",
+        {
+          "slot": "s3"
+        },
+        " die Treibhauswirkung verschiedener Gase."
+      ],
+      "evidence": {
+        "quote": "Im Jahr 1856 untersuchte Eunice Foote die Treibhauswirkung verschiedener Gase."
+      }
+    },
+    {
+      "sentence": [
+        "Als Frau durfte Foote ihre Ergebnisse ",
+        {
+          "slot": "s5"
+        },
+        " bei der American Association for the Advancement of Science vortragen."
+      ],
+      "evidence": {
+        "quote": "Foote durfte – als Frau – ihre Ergebnisse nicht selbst bei der American Association for the Advancement of Science vortragen"
+      }
+    },
+    {
+      "sentence": [
+        "Ihre Forschung konnte sie aber im Wissenschaftsjournal The American Journal of Science and ",
+        {
+          "slot": "s6"
+        },
+        " veröffentlichen."
+      ],
+      "evidence": {
+        "quote": "es gelang ihr aber die Publikation ihrer Forschung im Wissenschaftsjournal The American Journal of Science and Arts unterzubringen"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i4"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Foote schloss aus ihren ",
+        {
+          "slot": "sd"
+        },
+        " Wäre der Luft früher ",
+        {
+          "slot": "s8"
+        },
+        " Kohlendioxid beigemischt gewesen als heute, hätte sich ",
+        {
+          "slot": "s7"
+        },
+        " eine erhöhte Temperatur ergeben müssen."
+      ],
+      "evidence": {
+        "quote": "Foote schloss aus ihren Daten: „Wenn, wie manche annehmen, irgendwann in der Geschichte der Erde der Luft ein größerer Anteil davon [von Kohlendioxid] beigemischt war als heute, dann hätte sich daraus zwangsläufig eine erhöhte Temperatur ergeben müssen."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i2"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Im Jahr ",
+        {
+          "slot": "s9"
+        },
+        " konnte der britische Naturforscher John Tyndall einige Treibhausgase identifizieren."
+      ],
+      "evidence": {
+        "quote": "Im Jahr 1862 konnte der britische Naturforscher John Tyndall mittels präziser Messungen einige für den Treibhauseffekt verantwortlichen Gase"
+      }
+    },
+    {
+      "sentence": [
+        "Dazu gehören ",
+        {
+          "slot": "s11"
+        },
+        " und Kohlenstoffdioxid."
+      ],
+      "evidence": {
+        "quote": "einige für den Treibhauseffekt verantwortlichen Gase wie Wasserdampf und Kohlenstoffdioxid identifizieren"
+      }
+    },
+    {
+      "sentence": [
+        "Der ",
+        {
+          "slot": "s13"
+        },
+        " Physiker und Chemiker Svante Arrhenius beschrieb den Treibhauseffekt in einer ",
+        {
+          "slot": "s12"
+        },
+        " veröffentlichten Publikation erstmals quantitativ genauer."
+      ],
+      "evidence": {
+        "quote": "Dem schwedischen Physiker und Chemiker Svante Arrhenius (1859–1927) gelang es in einer 1896 veröffentlichten Publikation, den atmosphärischen Treibhauseffekt unter Berücksichtigung der Eis-Albedo-Rückkopplung erstmals quantitativ genauer zu beschreiben."
+      }
+    },
+    {
+      "sentence": [
+        "Der erste Nachweis, dass die Kohlenstoffdioxid-Konzentration in der Atmosphäre ansteigt, gelang ",
+        {
+          "slot": "s14"
+        },
+        " Charles D. ",
+        {
+          "slot": "s15"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Der erste Nachweis des Anstiegs der atmosphärischen Kohlenstoffdioxid-Konzentration und damit des anthropogenen Treibhauseffekts gelang 1958 Charles D. Keeling."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i3"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Auf Keelings Initiative wurde eine ",
+        {
+          "slot": "s18"
+        },
+        " Messstationen für Kohlenstoffdioxid aufgebaut."
+      ],
+      "evidence": {
+        "quote": "Auf Keelings Initiative wurde eine Vielzahl von Messstationen für Kohlenstoffdioxid aufgebaut"
+      }
+    },
+    {
+      "sentence": [
+        "Die bekannteste liegt auf dem ",
+        {
+          "slot": "s16"
+        },
+        " auf ",
+        {
+          "slot": "s17"
+        }
+      ],
+      "evidence": {
+        "quote": "die bekannteste befindet sich auf dem Mauna Loa auf Hawaii"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i5"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Seit Beginn des ",
+        {
+          "slot": "s20"
+        },
+        " haben menschliche Aktivitäten zusätzliche Treibhausgase freigesetzt, ",
+        {
+          "slot": "s22"
+        },
+        " durch die Verbrennung fossiler Brennstoffe."
+      ],
+      "evidence": {
+        "quote": "Seit Beginn des Industriezeitalters wurden durch menschliche Aktivitäten zusätzliche Treibhausgas-Anteile in der Atmosphäre freigesetzt, hauptsächlich durch Verbrennung von fossilen Brennstoffen"
+      }
+    },
+    {
+      "sentence": [
+        "Auch in industriellen Prozessen und in der ",
+        {
+          "slot": "s22b"
+        },
+        " werden Treibhausgase frei."
+      ],
+      "evidence": {
+        "quote": "aber auch durch die Freisetzung in industriellen Prozessen und der Landwirtschaft"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i6"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Diese Treibhausgase aus menschlichen Quellen ",
+        {
+          "slot": "s25"
+        },
+        " die ",
+        {
+          "slot": "s27"
+        },
+        " Erwärmung seit Beginn des Industriezeitalters, die im bisherigen 21. Jahrhundert ",
+        {
+          "slot": "s26"
+        },
+        " zunimmt."
+      ],
+      "evidence": {
+        "quote": "Diese anthropogenen Treibhausgase sind der Grund für die seit Beginn des Industriezeitalters auftretende und im bisherigen 21. Jahrhundert weiter zunehmende globale Erwärmung."
+      }
+    }
+  ],
+  "slots": {
+    "s1b": {
+      "correct": "Fourier",
+      "variants": [
+        {
+          "text": "Tyndall",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt“. Tyndall kommt erst später im Text vor, 1862.",
+          "evidence": "Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt"
+        },
+        {
+          "text": "Fournier",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt“. Richtig geschrieben ist „Fourier“, nicht „Fournier“.",
+          "evidence": "Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt"
+        }
+      ]
+    },
+    "s1": {
+      "correct": "1824",
+      "variants": [
+        {
+          "text": "1842",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt“. Zwei Ziffern wurden vertauscht: 1824.",
+          "evidence": "Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt"
+        },
+        {
+          "text": "1924",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt“. Es war 1824, nicht 1924.",
+          "evidence": "Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt"
+        }
+      ]
+    },
+    "s1x": {
+      "correct": "dass",
+      "variants": [
+        {
+          "text": "das",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier beginnt ein Nebensatz mit einer Aussage. Man schreibt „dass“. Mit „das“ kann man „dieses“ oder „welches“ ersetzen, hier passt das nicht."
+        }
+      ]
+    },
+    "s2b": {
+      "correct": "einen Teil der Wärmestrahlung",
+      "variants": [
+        {
+          "text": "die gesamte Wärmestrahlung",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „die einen Teil der einfallenden Wärmestrahlung daran hindert, in den Weltraum reflektiert zu werden“. Es ist nur ein Teil, nicht die gesamte Strahlung.",
+          "evidence": "Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt, verbunden mit der Annahme, dass die Erdatmosphäre isolierende Eigenschaften besitzt, die einen Teil der einfallenden Wärmestrahlung daran hindert, in den Weltraum reflektiert zu werden.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s2": {
+      "correct": "daran hindert",
+      "variants": [
+        {
+          "text": "dabei unterstützt",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „die einen Teil der einfallenden Wärmestrahlung daran hindert, in den Weltraum reflektiert zu werden“. Die Atmosphäre hindert die Strahlung daran, sie unterstützt sie nicht.",
+          "evidence": "Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt, verbunden mit der Annahme, dass die Erdatmosphäre isolierende Eigenschaften besitzt, die einen Teil der einfallenden Wärmestrahlung daran hindert, in den Weltraum reflektiert zu werden."
+        }
+      ]
+    },
+    "i1": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Forscher sagen, dass auch die Venus einen Treibhauseffekt hat.",
+          "errorClass": "false_authority",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Der Satz beruft sich auf „Forscher“, ohne einen Namen oder eine Quelle zu nennen. In der Quelle steht davon nichts. Dort geht es nur um die Erdatmosphäre.",
+          "evidence": "Der Treibhauseffekt wurde 1824 von dem französischen Mathematiker und Physiker Joseph Fourier entdeckt, verbunden mit der Annahme, dass die Erdatmosphäre isolierende Eigenschaften besitzt, die einen Teil der einfallenden Wärmestrahlung daran hindert, in den Weltraum reflektiert zu werden."
+        },
+        {
+          "text": "Auch die Venus hat einen Treibhauseffekt.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort geht es nur um die Erdatmosphäre."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "1856",
+      "variants": [
+        {
+          "text": "1865",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Im Jahr 1856 untersuchte Eunice Foote die Treibhauswirkung verschiedener Gase.“ Zwei Ziffern wurden vertauscht: 1856.",
+          "evidence": "Im Jahr 1856 untersuchte Eunice Foote die Treibhauswirkung verschiedener Gase."
+        },
+        {
+          "text": "1956",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Im Jahr 1856 untersuchte Eunice Foote die Treibhauswirkung verschiedener Gase.“ Es war 1856, nicht 1956.",
+          "evidence": "Im Jahr 1856 untersuchte Eunice Foote die Treibhauswirkung verschiedener Gase."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "Foote",
+      "variants": [
+        {
+          "text": "Fourier",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Im Jahr 1856 untersuchte Eunice Foote die Treibhauswirkung verschiedener Gase.“ Fourier war der erste Forscher im Text. Eunice hieß mit Nachnamen Foote.",
+          "evidence": "Im Jahr 1856 untersuchte Eunice Foote die Treibhauswirkung verschiedener Gase."
+        },
+        {
+          "text": "Foot",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Am Ende fehlt ein Buchstabe: Foote."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "nicht selbst",
+      "variants": [
+        {
+          "text": "selbst",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Foote durfte – als Frau – ihre Ergebnisse nicht selbst bei der American Association for the Advancement of Science vortragen“. Sie durfte ihre Ergebnisse nicht selbst vortragen.",
+          "evidence": "Foote durfte – als Frau – ihre Ergebnisse nicht selbst bei der American Association for the Advancement of Science vortragen"
+        }
+      ]
+    },
+    "s6": {
+      "correct": "Arts",
+      "variants": [
+        {
+          "text": "Chemistry",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „im Wissenschaftsjournal The American Journal of Science and Arts“. Der Name der Zeitschrift wurde verändert.",
+          "evidence": "es gelang ihr aber die Publikation ihrer Forschung im Wissenschaftsjournal The American Journal of Science and Arts unterzubringen"
+        }
+      ]
+    },
+    "i4": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Foote durfte ihre Ergebnisse selbst bei der American Association vortragen.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz widerspricht dem Text. Dort steht, dass Foote ihre Ergebnisse als Frau nicht selbst vortragen durfte."
+        }
+      ]
+    },
+    "sd": {
+      "correct": "Daten:",
+      "variants": [
+        {
+          "text": "Daten",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Nach „schloss aus ihren Daten“ folgt eine Aussage von Foote. Die kündigt man mit einem Doppelpunkt an."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "mehr",
+      "variants": [
+        {
+          "text": "weniger",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „der Luft ein größerer Anteil davon [von Kohlendioxid] beigemischt war als heute“. Es geht um einen größeren Anteil, nicht um einen kleineren.",
+          "evidence": "Foote schloss aus ihren Daten: „Wenn, wie manche annehmen, irgendwann in der Geschichte der Erde der Luft ein größerer Anteil davon [von Kohlendioxid] beigemischt war als heute, dann hätte sich daraus zwangsläufig eine erhöhte Temperatur ergeben müssen."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "zwangsläufig",
+      "variants": [
+        {
+          "text": "vielleicht",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „dann hätte sich daraus zwangsläufig eine erhöhte Temperatur ergeben müssen“. „Zwangsläufig“ heißt: es geht nicht anders. „Vielleicht“ macht daraus eine bloße Möglichkeit.",
+          "evidence": "Foote schloss aus ihren Daten: „Wenn, wie manche annehmen, irgendwann in der Geschichte der Erde der Luft ein größerer Anteil davon [von Kohlendioxid] beigemischt war als heute, dann hätte sich daraus zwangsläufig eine erhöhte Temperatur ergeben müssen."
+        },
+        {
+          "text": "zwangsleufig",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das Wort kommt von „Zwang“ und „laufen“. Darum schreibt man „äu“: zwangsläufig."
+        }
+      ]
+    },
+    "i2": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Die Entdeckung des Treibhauseffekts war die wichtigste Leistung der ganzen Physik.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das ist eine Meinung. „Die wichtigste Leistung“ lässt sich nicht messen. In der Quelle steht nur, wer wann etwas entdeckte oder untersuchte."
+        },
+        {
+          "text": "Foote wurde empörend ungerecht behandelt.",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "„Empörend ungerecht“ ist ein Gefühlswort. Die Quelle nennt nüchtern, was Foote nicht durfte, und was ihr trotzdem gelang."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "1862",
+      "variants": [
+        {
+          "text": "1826",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Im Jahr 1862 konnte der britische Naturforscher John Tyndall“ Gase identifizieren. Zwei Ziffern wurden vertauscht: 1862.",
+          "evidence": "Im Jahr 1862 konnte der britische Naturforscher John Tyndall mittels präziser Messungen einige für den Treibhauseffekt verantwortlichen Gase"
+        },
+        {
+          "text": "1882",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Im Jahr 1862 konnte der britische Naturforscher John Tyndall“ Gase identifizieren. Es war 1862, nicht 1882.",
+          "evidence": "Im Jahr 1862 konnte der britische Naturforscher John Tyndall mittels präziser Messungen einige für den Treibhauseffekt verantwortlichen Gase"
+        }
+      ]
+    },
+    "s11": {
+      "correct": "Wasserdampf",
+      "variants": [
+        {
+          "text": "Sauerstoff",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Gase wie Wasserdampf und Kohlenstoffdioxid“. Wasserdampf gehört zu den Treibhausgasen, Sauerstoff nicht.",
+          "evidence": "einige für den Treibhauseffekt verantwortlichen Gase wie Wasserdampf und Kohlenstoffdioxid identifizieren"
+        },
+        {
+          "text": "Wasserdamf",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein Buchstabe: Wasserdampf."
+        }
+      ]
+    },
+    "s13": {
+      "correct": "schwedische",
+      "variants": [
+        {
+          "text": "norwegische",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Dem schwedischen Physiker und Chemiker Svante Arrhenius“. Arrhenius war Schwede, nicht Norweger.",
+          "evidence": "Dem schwedischen Physiker und Chemiker Svante Arrhenius (1859–1927) gelang es in einer 1896 veröffentlichten Publikation, den atmosphärischen Treibhauseffekt unter Berücksichtigung der Eis-Albedo-Rückkopplung erstmals quantitativ genauer zu beschreiben."
+        },
+        {
+          "text": "dänische",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Dem schwedischen Physiker und Chemiker Svante Arrhenius“. Arrhenius war Schwede, nicht Däne.",
+          "evidence": "Dem schwedischen Physiker und Chemiker Svante Arrhenius (1859–1927) gelang es in einer 1896 veröffentlichten Publikation, den atmosphärischen Treibhauseffekt unter Berücksichtigung der Eis-Albedo-Rückkopplung erstmals quantitativ genauer zu beschreiben."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "1896",
+      "variants": [
+        {
+          "text": "1869",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „in einer 1896 veröffentlichten Publikation“. Zwei Ziffern wurden vertauscht: 1896.",
+          "evidence": "Dem schwedischen Physiker und Chemiker Svante Arrhenius (1859–1927) gelang es in einer 1896 veröffentlichten Publikation, den atmosphärischen Treibhauseffekt unter Berücksichtigung der Eis-Albedo-Rückkopplung erstmals quantitativ genauer zu beschreiben."
+        },
+        {
+          "text": "1996",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „in einer 1896 veröffentlichten Publikation“. Es war 1896, nicht 1996.",
+          "evidence": "Dem schwedischen Physiker und Chemiker Svante Arrhenius (1859–1927) gelang es in einer 1896 veröffentlichten Publikation, den atmosphärischen Treibhauseffekt unter Berücksichtigung der Eis-Albedo-Rückkopplung erstmals quantitativ genauer zu beschreiben."
+        }
+      ]
+    },
+    "s14": {
+      "correct": "1958",
+      "variants": [
+        {
+          "text": "1985",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „gelang 1958 Charles D. Keeling“. Zwei Ziffern wurden vertauscht: 1958.",
+          "evidence": "Der erste Nachweis des Anstiegs der atmosphärischen Kohlenstoffdioxid-Konzentration und damit des anthropogenen Treibhauseffekts gelang 1958 Charles D. Keeling."
+        },
+        {
+          "text": "1948",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „gelang 1958 Charles D. Keeling“. Es war 1958, nicht 1948.",
+          "evidence": "Der erste Nachweis des Anstiegs der atmosphärischen Kohlenstoffdioxid-Konzentration und damit des anthropogenen Treibhauseffekts gelang 1958 Charles D. Keeling."
+        }
+      ]
+    },
+    "s15": {
+      "correct": "Keeling",
+      "variants": [
+        {
+          "text": "Keller",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „gelang 1958 Charles D. Keeling“. Der Name wurde verändert. Im nächsten Satz heißt es „Keelings“.",
+          "evidence": "Der erste Nachweis des Anstiegs der atmosphärischen Kohlenstoffdioxid-Konzentration und damit des anthropogenen Treibhauseffekts gelang 1958 Charles D. Keeling."
+        },
+        {
+          "text": "Kieling",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Der Name wird „Keeling“ geschrieben, mit „ee“."
+        }
+      ]
+    },
+    "i3": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Weil Keeling 1958 den Anstieg nachwies, begann die Erwärmung erst 1958.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Hier werden Messung und Ereignis verwechselt. 1958 wurde der Anstieg zum ersten Mal nachgewiesen. Dass er vorher schon begann, schließt das nicht aus."
+        },
+        {
+          "text": "Daran sieht man: Messstationen liefern immer genaue Werte.",
+          "errorClass": "overgeneralization",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier wird aus einem Fall ein Gesetz gemacht. In der Quelle steht nur, dass Keeling den Anstieg nachwies und Messstationen aufgebaut wurden. „Immer“ steht dort nicht."
+        }
+      ]
+    },
+    "s18": {
+      "correct": "Vielzahl von",
+      "variants": [
+        {
+          "text": "Handvoll",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „wurde eine Vielzahl von Messstationen für Kohlenstoffdioxid aufgebaut“. Es waren sehr viele Stationen, nicht nur eine Handvoll.",
+          "evidence": "Auf Keelings Initiative wurde eine Vielzahl von Messstationen für Kohlenstoffdioxid aufgebaut"
+        },
+        {
+          "text": "Vielzal von",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein Buchstabe: Vielzahl."
+        }
+      ]
+    },
+    "s16": {
+      "correct": "Mauna Loa",
+      "variants": [
+        {
+          "text": "Mauna Kea",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „die bekannteste befindet sich auf dem Mauna Loa auf Hawaii“. Der Name des Berges wurde verändert.",
+          "evidence": "die bekannteste befindet sich auf dem Mauna Loa auf Hawaii"
+        },
+        {
+          "text": "Mount Everest",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „die bekannteste befindet sich auf dem Mauna Loa auf Hawaii“. Der Berg heißt Mauna Loa und liegt auf Hawaii, nicht im Himalaya.",
+          "evidence": "die bekannteste befindet sich auf dem Mauna Loa auf Hawaii"
+        }
+      ]
+    },
+    "s17": {
+      "correct": "Hawaii.",
+      "variants": [
+        {
+          "text": "Island.",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „auf dem Mauna Loa auf Hawaii“. Der Berg liegt auf Hawaii, nicht auf Island.",
+          "evidence": "die bekannteste befindet sich auf dem Mauna Loa auf Hawaii"
+        },
+        {
+          "text": "Hawai.",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „die bekannteste befindet sich auf dem Mauna Loa auf Hawaii“. Richtig geschrieben ist „Hawaii“, nicht „Hawai“.",
+          "evidence": "die bekannteste befindet sich auf dem Mauna Loa auf Hawaii"
+        }
+      ]
+    },
+    "i5": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Geologen sagen, dass der Mauna Loa einer der größten Vulkane der Erde ist.",
+          "errorClass": "false_authority",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Der Satz beruft sich auf „Geologen“, ohne einen Namen oder eine Quelle zu nennen. In der Quelle steht davon nichts. Dort wird nur gesagt, dass dort eine Messstation liegt.",
+          "evidence": "Auf Keelings Initiative wurde eine Vielzahl von Messstationen für Kohlenstoffdioxid aufgebaut; die bekannteste befindet sich auf dem Mauna Loa auf Hawaii."
+        },
+        {
+          "text": "Der Mauna Loa ist ein Vulkan.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort wird nur gesagt, dass dort eine bekannte Messstation liegt."
+        }
+      ]
+    },
+    "s20": {
+      "correct": "Industriezeitalters",
+      "variants": [
+        {
+          "text": "Mittelalters",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Seit Beginn des Industriezeitalters wurden durch menschliche Aktivitäten zusätzliche Treibhausgas-Anteile in der Atmosphäre freigesetzt“. Es geht um das Industriezeitalter, nicht um das Mittelalter.",
+          "evidence": "Seit Beginn des Industriezeitalters wurden durch menschliche Aktivitäten zusätzliche Treibhausgas-Anteile in der Atmosphäre freigesetzt, hauptsächlich durch Verbrennung von fossilen Brennstoffen"
+        },
+        {
+          "text": "Industrizeitalters",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein Buchstabe: Industriezeitalters."
+        }
+      ]
+    },
+    "s22": {
+      "correct": "hauptsächlich",
+      "variants": [
+        {
+          "text": "ausschließlich",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „hauptsächlich durch Verbrennung von fossilen Brennstoffen“. Dort stehen noch weitere Quellen: industrielle Prozesse und die Landwirtschaft. „Ausschließlich“ meint: nur diese eine Quelle.",
+          "evidence": "Seit Beginn des Industriezeitalters wurden durch menschliche Aktivitäten zusätzliche Treibhausgas-Anteile in der Atmosphäre freigesetzt, hauptsächlich durch Verbrennung von fossilen Brennstoffen"
+        }
+      ]
+    },
+    "s22b": {
+      "correct": "Landwirtschaft",
+      "variants": [
+        {
+          "text": "Fischerei",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „aber auch durch die Freisetzung in industriellen Prozessen und der Landwirtschaft“. Die Landwirtschaft wird genannt, nicht die Fischerei.",
+          "evidence": "aber auch durch die Freisetzung in industriellen Prozessen und der Landwirtschaft"
+        }
+      ]
+    },
+    "i6": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Alle Treibhausgase in der Atmosphäre stammen vom Menschen.",
+          "errorClass": "overgeneralization",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „wurden durch menschliche Aktivitäten zusätzliche Treibhausgas-Anteile in der Atmosphäre freigesetzt“. Der Mensch hat also zusätzliche Treibhausgase freigesetzt. Es gab auch vorher welche. „Alle“ ist zu viel.",
+          "evidence": "Seit Beginn des Industriezeitalters wurden durch menschliche Aktivitäten zusätzliche Treibhausgas-Anteile in der Atmosphäre freigesetzt, hauptsächlich durch Verbrennung von fossilen Brennstoffen (Kohle, Erdöl und Erdgas), aber auch durch die Freisetzung in industriellen Prozessen und der Landwirtschaft."
+        },
+        {
+          "text": "Auch Vulkane geben Gase in die Luft ab.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort geht es nur um Treibhausgase aus menschlichen Quellen."
+        }
+      ]
+    },
+    "s25": {
+      "correct": "verursachen",
+      "variants": [
+        {
+          "text": "verhindern",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Diese anthropogenen Treibhausgase sind der Grund für die … globale Erwärmung“. Sie verursachen die Erwärmung, sie verhindern sie nicht.",
+          "evidence": "Diese anthropogenen Treibhausgase sind der Grund für die seit Beginn des Industriezeitalters auftretende und im bisherigen 21. Jahrhundert weiter zunehmende globale Erwärmung."
+        },
+        {
+          "text": "verursachn",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein Buchstabe: verursachen."
+        }
+      ]
+    },
+    "s27": {
+      "correct": "globale",
+      "variants": [
+        {
+          "text": "katastrophale",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "„Katastrophal“ ist ein Gefühlswort. Die Quelle sagt nüchtern: „globale Erwärmung“."
+        },
+        {
+          "text": "dramatische",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Dramatisch“ ist eine Wertung. Die Quelle sagt nüchtern: „globale Erwärmung“."
+        }
+      ]
+    },
+    "s26": {
+      "correct": "weiter",
+      "variants": [
+        {
+          "text": "nicht mehr",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „im bisherigen 21. Jahrhundert weiter zunehmende globale Erwärmung“. Sie nimmt weiter zu, sie nimmt nicht ab.",
+          "evidence": "Diese anthropogenen Treibhausgase sind der Grund für die seit Beginn des Industriezeitalters auftretende und im bisherigen 21. Jahrhundert weiter zunehmende globale Erwärmung."
+        }
+      ]
+    },
+    "t1": {
+      "correct": "höhere",
+      "variants": [
+        {
+          "text": "niedrigere",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „so eine höhere Temperatur auf der Planetenoberfläche bewirken“. Treibhausgase machen es wärmer, nicht kälter.",
+          "evidence": "Der Treibhauseffekt ist die Wirkung von Treibhausgasen, die in der Atmosphäre eines Planeten die Ausbreitung der Wärmestrahlung behindern und so eine höhere Temperatur auf der Planetenoberfläche bewirken."
+        }
+      ]
+    },
+    "t2": {
+      "correct": "natürliches",
+      "variants": [
+        {
+          "text": "künstliches",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „ein zunächst natürliches Phänomen“. Der Treibhauseffekt ist von Natur aus da. Der Mensch verstärkt ihn nur.",
+          "evidence": "Der Treibhauseffekt ist ein zunächst natürliches Phänomen; jedoch wird die Atmosphäre der Erde durch menschliche Aktivitäten mit zusätzlichen Treibhausgasen angereichert, die den Treibhauseffekt verstärken und zur globalen Erwärmung führen."
+        }
+      ]
+    },
+    "t3": {
+      "correct": "verstärken",
+      "variants": [
+        {
+          "text": "abschwächen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „die den Treibhauseffekt verstärken und zur globalen Erwärmung führen“. Zusätzliche Treibhausgase verstärken den Effekt, sie schwächen ihn nicht ab.",
+          "evidence": "Der Treibhauseffekt ist ein zunächst natürliches Phänomen; jedoch wird die Atmosphäre der Erde durch menschliche Aktivitäten mit zusätzlichen Treibhausgasen angereichert, die den Treibhauseffekt verstärken und zur globalen Erwärmung führen."
+        },
+        {
+          "text": "verstärkn",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "In diesem Wort fehlt ein Buchstabe: verstärken."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Wikipedia-Artikel Treibhauseffekt, Revision 271432023 (abgerufen am 18.10.2026), als gespeicherte Seite vollständig durchgesehen; die 12 Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft; Fußnotenzeichen fehlen im Auszug).",
+    "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite); die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Alle Fehlerklassen der Stufe kommen vor. Die Klassen ab Klasse 7 und ab Klasse 10 sind abgeleitet, nicht belegt. Rechtschreibfehler sind konstruiert nach den IQB-Schwerpunkten (Konsonantverdopplung, Auslautverhärtung, Dehnung, das/dass, wieder/wider).",
+    "Die eingefügten Sätze (Stellen ohne Text im richtigen Wortlaut) sind erfunden, harmlos und stehen nicht im Original; die Erklärung nennt das.",
+    "Der Auszug stammt aus dem Abschnitt „Geschichtliches“ und dem Anfang von „Historischer Verlauf“ (zwei Absätze und ein Teil des dritten, zusammenhängend). Die physikalischen Abschnitte des Artikels sind für diese Stufe nicht gewählt.",
+    "Der eingefügte Satz „Foote durfte ihre Ergebnisse selbst bei der American Association vortragen.“ widerspricht dem richtigen Satz „Als Frau durfte Foote ihre Ergebnisse nicht selbst … vortragen“.",
+    "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt; die Zahlen und Namen folgen dem Artikel, nicht anderen Quellen. Die falschen Varianten sind absichtlich verändert und stehen nicht in der Quelle.",
+    "Die Quelle liegt als PDF unter public/quellen/de/treibhauseffekt.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
+    "Überarbeitung Klasse 9–10: Der Auszug beginnt jetzt mit dem ersten Satz der Einleitung des Artikels (was der Treibhauseffekt ist) und dem Einleitungssatz zum natürlichen und vom Menschen verstärkten Effekt; die Sätze über die Erdbeobachtungssatelliten und über die Strahlungsantriebe (Fachbegriff) sind entfallen (zwölf Sätze). Bei dem Foote-Zitat ist jetzt das schließende Anführungszeichen des Artikels im Auszug. Jahre, Namen und Zahlen der Auszugssätze mit dem Artikel im PDF abgeglichen. Die Stellen der entfallenen Sätze sind entfallen, drei Stellen zur Einleitung sind neu."
+  ]
+}

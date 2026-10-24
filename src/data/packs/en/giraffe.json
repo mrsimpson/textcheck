@@ -1,0 +1,543 @@
+{
+  "id": "giraffe",
+  "title": "Giraffe",
+  "language": "en",
+  "topic": "Giraffes: looks, home and life",
+  "source": {
+    "title": "Giraffe – Simple English Wikipedia, the free encyclopedia",
+    "url": "https://simple.wikipedia.org/w/index.php?title=Giraffe&oldid=10993061",
+    "revision": "10993061",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "authorsUrl": "https://simple.wikipedia.org/w/index.php?title=Giraffe&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/en/giraffe.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Giraffes have a very long neck and long legs.",
+      "section": "Appearance"
+    },
+    {
+      "text": "Both male and female giraffes have small horn-like stumps on their head, which are covered with skin.",
+      "section": "Appearance"
+    },
+    {
+      "text": "Giraffes are found in parts of Africa.",
+      "section": "Habitat"
+    },
+    {
+      "text": "They live on the savannah, which is the African grassland, or in light woodland.",
+      "section": "Habitat"
+    },
+    {
+      "text": "Giraffes eat mostly leaves from tall trees, which they can reach because of their long legs and long necks, as well as fruit.",
+      "section": "Life"
+    },
+    {
+      "text": "They can go without water for weeks.",
+      "section": "Life"
+    },
+    {
+      "text": "Like all mammals, giraffes have only seven bones in their necks.",
+      "section": "Life"
+    },
+    {
+      "text": "Giraffes live alone or in loose groups.",
+      "section": "Life"
+    },
+    {
+      "text": "Young giraffes become mature when they are 4 years old, and they are fully grown when they are 6 years old.",
+      "section": "Life"
+    },
+    {
+      "text": "Giraffes can live to 25 years old, and in captivity they can live 35 years.",
+      "section": "Life"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "A ",
+        {
+          "slot": "s1"
+        },
+        " neck is very long."
+      ],
+      "evidence": {
+        "quote": "Giraffes have a very long neck and long legs"
+      }
+    },
+    {
+      "sentence": [
+        "A giraffe also has long ",
+        {
+          "slot": "s2"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Giraffes have a very long neck and long legs"
+      }
+    },
+    {
+      "sentence": [
+        "Male and female giraffes both have small ",
+        {
+          "slot": "s3"
+        },
+        " on their head."
+      ],
+      "evidence": {
+        "quote": "Both male and female giraffes have small horn-like stumps on their head"
+      }
+    },
+    {
+      "sentence": ["Skin covers them."],
+      "evidence": {
+        "quote": "which are covered with skin"
+      }
+    },
+    {
+      "sentence": [
+        "Giraffes live in parts of ",
+        {
+          "slot": "s4"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Giraffes are found in parts of Africa"
+      }
+    },
+    {
+      "sentence": [
+        "They live on the ",
+        {
+          "slot": "s5"
+        },
+        " which is a kind of grassland."
+      ],
+      "evidence": {
+        "quote": "They live on the savannah, which is the African grassland"
+      }
+    },
+    {
+      "sentence": [
+        "They also live in light ",
+        {
+          "slot": "s6"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "or in light woodland"
+      }
+    },
+    {
+      "sentence": [
+        "Giraffes mostly eat ",
+        {
+          "slot": "s7"
+        },
+        " from tall trees, and they eat fruit, too."
+      ],
+      "evidence": {
+        "quote": "Giraffes eat mostly leaves from tall trees, which they can reach because of their long legs and long necks, as well as fruit"
+      }
+    },
+    {
+      "sentence": ["Their long legs and long necks help them to reach the tall trees."],
+      "evidence": {
+        "quote": "which they can reach because of their long legs and long necks"
+      }
+    },
+    {
+      "sentence": [
+        "A giraffe can go for ",
+        {
+          "slot": "s8"
+        },
+        " without water."
+      ],
+      "evidence": {
+        "quote": "They can go without water for weeks"
+      }
+    },
+    {
+      "sentence": [
+        "Like all mammals, a giraffe has only ",
+        {
+          "slot": "s9"
+        },
+        " bones in its neck."
+      ],
+      "evidence": {
+        "quote": "Like all mammals, giraffes have only seven bones in their necks"
+      }
+    },
+    {
+      "sentence": [
+        "A giraffe can live alone or in loose ",
+        {
+          "slot": "s10"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Giraffes live alone or in loose groups"
+      }
+    },
+    {
+      "sentence": [
+        "A young giraffe becomes mature at the age of ",
+        {
+          "slot": "s11"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Young giraffes become mature when they are 4 years old"
+      }
+    },
+    {
+      "sentence": ["It is fully grown at the age of 6."],
+      "evidence": {
+        "quote": "they are fully grown when they are 6 years old"
+      }
+    },
+    {
+      "sentence": [
+        "Giraffes can live to be ",
+        {
+          "slot": "s12"
+        },
+        " years old."
+      ],
+      "evidence": {
+        "quote": "Giraffes can live to 25 years old"
+      }
+    },
+    {
+      "sentence": [
+        "In captivity they can live ",
+        {
+          "slot": "s13"
+        },
+        " years."
+      ],
+      "evidence": {
+        "quote": "in captivity they can live 35 years"
+      }
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "giraffe's",
+      "variants": [
+        {
+          "text": "giraffes",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The neck belongs to one giraffe, so the word needs an apostrophe: giraffe's."
+        },
+        {
+          "text": "giraffes'",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "The apostrophe is in the wrong place. For one giraffe you write giraffe's."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "legs",
+      "variants": [
+        {
+          "text": "tail",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Giraffes have a very long neck and long legs.\" A giraffe has long legs, not a long tail.",
+          "evidence": "Giraffes have a very long neck and long legs."
+        },
+        {
+          "text": "leggs",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word legs has only one g. The double letter is not needed."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "stumps",
+      "variants": [
+        {
+          "text": "horns",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"Both male and female giraffes have small horn-like stumps on their head, which are covered with skin.\" The giraffe has small horn-like stumps, not real horns.",
+          "evidence": "Both male and female giraffes have small horn-like stumps on their head, which are covered with skin."
+        },
+        {
+          "text": "stmups",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Two letters are swapped. The word is stumps."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "Africa",
+      "variants": [
+        {
+          "text": "Asia",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Giraffes are found in parts of Africa.\" Giraffes are found in Africa, not in Asia.",
+          "evidence": "Giraffes are found in parts of Africa."
+        },
+        {
+          "text": "Europe",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"Giraffes are found in parts of Africa.\" Giraffes are found in Africa, not in Europe.",
+          "evidence": "Giraffes are found in parts of Africa."
+        },
+        {
+          "text": "Afirca",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Two letters are swapped. The word is Africa."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "savannah,",
+      "variants": [
+        {
+          "text": "savannah",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "A comma is missing. The part \"which is a kind of grassland\" gives extra information, so a comma comes before it."
+        },
+        {
+          "text": "savanah,",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word savannah has a double n in the middle."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "woodland",
+      "variants": [
+        {
+          "text": "woodlant",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word ends in d, like land. Say the two parts: wood and land."
+        },
+        {
+          "text": "wodland",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "A letter is missing. The word is woodland, with two o."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "leaves",
+      "variants": [
+        {
+          "text": "twigs",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Giraffes eat mostly leaves from tall trees, which they can reach because of their long legs and long necks, as well as fruit.\" Giraffes eat mostly leaves, not twigs.",
+          "evidence": "Giraffes eat mostly leaves from tall trees, which they can reach because of their long legs and long necks, as well as fruit."
+        },
+        {
+          "text": "grass",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"Giraffes eat mostly leaves from tall trees, which they can reach because of their long legs and long necks, as well as fruit.\" Giraffes eat mostly leaves from tall trees, not grass.",
+          "evidence": "Giraffes eat mostly leaves from tall trees, which they can reach because of their long legs and long necks, as well as fruit."
+        },
+        {
+          "text": "leafs",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "One leaf, two leaves. The plural of leaf is leaves, with v."
+        },
+        {
+          "text": "leeves",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "The word leaves is written with ea, like leaf."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "weeks",
+      "variants": [
+        {
+          "text": "days",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"They can go without water for weeks.\" Giraffes can go for weeks without water, not only for days.",
+          "evidence": "They can go without water for weeks."
+        },
+        {
+          "text": "months",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"They can go without water for weeks.\" Giraffes can go for weeks without water, not for months.",
+          "evidence": "They can go without water for weeks."
+        },
+        {
+          "text": "weaks",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word weeks is written with ee. A weak giraffe is a different word."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "seven",
+      "variants": [
+        {
+          "text": "six",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Like all mammals, giraffes have only seven bones in their necks.\" A giraffe has seven bones in its neck, not six.",
+          "evidence": "Like all mammals, giraffes have only seven bones in their necks."
+        },
+        {
+          "text": "eleven",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"Like all mammals, giraffes have only seven bones in their necks.\" A giraffe has seven bones in its neck, not eleven.",
+          "evidence": "Like all mammals, giraffes have only seven bones in their necks."
+        },
+        {
+          "text": "sevn",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "A letter is missing. The word is seven."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "groups",
+      "variants": [
+        {
+          "text": "gruops",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Two letters are swapped. The word is groups."
+        },
+        {
+          "text": "groops",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word groups is written with ou, like soup."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "4",
+      "variants": [
+        {
+          "text": "5",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Young giraffes become mature when they are 4 years old, and they are fully grown when they are 6 years old.\" Young giraffes become mature at 4 years, not at 5.",
+          "evidence": "Young giraffes become mature when they are 4 years old, and they are fully grown when they are 6 years old."
+        },
+        {
+          "text": "2",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"Young giraffes become mature when they are 4 years old, and they are fully grown when they are 6 years old.\" Young giraffes become mature at 4 years, not at 2.",
+          "evidence": "Young giraffes become mature when they are 4 years old, and they are fully grown when they are 6 years old."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "25",
+      "variants": [
+        {
+          "text": "20",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Giraffes can live to 25 years old, and in captivity they can live 35 years.\" Giraffes can live to 25 years old, not to 20.",
+          "evidence": "Giraffes can live to 25 years old, and in captivity they can live 35 years."
+        },
+        {
+          "text": "30",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"Giraffes can live to 25 years old, and in captivity they can live 35 years.\" Giraffes can live to 25 years old, not to 30.",
+          "evidence": "Giraffes can live to 25 years old, and in captivity they can live 35 years."
+        }
+      ]
+    },
+    "s13": {
+      "correct": "35",
+      "variants": [
+        {
+          "text": "45",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Giraffes can live to 25 years old, and in captivity they can live 35 years.\" In captivity giraffes can live 35 years, not 45.",
+          "evidence": "Giraffes can live to 25 years old, and in captivity they can live 35 years."
+        },
+        {
+          "text": "40",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"Giraffes can live to 25 years old, and in captivity they can live 35 years.\" In captivity giraffes can live 35 years, not 40.",
+          "evidence": "Giraffes can live to 25 years old, and in captivity they can live 35 years."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Source read: Simple English Wikipedia article Giraffe, revision 10993061 (retrieved 18 Oct 2026), all sections (Appearance, Habitat, Life) read completely; the ten excerpt sentences, every evidence quote and every Original quote in the explanations were compared with the saved article text by script and occur verbatim.",
+    "Left out on purpose: sentences with measurements in two units, a sentence with typing errors in the source, the reference list and the picture caption.",
+    "Licence: Simple English Wikipedia text is CC BY-SA 4.0 (licence page linked above, author list = page history); the data of this pack is under the same licence.",
+    "Only classes that occur from grade 3: spelling, slip, punctuation, number/name. The misspellings (leafs, leggs, weaks, groops, savanah, woodlant and others) and the slips (swapped or missing letters) are constructed on the patterns of common English school errors, not taken from a child corpus.",
+    "Not verified: whether the article is complete and correct in its facts; the pack checks the Variant against the article, not against the world. The rendition is an own-words retelling: it says \"a kind of grassland\" for \"the African grassland\" and \"Their long legs and long necks help them to reach the tall trees\" for the clause with \"because of\".",
+    "The source is saved as a PDF under public/quellen/en/giraffe.pdf (notice with licence, authors and \"saved unchanged\" on the first page), made by the lead for the mode source."
+  ]
+}

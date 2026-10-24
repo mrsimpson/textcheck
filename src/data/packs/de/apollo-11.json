@@ -1,0 +1,944 @@
+{
+  "id": "apollo-11",
+  "title": "Apollo 11",
+  "language": "de",
+  "topic": "Apollo 11: die erste Mondlandung",
+  "source": {
+    "title": "Apollo 11 – Wikipedia",
+    "url": "https://de.wikipedia.org/w/index.php?title=Apollo_11&oldid=268725520",
+    "revision": "268725520",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Apollo_11&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/apollo-11.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Apollo 11 war die fünfte bemannte Raumfahrtmission des Apollo-Programms und der erste bemannte Raumflug mit einer Mondlandung.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Die Mission einschließlich Mondlandung am 20. Juli 1969 verlief erfolgreich.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Damit erreichte die US-amerikanische Raumfahrtbehörde NASA das 1961 von US-Präsident John F. Kennedy vorgegebene nationale Ziel, noch vor Ende des Jahrzehnts einen Menschen zum Mond und wieder sicher zurück zur Erde zu bringen.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Die drei Astronauten Neil Armstrong, Edwin „Buzz“ Aldrin und Michael Collins starteten am 16. Juli 1969 mit einer Saturn-V-Rakete von Launch Complex 39A des Kennedy Space Center in Florida und erreichten am 19. Juli die vorgesehene Mondumlaufbahn.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Während Collins im Kommandomodul des Raumschiffs Columbia zurückblieb, setzten Armstrong und Aldrin am nächsten Tag mit der Mondlandefähre Eagle auf dem Erdtrabanten auf.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Wenige Stunden später betrat Armstrong als erster Mensch den Mond, kurz danach auch Aldrin.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Nach einem knapp 22-stündigen Aufenthalt startete die Landefähre wieder von der Mondoberfläche und kehrte zum Kommandoschiff zurück (Mondumlaufbahn-Rendezvous).",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Nach der Rückkehr zur Erde wasserte die Columbia am 24. Juli rund 25 km vom Bergungsschiff Hornet entfernt im Pazifik.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Mit Apollo 11 wurden auch erstmals Gesteinsproben von einem anderen Himmelskörper zur Erde geholt.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Weltweit verfolgten rund 600 Millionen Menschen die Fernsehübertragung der Mondlandung 1969.",
+      "section": "Einleitung"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Apollo 11 war die ",
+        {
+          "slot": "s1"
+        },
+        " bemannte Mission des Apollo-Programms."
+      ],
+      "evidence": {
+        "quote": "Apollo 11 war die fünfte bemannte Raumfahrtmission des Apollo-Programms"
+      }
+    },
+    {
+      "sentence": [
+        "Zugleich war es der erste bemannte Raumflug mit einer ",
+        {
+          "slot": "s2"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "der erste bemannte Raumflug mit einer Mondlandung"
+      }
+    },
+    {
+      "sentence": [
+        "Die Mission verlief erfolgreich, auch die Mondlandung am ",
+        {
+          "slot": "s3"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Die Mission einschließlich Mondlandung am 20. Juli 1969 verlief erfolgreich."
+      }
+    },
+    {
+      "sentence": [
+        "Damit erreichte die US-amerikanische Raumfahrtbehörde NASA das ",
+        {
+          "slot": "s4"
+        },
+        " von US-Präsident John F. Kennedy vorgegebene nationale ",
+        {
+          "slot": "s5x"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Damit erreichte die US-amerikanische Raumfahrtbehörde NASA das 1961 von US-Präsident John F. Kennedy vorgegebene nationale Ziel"
+      }
+    },
+    {
+      "sentence": [
+        "Es lautete, noch vor Ende des ",
+        {
+          "slot": "s5"
+        },
+        " einen Menschen zum Mond und ",
+        {
+          "slot": "s6"
+        },
+        " sicher zurück zur Erde zu bringen."
+      ],
+      "evidence": {
+        "quote": "noch vor Ende des Jahrzehnts einen Menschen zum Mond und wieder sicher zurück zur Erde zu bringen"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i1"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Die drei Astronauten Neil Armstrong, Edwin „Buzz“ Aldrin und Michael ",
+        {
+          "slot": "s7"
+        },
+        " hoben am ",
+        {
+          "slot": "s8"
+        },
+        " mit einer Saturn-V-Rakete ab."
+      ],
+      "evidence": {
+        "quote": "Die drei Astronauten Neil Armstrong, Edwin „Buzz“ Aldrin und Michael Collins starteten am 16. Juli 1969 mit einer Saturn-V-Rakete"
+      }
+    },
+    {
+      "sentence": [
+        "Der Start fand im Kennedy Space Center in ",
+        {
+          "slot": "s9"
+        },
+        " statt."
+      ],
+      "evidence": {
+        "quote": "des Kennedy Space Center in Florida"
+      }
+    },
+    {
+      "sentence": [
+        "Am ",
+        {
+          "slot": "s10"
+        },
+        " erreichten sie die vorgesehene Mondumlaufbahn."
+      ],
+      "evidence": {
+        "quote": "erreichten am 19. Juli die vorgesehene Mondumlaufbahn"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i5"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s11"
+        },
+        " blieb im Kommandomodul des Raumschiffs ",
+        {
+          "slot": "s12"
+        },
+        " zurück, Armstrong und Aldrin setzten mit der Mondlandefähre Eagle auf dem Mond auf."
+      ],
+      "evidence": {
+        "quote": "Während Collins im Kommandomodul des Raumschiffs Columbia zurückblieb, setzten Armstrong und Aldrin am nächsten Tag mit der Mondlandefähre Eagle auf dem Erdtrabanten auf."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i4b"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Das war ",
+        {
+          "slot": "s13"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "am nächsten Tag"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s16"
+        },
+        " später betrat ",
+        {
+          "slot": "s14"
+        },
+        " als erster Mensch den Mond, kurz danach auch Aldrin."
+      ],
+      "evidence": {
+        "quote": "Wenige Stunden später betrat Armstrong als erster Mensch den Mond, kurz danach auch Aldrin."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i2"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Die Landefähre startete nach einem knapp ",
+        {
+          "slot": "s17"
+        },
+        " Aufenthalt wieder von der Mondoberfläche."
+      ],
+      "evidence": {
+        "quote": "Nach einem knapp 22-stündigen Aufenthalt startete die Landefähre wieder von der Mondoberfläche"
+      }
+    },
+    {
+      "sentence": [
+        "Sie kehrte zum ",
+        {
+          "slot": "s18"
+        },
+        " zurück."
+      ],
+      "evidence": {
+        "quote": "kehrte zum Kommandoschiff zurück"
+      }
+    },
+    {
+      "sentence": [
+        "Nach der Rückkehr zur Erde wasserte die Columbia am ",
+        {
+          "slot": "s19"
+        },
+        " im ",
+        {
+          "slot": "s21"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Nach der Rückkehr zur Erde wasserte die Columbia am 24. Juli rund 25 km vom Bergungsschiff Hornet entfernt im Pazifik"
+      }
+    },
+    {
+      "sentence": [
+        "Das Bergungsschiff Hornet lag rund ",
+        {
+          "slot": "s20"
+        },
+        " von der Columbia entfernt."
+      ],
+      "evidence": {
+        "quote": "rund 25 km vom Bergungsschiff Hornet entfernt"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i3"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Apollo 11 brachte ",
+        {
+          "slot": "s22"
+        },
+        " Gesteinsproben von einem anderen Himmelskörper zur Erde."
+      ],
+      "evidence": {
+        "quote": "Mit Apollo 11 wurden auch erstmals Gesteinsproben von einem anderen Himmelskörper zur Erde geholt."
+      }
+    },
+    {
+      "sentence": [
+        "Die Fernsehübertragung der Mondlandung ",
+        {
+          "slot": "s24"
+        },
+        " verfolgten weltweit rund ",
+        {
+          "slot": "s23"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Weltweit verfolgten rund 600 Millionen Menschen die Fernsehübertragung der Mondlandung 1969."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i4"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "fünfte",
+      "variants": [
+        {
+          "text": "dritte",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Apollo 11 war die fünfte bemannte Raumfahrtmission des Apollo-Programms“. Es war die fünfte, nicht die dritte.",
+          "evidence": "Apollo 11 war die fünfte bemannte Raumfahrtmission des Apollo-Programms"
+        },
+        {
+          "text": "erste",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Apollo 11 war die fünfte bemannte Raumfahrtmission des Apollo-Programms“. Es war die fünfte bemannte Mission, nicht die erste.",
+          "evidence": "Apollo 11 war die fünfte bemannte Raumfahrtmission des Apollo-Programms"
+        },
+        {
+          "text": "füfte",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein Buchstabe: fünfte."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "Mondlandung",
+      "variants": [
+        {
+          "text": "Marslandung",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „der erste bemannte Raumflug mit einer Mondlandung“. Das Ziel war der Mond, nicht der Mars.",
+          "evidence": "der erste bemannte Raumflug mit einer Mondlandung"
+        },
+        {
+          "text": "Mondladung",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier ist ein Buchstabe falsch: Mondlandung. Man landet auf dem Mond, man lädt ihn nicht."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "20. Juli 1969",
+      "variants": [
+        {
+          "text": "20. Juni 1969",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Die Mission einschließlich Mondlandung am 20. Juli 1969 verlief erfolgreich.“ Die Landung war im Juli, nicht im Juni.",
+          "evidence": "Die Mission einschließlich Mondlandung am 20. Juli 1969 verlief erfolgreich.",
+          "tolerance": 1
+        },
+        {
+          "text": "20. Juli 1961",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Die Mission einschließlich Mondlandung am 20. Juli 1969 verlief erfolgreich.“ Die Landung war 1969. 1961 setzte Kennedy das Ziel.",
+          "evidence": "Die Mission einschließlich Mondlandung am 20. Juli 1969 verlief erfolgreich.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s4": {
+      "correct": "1961",
+      "variants": [
+        {
+          "text": "1951",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „das 1961 von US-Präsident John F. Kennedy vorgegebene nationale Ziel“. Es war 1961, nicht 1951.",
+          "evidence": "Damit erreichte die US-amerikanische Raumfahrtbehörde NASA das 1961 von US-Präsident John F. Kennedy vorgegebene nationale Ziel"
+        },
+        {
+          "text": "1971",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „das 1961 von US-Präsident John F. Kennedy vorgegebene nationale Ziel“. Es war 1961, zehn Jahre vor 1971.",
+          "evidence": "Damit erreichte die US-amerikanische Raumfahrtbehörde NASA das 1961 von US-Präsident John F. Kennedy vorgegebene nationale Ziel"
+        }
+      ]
+    },
+    "s5x": {
+      "correct": "Ziel",
+      "variants": [
+        {
+          "text": "Wahnsinnsprojekt",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "„Wahnsinnsprojekt“ ist ein Gefühlswort. Die Quelle sagt nüchtern: „nationale Ziel“."
+        },
+        {
+          "text": "Prestigeprojekt",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Prestigeprojekt“ ist eine Wertung. Die Quelle sagt nüchtern: „nationale Ziel“."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "Jahrzehnts",
+      "variants": [
+        {
+          "text": "Jahrhunderts",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „noch vor Ende des Jahrzehnts“. Das Ziel galt für zehn Jahre, nicht für hundert.",
+          "evidence": "noch vor Ende des Jahrzehnts einen Menschen zum Mond und wieder sicher zurück zur Erde zu bringen"
+        },
+        {
+          "text": "Jahrtausends",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „noch vor Ende des Jahrzehnts“. Das Ziel galt für zehn Jahre, nicht für tausend.",
+          "evidence": "noch vor Ende des Jahrzehnts einen Menschen zum Mond und wieder sicher zurück zur Erde zu bringen"
+        }
+      ]
+    },
+    "s6": {
+      "correct": "wieder",
+      "variants": [
+        {
+          "text": "wider",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Wieder“ heißt: zurück oder noch einmal. „Wider“ heißt: gegen. Hier passt „wieder“, weil der Mensch auch zurück zur Erde kommen soll."
+        }
+      ]
+    },
+    "i1": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Raumfahrtexperten sagen, dass der Mond etwa 380.000 Kilometer von der Erde entfernt ist.",
+          "errorClass": "false_authority",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Der Satz beruft sich auf „Raumfahrtexperten“, ohne einen Namen oder eine Quelle zu nennen. In der Quelle steht davon nichts. Dort wird nicht gesagt, wie weit der Mond entfernt ist.",
+          "evidence": "Wenige Stunden später betrat Armstrong als erster Mensch den Mond, kurz danach auch Aldrin."
+        },
+        {
+          "text": "Der Mond ist der einzige natürliche Satellit der Erde.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort geht es um die Mission Apollo 11."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "Collins",
+      "variants": [
+        {
+          "text": "Aldrin",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „und Michael Collins starteten am 16. Juli 1969“. Aldrin wird im Satz schon genannt. Der dritte Astronaut war Collins.",
+          "evidence": "Die drei Astronauten Neil Armstrong, Edwin „Buzz“ Aldrin und Michael Collins starteten am 16. Juli 1969 mit einer Saturn-V-Rakete"
+        },
+        {
+          "text": "Colins",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein „l“: Collins."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "16. Juli 1969",
+      "variants": [
+        {
+          "text": "16. Juli 1996",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „starteten am 16. Juli 1969 mit einer Saturn-V-Rakete“. Zwei Ziffern wurden vertauscht: 1969.",
+          "evidence": "Die drei Astronauten Neil Armstrong, Edwin „Buzz“ Aldrin und Michael Collins starteten am 16. Juli 1969 mit einer Saturn-V-Rakete",
+          "tolerance": 1
+        },
+        {
+          "text": "26. Juli 1969",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „starteten am 16. Juli 1969 mit einer Saturn-V-Rakete“. Der Start war am 16., nicht am 26.",
+          "evidence": "Die drei Astronauten Neil Armstrong, Edwin „Buzz“ Aldrin und Michael Collins starteten am 16. Juli 1969 mit einer Saturn-V-Rakete",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s9": {
+      "correct": "Florida",
+      "variants": [
+        {
+          "text": "Texas",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „des Kennedy Space Center in Florida“. Das Raumfahrtzentrum liegt in Florida, nicht in Texas.",
+          "evidence": "des Kennedy Space Center in Florida"
+        },
+        {
+          "text": "Kalifornien",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „des Kennedy Space Center in Florida“. Das Raumfahrtzentrum liegt in Florida, nicht in Kalifornien.",
+          "evidence": "des Kennedy Space Center in Florida"
+        }
+      ]
+    },
+    "s10": {
+      "correct": "19. Juli",
+      "variants": [
+        {
+          "text": "9. Juli",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „erreichten am 19. Juli die vorgesehene Mondumlaufbahn“. Es war der 19. Juli. Am 9. Juli war die Rakete noch gar nicht gestartet.",
+          "evidence": "erreichten am 19. Juli die vorgesehene Mondumlaufbahn"
+        },
+        {
+          "text": "29. Juli",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „erreichten am 19. Juli die vorgesehene Mondumlaufbahn“. Es war der 19., nicht der 29.",
+          "evidence": "erreichten am 19. Juli die vorgesehene Mondumlaufbahn"
+        }
+      ]
+    },
+    "s11": {
+      "correct": "Collins",
+      "variants": [
+        {
+          "text": "Armstrong",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Während Collins im Kommandomodul des Raumschiffs Columbia zurückblieb, setzten Armstrong und Aldrin“ auf. Armstrong landete mit auf dem Mond.",
+          "evidence": "Während Collins im Kommandomodul des Raumschiffs Columbia zurückblieb, setzten Armstrong und Aldrin am nächsten Tag mit der Mondlandefähre Eagle auf dem Erdtrabanten auf."
+        },
+        {
+          "text": "Aldrin",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Während Collins im Kommandomodul des Raumschiffs Columbia zurückblieb, setzten Armstrong und Aldrin“ auf. Aldrin landete mit auf dem Mond.",
+          "evidence": "Während Collins im Kommandomodul des Raumschiffs Columbia zurückblieb, setzten Armstrong und Aldrin am nächsten Tag mit der Mondlandefähre Eagle auf dem Erdtrabanten auf."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "Columbia",
+      "variants": [
+        {
+          "text": "Eagle",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „im Kommandomodul des Raumschiffs Columbia“. Eagle ist die Mondlandefähre, die im selben Satz genannt wird.",
+          "evidence": "Während Collins im Kommandomodul des Raumschiffs Columbia zurückblieb, setzten Armstrong und Aldrin am nächsten Tag mit der Mondlandefähre Eagle auf dem Erdtrabanten auf."
+        },
+        {
+          "text": "Hornet",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „im Kommandomodul des Raumschiffs Columbia“. Hornet war das Bergungsschiff, kein Raumschiff.",
+          "evidence": "Während Collins im Kommandomodul des Raumschiffs Columbia zurückblieb, setzten Armstrong und Aldrin am nächsten Tag mit der Mondlandefähre Eagle auf dem Erdtrabanten auf."
+        }
+      ]
+    },
+    "i4b": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Collins landete zusammen mit Armstrong auf dem Mond.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz widerspricht dem Text. Dort steht, dass Collins im Kommandomodul zurückblieb."
+        }
+      ]
+    },
+    "s13": {
+      "correct": "am nächsten Tag",
+      "variants": [
+        {
+          "text": "eine Woche später",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „setzten Armstrong und Aldrin am nächsten Tag mit der Mondlandefähre Eagle auf dem Erdtrabanten auf“. Die Landung war am Tag nach dem Erreichen der Umlaufbahn.",
+          "evidence": "am nächsten Tag",
+          "tolerance": 1
+        },
+        {
+          "text": "am selben Tag",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „setzten Armstrong und Aldrin am nächsten Tag mit der Mondlandefähre Eagle auf dem Erdtrabanten auf“. Die Landung war am nächsten Tag, nicht am selben.",
+          "evidence": "am nächsten Tag",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s16": {
+      "correct": "Wenige Stunden",
+      "variants": [
+        {
+          "text": "Wenige Tage",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Wenige Stunden später betrat Armstrong als erster Mensch den Mond“. Es waren Stunden, nicht Tage.",
+          "evidence": "Wenige Stunden später betrat Armstrong als erster Mensch den Mond, kurz danach auch Aldrin."
+        },
+        {
+          "text": "Wenige Wochen",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Wenige Stunden später betrat Armstrong als erster Mensch den Mond“. Es waren Stunden, nicht Wochen.",
+          "evidence": "Wenige Stunden später betrat Armstrong als erster Mensch den Mond, kurz danach auch Aldrin."
+        }
+      ]
+    },
+    "s14": {
+      "correct": "Armstrong",
+      "variants": [
+        {
+          "text": "Aldrin",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „betrat Armstrong als erster Mensch den Mond, kurz danach auch Aldrin“. Armstrong war der Erste. Aldrin kam kurz danach.",
+          "evidence": "Wenige Stunden später betrat Armstrong als erster Mensch den Mond, kurz danach auch Aldrin."
+        },
+        {
+          "text": "Collins",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „betrat Armstrong als erster Mensch den Mond, kurz danach auch Aldrin“. Collins blieb im Kommandomodul und betrat den Mond nicht.",
+          "evidence": "Wenige Stunden später betrat Armstrong als erster Mensch den Mond, kurz danach auch Aldrin."
+        }
+      ]
+    },
+    "i2": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Der Moment, als Armstrong den Mond betrat, war der schönste der ganzen Geschichte.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das ist eine Meinung. „Der schönste“ lässt sich nicht messen. In der Quelle steht nur, wer wann den Mond betrat."
+        },
+        {
+          "text": "Das war ein einfach atemberaubender Moment für die ganze Welt.",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "„Atemberaubend“ ist ein Gefühlswort. Die Quelle sagt nüchtern: „betrat Armstrong als erster Mensch den Mond“."
+        }
+      ]
+    },
+    "s17": {
+      "correct": "22-stündigen",
+      "variants": [
+        {
+          "text": "22-tägigen",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Nach einem knapp 22-stündigen Aufenthalt“. Der Aufenthalt dauerte knapp 22 Stunden, nicht Tage.",
+          "evidence": "Nach einem knapp 22-stündigen Aufenthalt startete die Landefähre wieder von der Mondoberfläche"
+        },
+        {
+          "text": "12-stündigen",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Nach einem knapp 22-stündigen Aufenthalt“. Zwei Ziffern wurden verändert: 22.",
+          "evidence": "Nach einem knapp 22-stündigen Aufenthalt startete die Landefähre wieder von der Mondoberfläche"
+        }
+      ]
+    },
+    "s18": {
+      "correct": "Kommandoschiff",
+      "variants": [
+        {
+          "text": "Bergungsschiff",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „kehrte zum Kommandoschiff zurück“. Das Bergungsschiff Hornet kommt erst bei der Wasserung im Pazifik vor.",
+          "evidence": "kehrte zum Kommandoschiff zurück"
+        },
+        {
+          "text": "Kommandoschif",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein „f“: Kommandoschiff."
+        }
+      ]
+    },
+    "s19": {
+      "correct": "24. Juli",
+      "variants": [
+        {
+          "text": "4. Juli",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „wasserte die Columbia am 24. Juli“. Es war der 24. Juli. Am 4. Juli war die Mission noch nicht gestartet.",
+          "evidence": "Nach der Rückkehr zur Erde wasserte die Columbia am 24. Juli rund 25 km vom Bergungsschiff Hornet entfernt im Pazifik"
+        },
+        {
+          "text": "24. August",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „wasserte die Columbia am 24. Juli“. Es war im Juli, nicht im August.",
+          "evidence": "Nach der Rückkehr zur Erde wasserte die Columbia am 24. Juli rund 25 km vom Bergungsschiff Hornet entfernt im Pazifik"
+        }
+      ]
+    },
+    "s21": {
+      "correct": "Pazifik",
+      "variants": [
+        {
+          "text": "Atlantik",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „rund 25 km vom Bergungsschiff Hornet entfernt im Pazifik“. Die Columbia wasserte im Pazifik, nicht im Atlantik.",
+          "evidence": "Nach der Rückkehr zur Erde wasserte die Columbia am 24. Juli rund 25 km vom Bergungsschiff Hornet entfernt im Pazifik"
+        },
+        {
+          "text": "Pazifk",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein „i“: Pazifik."
+        }
+      ]
+    },
+    "s20": {
+      "correct": "25 km",
+      "variants": [
+        {
+          "text": "250 km",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „rund 25 km vom Bergungsschiff Hornet entfernt“. Es waren rund 25 km, nicht 250.",
+          "evidence": "rund 25 km vom Bergungsschiff Hornet entfernt"
+        },
+        {
+          "text": "25 m",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „rund 25 km vom Bergungsschiff Hornet entfernt“. Die Einheit wurde verändert. Ein Kilometer ist tausendmal so viel wie ein Meter.",
+          "evidence": "rund 25 km vom Bergungsschiff Hornet entfernt"
+        }
+      ]
+    },
+    "i3": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Weil die Landung erfolgreich war, war jeder spätere Raumflug auch erfolgreich.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Aus einem erfolgreichen Flug folgt nicht, dass alle späteren Flüge klappen. In der Quelle geht es nur um Apollo 11."
+        },
+        {
+          "text": "Daran sieht man: Alle Raumfahrtmissionen der NASA verliefen erfolgreich.",
+          "errorClass": "overgeneralization",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier wird aus einem Fall ein Gesetz gemacht. In der Quelle steht nur: „Die Mission … verlief erfolgreich.“ Das gilt für Apollo 11, nicht für alle Missionen."
+        }
+      ]
+    },
+    "s22": {
+      "correct": "erstmals",
+      "variants": [
+        {
+          "text": "letztmals",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Mit Apollo 11 wurden auch erstmals Gesteinsproben von einem anderen Himmelskörper zur Erde geholt.“ Es war das erste Mal, nicht das letzte.",
+          "evidence": "Mit Apollo 11 wurden auch erstmals Gesteinsproben von einem anderen Himmelskörper zur Erde geholt."
+        },
+        {
+          "text": "erstmal",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort heißt „erstmals“. Es endet auf „-mals“ wie „einmal“ und „oftmals“."
+        }
+      ]
+    },
+    "s23": {
+      "correct": "600 Millionen Menschen",
+      "variants": [
+        {
+          "text": "60 Millionen Menschen",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Weltweit verfolgten rund 600 Millionen Menschen die Fernsehübertragung der Mondlandung 1969.“ Es waren rund 600 Millionen, nicht 60.",
+          "evidence": "Weltweit verfolgten rund 600 Millionen Menschen die Fernsehübertragung der Mondlandung 1969.",
+          "tolerance": 1
+        },
+        {
+          "text": "6 Milliarden Menschen",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Weltweit verfolgten rund 600 Millionen Menschen die Fernsehübertragung der Mondlandung 1969.“ Es waren rund 600 Millionen. 6 Milliarden Menschen gab es 1969 noch gar nicht.",
+          "evidence": "Weltweit verfolgten rund 600 Millionen Menschen die Fernsehübertragung der Mondlandung 1969.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s24": {
+      "correct": "1969",
+      "variants": [
+        {
+          "text": "1996",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „die Fernsehübertragung der Mondlandung 1969“. Zwei Ziffern wurden vertauscht: 1969.",
+          "evidence": "Weltweit verfolgten rund 600 Millionen Menschen die Fernsehübertragung der Mondlandung 1969."
+        },
+        {
+          "text": "1959",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „die Fernsehübertragung der Mondlandung 1969“. Es war 1969, nicht 1959.",
+          "evidence": "Weltweit verfolgten rund 600 Millionen Menschen die Fernsehübertragung der Mondlandung 1969."
+        }
+      ]
+    },
+    "i4": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Nur wenige Menschen sahen die Fernsehübertragung der Mondlandung.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz widerspricht dem Text. Dort steht, dass weltweit rund 600 Millionen Menschen die Übertragung verfolgten."
+        }
+      ]
+    },
+    "i5": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Viele Menschen warteten gespannt auf die Nachricht von der Landung.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort steht nichts darüber, was die Menschen vor der Landung taten."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Wikipedia-Artikel Apollo 11, Revision 268725520 (abgerufen am 18.10.2026), als gespeicherte Seite vollständig durchgesehen; die 12 Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft; Fußnotenzeichen fehlen im Auszug).",
+    "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite); die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Alle Fehlerklassen der Stufe kommen vor. Die Klassen ab Klasse 7 und ab Klasse 10 sind abgeleitet, nicht belegt. Rechtschreibfehler sind konstruiert nach den IQB-Schwerpunkten (Konsonantverdopplung, Auslautverhärtung, Dehnung, das/dass, wieder/wider).",
+    "Die eingefügten Sätze (Stellen ohne Text im richtigen Wortlaut) sind erfunden, harmlos und stehen nicht im Original; die Erklärung nennt das.",
+    "Der Auszug umfasst die Einleitung (zehn Sätze) und die ersten beiden Sätze des Abschnitts „Hintergrund“; der Satz „Dieser Artikel behandelt die Raumfahrtmission …“ und die Bildunterschriften sind nicht Teil des Auszugs.",
+    "Der eingefügte Satz „Nur wenige Menschen sahen die Fernsehübertragung der Mondlandung.“ widerspricht dem richtigen Satz zur Zahl der Zuschauer; „Collins landete zusammen mit Armstrong auf dem Mond.“ widerspricht dem richtigen Satz zu Collins im Kommandomodul.",
+    "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt; die Zahlen und Namen folgen dem Artikel, nicht anderen Quellen. Die falschen Varianten sind absichtlich verändert und stehen nicht in der Quelle.",
+    "Die Quelle liegt als PDF unter public/quellen/de/apollo-11.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
+    "Überarbeitung Klasse 9–10: Der Auszug beginnt bereits mit den ersten beiden Sätzen der Einleitung des Artikels (die Treffer-Meldung des Skripts kommt von der Infobox vor dem Text) und bleibt unverändert. Jahre, Namen und Zahlen aller Auszugssätze mit dem Artikel im PDF abgeglichen. In der Variante: Satz zur Hornet verständlicher gefasst, zwei eingefügte Sätze an passendere Stellen gesetzt, die Meinung zu Sputnik neu gefasst.",
+    "Durchsicht (Assistent, nach Hinweis aus der Überarbeitung): Die zwei letzten Auszugssätze (Kalter Krieg, Sputnik 1) und ihre Stellen sind entfernt; der Text endet jetzt mit der Fernsehübertragung der Mondlandung statt mit einer angehängten Vorgeschichte."
+  ]
+}

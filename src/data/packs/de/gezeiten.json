@@ -1,0 +1,758 @@
+{
+  "id": "gezeiten",
+  "title": "Gezeiten",
+  "language": "de",
+  "topic": "Gezeiten: Was sie sind und warum das Meer steigt und fällt",
+  "source": {
+    "title": "Gezeiten – Wikipedia",
+    "url": "https://de.wikipedia.org/w/index.php?title=Gezeiten&oldid=270979665",
+    "revision": "270979665",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Gezeiten&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/gezeiten.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
+    },
+    {
+      "text": "Die Gezeitenkräfte entstehen dadurch, dass Mond und Sonne trotz ihrer großen Entfernung mit ihrer Anziehungskraft nicht ganz gleichmäßig auf die Erde einwirken, sondern auf der ihnen gerade zugewandten Seite etwas stärker und auf der abgewandten Seite etwas schwächer als im Durchschnitt."
+    },
+    {
+      "text": "Diese Unterschiede wirken im Sinne einer Streckung der Erde nach beiden Seiten, d. h. um je ca. 45 cm in Mondrichtung sowie entgegengesetzt zur Mondrichtung und um je ca. 25 cm in Sonnenrichtung sowie entgegengesetzt zur Sonnenrichtung."
+    },
+    {
+      "text": "An einem festen Ort auf der Erde wird dieser Einfluss mit der täglichen Rotation der Erde ein periodischer Vorgang, der sich jeden Tag zweimal wiederholt."
+    },
+    {
+      "text": "Beim Einfluss des Mondes ist die Periode ca. 20–30 min länger, weil der Mond sich zusätzlich einmal im Monat um die Erde dreht und damit etwas länger von einem Höchststand zum nächsten braucht."
+    },
+    {
+      "text": "Die Wirkungen von Mond und Sonne addieren sich, wobei der Mond den dominierenden Beitrag liefert und die Gesamtwirkung davon abhängt, wie groß der Winkel zwischen Mond- und Sonnenrichtung gerade ist."
+    },
+    {
+      "text": "Mit der um die Erdachse rotierenden Streckung der Erde geht ein periodisches Heben der Erdoberfläche einher, das von der am jeweiligen Ort vertikalen Komponente der Gezeitenkräfte verursacht wird und daher am zugewandten und am abgewandten Punkt am stärksten ist."
+    },
+    {
+      "text": "Dieses Heben und Senken ist auf festem Boden als Erdgezeiten auch messbar."
+    },
+    {
+      "text": "Es ist aber nicht die hauptsächliche Ursache der Tiden des Meeres."
+    },
+    {
+      "text": "Viel stärker wirken sich die Gezeitenströmungen aus, die in der ganzen Tiefe des Ozeans von der horizontalen Komponente der Gezeitenkräfte angeregt werden."
+    },
+    {
+      "text": "Die Gezeitenströmungen werden mit periodisch wechselnder Richtung angetrieben und in ihrer Form stark durch die Corioliskraft und die Kontinente beeinflusst."
+    },
+    {
+      "text": "Sie verursachen an den Küsten periodische Änderungen der Wasserstände, die an vielen Orten mehrere Meter betragen, an anderen Orten aber auch weniger, und gegenüber dem Höchststand des Mondes, abhängig vom Ort, um Stunden verfrüht oder verspätet sind."
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Die Gezeiten, auch Tiden genannt, sind die Wasserbewegungen der ",
+        {
+          "slot": "n1"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "sind die Wasserbewegungen der Ozeane"
+      }
+    },
+    {
+      "sentence": [
+        "Sie entstehen durch Gezeitenkräfte, die von ",
+        {
+          "slot": "n2"
+        },
+        " erzeugt werden, im Zusammenspiel mit der Erddrehung."
+      ],
+      "evidence": {
+        "quote": "die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden"
+      }
+    },
+    {
+      "sentence": [
+        "Die Gezeitenkräfte entstehen, weil Mond und Sonne die Erde ",
+        {
+          "slot": "s1"
+        },
+        " gleichmäßig anziehen."
+      ],
+      "evidence": {
+        "quote": "nicht ganz gleichmäßig auf die Erde einwirken"
+      }
+    },
+    {
+      "sentence": [
+        "Auf der zugewandten Seite ist die Anziehung etwas ",
+        {
+          "slot": "s2"
+        },
+        ", auf der abgewandten etwas schwächer als im Durchschnitt."
+      ],
+      "evidence": {
+        "quote": "auf der ihnen gerade zugewandten Seite etwas stärker und auf der abgewandten Seite etwas schwächer als im Durchschnitt"
+      }
+    },
+    {
+      "sentence": [
+        "Dadurch wird die Erde nach beiden Seiten gestreckt: um je etwa ",
+        {
+          "slot": "s3"
+        },
+        " in Mondrichtung und um je etwa ",
+        {
+          "slot": "s4"
+        },
+        " in Sonnenrichtung."
+      ],
+      "evidence": {
+        "quote": "Diese Unterschiede wirken im Sinne einer Streckung der Erde nach beiden Seiten, d. h. um je ca. 45 cm in Mondrichtung sowie entgegengesetzt zur Mondrichtung und um je ca. 25 cm in Sonnenrichtung sowie entgegengesetzt zur Sonnenrichtung"
+      }
+    },
+    {
+      "sentence": [
+        "An einem festen Ort wird das durch die tägliche Drehung der Erde zu einem regelmäßigen Vorgang, der sich jeden Tag ",
+        {
+          "slot": "s5"
+        },
+        " wiederholt."
+      ],
+      "evidence": {
+        "quote": "An einem festen Ort auf der Erde wird dieser Einfluss mit der täglichen Rotation der Erde ein periodischer Vorgang, der sich jeden Tag zweimal wiederholt"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i1"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Beim Einfluss des Mondes ist diese Periode etwa ",
+        {
+          "slot": "s6"
+        },
+        " länger, ",
+        {
+          "slot": "s7"
+        },
+        " sich der Mond zusätzlich einmal im Monat um die Erde dreht."
+      ],
+      "evidence": {
+        "quote": "Beim Einfluss des Mondes ist die Periode ca. 20–30 min länger, weil der Mond sich zusätzlich einmal im Monat um die Erde dreht"
+      }
+    },
+    {
+      "sentence": [
+        "Die Wirkungen von Mond und Sonne addieren sich, wobei ",
+        {
+          "slot": "s8"
+        },
+        " den größten Beitrag liefert."
+      ],
+      "evidence": {
+        "quote": "Die Wirkungen von Mond und Sonne addieren sich, wobei der Mond den dominierenden Beitrag liefert"
+      }
+    },
+    {
+      "sentence": [
+        "Wie groß die Gesamtwirkung ist, hängt vom ",
+        {
+          "slot": "s9"
+        },
+        " zwischen Mond- und Sonnenrichtung ab."
+      ],
+      "evidence": {
+        "quote": "die Gesamtwirkung davon abhängt, wie groß der Winkel zwischen Mond- und Sonnenrichtung gerade ist"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i2"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Mit der Streckung der Erde hebt und senkt sich auch die Erdoberfläche, am stärksten ",
+        {
+          "slot": "s10"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Mit der um die Erdachse rotierenden Streckung der Erde geht ein periodisches Heben der Erdoberfläche einher, das von der am jeweiligen Ort vertikalen Komponente der Gezeitenkräfte verursacht wird und daher am zugewandten und am abgewandten Punkt am stärksten ist"
+      }
+    },
+    {
+      "sentence": ["Dieses Heben und Senken lässt sich auf festem Boden als Erdgezeiten messen."],
+      "evidence": {
+        "quote": "Dieses Heben und Senken ist auf festem Boden als Erdgezeiten auch messbar."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i3"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Es ist aber ",
+        {
+          "slot": "s11"
+        },
+        " die hauptsächliche Ursache der Tiden des Meeres."
+      ],
+      "evidence": {
+        "quote": "Es ist aber nicht die hauptsächliche Ursache der Tiden des Meeres."
+      }
+    },
+    {
+      "sentence": [
+        "Viel stärker wirken die Gezeitenströmungen, die in der ",
+        {
+          "slot": "s12"
+        },
+        " Tiefe des Ozeans von der horizontalen Komponente der Gezeitenkräfte angeregt werden."
+      ],
+      "evidence": {
+        "quote": "Viel stärker wirken sich die Gezeitenströmungen aus, die in der ganzen Tiefe des Ozeans von der horizontalen Komponente der Gezeitenkräfte angeregt werden"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i4"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Die Gezeitenströmungen ändern dauernd ihre Richtung und ihre Form wird stark von der ",
+        {
+          "slot": "s14"
+        },
+        " und den Kontinenten beeinflusst."
+      ],
+      "evidence": {
+        "quote": "Die Gezeitenströmungen werden mit periodisch wechselnder Richtung angetrieben und in ihrer Form stark durch die Corioliskraft und die Kontinente beeinflusst."
+      }
+    },
+    {
+      "sentence": [
+        "An den Küsten ändern sich die Wasserstände regelmäßig, an vielen Orten um ",
+        {
+          "slot": "s15"
+        },
+        ", an anderen auch um weniger."
+      ],
+      "evidence": {
+        "quote": "Sie verursachen an den Küsten periodische Änderungen der Wasserstände, die an vielen Orten mehrere Meter betragen, an anderen Orten aber auch weniger"
+      }
+    },
+    {
+      "sentence": [
+        "Je nach Ort kommt das Hochwasser gegenüber dem Höchststand des Mondes um ",
+        {
+          "slot": "s16"
+        },
+        " zu früh oder zu spät."
+      ],
+      "evidence": {
+        "quote": "gegenüber dem Höchststand des Mondes, abhängig vom Ort, um Stunden verfrüht oder verspätet sind"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i5"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "nicht ganz",
+      "variants": [
+        {
+          "text": "ganz",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „dass Mond und Sonne trotz ihrer großen Entfernung mit ihrer Anziehungskraft nicht ganz gleichmäßig auf die Erde einwirken“. Es heißt „nicht ganz gleichmäßig“. Ohne „nicht“ ist die Aussage umgekehrt, und der nächste Satz mit der stärkeren und schwächeren Anziehung passt dann nicht mehr.",
+          "evidence": "Die Gezeitenkräfte entstehen dadurch, dass Mond und Sonne trotz ihrer großen Entfernung mit ihrer Anziehungskraft nicht ganz gleichmäßig auf die Erde einwirken"
+        },
+        {
+          "text": "nich ganz",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Hier fehlt ein Buchstabe: „nich“ statt „nicht“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "stärker",
+      "variants": [
+        {
+          "text": "schwächer",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „auf der ihnen gerade zugewandten Seite etwas stärker und auf der abgewandten Seite etwas schwächer als im Durchschnitt“. Auf der zugewandten Seite ist die Anziehung stärker, auf der abgewandten schwächer.",
+          "evidence": "auf der ihnen gerade zugewandten Seite etwas stärker und auf der abgewandten Seite etwas schwächer als im Durchschnitt"
+        },
+        {
+          "text": "stärcker",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Vor dem „k“ steht schon ein „r“. Nach einem Konsonanten schreibt man nie „ck“, sondern nur „k“: stärker."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "45 cm",
+      "variants": [
+        {
+          "text": "25 cm",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „um je ca. 45 cm in Mondrichtung sowie entgegengesetzt zur Mondrichtung“. In Mondrichtung sind es etwa 45 Zentimeter. Die 25 Zentimeter gehören zur Sonnenrichtung.",
+          "evidence": "um je ca. 45 cm in Mondrichtung sowie entgegengesetzt zur Mondrichtung"
+        },
+        {
+          "text": "450 cm",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „um je ca. 45 cm in Mondrichtung sowie entgegengesetzt zur Mondrichtung“. Es sind 45 Zentimeter, nicht 450.",
+          "evidence": "um je ca. 45 cm in Mondrichtung sowie entgegengesetzt zur Mondrichtung"
+        },
+        {
+          "text": "54 cm",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „um je ca. 45 cm in Mondrichtung sowie entgegengesetzt zur Mondrichtung“. Die Zahl heißt 45, nicht 54.",
+          "evidence": "um je ca. 45 cm in Mondrichtung sowie entgegengesetzt zur Mondrichtung"
+        }
+      ]
+    },
+    "s4": {
+      "correct": "25 cm",
+      "variants": [
+        {
+          "text": "45 cm",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „um je ca. 25 cm in Sonnenrichtung sowie entgegengesetzt zur Sonnenrichtung“. In Sonnenrichtung sind es etwa 25 Zentimeter. Die 45 Zentimeter gehören zur Mondrichtung.",
+          "evidence": "um je ca. 25 cm in Sonnenrichtung sowie entgegengesetzt zur Sonnenrichtung"
+        },
+        {
+          "text": "52 cm",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „um je ca. 25 cm in Sonnenrichtung sowie entgegengesetzt zur Sonnenrichtung“. Die Zahl heißt 25, nicht 52.",
+          "evidence": "um je ca. 25 cm in Sonnenrichtung sowie entgegengesetzt zur Sonnenrichtung"
+        }
+      ]
+    },
+    "s5": {
+      "correct": "zweimal",
+      "variants": [
+        {
+          "text": "einmal",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „der sich jeden Tag zweimal wiederholt“. Der Vorgang wiederholt sich zweimal am Tag, nicht nur einmal.",
+          "evidence": "der sich jeden Tag zweimal wiederholt"
+        },
+        {
+          "text": "dreimal",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „der sich jeden Tag zweimal wiederholt“. Es ist zweimal pro Tag, nicht dreimal.",
+          "evidence": "der sich jeden Tag zweimal wiederholt"
+        },
+        {
+          "text": "zwei mal",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das Wort „zweimal“ schreibt man zusammen, wenn es um die Anzahl geht, hier also: zweimal."
+        }
+      ]
+    },
+    "i1": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Weil sich der Vorgang jeden Tag zweimal wiederholt, dreht sich die Erde zweimal am Tag um ihre Achse.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Daraus, dass sich der Vorgang zweimal am Tag wiederholt, folgt nicht, dass sich die Erde zweimal dreht. In der Quelle steht, dass es die tägliche Rotation ist, also eine Drehung pro Tag."
+        },
+        {
+          "text": "Am Äquator ist dieser Vorgang besonders gut zu sehen.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort steht nur, dass sich der Vorgang an einem festen Ort jeden Tag zweimal wiederholt. Vom Äquator steht nichts im Text."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "20 bis 30 Minuten",
+      "variants": [
+        {
+          "text": "20 bis 30 Stunden",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Beim Einfluss des Mondes ist die Periode ca. 20–30 min länger“. Es sind 20 bis 30 Minuten, nicht Stunden. Dann wäre der Tag viel zu lang.",
+          "evidence": "Beim Einfluss des Mondes ist die Periode ca. 20–30 min länger"
+        },
+        {
+          "text": "2 bis 3 Minuten",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Beim Einfluss des Mondes ist die Periode ca. 20–30 min länger“. Die Zahlen heißen 20 bis 30, nicht 2 bis 3.",
+          "evidence": "Beim Einfluss des Mondes ist die Periode ca. 20–30 min länger"
+        }
+      ]
+    },
+    "s7": {
+      "correct": "weil",
+      "variants": [
+        {
+          "text": "obwohl",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „weil der Mond sich zusätzlich einmal im Monat um die Erde dreht“. Der Mond dreht sich zusätzlich um die Erde. Das ist der Grund dafür, dass die Periode länger ist. „Obwohl“ macht daraus einen Gegensatz.",
+          "evidence": "weil der Mond sich zusätzlich einmal im Monat um die Erde dreht"
+        },
+        {
+          "text": "sodass",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Hier sind Ursache und Wirkung vertauscht. Die Periode ist länger, weil sich der Mond zusätzlich um die Erde dreht. Es ist nicht so, dass die längere Periode den Mond dazu bringt.",
+          "evidence": "weil der Mond sich zusätzlich einmal im Monat um die Erde dreht"
+        }
+      ]
+    },
+    "s8": {
+      "correct": "der Mond",
+      "variants": [
+        {
+          "text": "die Sonne",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Die Wirkungen von Mond und Sonne addieren sich, wobei der Mond den dominierenden Beitrag liefert“. Den größten Beitrag liefert der Mond, nicht die Sonne.",
+          "evidence": "Die Wirkungen von Mond und Sonne addieren sich, wobei der Mond den dominierenden Beitrag liefert"
+        },
+        {
+          "text": "der Mon",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Hier fehlt ein Buchstabe: „Mon“ statt „Mond“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "Winkel",
+      "variants": [
+        {
+          "text": "Abstand",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „die Gesamtwirkung davon abhängt, wie groß der Winkel zwischen Mond- und Sonnenrichtung gerade ist“. Es hängt vom Winkel ab, nicht vom Abstand.",
+          "evidence": "die Gesamtwirkung davon abhängt, wie groß der Winkel zwischen Mond- und Sonnenrichtung gerade ist"
+        },
+        {
+          "text": "Wikel",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Hier fehlt ein Buchstabe: „Wikel“ statt „Winkel“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
+    },
+    "i2": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Die Sonne spielt für die Gezeiten keine Rolle.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Dieser Satz widerspricht dem Text. Dort steht, dass Mond und Sonne die Erde anziehen und dass sich ihre Wirkungen addieren."
+        },
+        {
+          "text": "Weil die Sonne weiter weg ist als der Mond, wirkt sie stärker.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Dieser Satz steht nicht in der Quelle. In der Quelle liefert der Mond den größten Beitrag. Dass die Sonne weiter weg ist, ist kein Grund dafür, dass sie stärker wirkt."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "am zugewandten und am abgewandten Punkt",
+      "variants": [
+        {
+          "text": "an den Polen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „das von der am jeweiligen Ort vertikalen Komponente der Gezeitenkräfte verursacht wird und daher am zugewandten und am abgewandten Punkt am stärksten ist“. Am stärksten ist das Heben dort, wo Mond oder Sonne zugewandt oder abgewandt sind, nicht an den Polen.",
+          "tolerance": 2,
+          "evidence": "daher am zugewandten und am abgewandten Punkt am stärksten ist"
+        },
+        {
+          "text": "nur am zugewandten Punkt",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „daher am zugewandten und am abgewandten Punkt am stärksten ist“. Es sind zwei Punkte: der zugewandte und der abgewandte.",
+          "tolerance": 2,
+          "evidence": "daher am zugewandten und am abgewandten Punkt am stärksten ist"
+        }
+      ]
+    },
+    "i3": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Dafür braucht man ein besonderes Messgerät, das nur wenige Forscher besitzen.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort steht nur, dass sich das Heben und Senken auf festem Boden messen lässt. Von einem besonderen Messgerät steht nichts im Text."
+        },
+        {
+          "text": "Erdgezeiten sind das spannendste Messergebnis der ganzen Geophysik.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das ist eine Meinung, keine Tatsache. Wörter wie „das spannendste“ bewerten. In der Quelle steht nur, dass sich das Heben und Senken messen lässt."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "nicht",
+      "variants": [
+        {
+          "text": "auch",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Es ist aber nicht die hauptsächliche Ursache der Tiden des Meeres.“ Mit „auch“ wird aus der Verneinung eine Bestätigung. Dann passt das „aber“ nicht, und der nächste Satz („Viel stärker …“) ergibt keinen Sinn.",
+          "evidence": "Es ist aber nicht die hauptsächliche Ursache der Tiden des Meeres."
+        },
+        {
+          "text": "nich",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Hier fehlt ein Buchstabe: „nich“ statt „nicht“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "ganzen",
+      "variants": [
+        {
+          "text": "obersten",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „die in der ganzen Tiefe des Ozeans von der horizontalen Komponente der Gezeitenkräfte angeregt werden“. Die Strömungen entstehen in der ganzen Tiefe des Ozeans, nicht nur oben.",
+          "evidence": "Viel stärker wirken sich die Gezeitenströmungen aus, die in der ganzen Tiefe des Ozeans von der horizontalen Komponente der Gezeitenkräfte angeregt werden"
+        },
+        {
+          "text": "gantzen",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort kommt von „ganz“. Nach einem Konsonanten schreibt man „z“ und nicht „tz“: ganzen."
+        }
+      ]
+    },
+    "i4": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Die Gezeitenströmungen sind das spannendste Thema der ganzen Meereskunde.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das ist eine Meinung, keine Tatsache. Wörter wie „das spannendste“ bewerten. In der Quelle steht nur, wie die Gezeitenströmungen entstehen und wirken."
+        },
+        {
+          "text": "Die Gezeitenströmungen wirken viel schwächer als das Heben und Senken der Erdoberfläche.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz widerspricht dem Text. Dort steht, dass sich die Erdoberfläche zwar hebt und senkt, die Gezeitenströmungen aber viel stärker wirken."
+        }
+      ]
+    },
+    "s14": {
+      "correct": "Corioliskraft",
+      "variants": [
+        {
+          "text": "Schwerkraft",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „in ihrer Form stark durch die Corioliskraft und die Kontinente beeinflusst“. Genannt wird die Corioliskraft, nicht die Schwerkraft.",
+          "evidence": "in ihrer Form stark durch die Corioliskraft und die Kontinente beeinflusst"
+        },
+        {
+          "text": "Fliehkraft",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „in ihrer Form stark durch die Corioliskraft und die Kontinente beeinflusst“. Genannt wird die Corioliskraft, nicht die Fliehkraft.",
+          "evidence": "in ihrer Form stark durch die Corioliskraft und die Kontinente beeinflusst"
+        }
+      ]
+    },
+    "s15": {
+      "correct": "mehrere Meter",
+      "variants": [
+        {
+          "text": "einen Meter",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „die an vielen Orten mehrere Meter betragen, an anderen Orten aber auch weniger“. An vielen Orten sind es mehrere Meter, nicht nur ein Meter.",
+          "evidence": "die an vielen Orten mehrere Meter betragen, an anderen Orten aber auch weniger"
+        },
+        {
+          "text": "mehrere Kilometer",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „die an vielen Orten mehrere Meter betragen, an anderen Orten aber auch weniger“. Es sind mehrere Meter, nicht Kilometer.",
+          "evidence": "die an vielen Orten mehrere Meter betragen, an anderen Orten aber auch weniger"
+        }
+      ]
+    },
+    "s16": {
+      "correct": "Stunden",
+      "variants": [
+        {
+          "text": "Tage",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „gegenüber dem Höchststand des Mondes, abhängig vom Ort, um Stunden verfrüht oder verspätet sind“. Es sind Stunden, nicht Tage.",
+          "evidence": "gegenüber dem Höchststand des Mondes, abhängig vom Ort, um Stunden verfrüht oder verspätet sind"
+        },
+        {
+          "text": "Minuten",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „gegenüber dem Höchststand des Mondes, abhängig vom Ort, um Stunden verfrüht oder verspätet sind“. Es sind Stunden, nicht nur Minuten.",
+          "evidence": "gegenüber dem Höchststand des Mondes, abhängig vom Ort, um Stunden verfrüht oder verspätet sind"
+        }
+      ]
+    },
+    "i5": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Auch in jedem See und in jedem Teich gibt es deutliche Gezeiten.",
+          "errorClass": "overgeneralization",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort geht es um die Gezeiten der Ozeane. Aus dem Meer wird hier ein Gesetz für jedes Gewässer gemacht."
+        },
+        {
+          "text": "Fischer richten sich deshalb nach Ebbe und Flut.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort steht nur, wie die Wasserstände an den Küsten schwanken. Von Fischern steht nichts im Text."
+        }
+      ]
+    },
+    "n1": {
+      "correct": "Ozeane",
+      "variants": [
+        {
+          "text": "Flüsse",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Die Gezeiten oder Tiden … sind die Wasserbewegungen der Ozeane …“. Es sind die Wasserbewegungen der Ozeane, nicht der Flüsse.",
+          "evidence": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
+        },
+        {
+          "text": "Ozäne",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort kommt aus dem Griechischen und wird „Ozean“ geschrieben, mit „e“: der Ozean, die Ozeane."
+        }
+      ]
+    },
+    "n2": {
+      "correct": "Mond und Sonne",
+      "variants": [
+        {
+          "text": "dem Mond allein",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „… die durch die von Mond und Sonne erzeugten Gezeitenkräfte …“. Die Gezeitenkräfte kommen von Mond und Sonne, nicht nur vom Mond.",
+          "evidence": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
+        },
+        {
+          "text": "Wind und Sonne",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „… die durch die von Mond und Sonne erzeugten Gezeitenkräfte …“. Die Gezeitenkräfte kommen von Mond und Sonne, nicht vom Wind.",
+          "evidence": "Die Gezeiten oder Tiden (niederdeutsch Tid, Tied [tiːt] „Zeit“) sind die Wasserbewegungen der Ozeane, die durch die von Mond und Sonne erzeugten Gezeitenkräfte im Zusammenspiel mit der Erddrehung verursacht werden."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Wikipedia-Artikel Gezeiten, Revision 270979665 (abgerufen am 18.10.2026, Abschnitt „Einfache Erklärung“); die zwölf Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite, Link auf die Lizenz); die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Fehlerarten: Die Falschschreibungen sind konstruiert (Konsonantenverdopplung, Dehnung, nach den Schwerpunkten der IQB-Handreichung); die Klassen ab Klasse 7 (Menge/Grad, Verallgemeinerung, falsche Folgerung, Meinung als Tatsache) sind abgeleitet, nicht belegt. Die eingefügten Sätze sind erfunden und stehen so nicht in der Quelle.",
+    "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft.",
+    "Überarbeitet (Einleitung): Der Auszug beginnt jetzt mit dem ersten Satz des Artikels (vorher mit „Die Gezeitenkräfte entstehen …“). Gestrichen: „Diese Komponente ist am stärksten in zwei Bändern …“ samt der Stelle „45°“. Neu: zwei Stellen in der Einleitung der Variante. Verständlichkeit: Der Satz „Beim Mond ist die Periode …“ heißt jetzt „Beim Einfluss des Mondes ist diese Periode …“.",
+    "Auszug leicht vereinfacht auf Wunsch des Erstellers: Mehrzahl-Angabe in der Klammer des ersten Satzes gestrichen. Die Auszugssätze stehen dort nicht mehr überall wörtlich im Artikel (erste Notiz gilt für diese Stellen nicht mehr); der Satzanfang ist unverändert."
+  ]
+}

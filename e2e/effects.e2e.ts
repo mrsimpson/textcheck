@@ -1,16 +1,10 @@
 import { expect, test, type Page } from "playwright/test";
-
-const STATE = "lernappsState";
-const CLOCK = "lernappsClock";
-
-type Round = { tokens: { id: number; slot: string | null }[]; corruptions: { slot: string }[] };
+import { CLOCK, markAllErrors, open } from "./helpers.ts";
 
 /** Opens a round, marks the first word of every error and checks; with `hint`, takes the first hint before. */
 async function playAllFound(page: Page, hint: boolean): Promise<void> {
   await page.addInitScript((property) => Reflect.set(globalThis, property, {}), CLOCK);
-  await page.goto("./app/?seed=2#klasse-9-10");
-  await expect(page.locator(".interactive-app")).toHaveAttribute("data-mounted", "");
-  await page.getByRole("button", { name: "Variante", exact: true }).click();
+  await open(page, "./app/?seed=2#text-3");
   if (hint) {
     await page.evaluate(
       (property) => (Reflect.get(globalThis, property) as { tick(count: number): void }).tick(750),
@@ -18,13 +12,7 @@ async function playAllFound(page: Page, hint: boolean): Promise<void> {
     );
     await page.getByRole("button", { name: "Hinweis", exact: true }).click();
   }
-  const round = await page
-    .locator(".interactive-app")
-    .evaluate((element, property) => Reflect.get(element, property) as Round, STATE);
-  for (const { slot } of round.corruptions) {
-    const first = round.tokens.find((token) => token.slot === slot);
-    await page.locator(`#word-${first?.id}`).click();
-  }
+  await markAllErrors(page);
   await page.getByRole("button", { name: "Prüfen", exact: true }).click();
   await expect(page.locator("#result-heading")).toBeVisible();
 }

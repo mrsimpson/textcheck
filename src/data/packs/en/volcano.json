@@ -1,0 +1,536 @@
+{
+  "id": "volcano",
+  "title": "Volcanoes",
+  "language": "en",
+  "topic": "Volcanoes: active, dormant and extinct",
+  "source": {
+    "title": "Volcano – Simple English Wikipedia, the free encyclopedia",
+    "url": "https://simple.wikipedia.org/w/index.php?title=Volcano&oldid=10961960",
+    "revision": "10961960",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "authorsUrl": "https://simple.wikipedia.org/w/index.php?title=Volcano&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/en/volcano.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "A traditional way to classify or identify volcanoes is by its pattern of eruptions.",
+      "section": "Classification"
+    },
+    {
+      "text": "Those volcanoes which may erupt again at any time are called active.",
+      "section": "Classification"
+    },
+    {
+      "text": "Those that are now quiet are called dormant (inactive).",
+      "section": "Classification"
+    },
+    {
+      "text": "Those volcanoes which have not erupted in historical times are called extinct.",
+      "section": "Classification"
+    },
+    {
+      "text": "An active volcano is currently erupting, or it has erupted in the last 10,000 years.",
+      "section": "Active"
+    },
+    {
+      "text": "An example of an active volcano is Mount St. Helens in the United States (US).",
+      "section": "Active"
+    },
+    {
+      "text": "A dormant volcano is \"sleeping,\" but it could awaken in the future.",
+      "section": "Dormant (inactive)"
+    },
+    {
+      "text": "Mount Rainier in the United States is considered dormant.",
+      "section": "Dormant (inactive)"
+    },
+    {
+      "text": "An extinct volcano has not erupted in the past 10,000 years.",
+      "section": "Extinct (dead volcano)"
+    },
+    {
+      "text": "Edinburgh Castle in Scotland sits on top of an extinct volcano.",
+      "section": "Extinct (dead volcano)"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Traditionally, people sort volcanoes by ",
+        {
+          "slot": "s1"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "A traditional way to classify or identify volcanoes is by its pattern of eruptions."
+      }
+    },
+    {
+      "sentence": [
+        "Some volcanoes ",
+        {
+          "slot": "s2"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Those volcanoes which may erupt again at any time are called active."
+      }
+    },
+    {
+      "sentence": [
+        "They are called ",
+        {
+          "slot": "s3"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Those volcanoes which may erupt again at any time are called active."
+      }
+    },
+    {
+      "sentence": [
+        "A volcano that is ",
+        {
+          "slot": "s4"
+        },
+        " for now is called dormant."
+      ],
+      "evidence": {
+        "quote": "Those that are now quiet are called dormant (inactive)."
+      }
+    },
+    {
+      "sentence": [
+        "A volcano that has not erupted in historical times is called ",
+        {
+          "slot": "s5"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Those volcanoes which have not erupted in historical times are called extinct."
+      }
+    },
+    {
+      "sentence": [
+        "An active volcano is ",
+        {
+          "slot": "s6"
+        },
+        " at the moment."
+      ],
+      "evidence": {
+        "quote": "An active volcano is currently erupting, or it has erupted in the last 10,000 years."
+      }
+    },
+    {
+      "sentence": [
+        "An active volcano can also be one that has erupted in the last ",
+        {
+          "slot": "s7"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "An active volcano is currently erupting, or it has erupted in the last 10,000 years."
+      }
+    },
+    {
+      "sentence": [
+        "Mount St. Helens, in the United ",
+        {
+          "slot": "s8"
+        },
+        " is an example of an active volcano."
+      ],
+      "evidence": {
+        "quote": "An example of an active volcano is Mount St. Helens in the United States (US)."
+      }
+    },
+    {
+      "sentence": [
+        "A dormant volcano is only \"sleeping,\" ",
+        {
+          "slot": "s9"
+        },
+        " it could wake up in the future."
+      ],
+      "evidence": {
+        "quote": "A dormant volcano is \"sleeping,\" but it could awaken in the future."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s10"
+        },
+        " is a volcano in the United States."
+      ],
+      "evidence": {
+        "quote": "Mount Rainier in the United States is considered dormant."
+      }
+    },
+    {
+      "sentence": [
+        "It is considered ",
+        {
+          "slot": "s11"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Mount Rainier in the United States is considered dormant."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s12"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "An extinct volcano ",
+        {
+          "slot": "s13"
+        },
+        " in the past 10,000 years."
+      ],
+      "evidence": {
+        "quote": "An extinct volcano has not erupted in the past 10,000 years."
+      }
+    },
+    {
+      "sentence": [
+        "Edinburgh Castle in ",
+        {
+          "slot": "s14"
+        },
+        " stands on top of a volcano."
+      ],
+      "evidence": {
+        "quote": "Edinburgh Castle in Scotland sits on top of an extinct volcano."
+      }
+    },
+    {
+      "sentence": [
+        "This volcano is ",
+        {
+          "slot": "s15"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Edinburgh Castle in Scotland sits on top of an extinct volcano."
+      }
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "when they erupt",
+      "variants": [
+        {
+          "text": "how tall they are",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "tolerance": 1,
+          "explanation": "The source says: \"A traditional way to classify or identify volcanoes is by its pattern of eruptions.\" It sorts volcanoes by their pattern of eruptions, not by their height.",
+          "evidence": "A traditional way to classify or identify volcanoes is by its pattern of eruptions."
+        },
+        {
+          "text": "when the erupt",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "A letter is missing: \"they\". Slips like this happen fast when you type."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "may erupt again at any time",
+      "variants": [
+        {
+          "text": "will never erupt again",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "tolerance": 1,
+          "explanation": "The source says: \"Those volcanoes which may erupt again at any time are called active.\" Volcanoes that may erupt again at any time are meant, not volcanoes that never erupt again.",
+          "evidence": "Those volcanoes which may erupt again at any time are called active."
+        },
+        {
+          "text": "may erupt agian at any time",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "tolerance": 1,
+          "explanation": "Two letters are swapped: \"again\"."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "active",
+      "variants": [
+        {
+          "text": "dormant",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Those volcanoes which may erupt again at any time are called active.\" The name for these volcanoes is \"active\". \"Dormant\" is another group.",
+          "evidence": "Those volcanoes which may erupt again at any time are called active."
+        },
+        {
+          "text": "actve",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "A letter is missing: \"active\"."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "quiet",
+      "variants": [
+        {
+          "text": "quite",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "\"Quite\" is a real word, but the sentence needs \"quiet\" (not making noise or doing nothing). A spell checker does not find this."
+        },
+        {
+          "text": "loud",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"Those that are now quiet are called dormant (inactive).\" Dormant volcanoes are \"quiet\" for now, not loud.",
+          "evidence": "Those that are now quiet are called dormant (inactive)."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "extinct",
+      "variants": [
+        {
+          "text": "active",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Those volcanoes which have not erupted in historical times are called extinct.\" A volcano that has not erupted in historical times is called \"extinct\", not \"active\".",
+          "evidence": "Those volcanoes which have not erupted in historical times are called extinct."
+        },
+        {
+          "text": "extinkt",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word is written with \"ct\" at the end: \"extinct\", not \"extinkt\"."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "erupting",
+      "variants": [
+        {
+          "text": "sleeping",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"An active volcano is currently erupting, or it has erupted in the last 10,000 years.\" An active volcano is erupting, not sleeping. \"Sleeping\" is the picture for a dormant volcano.",
+          "evidence": "An active volcano is currently erupting, or it has erupted in the last 10,000 years."
+        },
+        {
+          "text": "erupitng",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Two letters are swapped: \"erupting\"."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "10,000 years",
+      "variants": [
+        {
+          "text": "1,000 years",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"An active volcano is currently erupting, or it has erupted in the last 10,000 years.\" The time span was changed.",
+          "evidence": "An active volcano is currently erupting, or it has erupted in the last 10,000 years."
+        },
+        {
+          "text": "100,000 years",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"An active volcano is currently erupting, or it has erupted in the last 10,000 years.\" The time span was changed.",
+          "evidence": "An active volcano is currently erupting, or it has erupted in the last 10,000 years."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "States,",
+      "variants": [
+        {
+          "text": "States",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "The words \"in the United States\" are an extra remark inside the sentence. It needs a comma before and after, like \"Mount St. Helens, in the United States, is ...\". The second comma is missing."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "but",
+      "variants": [
+        {
+          "text": "because",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"A dormant volcano is \"sleeping,\" but it could awaken in the future.\" \"But\" shows a contrast: the volcano is quiet now, yet it could wake up. \"Because\" says the volcano is sleeping since it could wake up. That does not make sense.",
+          "evidence": "A dormant volcano is \"sleeping,\" but it could awaken in the future."
+        },
+        {
+          "text": "although",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"A dormant volcano is \"sleeping,\" but it could awaken in the future.\" \"But\" shows a contrast. \"Although\" does not fit the sentence.",
+          "evidence": "A dormant volcano is \"sleeping,\" but it could awaken in the future."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "Mount Rainier",
+      "variants": [
+        {
+          "text": "Mount Hood",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Mount Rainier in the United States is considered dormant.\" The name of the volcano was changed.",
+          "evidence": "Mount Rainier in the United States is considered dormant."
+        },
+        {
+          "text": "Mount Rainer",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"Mount Rainier in the United States is considered dormant.\" The correct spelling is \"Mount Rainier\", not \"Mount Rainer\".",
+          "evidence": "Mount Rainier in the United States is considered dormant."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "dormant",
+      "variants": [
+        {
+          "text": "extinct",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Mount Rainier in the United States is considered dormant.\" Mount Rainier is called \"dormant\", not \"extinct\".",
+          "evidence": "Mount Rainier in the United States is considered dormant."
+        },
+        {
+          "text": "dorment",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "The word ends with \"-ant\": \"dormant\". Some English words end with \"-ent\", others with \"-ant\", so it helps to learn each one."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Scientists can tell exactly when a dormant volcano will wake up.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "This sentence is not in the source. The source only says that a dormant volcano \"could awaken in the future\"."
+        }
+      ]
+    },
+    "s13": {
+      "correct": "has not erupted",
+      "variants": [
+        {
+          "text": "has erupted",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Earlier the text says that a volcano that has not erupted in historical times is called extinct. \"Has erupted\" contradicts that."
+        },
+        {
+          "text": "has not errupted",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "tolerance": 1,
+          "explanation": "The word has only one \"r\": \"erupted\". Doubling a consonant here is a typical mistake."
+        }
+      ]
+    },
+    "s14": {
+      "correct": "Scotland",
+      "variants": [
+        {
+          "text": "Ireland",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Edinburgh Castle in Scotland sits on top of an extinct volcano.\" The place was changed.",
+          "evidence": "Edinburgh Castle in Scotland sits on top of an extinct volcano."
+        },
+        {
+          "text": "Scotand",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "A letter is missing: \"Scotland\"."
+        }
+      ]
+    },
+    "s15": {
+      "correct": "extinct",
+      "variants": [
+        {
+          "text": "active",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"Edinburgh Castle in Scotland sits on top of an extinct volcano.\" The volcano under Edinburgh Castle is extinct, not active.",
+          "evidence": "Edinburgh Castle in Scotland sits on top of an extinct volcano."
+        },
+        {
+          "text": "extint",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "A letter is missing: \"extinct\"."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Source read: Simple English Wikipedia, article Volcano, revision 10961960, read completely from a saved copy of that revision (references, tables and picture boxes left out). The ten excerpt sentences are all from the section Classification and its subsections (Active, Dormant, Extinct). They were checked word for word against the saved text by script, as were all evidence quotes and evidence passages.",
+    "Licence: CC BY-SA 4.0 (Simple English Wikipedia text; licence page https://creativecommons.org/licenses/by-sa/4.0/). The licence was taken from the Wikipedia project's licence statement, not re-read on the page footer in this session. Authors: page history. The pack data stays under the same licence.",
+    "Misspellings (slip, spelling_rule, real_word) are constructed on typical patterns for English (swapped or missing letters, -ant/-ent, doubled consonant, quiet/quite), not collected from learners.",
+    "The punctuation slot (second comma after an extra remark) is an English rule that readers notice; English has few comma rules.",
+    "Not verified: whether the article is complete or correct in science (the pack compares with this source). The Original states 10,000 years for active and extinct volcanoes alike; the Variant keeps this.",
+    "Left out of the source: all other sections (formation, types, caldera, largest volcano, references). The Variant says Mount St. Helens and Mount Rainier are in the United States; the Original adds the short form (US), which the Variant leaves out.",
+    "The source PDF public/quellen/en/volcano.pdf is made by the lead; source.pdf points to it."
+  ]
+}

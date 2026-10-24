@@ -432,7 +432,7 @@ implements: concept-core-and-shell, concept-hash-routes, concept-determinism
 
 #### Start interface
 
-The app's `src/main.ts` imports the runtime's style, the core and the root component and calls `startInteractive`, with the component for the slot in the heading line as the option `title` if it has one.
+The app's `src/main.ts` imports the runtime's style, the core and the root component and calls `startInteractive`.
 
 ```arc42
 :::ignore H014 installed package @lernapps/app-templates (arc42 cannot resolve untracked paths, docToolchain/arc42-language#128)
@@ -644,8 +644,8 @@ protocol: TypeScript module exports
 
 ### The core's parts
 
-The core builds a round from a text pack, takes the learner's actions and says what was found. Its parts and how they
-use each other:
+The core builds a round from a text pack, takes the learner's actions and says what was found and what to do next. Its
+parts and how they use each other:
 
 ```arc42
 :::diagram
@@ -659,28 +659,31 @@ notation: mermaid
 flowchart TB
     subgraph bb-interactive-core["Core"]
         bb-textcheck-state["Round state and inputs"]
+        bb-textcheck-stages["Stages and routes"]
         bb-textcheck-round["Round builder"]
         bb-textcheck-evaluate["Evaluation"]
         bb-textcheck-data-access["Data access"]
         bb-textcheck-pack-check["Pack checks"]
     end
     bb-interactive-data["Data"]
+    bb-textcheck-state -->|"if-textcheck-stages"| bb-textcheck-stages
     bb-textcheck-state -->|"if-textcheck-round"| bb-textcheck-round
     bb-textcheck-state -->|"if-textcheck-evaluation"| bb-textcheck-evaluate
-    bb-textcheck-state -->|"if-textcheck-data"| bb-textcheck-data-access
-    bb-textcheck-round -->|"if-textcheck-data"| bb-textcheck-data-access
+    bb-textcheck-stages -->|"if-textcheck-data"| bb-textcheck-data-access
+    bb-textcheck-round -->|"if-textcheck-stages"| bb-textcheck-stages
     bb-textcheck-evaluate -->|"if-textcheck-data"| bb-textcheck-data-access
-    bb-textcheck-pack-check -->|"if-textcheck-round"| bb-textcheck-round
-    bb-textcheck-pack-check -->|"if-textcheck-data"| bb-textcheck-data-access
     bb-textcheck-data-access -->|"if-interactive-data"| bb-interactive-data
+    bb-textcheck-pack-check -->|"if-textcheck-stages"| bb-textcheck-stages
+    bb-textcheck-pack-check -->|"if-textcheck-data"| bb-textcheck-data-access
+    bb-textcheck-stages -->|"if-interactive-data"| bb-interactive-data
 ```
 
 ### Round state and inputs
 
-Built. `src/core/index.ts` holds the core's contract and its state machine: `start` builds a round, `step` takes the
-actions of the UI (mark, unmark, clear, move, check, hint, again) and returns the next state; `tick` lets the wait before
-the next hint run down (10 s plus 5 s for the hint that is next in line: 15 s, then 20 s) and leaves the state as it is
-when there is nothing to count; unknown inputs leave the state as it is. `src/core/types.ts` has the types of the data and of the state.
+Built. `src/core/index.ts` holds the core's contract and its state machine: `start` opens the page or round a route
+names (the choice of the exercise, the stages of one, or a round, which begins with the reading tip where its stage has
+one), `step` takes the actions of the UI and returns the next state, and `tick` runs the wait before the next hint down;
+unknown inputs leave the state as it is. `src/core/types.ts` has the types of the data and of the state.
 
 ```arc42
 :::building-block
@@ -688,7 +691,7 @@ id: bb-textcheck-state
 title: Round state and inputs
 parent: bb-interactive-core
 technology: TypeScript
-requires: if-textcheck-round, if-textcheck-evaluation, if-textcheck-data
+requires: if-textcheck-stages, if-textcheck-round, if-textcheck-evaluation
 path: src/core/index.ts
 :::
 ```
@@ -696,10 +699,9 @@ path: src/core/index.ts
 #### Actions interface
 
 The root component hands every action of the learner to `step` as an action input with a name and optionally a value:
-`toggle` (a word id), `move` (next, prev, next-sentence, prev-sentence, first, last), `clear`, `check`, `hint` (the next
-hint, refused until the wait is over), `choose` (a text in the mode Original erkennen), `again`, `language` (the page's language) and `round` (`{ seed, route }`: the round an
-address names, because the learner picked another age group or mode, asked for the next round, or went back or forward
-in the history).
+`round` (`{ seed, route }`, the round an address names), `language`, `begin` (end the reading tip), `view` (source or
+rendition sheet), `toggle`, `move`, `hint`, `clear`, `check` and `again`. The state's phase (`choose`, `stages`, `tip`,
+`marking`, `result`) says what the UI shows; the result carries the advice for what to do next.
 
 ```arc42
 :::interface
@@ -711,13 +713,45 @@ path: src/core/index.ts
 :::
 ```
 
+### Stages and routes
+
+Built. `src/core/stages.ts` knows the routes of the app, the rules and error classes of each stage (cumulative over the
+stages before it) and which texts belong to which stage, by measured length and by enough places for the stage's error
+classes. The stage cards are derived from the rules and the texts, so that nothing a card says is written out twice.
+
+```arc42
+:::building-block
+id: bb-textcheck-stages
+title: Stages and routes
+parent: bb-interactive-core
+technology: TypeScript
+requires: if-textcheck-data, if-interactive-data
+path: src/core/stages.ts
+:::
+```
+
+#### Stages interface
+
+The state machine, the round builder, the pack checks and the UI ask for the place of a route, the rules and classes of a
+stage, the texts that fit it and the cards.
+
+```arc42
+:::interface
+id: if-textcheck-stages
+title: Routes, rules, fitting texts and cards of the stages
+provider: bb-textcheck-stages
+protocol: TypeScript module exports
+path: src/core/stages.ts
+:::
+```
+
 ### Round builder
 
-Built. Picks the text pack of the route's school years and the slots to corrupt from the seed (a seeded shuffle, within
-the classes, bases and error count of the level), and splits the Variante into words, each word belonging to the slot it
-overlaps. It also finds the sentences the hints may point to: those of the Variante with an error whose evidence quote
-stands in a sentence of the Original; inserted sentences have no quote and no counterpart, so they are never part of a
-hint. The random numbers come only from the seed (`src/core/random.ts`), so the same seed gives the same round.
+Built. Picks the text of the stage from the seed, chooses the places to corrupt (a seeded shuffle, at least a few errors
+of the classes the stage adds), and splits the rendition into words, each word belonging to the slot it overlaps. It
+also finds the sentences the hints may point to: those with an error whose evidence quote stands in the source;
+inserted sentences have no quote, so they are never part of a hint. The random numbers come only from the seed
+(`src/core/random.ts`), so the same seed gives the same round.
 
 ```arc42
 :::building-block
@@ -725,19 +759,19 @@ id: bb-textcheck-round
 title: Round builder
 parent: bb-interactive-core
 technology: TypeScript
-requires: if-textcheck-data
+requires: if-textcheck-stages
 path: src/core/round.ts
 :::
 ```
 
 #### Round building interface
 
-The round builder is used by the state machine and by the pack checks, which ask it which slots a level can corrupt.
+The state machine builds the round with it; the unit tests call the parts.
 
 ```arc42
 :::interface
 id: if-textcheck-round
-title: Round building (buildRound, candidatesOf)
+title: Round building (buildRound, chooseVariants, hintSentencesOf)
 provider: bb-textcheck-round
 protocol: TypeScript module exports
 path: src/core/round.ts
@@ -776,8 +810,8 @@ path: src/core/evaluate.ts
 
 ### Data access
 
-Built. Loads the error classes, the levels and every text pack under `src/data/packs/` as JSON modules, in the order of
-their paths. A new pack file is found by its place; no code changes.
+Built. Loads the error classes and every text pack under `src/data/packs/` as JSON modules, in the order of their
+paths. A new pack file is found by its place; no code changes.
 
 ```arc42
 :::building-block
@@ -792,12 +826,12 @@ path: src/core/data.ts
 
 #### Data access interface
 
-The round builder, the evaluation, the state machine and the pack checks read the error classes, the levels and the packs only through this module.
+The stages, the evaluation and the pack checks read the error classes and the packs only through this module.
 
 ```arc42
 :::interface
 id: if-textcheck-data
-title: Packs, levels and error classes
+title: Packs and error classes
 provider: bb-textcheck-data-access
 protocol: TypeScript module exports
 path: src/core/data.ts
@@ -806,9 +840,9 @@ path: src/core/data.ts
 
 ### Pack checks
 
-Built. Checks what the JSON schema cannot say: two adjacent school years, evidence quotes verbatim in the excerpt,
-every slot exactly once, classes fitting the school years and language, tolerance only with neighbouring words, enough
-slots for each level. The unit tests run it over every pack together with the schema (Ajv).
+Built. Checks what the JSON schema cannot say: evidence quotes verbatim in the excerpt, every slot exactly once, classes
+fitting the language, tolerance only with neighbouring words, enough places for the stages a text belongs to. The unit
+tests run it over every pack together with the schema (Ajv).
 
 ```arc42
 :::building-block
@@ -816,7 +850,7 @@ id: bb-textcheck-pack-check
 title: Pack checks
 parent: bb-interactive-core
 technology: TypeScript, Ajv, Vitest
-requires: if-textcheck-round, if-textcheck-data
+requires: if-textcheck-stages, if-textcheck-data
 path: src/core/pack-check.ts
 :::
 ```
@@ -873,8 +907,8 @@ protocol: Vue props and events
 
 ### The UI's parts
 
-The root component shows the round and hands what the learner does back as actions; the word list and the result view
-show parts of the state; the texts come from the message files through one translator.
+The root component handles the address and shows the page the core's state names; the pages and the round view show
+parts of the state; the texts come from the message files through one translator.
 
 ```arc42
 :::diagram
@@ -888,63 +922,51 @@ notation: mermaid
 flowchart TB
     subgraph bb-interactive-ui["UI"]
         bb-textcheck-root["Root component"]
+        bb-textcheck-choose-page["Choice of the exercise"]
+        bb-textcheck-stages-page["Stages page"]
+        bb-textcheck-tip-page["Reading tip page"]
+        bb-textcheck-round-view["Round view"]
         bb-textcheck-wordlist["Word list"]
-        bb-textcheck-choose["Choose view"]
         bb-textcheck-result["Result view"]
         bb-textcheck-ui-texts["UI texts"]
         bb-textcheck-controls["Controls"]
         bb-textcheck-reading["Reading values"]
+        bb-textcheck-reading-tip["Reading tip texts"]
+        bb-textcheck-progress["Stages passed"]
         bb-textcheck-hint-button["Hint button"]
         bb-textcheck-hint-note["Hint note"]
         bb-textcheck-hints["Hint texts"]
     end
     bb-interactive-messages["Messages"]
-    bb-textcheck-root -->|"if-textcheck-wordlist"| bb-textcheck-wordlist
-    bb-textcheck-root -->|"if-textcheck-choose"| bb-textcheck-choose
-    bb-textcheck-root -->|"if-textcheck-result"| bb-textcheck-result
-    bb-textcheck-choose -->|"if-textcheck-wordlist"| bb-textcheck-wordlist
-    bb-textcheck-choose -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
-    bb-textcheck-root -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
-    bb-textcheck-wordlist -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
-    bb-textcheck-result -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
-    bb-textcheck-ui-texts -->|"if-messages"| bb-interactive-messages
+    bb-textcheck-root -->|"if-textcheck-choose-page"| bb-textcheck-choose-page
+    bb-textcheck-root -->|"if-textcheck-stages-page"| bb-textcheck-stages-page
+    bb-textcheck-root -->|"if-textcheck-tip-page"| bb-textcheck-tip-page
+    bb-textcheck-root -->|"if-textcheck-round-view"| bb-textcheck-round-view
     bb-textcheck-root -->|"if-textcheck-reading"| bb-textcheck-reading
-    bb-textcheck-controls -->|"if-textcheck-reading"| bb-textcheck-reading
-    bb-textcheck-controls -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
-    bb-textcheck-reading -->|"if-device-storage"| bb-tooling
-    bb-textcheck-root -->|"if-textcheck-hint-button"| bb-textcheck-hint-button
-    bb-textcheck-root -->|"if-textcheck-hint-note"| bb-textcheck-hint-note
+    bb-textcheck-root -->|"if-textcheck-progress"| bb-textcheck-progress
     bb-textcheck-root -->|"if-textcheck-hints"| bb-textcheck-hints
-    bb-textcheck-choose -->|"if-textcheck-hint-button"| bb-textcheck-hint-button
-    bb-textcheck-choose -->|"if-textcheck-hint-note"| bb-textcheck-hint-note
-    bb-textcheck-choose -->|"if-textcheck-hints"| bb-textcheck-hints
+    bb-textcheck-stages-page -->|"if-textcheck-progress"| bb-textcheck-progress
+    bb-textcheck-tip-page -->|"if-textcheck-reading-tip"| bb-textcheck-reading-tip
+    bb-textcheck-round-view -->|"if-textcheck-reading-tip"| bb-textcheck-reading-tip
+    bb-textcheck-round-view -->|"if-textcheck-wordlist"| bb-textcheck-wordlist
+    bb-textcheck-round-view -->|"if-textcheck-result"| bb-textcheck-result
+    bb-textcheck-round-view -->|"if-textcheck-hint-button"| bb-textcheck-hint-button
+    bb-textcheck-round-view -->|"if-textcheck-hint-note"| bb-textcheck-hint-note
+    bb-textcheck-round-view -->|"if-textcheck-hints"| bb-textcheck-hints
     bb-textcheck-hint-note -->|"if-textcheck-hints"| bb-textcheck-hints
-    bb-textcheck-hint-button -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
-    bb-textcheck-hints -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
+    bb-textcheck-controls -->|"if-textcheck-reading"| bb-textcheck-reading
+    bb-textcheck-reading -->|"if-device-storage"| bb-tooling
+    bb-textcheck-progress -->|"if-device-storage"| bb-tooling
+    bb-textcheck-root -->|"if-textcheck-ui-texts"| bb-textcheck-ui-texts
+    bb-textcheck-ui-texts -->|"if-messages"| bb-interactive-messages
 ```
 
 ### Root component
 
-Built. `src/ui/App.vue` shows the round (the heading line of the page, with the controls for the reading settings
-beside it, is the runtime's and the `Controls` component's), the goal line, the Original and the Variante (like two sheets, one on top of the other,
-starting with the Original: a switch turns from one to the other with a short page-turn animation, which reduced motion
-switches off, and the hidden one is not in the page, so the learner cannot compare them side by side; the source PDF is
-no sheet and has no switch: where it is embedded (a wide screen of 1300 px and more with a mouse) it stands next to the
-Variante, in a frame widened to 80 rem while it shows, so that an A4 page is wide enough to read; elsewhere only the
-button that opens it stands above the Variante, which has the whole width), the keyboard hint and the buttons below the sheets (among them the button for the next hint, which waits and shows the seconds left; the hints taken stay on the page until the round ends and mark the sentences with an error at the edge, in the mode Original erkennen in both texts), so that both sheets are of the same height (one font size
-and one line height for every text; the root component also gives the hint button and the hint note their state), the texts in the font and size the learner set (font style, weight, size, line spacing, kept on the device) and, after checking, the result. It announces every change through the live region, moves the focus
-to the result heading after checking and back to the words after a new round, and emits the learner's actions. The address is the round (`?seed=<n>#<route>`) and the only place the seed is taken from, so
-that a round can be reloaded and shared. Without a valid seed in the address, the root component works one out when the
-page opens, writes it into the address and takes it from there. The learner's own steps write the address first
-(`history.pushState`) and then apply it: a new age group or mode, chosen with the two selects, starts a round with a new
-seed, so that the same text with the same errors does not come back (where marks are set, a dialog asks first and the
-selects keep showing the round that goes on if the learner stays), and the next round takes the seed after the one in
-the address. Applying the address is the action `round` (`{ seed, route }`), which the root component also emits when
-the back or forward button changes the address; the state stays as it is for the round it shows and for an address it
-does not know. The
-panel that is shown is its only state of its own. The route decides the mode: the Original, the PDF of the
-source (a link to a new tab and, on a wide screen with a mouse, the PDF in a frame of the same site) or the two texts
-of the mode Original erkennen, which the choose view shows.
+Built. `src/ui/App.vue` is only the root: it takes the round from the address (`?seed=<n>#<route>`, the only place the
+seed comes from, so that a round can be reloaded and shared), tells the core the page's language, announces every change
+through the live region, moves the focus and remembers the stages passed. It shows the page the state's phase names and
+holds no state of its own.
 
 ```arc42
 :::building-block
@@ -952,14 +974,134 @@ id: bb-textcheck-root
 title: Root component
 parent: bb-interactive-ui
 technology: Vue single-file component
-requires: if-textcheck-wordlist, if-textcheck-choose, if-textcheck-result, if-textcheck-ui-texts, if-textcheck-reading, if-textcheck-hint-button, if-textcheck-hint-note, if-textcheck-hints, if-a11y
+requires: if-textcheck-choose-page, if-textcheck-stages-page, if-textcheck-tip-page, if-textcheck-round-view, if-textcheck-ui-texts, if-textcheck-reading, if-textcheck-progress, if-textcheck-hints, if-a11y
 path: src/ui/App.vue
+:::
+```
+
+### Choice of the exercise
+
+Built. `src/ui/ChoosePage.vue` is the first page: one card for each kind of exercise, which opens its stages.
+
+```arc42
+:::building-block
+id: bb-textcheck-choose-page
+title: Choice of the exercise
+parent: bb-interactive-ui
+technology: Vue single-file component
+requires: if-textcheck-ui-texts, if-textcheck-stages
+path: src/ui/ChoosePage.vue
+:::
+```
+
+#### Choice interface
+
+The root component gives the page the language as a prop and takes its `open` event (a route) on.
+
+```arc42
+:::interface
+id: if-textcheck-choose-page
+title: Choice page props and open event
+provider: bb-textcheck-choose-page
+protocol: Vue props and events
+path: src/ui/ChoosePage.vue
+:::
+```
+
+### Stages page
+
+Built. `src/ui/StagesPage.vue` shows the stage cards of one exercise exactly as the core derives them, with a tick on
+the stages passed, so that no description of a stage is kept in the UI.
+
+```arc42
+:::building-block
+id: bb-textcheck-stages-page
+title: Stages page
+parent: bb-interactive-ui
+technology: Vue single-file component
+requires: if-textcheck-ui-texts, if-textcheck-progress
+path: src/ui/StagesPage.vue
+:::
+```
+
+#### Stages page interface
+
+The root component gives the page the state and the language as props and takes its `open` event (a route) on.
+
+```arc42
+:::interface
+id: if-textcheck-stages-page
+title: Stages page props and open event
+provider: bb-textcheck-stages-page
+protocol: Vue props and events
+path: src/ui/StagesPage.vue
+:::
+```
+
+### Reading tip page
+
+Built. `src/ui/TipPage.vue` shows the question of the exercise and the tip on how to read before a round, and sends
+`begin` when the learner is ready.
+
+```arc42
+:::building-block
+id: bb-textcheck-tip-page
+title: Reading tip page
+parent: bb-interactive-ui
+technology: Vue single-file component
+requires: if-textcheck-ui-texts, if-textcheck-reading-tip
+path: src/ui/TipPage.vue
+:::
+```
+
+#### Reading tip page interface
+
+The root component gives the page the state and the language as props and takes its `input` and `open` events on.
+
+```arc42
+:::interface
+id: if-textcheck-tip-page
+title: Reading tip page props and events
+provider: bb-textcheck-tip-page
+protocol: Vue props and events
+path: src/ui/TipPage.vue
+:::
+```
+
+### Round view
+
+Built. `src/ui/RoundView.vue` shows a round: the question, the goal line, the source sheet or the link to the whole
+article, the rendition with the word list, the bar below it, and after checking the result. The source and the
+rendition are never side by side, so that the learner compares by reading, not by looking across.
+
+```arc42
+:::building-block
+id: bb-textcheck-round-view
+title: Round view
+parent: bb-interactive-ui
+technology: Vue single-file component
+requires: if-textcheck-wordlist, if-textcheck-result, if-textcheck-hint-button, if-textcheck-hint-note, if-textcheck-hints, if-textcheck-reading-tip, if-textcheck-ui-texts
+path: src/ui/RoundView.vue
+:::
+```
+
+#### Round view interface
+
+The root component gives the view the state and the language as props and takes its `input` and `open` events on.
+
+```arc42
+:::interface
+id: if-textcheck-round-view
+title: Round view props and events
+provider: bb-textcheck-round-view
+protocol: Vue props and events
+path: src/ui/RoundView.vue
 :::
 ```
 
 ### Word list
 
-Built. `src/ui/WordList.vue` shows the words of the Variante. While marking, they are one listbox with one tab stop: the
+Built. `src/ui/WordList.vue` shows the words of the rendition. While marking, they are one listbox with one tab stop: the
 arrow keys move between words and sentences, the space bar marks, a tap or click marks. After checking it shows how
 each word counts, by colour and line style with a hidden status text for screen readers.
 
@@ -976,8 +1118,8 @@ path: src/ui/WordList.vue
 
 #### Word list interface
 
-The root component gives the word list the words, the marks, the cursor and the status of each word as props, and takes
-its `input` events (toggle and move actions) on.
+The round view gives the word list the words, the marks, the cursor and the status of each word as props, and takes its
+`input` events (toggle and move actions) on.
 
 ```arc42
 :::interface
@@ -989,46 +1131,12 @@ path: src/ui/WordList.vue
 :::
 ```
 
-### Choose view
-
-Built. `src/ui/ChooseView.vue` shows the two texts of the mode Original erkennen, A and B, one the Original and the other
-the Variante; which is which stays hidden until checking. The learner picks the text that has the errors (a button under
-each text, or the keys 1 and 2) and marks the words there with the word list. The two texts lie like sheets on every
-screen, one at a time with the same page-turn animation; under the texts it shows the hint button and the hint note, and a hint marks the same sentences in both texts; the text shown is its only state of its own.
-
-```arc42
-:::building-block
-id: bb-textcheck-choose
-title: Choose view
-parent: bb-interactive-ui
-technology: Vue single-file component
-requires: if-textcheck-wordlist, if-textcheck-hint-button, if-textcheck-hint-note, if-textcheck-hints, if-textcheck-ui-texts
-path: src/ui/ChooseView.vue
-:::
-```
-
-#### Choose view interface
-
-The root component gives the choose view the state and the language as props and takes its `input` events (the pick, and
-the actions of the word list) on.
-
-```arc42
-:::interface
-id: if-textcheck-choose
-title: Choose view props and input events
-provider: bb-textcheck-choose
-protocol: Vue props and events
-path: src/ui/ChooseView.vue
-:::
-```
-
 ### Result view
 
-Built. `src/ui/ResultView.vue` shows the counts, the errors grouped by class with what stands in the Variante and in the
-Original and the explanation, the words marked wrongly or within tolerance, and the legend. When every error is
-found it shows big fireworks on a dimmed page if no hint was taken and confetti if hints were (both calm, the dimming
-fades in and out and nothing flashes, and both are off when the system asks for less motion); where hints were taken, a sentence says that next time it may work without them. It
-emits the action `again`.
+Built. `src/ui/ResultView.vue` shows the counts, the errors grouped by class with the explanation, the words marked
+wrongly or within tolerance, the legend and the advice: the next stage, another round with a tip for the
+class missed, or the other exercise. When every error is found it shows fireworks (no hint taken) or confetti, both calm
+and off when the system asks for less motion. It emits the action `again`.
 
 ```arc42
 :::building-block
@@ -1043,12 +1151,12 @@ path: src/ui/ResultView.vue
 
 #### Result view interface
 
-The root component gives the result view the result and the words as props and takes its `input` event on.
+The round view gives the result view the result and the words as props and takes its `input` and `open` events on.
 
 ```arc42
 :::interface
 id: if-textcheck-result
-title: Result view props and input event
+title: Result view props and events
 provider: bb-textcheck-result
 protocol: Vue props and events
 path: src/ui/ResultView.vue
@@ -1089,9 +1197,8 @@ path: src/ui/messages.ts
 
 Built. `src/ui/Controls.vue` is what the app puts into the heading line of the page, where the runtime mounts it beside
 the h1 (the option `title` of `startInteractive`, in `src/main.ts`): one small button "Schrift", which opens a dialog
-with the style of the font (normal, round, fixed width), the weight, the size and the line spacing, a line of sample
-text, a button for the defaults and one to close it. The texts change while the learner sets. The settings are the
-shared ones of `reading.ts`; the component gets the props and the input event of the root component and uses neither.
+with the style of the font, the weight, the size and the line spacing, and a button for the defaults. The texts change
+while the learner sets.
 
 ```arc42
 :::building-block
@@ -1141,8 +1248,7 @@ path: src/ui/reading.ts
 #### Reading values interface
 
 The settings are one reactive value that the root component (for the texts) and the controls (for the dialog) share; it is
-loaded once, saved after every change and turned into CSS custom properties; the controls take the limits and the
-defaults from it.
+loaded once, saved after every change and turned into CSS custom properties.
 
 ```arc42
 :::interface
@@ -1154,11 +1260,70 @@ path: src/ui/reading.ts
 :::
 ```
 
+### Reading tip texts
+
+Built. `src/ui/reading-tip.ts` turns the rules of a stage into the keys of the question and of the tip lines (all three,
+or the last one), so that the tip page and the round view say the same.
+
+```arc42
+:::building-block
+id: bb-textcheck-reading-tip
+title: Reading tip texts
+parent: bb-interactive-ui
+technology: TypeScript
+path: src/ui/reading-tip.ts
+:::
+```
+
+#### Reading tip texts interface
+
+The tip page and the round view take the question and the tip lines from it.
+
+```arc42
+:::interface
+id: if-textcheck-reading-tip
+title: Question and tip lines of a stage
+provider: bb-textcheck-reading-tip
+protocol: TypeScript module export
+path: src/ui/reading-tip.ts
+:::
+```
+
+### Stages passed
+
+Built. `src/ui/progress.ts` keeps which stages the learner has passed, so that the cards show a tick. It is the app's
+second thing kept on the device, through `createStorage("textcheck")` like the reading settings (100 kB limit); where the
+browser blocks storage the ticks hold for this visit only.
+
+```arc42
+:::building-block
+id: bb-textcheck-progress
+title: Stages passed
+parent: bb-interactive-ui
+technology: TypeScript
+requires: if-device-storage
+path: src/ui/progress.ts
+:::
+```
+
+#### Stages passed interface
+
+The root component records a stage as passed when a round is; the stages page reads the list and can clear it.
+
+```arc42
+:::interface
+id: if-textcheck-progress
+title: Stages passed (passed, markPassed, clearPassed)
+provider: bb-textcheck-progress
+protocol: TypeScript module export
+path: src/ui/progress.ts
+:::
+```
+
 ### Hint button
 
 Built. `src/ui/HintButton.vue` is the button that takes the next hint: it is off until the core's wait is over and says
-how many seconds are left, and after the last hint it says there are none. It holds no state of its own; the hint is an
-action the root component and the choose view hand on.
+how many seconds are left, and after the last hint it says there are none. It holds no state of its own.
 
 ```arc42
 :::building-block
@@ -1173,7 +1338,7 @@ path: src/ui/HintButton.vue
 
 #### Hint button interface
 
-The root component and the choose view give the button the state and the language as props and take its `input` event on.
+The round view gives the button the state and the language as props and takes its `input` event on.
 
 ```arc42
 :::interface
@@ -1203,7 +1368,7 @@ path: src/ui/HintNote.vue
 
 #### Hint note interface
 
-The root component and the choose view give the note the state and the language as props.
+The round view gives the note the state and the language as props.
 
 ```arc42
 :::interface
@@ -1218,8 +1383,8 @@ path: src/ui/HintNote.vue
 ### Hint texts
 
 Built. `src/ui/hints.ts` works out from the state what the hints show: the kinds of error of the round (only where the
-level hides them) and the label of each sentence a hint marks, by the sentence's index in the Variante or in the
-Original. A hint never shows a word and never names an inserted sentence.
+stage hides them) and the label of each sentence a hint marks. A hint never shows a word and never names an inserted
+sentence.
 
 ```arc42
 :::building-block
@@ -1234,8 +1399,8 @@ path: src/ui/hints.ts
 
 #### Hint texts interface
 
-The note takes the sentences of the hints from it, and the root component and the choose view the labels of the marked
-sentences, which they hand to the list of words as its prop `tags`.
+The note takes the sentences of the hints from it, the round view the labels of the marked sentences, which it hands to
+the list of words as its prop `tags`, and the root component the text of a hint to announce.
 
 ```arc42
 :::interface
@@ -1280,8 +1445,8 @@ path: src/data
 
 ### The data's parts
 
-The data are the text packs, which carry the content, and two tables that say what a school-year pair gets and what the
-error classes are. The data access of the core reads both.
+The data are the text packs, which carry the content, and two tables: the rules of the stages and the error classes. The
+core reads all three.
 
 ```arc42
 :::diagram
@@ -1295,15 +1460,17 @@ notation: mermaid
 flowchart TB
     subgraph bb-interactive-data["Data"]
         bb-textcheck-packs["Text packs"]
-        bb-textcheck-tables["Levels and error classes"]
+        bb-textcheck-stage-rules["Stage rules"]
+        bb-textcheck-error-classes["Error classes"]
     end
 ```
 
 ### Text packs
 
-Built. `src/data/packs/<language>/<from>-<to>/<id>.json`, each a source excerpt, the rendition learners check and the
-slots with their correct wording and wrong variants; the schema `src/data/textpack.v1.schema.json` says the format. The
-content guide `.agents/skills/app-content/SKILL.md` and the skill `app-textpack` say how to write one.
+Built. `src/data/packs/<language>/<id>.json`, each a source excerpt, the rendition learners check and the slots with
+their correct wording and wrong variants; the schema `src/data/textpack.v1.schema.json` says the format. Which stage a
+text belongs to is not written in it but derived from its length and its places for errors. The content guide
+`.agents/skills/app-content/SKILL.md` and the skill `app-textpack` say how to write one.
 
 ```arc42
 :::building-block
@@ -1329,32 +1496,62 @@ path: src/data/textpack.v1.schema.json
 :::
 ```
 
-### Levels and error classes
+### Stage rules
 
-Built. `src/data/levels.json` names for each route the school years, the error classes and detection bases it may use,
-the errors per round and whether the goal line names the classes. `src/data/error-classes.json` lists the error classes
-with their family, status (documented or derived), usual basis, first school year, languages and source.
+Built. `src/data/stages.json` holds the rules of the three stages of each kind of exercise: the error classes a stage adds
+(stages are cumulative), the errors per round, whether the goal line names the classes, the reading tip, the material
+(none, source excerpt, link to the article) and the maximum text length. Rules are data so that changing a stage is not
+a code change.
 
 ```arc42
 :::building-block
-id: bb-textcheck-tables
-title: Levels and error classes
+id: bb-textcheck-stage-rules
+title: Stage rules
 parent: bb-interactive-data
 technology: JSON
-path: src/data/levels.json
+path: src/data/stages.json
 :::
 ```
 
-#### Tables interface
+#### Stage rules interface
 
-The data access reads both tables as JSON modules; the rationale page in `src/app.yaml` repeats the class list for
+The stages module reads the file as a JSON module; the unit tests check its shape.
+
+```arc42
+:::interface
+id: if-textcheck-stage-rules
+title: Stage rules table
+provider: bb-textcheck-stage-rules
+protocol: JSON module import
+path: src/data/stages.json
+:::
+```
+
+### Error classes
+
+Built. `src/data/error-classes.json` lists the error classes with their status (documented or derived), usual basis,
+languages and source.
+
+```arc42
+:::building-block
+id: bb-textcheck-error-classes
+title: Error classes
+parent: bb-interactive-data
+technology: JSON
+path: src/data/error-classes.json
+:::
+```
+
+#### Error classes interface
+
+The data access reads the table as a JSON module; the rationale page in `src/app.yaml` repeats the class list for
 learners and a unit test keeps the two in step.
 
 ```arc42
 :::interface
-id: if-textcheck-tables
-title: Levels and error classes tables
-provider: bb-textcheck-tables
+id: if-textcheck-error-classes
+title: Error classes table
+provider: bb-textcheck-error-classes
 protocol: JSON module import
 path: src/data/error-classes.json
 :::

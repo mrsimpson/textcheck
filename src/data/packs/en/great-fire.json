@@ -1,0 +1,636 @@
+{
+  "id": "great-fire",
+  "title": "Great Fire of London",
+  "language": "en",
+  "topic": "The Great Fire of London in 1666: how it started and spread, and how it was stopped",
+  "source": {
+    "title": "Great Fire of London – Wikipedia",
+    "url": "https://en.wikipedia.org/w/index.php?title=Great_Fire_of_London&oldid=1376270657",
+    "revision": "1376270657",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "authorsUrl": "https://en.wikipedia.org/w/index.php?title=Great_Fire_of_London&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/en/great-fire.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "The Great Fire of London occurred from Sunday 2 September to Wednesday 5 September 1666, gutting the medieval City of London inside the old Roman city wall, while also extending past the wall to the west.",
+      "section": "Introduction"
+    },
+    {
+      "text": "The death toll is generally thought to have been relatively small, although some historians have challenged this belief.",
+      "section": "Introduction"
+    },
+    {
+      "text": "The fire started in a bakery in Pudding Lane shortly after midnight on Sunday 2 September and spread rapidly.",
+      "section": "Introduction"
+    },
+    {
+      "text": "The main firefighting technique of the time was the creation of firebreaks by means of removing structures in the fire's path.",
+      "section": "Introduction"
+    },
+    {
+      "text": "The Lord Mayor, Sir Thomas Bloodworth, hesitated in giving the order to employ this method.",
+      "section": "Introduction"
+    },
+    {
+      "text": "By the time large-scale demolitions were ordered on Sunday night, the wind had already fanned the bakery fire into a firestorm which defeated such measures.",
+      "section": "Introduction"
+    },
+    {
+      "text": "The fire pushed north on Monday into the heart of the City.",
+      "section": "Introduction"
+    },
+    {
+      "text": "Order in the streets broke down as rumours arose of suspicious foreigners setting fires.",
+      "section": "Introduction"
+    },
+    {
+      "text": "The fears of the homeless focused on the French and Dutch, England's enemies in the ongoing Second Anglo-Dutch War; these substantial immigrant groups became victims of street violence.",
+      "section": "Introduction"
+    },
+    {
+      "text": "On Tuesday, the fire spread over nearly the whole city, destroying Old St Paul's Cathedral and leaping the River Fleet to threaten Charles II's court at Whitehall Palace.",
+      "section": "Introduction"
+    },
+    {
+      "text": "Coordinated firefighting efforts were simultaneously getting underway.",
+      "section": "Introduction"
+    },
+    {
+      "text": "The battle to put out the fire is considered to have been won by two key factors: the strong east wind dropped, and the Tower of London garrison used gunpowder to create effective firebreaks, halting further spread eastward.",
+      "section": "Introduction"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "The Great Fire of London raged from ",
+        {
+          "slot": "s1"
+        },
+        ", destroyed the medieval City of London inside the old Roman city wall and also reached past the wall to the west."
+      ],
+      "evidence": {
+        "quote": "The Great Fire of London occurred from Sunday 2 September to Wednesday 5 September 1666, gutting the medieval City of London inside the old Roman city wall, while also extending past the wall to the west."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s13"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "It is generally believed that the death toll was relatively small, ",
+        {
+          "slot": "s2"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "The death toll is generally thought to have been relatively small, although some historians have challenged this belief."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s14"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "A little after midnight on Sunday 2 September, a fire broke out in a bakery in ",
+        {
+          "slot": "s3"
+        },
+        ", and it spread rapidly."
+      ],
+      "evidence": {
+        "quote": "The fire started in a bakery in Pudding Lane shortly after midnight on Sunday 2 September and spread rapidly."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s15"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "At that time, the ",
+        {
+          "slot": "s4"
+        },
+        " way to fight a fire was to make firebreaks by removing buildings in its path."
+      ],
+      "evidence": {
+        "quote": "The main firefighting technique of the time was the creation of firebreaks by means of removing structures in the fire's path."
+      }
+    },
+    {
+      "sentence": [
+        "The Lord Mayor, Sir Thomas Bloodworth, ",
+        {
+          "slot": "s5"
+        },
+        " to order the use of this method."
+      ],
+      "evidence": {
+        "quote": "The Lord Mayor, Sir Thomas Bloodworth, hesitated in giving the order to employ this method."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s16"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Large-scale demolitions were ordered on Sunday night, ",
+        {
+          "slot": "s6"
+        },
+        " the wind had already fanned the fire from the bakery into a firestorm which defeated such measures."
+      ],
+      "evidence": {
+        "quote": "By the time large-scale demolitions were ordered on Sunday night, the wind had already fanned the bakery fire into a firestorm which defeated such measures."
+      }
+    },
+    {
+      "sentence": [
+        "On Monday, the fire pushed ",
+        {
+          "slot": "s7"
+        },
+        " into the heart of the City."
+      ],
+      "evidence": {
+        "quote": "The fire pushed north on Monday into the heart of the City."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s17"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Order in the streets broke down when ",
+        {
+          "slot": "s8"
+        },
+        " spread that suspicious foreigners were setting fires."
+      ],
+      "evidence": {
+        "quote": "Order in the streets broke down as rumours arose of suspicious foreigners setting fires."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s18"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "The homeless feared the French and the Dutch, ",
+        {
+          "slot": "s9"
+        },
+        ", and these large immigrant groups became victims of street violence."
+      ],
+      "evidence": {
+        "quote": "The fears of the homeless focused on the French and Dutch, England's enemies in the ongoing Second Anglo-Dutch War; these substantial immigrant groups became victims of street violence."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s19"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "On Tuesday, the fire spread over ",
+        {
+          "slot": "s10"
+        },
+        ", destroyed Old St Paul's Cathedral and leapt across the River Fleet to threaten the court of Charles II at Whitehall Palace."
+      ],
+      "evidence": {
+        "quote": "On Tuesday, the fire spread over nearly the whole city, destroying Old St Paul's Cathedral and leaping the River Fleet to threaten Charles II's court at Whitehall Palace."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s20"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "At the same time, organised ",
+        {
+          "slot": "s11"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Coordinated firefighting efforts were simultaneously getting underway."
+      }
+    },
+    {
+      "sentence": [
+        "Two key factors are considered to have won the battle against the fire: the strong east wind ",
+        {
+          "slot": "s12"
+        },
+        ", and the Tower of London garrison used gunpowder to create effective firebreaks that stopped the fire from spreading further east."
+      ],
+      "evidence": {
+        "quote": "The battle to put out the fire is considered to have been won by two key factors: the strong east wind dropped, and the Tower of London garrison used gunpowder to create effective firebreaks, halting further spread eastward."
+      }
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "Sunday 2 September to Wednesday 5 September 1666",
+      "variants": [
+        {
+          "text": "Sunday 2 September to Friday 7 September 1666",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"The Great Fire of London occurred from Sunday 2 September to Wednesday 5 September 1666 ...\" The fire ended on Wednesday 5 September, not on Friday 7 September.",
+          "evidence": "The Great Fire of London occurred from Sunday 2 September to Wednesday 5 September 1666, gutting the medieval City of London inside the old Roman city wall, while also extending past the wall to the west."
+        },
+        {
+          "text": "Sunday 2 September to Wednesday 5 September 1676",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"The Great Fire of London occurred from Sunday 2 September to Wednesday 5 September 1666 ...\" The year is 1666, not 1676.",
+          "evidence": "The Great Fire of London occurred from Sunday 2 September to Wednesday 5 September 1666, gutting the medieval City of London inside the old Roman city wall, while also extending past the wall to the west."
+        }
+      ]
+    },
+    "s13": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Not a single building in the City was left standing.",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "This goes further than the source, which says: \"... gutting the medieval City of London inside the old Roman city wall ...\" The source does not say that nothing was left. \"Not a single\" turns a strong claim into an absolute one.",
+          "evidence": "The Great Fire of London occurred from Sunday 2 September to Wednesday 5 September 1666, gutting the medieval City of London inside the old Roman city wall, while also extending past the wall to the west."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "although some historians have challenged this belief",
+      "variants": [
+        {
+          "text": "and no historian has challenged this belief",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... although some historians have challenged this belief.\" Some historians did challenge it. \"No historian\" turns \"some\" into \"none\".",
+          "tolerance": 1,
+          "evidence": "The death toll is generally thought to have been relatively small, although some historians have challenged this belief."
+        },
+        {
+          "text": "although some historians have chalenged this belief",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word \"challenged\" has a double \"l\": \"challenged\"."
+        }
+      ]
+    },
+    "s14": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "The loss of so much of the old city was clearly the worst disaster in the history of England.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "This is a judgement, not a fact. \"Clearly the worst\" ranks disasters, and a ranking like that cannot be counted. The source only says what was gutted and when."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "Pudding Lane",
+      "variants": [
+        {
+          "text": "Pye Corner",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"The fire started in a bakery in Pudding Lane shortly after midnight on Sunday 2 September and spread rapidly.\" The bakery was in Pudding Lane, not in Pye Corner.",
+          "evidence": "The fire started in a bakery in Pudding Lane shortly after midnight on Sunday 2 September and spread rapidly."
+        },
+        {
+          "text": "Puding Lane",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"The fire started in a bakery in Pudding Lane shortly after midnight on Sunday 2 September and spread rapidly.\" The correct spelling is \"Pudding Lane\", not \"Puding Lane\".",
+          "evidence": "The fire started in a bakery in Pudding Lane shortly after midnight on Sunday 2 September and spread rapidly."
+        }
+      ]
+    },
+    "s15": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "The baker had forgotten to put out his oven the evening before.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "This sentence is not in the source. It says only: \"The fire started in a bakery in Pudding Lane shortly after midnight on Sunday 2 September and spread rapidly.\" It names no cause for the fire.",
+          "evidence": "The fire started in a bakery in Pudding Lane shortly after midnight on Sunday 2 September and spread rapidly."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "main",
+      "variants": [
+        {
+          "text": "only",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"The main firefighting technique of the time was the creation of firebreaks ...\" It was the main technique, not the only one.",
+          "evidence": "The main firefighting technique of the time was the creation of firebreaks by means of removing structures in the fire's path."
+        },
+        {
+          "text": "mane",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "\"Mane\" is a real word (the hair on a horse's neck), but here you need \"main\", which means \"most important\"."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "hesitated",
+      "variants": [
+        {
+          "text": "hurried",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"The Lord Mayor, Sir Thomas Bloodworth, hesitated in giving the order to employ this method.\" He hesitated; he did not hurry.",
+          "evidence": "The Lord Mayor, Sir Thomas Bloodworth, hesitated in giving the order to employ this method."
+        },
+        {
+          "text": "hesistated",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Two letters are swapped: \"hesitated\"."
+        }
+      ]
+    },
+    "s16": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Experts say that the fire could have been stopped within an hour.",
+          "errorClass": "false_authority",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The sentence refers to \"experts\" without a name or a source. This is an appeal to an unnamed authority. The source only says: \"The Lord Mayor, Sir Thomas Bloodworth, hesitated in giving the order to employ this method.\"",
+          "evidence": "The Lord Mayor, Sir Thomas Bloodworth, hesitated in giving the order to employ this method."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "but by then",
+      "variants": [
+        {
+          "text": "so by then",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "A wrong connective. \"So\" makes the late order the cause of the firestorm. The source says: \"By the time large-scale demolitions were ordered on Sunday night, the wind had already fanned the bakery fire into a firestorm ...\" The firestorm came first, so \"but\" fits.",
+          "tolerance": 1
+        },
+        {
+          "text": "but by than",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "\"Than\" is used to compare things. Here you need \"then\", which points to a time."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "north",
+      "variants": [
+        {
+          "text": "south",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"The fire pushed north on Monday into the heart of the City.\" It pushed north, not south.",
+          "evidence": "The fire pushed north on Monday into the heart of the City."
+        },
+        {
+          "text": "norht",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Two letters are swapped: \"north\"."
+        }
+      ]
+    },
+    "s17": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "The fire stayed small and never left the bakery.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "This contradicts the text itself. It said that the fire \"spread rapidly\" and that \"the fire pushed north into the heart of the City\"."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "rumours",
+      "variants": [
+        {
+          "text": "proof",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Order in the streets broke down as rumours arose of suspicious foreigners setting fires.\" Rumours are not proof. The rendition makes unconfirmed talk look like fact.",
+          "evidence": "Order in the streets broke down as rumours arose of suspicious foreigners setting fires."
+        },
+        {
+          "text": "rumuors",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Two letters are swapped: \"rumours\"."
+        }
+      ]
+    },
+    "s18": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Since so many people believed the rumours about foreigners, the rumours must have been true.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "How many people believe something does not make it true. This is a false conclusion: belief is treated as proof. The source only says that \"rumours arose of suspicious foreigners setting fires\"."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "England's enemies in the ongoing Second Anglo-Dutch War",
+      "variants": [
+        {
+          "text": "England's enemies in the ongoing Third Anglo-Dutch War",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"... England's enemies in the ongoing Second Anglo-Dutch War ...\" It was the Second Anglo-Dutch War, not the Third.",
+          "tolerance": 1,
+          "evidence": "The fears of the homeless focused on the French and Dutch, England's enemies in the ongoing Second Anglo-Dutch War; these substantial immigrant groups became victims of street violence."
+        },
+        {
+          "text": "England's allies in the ongoing Second Anglo-Dutch War",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... the French and Dutch, England's enemies in the ongoing Second Anglo-Dutch War ...\" They were enemies, not allies.",
+          "tolerance": 1,
+          "evidence": "The fears of the homeless focused on the French and Dutch, England's enemies in the ongoing Second Anglo-Dutch War; these substantial immigrant groups became victims of street violence."
+        },
+        {
+          "text": "Englands enemies in the ongoing Second Anglo-Dutch War",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The possessive needs an apostrophe: \"England's\".",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s19": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "This shows that frightened crowds always turn against foreigners.",
+          "errorClass": "overgeneralization",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "One case is turned into a rule for all. The source reports what happened in London in 1666: \"... these substantial immigrant groups became victims of street violence.\" It does not say that this always happens."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "nearly the whole city",
+      "variants": [
+        {
+          "text": "the whole city",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"On Tuesday, the fire spread over nearly the whole city ...\" The word \"nearly\" matters: not all of the city burned.",
+          "tolerance": 1,
+          "evidence": "On Tuesday, the fire spread over nearly the whole city, destroying Old St Paul's Cathedral and leaping the River Fleet to threaten Charles II's court at Whitehall Palace."
+        },
+        {
+          "text": "all of England",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"On Tuesday, the fire spread over nearly the whole city ...\" It was the city of London, not all of England.",
+          "tolerance": 1,
+          "evidence": "On Tuesday, the fire spread over nearly the whole city, destroying Old St Paul's Cathedral and leaping the River Fleet to threaten Charles II's court at Whitehall Palace."
+        }
+      ]
+    },
+    "s20": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "The greedy, merciless flames devoured the helpless city like a hungry beast.",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "\"Greedy\", \"merciless\", \"devoured\", \"helpless\" and \"hungry beast\" are loaded words that aim at your feelings. The source is neutral: \"... destroying Old St Paul's Cathedral and leaping the River Fleet ...\""
+        }
+      ]
+    },
+    "s11": {
+      "correct": "firefighting efforts were getting underway",
+      "variants": [
+        {
+          "text": "firefighting had stopped completely",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "This contradicts the text itself. Later it says that \"the Tower of London garrison used gunpowder to create effective firebreaks\". That is firefighting, so it cannot have stopped.",
+          "tolerance": 1
+        },
+        {
+          "text": "firefighting efforts were geting underway",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word \"getting\" has a double \"t\": \"getting\".",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s12": {
+      "correct": "dropped",
+      "variants": [
+        {
+          "text": "grew stronger",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"... the strong east wind dropped ...\" The wind dropped; it did not grow stronger. A stronger wind would not have helped to win the battle.",
+          "evidence": "The battle to put out the fire is considered to have been won by two key factors: the strong east wind dropped, and the Tower of London garrison used gunpowder to create effective firebreaks, halting further spread eastward."
+        },
+        {
+          "text": "droped",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "A short word that ends in one vowel and one consonant doubles the consonant before \"-ed\": \"dropped\"."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Source read: English Wikipedia article Great Fire of London, revision 1376270657 (retrieved 2026-10-18), saved text read in full (about 8,000 words, without references and tables). The twelve excerpt sentences come from the lead section: the first two sentences of paragraph 1 and sentences 1 to 10 of paragraph 2 (sentences left out, none changed). Every excerpt sentence, every evidence quote and every variant evidence was compared with the saved article text by script (whitespace squeezed) and found.",
+    "Licence: Wikipedia text under CC BY-SA 4.0 (page footer); the data of this pack is under the same licence.",
+    "All 15 error classes of the level occur. Classes from grade 7 and from grade 10 are derived, not documented. Misspellings (chalenged, Puding, hesistated, norht, rumuors, geting, droped, Englands) and the homophone swaps (mane, than) are constructed on typical English patterns, not taken from a corpus.",
+    "The eight inserted sentences (quantity, opinion, added claim, experts, contradiction, inference, generalisation, loaded wording) are invented, harmless and not in the Original; the explanations say so. The place name Pye Corner and the idea of a Third Anglo-Dutch War are plausible wrong values outside the excerpt.",
+    "Not verified: whether the article's statements are right in the world; the death toll and dates follow the article (some historians dispute the small death toll, which the excerpt itself says). The rest of the article is not used, so the excerpt stays within two neighbouring paragraphs of the lead.",
+    "The source is saved as PDF under public/quellen/en/great-fire.pdf (made by the lead) for the mode source."
+  ]
+}

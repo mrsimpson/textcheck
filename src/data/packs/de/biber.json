@@ -1,0 +1,417 @@
+{
+  "id": "biber",
+  "title": "Biber",
+  "language": "de",
+  "topic": "Biber: Körper und Zähne",
+  "source": {
+    "title": "Biber – Klexikon – das Kinderlexikon",
+    "url": "https://klexikon.zum.de/index.php?title=Biber&oldid=164414",
+    "revision": "164414",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://klexikon.zum.de/index.php?title=Biber&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/biber.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Biber sind Säugetiere und Nagetiere, die im Süßwasser oder am Ufer leben, also in Flüssen und Seen."
+    },
+    {
+      "text": "Biber werden etwa 80 bis 100 Zentimeter lang.",
+      "section": "Wie sehen Biber aus?"
+    },
+    {
+      "text": "Hinzu kommt der Schwanz, der um die 30 Zentimeter lang wird.",
+      "section": "Wie sehen Biber aus?"
+    },
+    {
+      "text": "Unter den Nagetieren sind Biber fast die größten: Nur Capybaras werden größer.",
+      "section": "Wie sehen Biber aus?"
+    },
+    {
+      "text": "Ein Biber wird außerdem um die 30 Kilogramm schwer.",
+      "section": "Wie sehen Biber aus?"
+    },
+    {
+      "text": "Der Pelz ist meist braun und sehr dicht.",
+      "section": "Wie sehen Biber aus?"
+    },
+    {
+      "text": "Als Nagetier hat der Biber Nagezähne.",
+      "section": "Wie sehen Biber aus?"
+    },
+    {
+      "text": "Sie wachsen ein Leben lang nach und werden dreieinhalb Zentimeter lang.",
+      "section": "Wie sehen Biber aus?"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Biber leben im ",
+        {
+          "slot": "n1"
+        },
+        " und am Ufer, also in Flüssen und ",
+        {
+          "slot": "n2"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Biber sind Säugetiere und Nagetiere, die im Süßwasser oder am Ufer leben, also in Flüssen und Seen."
+      }
+    },
+    {
+      "sentence": [
+        "Ein Biber ist etwa ",
+        {
+          "slot": "s1"
+        },
+        " Zentimeter lang."
+      ],
+      "evidence": {
+        "quote": "Biber werden etwa 80 bis 100 Zentimeter lang."
+      }
+    },
+    {
+      "sentence": [
+        "Dazu kommt noch der ",
+        {
+          "slot": "s2"
+        },
+        ". Er wird etwa ",
+        {
+          "slot": "s3"
+        },
+        " Zentimeter lang."
+      ],
+      "evidence": {
+        "quote": "Hinzu kommt der Schwanz, der um die 30 Zentimeter lang wird."
+      }
+    },
+    {
+      "sentence": [
+        "Unter allen ",
+        {
+          "slot": "s4"
+        },
+        " sind nur die ",
+        {
+          "slot": "s5"
+        },
+        " größer als der Biber."
+      ],
+      "evidence": {
+        "quote": "Unter den Nagetieren sind Biber fast die größten: Nur Capybaras werden größer."
+      }
+    },
+    {
+      "sentence": [
+        "Außerdem wiegt ein Biber ungefähr ",
+        {
+          "slot": "s6"
+        },
+        " ",
+        {
+          "slot": "s7"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Ein Biber wird außerdem um die 30 Kilogramm schwer."
+      }
+    },
+    {
+      "sentence": [
+        "Der ",
+        {
+          "slot": "s9"
+        },
+        " ist meistens braun und sehr dicht."
+      ],
+      "evidence": {
+        "quote": "Der Pelz ist meist braun und sehr dicht."
+      }
+    },
+    {
+      "sentence": [
+        "Weil der Biber ein Nagetier ",
+        {
+          "slot": "s10"
+        },
+        " hat er ",
+        {
+          "slot": "s11"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Als Nagetier hat der Biber Nagezähne."
+      }
+    },
+    {
+      "sentence": [
+        "Diese Zähne ",
+        {
+          "slot": "s12"
+        },
+        " ",
+        {
+          "slot": "s13"
+        },
+        " nach und werden ",
+        {
+          "slot": "s14"
+        },
+        " Zentimeter lang."
+      ],
+      "evidence": {
+        "quote": "Sie wachsen ein Leben lang nach und werden dreieinhalb Zentimeter lang."
+      }
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "80 bis 100",
+      "variants": [
+        {
+          "text": "60 bis 80",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Biber werden etwa 80 bis 100 Zentimeter lang.“ Biber werden etwa 80 bis 100 Zentimeter lang.",
+          "evidence": "Biber werden etwa 80 bis 100 Zentimeter lang.",
+          "tolerance": 1
+        },
+        {
+          "text": "80 bis 200",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Biber werden etwa 80 bis 100 Zentimeter lang.“ Ein Biber ist höchstens etwa 100 Zentimeter lang.",
+          "evidence": "Biber werden etwa 80 bis 100 Zentimeter lang.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s2": {
+      "correct": "Schwanz",
+      "variants": [
+        {
+          "text": "Schwans",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort endet mit „z“. Wenn du das Wort verlängerst, hörst du ein „ts“: Schwänze. Darum schreibt man „z“."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "30",
+      "variants": [
+        {
+          "text": "50",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Hinzu kommt der Schwanz, der um die 30 Zentimeter lang wird.“ Der Schwanz wird um die 30 Zentimeter lang.",
+          "evidence": "Hinzu kommt der Schwanz, der um die 30 Zentimeter lang wird."
+        },
+        {
+          "text": "3",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Hinzu kommt der Schwanz, der um die 30 Zentimeter lang wird.“ Der Schwanz wird um die 30 Zentimeter lang, nicht nur 3.",
+          "evidence": "Hinzu kommt der Schwanz, der um die 30 Zentimeter lang wird."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "Nagetieren",
+      "variants": [
+        {
+          "text": "Nagetiren",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Im Wort fehlt ein Buchstabe: Nagetieren. Es kommt von „Tier“."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "Capybaras",
+      "variants": [
+        {
+          "text": "Murmeltiere",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Unter den Nagetieren sind Biber fast die größten: Nur Capybaras werden größer.“ Nur Capybaras werden größer als Biber.",
+          "evidence": "Unter den Nagetieren sind Biber fast die größten: Nur Capybaras werden größer."
+        },
+        {
+          "text": "Mäuse",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Unter den Nagetieren sind Biber fast die größten: Nur Capybaras werden größer.“ Biber sind fast die größten Nagetiere. Mäuse sind viel kleiner.",
+          "evidence": "Unter den Nagetieren sind Biber fast die größten: Nur Capybaras werden größer."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "30",
+      "variants": [
+        {
+          "text": "300",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Ein Biber wird außerdem um die 30 Kilogramm schwer.“ Ein Biber wird um die 30 Kilogramm schwer.",
+          "evidence": "Ein Biber wird außerdem um die 30 Kilogramm schwer."
+        },
+        {
+          "text": "13",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Ein Biber wird außerdem um die 30 Kilogramm schwer.“ Es sind um die 30 Kilogramm, nicht 13.",
+          "evidence": "Ein Biber wird außerdem um die 30 Kilogramm schwer."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "Kilogramm",
+      "variants": [
+        {
+          "text": "Kilogram",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Am Ende fehlt ein „m“: Kilogramm. Das Wort hat zwei „m“."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "Pelz",
+      "variants": [
+        {
+          "text": "Pels",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort endet mit „lz“. Ein Wort mit gleichem Ende ist Salz."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "ist,",
+      "variants": [
+        {
+          "text": "ist",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Nach „Weil der Biber ein Nagetier ist“ steht ein Komma. Es trennt den Nebensatz vom Rest."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "Nagezähne",
+      "variants": [
+        {
+          "text": "Nagezehne",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort kommt von „Zahn“. Darum schreibt man es mit „ä“: Zähne."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "wachsen",
+      "variants": [
+        {
+          "text": "waksen",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "In „wachsen“ hörst du ein „ks“. Man schreibt es aber mit „chs“."
+        }
+      ]
+    },
+    "s13": {
+      "correct": "ein Leben lang",
+      "variants": [
+        {
+          "text": "ein Jahr lang",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Sie wachsen ein Leben lang nach und werden dreieinhalb Zentimeter lang.“ Die Nagezähne wachsen ein Leben lang nach.",
+          "evidence": "Sie wachsen ein Leben lang nach und werden dreieinhalb Zentimeter lang.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s14": {
+      "correct": "dreieinhalb",
+      "variants": [
+        {
+          "text": "zweieinhalb",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Sie wachsen ein Leben lang nach und werden dreieinhalb Zentimeter lang.“ Sie werden dreieinhalb Zentimeter lang.",
+          "evidence": "Sie wachsen ein Leben lang nach und werden dreieinhalb Zentimeter lang."
+        },
+        {
+          "text": "dreizehn",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Sie wachsen ein Leben lang nach und werden dreieinhalb Zentimeter lang.“ Die Zähne werden dreieinhalb Zentimeter lang, nicht dreizehn.",
+          "evidence": "Sie wachsen ein Leben lang nach und werden dreieinhalb Zentimeter lang."
+        }
+      ]
+    },
+    "n1": {
+      "correct": "Süßwasser",
+      "variants": [
+        {
+          "text": "Süswasser",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach dem langen „ü“ steht „ß“: Süßwasser. Das Wort ist aus „süß“ und „Wasser“ gemacht."
+        }
+      ]
+    },
+    "n2": {
+      "correct": "Seen",
+      "variants": [
+        {
+          "text": "Meeren",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Biber sind Säugetiere und Nagetiere, die im Süßwasser oder am Ufer leben, also in Flüssen und Seen.“ Biber leben in Flüssen und Seen, nicht in Meeren.",
+          "evidence": "Biber sind Säugetiere und Nagetiere, die im Süßwasser oder am Ufer leben, also in Flüssen und Seen."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Klexikon-Artikel Biber, Revision 164414 (abgerufen am 18.10.2026, Abschnitt „Wie sehen Biber aus?“); die 8 Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de; die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Nur Klassen, die ab Klasse 3 vorkommen: Rechtschreibung (Ableitung, Doppelkonsonant, tz, ck, ß), Flüchtigkeitsfehler, Zeichensetzung, Zahl/Name/Ort. Die Falschschreibungen sind konstruiert, nach den Schwerpunkten der IQB-Handreichung.",
+    "Geändert (Einleitung): Der Auszug beginnt jetzt mit dem ersten Satz des Artikels; gestrichen ist der Satz zu Weibchen und Männchen. Der erste Variantensatz sagt in eigenen Worten, wo Biber leben.",
+    "Ausgelassen: die Sätze zum Einfetten des Pelzes im Auszug (Original: nicht Teil des Auszugs); „Capybaras“ steht im Original und bleibt unverändert.",
+    "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt.",
+    "Die Quelle liegt als PDF unter public/quellen/de/biber.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+  ]
+}

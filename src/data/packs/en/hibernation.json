@@ -1,0 +1,526 @@
+{
+  "id": "hibernation",
+  "title": "Hibernation",
+  "language": "en",
+  "topic": "Hibernation: how animals get through the winter",
+  "source": {
+    "title": "Hibernation – Simple English Wikipedia, the free encyclopedia",
+    "url": "https://simple.wikipedia.org/w/index.php?title=Hibernation&oldid=10379006",
+    "revision": "10379006",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "authorsUrl": "https://simple.wikipedia.org/w/index.php?title=Hibernation&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/en/hibernation.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Hibernation is a time of inactivity."
+    },
+    {
+      "text": "Some endothermic (warm-blooded) animals hibernate, usually during the winter, when food is short."
+    },
+    {
+      "text": "They regulate their metabolism to consume less energy."
+    },
+    {
+      "text": "They lower their body temperature, slow their breathing, and slow other vital functions."
+    },
+    {
+      "text": "During hibernation, the body uses fat for energy, which the animal has gathered in summer and autumn."
+    },
+    {
+      "text": "Animals try and eat as much as they can to increase the fats in their body."
+    },
+    {
+      "text": "Mammals like bats, ground squirrels (like marmots), hedgehogs, marsupials and others hibernate."
+    },
+    {
+      "text": "The phases of sleeping (called torpor) are different for the different animals."
+    },
+    {
+      "text": "Hedgehogs sleep for 1–3 weeks, without waking, The fat dormouse sleeps for 20–33 days, without waking."
+    },
+    {
+      "text": "The winter sleep of bears is not as deep as hibernation."
+    },
+    {
+      "text": "Only mammals hibernate."
+    },
+    {
+      "text": "However, a few birds including hummingbirds do something similar."
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Hibernation is a period of inactivity that some ",
+        {
+          "slot": "s1"
+        },
+        " animals go through."
+      ],
+      "evidence": {
+        "quote": "Some endothermic (warm-blooded) animals hibernate, usually during the winter, when food is short."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s2"
+        },
+        " they hibernate during the winter, when food is scarce."
+      ],
+      "evidence": {
+        "quote": "Some endothermic (warm-blooded) animals hibernate, usually during the winter, when food is short."
+      }
+    },
+    {
+      "sentence": [
+        "Their metabolism is regulated ",
+        {
+          "slot": "s3"
+        },
+        " the body consumes less energy."
+      ],
+      "evidence": {
+        "quote": "They regulate their metabolism to consume less energy."
+      }
+    },
+    {
+      "sentence": [
+        "The animals ",
+        {
+          "slot": "s4"
+        },
+        " their body temperature and slow down their breathing and other vital functions."
+      ],
+      "evidence": {
+        "quote": "They lower their body temperature, slow their breathing, and slow other vital functions."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s5"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "The body then gets its energy from fat that the animal gathered in ",
+        {
+          "slot": "s6"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "During hibernation, the body uses fat for energy, which the animal has gathered in summer and autumn."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s7"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "To build up more body fat, animals try to eat ",
+        {
+          "slot": "s8"
+        },
+        " they can."
+      ],
+      "evidence": {
+        "quote": "Animals try and eat as much as they can to increase the fats in their body."
+      }
+    },
+    {
+      "sentence": [
+        "Mammals such as bats, hedgehogs and marsupials hibernate, and so do ground squirrels such as ",
+        {
+          "slot": "s9"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Mammals like bats, ground squirrels (like marmots), hedgehogs, marsupials and others hibernate."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s10"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "The phases of sleep, which are called torpor, are ",
+        {
+          "slot": "s11"
+        },
+        " for different animals."
+      ],
+      "evidence": {
+        "quote": "The phases of sleeping (called torpor) are different for the different animals."
+      }
+    },
+    {
+      "sentence": [
+        "A hedgehog sleeps for 1–3 weeks, ",
+        {
+          "slot": "s12"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Hedgehogs sleep for 1–3 weeks, without waking"
+      }
+    },
+    {
+      "sentence": [
+        "The fat dormouse also sleeps for ",
+        {
+          "slot": "s13"
+        },
+        " without waking."
+      ],
+      "evidence": {
+        "quote": "The fat dormouse sleeps for 20–33 days, without waking."
+      }
+    },
+    {
+      "sentence": [
+        "Bears also sleep through the winter, but their sleep is ",
+        {
+          "slot": "s14"
+        },
+        " deep as hibernation."
+      ],
+      "evidence": {
+        "quote": "The winter sleep of bears is not as deep as hibernation."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s15"
+        },
+        " mammals hibernate."
+      ],
+      "evidence": {
+        "quote": "Only mammals hibernate."
+      }
+    },
+    {
+      "sentence": [
+        "However, a few birds, among them ",
+        {
+          "slot": "s16"
+        },
+        ", do something similar."
+      ],
+      "evidence": {
+        "quote": "However, a few birds including hummingbirds do something similar."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s17"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "warm-blooded",
+      "variants": [
+        {
+          "text": "cold-blooded",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Source: \"Some endothermic (warm-blooded) animals hibernate, usually during the winter, when food is short.\" The animals are warm-blooded, not cold-blooded.",
+          "evidence": "Some endothermic (warm-blooded) animals hibernate, usually during the winter, when food is short."
+        },
+        {
+          "text": "warm-bloded",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "A letter is missing: warm-blooded has two o's in a row after the l. Check the word letter by letter."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "Usually,",
+      "variants": [
+        {
+          "text": "Always,",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Source: \"Some endothermic (warm-blooded) animals hibernate, usually during the winter, when food is short.\" The text says \"usually\", so it is not always the case. The word \"always\" turns a tendency into a rule.",
+          "evidence": "Some endothermic (warm-blooded) animals hibernate, usually during the winter, when food is short."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "so that",
+      "variants": [
+        {
+          "text": "although",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Reading the sentence shows that \"although\" does not fit. The metabolism is regulated for a reason: \"They regulate their metabolism to consume less energy.\" \"Although\" turns the purpose into a contrast.",
+          "evidence": "They regulate their metabolism to consume less energy."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "lower",
+      "variants": [
+        {
+          "text": "raise",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Source: \"They lower their body temperature, slow their breathing, and slow other vital functions.\" The animals lower their body temperature, they do not raise it.",
+          "evidence": "They lower their body temperature, slow their breathing, and slow other vital functions."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Some of them stay in this state for more than a year.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "This sentence is not in the source. The source only gives sleep periods of 1–3 weeks for hedgehogs and 20–33 days for the fat dormouse, and says nothing about a year."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "summer and autumn",
+      "variants": [
+        {
+          "text": "winter and spring",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Source: \"During hibernation, the body uses fat for energy, which the animal has gathered in summer and autumn.\" The fat is gathered before hibernation, in summer and autumn, not in winter and spring.",
+          "tolerance": 1,
+          "evidence": "During hibernation, the body uses fat for energy, which the animal has gathered in summer and autumn."
+        },
+        {
+          "text": "summer and autum",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The last letter n of \"autumn\" is missing. Check the spelling of the season."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Because they have stored fat, hibernating animals cannot starve in winter.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "This sentence is not in the source. It draws a conclusion the text does not support: a fat reserve does not make starving impossible. This is a faulty inference, because a \"because\" links two things that the text does not link."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "as much as",
+      "variants": [
+        {
+          "text": "as little as",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Source: \"Animals try and eat as much as they can to increase the fats in their body.\" The animals eat as much as they can, not as little as possible, so that they increase their body fat.",
+          "evidence": "Animals try and eat as much as they can to increase the fats in their body."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "marmots",
+      "variants": [
+        {
+          "text": "meerkats",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Source: \"Mammals like bats, ground squirrels (like marmots), hedgehogs, marsupials and others hibernate.\" The ground squirrel named there is the marmot, not the meerkat.",
+          "evidence": "Mammals like bats, ground squirrels (like marmots), hedgehogs, marsupials and others hibernate."
+        },
+        {
+          "text": "marmosets",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Source: \"Mammals like bats, ground squirrels (like marmots), hedgehogs, marsupials and others hibernate.\" Marmosets are small monkeys. The animals the source names with ground squirrels are marmots.",
+          "evidence": "Mammals like bats, ground squirrels (like marmots), hedgehogs, marsupials and others hibernate."
+        },
+        {
+          "text": "marmotts",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word \"marmot\" ends in a single t. Doubling the consonant is a typical mistake after a short vowel, but it does not apply here."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Bats are by far the most fascinating animals that hibernate.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "This sentence is not in the source. \"By far the most fascinating\" is an opinion, not a fact. Here a judgement is presented as if it were a fact."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "different",
+      "variants": [
+        {
+          "text": "the same",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "This contradicts the text itself: a hedgehog sleeps for 1–3 weeks, the fat dormouse for 20–33 days, so the phases are not the same. A contradiction means that two sentences of one text cannot both be true.",
+          "evidence": "The phases of sleeping (called torpor) are different for the different animals."
+        },
+        {
+          "text": "diffrent",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The word has an e after the f: different. Say it in three parts: dif-fe-rent."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "without waking",
+      "variants": [
+        {
+          "text": "waking up every day",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Source: \"Hedgehogs sleep for 1–3 weeks, without waking\" The hedgehogs sleep without waking.",
+          "tolerance": 1,
+          "evidence": "Hedgehogs sleep for 1–3 weeks, without waking"
+        }
+      ]
+    },
+    "s13": {
+      "correct": "20–33 days",
+      "variants": [
+        {
+          "text": "20–33 weeks",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Source: \"The fat dormouse sleeps for 20–33 days, without waking.\" The unit is days, not weeks.",
+          "evidence": "The fat dormouse sleeps for 20–33 days, without waking."
+        },
+        {
+          "text": "20–38 days",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "Source: \"The fat dormouse sleeps for 20–33 days, without waking.\" The second number is 33, not 38.",
+          "evidence": "The fat dormouse sleeps for 20–33 days, without waking."
+        }
+      ]
+    },
+    "s14": {
+      "correct": "not as",
+      "variants": [
+        {
+          "text": "just as",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Source: \"The winter sleep of bears is not as deep as hibernation.\" The sentence begins with \"but\", so it must name a difference. A negation is turned around: the bears' winter sleep is not as deep.",
+          "evidence": "The winter sleep of bears is not as deep as hibernation."
+        }
+      ]
+    },
+    "s15": {
+      "correct": "Only",
+      "variants": [
+        {
+          "text": "Most",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Source: \"Only mammals hibernate.\" The source says that only mammals hibernate. \"Most mammals\" changes the group and says something different.",
+          "evidence": "Only mammals hibernate."
+        },
+        {
+          "text": "All",
+          "errorClass": "overgeneralization",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Source: \"Mammals like bats, ground squirrels (like marmots), hedgehogs, marsupials and others hibernate.\" The source names some mammals that hibernate, such as bats and hedgehogs. It does not say that all of them do. One group is turned into a rule for everybody.",
+          "evidence": "Mammals like bats, ground squirrels (like marmots), hedgehogs, marsupials and others hibernate."
+        }
+      ]
+    },
+    "s16": {
+      "correct": "hummingbirds",
+      "variants": [
+        {
+          "text": "penguins",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Source: \"However, a few birds including hummingbirds do something similar.\" The birds named there are hummingbirds, not penguins.",
+          "evidence": "However, a few birds including hummingbirds do something similar."
+        },
+        {
+          "text": "humingbirds",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The letter m is missing in the middle of the word: hummingbirds."
+        }
+      ]
+    },
+    "s17": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Since some birds and mammals hibernate, every small animal must do the same in winter.",
+          "errorClass": "overgeneralization",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "This sentence is not in the source. It makes a rule for all small animals from a few cases: the source says that bats and hedgehogs hibernate and \"a few birds\" do something similar. This is overgeneralisation: from some cases to all."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Source read: Simple English Wikipedia article \"Hibernation\", revision 10379006 (retrieved 18.10.2026, saved text of the whole article, about 170 words; references, tables and boxes left out). The twelve excerpt sentences stand verbatim in the saved article text (checked by script, as were all evidence quotes); the sentences left out are \"They fall into a sleep-like state.\" and \"They hibernate from the end of autumn to the start of winter.\" The article is short, so the excerpt takes nearly all of it. One excerpt entry holds two clauses as the source has them (\"Hedgehogs sleep for 1–3 weeks, without waking, The fat dormouse sleeps for 20–33 days, without waking.\"); the rendition splits it into two sentences.",
+    "Licence: Simple English Wikipedia text under CC BY-SA 4.0 (licence link and page history as authors list); the data of this pack is under the same licence.",
+    "Error types: the misspellings (warm-bloded, autum, marmotts, diffrent, humingbirds) are constructed on typical patterns (omitted or doubled letters), not taken from learner data; the classes from grade 7 (quantity or degree, overgeneralisation, faulty inference, opinion as fact) are derived, not documented. The sentences s5, s7, s10 and s17 are insertions that the Original does not contain.",
+    "Not verified: whether the article is right in biology. The pack checks the comparison with this source, not the science. The source itself says \"Only mammals hibernate\" and then names birds that do \"something similar\"; the pack keeps both sentences as they stand.",
+    "The source PDF public/quellen/en/hibernation.pdf is made by the lead; source.pdf names its path."
+  ]
+}

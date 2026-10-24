@@ -3,8 +3,8 @@
 ## Choose the source
 
 - Needs: you may reuse and republish it, and you can open it completely. Preferred, in this order:
-  1. Children's and school encyclopedias under CC BY-SA (German: Klexikon for grades 3-6; Wikipedia, simple
-     language, for 7+; English: Simple English Wikipedia for grades 3-8, English Wikipedia for 9+).
+  1. Children's and school encyclopedias under CC BY-SA (German: Klexikon for short texts; Wikipedia, simple
+     language, for long ones; English: Simple English Wikipedia for short and medium texts, English Wikipedia for long ones).
   2. Official texts that allow reuse (laws, public bodies with an open licence, CC BY / CC0 pages).
   3. Texts the creator supplies with a licence.
 - Not allowed: newspaper articles, textbooks, tests of publishers, anything without a licence statement.
@@ -21,7 +21,7 @@
 - Rate limits: on HTTP 429 or 403, stop, wait, try again later, then report. No loops, no tricks (other headers, other
   hosts). Every request has a cost for the source.
 - Facts you will need to judge errors (numbers, names, definitions) stand in the source. If the source looks wrong
-  or outdated, take another source; the pack checks the Variante against the source, not the source against the world.
+  or outdated, take another source; the pack checks the rendition against the source, not the source against the world.
 
 ## Record
 

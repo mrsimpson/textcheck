@@ -1,26 +1,22 @@
 # yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/interactive/playthrough.v1.schema.json
-# A round of the Fledermäuse pack with seed 8. Its errors: "viele" (word 12), "trotzdem" (word 27) and "sechs bis zehn
-# Monate" (words 64 to 67, tolerance 2). One word of the long error is a hit; two words before it and one
-# after it, in its sentence, are within the tolerance; the third word before it and the first word of the next
-# sentence are wrong; the third error is missed.
-route: klasse-5-6
-seed: 8
+# A round of the comparison with a source, first stage, with the Biber text (seed 7). Its errors: "Meeren" (word 11),
+# "ein Jahr lang" (words 70 to 72, tolerance 1) and "dreizehn" (word 76). One word of the long error is a hit; the word
+# before it and the word after it, in its sentence, are within the tolerance; a word of another sentence is wrong; the
+# error "dreizehn" is missed.
+route: quelle-1
+seed: 7
 steps:
+  - inputs: [{ kind: action, name: begin }, { kind: action, name: view, value: rendition }]
+    state: { phase: marking, view: rendition, packId: biber }
   - inputs:
-      - { kind: action, name: toggle, value: 66 }
-      - { kind: action, name: toggle, value: 63 }
-      - { kind: action, name: toggle, value: 62 }
-      - { kind: action, name: toggle, value: 68 }
-      - { kind: action, name: toggle, value: 61 }
-      - { kind: action, name: toggle, value: 70 }
-      - { kind: action, name: toggle, value: 12 }
-    state: { marked: [12, 61, 62, 63, 66, 68, 70] }
+      - { kind: action, name: toggle, value: 71 }
+      - { kind: action, name: toggle, value: 69 }
+      - { kind: action, name: toggle, value: 73 }
+      - { kind: action, name: toggle, value: 11 }
+      - { kind: action, name: toggle, value: 30 }
+    state: { marked: [11, 30, 69, 71, 73] }
   - inputs: [{ kind: action, name: check }]
     state:
       phase: result
-      result:
-        total: 3
-        found: 2
-        wrong: 2
-        tolerated: 3
-    announce: "Geprüft: 2 von 3 Fehlern gefunden. Fälschlich markiert: 2."
+      result: { total: 3, found: 2, wrong: 1, tolerated: 2 }
+    announce: "Geprüft: 2 von 3 Fehlern gefunden. Fälschlich markiert: 1."

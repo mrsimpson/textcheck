@@ -1,13 +1,13 @@
 import { expect, test, type Page } from "playwright/test";
+import { openRound } from "./helpers.ts";
 
 async function open(page: Page): Promise<void> {
-  await page.goto("./app/?seed=1#klasse-5-6");
-  await expect(page.locator(".interactive-app")).toHaveAttribute("data-mounted", "");
+  await openRound(page, "./app/?seed=1#text-1");
 }
 
 const textStyle = (page: Page, property: string): Promise<string> =>
   page
-    .locator(".panel.original p")
+    .locator(".words p")
     .first()
     .evaluate((element, name) => getComputedStyle(element).getPropertyValue(name), property);
 
@@ -33,6 +33,7 @@ test.describe("Settings for reading", () => {
     await expect.poll(() => textStyle(page, "font-weight")).toBe("700");
     await page.reload();
     await expect(page.locator(".interactive-app")).toHaveAttribute("data-mounted", "");
+    await page.getByRole("button", { name: "Verstanden, los" }).click();
     await expect.poll(() => textStyle(page, "font-weight")).toBe("700");
     await page.getByRole("button", { name: "Schrift", exact: true }).click();
     await page.getByRole("button", { name: "Zurücksetzen" }).click();
@@ -83,10 +84,5 @@ test.describe("Settings for reading", () => {
     const middle = (box: { y: number; height: number } | null): number => (box?.y ?? 0) + (box?.height ?? 0) / 2;
     expect(Math.abs(middle(heading) - middle(button))).toBeLessThan(6);
     expect((column?.x ?? 0) + (column?.width ?? 0) - ((button?.x ?? 0) + (button?.width ?? 0))).toBeLessThan(24);
-    // the age group comes straight under the heading
-    const picker = await page.locator(".picker").boundingBox();
-    const gap = (picker?.y ?? 0) - ((heading?.y ?? 0) + (heading?.height ?? 0));
-    expect(gap).toBeGreaterThanOrEqual(0);
-    expect(gap).toBeLessThan(40);
   });
 });

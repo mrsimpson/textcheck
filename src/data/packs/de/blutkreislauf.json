@@ -1,0 +1,661 @@
+{
+  "id": "blutkreislauf",
+  "title": "Blutkreislauf",
+  "language": "de",
+  "topic": "Blutkreislauf: Gefäße, Aufgaben und offene Kreisläufe",
+  "source": {
+    "title": "Blutkreislauf – Wikipedia",
+    "url": "https://de.wikipedia.org/w/index.php?title=Blutkreislauf&oldid=270946593",
+    "revision": "270946593",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Blutkreislauf&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/blutkreislauf.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Der Blutkreislauf, auch Kreislauf, Blutzirkulation und kurz Zirkulation genannt, ist das Strömungssystem des Blutes im Körper des Menschen und der meisten Tiere, ausgehend vom Herzen zu den Organen und wieder zurück zum Herzen."
+    },
+    {
+      "text": "Herz und Blutkreislauf zusammen bilden das Herz-Kreislauf-System (kardiovaskuläres System)."
+    },
+    {
+      "text": "Seine Aufgabe ist die Versorgung der Organe mit Nährstoffen, Signalstoffen und anderem, die Entsorgung von Stoffwechselprodukten und bei den meisten Gruppen mit Kreislauf auch die Versorgung mit Sauerstoff und der Abtransport von Kohlendioxid."
+    },
+    {
+      "text": "Je nach Tiergruppe können weitere Aufgaben hinzu kommen."
+    },
+    {
+      "text": "Blutgefäße, die Blut zum Herzen leiten, werden als Venen (Blutadern) bezeichnet; diejenigen Gefäße, die Blut vom Herzen zu den Organen leiten, nennt man Arterien (Schlagadern)."
+    },
+    {
+      "text": "Diese Bezeichnungen gelten unabhängig davon, ob das Blut im jeweiligen Gefäß sauerstoffarm oder sauerstoffreich ist."
+    },
+    {
+      "text": "Je stärker sich die Blutgefäße verzweigen, desto kleiner wird ihr Durchmesser."
+    },
+    {
+      "text": "Bei Tieren mit einem geschlossenen Kreislaufsystem werden Arterien zuerst zu Arteriolen und diese zu Kapillaren, in welchen der größte Teil des Stoffaustausches mit den Geweben stattfindet."
+    },
+    {
+      "text": "Diese führen wiederum zusammen und bilden die postkapillären Venolen, die sich zu Venen vereinigen."
+    },
+    {
+      "text": "Bei Tieren mit einem offenen Kreislaufsystem ergießt sich die Flüssigkeit, die hier nicht Blut, sondern Hämolymphe genannt wird, aus arteriellen Blutgefäßen in die Körperhöhle, um die Organe zu umfließen."
+    },
+    {
+      "text": "Durch die Körperhöhle fließt sie zu venösen Gefäßen oder direkt zurück zum Herzen."
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Der Blutkreislauf ist das ",
+        {
+          "slot": "s1"
+        },
+        " des Blutes im Körper des Menschen und ",
+        {
+          "slot": "s2"
+        },
+        " Tiere."
+      ],
+      "evidence": {
+        "quote": "ist das Strömungssystem des Blutes im Körper des Menschen und der meisten Tiere"
+      }
+    },
+    {
+      "sentence": ["Das Blut fließt vom Herzen zu den Organen und wieder zurück zum Herzen."],
+      "evidence": {
+        "quote": "ausgehend vom Herzen zu den Organen und wieder zurück zum Herzen"
+      }
+    },
+    {
+      "sentence": [
+        "Herz und Blutkreislauf zusammen bilden das ",
+        {
+          "slot": "s3"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Herz und Blutkreislauf zusammen bilden das Herz-Kreislauf-System (kardiovaskuläres System)."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i1"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Die Aufgabe des Blutkreislaufs ist es, die Organe mit Nährstoffen zu versorgen und ",
+        {
+          "slot": "s4"
+        },
+        " zu entsorgen."
+      ],
+      "evidence": {
+        "quote": "Seine Aufgabe ist die Versorgung der Organe mit Nährstoffen, Signalstoffen und anderem, die Entsorgung von Stoffwechselprodukten"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s5"
+        },
+        " mit Kreislauf versorgt er die Organe auch mit Sauerstoff und transportiert Kohlendioxid ab."
+      ],
+      "evidence": {
+        "quote": "bei den meisten Gruppen mit Kreislauf auch die Versorgung mit Sauerstoff und der Abtransport von Kohlendioxid"
+      }
+    },
+    {
+      "sentence": ["Je nach Tiergruppe können weitere Aufgaben hinzukommen."],
+      "evidence": {
+        "quote": "Je nach Tiergruppe können weitere Aufgaben hinzu kommen."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i2"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Blutgefäße, die Blut zum Herzen leiten, nennt man ",
+        {
+          "slot": "s6"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Blutgefäße, die Blut zum Herzen leiten, werden als Venen (Blutadern) bezeichnet"
+      }
+    },
+    {
+      "sentence": [
+        "Gefäße, die Blut vom Herzen zu den Organen leiten, heißen ",
+        {
+          "slot": "s7"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "diejenigen Gefäße, die Blut vom Herzen zu den Organen leiten, nennt man Arterien (Schlagadern)"
+      }
+    },
+    {
+      "sentence": [
+        "Diese Bezeichnungen gelten ",
+        {
+          "slot": "s8"
+        },
+        " davon, ob das Blut sauerstoffarm oder sauerstoffreich ist."
+      ],
+      "evidence": {
+        "quote": "Diese Bezeichnungen gelten unabhängig davon, ob das Blut im jeweiligen Gefäß sauerstoffarm oder sauerstoffreich ist."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i3"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Je stärker sich die Blutgefäße verzweigen, ",
+        {
+          "slot": "s9"
+        },
+        " wird ihr Durchmesser."
+      ],
+      "evidence": {
+        "quote": "Je stärker sich die Blutgefäße verzweigen, desto kleiner wird ihr Durchmesser."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i4"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Bei Tieren mit einem geschlossenen Kreislaufsystem werden Arterien zuerst zu Arteriolen und diese zu ",
+        {
+          "slot": "s10"
+        },
+        ", in denen der größte Teil des Stoffaustausches mit den Geweben stattfindet."
+      ],
+      "evidence": {
+        "quote": "Bei Tieren mit einem geschlossenen Kreislaufsystem werden Arterien zuerst zu Arteriolen und diese zu Kapillaren, in welchen der größte Teil des Stoffaustausches mit den Geweben stattfindet."
+      }
+    },
+    {
+      "sentence": [
+        "Diese führen wiederum zusammen und bilden die postkapillären Venolen, die sich zu ",
+        {
+          "slot": "s11"
+        },
+        " vereinigen."
+      ],
+      "evidence": {
+        "quote": "Diese führen wiederum zusammen und bilden die postkapillären Venolen, die sich zu Venen vereinigen."
+      }
+    },
+    {
+      "sentence": [
+        "Bei Tieren mit einem offenen Kreislaufsystem heißt die Flüssigkeit nicht Blut, sondern ",
+        {
+          "slot": "s12"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Bei Tieren mit einem offenen Kreislaufsystem ergießt sich die Flüssigkeit, die hier nicht Blut, sondern Hämolymphe genannt wird"
+      }
+    },
+    {
+      "sentence": [
+        "Sie ergießt sich aus ",
+        {
+          "slot": "s13"
+        },
+        " Blutgefäßen in die Körperhöhle, um die Organe zu umfließen."
+      ],
+      "evidence": {
+        "quote": "aus arteriellen Blutgefäßen in die Körperhöhle, um die Organe zu umfließen"
+      }
+    },
+    {
+      "sentence": [
+        "Durch die Körperhöhle fließt sie zu ",
+        {
+          "slot": "s14"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Durch die Körperhöhle fließt sie zu venösen Gefäßen oder direkt zurück zum Herzen."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i5"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "Strömungssystem",
+      "variants": [
+        {
+          "text": "Nervensystem",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Der Blutkreislauf, auch Kreislauf, Blutzirkulation und kurz Zirkulation genannt, ist das Strömungssystem des Blutes im Körper des Menschen und der meisten Tiere, ausgehend vom Herzen zu den Organen und wieder zurück zum Herzen.“ Der Blutkreislauf ist ein Strömungssystem, kein Nervensystem.",
+          "evidence": "Der Blutkreislauf, auch Kreislauf, Blutzirkulation und kurz Zirkulation genannt, ist das Strömungssystem des Blutes im Körper des Menschen und der meisten Tiere, ausgehend vom Herzen zu den Organen und wieder zurück zum Herzen."
+        },
+        {
+          "text": "Strömungsystem",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das Wort besteht aus „Strömung“ und „System“. Bei der Zusammensetzung bleibt das „s“ der Fuge erhalten: Strömungssystem."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "der meisten",
+      "variants": [
+        {
+          "text": "aller",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „ist das Strömungssystem des Blutes im Körper des Menschen und der meisten Tiere“. Es heißt „der meisten Tiere“, nicht „aller Tiere“.",
+          "evidence": "ist das Strömungssystem des Blutes im Körper des Menschen und der meisten Tiere"
+        },
+        {
+          "text": "einiger",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „ist das Strömungssystem des Blutes im Körper des Menschen und der meisten Tiere“. Es sind die meisten Tiere, nicht nur einige.",
+          "evidence": "ist das Strömungssystem des Blutes im Körper des Menschen und der meisten Tiere"
+        }
+      ]
+    },
+    "s3": {
+      "correct": "Herz-Kreislauf-System",
+      "variants": [
+        {
+          "text": "Herz-Lungen-System",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Herz und Blutkreislauf zusammen bilden das Herz-Kreislauf-System (kardiovaskuläres System).“ Gemeint ist das Herz-Kreislauf-System.",
+          "evidence": "Herz und Blutkreislauf zusammen bilden das Herz-Kreislauf-System (kardiovaskuläres System)."
+        },
+        {
+          "text": "Hertz-Kreislauf-System",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort „Herz“ schreibt man mit „z“. Das „tz“ steht nur nach einem kurzen Vokal, hier steht aber ein „r“ davor. Richtig ist: Herz."
+        }
+      ]
+    },
+    "i1": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Das Herz ist das wichtigste Organ im ganzen Körper.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das ist eine Meinung, keine Tatsache. Ein Wort wie „wichtigste“ bewertet. In der Quelle steht nur, welche Aufgabe der Blutkreislauf hat."
+        },
+        {
+          "text": "Das Herz pumpt das Blut dabei durch den ganzen Körper.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort steht nur, dass das Blut vom Herzen zu den Organen und wieder zurück fließt. Vom Pumpen steht nichts im Text."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "Stoffwechselprodukte",
+      "variants": [
+        {
+          "text": "Nahrungsreste",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Seine Aufgabe ist die Versorgung der Organe mit Nährstoffen, Signalstoffen und anderem, die Entsorgung von Stoffwechselprodukten“. Entsorgt werden Stoffwechselprodukte, keine Nahrungsreste.",
+          "evidence": "Seine Aufgabe ist die Versorgung der Organe mit Nährstoffen, Signalstoffen und anderem, die Entsorgung von Stoffwechselprodukten"
+        },
+        {
+          "text": "Stoffwechselproduckte",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort kommt von „Produkt“. Man schreibt es mit „k“: Stoffwechselprodukte."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "Bei den meisten Gruppen",
+      "variants": [
+        {
+          "text": "Bei allen Gruppen",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „bei den meisten Gruppen mit Kreislauf auch die Versorgung mit Sauerstoff und der Abtransport von Kohlendioxid“. Es heißt „bei den meisten Gruppen“, nicht bei allen.",
+          "evidence": "bei den meisten Gruppen mit Kreislauf auch die Versorgung mit Sauerstoff und der Abtransport von Kohlendioxid"
+        },
+        {
+          "text": "Bei wenigen Gruppen",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „bei den meisten Gruppen mit Kreislauf auch die Versorgung mit Sauerstoff und der Abtransport von Kohlendioxid“. Es sind die meisten Gruppen, nicht wenige.",
+          "evidence": "bei den meisten Gruppen mit Kreislauf auch die Versorgung mit Sauerstoff und der Abtransport von Kohlendioxid"
+        }
+      ]
+    },
+    "i2": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Alle Tiere haben einen Blutkreislauf mit Blutgefäßen.",
+          "errorClass": "overgeneralization",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort geht es um den Blutkreislauf des Menschen und der meisten Tiere. Aus dieser Aussage wird hier eine Regel für alle Tiere gemacht."
+        },
+        {
+          "text": "Weil der Kreislauf Stoffe transportiert, braucht ein Tier kein Herz.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Der Kreislauf wird in der Quelle zusammen mit dem Herzen genannt: Sie bilden das Herz-Kreislauf-System. Aus dem Transport von Stoffen folgt nicht, dass ein Herz überflüssig ist."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "Venen",
+      "variants": [
+        {
+          "text": "Arterien",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Blutgefäße, die Blut zum Herzen leiten, werden als Venen (Blutadern) bezeichnet“. Gefäße, die Blut zum Herzen leiten, sind Venen. Arterien leiten Blut vom Herzen weg.",
+          "evidence": "Blutgefäße, die Blut zum Herzen leiten, werden als Venen (Blutadern) bezeichnet"
+        },
+        {
+          "text": "Vennen",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort „Venen“ hat nur ein „n“ in der Mitte. Nach dem langen „e“ wird nicht verdoppelt."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "Arterien",
+      "variants": [
+        {
+          "text": "Venen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „diejenigen Gefäße, die Blut vom Herzen zu den Organen leiten, nennt man Arterien (Schlagadern)“. Gefäße, die Blut vom Herzen zu den Organen leiten, sind Arterien. Venen leiten Blut zum Herzen.",
+          "evidence": "diejenigen Gefäße, die Blut vom Herzen zu den Organen leiten, nennt man Arterien (Schlagadern)"
+        },
+        {
+          "text": "Arterrien",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier ist ein Buchstabe zu viel: „Arterrien“ statt „Arterien“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "unabhängig",
+      "variants": [
+        {
+          "text": "abhängig",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Diese Bezeichnungen gelten unabhängig davon, ob das Blut im jeweiligen Gefäß sauerstoffarm oder sauerstoffreich ist.“ Die Namen gelten unabhängig vom Sauerstoffgehalt. „Abhängig“ kehrt die Aussage um.",
+          "evidence": "Diese Bezeichnungen gelten unabhängig davon, ob das Blut im jeweiligen Gefäß sauerstoffarm oder sauerstoffreich ist."
+        },
+        {
+          "text": "unabhänig",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein Buchstabe: „unabhänig“ statt „unabhängig“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
+    },
+    "i3": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Weil Venen das Blut zum Herzen leiten, ist das Blut in den Venen immer sauerstoffarm.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort heißt es, dass die Namen Vene und Arterie unabhängig davon gelten, ob das Blut sauerstoffarm oder sauerstoffreich ist. Aus der Richtung des Blutes folgt nicht, wie viel Sauerstoff es hat."
+        },
+        {
+          "text": "Arterien sind die wichtigeren Gefäße.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das ist eine Meinung, keine Tatsache. Ein Wort wie „wichtigeren“ bewertet. In der Quelle wird nur erklärt, was Venen und Arterien sind."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "desto kleiner",
+      "variants": [
+        {
+          "text": "desto größer",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Je stärker sich die Blutgefäße verzweigen, desto kleiner wird ihr Durchmesser.“ Je stärker sich die Gefäße verzweigen, desto kleiner werden sie.",
+          "evidence": "Je stärker sich die Blutgefäße verzweigen, desto kleiner wird ihr Durchmesser."
+        },
+        {
+          "text": "deso kleiner",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein Buchstabe: „deso“ statt „desto“. Das ist ein Flüchtigkeitsfehler."
+        }
+      ]
+    },
+    "i4": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Das Blut braucht in den feinsten Gefäßen für seinen Weg besonders lange.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort steht nur, dass der Durchmesser der Gefäße kleiner wird, wenn sie sich verzweigen. Von der Dauer des Blutflusses steht nichts im Text."
+        },
+        {
+          "text": "Die Blutgefäße werden beim Verzweigen immer dicker.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Dieser Satz widerspricht dem Satz davor. Dort wird der Durchmesser der Gefäße kleiner, wenn sie sich stärker verzweigen."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "Kapillaren",
+      "variants": [
+        {
+          "text": "Venolen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Bei Tieren mit einem geschlossenen Kreislaufsystem werden Arterien zuerst zu Arteriolen und diese zu Kapillaren, in welchen der größte Teil des Stoffaustausches mit den Geweben stattfindet.“ Die Arteriolen werden zu Kapillaren. Die Venolen kommen erst später.",
+          "evidence": "Bei Tieren mit einem geschlossenen Kreislaufsystem werden Arterien zuerst zu Arteriolen und diese zu Kapillaren, in welchen der größte Teil des Stoffaustausches mit den Geweben stattfindet."
+        },
+        {
+          "text": "Kappilaren",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Bei Tieren mit einem geschlossenen Kreislaufsystem werden Arterien zuerst zu Arteriolen und diese zu Kapillaren, in welchen der größte Teil des Stoffaustausches mit den Geweben stattfindet.“. Richtig geschrieben ist „Kapillaren“, nicht „Kappilaren“.",
+          "evidence": "Bei Tieren mit einem geschlossenen Kreislaufsystem werden Arterien zuerst zu Arteriolen und diese zu Kapillaren, in welchen der größte Teil des Stoffaustausches mit den Geweben stattfindet."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "Venen",
+      "variants": [
+        {
+          "text": "Arterien",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Diese führen wiederum zusammen und bilden die postkapillären Venolen, die sich zu Venen vereinigen.“ Die Venolen vereinigen sich zu Venen, nicht zu Arterien.",
+          "evidence": "Diese führen wiederum zusammen und bilden die postkapillären Venolen, die sich zu Venen vereinigen."
+        },
+        {
+          "text": "Kapillaren",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Diese führen wiederum zusammen und bilden die postkapillären Venolen, die sich zu Venen vereinigen.“ Die Venolen vereinigen sich zu Venen. Die Kapillaren stehen im Satz davor.",
+          "evidence": "Diese führen wiederum zusammen und bilden die postkapillären Venolen, die sich zu Venen vereinigen."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "Hämolymphe",
+      "variants": [
+        {
+          "text": "Hämoglobin",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Bei Tieren mit einem offenen Kreislaufsystem ergießt sich die Flüssigkeit, die hier nicht Blut, sondern Hämolymphe genannt wird“. Die Flüssigkeit heißt Hämolymphe.",
+          "evidence": "Bei Tieren mit einem offenen Kreislaufsystem ergießt sich die Flüssigkeit, die hier nicht Blut, sondern Hämolymphe genannt wird"
+        },
+        {
+          "text": "Lymphe",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Bei Tieren mit einem offenen Kreislaufsystem ergießt sich die Flüssigkeit, die hier nicht Blut, sondern Hämolymphe genannt wird“. Der Name ist Hämolymphe, nicht nur Lymphe.",
+          "evidence": "Bei Tieren mit einem offenen Kreislaufsystem ergießt sich die Flüssigkeit, die hier nicht Blut, sondern Hämolymphe genannt wird"
+        },
+        {
+          "text": "Hämolymfe",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Bei Tieren mit einem offenen Kreislaufsystem ergießt sich die Flüssigkeit, die hier nicht Blut, sondern Hämolymphe genannt wird“. Richtig geschrieben ist „Hämolymphe“, nicht „Hämolymfe“.",
+          "evidence": "Bei Tieren mit einem offenen Kreislaufsystem ergießt sich die Flüssigkeit, die hier nicht Blut, sondern Hämolymphe genannt wird"
+        }
+      ]
+    },
+    "s13": {
+      "correct": "arteriellen",
+      "variants": [
+        {
+          "text": "venösen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „aus arteriellen Blutgefäßen in die Körperhöhle, um die Organe zu umfließen“. Die Flüssigkeit tritt aus arteriellen Gefäßen aus. Zu den venösen Gefäßen fließt sie erst später.",
+          "evidence": "aus arteriellen Blutgefäßen in die Körperhöhle, um die Organe zu umfließen"
+        },
+        {
+          "text": "arterielen",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das Wort kommt von „Arterie“ und hat zwei „l“: arteriellen."
+        }
+      ]
+    },
+    "s14": {
+      "correct": "venösen Gefäßen oder direkt zurück zum Herzen",
+      "variants": [
+        {
+          "text": "arteriellen Gefäßen und nie zurück zum Herzen",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz widerspricht dem Anfang des Textes. Dort fließt das Blut vom Herzen zu den Organen und wieder zurück zum Herzen.",
+          "tolerance": 2,
+          "evidence": "Durch die Körperhöhle fließt sie zu venösen Gefäßen oder direkt zurück zum Herzen."
+        },
+        {
+          "text": "arteriellen Gefäßen oder direkt zurück zum Herzen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Durch die Körperhöhle fließt sie zu venösen Gefäßen oder direkt zurück zum Herzen.“ Sie fließt zu venösen Gefäßen, nicht zu arteriellen.",
+          "tolerance": 2,
+          "evidence": "Durch die Körperhöhle fließt sie zu venösen Gefäßen oder direkt zurück zum Herzen."
+        }
+      ]
+    },
+    "i5": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Die Hämolymphe fließt dabei nie durch die Körperhöhle.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz widerspricht dem Text. Dort ergießt sich die Hämolymphe in die Körperhöhle und fließt durch sie hindurch."
+        },
+        {
+          "text": "Bei allen Tieren fließt Hämolymphe statt Blut.",
+          "errorClass": "overgeneralization",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht in der Quelle. In der Quelle gilt das nur bei Tieren mit einem offenen Kreislaufsystem. Bei einem geschlossenen Kreislauf fließt Blut. Aus einem Fall wird hier eine Regel für alle."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Wikipedia-Artikel Blutkreislauf, Revision 270946593 (abgerufen am 18.10.2026, Einleitung des Artikels); die elf Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite, Link auf die Lizenz); die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Fehlerarten: Die Falschschreibungen sind konstruiert (Konsonantenverdopplung, Dehnung, nach den Schwerpunkten der IQB-Handreichung); die Klassen ab Klasse 7 (Menge/Grad, Verallgemeinerung, falsche Folgerung, Meinung als Tatsache) sind abgeleitet, nicht belegt. Die eingefügten Sätze sind erfunden und stehen so nicht in der Quelle.",
+    "Nicht geprüft: ob der Artikeltext fachlich stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Fachwissenschaft.",
+    "Überarbeitet (Einleitung geprüft): Der Auszug beginnt schon mit dem ersten Satz des Artikels, Auszug und Stellen bleiben. Verständlichkeit: „Seine Aufgabe …“ heißt jetzt „Die Aufgabe des Blutkreislaufs …“, „Das gilt …“ heißt „Diese Bezeichnungen gelten …“.",
+    "Auszug leicht vereinfacht auf Wunsch des Erstellers: zwei Nebenbezeichnungen im ersten Satz gestrichen. Die Auszugssätze stehen dort nicht mehr überall wörtlich im Artikel (erste Notiz gilt für diese Stellen nicht mehr); der Satzanfang ist unverändert."
+  ]
+}

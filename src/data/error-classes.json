@@ -1,136 +1,106 @@
 {
   "spelling_rule": {
-    "family": "form",
     "status": "documented",
     "statusNote": "belegt",
     "usualBasis": ["text"],
-    "fromGrade": 3,
     "languages": ["de", "en"],
     "source": "IQB-Lernaufgabe (AFRA-Liste), IQB-Handreichung Fehlerschwerpunkte; KMK Primar Fehleraufmerksamkeit"
   },
   "slip": {
-    "family": "form",
     "status": "documented",
     "statusNote": "belegt",
     "usualBasis": ["text"],
-    "fromGrade": 3,
     "languages": ["de", "en"],
     "source": "Schmellentin & Lindauer 2019 (Regel- und Flüchtigkeitsfehler trennen); Unterart Wort doppelt oder fehlt abgeleitet"
   },
   "real_word": {
-    "family": "form",
     "status": "documented",
     "statusNote": "belegt",
     "usualBasis": ["text"],
-    "fromGrade": 5,
     "languages": ["de", "en"],
     "source": "IQB-Handreichung (das/dass), IQB-Lernaufgabe (Rechtschreibprogramm übersieht Substantivierungen)"
   },
   "punctuation": {
-    "family": "form",
     "status": "derived",
     "statusNote": "Kompetenz belegt, Stufung abgeleitet",
     "usualBasis": ["text"],
-    "fromGrade": 3,
     "languages": ["de", "en"],
     "source": "KMK Primar (Satzzeichen); Schmellentin & Lindauer (Komma früh nicht erwartet, ein Einzelfall)"
   },
   "number_name_date": {
-    "family": "deviation",
     "status": "derived",
     "statusNote": "Prozess belegt, Klasse abgeleitet",
     "usualBasis": ["comparison"],
-    "fromGrade": 3,
     "languages": ["de", "en"],
     "source": "IGLU 2021 (explizit angegebene Informationen lokalisieren); KMK (Textinformationen auf lokaler Ebene)"
   },
   "factual_error": {
-    "family": "deviation",
     "status": "derived",
     "statusNote": "abgeleitet",
     "usualBasis": ["comparison", "prior_knowledge"],
-    "fromGrade": 5,
     "languages": ["de", "en"],
     "source": "IGLU 2021 (Prüfen und Bewerten); Cook et al. 2018 (Verzerrung der Gegenposition)"
   },
   "added_claim": {
-    "family": "deviation",
     "status": "derived",
     "statusNote": "abgeleitet",
     "usualBasis": ["comparison"],
-    "fromGrade": 5,
     "languages": ["de", "en"],
     "source": "Irwin über Voss et al. (Makroregeln beim Zusammenfassen)"
   },
   "connective_negation": {
-    "family": "logic",
     "status": "derived",
     "statusNote": "Prozess belegt, Klasse abgeleitet",
     "usualBasis": ["text"],
-    "fromGrade": 5,
     "languages": ["de", "en"],
     "source": "Irwin über Voss et al. (integrative Prozesse: Konjunktionen)"
   },
   "contradiction": {
-    "family": "logic",
     "status": "derived",
     "statusNote": "Prozess belegt, Klasse abgeleitet",
     "usualBasis": ["text"],
-    "fromGrade": 5,
     "languages": ["de", "en"],
     "source": "Irwin über Voss et al. (Widersprüche klären); KMK ESA/MSA (Verstehensschwierigkeiten erkennen)"
   },
   "quantity_degree": {
-    "family": "logic",
     "status": "derived",
     "statusNote": "abgeleitet",
     "usualBasis": ["comparison", "text"],
-    "fromGrade": 7,
     "languages": ["de", "en"],
     "source": "eigener Schluss, keine Quelle gelesen"
   },
   "overgeneralization": {
-    "family": "logic",
     "status": "derived",
     "statusNote": "Schlussart belegt, Übertragung abgeleitet",
     "usualBasis": ["text", "comparison"],
-    "fromGrade": 7,
     "languages": ["de", "en"],
     "source": "Cook et al. 2018 (induktiv schwacher Schluss)"
   },
   "faulty_inference": {
-    "family": "logic",
     "status": "derived",
     "statusNote": "Fehlschluss belegt (Klima), Übertragung abgeleitet",
     "usualBasis": ["text", "prior_knowledge"],
-    "fromGrade": 7,
     "languages": ["de", "en"],
     "source": "Cook et al. 2018 (falsche Ursache, Non sequitur, Einzelursache); IGLU 2021 (einfache Schlussfolgerung)"
   },
   "opinion_as_fact": {
-    "family": "stance",
     "status": "derived",
     "statusNote": "Fähigkeit belegt, Klasse abgeleitet",
     "usualBasis": ["comparison", "text"],
-    "fromGrade": 7,
     "languages": ["de", "en"],
     "source": "IGLU 2021 (Standpunkt, Voreingenommenheit); Irwin über Voss et al. (objektiv und subjektiv unterscheiden); KMK ESA/MSA 4.4"
   },
   "false_authority": {
-    "family": "stance",
     "status": "derived",
     "statusNote": "belegt für Erwachsene und Klima, Übertragung abgeleitet",
     "usualBasis": ["comparison", "prior_knowledge"],
-    "fromGrade": 10,
     "languages": ["de", "en"],
     "source": "Cook et al. 2017 und 2018 (falsche Experten)"
   },
   "loaded_language": {
-    "family": "stance",
     "status": "derived",
     "statusNote": "Fähigkeit belegt, Klasse abgeleitet",
     "usualBasis": ["text"],
-    "fromGrade": 10,
     "languages": ["de", "en"],
     "source": "IGLU 2021 (Wirkung sprachlicher Merkmale); KMK Abitur 2.3 (Geltungsansprüche reflektieren); Cook et al. 2017 (Technik erklären)"
   }

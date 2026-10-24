@@ -1,22 +1,27 @@
 <script setup lang="ts">
-// The result of a round: the counts, the errors grouped by class (found or missed, how to detect it, what stands in
-// the Variante and in the Original, why), the words marked wrongly or within tolerance, and the legend of the colours.
-// It shows the core's result and emits "again" for the next round. Every error found: fireworks when no hint was taken,
-// confetti when hints were; with hints, a sentence that encourages the next round without.
+// The result of a round: what to do next (the core's advice: the next stage, another round with a tip for what was
+// missed, or the other exercise), the counts, the errors grouped by class (found or missed, how to detect it, what stands
+// in the text and what is right, why), the words marked wrongly or within tolerance, and the legend of the colours. It
+// shows the core's result and emits "again" for the next round, or a route to open. Every error found: fireworks when no
+// hint was taken, confetti when hints were; with hints, a sentence that encourages the next round without.
 import { computed } from "vue";
 import type { Input } from "@lernapps/app-templates/interactive";
-import type { Result, Token } from "../core/types.ts";
+import { stagesRoute, START_ROUTE } from "../core/stages.ts";
+import type { Kind, Result, Token } from "../core/types.ts";
 import { translatorOf } from "./messages.ts";
 
 const props = defineProps<{
   result: Result;
   tokens: readonly Token[];
+  kind: Kind;
+  stage: number;
+  /** The number of the next stage of this exercise, null on the last. */
+  nextStage: number | null;
   lang: string;
-  choiceNote?: string | null;
   /** How many hints the learner took. */
   hints: number;
 }>();
-const emit = defineEmits<{ input: [input: Input] }>();
+const emit = defineEmits<{ input: [input: Input]; open: [route: string] }>();
 const t = translatorOf(props.lang);
 
 const wordsWith = (status: string): string =>
@@ -27,6 +32,20 @@ const wordsWith = (status: string): string =>
 const wrongWords = computed(() => wordsWith("false"));
 const toleratedWords = computed(() => wordsWith("tolerated"));
 const allFound = computed(() => props.result.total > 0 && props.result.found === props.result.total);
+const advice = computed(() => props.result.advice);
+const stageName = (stage: number): string => t(`stageName.${stage}` as never);
+/** What the advice says in words: where to go on, and the tip for what was missed. */
+const lines = computed(() => {
+  const given = advice.value;
+  if (given.passed)
+    return [given.next === null ? t("adviceLast") : t("adviceNext", { stage: stageName(props.stage + 1) })];
+  const tip = given.overmarked
+    ? t("adviceOvermarked")
+    : given.missed === null
+      ? t("adviceNoTip")
+      : t("adviceTip", { tip: t(`classTip.${given.missed}` as never) });
+  return [allFound.value ? t("adviceBetter") : t("adviceAgain"), tip];
+});
 // Fireworks: five big bursts on a dimmed page, each of sparks that fly out from a point and fade (the dimming fades in
 // and out slowly and nothing flashes); positions and colours are fixed by index, too.
 const bursts = [
@@ -69,14 +88,39 @@ const pieces = Array.from({ length: 28 }, (_, index) => ({
       ></span>
     </div>
     <h2 id="result-heading" tabindex="-1">{{ t("resultHeading") }}</h2>
-    <p v-if="choiceNote" class="choice">{{ choiceNote }}</p>
     <p v-if="allFound" class="praise">{{ result.wrong === 0 ? t("praiseClean") : t("praiseAll") }}</p>
     <p v-if="hints > 0" class="praise">{{ t("praiseHints") }}</p>
-    <p class="again-row">
-      <button type="button" class="primary again" @click="emit('input', { kind: 'action', name: 'again' })">
-        {{ t("again") }}
-      </button>
-    </p>
+    <div class="advice">
+      <p v-for="line in lines" :key="line">{{ line }}</p>
+      <p class="again-row">
+        <button
+          v-if="nextStage !== null && advice.next !== null && (advice.passed || allFound)"
+          type="button"
+          class="tc-btn"
+          :class="{ primary: advice.passed }"
+          @click="emit('open', advice.next)"
+        >
+          {{ advice.passed ? t("nextStage", { stage: stageName(nextStage) }) : t("nextAnyway") }}
+        </button>
+        <button
+          type="button"
+          class="tc-btn again"
+          :class="{ primary: !advice.passed }"
+          @click="emit('input', { kind: 'action', name: 'again' })"
+        >
+          {{ t("againRound") }}
+        </button>
+        <button type="button" class="tc-btn" @click="emit('open', stagesRoute(kind))">{{ t("toStages") }}</button>
+        <button
+          v-if="advice.next === null && advice.passed"
+          type="button"
+          class="tc-btn"
+          @click="emit('open', START_ROUTE)"
+        >
+          {{ t("toChoose") }}
+        </button>
+      </p>
+    </div>
     <p class="summary">
       {{ t("resultSummary", { found: result.found, total: result.total }) }}
       <template v-if="result.wrong > 0"> · {{ t("resultWrong", { count: result.wrong }) }}</template>
@@ -94,15 +138,15 @@ const pieces = Array.from({ length: 28 }, (_, index) => ({
           <span class="chip">{{ t(`basis.${item.basis}` as never) }}</span>
         </p>
         <dl>
-          <dt>{{ t("inRendition") }}</dt>
+          <dt>{{ t(`itemShown.${kind}` as never) }}</dt>
           <dd>„{{ item.text }}“</dd>
-          <dt>{{ t("right") }}</dt>
-          <dd>{{ item.correct === "" ? t("noOriginal") : `„${item.correct}“` }}</dd>
+          <dt>{{ t(`itemRight.${kind}` as never) }}</dt>
+          <dd>{{ item.correct === "" ? t("noSource") : `„${item.correct}“` }}</dd>
         </dl>
         <p class="explanation">{{ item.explanation }}</p>
       </div>
     </section>
-    <p v-if="result.wrong > 0" class="note wrong">{{ t("wrongBox", { words: wrongWords }) }}</p>
+    <p v-if="result.wrong > 0" class="note wrong">{{ t(`wrongBox.${kind}` as never, { words: wrongWords }) }}</p>
     <p v-if="result.tolerated > 0" class="note tolerated">{{ t("toleratedBox", { words: toleratedWords }) }}</p>
     <ul class="legend" :aria-label="t('legend')">
       <li class="found">{{ t("legendFound") }}</li>
@@ -123,15 +167,29 @@ h2 {
   font-size: 1.25rem;
 }
 
-/* the button for the next round stands right below the heading (and the praise); on a narrow screen it fills the width */
-.again-row {
+/* what to do next stands right below the heading (and the praise); on a narrow screen the buttons fill the width */
+.advice {
   margin: 0.75rem 0 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: var(--tc-card);
+  border: 1px solid var(--tc-line);
+}
+
+.advice p {
+  margin: 0 0 0.5rem;
+}
+
+.again-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0 !important;
 }
 
 @media (max-width: 40rem) {
-  .again {
-    display: block;
-    width: 100%;
+  .again-row .tc-btn {
+    flex: 1 1 100%;
   }
 }
 

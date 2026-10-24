@@ -1,48 +1,55 @@
 # yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/interactive/playthrough.v1.schema.json
-# A round of the Fledermäuse pack for grades 5 and 6 with seed 19 (the seed picks the pack among all packs of the
-# grades). Its errors: "viele" (word 12, a wrong fact), "Höllen" (word 52, a real word) and "Herbst" (word 71, a wrong
-# season). Marking and unmarking, the
-# marks cleared, the cursor moved (a step back by sentence in the first sentence stays), a right word marked (word 5), checking with all three found, nothing marked after
-# checking, and the next round with the action "again".
-route: klasse-5-6
+# A round of "Fehler im Text finden", stage 2, with the Apollo 11 text (seed 19). Its errors: "füfte" (word 4, a slip),
+# "wider" (word 58, a real word), "Pazifk." (word 171, a slip) and "erstmal" (word 186, a spelling mistake). Marking and
+# unmarking, the marks cleared, the cursor moved (a step back by sentence in the first sentence stays), a right word marked
+# (word 5), checking with all four found and the next stage as advice, nothing marked after checking, and the next round
+# with the action "again".
+route: text-2
 seed: 19
 steps:
-  - inputs: [{ kind: action, name: toggle, value: 12 }]
-    state:
-      seed: 19
-      phase: marking
-      marked: [12]
-      cursor: 12
-      last: mark
-      announced: [factual_error, real_word, number_name_date]
-    announce: "viele markiert. 1 markiert."
-  - inputs: [{ kind: action, name: toggle, value: 13 }]
-    state: { marked: [12, 13] }
-    announce: "Federn. markiert. 2 markiert."
-  - inputs: [{ kind: action, name: toggle, value: 13 }]
-    state: { marked: [12], last: unmark }
-    announce: "Federn. nicht mehr markiert. 1 markiert."
+  - inputs: [{ kind: action, name: begin }]
+    state: { phase: marking, view: rendition, packId: apollo-11, announced: [slip, real_word, spelling_rule] }
+    announce: "Los geht's. 4 Fehler sind versteckt."
+  - inputs: [{ kind: action, name: toggle, value: 4 }]
+    state: { marked: [4], cursor: 4, last: mark }
+    announce: "füfte markiert. 1 markiert."
+  - inputs: [{ kind: action, name: toggle, value: 5 }]
+    state: { marked: [4, 5] }
+    announce: "bemannte markiert. 2 markiert."
+  - inputs: [{ kind: action, name: toggle, value: 5 }]
+    state: { marked: [4], last: unmark }
+    announce: "bemannte nicht mehr markiert. 1 markiert."
   - inputs: [{ kind: action, name: clear }]
     state: { marked: [], last: clear }
     announce: "Alle Markierungen gelöscht."
   - inputs:
-      - { kind: action, name: toggle, value: 71 }
-      - { kind: action, name: toggle, value: 12 }
-      - { kind: action, name: toggle, value: 52 }
+      - { kind: action, name: toggle, value: 186 }
+      - { kind: action, name: toggle, value: 4 }
+      - { kind: action, name: toggle, value: 171 }
+      - { kind: action, name: toggle, value: 58 }
       - { kind: action, name: toggle, value: 5 }
-    state: { marked: [5, 12, 52, 71], cursor: 5 }
-    announce: "die markiert. 4 markiert."
+    state: { marked: [4, 5, 58, 171, 186], cursor: 5 }
   - inputs: [{ kind: action, name: move, value: next }, { kind: action, name: move, value: prev-sentence }]
-    state: { cursor: 6, marked: [5, 12, 52, 71] }
+    state: { cursor: 6, marked: [4, 5, 58, 171, 186] }
   - inputs: [{ kind: action, name: move, value: last }]
-    state: { cursor: 79 }
+    state: { cursor: 204 }
   - inputs: [{ kind: action, name: move, value: first }, { kind: action, name: move, value: next-sentence }]
-    state: { cursor: 8 }
+    state: { cursor: 9 }
   - inputs: [{ kind: action, name: check }]
-    state: { phase: result, last: check, result: { total: 3, found: 3, wrong: 1, tolerated: 0 } }
-    announce: "Geprüft: 3 von 3 Fehlern gefunden. Fälschlich markiert: 1."
+    state:
+      phase: result
+      last: check
+      result:
+        {
+          total: 4,
+          found: 4,
+          wrong: 1,
+          tolerated: 0,
+          advice: { passed: true, next: text-3, missed: null, overmarked: false },
+        }
+    announce: "Geprüft: 4 von 4 Fehlern gefunden. Fälschlich markiert: 1."
   - inputs: [{ kind: action, name: toggle, value: 0 }]
-    state: { phase: result, marked: [5, 12, 52, 71] }
+    state: { phase: result, marked: [4, 5, 58, 171, 186] }
   - inputs: [{ kind: action, name: again }]
     state: { seed: 20, phase: marking, marked: [], result: null, last: start }
-    announce: "Neue Runde. 3 Fehler sind versteckt."
+    announce: "Neue Runde. 4 Fehler sind versteckt."

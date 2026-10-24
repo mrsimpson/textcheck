@@ -1,9 +1,9 @@
-import { parseRoute } from "../core/data.ts";
+import { placeOf, ROUTES, STAGES, firstStageOf, KINDS } from "../core/stages.ts";
 import { parse } from "yaml";
 import { describe, expect, it } from "vitest";
 import appYaml from "../app.yaml?raw";
+import readme from "../../README.md?raw";
 import classes from "./error-classes.json" with { type: "json" };
-import levels from "./levels.json" with { type: "json" };
 import de from "../messages/de.json" with { type: "json" };
 import en from "../messages/en.json" with { type: "json" };
 
@@ -12,55 +12,49 @@ type Text = Record<string, string>;
 interface Description {
   languages: string[];
   routes: { id: string; title: Text; description: Text }[];
-  sections: { id: string; text: Text }[];
 }
 
 const app = parse(appYaml) as Description;
 const messages: Record<string, Record<string, string>> = { de, en };
-/** How a line of the section "begruendung" names the status and the first grade of an error class, by language. */
-const LINES: Record<string, (status: "documented" | "derived", grade: number) => { status: string; from: string }> = {
-  de: (status, grade) => ({ status: status === "documented" ? "belegt" : "abgeleitet", from: `ab Klasse ${grade}` }),
-  en: (status, grade) => ({ status, from: `from grade ${grade}` }),
-};
+/** How a line of the README's list of the error classes names the status and the place of a class (German). */
+const line = (status: "documented" | "derived", kind: string, stage: number): { status: string; place: string } => ({
+  status: status === "documented" ? "belegt" : "abgeleitet",
+  place: `${de[`kind.${kind}` as keyof typeof de]}, Stufe ${stage}`,
+});
 
-describe.each(app.languages)("the start page in %s", (language) => {
-  const names = messages[language] ?? {};
-  const section = app.sections.find((entry) => entry.id === "begruendung")?.text[language] ?? "";
+describe("the README", () => {
+  const list = readme.slice(readme.indexOf("Die Fehlerarten:"), readme.indexOf("Was wir nicht belegen können:"));
 
-  it("lists every error class with its status and its first school year, as the data say", () => {
+  it("lists every error class with its status and the exercise and stage that adds it, as the data say", () => {
     for (const [id, info] of Object.entries(classes)) {
-      const name = names[`errorClass.${id}`];
-      expect(name, `a name for ${id} in src/messages/${language}.json`).toBeDefined();
-      const { status, from } = LINES[language]?.(info.status as "documented" | "derived", info.fromGrade) ?? {
-        status: "",
-        from: "",
-      };
-      const line = section.split("\n").find((row) => row.includes(`**${name}**`));
-      expect(line, `a line for ${name} in the section begruendung`).toBeDefined();
-      expect(line, `${name}: status`).toContain(`**, ${status}, ${from}:`);
+      const name = de[`errorClass.${id}` as keyof typeof de];
+      expect(name, `a name for ${id} in src/messages/de.json`).toBeDefined();
+      const kind = KINDS.find((candidate) => firstStageOf(candidate, id) !== null) ?? "";
+      const { status, place } = line(
+        info.status as "documented" | "derived",
+        kind,
+        firstStageOf(kind as "text" | "quelle", id) ?? 0,
+      );
+      const row = list.split("\n").find((entry) => entry.includes(`**${name}**`));
+      expect(row, `a line for ${name} in the README`).toBeDefined();
+      expect(row, `${name}: status and place`).toContain(`**, ${status}, ${place}:`);
     }
   });
 
   it("has no line for a class that does not exist", () => {
-    const marker = language === "de" ? ", ab Klasse " : ", from grade ";
-    const lines = section.split("\n").filter((row) => row.startsWith("- **") && row.includes(marker));
-    expect(lines).toHaveLength(Object.keys(classes).length);
+    const rows = list.split("\n").filter((entry) => entry.startsWith("- **"));
+    expect(rows).toHaveLength(Object.keys(classes).length);
   });
 });
 
 describe("the start page", () => {
-  it("has a route for every level and a level for every route", () => {
-    const ids = app.routes.map((route) => route.id);
-    expect(ids.filter((id) => parseRoute(id).mode === "mark").sort()).toEqual(Object.keys(levels).sort());
-    for (const id of ids) expect(Object.keys(levels), id).toContain(parseRoute(id).level);
+  it("has a route for every route of the app and no other", () => {
+    expect(app.routes.map((route) => route.id).sort()).toEqual([...ROUTES].sort());
+    for (const route of app.routes) expect(placeOf(route.id), route.id).not.toBeNull();
   });
 
-  it("has the routes of the modes source and choose for every level", () => {
-    const ids = app.routes.map((route) => route.id);
-    for (const level of Object.keys(levels)) {
-      expect(ids, level).toContain(`${level}-quelle`);
-      expect(ids, level).toContain(`${level}-original`);
-    }
+  it("names the stages of every exercise", () => {
+    for (const kind of KINDS) expect(STAGES[kind]).toHaveLength(3);
   });
 });
 
