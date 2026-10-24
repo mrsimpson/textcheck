@@ -221,21 +221,21 @@ andere Art des gründlichen Lesens und sagt das auch. Die Auswahl nach Klassen u
 
 ### Tasks
 
-- [ ] Push the branch and open a pull request to `main` in the app's repo. The pre-push hook runs the heavy checks;
+- [x] Push the branch and open a pull request to `main` in the app's repo. The pre-push hook runs the heavy checks;
       fix what fails. See the checks of the pull request through to green. When a GitHub step fails or is refused,
       load the skill `lernapps-github`.
-- [ ] **Checkpoint:** publish. Show the creator what the increment adds and the link to its preview from the comment
+- [x] **Checkpoint:** publish. Der Ersteller hat den Pull Request selbst geöffnet (Vorschau gesehen) und mit „dann merge“ beauftragt. Show the creator what the increment adds and the link to its preview from the comment
       "Vorschau der App" on the pull request, and ask whether it may go online. Wait for their yes.
-- [ ] Merge the pull request into `main` (or, without a pull request, merge the branch into `main` and push `main`).
+- [x] Merge the pull request into `main` (or, without a pull request, merge the branch into `main` and push `main`).
       Watch the run of the workflow `Pages` for that commit until it ends. If it fails, read the message of the
       failed step, fix what you can and push again.
-- [ ] Open the address the job `deploy` printed ("published at ...", also in the run's summary) and confirm that it
+- [x] Open the address the job `deploy` printed ("published at ...", also in the run's summary) and confirm that it
       shows the new content. Take that address, never one you derive; follow its redirects.
-- [ ] If the app is listed and the increment changes what its entry says (topics, school years, summary): load the
+- [x] If the app is listed and the increment changes what its entry says (topics, school years, summary): load the
       skill `lernapps-listing` and write the changed entry. Otherwise skip the next task. Hier ändert sich die
       Zusammenfassung und der Speicher: ausführen.
 - [ ] **Checkpoint:** list. Ask the creator before you open the pull request to the catalog, and wait for their yes.
-- [ ] Fill the retrospective.
+- [x] Fill the retrospective.
 - [ ] Commit this plan on `main` and push it. A push that changes only `.vibe/` publishes nothing again.
 - [ ] If you opened a pull request to the catalog, see it through to "bestanden" as the skill says.
 - [ ] If this plan changed since its last push, commit it on `main` and push it again.
@@ -246,6 +246,17 @@ andere Art des gründlichen Lesens und sagt das auch. Die Auswahl nach Klassen u
 
 ### Phases reached
 
+Commit: Pull Request 16 nach grüner CI in `main` gemergt (Squash), der Lauf „Pages“ hat veröffentlicht; die Adresse https://mrsimpson.github.io/textcheck/ zeigt die neue App (Startseite, Auswahl, PDF der Quelle erreichbar, englische Seite). Die Checkpoints Plan und Veröffentlichung sind bestanden. Der Checkpoint Katalog („list“) steht aus: Der Eintrag hat sich geändert, der Pull Request an den Katalog wartet auf das Ja des Erstellers.
+
 ### Creator turns after the plan
 
+5: (1) Katalogeintrag kompakt, Methode ins README; (2) Frage, ob die Karten vom Seed abhängen, und Pull Request selbst eröffnet; (3) Längen als Bereich statt Durchschnitt; (4) Namen ohne Quelle nicht erkennbar prüfen und das Scrollen zum Anfang der Übung nach einer neuen Runde; (5) Knopf „Üben“ in der Hauptfarbe, Karte klickbar, dann merge. Zusätzlich vor der Bestätigung: „keine Abwärtskompatibilität, radikal aufräumen“.
+
 ### Where I had to guess
+
+- Stufengrenzen nach Wörtern der Wiedergabe (140 und 215), zwei Plätze Reserve je Text, mindestens ein Platz für eine neue Fehlerart; die Stufe eines Textes folgt aus Länge und Plätzen.
+- Zuordnung der Fehlerarten zu den Stufen und der Hilfen je Stufe (aus dem Mock, vom Ersteller gutgeheißen, aber nicht Wort für Wort vorgegeben).
+- Die Methode aus Katalogeintrag und Startseite ins README verschoben: „Katalog Eintrag“ als Eintrag und als Abschnitt der Startseite gedeutet.
+- Welche Falschschreibungen von Namen und Fachwörtern ohne Quelle nicht erkennbar sind: nach eigenem Urteil (Name oder Fachwort, plausible falsche Form, richtige Form nirgends sonst im Text); 17 wurden zur Übung mit der Quelle verschoben.
+- Die Scheiben 1 bis 3 in einem Commit, weil die Hooks nur grüne Stände annehmen.
+- Das Playwright der Umgebung passt nicht zum neuen Tooling (Browser-Build 1243 statt 1248); die Browser-Tests lokal mit einer Verknüpfung außerhalb des Repos gestartet, `lernapps check` wählte den installierten Browser selbst.
