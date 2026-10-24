@@ -1,7 +1,7 @@
 // The checks of a text pack beyond its JSON schema: what a schema cannot say. Used by the unit tests over every pack
 // in src/data/packs/ and by whoever writes a pack. Errors fail the build's tests; warnings are read and justified.
-import { ERROR_CLASSES, LEVELS } from "./data.ts";
-import { candidatesOf } from "./round.ts";
+import { ERROR_CLASSES } from "./data.ts";
+import { candidatesOf, classesOf, fits, KINDS, lengthStageOf, RESERVE, rulesOf, STAGES } from "./stages.ts";
 import type { TextPack } from "./types.ts";
 
 export interface PackReport {
@@ -20,10 +20,6 @@ function around(pack: TextPack, sentence: number, skip: string): string {
 export function checkPack(pack: TextPack): PackReport {
   const errors: string[] = [];
   const warnings: string[] = [];
-  const { from, to } = pack.grades;
-  const upperSchool = from === 11 && to === 13; // the Oberstufe is one pack range
-  if (to < from || (to - from > 1 && !upperSchool))
-    errors.push(`grades ${from} to ${to} are not two adjacent school years (or the Oberstufe 11 to 13)`);
   if (pack.isExample === true) errors.push("an example pack does not belong in src/data/packs");
 
   const excerpt = squeeze(pack.excerpt.map((entry) => entry.text).join(" "));
@@ -57,8 +53,6 @@ export function checkPack(pack: TextPack): PackReport {
         errors.push(`slot ${name}: unknown error class ${variant.errorClass}`);
         continue;
       }
-      if (info.fromGrade > to)
-        errors.push(`slot ${name}: ${variant.errorClass} starts at grade ${info.fromGrade}, the pack ends at ${to}`);
       if (!info.languages.includes(pack.language))
         errors.push(`slot ${name}: ${variant.errorClass} is not reviewed for the language ${pack.language}`);
       if (!info.usualBasis.includes(variant.basis))
@@ -81,25 +75,15 @@ export function checkPack(pack: TextPack): PackReport {
     }
   }
   if (classes.size < 3) warnings.push(`only ${classes.size} different error classes`);
-  for (const [route, level] of Object.entries(LEVELS)) {
-    if (level.grades.from !== from || level.grades.to !== to) continue;
-    const available = candidatesOf(pack, level).length;
-    if (available < level.errors)
-      errors.push(`route ${route} needs ${level.errors} errors, the pack offers ${available} slots`);
-    else if (available < level.errors + 3)
-      warnings.push(`route ${route}: only ${available} slots for ${level.errors} errors, add reserve`);
-    // the mode Original erkennen builds no errors of the form family (the Variante would be given away)
-    const compared = candidatesOf(pack, {
-      ...level,
-      classes: level.classes.filter((name) => ERROR_CLASSES[name]?.family !== "form"),
-    }).length;
-    if (compared < level.errors)
-      errors.push(
-        `route ${route}-original needs ${level.errors} errors, the pack offers ${compared} slots without form`,
-      );
-    else if (compared < level.errors + 2)
+  // the stage the text's length puts it in, for each kind of exercise: it needs places for the errors of the stage
+  for (const kind of KINDS) {
+    const stage = lengthStageOf(pack, kind);
+    if (stage > STAGES[kind].length) continue;
+    const available = candidatesOf(pack, classesOf(kind, stage)).length;
+    const needed = rulesOf(kind, stage).errors;
+    if (!fits(pack, kind, stage))
       warnings.push(
-        `route ${route}-original: only ${compared} slots without form for ${level.errors} errors, add reserve`,
+        `${kind}, stage ${stage} by its length: ${available} places for ${needed} errors (reserve ${RESERVE}) or too few of the classes the stage adds, it is not used there`,
       );
   }
   return { errors, warnings };

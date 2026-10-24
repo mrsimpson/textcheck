@@ -1,7 +1,8 @@
 # Source as PDF
 
-Needed for the mode Quellentreue (learners see the PDF next to the Variante: embedded on a wide screen, a link to a new tab
-elsewhere). Required for every pack: the tests fail without the file.
+A reserve, not shown by default: the last stage of the comparison with a source sends learners to the article itself (the
+fixed revision); the PDF is the copy for the day that article changes or goes away, linked small under it. Required for every
+pack: the tests fail without the file.
 
 - Script: `node .agents/skills/app-textpack/scripts/source-pdf.mjs --url <fixed revision> --out public/quellen/<language>/<id>.pdf
   --title <title> --licence <name> --licence-url <url> --authors-url <url> --retrieved <date> [--selector <css>]`

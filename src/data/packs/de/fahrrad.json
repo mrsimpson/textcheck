@@ -1,0 +1,402 @@
+{
+  "id": "fahrrad",
+  "title": "Fahrrad",
+  "language": "de",
+  "topic": "Fahrrad: Die ersten Räder",
+  "source": {
+    "title": "Fahrrad – Klexikon – das Kinderlexikon",
+    "url": "https://klexikon.zum.de/index.php?title=Fahrrad&oldid=162200",
+    "revision": "162200",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://klexikon.zum.de/index.php?title=Fahrrad&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/fahrrad.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Das Fahrrad ist ein Fahrzeug, das nur durch menschliche Muskelkraft angetrieben wird."
+    },
+    {
+      "text": "Es besteht meistens aus zwei Rädern, einem Sattel zum Sitzen und einem Lenker."
+    },
+    {
+      "text": "Vor etwa 200 Jahren hat man zuerst versucht, ein „Laufrad“ zu bauen.",
+      "section": "Wann wurde das Fahrrad erfunden?"
+    },
+    {
+      "text": "Erfinder der ersten Laufmaschine im Jahr 1817 war Karl Drais aus Karlsruhe.",
+      "section": "Wann wurde das Fahrrad erfunden?"
+    },
+    {
+      "text": "Seine Draisine, ein Vorläufer des Fahrrads aus Holz, hatte noch keine Pedale.",
+      "section": "Wann wurde das Fahrrad erfunden?"
+    },
+    {
+      "text": "Man musste sich immer wieder mit den Füßen vom Boden abstoßen.",
+      "section": "Wann wurde das Fahrrad erfunden?"
+    },
+    {
+      "text": "Fünfzig Jahre später wurde in Frankreich das „Velocipede“ erfunden.",
+      "section": "Wann wurde das Fahrrad erfunden?"
+    },
+    {
+      "text": "Es hatte Pedalen am Vorderrad und war ebenfalls noch ganz aus Holz.",
+      "section": "Wann wurde das Fahrrad erfunden?"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Ein Fahrrad ist ein Fahrzeug, das nur durch die ",
+        {
+          "slot": "n1"
+        },
+        " von Menschen angetrieben wird."
+      ],
+      "evidence": {
+        "quote": "Das Fahrrad ist ein Fahrzeug, das nur durch menschliche Muskelkraft angetrieben wird."
+      }
+    },
+    {
+      "sentence": [
+        "Meistens hat es ",
+        {
+          "slot": "n2"
+        },
+        " Räder, einen ",
+        {
+          "slot": "n3"
+        },
+        " und einen Lenker."
+      ],
+      "evidence": {
+        "quote": "Es besteht meistens aus zwei Rädern, einem Sattel zum Sitzen und einem Lenker."
+      }
+    },
+    {
+      "sentence": [
+        "Vor etwa ",
+        {
+          "slot": "s1"
+        },
+        " Jahren versuchte man zum ersten Mal, ein „",
+        {
+          "slot": "s2"
+        },
+        "“ zu bauen."
+      ],
+      "evidence": {
+        "quote": "Vor etwa 200 Jahren hat man zuerst versucht, ein „Laufrad“ zu bauen."
+      }
+    },
+    {
+      "sentence": [
+        "Im Jahr ",
+        {
+          "slot": "s3"
+        },
+        " erfand ",
+        {
+          "slot": "s4"
+        },
+        " aus ",
+        {
+          "slot": "s5"
+        },
+        " die erste Laufmaschine."
+      ],
+      "evidence": {
+        "quote": "Erfinder der ersten Laufmaschine im Jahr 1817 war Karl Drais aus Karlsruhe."
+      }
+    },
+    {
+      "sentence": [
+        "Diese Laufmaschine, die Draisine, war aus ",
+        {
+          "slot": "s6"
+        },
+        " und hatte noch keine ",
+        {
+          "slot": "s7"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Seine Draisine, ein Vorläufer des Fahrrads aus Holz, hatte noch keine Pedale."
+      }
+    },
+    {
+      "sentence": [
+        "Man stieß sich immer wieder mit den ",
+        {
+          "slot": "s8"
+        },
+        " vom Boden ab."
+      ],
+      "evidence": {
+        "quote": "Man musste sich immer wieder mit den Füßen vom Boden abstoßen."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s12"
+        },
+        " Jahre später wurde in ",
+        {
+          "slot": "s13"
+        },
+        " das „Velocipede“ erfunden."
+      ],
+      "evidence": {
+        "quote": "Fünfzig Jahre später wurde in Frankreich das „Velocipede“ erfunden."
+      }
+    },
+    {
+      "sentence": [
+        "Es hatte Pedale am ",
+        {
+          "slot": "s14"
+        },
+        " und war ebenfalls ganz aus Holz."
+      ],
+      "evidence": {
+        "quote": "Es hatte Pedalen am Vorderrad und war ebenfalls noch ganz aus Holz."
+      }
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "200",
+      "variants": [
+        {
+          "text": "100",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Vor etwa 200 Jahren hat man zuerst versucht, ein „Laufrad“ zu bauen.“ Das war vor etwa 200 Jahren.",
+          "evidence": "Vor etwa 200 Jahren hat man zuerst versucht, ein „Laufrad“ zu bauen."
+        },
+        {
+          "text": "2.000",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Vor etwa 200 Jahren hat man zuerst versucht, ein „Laufrad“ zu bauen.“ Das war vor etwa 200 Jahren, nicht vor 2.000.",
+          "evidence": "Vor etwa 200 Jahren hat man zuerst versucht, ein „Laufrad“ zu bauen."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "Laufrad",
+      "variants": [
+        {
+          "text": "Lauffrad",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort kommt von „laufen“. Es hat nur ein „f“: Laufrad."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "1817",
+      "variants": [
+        {
+          "text": "1871",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Erfinder der ersten Laufmaschine im Jahr 1817 war Karl Drais aus Karlsruhe.“ Das war im Jahr 1817. Zwei Ziffern sind vertauscht.",
+          "evidence": "Erfinder der ersten Laufmaschine im Jahr 1817 war Karl Drais aus Karlsruhe."
+        },
+        {
+          "text": "1717",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Erfinder der ersten Laufmaschine im Jahr 1817 war Karl Drais aus Karlsruhe.“ Das war im Jahr 1817.",
+          "evidence": "Erfinder der ersten Laufmaschine im Jahr 1817 war Karl Drais aus Karlsruhe."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "Karl Drais",
+      "variants": [
+        {
+          "text": "Karl Benz",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Erfinder der ersten Laufmaschine im Jahr 1817 war Karl Drais aus Karlsruhe.“ Der Erfinder war Karl Drais.",
+          "evidence": "Erfinder der ersten Laufmaschine im Jahr 1817 war Karl Drais aus Karlsruhe."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "Karlsruhe",
+      "variants": [
+        {
+          "text": "Stuttgart",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Erfinder der ersten Laufmaschine im Jahr 1817 war Karl Drais aus Karlsruhe.“ Karl Drais kam aus Karlsruhe.",
+          "evidence": "Erfinder der ersten Laufmaschine im Jahr 1817 war Karl Drais aus Karlsruhe."
+        },
+        {
+          "text": "Karlsrue",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Im Namen fehlt ein „h“: Karlsruhe."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "Holz",
+      "variants": [
+        {
+          "text": "Metall",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Seine Draisine, ein Vorläufer des Fahrrads aus Holz, hatte noch keine Pedale.“ Die Draisine war ein Vorläufer des Fahrrads aus Holz.",
+          "evidence": "Seine Draisine, ein Vorläufer des Fahrrads aus Holz, hatte noch keine Pedale."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "Pedale",
+      "variants": [
+        {
+          "text": "Pedahle",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das Wort „Pedale“ schreibt man ohne „h“."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "Füßen",
+      "variants": [
+        {
+          "text": "Füsen",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach dem langen „ü“ steht „ß“: Füßen. Das Wort kommt von „Fuß“."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "Fünfzig",
+      "variants": [
+        {
+          "text": "Fünfzehn",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Fünfzig Jahre später wurde in Frankreich das „Velocipede“ erfunden.“ Fünfzig Jahre später wurde das „Velocipede“ erfunden.",
+          "evidence": "Fünfzig Jahre später wurde in Frankreich das „Velocipede“ erfunden."
+        },
+        {
+          "text": "Fünfzik",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort endet mit „zig“: fünfzig. Du hörst am Ende ein „ch“."
+        }
+      ]
+    },
+    "s13": {
+      "correct": "Frankreich",
+      "variants": [
+        {
+          "text": "England",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Fünfzig Jahre später wurde in Frankreich das „Velocipede“ erfunden.“ Das „Velocipede“ wurde in Frankreich erfunden.",
+          "evidence": "Fünfzig Jahre später wurde in Frankreich das „Velocipede“ erfunden."
+        },
+        {
+          "text": "Frankreig",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das Wort endet mit „reich“, wie bei Königreich."
+        }
+      ]
+    },
+    "s14": {
+      "correct": "Vorderrad",
+      "variants": [
+        {
+          "text": "Hinterrad",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Es hatte Pedalen am Vorderrad und war ebenfalls noch ganz aus Holz.“ Es hatte Pedalen am Vorderrad.",
+          "evidence": "Es hatte Pedalen am Vorderrad und war ebenfalls noch ganz aus Holz."
+        },
+        {
+          "text": "Vorderrat",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Das Wort besteht aus „Vorder“ und „Rad“. Es endet mit „d“, wie in den Rädern."
+        }
+      ]
+    },
+    "n1": {
+      "correct": "Muskelkraft",
+      "variants": [
+        {
+          "text": "Muskelkraf",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Am Ende fehlt ein „t“: Muskelkraft."
+        }
+      ]
+    },
+    "n2": {
+      "correct": "zwei",
+      "variants": [
+        {
+          "text": "drei",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Es besteht meistens aus zwei Rädern, einem Sattel zum Sitzen und einem Lenker.“ Ein Fahrrad hat meistens zwei Räder.",
+          "evidence": "Es besteht meistens aus zwei Rädern, einem Sattel zum Sitzen und einem Lenker."
+        }
+      ]
+    },
+    "n3": {
+      "correct": "Sattel",
+      "variants": [
+        {
+          "text": "Satel",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "In „Sattel“ klingt das „a“ kurz. Darum steht „tt“ im Wort."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Klexikon-Artikel Fahrrad, Revision 162200 (abgerufen am 18.10.2026, Abschnitt „Wann wurde das Fahrrad erfunden?“); die 8 Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de; die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Nur Klassen, die ab Klasse 3 vorkommen: Rechtschreibung (Ableitung, Doppelkonsonant, tz, ck, ß), Flüchtigkeitsfehler, Zeichensetzung, Zahl/Name/Ort. Die Falschschreibungen sind konstruiert, nach den Schwerpunkten der IQB-Handreichung.",
+    "Geändert (Einleitung): Der Auszug beginnt jetzt mit den ersten zwei Sätzen des Artikels; gestrichen sind die Sätze zu schwerfälligen Laufrädern und ihrem Gewicht.",
+    "Die Anführungszeichen um „Laufrad“ und „Velocipede“ stehen im Original und bleiben auch in der Variante. Der letzte Auszugssatz steht nach einem Bildtext im Artikel, bleibt aber im selben Abschnitt.",
+    "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt.",
+    "Die Quelle liegt als PDF unter public/quellen/de/fahrrad.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+  ]
+}

@@ -1,0 +1,838 @@
+{
+  "id": "black-death",
+  "title": "Black Death",
+  "language": "en",
+  "topic": "The Black Death in Europe: how many people died and which places were hit hardest",
+  "source": {
+    "title": "Black Death – Wikipedia",
+    "url": "https://en.wikipedia.org/w/index.php?title=Black_Death&oldid=1377102371",
+    "revision": "1377102371",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "authorsUrl": "https://en.wikipedia.org/w/index.php?title=Black_Death&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/en/black-death.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "The mortality rate of the Black Death in the 14th century was far greater than the worst 20th-century outbreaks of Y. pestis plague, which occurred in India and killed as much as 3% of the population of certain cities.",
+      "section": "Deaths"
+    },
+    {
+      "text": "In 1348, the disease spread so rapidly that nearly a third of the European population perished before any physicians or government authorities had time to reflect upon its origins.",
+      "section": "Deaths"
+    },
+    {
+      "text": "In crowded cities, it was not uncommon for as much as 50% of the population to die.",
+      "section": "Deaths"
+    },
+    {
+      "text": "Half of Paris's population of 100,000 people died.",
+      "section": "Deaths"
+    },
+    {
+      "text": "In Italy, the population of Florence was reduced from between 110,000 and 120,000 inhabitants in 1338 to 50,000 in 1351.",
+      "section": "Deaths"
+    },
+    {
+      "text": "At least 60% of the population of Hamburg and Bremen perished, and a similar percentage of Londoners may have died from the disease as well, leaving a death toll of approximately 62,000 between 1346 and 1353.",
+      "section": "Deaths"
+    },
+    {
+      "text": "Florence's tax records suggest that 80% of the city's population died within four months in 1348.",
+      "section": "Deaths"
+    },
+    {
+      "text": "Before 1350, there were about 170,000 settlements in Germany, and this was reduced by nearly 40,000 by 1450.",
+      "section": "Deaths"
+    },
+    {
+      "text": "The disease bypassed some areas, with the most isolated areas being less vulnerable to contagion.",
+      "section": "Deaths"
+    },
+    {
+      "text": "Plague did not appear in Flanders until the turn of the 15th century, and the impact was less severe on the populations of Hainaut, Finland, northern Germany, and areas of Poland.",
+      "section": "Deaths"
+    },
+    {
+      "text": "Monks, nuns, and priests were especially hard-hit since they cared for people ill with the plague.",
+      "section": "Deaths"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "The mortality rate of the Black Death in the 14th century was ",
+        {
+          "slot": "s1"
+        },
+        " than that of the worst plague outbreaks of the 20th century."
+      ],
+      "evidence": {
+        "quote": "The mortality rate of the Black Death in the 14th century was far greater than the worst 20th-century outbreaks of Y. pestis plague"
+      }
+    },
+    {
+      "sentence": [
+        "Those outbreaks took place in India and killed ",
+        {
+          "slot": "s2"
+        },
+        " of the population of certain cities."
+      ],
+      "evidence": {
+        "quote": "which occurred in India and killed as much as 3% of the population of certain cities"
+      }
+    },
+    {
+      "sentence": [
+        "In 1348, the plague spread so rapidly that ",
+        {
+          "slot": "s3"
+        },
+        " of Europe's population died."
+      ],
+      "evidence": {
+        "quote": "In 1348, the disease spread so rapidly that nearly a third of the European population perished"
+      }
+    },
+    {
+      "sentence": [
+        "Physicians and government authorities ",
+        {
+          "slot": "s4"
+        },
+        " to consider its origins before so many people had died."
+      ],
+      "evidence": {
+        "quote": "before any physicians or government authorities had time to reflect upon its origins"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s5"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "As much as 50% of the population could die in ",
+        {
+          "slot": "s6"
+        },
+        ", and this was not unusual."
+      ],
+      "evidence": {
+        "quote": "In crowded cities, it was not uncommon for as much as 50% of the population to die."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s7"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "In ",
+        {
+          "slot": "s8"
+        },
+        ", half of the 100,000 inhabitants died."
+      ],
+      "evidence": {
+        "quote": "Half of Paris's population of 100,000 people died."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s9"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "In 1338, Florence in Italy had ",
+        {
+          "slot": "s10"
+        },
+        " inhabitants."
+      ],
+      "evidence": {
+        "quote": "In Italy, the population of Florence was reduced from between 110,000 and 120,000 inhabitants in 1338 to 50,000 in 1351."
+      }
+    },
+    {
+      "sentence": [
+        "By 1351, the number had fallen to ",
+        {
+          "slot": "s11"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "In Italy, the population of Florence was reduced from between 110,000 and 120,000 inhabitants in 1338 to 50,000 in 1351."
+      }
+    },
+    {
+      "sentence": [
+        "At least 60% of the people of ",
+        {
+          "slot": "s12"
+        },
+        " perished."
+      ],
+      "evidence": {
+        "quote": "At least 60% of the population of Hamburg and Bremen perished"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s13"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "A similar percentage of Londoners ",
+        {
+          "slot": "s14"
+        },
+        " died from the disease as well, leaving a death toll of approximately 62,000 between 1346 and 1353."
+      ],
+      "evidence": {
+        "quote": "a similar percentage of Londoners may have died from the disease as well, leaving a death toll of approximately 62,000 between 1346 and 1353"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s15"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Tax records of Florence suggest that ",
+        {
+          "slot": "s16"
+        },
+        " died."
+      ],
+      "evidence": {
+        "quote": "Florence's tax records suggest that 80% of the city's population died"
+      }
+    },
+    {
+      "sentence": [
+        "According to these records, it happened ",
+        {
+          "slot": "s17"
+        },
+        " in 1348."
+      ],
+      "evidence": {
+        "quote": "Florence's tax records suggest that 80% of the city's population died within four months in 1348."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s18"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Before 1350, there were ",
+        {
+          "slot": "s19"
+        },
+        " settlements in Germany."
+      ],
+      "evidence": {
+        "quote": "Before 1350, there were about 170,000 settlements in Germany"
+      }
+    },
+    {
+      "sentence": [
+        "By 1450, that number had shrunk by ",
+        {
+          "slot": "s20"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "and this was reduced by nearly 40,000 by 1450"
+      }
+    },
+    {
+      "sentence": [
+        "The disease bypassed some areas, ",
+        {
+          "slot": "s21"
+        },
+        " the most isolated areas were less vulnerable to contagion."
+      ],
+      "evidence": {
+        "quote": "The disease bypassed some areas, with the most isolated areas being less vulnerable to contagion."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s22"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Plague did not appear in Flanders until ",
+        {
+          "slot": "s23"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Plague did not appear in Flanders until the turn of the 15th century"
+      }
+    },
+    {
+      "sentence": [
+        "The impact was also ",
+        {
+          "slot": "s24"
+        },
+        " on the populations of Hainaut, Finland, northern Germany, and areas of Poland."
+      ],
+      "evidence": {
+        "quote": "the impact was less severe on the populations of Hainaut, Finland, northern Germany, and areas of Poland"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s25"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Monks, nuns, and priests were especially hard-hit, ",
+        {
+          "slot": "s26"
+        },
+        " people ill with the plague."
+      ],
+      "evidence": {
+        "quote": "Monks, nuns, and priests were especially hard-hit since they cared for people ill with the plague."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s27"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "far greater",
+      "variants": [
+        {
+          "text": "slightly greater",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"The mortality rate of the Black Death in the 14th century was far greater than the worst 20th-century outbreaks ...\" It was \"far greater\", not \"slightly greater\". The wording shrinks the gap.",
+          "evidence": "The mortality rate of the Black Death in the 14th century was far greater than the worst 20th-century outbreaks of Y. pestis plague, which occurred in India and killed as much as 3% of the population of certain cities."
+        },
+        {
+          "text": "far grater",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "\"Grater\" is a real word (a kitchen tool), so a spell checker does not flag it. Here you need \"greater\"."
+        },
+        {
+          "text": "far lower",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"The mortality rate of the Black Death in the 14th century was far greater than the worst 20th-century outbreaks ...\" The Black Death was deadlier, not less deadly.",
+          "evidence": "The mortality rate of the Black Death in the 14th century was far greater than the worst 20th-century outbreaks of Y. pestis plague, which occurred in India and killed as much as 3% of the population of certain cities."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "as much as 3%",
+      "variants": [
+        {
+          "text": "at least 3%",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"... killed as much as 3% of the population of certain cities.\" The figure is an upper limit (\"as much as\"), not a minimum. \"At least\" changes what the number means.",
+          "tolerance": 1,
+          "evidence": "The mortality rate of the Black Death in the 14th century was far greater than the worst 20th-century outbreaks of Y. pestis plague, which occurred in India and killed as much as 3% of the population of certain cities."
+        },
+        {
+          "text": "as much as 30%",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... killed as much as 3% of the population of certain cities.\" The number is 3%, not 30%.",
+          "tolerance": 1,
+          "evidence": "The mortality rate of the Black Death in the 14th century was far greater than the worst 20th-century outbreaks of Y. pestis plague, which occurred in India and killed as much as 3% of the population of certain cities."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "nearly a third",
+      "variants": [
+        {
+          "text": "nearly half",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"In 1348, the disease spread so rapidly that nearly a third of the European population perished ...\" It was nearly a third, not nearly half.",
+          "evidence": "In 1348, the disease spread so rapidly that nearly a third of the European population perished before any physicians or government authorities had time to reflect upon its origins."
+        },
+        {
+          "text": "nearly a thrid",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Two letters are swapped: \"third\"."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "did not even have time",
+      "variants": [
+        {
+          "text": "had plenty of time",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "The sentence before says the plague \"spread so rapidly\". Having \"plenty of time\" cannot be true at the same time. This is a contradiction inside the text.",
+          "tolerance": 1
+        },
+        {
+          "text": "did not even have tiem",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Two letters are swapped: \"time\"."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Since the authorities acted too slowly, it was their fault that so many people died.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "This sentence is not in the source, which says only that people died \"before any physicians or government authorities had time to reflect upon its origins\". Nothing says the authorities were slow or to blame. The conclusion does not follow from the text (a false cause)."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "crowded cities",
+      "variants": [
+        {
+          "text": "all cities",
+          "errorClass": "overgeneralization",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"In crowded cities, it was not uncommon for as much as 50% of the population to die.\" It speaks of crowded cities only. \"All cities\" turns a special case into a rule for every city.",
+          "evidence": "In crowded cities, it was not uncommon for as much as 50% of the population to die."
+        },
+        {
+          "text": "crowded cites",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "\"Cites\" is a real word (a verb), so a spell checker does not flag it. The plural of \"city\" is \"cities\"."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "So every large city in Europe lost half of its people.",
+          "errorClass": "overgeneralization",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"In crowded cities, it was not uncommon for as much as 50% of the population to die.\" That describes crowded cities in general, not every large city, and \"as much as 50%\" is not \"half\" everywhere. One case is stretched into a rule.",
+          "evidence": "In crowded cities, it was not uncommon for as much as 50% of the population to die."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "Paris",
+      "variants": [
+        {
+          "text": "Rome",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Half of Paris's population of 100,000 people died.\" The city is Paris, not Rome.",
+          "evidence": "Half of Paris's population of 100,000 people died."
+        },
+        {
+          "text": "Pairs",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "\"Pairs\" is a real word (two of something), so a spell checker does not flag it. The city is spelled \"Paris\"."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Many wealthy residents left the city before the disease reached it.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "This sentence is not in the source. It says only: \"Half of Paris's population of 100,000 people died.\" The new claim sounds plausible, but the text does not support it.",
+          "evidence": "Half of Paris's population of 100,000 people died."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "between 110,000 and 120,000",
+      "variants": [
+        {
+          "text": "between 150,000 and 160,000",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... from between 110,000 and 120,000 inhabitants in 1338 to 50,000 in 1351.\" The numbers are 110,000 and 120,000.",
+          "tolerance": 1,
+          "evidence": "In Italy, the population of Florence was reduced from between 110,000 and 120,000 inhabitants in 1338 to 50,000 in 1351."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "50,000",
+      "variants": [
+        {
+          "text": "150,000",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "The source says: \"... was reduced from between 110,000 and 120,000 inhabitants in 1338 to 50,000 in 1351.\" A number above 120,000 would not be a fall. The number is 50,000.",
+          "evidence": "In Italy, the population of Florence was reduced from between 110,000 and 120,000 inhabitants in 1338 to 50,000 in 1351."
+        },
+        {
+          "text": "5,000",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"... to 50,000 in 1351.\" The number is 50,000, not 5,000.",
+          "evidence": "In Italy, the population of Florence was reduced from between 110,000 and 120,000 inhabitants in 1338 to 50,000 in 1351."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "Hamburg and Bremen",
+      "variants": [
+        {
+          "text": "Hamburg and Berlin",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"At least 60% of the population of Hamburg and Bremen perished ...\" The second city is Bremen, not Berlin.",
+          "tolerance": 1,
+          "evidence": "At least 60% of the population of Hamburg and Bremen perished, and a similar percentage of Londoners may have died from the disease as well, leaving a death toll of approximately 62,000 between 1346 and 1353."
+        },
+        {
+          "text": "Hamburg and Bremne",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Two letters are swapped: \"Bremen\"."
+        }
+      ]
+    },
+    "s13": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Experts have shown that Florence suffered greater losses than any other city in Europe.",
+          "errorClass": "false_authority",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The \"experts\" are not named and no source is given: this is an appeal to an unnamed authority. The source has no such comparison; it says only: \"Florence's tax records suggest that 80% of the city's population died within four months in 1348.\"",
+          "evidence": "Florence's tax records suggest that 80% of the city's population died within four months in 1348."
+        }
+      ]
+    },
+    "s14": {
+      "correct": "may have",
+      "variants": [
+        {
+          "text": "certainly",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... a similar percentage of Londoners may have died from the disease as well ...\" It is only a possibility. \"Certainly\" makes the estimate sound like a proven fact.",
+          "evidence": "At least 60% of the population of Hamburg and Bremen perished, and a similar percentage of Londoners may have died from the disease as well, leaving a death toll of approximately 62,000 between 1346 and 1353."
+        },
+        {
+          "text": "may of",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "\"May of\" sounds like \"may have\" but is not correct. \"Of\" is a real word, so a spell checker does not flag it."
+        }
+      ]
+    },
+    "s15": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Many Londoners left the city and carried the disease into the countryside.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "This sentence is not in the source. It says only: \"... a similar percentage of Londoners may have died from the disease as well ...\" Nothing is said about people leaving London.",
+          "evidence": "At least 60% of the population of Hamburg and Bremen perished, and a similar percentage of Londoners may have died from the disease as well, leaving a death toll of approximately 62,000 between 1346 and 1353."
+        }
+      ]
+    },
+    "s16": {
+      "correct": "80% of the city's population",
+      "variants": [
+        {
+          "text": "8% of the city's population",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"Florence's tax records suggest that 80% of the city's population died within four months in 1348.\" The number is 80%, not 8%.",
+          "tolerance": 1,
+          "evidence": "Florence's tax records suggest that 80% of the city's population died within four months in 1348."
+        },
+        {
+          "text": "the whole population of the city",
+          "errorClass": "overgeneralization",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... 80% of the city's population died ...\" Four fifths is not everyone. \"The whole population\" turns a large share into all.",
+          "tolerance": 1,
+          "evidence": "Florence's tax records suggest that 80% of the city's population died within four months in 1348."
+        }
+      ]
+    },
+    "s17": {
+      "correct": "within four months",
+      "variants": [
+        {
+          "text": "within four years",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... died within four months in 1348.\" It was four months, not four years.",
+          "tolerance": 1,
+          "evidence": "Florence's tax records suggest that 80% of the city's population died within four months in 1348."
+        },
+        {
+          "text": "within four monts",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "A letter is missing: \"months\"."
+        }
+      ]
+    },
+    "s18": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "The merciless plague tore through Europe's helpless cities.",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Words like \"merciless\" and \"helpless\" are emotional. They steer your feelings; the source describes the events in a neutral tone. This is loaded language."
+        }
+      ]
+    },
+    "s19": {
+      "correct": "about 170,000",
+      "variants": [
+        {
+          "text": "about 17,000",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"Before 1350, there were about 170,000 settlements in Germany ...\" The number is about 170,000, not 17,000.",
+          "evidence": "Before 1350, there were about 170,000 settlements in Germany, and this was reduced by nearly 40,000 by 1450."
+        },
+        {
+          "text": "over 170,000",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "The source says: \"... about 170,000 settlements in Germany ...\" The figure is approximate. \"Over\" turns it into a minimum.",
+          "evidence": "Before 1350, there were about 170,000 settlements in Germany, and this was reduced by nearly 40,000 by 1450."
+        }
+      ]
+    },
+    "s20": {
+      "correct": "nearly 40,000",
+      "variants": [
+        {
+          "text": "nearly 140,000",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... this was reduced by nearly 40,000 by 1450.\" The loss was nearly 40,000, not 140,000.",
+          "evidence": "Before 1350, there were about 170,000 settlements in Germany, and this was reduced by nearly 40,000 by 1450."
+        },
+        {
+          "text": "nearyl 40,000",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Two letters are swapped: \"nearly\"."
+        }
+      ]
+    },
+    "s21": {
+      "correct": "and",
+      "variants": [
+        {
+          "text": "although",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "\"Although\" suggests a contrast, but being less vulnerable fits with being bypassed. The wrong connective turns the sentence around. The source says: \"The disease bypassed some areas, with the most isolated areas being less vulnerable to contagion.\""
+        },
+        {
+          "text": "so",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Here cause and effect are swapped: being bypassed would not make isolated areas less vulnerable. The source does not give this reason: \"... with the most isolated areas being less vulnerable to contagion.\""
+        }
+      ]
+    },
+    "s22": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "No region of Europe escaped the plague.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "This contradicts the sentence \"The disease bypassed some areas ...\" in the same text. Two sentences of one text cannot both be true: that is a contradiction."
+        }
+      ]
+    },
+    "s23": {
+      "correct": "the turn of the 15th century",
+      "variants": [
+        {
+          "text": "the turn of the 16th century",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"Plague did not appear in Flanders until the turn of the 15th century ...\" The date is the turn of the 15th century, not the 16th.",
+          "tolerance": 2,
+          "evidence": "Plague did not appear in Flanders until the turn of the 15th century, and the impact was less severe on the populations of Hainaut, Finland, northern Germany, and areas of Poland."
+        },
+        {
+          "text": "the turn of the 15th centruy",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Two letters are swapped: \"century\"."
+        }
+      ]
+    },
+    "s24": {
+      "correct": "less severe",
+      "variants": [
+        {
+          "text": "more severe",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "The source says: \"... the impact was less severe on the populations of Hainaut, Finland, northern Germany, and areas of Poland.\" It was less severe, not more severe.",
+          "evidence": "Plague did not appear in Flanders until the turn of the 15th century, and the impact was less severe on the populations of Hainaut, Finland, northern Germany, and areas of Poland."
+        },
+        {
+          "text": "less sevre",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Two letters are swapped: \"severe\"."
+        }
+      ]
+    },
+    "s25": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Since Finland was hit less severely, its people must have been healthier than other Europeans.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "The source says only that the impact was \"less severe\" there. It gives no reason, and nothing about the health of the people. The conclusion goes beyond the text (an unsupported inference)."
+        }
+      ]
+    },
+    "s26": {
+      "correct": "because they cared for",
+      "variants": [
+        {
+          "text": "so they cared for",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Cause and effect are swapped: caring for the sick was the reason for the losses, not their result. The source says: \"... especially hard-hit since they cared for people ill with the plague.\"",
+          "tolerance": 1
+        },
+        {
+          "text": "becuase they cared for",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Two letters are swapped: \"because\"."
+        }
+      ]
+    },
+    "s27": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "It was without doubt the worst catastrophe that Europe has ever suffered.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "\"The worst catastrophe\" is a judgement, not a counted fact, and \"without doubt\" presents it as certain. The source gives only numbers and places. This is an opinion stated as a fact."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Source read: English Wikipedia article Black Death, revision 1377102371 (retrieved 2026-10-18); the saved article text (about 13,500 words, references, tables and boxes left out) was read in full. The eleven excerpt sentences come from the section \"Consequences\", subsection \"Deaths\" (the last sentence of the paragraph on mass burials and then the paragraph beginning \"In 1348, the disease spread so rapidly\"). Excerpt sentences, evidence quotes and variant evidence were compared with the saved article text by script (whitespace squeezed); every one occurs in it, in the source's order.",
+    "Licence: Wikipedia text under CC BY-SA 4.0 (page footer); the data of this pack is under the same licence.",
+    "All 15 error classes of the level occur. Classes from grade 7 and from grade 10 are derived, not documented. Misspellings (thrid, tiem, Bremne, monts, nearyl, centruy, sevre, becuase) and real-word errors (grater, cites, Pairs, may of) are constructed on typical English patterns, not taken from a corpus.",
+    "The inserted sentences (unfounded blame, generalisation, added claims, unnamed experts, loaded wording, contradiction, unsupported inference, opinion) are invented, harmless and not in the Original; the explanation says so. Place names and figures in the Variante follow the article; Y. pestis is left out of the Variante, and \"Y. pestis plague\" stays in the Original as the article has it.",
+    "Not verified: whether the article's figures are right in the world; they follow the article, not other sources (the article itself gives other estimates elsewhere, e.g. a lower share for Germany and England in a footnote). Sentences of the two paragraphs were left out (never changed), so the excerpt stays within two neighbouring paragraphs.",
+    "The source is saved as PDF under public/quellen/en/black-death.pdf (made by the lead) for the mode source."
+  ]
+}

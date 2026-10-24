@@ -4,7 +4,7 @@
   "description": "A source excerpt, a rendition of it in sentences, and slots holding the correct wording plus several wrong variants. At run time a seed decides which slots are corrupted and with which variant. All learner-facing text (title, topic, excerpt, rendition, slot texts, explanations) is written in `language`.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "title", "language", "grades", "topic", "source", "excerpt", "rendition", "slots"],
+  "required": ["id", "title", "language", "topic", "source", "excerpt", "rendition", "slots"],
   "properties": {
     "id": {
       "type": "string",
@@ -24,24 +24,6 @@
       "type": "string",
       "pattern": "^[a-z]{2}$",
       "description": "ISO 639-1 code of all texts in this pack."
-    },
-    "grades": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["from", "to"],
-      "properties": {
-        "from": {
-          "type": "integer",
-          "minimum": 3,
-          "maximum": 13
-        },
-        "to": {
-          "type": "integer",
-          "minimum": 3,
-          "maximum": 13
-        }
-      },
-      "description": "Two adjacent school years, or 11 to 13 (Oberstufe). The checker enforces it."
     },
     "topic": {
       "type": "string",

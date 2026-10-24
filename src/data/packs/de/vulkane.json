@@ -1,0 +1,557 @@
+{
+  "id": "vulkane",
+  "title": "Vulkane",
+  "language": "de",
+  "topic": "Vulkane: Entstehung, Lage und Lava",
+  "source": {
+    "title": "Vulkan – Klexikon – das Kinderlexikon",
+    "url": "https://klexikon.zum.de/index.php?title=Vulkan&oldid=160319",
+    "revision": "160319",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://klexikon.zum.de/index.php?title=Vulkan&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/vulkane.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Ein Vulkan ist ein Berg.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Aus ihm kommt Gestein aus dem Inneren der Erde an die Oberfläche.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Der Name „Vulkan“ kommt von dem römischen Gott des Feuers, Vulcanus.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Auf der Erde gibt es etwa 1500 aktive Vulkane, die meisten davon dort, wo verschiedene Kontinente zusammentreffen.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Auch in Europa gibt es mehrere Vulkane, zum Beispiel auf Island oder in Italien.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Der höchste Berg Afrikas ist ebenfalls ein Vulkan, der Kilimandscharo.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Tief im Innern der Erde ist es so heiß, dass alles Gestein schmilzt.",
+      "section": "Wie entstehen Vulkane?"
+    },
+    {
+      "text": "Das geschmolzene Gestein nennt man Magma.",
+      "section": "Wie entstehen Vulkane?"
+    },
+    {
+      "text": "Wenn das Magma heraustritt, nennt man es Lava.",
+      "section": "Wie entstehen Vulkane?"
+    },
+    {
+      "text": "An der Luft kühlt die Lava ab und wird wieder fest.",
+      "section": "Wie entstehen Vulkane?"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Ein Vulkan ist ein ",
+        {
+          "slot": "s1"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Ein Vulkan ist ein Berg."
+      }
+    },
+    {
+      "sentence": [
+        "Aus diesem Berg tritt ",
+        {
+          "slot": "s2"
+        },
+        " aus dem Erdinneren nach draußen."
+      ],
+      "evidence": {
+        "quote": "Aus ihm kommt Gestein aus dem Inneren der Erde an die Oberfläche."
+      }
+    },
+    {
+      "sentence": [
+        "Das Wort „Vulkan“ geht auf den ",
+        {
+          "slot": "s3"
+        },
+        " Gott des Feuers zurück, auf Vulcanus."
+      ],
+      "evidence": {
+        "quote": "Der Name „Vulkan“ kommt von dem römischen Gott des Feuers, Vulcanus."
+      }
+    },
+    {
+      "sentence": [
+        "Weltweit gibt es ungefähr ",
+        {
+          "slot": "s4"
+        },
+        " aktive Vulkane."
+      ],
+      "evidence": {
+        "quote": "Auf der Erde gibt es etwa 1500 aktive Vulkane, die meisten davon dort, wo verschiedene Kontinente zusammentreffen."
+      }
+    },
+    {
+      "sentence": [
+        "Die meisten davon liegen ",
+        {
+          "slot": "s5a"
+        },
+        " ",
+        {
+          "slot": "s5b"
+        },
+        " zusammentreffen."
+      ],
+      "evidence": {
+        "quote": "Auf der Erde gibt es etwa 1500 aktive Vulkane, die meisten davon dort, wo verschiedene Kontinente zusammentreffen."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "a1"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Auch in Europa gibt es ",
+        {
+          "slot": "s6a"
+        },
+        " Vulkane, zum Beispiel auf ",
+        {
+          "slot": "s6b"
+        },
+        " oder in ",
+        {
+          "slot": "s6c"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Auch in Europa gibt es mehrere Vulkane, zum Beispiel auf Island oder in Italien."
+      }
+    },
+    {
+      "sentence": [
+        "Der ",
+        {
+          "slot": "s7a"
+        },
+        " Berg Afrikas ist ebenfalls ein Vulkan, der ",
+        {
+          "slot": "s7b"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Der höchste Berg Afrikas ist ebenfalls ein Vulkan, der Kilimandscharo."
+      }
+    },
+    {
+      "sentence": [
+        "Tief unter der Erde ist es so ",
+        {
+          "slot": "s8a"
+        },
+        " dass jedes Gestein ",
+        {
+          "slot": "s8b"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Tief im Innern der Erde ist es so heiß, dass alles Gestein schmilzt."
+      }
+    },
+    {
+      "sentence": [
+        "Geschmolzenes Gestein heißt ",
+        {
+          "slot": "s9"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Das geschmolzene Gestein nennt man Magma."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s10"
+        },
+        " das Magma heraustritt, nennt man es Lava."
+      ],
+      "evidence": {
+        "quote": "Wenn das Magma heraustritt, nennt man es Lava."
+      }
+    },
+    {
+      "sentence": [
+        "Wenn Lava mit der Luft in Berührung kommt, wird sie kalt und ",
+        {
+          "slot": "s11"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "An der Luft kühlt die Lava ab und wird wieder fest."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "a2"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "Berg",
+      "variants": [
+        {
+          "text": "Tal",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Ein Vulkan ist ein Berg.“ Ein Vulkan ist kein Tal.",
+          "evidence": "Ein Vulkan ist ein Berg."
+        },
+        {
+          "text": "Berk",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Wer das Wort verlängert („Berge“), hört das „g“. Darum schreibt man am Ende „g“: Berg."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "Gestein",
+      "variants": [
+        {
+          "text": "Wasser",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Aus ihm kommt Gestein aus dem Inneren der Erde an die Oberfläche.“ Von Wasser steht dort nichts.",
+          "evidence": "Aus ihm kommt Gestein aus dem Inneren der Erde an die Oberfläche."
+        },
+        {
+          "text": "Gesten",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Gesten“ gibt es als Wort (eine Geste), gemeint ist aber „Gestein“. Ein Rechtschreibprogramm findet diesen Fehler nicht."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "römischen",
+      "variants": [
+        {
+          "text": "griechischen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Der Name „Vulkan“ kommt von dem römischen Gott des Feuers, Vulcanus.“ Der Gott war ein römischer, kein griechischer.",
+          "evidence": "Der Name „Vulkan“ kommt von dem römischen Gott des Feuers, Vulcanus."
+        }
+      ]
+    },
+    "s4": {
+      "correct": "1500",
+      "variants": [
+        {
+          "text": "150",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Auf der Erde gibt es etwa 1500 aktive Vulkane“ Die Zahl wurde verändert.",
+          "evidence": "Auf der Erde gibt es etwa 1500 aktive Vulkane, die meisten davon dort, wo verschiedene Kontinente zusammentreffen."
+        },
+        {
+          "text": "15.000",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Auf der Erde gibt es etwa 1500 aktive Vulkane“ Die Zahl wurde verändert.",
+          "evidence": "Auf der Erde gibt es etwa 1500 aktive Vulkane, die meisten davon dort, wo verschiedene Kontinente zusammentreffen."
+        }
+      ]
+    },
+    "s5a": {
+      "correct": "dort, wo",
+      "variants": [
+        {
+          "text": "dort wo",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Vor „wo“ beginnt ein Nebensatz. Vor einem Nebensatz steht ein Komma: dort, wo."
+        }
+      ]
+    },
+    "s5b": {
+      "correct": "verschiedene Kontinente",
+      "variants": [
+        {
+          "text": "verschiedene Meere",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „die meisten davon dort, wo verschiedene Kontinente zusammentreffen“ Von Meeren steht dort nichts.",
+          "evidence": "Auf der Erde gibt es etwa 1500 aktive Vulkane, die meisten davon dort, wo verschiedene Kontinente zusammentreffen."
+        }
+      ]
+    },
+    "a1": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Die meisten Vulkane brechen jedes Jahr aus.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort geht es darum, wo es Vulkane gibt, nicht darum, wie oft sie ausbrechen."
+        }
+      ]
+    },
+    "s6a": {
+      "correct": "mehrere",
+      "variants": [
+        {
+          "text": "keine",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Im selben Satz stehen Island und Italien als Beispiele für Vulkane in Europa. Das passt nicht zu „keine“.",
+          "evidence": "Auch in Europa gibt es mehrere Vulkane, zum Beispiel auf Island oder in Italien."
+        }
+      ]
+    },
+    "s6b": {
+      "correct": "Island",
+      "variants": [
+        {
+          "text": "Irland",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „zum Beispiel auf Island oder in Italien“ Der Ort wurde verändert.",
+          "evidence": "Auch in Europa gibt es mehrere Vulkane, zum Beispiel auf Island oder in Italien."
+        },
+        {
+          "text": "Grönland",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „zum Beispiel auf Island oder in Italien“ Der Ort wurde verändert.",
+          "evidence": "Auch in Europa gibt es mehrere Vulkane, zum Beispiel auf Island oder in Italien."
+        }
+      ]
+    },
+    "s6c": {
+      "correct": "Italien",
+      "variants": [
+        {
+          "text": "Polen",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „zum Beispiel auf Island oder in Italien“ Der Ort wurde verändert.",
+          "evidence": "Auch in Europa gibt es mehrere Vulkane, zum Beispiel auf Island oder in Italien."
+        },
+        {
+          "text": "Norwegen",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „zum Beispiel auf Island oder in Italien“ Der Ort wurde verändert.",
+          "evidence": "Auch in Europa gibt es mehrere Vulkane, zum Beispiel auf Island oder in Italien."
+        }
+      ]
+    },
+    "s7a": {
+      "correct": "höchste",
+      "variants": [
+        {
+          "text": "niedrigste",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Der höchste Berg Afrikas ist ebenfalls ein Vulkan“ Es geht um den höchsten Berg.",
+          "evidence": "Der höchste Berg Afrikas ist ebenfalls ein Vulkan, der Kilimandscharo."
+        },
+        {
+          "text": "zweithöchste",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Der höchste Berg Afrikas ist ebenfalls ein Vulkan“ Es geht um den höchsten Berg, nicht um den zweithöchsten.",
+          "evidence": "Der höchste Berg Afrikas ist ebenfalls ein Vulkan, der Kilimandscharo."
+        }
+      ]
+    },
+    "s7b": {
+      "correct": "Kilimandscharo",
+      "variants": [
+        {
+          "text": "Ätna",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „der Kilimandscharo“ Der Name wurde verändert.",
+          "evidence": "Der höchste Berg Afrikas ist ebenfalls ein Vulkan, der Kilimandscharo."
+        },
+        {
+          "text": "Kilimanscharo",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Hier fehlt ein Buchstabe: Kilimandscharo. Solche Fehler passieren schnell beim Schreiben."
+        }
+      ]
+    },
+    "s8a": {
+      "correct": "heiß,",
+      "variants": [
+        {
+          "text": "heiß",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach „heiß“ beginnt mit „dass“ ein Nebensatz. Vor einem Nebensatz steht ein Komma: heiß, dass."
+        },
+        {
+          "text": "heis,",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Wer das Wort verlängert („heiße Luft“), hört das lange „ei“ mit scharfem „s“. Darum schreibt man „ß“: heiß."
+        }
+      ]
+    },
+    "s8b": {
+      "correct": "schmilzt",
+      "variants": [
+        {
+          "text": "gefriert",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „dass alles Gestein schmilzt“ Das Gestein schmilzt.",
+          "evidence": "Tief im Innern der Erde ist es so heiß, dass alles Gestein schmilzt."
+        },
+        {
+          "text": "schmiltzt",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach dem kurzen „i“ steht kein „tz“. Man schreibt: schmilzt."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "Magma",
+      "variants": [
+        {
+          "text": "Lava",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Das geschmolzene Gestein nennt man Magma.“ Als „Lava“ bezeichnet man es erst, wenn es heraustritt.",
+          "evidence": "Das geschmolzene Gestein nennt man Magma."
+        },
+        {
+          "text": "Mgama",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Hier sind zwei Buchstaben vertauscht: Magma. Solche Fehler passieren schnell beim Schreiben."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "Wenn",
+      "variants": [
+        {
+          "text": "Obwohl",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht „Wenn“: Sobald das Magma heraustritt, heißt es Lava. „Obwohl“ passt nicht zu diesem Zusammenhang.",
+          "evidence": "Wenn das Magma heraustritt, nennt man es Lava."
+        },
+        {
+          "text": "Bevor",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht „Wenn“: Erst wenn das Magma heraustritt, nennt man es Lava. Mit „Bevor“ stimmt die Reihenfolge nicht.",
+          "evidence": "Wenn das Magma heraustritt, nennt man es Lava."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "wieder hart",
+      "variants": [
+        {
+          "text": "noch flüssiger",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „An der Luft kühlt die Lava ab und wird wieder fest.“ Die Lava wird nicht flüssiger, sondern fest.",
+          "evidence": "An der Luft kühlt die Lava ab und wird wieder fest."
+        },
+        {
+          "text": "wieder weich",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „An der Luft kühlt die Lava ab und wird wieder fest.“ Die Lava wird fest, nicht weich.",
+          "evidence": "An der Luft kühlt die Lava ab und wird wieder fest."
+        }
+      ]
+    },
+    "a2": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Vulkane gibt es nur auf der Erde.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort geht es um Vulkane auf der Erde, aber nicht darum, ob es sie nur hier gibt."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Klexikon-Artikel Vulkan (Revision 160319), am 2026-10-18 abgerufen und lokal gespeichert; die Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de (rel=license). Das Paket steht unter derselben Lizenz (CC BY-SA 4.0).",
+    "Die Falschschreibungen sind nach den Mustern der IQB-Handreichung und der AFRA-Kategorien (Ableitung, Dehnung, Konsonantverdopplung, Auslautverhärtung, Groß-/Kleinschreibung) konstruiert, nicht von Lernenden gesammelt.",
+    "Weggelassen wurden die Abschnitte über die schlimmsten Ausbrüche, den Aufbau eines Vulkans sowie die Bildunterschriften, weil sie für diesen Auszug nicht gebraucht werden.",
+    "Nicht geprüft: ob der Artikeltext des Klexikons fachlich vollständig stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Sachlage in der Welt.",
+    "Die Quelle liegt als PDF unter public/quellen/de/vulkane.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
+    "Durchsicht Überschrift/Einleitung: Auszug beginnt schon mit dem ersten Satz des Artikels (davor steht nur eine Bildunterschrift); Auszug und Variante sind unverändert, jeder Satz ist ohne den Rest des Artikels verständlich."
+  ]
+}

@@ -1,0 +1,433 @@
+{
+  "id": "fledermaeuse",
+  "title": "Fledermäuse",
+  "language": "de",
+  "topic": "Fledermäuse: Lebensweise und Schutz",
+  "source": {
+    "title": "Fledermäuse – Klexikon – das Kinderlexikon",
+    "url": "https://klexikon.zum.de/index.php?title=Flederm%C3%A4use&oldid=157941",
+    "revision": "157941",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://klexikon.zum.de/index.php?title=Flederm%C3%A4use&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/fledermaeuse.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Fledermäuse sind eine Gruppe von Säugetieren, die fliegen können.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Sie haben nämlich Flügel, aber ohne Federn.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Die meisten Arten von Fledermäusen fressen Insekten.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "In Europa sind alle Fledermausarten gefährdet.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Sie sind deshalb streng geschützt.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Eine Mutter hat nur ein Jungtier im Jahr.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Fledermäuse sind nachts wach und schlafen am Tag.",
+      "section": "Wie leben Fledermäuse?"
+    },
+    {
+      "text": "Dabei hängen sie kopfüber in Bäumen, Höhlen oder auf Dachböden.",
+      "section": "Wie leben Fledermäuse?"
+    },
+    {
+      "text": "Nach der Paarung trägt das Muttertier ihr Junges sechs bis zehn Wochen im Bauch.",
+      "section": "Wie leben Fledermäuse?"
+    },
+    {
+      "text": "Im Frühling bringt das Muttertier ein einziges Junges zur Welt.",
+      "section": "Wie leben Fledermäuse?"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Fledermäuse gehören zu den ",
+        {
+          "slot": "s1"
+        },
+        ", die fliegen können."
+      ],
+      "evidence": {
+        "quote": "Fledermäuse sind eine Gruppe von Säugetieren, die fliegen können."
+      }
+    },
+    {
+      "sentence": [
+        "Sie haben Flügel, aber ",
+        {
+          "slot": "s2"
+        },
+        " Federn."
+      ],
+      "evidence": {
+        "quote": "Sie haben nämlich Flügel, aber ohne Federn."
+      }
+    },
+    {
+      "sentence": [
+        "Die meisten Arten fressen ",
+        {
+          "slot": "s3"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Die meisten Arten von Fledermäusen fressen Insekten."
+      }
+    },
+    {
+      "sentence": [
+        "In ",
+        {
+          "slot": "s4a"
+        },
+        " sind alle ",
+        {
+          "slot": "s4b"
+        },
+        " gefährdet."
+      ],
+      "evidence": {
+        "quote": "In Europa sind alle Fledermausarten gefährdet."
+      }
+    },
+    {
+      "sentence": [
+        "Sie sind ",
+        {
+          "slot": "s5"
+        },
+        " streng ",
+        {
+          "slot": "s5b"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Sie sind deshalb streng geschützt."
+      }
+    },
+    {
+      "sentence": [
+        "Eine Mutter bekommt nur ",
+        {
+          "slot": "s6"
+        },
+        " im Jahr."
+      ],
+      "evidence": {
+        "quote": "Eine Mutter hat nur ein Jungtier im Jahr."
+      }
+    },
+    {
+      "sentence": [
+        "Fledermäuse sind ",
+        {
+          "slot": "s7"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Fledermäuse sind nachts wach und schlafen am Tag."
+      }
+    },
+    {
+      "sentence": [
+        "Dabei hängen sie ",
+        {
+          "slot": "s8a"
+        },
+        " in Bäumen, ",
+        {
+          "slot": "s8b"
+        },
+        " oder auf Dachböden."
+      ],
+      "evidence": {
+        "quote": "Dabei hängen sie kopfüber in Bäumen, Höhlen oder auf Dachböden."
+      }
+    },
+    {
+      "sentence": [
+        "Nach der Paarung trägt das Muttertier ihr Junges ",
+        {
+          "slot": "s9"
+        },
+        " im Bauch."
+      ],
+      "evidence": {
+        "quote": "Nach der Paarung trägt das Muttertier ihr Junges sechs bis zehn Wochen im Bauch."
+      }
+    },
+    {
+      "sentence": [
+        "Im ",
+        {
+          "slot": "s10a"
+        },
+        " bringt das Muttertier ",
+        {
+          "slot": "s10b"
+        },
+        " zur Welt."
+      ],
+      "evidence": {
+        "quote": "Im Frühling bringt das Muttertier ein einziges Junges zur Welt."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s11"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "s1": {
+      "correct": "Säugetieren",
+      "variants": [
+        {
+          "text": "Vögeln",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Fledermäuse sind eine Gruppe von Säugetieren.“ Fledermäuse sind keine Vögel.",
+          "evidence": "Fledermäuse sind eine Gruppe von Säugetieren, die fliegen können."
+        },
+        {
+          "text": "Seugetieren",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort kommt von „säugen“. Darum schreibt man es mit „äu“: Säugetieren. Wer ableitet, findet die richtige Schreibung."
+        }
+      ]
+    },
+    "s2": {
+      "correct": "keine",
+      "variants": [
+        {
+          "text": "viele",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Sie haben nämlich Flügel, aber ohne Federn.“ Fledermäuse haben keine Federn.",
+          "evidence": "Sie haben nämlich Flügel, aber ohne Federn."
+        }
+      ]
+    },
+    "s3": {
+      "correct": "Insekten",
+      "variants": [
+        {
+          "text": "Fische",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Die meisten Arten von Fledermäusen fressen Insekten.“ Von Fischen als Hauptnahrung steht dort nichts.",
+          "evidence": "Die meisten Arten von Fledermäusen fressen Insekten."
+        },
+        {
+          "text": "Insecten",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Das Wort schreibt man mit „k“: Insekten. Die Schreibung mit „c“ gibt es so nicht mehr."
+        }
+      ]
+    },
+    "s4a": {
+      "correct": "Europa",
+      "variants": [
+        {
+          "text": "Asien",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „In Europa sind alle Fledermausarten gefährdet.“ Der Ort wurde verändert.",
+          "evidence": "In Europa sind alle Fledermausarten gefährdet."
+        },
+        {
+          "text": "Afrika",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „In Europa sind alle Fledermausarten gefährdet.“ Der Ort wurde verändert.",
+          "evidence": "In Europa sind alle Fledermausarten gefährdet."
+        }
+      ]
+    },
+    "s4b": {
+      "correct": "Fledermausarten",
+      "variants": [
+        {
+          "text": "Fledermausaten",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Hier fehlt ein Buchstabe: Fledermausarten. Solche Fehler passieren schnell beim Schreiben."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "deshalb",
+      "variants": [
+        {
+          "text": "trotzdem",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht „deshalb“: Weil die Fledermäuse gefährdet sind, werden sie geschützt. „Trotzdem“ passt nicht zum Satz davor.",
+          "evidence": "Sie sind deshalb streng geschützt."
+        }
+      ]
+    },
+    "s5b": {
+      "correct": "geschützt",
+      "variants": [
+        {
+          "text": "geschüzt",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Nach dem kurzen „ü“ steht „tz“: geschützt. Wer das Wort verlängert („schützen“), hört das „tz“."
+        }
+      ]
+    },
+    "s6": {
+      "correct": "ein Jungtier",
+      "variants": [
+        {
+          "text": "zwei Jungtiere",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Eine Mutter hat nur ein Jungtier im Jahr.“ Die Zahl wurde verändert.",
+          "evidence": "Eine Mutter hat nur ein Jungtier im Jahr."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "nachts wach und schlafen am Tag",
+      "variants": [
+        {
+          "text": "tagsüber wach und schlafen in der Nacht",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "tolerance": 2,
+          "explanation": "In der Quelle steht: „Fledermäuse sind nachts wach und schlafen am Tag.“ Hier ist es umgedreht.",
+          "evidence": "Fledermäuse sind nachts wach und schlafen am Tag."
+        },
+        {
+          "text": "nachts wach und schlaffen am Tag",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Schlaffen“ gibt es als Wort (schlaff), gemeint ist aber „schlafen“. Ein Rechtschreibprogramm findet diesen Fehler nicht."
+        }
+      ]
+    },
+    "s8a": {
+      "correct": "kopfüber",
+      "variants": [
+        {
+          "text": "Kopfüber",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Mitten im Satz schreibt man „kopfüber“ klein. Nur das erste Wort eines Satzes und Nomen schreibt man groß."
+        }
+      ]
+    },
+    "s8b": {
+      "correct": "Höhlen",
+      "variants": [
+        {
+          "text": "Höllen",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Höllen“ gibt es als Wort, gemeint ist aber „Höhlen“. Die Tiere hängen in Höhlen. Ein Rechtschreibprogramm findet diesen Fehler nicht."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "sechs bis zehn Wochen",
+      "variants": [
+        {
+          "text": "sechs bis zehn Monate",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "tolerance": 2,
+          "explanation": "In der Quelle steht: „sechs bis zehn Wochen“. Die Zeitangabe wurde verändert.",
+          "evidence": "Nach der Paarung trägt das Muttertier ihr Junges sechs bis zehn Wochen im Bauch."
+        }
+      ]
+    },
+    "s10a": {
+      "correct": "Frühling",
+      "variants": [
+        {
+          "text": "Herbst",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Im Frühling bringt das Muttertier ein einziges Junges zur Welt.“ Die Jahreszeit wurde verändert.",
+          "evidence": "Im Frühling bringt das Muttertier ein einziges Junges zur Welt."
+        }
+      ]
+    },
+    "s10b": {
+      "correct": "ein einziges Junges",
+      "variants": [
+        {
+          "text": "mehrere Junge",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Weiter oben steht, dass eine Mutter nur ein Jungtier im Jahr bekommt. „Mehrere Junge“ widerspricht dem."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Sie leben nur in Australien.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort geht es um Europa und um Fledermäuse allgemein."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Klexikon-Artikel Fledermäuse, Stand 6. Mai 2024, 19:52 Uhr (Revision 157941); die zehn Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft).",
+    "Lizenz: Das Klexikon kennzeichnet seine Seiten im Fuß mit dem Logo CC BY-SA und verlinkt https://creativecommons.org/licenses/by-sa/4.0/deed.de (rel=license). Eine eigene Lizenzseite des Klexikons gibt es nicht (Klexikon:Lizenz ist leer); die Version 4.0 folgt aus diesem Link.",
+    "Fehlerarten bei der Rechtschreibung folgen den Schwerpunkten der IQB-Handreichung (Konsonantenverdopplung, z/tz) und den AFRA-Kategorien der IQB-Lernaufgabe (Ableitung, Groß-/Kleinschreibung, Vokallänge). Die einzelnen Falschschreibungen sind für diese Wörter konstruiert, nicht von Lernenden gesammelt.",
+    "Nicht geprüft: ob der Artikeltext des Klexikons fachlich vollständig stimmt. Das Paket prüft den Vergleich mit dieser Quelle, nicht die Biologie.",
+    "Die Quelle liegt als PDF unter public/quellen/de/fledermaeuse.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue."
+  ]
+}

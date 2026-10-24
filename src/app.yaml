@@ -4,161 +4,111 @@ title:
   en: Textcheck
 description:
   de: |
-    Hier übst du, genau zu lesen. Du siehst ein Original und eine Variante davon. In der Variante stecken Fehler. Finde sie
-    und markiere sie. Für Schülerinnen und Schüler ab Klasse 3 bis zum Abitur. Die Texte und die Fehler werden mit der
-    Klassenstufe schwieriger.
+    Hier übst du, genau zu lesen. Es gibt zwei Arten: Du findest Fehler in einem Text, den du allein vor dir hast. Oder
+    du vergleichst eine Wiedergabe mit ihrer Quelle und findest, was beim Übertragen falsch geworden ist. Jede Art hat
+    drei Stufen. Mit der Stufe werden die Texte länger, die Fehlerarten mehr und die Hilfen weniger. Für Schülerinnen
+    und Schüler ab Klasse 3 bis zum Abitur.
   en: |
-    Here you practise careful reading. You see an original text and a variant of it. The variant hides errors. Find them and mark them. For pupils from grade 3 to the Abitur in the German school system. The texts and the errors get harder with the grade.
+    Here you practise careful reading. There are two kinds: you find errors in a text you have in front of you alone, or you compare a rendition with its source and find what went wrong when it was passed on. Each kind has three stages. With each stage the texts get longer, the kinds of error more and the help less. For pupils from grade 3 to the Abitur in the German school system.
 howto:
   de: |
-    - Lies das Original. Es stimmt und nennt seine Quelle.
-    - Lies die Variante und markiere die Wörter, die nicht stimmen. Du markierst mit einem Klick oder Tipp, mit der Tastatur
-      wählst du Wörter mit den Pfeiltasten und markierst mit der Leertaste.
-    - Tippe auf „Prüfen“. Du siehst, welche Fehler du gefunden hast, welche nicht, und warum.
-    - Zu jedem Text gibt es drei Arten zu üben. Beim ersten siehst du das Original. Bei „mit der Quelle als PDF“ öffnest du die Quelle als PDF und vergleichst. Bei „Original erkennen“ siehst du zwei Texte, A und B: Du wählst den Text mit den Fehlern und markierst sie dort.
+    - Wähl, was du üben willst: Fehler im Text finden oder mit der Quelle vergleichen. Danach wählst du eine Stufe. Die Karte
+      der Stufe sagt dir, wie lang die Texte sind, welche Fehlerarten vorkommen und welche Hilfen es gibt.
+    - Lies den Tipp zum Lesen. Er sagt dir, worauf du bei dieser Übung achtest.
+    - Markiere die Wörter, die nicht stimmen. Du markierst mit einem Klick oder Tipp, mit der Tastatur wählst du Wörter mit
+      den Pfeiltasten und markierst mit der Leertaste.
+    - Beim Vergleichen mit der Quelle liest du erst die Quelle und blätterst dann zur Wiedergabe. In der schwersten Stufe ist
+      die Quelle der echte Artikel auf einer Internetseite.
+    - Tippe auf „Prüfen“. Du siehst, welche Fehler du gefunden hast, welche nicht, und warum. Dann schlägt die Übung vor, wie es
+      weitergeht.
     - Ein paar Wörter zu viel zu markieren ist nicht schlimm, wenn sie direkt neben einem langen Fehler im selben Satz stehen.
   en: |
-    - Read the original. It is correct and names its source.
-    - Read the variant and mark the words that are wrong. You mark with a click or a tap; with the keyboard you choose words with the arrow keys and mark with the space bar.
-    - Tap "Check". You see which errors you found, which you missed, and why they are wrong.
-    - Every text has three ways to practise. In the first you see the original. With "the source as PDF" you open the source as a PDF and compare. With "Spot the original" you see two texts, A and B: you choose the text with the errors and mark them there.
+    - Choose what you want to practise: find errors in a text, or compare with the source. Then choose a stage. The card of the stage tells you how long the texts are, which kinds of error occur and what help there is.
+    - Read the tip on how to read. It tells you what to look out for in this exercise.
+    - Mark the words that are wrong. You mark with a click or a tap; with the keyboard you choose words with the arrow keys and mark with the space bar.
+    - When you compare with the source, you read the source first and then turn to the rendition. In the hardest stage the source is the real article on a web page.
+    - Tap "Check". You see which errors you found, which you missed, and why they are wrong. Then the exercise suggests what to do next.
     - It is fine to mark a few extra words if they stand right next to a long error in the same sentence.
 competencies:
-  - de: Ich kann falsch geschriebene Wörter in einem kurzen Text finden und markieren.
-    en: I can find misspelt words in a short text and mark them.
-  - de: Ich kann Stellen markieren, an denen die Variante dem Original widerspricht.
-    en: I can mark places where the variant contradicts the original.
-  - de: Ich kann Sätze finden, die sich im selben Text widersprechen.
-    en: I can find sentences that contradict each other in the same text.
-  - de: Ich kann eine falsche Zeit-, Orts- oder Mengenangabe mit dem Original abgleichen.
-    en: I can compare a wrong time, place or amount with the original.
+  - de: Ich kann falsch geschriebene Wörter in einem Text finden und markieren.
+    en: I can find misspelt words in a text and mark them.
   - de: Ich kann falsch geschriebene Wörter finden, auch solche, die ein Rechtschreibprogramm nicht findet.
     en: I can find misspelt words, even ones a spell checker does not find.
-  - de: Ich kann eine Meinung von einer Tatsache unterscheiden und die Meinung markieren.
-    en: I can tell an opinion from a fact and mark the opinion.
-  - de: Ich kann eine Folgerung erkennen, die der Text nicht trägt.
-    en: I can recognise a conclusion that the text does not support.
+  - de: Ich kann Sätze finden, die sich im selben Text widersprechen.
+    en: I can find sentences that contradict each other in the same text.
+  - de: Ich kann einen Text mit seiner Quelle vergleichen und Zahlen, Namen, Orte und Angaben finden, die von der Quelle abweichen.
+    en: I can compare a text with its source and find numbers, names, places and details that differ from the source.
+  - de: Ich kann in einer Wiedergabe erkennen, was die Quelle nicht sagt, also Verallgemeinerungen, Folgerungen und Meinungen, die als Tatsachen auftreten.
+    en: I can recognise in a rendition what the source does not say, such as overgeneralisations, conclusions and opinions that pose as facts.
   - de: Ich kann wertende oder emotionalisierende Formulierungen erkennen.
     en: I can recognise judging or emotional wording.
-  - de: Ich kann einen Text mit seiner Quelle vergleichen und Stellen finden, die von der Quelle abweichen.
-    en: I can compare a text with its source and find places that differ from the source.
-  - de: Ich kann zwei Texte vergleichen und erkennen, welcher Fehler hat.
-    en: I can compare two texts and tell which one has errors.
 languages:
   - de
   - en
 routes:
-  - id: klasse-3-4
+  - id: start
     title:
-      de: Klasse 3 bis 4
-      en: Grades 3 to 4
+      de: Übung wählen
+      en: Choose an exercise
     description:
-      de: Kurze Texte mit Fehlern in der Rechtschreibung, in der Zeichensetzung und bei Zahlen und Orten.
-      en: Short texts with mistakes in spelling and punctuation and in numbers and places.
-  - id: klasse-5-6
+      de: Fehler im Text finden oder mit der Quelle vergleichen.
+      en: Find errors in a text or compare with the source.
+  - id: text
     title:
-      de: Klasse 5 bis 6
-      en: Grades 5 to 6
+      de: Fehler im Text finden, Stufen
+      en: Find errors in a text, stages
     description:
-      de: Texte mit Fehlern in der Rechtschreibung, bei Zahlen und Orten, bei Verbindungen und Widersprüchen.
-      en: Texts with mistakes in spelling, in numbers and places, in connections and contradictions.
-  - id: klasse-7-8
+      de: Ein Text, keine Vorlage. Drei Stufen von Rechtschreibung bis zu Widersprüchen im Text.
+      en: One text, nothing to compare it with. Three stages from spelling to contradictions in the text.
+  - id: text-1
     title:
-      de: Klasse 7 bis 8
-      en: Grades 7 to 8
+      de: Fehler im Text finden, Stufe 1
+      en: Find errors in a text, stage 1
     description:
-      de:
-        Wie in Klasse 5 bis 6, dazu Mengen und Grade, Verallgemeinerungen, falsche Folgerungen und Meinungen, die als Tatsachen
-        auftreten.
-      en: As in grades 5 to 6, plus amounts and degrees, overgeneralisations, faulty conclusions and opinions that pose as facts.
-  - id: klasse-9-10
+      de: Kurzer Text. Rechtschreibung und Flüchtigkeitsfehler.
+      en: Short text. Spelling and slips.
+  - id: text-2
     title:
-      de: Klasse 9 bis 10
-      en: Grades 9 to 10
+      de: Fehler im Text finden, Stufe 2
+      en: Find errors in a text, stage 2
     description:
-      de:
-        Alle Fehlerarten, auch Wertungen und Verweise auf ungenannte Fachleute. Welche Arten in der Runde vorkommen, steht
-        nicht mehr in der Aufgabe.
-      en:
-        All kinds of errors, including loaded wording and references to unnamed experts. The task no longer says which kinds
-        occur in the round.
-  - id: klasse-11-13
+      de: Längerer Text. Dazu Zeichensetzung und Fehler mit echten Wörtern.
+      en: Longer text. Also punctuation and mistakes with real words.
+  - id: text-3
     title:
-      de: Oberstufe (Klasse 11 bis 13)
-      en: Upper secondary (grades 11 to 13)
+      de: Fehler im Text finden, Stufe 3
+      en: Find errors in a text, stage 3
     description:
-      de: Alle Fehlerarten in einem historischen Text, mehr Fehler je Runde und keine Hinweise auf die Arten.
-      en: All kinds of errors in a historical text, more errors per round and no hints about the kinds.
-  - id: klasse-3-4-quelle
+      de: Langer Text. Dazu Sätze, die sich widersprechen. Die Fehlerarten werden nicht genannt.
+      en: Long text. Also sentences that contradict each other. The kinds of error are not named.
+  - id: quelle
     title:
-      de: Klasse 3 bis 4, mit der Quelle als PDF
-      en: Grades 3 to 4, with the source as PDF
+      de: Mit der Quelle vergleichen, Stufen
+      en: Compare with the source, stages
     description:
-      de: Dieselben Texte; statt des Originals gibt es die Quelle als PDF zum Vergleichen.
-      en: The same texts; instead of the original you get the source as a PDF to compare with.
-  - id: klasse-5-6-quelle
+      de: Wiedergabe und Quelle. Drei Stufen von Zahlen und Namen bis zu Meinungen, die als Tatsachen auftreten.
+      en: Rendition and source. Three stages from numbers and names to opinions that pose as facts.
+  - id: quelle-1
     title:
-      de: Klasse 5 bis 6, mit der Quelle als PDF
-      en: Grades 5 to 6, with the source as PDF
+      de: Mit der Quelle vergleichen, Stufe 1
+      en: Compare with the source, stage 1
     description:
-      de: Dieselben Texte; statt des Originals gibt es die Quelle als PDF zum Vergleichen.
-      en: The same texts; instead of the original you get the source as a PDF to compare with.
-  - id: klasse-7-8-quelle
+      de: Kurzer Text. Zahlen, Namen, Daten und Orte.
+      en: Short text. Numbers, names, dates and places.
+  - id: quelle-2
     title:
-      de: Klasse 7 bis 8, mit der Quelle als PDF
-      en: Grades 7 to 8, with the source as PDF
+      de: Mit der Quelle vergleichen, Stufe 2
+      en: Compare with the source, stage 2
     description:
-      de: Dieselben Texte; statt des Originals gibt es die Quelle als PDF zum Vergleichen.
-      en: The same texts; instead of the original you get the source as a PDF to compare with.
-  - id: klasse-9-10-quelle
+      de: Längerer Text. Dazu falsche und hinzugefügte Angaben, Verneinungen, Mengen und Grade.
+      en: Longer text. Also wrong and added details, negations, amounts and degrees.
+  - id: quelle-3
     title:
-      de: Klasse 9 bis 10, mit der Quelle als PDF
-      en: Grades 9 to 10, with the source as PDF
+      de: Mit der Quelle vergleichen, Stufe 3
+      en: Compare with the source, stage 3
     description:
-      de: Dieselben Texte; statt des Originals gibt es die Quelle als PDF zum Vergleichen.
-      en: The same texts; instead of the original you get the source as a PDF to compare with.
-  - id: klasse-11-13-quelle
-    title:
-      de: Oberstufe (Klasse 11 bis 13), mit der Quelle als PDF
-      en: Upper secondary (grades 11 to 13), with the source as PDF
-    description:
-      de: Dieselben Texte; statt des Originals gibt es die Quelle als PDF zum Vergleichen.
-      en: The same texts; instead of the original you get the source as a PDF to compare with.
-  - id: klasse-3-4-original
-    title:
-      de: Klasse 3 bis 4, Original erkennen
-      en: Grades 3 to 4, spot the original
-    description:
-      de: Zwei Texte, einer ist das Original. Finde den Text mit den Fehlern und markiere sie.
-      en: Two texts, one is the original. Find the text with the errors and mark them.
-  - id: klasse-5-6-original
-    title:
-      de: Klasse 5 bis 6, Original erkennen
-      en: Grades 5 to 6, spot the original
-    description:
-      de: Zwei Texte, einer ist das Original. Finde den Text mit den Fehlern und markiere sie.
-      en: Two texts, one is the original. Find the text with the errors and mark them.
-  - id: klasse-7-8-original
-    title:
-      de: Klasse 7 bis 8, Original erkennen
-      en: Grades 7 to 8, spot the original
-    description:
-      de: Zwei Texte, einer ist das Original. Finde den Text mit den Fehlern und markiere sie.
-      en: Two texts, one is the original. Find the text with the errors and mark them.
-  - id: klasse-9-10-original
-    title:
-      de: Klasse 9 bis 10, Original erkennen
-      en: Grades 9 to 10, spot the original
-    description:
-      de: Zwei Texte, einer ist das Original. Finde den Text mit den Fehlern und markiere sie.
-      en: Two texts, one is the original. Find the text with the errors and mark them.
-  - id: klasse-11-13-original
-    title:
-      de: Oberstufe (Klasse 11 bis 13), Original erkennen
-      en: Upper secondary (grades 11 to 13), spot the original
-    description:
-      de: Zwei Texte, einer ist das Original. Finde den Text mit den Fehlern und markiere sie.
-      en: Two texts, one is the original. Find the text with the errors and mark them.
+      de: Langer Text, die Quelle ist der echte Artikel. Dazu Verallgemeinerungen, Folgerungen, Meinungen und Wertungen.
+      en: Long text, the source is the real article. Also overgeneralisations, conclusions, opinions and loaded wording.
 sections:
   - id: begruendung
     title:
@@ -167,58 +117,58 @@ sections:
     text:
       de: |
         Hier steht, woran wir uns halten und was wir selbst abgeleitet haben. **Belegt** heißt: Eine Quelle, die wir gelesen
-        haben, nennt diese Fehlerart. **Abgeleitet** heißt: ein eigener Schluss aus verwandten Quellen. Ab welcher Klasse
-        eine Fehlerart vorkommt, ist unsere Einstellung. Keine der gelesenen Quellen ordnet die Fehlerarten Klassenstufen zu.
+        haben, nennt diese Fehlerart. **Abgeleitet** heißt: ein eigener Schluss aus verwandten Quellen. In welcher Stufe
+        einer Übung eine Fehlerart vorkommt, ist unsere Einstellung. Keine der gelesenen Quellen ordnet die Fehlerarten Stufen oder Klassen zu.
 
         Die Fehlerarten:
 
-        - **Rechtschreibung (Regelfehler)**, belegt, ab Klasse 3: IQB-Lernaufgabe und -Handreichung, KMK-Standards.
-        - **Flüchtigkeitsfehler**, belegt, ab Klasse 3: Schmellentin und Lindauer (2019).
-        - **Fehler mit echtem Wort (das/dass, das fahren)**, belegt, ab Klasse 5: IQB-Handreichung und -Lernaufgabe.
-        - **Zeichensetzung**, abgeleitet, ab Klasse 3: KMK-Standards, Schmellentin und Lindauer.
-        - **Zahl, Name, Datum oder Ort verändert**, abgeleitet, ab Klasse 3: IGLU 2021, KMK-Standards.
-        - **Sachlich falsche Angabe**, abgeleitet, ab Klasse 5: IGLU 2021, Cook, Ellerton und Kinkead (2018).
-        - **Hinzugefügte Aussage**, abgeleitet, ab Klasse 5: Voss, Carstensen und Bos (2005).
-        - **Verbindung oder Verneinung verändert**, abgeleitet, ab Klasse 5: Voss, Carstensen und Bos (2005).
-        - **Widerspruch im Text**, abgeleitet, ab Klasse 5: Voss, Carstensen und Bos (2005), KMK-Standards.
-        - **Menge oder Grad verändert**, abgeleitet, ab Klasse 7: eigener Schluss, keine Quelle gelesen.
-        - **Verallgemeinerung**, abgeleitet, ab Klasse 7: Cook, Ellerton und Kinkead (2018).
-        - **Falsche Folgerung oder Ursache**, abgeleitet, ab Klasse 7: Cook, Ellerton und Kinkead (2018), IGLU 2021.
-        - **Meinung als Tatsache**, abgeleitet, ab Klasse 7: IGLU 2021, Voss, Carstensen und Bos (2005), KMK-Standards.
-        - **Falsche Autorität oder Quelle**, abgeleitet, ab Klasse 10: Cook, Lewandowsky und Ecker (2017).
-        - **Wertende, emotionalisierende Beeinflussung**, abgeleitet, ab Klasse 10: IGLU 2021, KMK-Standards, Cook und andere (2017).
+        - **Rechtschreibung (Regelfehler)**, belegt, Fehler im Text finden, Stufe 1: IQB-Lernaufgabe und -Handreichung, KMK-Standards.
+        - **Flüchtigkeitsfehler**, belegt, Fehler im Text finden, Stufe 1: Schmellentin und Lindauer (2019).
+        - **Fehler mit echtem Wort (das/dass, das fahren)**, belegt, Fehler im Text finden, Stufe 2: IQB-Handreichung und -Lernaufgabe.
+        - **Zeichensetzung**, abgeleitet, Fehler im Text finden, Stufe 2: KMK-Standards, Schmellentin und Lindauer.
+        - **Zahl, Name, Datum oder Ort verändert**, abgeleitet, Mit der Quelle vergleichen, Stufe 1: IGLU 2021, KMK-Standards.
+        - **Sachlich falsche Angabe**, abgeleitet, Mit der Quelle vergleichen, Stufe 2: IGLU 2021, Cook, Ellerton und Kinkead (2018).
+        - **Hinzugefügte Aussage**, abgeleitet, Mit der Quelle vergleichen, Stufe 2: Voss, Carstensen und Bos (2005).
+        - **Verbindung oder Verneinung verändert**, abgeleitet, Mit der Quelle vergleichen, Stufe 2: Voss, Carstensen und Bos (2005).
+        - **Widerspruch im Text**, abgeleitet, Fehler im Text finden, Stufe 3: Voss, Carstensen und Bos (2005), KMK-Standards.
+        - **Menge oder Grad verändert**, abgeleitet, Mit der Quelle vergleichen, Stufe 2: eigener Schluss, keine Quelle gelesen.
+        - **Verallgemeinerung**, abgeleitet, Mit der Quelle vergleichen, Stufe 3: Cook, Ellerton und Kinkead (2018).
+        - **Falsche Folgerung oder Ursache**, abgeleitet, Mit der Quelle vergleichen, Stufe 3: Cook, Ellerton und Kinkead (2018), IGLU 2021.
+        - **Meinung als Tatsache**, abgeleitet, Mit der Quelle vergleichen, Stufe 3: IGLU 2021, Voss, Carstensen und Bos (2005), KMK-Standards.
+        - **Falsche Autorität oder Quelle**, abgeleitet, Mit der Quelle vergleichen, Stufe 3: Cook, Lewandowsky und Ecker (2017).
+        - **Wertende, emotionalisierende Beeinflussung**, abgeleitet, Mit der Quelle vergleichen, Stufe 3: IGLU 2021, KMK-Standards, Cook und andere (2017).
 
         Was wir nicht belegen können:
 
         - Dass diese Übung die Lesekompetenz verbessert. Dafür gibt es keine Studie.
         - Dass Fehlersuche in Texten das Prüfen unbekannter Webseiten übt. Das ist etwas anderes (Wineburg und McGrew 2018).
-        - Die Länge und den Satzbau der Texte je Klassenstufe: Das sind Einstellungen der Autorinnen und Autoren.
+        - Die Länge und den Satzbau der Texte je Stufe: Das sind Einstellungen der Autorinnen und Autoren.
         - Die Fehler bei der Rechtschreibung sind für die Wörter der Texte konstruiert. Die Arten der Fehler stammen aus den
           IQB-Materialien, die einzelnen Falschschreibungen von Lernenden haben wir nicht gesammelt.
       en: |
-        Here we say what we rely on and what we worked out ourselves. **Documented** means: a source we read names this kind of error. **Derived** means: our own conclusion from related sources. From which grade a kind of error occurs is our own setting. None of the sources we read assigns the kinds of error to grades.
+        Here we say what we rely on and what we worked out ourselves. **Documented** means: a source we read names this kind of error. **Derived** means: our own conclusion from related sources. In which stage of an exercise a kind of error occurs is our own setting. None of the sources we read assigns the kinds of error to stages or grades.
 
         The kinds of error:
 
-        - **Spelling (rule-based mistake)**, documented, from grade 3: IQB learning task and handbook, KMK standards.
-        - **Slip of the pen**, documented, from grade 3: Schmellentin and Lindauer (2019).
-        - **Mistake with a real word (their/there, its/it's)**, documented, from grade 5: IQB handbook and learning task.
-        - **Punctuation**, derived, from grade 3: KMK standards, Schmellentin and Lindauer.
-        - **Number, name, date or place changed**, derived, from grade 3: IGLU 2021, KMK standards.
-        - **Wrong fact**, derived, from grade 5: IGLU 2021, Cook, Ellerton and Kinkead (2018).
-        - **Added statement**, derived, from grade 5: Voss, Carstensen and Bos (2005).
-        - **Connective or negation changed**, derived, from grade 5: Voss, Carstensen and Bos (2005).
-        - **Contradiction in the text**, derived, from grade 5: Voss, Carstensen and Bos (2005), KMK standards.
-        - **Amount or degree changed**, derived, from grade 7: our own inference, no source read.
-        - **Overgeneralisation**, derived, from grade 7: Cook, Ellerton and Kinkead (2018).
-        - **Faulty conclusion or cause**, derived, from grade 7: Cook, Ellerton and Kinkead (2018), IGLU 2021.
-        - **Opinion presented as fact**, derived, from grade 7: IGLU 2021, Voss, Carstensen and Bos (2005), KMK standards.
-        - **False authority or source**, derived, from grade 10: Cook, Lewandowsky and Ecker (2017).
-        - **Loaded, emotional wording**, derived, from grade 10: IGLU 2021, KMK standards, Cook and others (2017).
+        - **Spelling (rule-based mistake)**, documented, Find errors in a text, stage 1: IQB learning task and handbook, KMK standards.
+        - **Slip of the pen**, documented, Find errors in a text, stage 1: Schmellentin and Lindauer (2019).
+        - **Mistake with a real word (their/there, its/it's)**, documented, Find errors in a text, stage 2: IQB handbook and learning task.
+        - **Punctuation**, derived, Find errors in a text, stage 2: KMK standards, Schmellentin and Lindauer.
+        - **Number, name, date or place changed**, derived, Compare with the source, stage 1: IGLU 2021, KMK standards.
+        - **Wrong fact**, derived, Compare with the source, stage 2: IGLU 2021, Cook, Ellerton and Kinkead (2018).
+        - **Added statement**, derived, Compare with the source, stage 2: Voss, Carstensen and Bos (2005).
+        - **Connective or negation changed**, derived, Compare with the source, stage 2: Voss, Carstensen and Bos (2005).
+        - **Contradiction in the text**, derived, Find errors in a text, stage 3: Voss, Carstensen and Bos (2005), KMK standards.
+        - **Amount or degree changed**, derived, Compare with the source, stage 2: our own inference, no source read.
+        - **Overgeneralisation**, derived, Compare with the source, stage 3: Cook, Ellerton and Kinkead (2018).
+        - **Faulty conclusion or cause**, derived, Compare with the source, stage 3: Cook, Ellerton and Kinkead (2018), IGLU 2021.
+        - **Opinion presented as fact**, derived, Compare with the source, stage 3: IGLU 2021, Voss, Carstensen and Bos (2005), KMK standards.
+        - **False authority or source**, derived, Compare with the source, stage 3: Cook, Lewandowsky and Ecker (2017).
+        - **Loaded, emotional wording**, derived, Compare with the source, stage 3: IGLU 2021, KMK standards, Cook and others (2017).
 
         What we cannot back up:
 
         - That this exercise improves reading skills. There is no study for it.
         - That finding errors in texts trains checking unknown web pages. That is something else (Wineburg and McGrew 2018).
-        - The length and sentence structure of the texts for each grade: these are settings of the authors.
+        - The length and sentence structure of the texts for each stage: these are settings of the authors.
         - The spelling mistakes are constructed for the words of the texts. The kinds of mistake come from the IQB materials; we did not collect the individual misspellings of learners. In English texts we carried over the same kinds; this is our own adaptation and no source names it.

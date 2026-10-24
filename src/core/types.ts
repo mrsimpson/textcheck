@@ -52,7 +52,6 @@ export interface TextPack {
   title: string;
   isExample?: boolean;
   language: string;
-  grades: { from: number; to: number };
   topic: string;
   source: Source;
   excerpt: { text: string; section?: string }[];
@@ -61,22 +60,52 @@ export interface TextPack {
   notes?: string[];
 }
 
-/** What a school-year pair gets: the error classes and bases it may use, how many errors a round has. */
-export interface Level {
-  grades: { from: number; to: number };
-  classes: string[];
-  bases: Basis[];
+/** The two kinds of exercise: find errors in one text, or compare a rendition with its source. */
+export type Kind = "text" | "quelle";
+
+/** How the source shows: not at all (a text alone), as a sheet with the excerpt, or as a link to the whole article. */
+export type Material = "none" | "sheet" | "link";
+
+/** The reading tip before a round: all of it, the short one, or none (only on request). */
+export type Tip = "full" | "short" | "none";
+
+/** What a stage of one kind of exercise holds: the error classes it adds, and how it plays. The stages build on each other. */
+export interface StageRules {
+  /** The error classes this stage adds to those of the stages before it. */
+  adds: string[];
+  /** Errors in a round. */
   errors: number;
   /** Whether the goal line names the error classes of the round. */
-  announceClasses: boolean;
+  announce: boolean;
+  tip: Tip;
+  material: Material;
+  /** The most words a text may have to belong to this stage; null for the last stage. */
+  maxWords: number | null;
+}
+
+/** What learners see on the card of a stage, all derived from the rules and from the texts of the stage. */
+export interface StageCard {
+  stage: number;
+  /** The route of the stage's rounds. */
+  route: string;
+  /** The classes of the stages before, and the classes this stage adds. */
+  before: string[];
+  adds: string[];
+  errors: number;
+  announce: boolean;
+  tip: Tip;
+  material: Material;
+  /** Texts of this stage in the page's language, and their average length in words, sentences and the longest sentence. */
+  texts: number;
+  words: number;
+  sentences: number;
+  longest: number;
 }
 
 export interface ErrorClass {
-  family: string;
   status: "documented" | "derived";
   statusNote: string;
   usualBasis: Basis[];
-  fromGrade: number;
   languages: string[];
   source: string;
 }
@@ -134,57 +163,68 @@ export interface Result {
   /** One status per token of the checked text, in token order. */
   status: Status[];
   classes: ClassResult[];
-  /** In the mode `choose`: whether the learner picked the text with the errors; else null. */
-  chosenRight: boolean | null;
+  advice: Advice;
 }
 
-/** How a route plays: mark errors against the Original, against the source PDF, or choose the text with errors first. */
-export type Mode = "mark" | "source" | "choose";
-
 /** What the last input changed; the root component announces it. */
-export type Last = "start" | "mark" | "unmark" | "clear" | "check" | "choose" | "hint";
+export type Last = "start" | "mark" | "unmark" | "clear" | "check" | "hint" | "begin" | "view";
 
 /** What a hint shows: the error classes of the round, or the sentences that hold an error. */
 export type HintStage = "classes" | "sentences";
 
 /**
- * A sentence of the Variante that holds an error and has a counterpart in the Original (inserted sentences have none and
- * are no part of the hints): its index in the rendition, the index of the Original's sentence it renders, and the error
- * classes in it.
+ * A sentence of the rendition that holds an error and says something the source says (inserted sentences have no
+ * evidence quote and are no part of the hints): its index in the rendition and the error classes in it.
  */
 export interface HintSentence {
   sentence: number;
-  original: number;
   classes: string[];
 }
 
-/** The two texts of the mode `choose`. */
-export type Side = "a" | "b";
+/** The page of the app a state shows: the choice of the exercise, the stages of one, the reading tip, a round, its result. */
+export type Phase = "choose" | "stages" | "tip" | "marking" | "result";
+
+/** The sheet of a round with a source sheet: the source or the rendition. */
+export type View = "source" | "rendition";
+
+/** What the learner is told after checking, derived from the result. */
+export interface Advice {
+  /** All errors found and at most one right word marked. */
+  passed: boolean;
+  /** The route of the next stage of this kind of exercise, null on the last. */
+  next: string | null;
+  /** The class of the first error missed, else null. */
+  missed: string | null;
+  /** In the comparison with a source: so many right words marked that the learner is told that other words are no error. */
+  overmarked: boolean;
+}
 
 export interface State {
   seed: number;
   route: string;
-  /** The mode of the route; `source` shows the PDF of the source instead of the Original. */
-  mode: Mode;
+  phase: Phase;
   language: string;
+  /** The kind of exercise and the stage of the route, null on the choice of the exercise. */
+  kind: Kind | null;
+  stage: number | null;
+  /** On the page of the stages: one card per stage; else empty. */
+  cards: StageCard[];
+  /** The rules of the stage of a round, else null. */
+  rules: StageRules | null;
   packId: string;
   title: string;
-  source: Source;
-  /** The path of the source PDF relative to the site root, when the mode is `source` and the pack has one, else null. */
-  pdf: string | null;
-  /** The sentences of the Original, as shown. */
-  original: string[];
-  /** The words of the Original, in the mode `choose` (else empty): the learner may mark them there too. */
-  originalTokens: Token[];
-  /** In the mode `choose`: which text, a or b, is the Variante (the other is the Original). */
-  variantSide: Side;
-  /** In the mode `choose`: the text the learner says has the errors; else null. */
-  choice: Side | null;
-  /** The words of the Variante; each sentence is a run of tokens with the same `sentence`. */
+  source: Source | null;
+  /** The sentences of the source excerpt, shown on the sheet of a comparison with `material: sheet`; else empty. */
+  excerpt: string[];
+  /** The sections of the source article the round's text is from, for the link to the whole article. */
+  sections: string[];
+  /** Which sheet shows, with a source sheet: the round starts on the source. */
+  view: View;
+  /** The words of the rendition; each sentence is a run of tokens with the same `sentence`. */
   tokens: Token[];
   /** The errors of the round; the answers, which the component shows only after checking. */
   corruptions: Corruption[];
-  /** The error classes of the round when the level names them, else null. */
+  /** The error classes of the round when the stage names them, else null. */
   announced: string[] | null;
   /** The ids of the marked tokens, ascending. */
   marked: number[];
@@ -194,14 +234,13 @@ export interface State {
   changed: number;
   /** The hints of this round, in the order they are given; hint n shows the first n stages. */
   hintStages: HintStage[];
-  /** The error classes of the round that stand in sentences with a counterpart in the Original. */
+  /** The error classes of the round that stand in sentences that may carry a hint. */
   hintClasses: string[];
   hintSentences: HintSentence[];
   /** How many hints the learner has taken. */
   hintLevel: number;
   /** The milliseconds until the next hint can be taken; 0 when it can. */
   hintWait: number;
-  phase: "marking" | "result";
   result: Result | null;
   last: Last;
 }

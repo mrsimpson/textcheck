@@ -16,22 +16,18 @@ export function hintTextsOf(state: State, t: T): string[] {
     .map((stage) =>
       stage === "classes"
         ? t("tipClasses", { classes: state.hintClasses.map((id) => className(t, id)).join(", ") })
-        : t(state.mode === "choose" ? "tipSentencesChoose" : "tipSentences"),
+        : t("tipSentences"),
     );
 }
 
-/**
- * The label of each marked sentence once the stage "sentences" is given: the error classes in it. For the Variante the
- * key is the index of its sentence, for the Original (`original`) the index of the sentence it renders.
- */
-export function hintTags(state: State, t: T, original: boolean): Record<number, string> {
+/** The label of each marked sentence once the stage "sentences" is given: the error classes in it, by sentence index. */
+export function hintTags(state: State, t: T): Record<number, string> {
   const names = new Map<number, Set<string>>();
   if (state.phase === "marking" && hintShown(state, "sentences")) {
     for (const entry of state.hintSentences) {
-      const key = original ? entry.original : entry.sentence;
-      const held = names.get(key) ?? new Set<string>();
+      const held = names.get(entry.sentence) ?? new Set<string>();
       for (const id of entry.classes) held.add(className(t, id));
-      names.set(key, held);
+      names.set(entry.sentence, held);
     }
   }
   return Object.fromEntries([...names].map(([key, held]) => [key, [...held].join(", ")]));

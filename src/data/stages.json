@@ -1,0 +1,54 @@
+{
+  "text": [
+    {
+      "adds": ["spelling_rule", "slip"],
+      "errors": 3,
+      "announce": true,
+      "tip": "full",
+      "material": "none",
+      "maxWords": 140
+    },
+    {
+      "adds": ["punctuation", "real_word"],
+      "errors": 4,
+      "announce": true,
+      "tip": "short",
+      "material": "none",
+      "maxWords": 215
+    },
+    {
+      "adds": ["contradiction"],
+      "errors": 5,
+      "announce": false,
+      "tip": "none",
+      "material": "none",
+      "maxWords": null
+    }
+  ],
+  "quelle": [
+    {
+      "adds": ["number_name_date"],
+      "errors": 3,
+      "announce": true,
+      "tip": "full",
+      "material": "sheet",
+      "maxWords": 140
+    },
+    {
+      "adds": ["factual_error", "added_claim", "connective_negation", "quantity_degree"],
+      "errors": 4,
+      "announce": true,
+      "tip": "short",
+      "material": "sheet",
+      "maxWords": 215
+    },
+    {
+      "adds": ["overgeneralization", "faulty_inference", "opinion_as_fact", "false_authority", "loaded_language"],
+      "errors": 5,
+      "announce": false,
+      "tip": "none",
+      "material": "link",
+      "maxWords": null
+    }
+  ]
+}

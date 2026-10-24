@@ -1,46 +1,57 @@
 // Builds a round from a text pack: which slots are corrupted and with which variant (drawn from the seed within the
-// limits of the level), and the words of the Variante as learners see them.
-import { ERROR_CLASSES } from "./data.ts";
+// rules of the stage), and the words of the rendition as learners see them.
 import { random } from "./random.ts";
-import type { Corruption, HintSentence, Level, TextPack, Token, Variant } from "./types.ts";
+import { candidatesOf, MIN_NEW } from "./stages.ts";
+import type { Corruption, HintSentence, StageRules, TextPack, Token, Variant } from "./types.ts";
 
-/** A slot with the variants the level allows for it. */
+/** A slot with the variants the stage allows for it. */
 interface Candidate {
   slot: string;
   variants: Variant[];
 }
 
-/** The slots that have at least one variant of an allowed class and basis, for a pack of grades up to the level's. */
-export function candidatesOf(pack: TextPack, level: Level): Candidate[] {
-  const found: Candidate[] = [];
-  for (const [slot, { variants: all }] of Object.entries(pack.slots)) {
-    const variants = all.filter(
-      (variant) =>
-        level.classes.includes(variant.errorClass) &&
-        level.bases.includes(variant.basis) &&
-        (ERROR_CLASSES[variant.errorClass]?.fromGrade ?? Infinity) <= level.grades.to,
-    );
-    if (variants.length > 0) found.push({ slot, variants });
-  }
-  return found;
-}
-
-/** The slots to corrupt and the variant of each: a seeded shuffle of the candidates, the first `level.errors`. */
-export function chooseVariants(candidates: Candidate[], level: Level, next: () => number): Map<string, Variant> {
-  const shuffled = [...candidates];
-  for (let index = shuffled.length - 1; index > 0; index--) {
+/** A seeded shuffle of a copy of the list. */
+function shuffled<T>(list: readonly T[], next: () => number): T[] {
+  const copy = [...list];
+  for (let index = copy.length - 1; index > 0; index--) {
     const other = Math.floor(next() * (index + 1));
-    const held = shuffled[index];
-    const swap = shuffled[other];
+    const held = copy[index];
+    const swap = copy[other];
     if (held !== undefined && swap !== undefined) {
-      shuffled[index] = swap;
-      shuffled[other] = held;
+      copy[index] = swap;
+      copy[other] = held;
     }
   }
+  return copy;
+}
+
+/**
+ * The slots to corrupt and the variant of each: a seeded shuffle of the candidates. At least `MIN_NEW` errors (fewer if the
+ * stage has fewer errors) are of the classes the stage adds, so that every round shows what is new in the stage; the
+ * rest are of any class of the stage.
+ */
+export function chooseVariants(
+  pack: TextPack,
+  classes: readonly string[],
+  rules: StageRules,
+  next: () => number,
+): Map<string, Variant> {
+  const all: Candidate[] = candidatesOf(pack, classes);
+  const fresh = shuffled(
+    all.filter(({ variants }) => variants.some((variant) => rules.adds.includes(variant.errorClass))),
+    next,
+  ).slice(0, Math.min(MIN_NEW, rules.errors));
+  const rest = shuffled(
+    all.filter((candidate) => !fresh.includes(candidate)),
+    next,
+  ).slice(0, rules.errors - fresh.length);
   const chosen = new Map<string, Variant>();
-  for (const { slot, variants } of shuffled.slice(0, level.errors)) {
-    const variant = variants[Math.floor(next() * variants.length)];
-    if (variant !== undefined) chosen.set(slot, variant);
+  for (const candidate of [...fresh, ...rest]) {
+    const pool = fresh.includes(candidate)
+      ? candidate.variants.filter((variant) => rules.adds.includes(variant.errorClass))
+      : candidate.variants;
+    const variant = pool[Math.floor(next() * pool.length)];
+    if (variant !== undefined) chosen.set(candidate.slot, variant);
   }
   return chosen;
 }
@@ -73,16 +84,6 @@ export function tokensOf(pack: TextPack, chosen: ReadonlyMap<string, Variant>): 
   return tokens;
 }
 
-/** The words of the excerpt (the Original), by sentence; no word belongs to a slot. */
-export function originalTokensOf(pack: TextPack): Token[] {
-  const tokens: Token[] = [];
-  pack.excerpt.forEach((entry, sentence) => {
-    for (const word of entry.text.matchAll(/\S+/g))
-      tokens.push({ id: tokens.length, text: word[0], sentence, slot: null });
-  });
-  return tokens;
-}
-
 /** The errors of the round, in the order their slots stand in the text. */
 export function corruptionsOf(
   pack: TextPack,
@@ -105,19 +106,19 @@ export function corruptionsOf(
 }
 
 /** A round: the pack the seed picks among `packs`, its corrupted slots and its words. */
-export function buildRound(packs: readonly TextPack[], level: Level, seed: number) {
+export function buildRound(packs: readonly TextPack[], classes: readonly string[], rules: StageRules, seed: number) {
   const next = random(seed);
   const pack = packs[Math.floor(next() * packs.length)];
-  if (pack === undefined) throw new Error("no text pack for this level");
-  const chosen = chooseVariants(candidatesOf(pack, level), level, next);
+  if (pack === undefined) throw new Error("no text pack for this stage");
+  const chosen = chooseVariants(pack, classes, rules, next);
   const tokens = tokensOf(pack, chosen);
   return { pack, tokens, corruptions: corruptionsOf(pack, chosen, tokens) };
 }
 
 /**
- * The sentences a hint may point to: those of the Variante with an error whose evidence quote stands in a sentence of
- * the Original. A sentence without a quote is inserted (nothing in the Original says it); pointing at it in one text
- * only would give the Variante away, so it is left out, in every mode.
+ * The sentences a hint may point to: those of the rendition with an error whose sentence says something the source says
+ * (it has an evidence quote). A sentence without a quote is inserted; pointing at it would give away that something was
+ * added, so it is left out.
  */
 export function hintSentencesOf(
   pack: TextPack,
@@ -127,11 +128,8 @@ export function hintSentencesOf(
   const found = new Map<number, HintSentence>();
   for (const corruption of corruptions) {
     const sentence = tokens.find((token) => token.slot === corruption.slot)?.sentence;
-    const quote = sentence === undefined ? undefined : pack.rendition[sentence]?.evidence?.quote;
-    if (sentence === undefined || quote === undefined) continue;
-    const original = pack.excerpt.findIndex((entry) => entry.text.includes(quote));
-    if (original < 0) continue;
-    const held = found.get(sentence) ?? { sentence, original, classes: [] };
+    if (sentence === undefined || pack.rendition[sentence]?.evidence === undefined) continue;
+    const held = found.get(sentence) ?? { sentence, classes: [] };
     if (!held.classes.includes(corruption.errorClass)) held.classes.push(corruption.errorClass);
     found.set(sentence, held);
   }

@@ -1,6 +1,5 @@
 import { expect, test, type Page } from "playwright/test";
-
-const CLOCK = "lernappsClock";
+import { CLOCK, open } from "./helpers.ts";
 
 /** Lets `count` ticks of 20 ms pass on the tests' clock of the page, where no other time passes. */
 async function pass(page: Page, count: number): Promise<void> {
@@ -10,16 +9,14 @@ async function pass(page: Page, count: number): Promise<void> {
   );
 }
 
-async function open(page: Page, route: string): Promise<void> {
+async function openWithClock(page: Page, route: string): Promise<void> {
   await page.addInitScript((property) => Reflect.set(globalThis, property, {}), CLOCK);
-  await page.goto(`./app/?seed=2#${route}`);
-  await expect(page.locator(".interactive-app")).toHaveAttribute("data-mounted", "");
+  await open(page, `./app/?seed=2#${route}`);
 }
 
 test.describe("Hints", () => {
   test("wait, name the kinds of error, then mark the sentences, and then there are no more", async ({ page }) => {
-    await open(page, "klasse-9-10");
-    await page.getByRole("button", { name: "Variante", exact: true }).click();
+    await openWithClock(page, "text-3");
     const button = page.getByRole("button", { name: /^Hinweis|^Keine weiteren Hinweise/ });
     await expect(button).toBeDisabled();
     await expect(button).toHaveText("Hinweis in 15 s");
@@ -35,19 +32,11 @@ test.describe("Hints", () => {
     await expect(button).toBeDisabled();
   });
 
-  test("mark the same sentences in both texts in the mode Original erkennen", async ({ page }) => {
-    await open(page, "klasse-9-10-original");
+  test("do not run while the reading tip shows, and start with the round", async ({ page }) => {
+    await openWithClock(page, "text-2");
+    await expect(page.getByRole("button", { name: "Hinweis", exact: true })).toHaveCount(0);
     await pass(page, 750);
-    await page.getByRole("button", { name: "Hinweis", exact: true }).click();
-    await pass(page, 1000);
-    await page.getByRole("button", { name: "Hinweis", exact: true }).click();
-    const tagged = async (name: string): Promise<number> => {
-      await page.getByRole("button", { name, exact: true }).first().click();
-      return page.locator(".panel:visible [data-tag]").count();
-    };
-    const a = await tagged("Text A");
-    const b = await tagged("Text B");
-    expect(a).toBeGreaterThan(0);
-    expect(b).toBeGreaterThan(0);
+    await page.getByRole("button", { name: "Verstanden, los" }).click();
+    await expect(page.getByRole("button", { name: "Hinweis in 15 s" })).toBeDisabled();
   });
 });

@@ -1,9 +1,8 @@
-import { parseRoute } from "../core/data.ts";
+import { placeOf, ROUTES, STAGES, firstStageOf, KINDS } from "../core/stages.ts";
 import { parse } from "yaml";
 import { describe, expect, it } from "vitest";
 import appYaml from "../app.yaml?raw";
 import classes from "./error-classes.json" with { type: "json" };
-import levels from "./levels.json" with { type: "json" };
 import de from "../messages/de.json" with { type: "json" };
 import en from "../messages/en.json" with { type: "json" };
 
@@ -17,50 +16,59 @@ interface Description {
 
 const app = parse(appYaml) as Description;
 const messages: Record<string, Record<string, string>> = { de, en };
-/** How a line of the section "begruendung" names the status and the first grade of an error class, by language. */
-const LINES: Record<string, (status: "documented" | "derived", grade: number) => { status: string; from: string }> = {
-  de: (status, grade) => ({ status: status === "documented" ? "belegt" : "abgeleitet", from: `ab Klasse ${grade}` }),
-  en: (status, grade) => ({ status, from: `from grade ${grade}` }),
+/** How a line of the section "begruendung" names the status and the place of an error class, by language. */
+const LINES: Record<
+  string,
+  (
+    status: "documented" | "derived",
+    kind: string,
+    stage: number,
+    names: Record<string, string>,
+  ) => { status: string; place: string }
+> = {
+  de: (status, kind, stage, names) => ({
+    status: status === "documented" ? "belegt" : "abgeleitet",
+    place: `${names[`kind.${kind}`]}, Stufe ${stage}`,
+  }),
+  en: (status, kind, stage, names) => ({ status, place: `${names[`kind.${kind}`]}, stage ${stage}` }),
 };
 
 describe.each(app.languages)("the start page in %s", (language) => {
   const names = messages[language] ?? {};
   const section = app.sections.find((entry) => entry.id === "begruendung")?.text[language] ?? "";
 
-  it("lists every error class with its status and its first school year, as the data say", () => {
+  it("lists every error class with its status and the exercise and stage that adds it, as the data say", () => {
     for (const [id, info] of Object.entries(classes)) {
       const name = names[`errorClass.${id}`];
       expect(name, `a name for ${id} in src/messages/${language}.json`).toBeDefined();
-      const { status, from } = LINES[language]?.(info.status as "documented" | "derived", info.fromGrade) ?? {
-        status: "",
-        from: "",
-      };
+      const kind = KINDS.find((candidate) => firstStageOf(candidate, id) !== null) ?? "";
+      const { status, place } = LINES[language]?.(
+        info.status as "documented" | "derived",
+        kind,
+        firstStageOf(kind as "text" | "quelle", id) ?? 0,
+        names,
+      ) ?? { status: "", place: "" };
       const line = section.split("\n").find((row) => row.includes(`**${name}**`));
       expect(line, `a line for ${name} in the section begruendung`).toBeDefined();
-      expect(line, `${name}: status`).toContain(`**, ${status}, ${from}:`);
+      expect(line, `${name}: status and place`).toContain(`**, ${status}, ${place}:`);
     }
   });
 
   it("has no line for a class that does not exist", () => {
-    const marker = language === "de" ? ", ab Klasse " : ", from grade ";
+    const marker = language === "de" ? ", Stufe " : ", stage ";
     const lines = section.split("\n").filter((row) => row.startsWith("- **") && row.includes(marker));
     expect(lines).toHaveLength(Object.keys(classes).length);
   });
 });
 
 describe("the start page", () => {
-  it("has a route for every level and a level for every route", () => {
-    const ids = app.routes.map((route) => route.id);
-    expect(ids.filter((id) => parseRoute(id).mode === "mark").sort()).toEqual(Object.keys(levels).sort());
-    for (const id of ids) expect(Object.keys(levels), id).toContain(parseRoute(id).level);
+  it("has a route for every route of the app and no other", () => {
+    expect(app.routes.map((route) => route.id).sort()).toEqual([...ROUTES].sort());
+    for (const route of app.routes) expect(placeOf(route.id), route.id).not.toBeNull();
   });
 
-  it("has the routes of the modes source and choose for every level", () => {
-    const ids = app.routes.map((route) => route.id);
-    for (const level of Object.keys(levels)) {
-      expect(ids, level).toContain(`${level}-quelle`);
-      expect(ids, level).toContain(`${level}-original`);
-    }
+  it("names the stages of every exercise", () => {
+    for (const kind of KINDS) expect(STAGES[kind]).toHaveLength(3);
   });
 });
 

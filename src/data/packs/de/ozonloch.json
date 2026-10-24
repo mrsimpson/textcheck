@@ -1,0 +1,1006 @@
+{
+  "id": "ozonloch",
+  "title": "Ozonloch",
+  "language": "de",
+  "topic": "Ozonloch: Entdeckung, Ursachen und Entwicklung",
+  "source": {
+    "title": "Ozonloch – Wikipedia",
+    "url": "https://de.wikipedia.org/w/index.php?title=Ozonloch&oldid=269186062",
+    "revision": "269186062",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "authorsUrl": "https://de.wikipedia.org/w/index.php?title=Ozonloch&action=history",
+    "retrieved": "2026-10-18",
+    "pdf": "quellen/de/ozonloch.pdf",
+    "verified": true
+  },
+  "excerpt": [
+    {
+      "text": "Als Ozonloch bezeichnet man eine starke Ausdünnung der Ozonschicht der Erdatmosphäre, wie sie 1985 erstmals am Südpol über der Antarktis festgestellt wurde, Anfang 2020 nach einem Bericht des Alfred-Wegener-Instituts zum ersten Mal auch über der Arktis (Nordpol).",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Die Ursachen des Ozonabbaus sind hauptsächlich radikalische Chloratome aus chlorierten organischen Verbindungen, die zusammenfassend als Fluorchlorkohlenwasserstoffe (FCKW oder CFCs) bezeichnet werden.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Daneben sind Halon und auch teilbromierte und teilchlorierte Kohlenwasserstoffe (H-FBKW, H-FCKW), Bromchlormethan, Tetrachlorkohlenstoff, Methylbromid und Trichlorethan an der Zerstörung beteiligt.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Die ausgedünnte Ozonschicht lässt mehr vom UV-B-Anteil der Sonnenstrahlung zum Erdboden durch: Ultraviolette Strahlung kann bei Lebewesen karzinogen wirken.",
+      "section": "Einleitung"
+    },
+    {
+      "text": "Erste Hinweise auf eine Schwächung der Ozonschicht über der Antarktis gab es bereits 1957, doch die Messungen der britischen Forschungsstation Halley Bay wurden weitgehend nicht beachtet.",
+      "section": "Beobachtungsgeschichte"
+    },
+    {
+      "text": "1974 warnten die Physikochemiker Mario J. Molina und Frank Sherwood Rowland, die Anreicherung der schwer abbaubaren FCKW in der Atmosphäre würde zu einer wesentlichen Abnahme der Ozonkonzentration führen, weltweit und ganzjährig – bis dahin hatte niemand das Ozonloch vorausgesehen.",
+      "section": "Beobachtungsgeschichte"
+    },
+    {
+      "text": "Die beiden Forscher erhielten 1995 zusammen mit dem Atmosphärenchemiker Paul Crutzen den Nobelpreis für Chemie für die Aufklärung der Mechanismen, die zum Auf- und Abbau der Ozonschicht beitragen.",
+      "section": "Beobachtungsgeschichte"
+    },
+    {
+      "text": "Seit Anfang der 1980er Jahre tritt das Ozonloch jährlich auf: Innerhalb weniger Wochen nach dem Sonnenaufgang in der Antarktis bricht die Ozonkonzentration ein und erholt sich innerhalb weniger Monate.",
+      "section": "Beobachtungsgeschichte"
+    },
+    {
+      "text": "Die Größe des Einbruchs entwickelte sich innerhalb weniger Jahre von wenigen Prozent auf mehr als fünfzig Prozent.",
+      "section": "Beobachtungsgeschichte"
+    }
+  ],
+  "rendition": [
+    {
+      "sentence": [
+        "Als Ozonloch bezeichnet man eine ",
+        {
+          "slot": "a1"
+        },
+        " ",
+        {
+          "slot": "s1"
+        },
+        " der Ozonschicht."
+      ],
+      "evidence": {
+        "quote": "Als Ozonloch bezeichnet man eine starke Ausdünnung der Ozonschicht der Erdatmosphäre"
+      }
+    },
+    {
+      "sentence": [
+        "Festgestellt wurde es ",
+        {
+          "slot": "s2"
+        },
+        " erstmals am ",
+        {
+          "slot": "s3"
+        },
+        " über der Antarktis."
+      ],
+      "evidence": {
+        "quote": "wie sie 1985 erstmals am Südpol über der Antarktis festgestellt wurde"
+      }
+    },
+    {
+      "sentence": [
+        "Anfang 2020 wurde es nach einem Bericht des ",
+        {
+          "slot": "s4"
+        },
+        " zum ersten Mal auch über der ",
+        {
+          "slot": "s5"
+        },
+        " festgestellt."
+      ],
+      "evidence": {
+        "quote": "Anfang 2020 nach einem Bericht des Alfred-Wegener-Instituts zum ersten Mal auch über der Arktis"
+      }
+    },
+    {
+      "sentence": [
+        "Die Ursachen des Ozonabbaus sind ",
+        {
+          "slot": "s6"
+        },
+        " Chloratome aus Verbindungen, die man zusammen ",
+        {
+          "slot": "s7"
+        },
+        " nennt."
+      ],
+      "evidence": {
+        "quote": "Die Ursachen des Ozonabbaus sind hauptsächlich radikalische Chloratome aus chlorierten organischen Verbindungen, die zusammenfassend als Fluorchlorkohlenwasserstoffe (FCKW oder CFCs) bezeichnet werden."
+      }
+    },
+    {
+      "sentence": [
+        "Daneben wirken noch weitere Stoffe wie ",
+        {
+          "slot": "s8"
+        },
+        " und Methylbromid an der Zerstörung der Ozonschicht mit."
+      ],
+      "evidence": {
+        "quote": "Daneben sind Halon und auch teilbromierte und teilchlorierte Kohlenwasserstoffe (H-FBKW, H-FCKW), Bromchlormethan, Tetrachlorkohlenstoff, Methylbromid und Trichlorethan an der Zerstörung beteiligt."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i6"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Eine dünnere Ozonschicht lässt ",
+        {
+          "slot": "s9"
+        },
+        " UV-B-Strahlung der Sonne zum Erdboden durch."
+      ],
+      "evidence": {
+        "quote": "Die ausgedünnte Ozonschicht lässt mehr vom UV-B-Anteil der Sonnenstrahlung zum Erdboden durch"
+      }
+    },
+    {
+      "sentence": [
+        "Auf Lebewesen ",
+        {
+          "slot": "s10"
+        },
+        " ultraviolette Strahlung karzinogen wirken."
+      ],
+      "evidence": {
+        "quote": "Ultraviolette Strahlung kann bei Lebewesen karzinogen wirken"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i1"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Erste Hinweise auf eine Schwächung der Ozonschicht über der Antarktis gab es bereits ",
+        {
+          "slot": "s11"
+        },
+        " ",
+        {
+          "slot": "s11b"
+        },
+        " die Messungen wurden weitgehend nicht beachtet."
+      ],
+      "evidence": {
+        "quote": "Erste Hinweise auf eine Schwächung der Ozonschicht über der Antarktis gab es bereits 1957, doch die Messungen der britischen Forschungsstation Halley Bay wurden weitgehend nicht beachtet."
+      }
+    },
+    {
+      "sentence": [
+        "Sie stammten von der ",
+        {
+          "slot": "s12"
+        },
+        " Forschungsstation ",
+        {
+          "slot": "s12b"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "die Messungen der britischen Forschungsstation Halley Bay"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i2"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s14"
+        },
+        " warnten die Physikochemiker Mario J. Molina und Frank Sherwood Rowland, ",
+        {
+          "slot": "s15"
+        },
+        " sich die schwer abbaubaren FCKW in der Atmosphäre anreichern würden."
+      ],
+      "evidence": {
+        "quote": "1974 warnten die Physikochemiker Mario J. Molina und Frank Sherwood Rowland, die Anreicherung der schwer abbaubaren FCKW in der Atmosphäre"
+      }
+    },
+    {
+      "sentence": [
+        "Dadurch würde die Ozonkonzentration ",
+        {
+          "slot": "s16"
+        },
+        " deutlich abnehmen."
+      ],
+      "evidence": {
+        "quote": "würde zu einer wesentlichen Abnahme der Ozonkonzentration führen, weltweit und ganzjährig"
+      }
+    },
+    {
+      "sentence": [
+        "Bis dahin hatte ",
+        {
+          "slot": "s17"
+        },
+        " das Ozonloch vorausgesehen."
+      ],
+      "evidence": {
+        "quote": "bis dahin hatte niemand das Ozonloch vorausgesehen"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i3"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        {
+          "slot": "s19"
+        },
+        " erhielten die beiden Forscher zusammen mit dem Atmosphärenchemiker Paul Crutzen den Nobelpreis für ",
+        {
+          "slot": "s18"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Die beiden Forscher erhielten 1995 zusammen mit dem Atmosphärenchemiker Paul Crutzen den Nobelpreis für Chemie"
+      }
+    },
+    {
+      "sentence": [
+        "Seit Anfang der ",
+        {
+          "slot": "s21"
+        },
+        " Jahre tritt das Ozonloch ",
+        {
+          "slot": "s22"
+        },
+        " auf."
+      ],
+      "evidence": {
+        "quote": "Seit Anfang der 1980er Jahre tritt das Ozonloch jährlich auf"
+      }
+    },
+    {
+      "sentence": [
+        "Innerhalb weniger ",
+        {
+          "slot": "s23"
+        },
+        " nach dem ",
+        {
+          "slot": "s25"
+        },
+        " in der Antarktis bricht die Ozonkonzentration ein."
+      ],
+      "evidence": {
+        "quote": "Innerhalb weniger Wochen nach dem Sonnenaufgang in der Antarktis bricht die Ozonkonzentration ein"
+      }
+    },
+    {
+      "sentence": [
+        "Sie erholt sich ",
+        {
+          "slot": "s24b"
+        },
+        " innerhalb weniger ",
+        {
+          "slot": "s24"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "erholt sich innerhalb weniger Monate"
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i4"
+        }
+      ]
+    },
+    {
+      "sentence": [
+        "Die Größe des Einbruchs wuchs innerhalb weniger Jahre von wenigen Prozent auf ",
+        {
+          "slot": "s29"
+        },
+        "."
+      ],
+      "evidence": {
+        "quote": "Die Größe des Einbruchs entwickelte sich innerhalb weniger Jahre von wenigen Prozent auf mehr als fünfzig Prozent."
+      }
+    },
+    {
+      "sentence": [
+        {
+          "slot": "i5"
+        }
+      ]
+    }
+  ],
+  "slots": {
+    "a1": {
+      "correct": "starke",
+      "variants": [
+        {
+          "text": "bedrohliche",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Bedrohlich“ ist ein Gefühlswort. In der Quelle steht sachlich: „eine starke Ausdünnung der Ozonschicht“. Solche Wörter machen Angst, sie belegen nichts."
+        },
+        {
+          "text": "erschreckende",
+          "errorClass": "loaded_language",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "„Erschreckend“ ist eine Wertung. Die Quelle beschreibt nur: „eine starke Ausdünnung der Ozonschicht“."
+        }
+      ]
+    },
+    "s1": {
+      "correct": "Ausdünnung",
+      "variants": [
+        {
+          "text": "Ausdünung",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das Wort kommt von „dünn“. Darum schreibt man zwei „n“: Ausdünnung. Nach dem kurzen „ü“ folgt ein doppelter Konsonant."
+        },
+        {
+          "text": "Verdickung",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Als Ozonloch bezeichnet man eine starke Ausdünnung der Ozonschicht der Erdatmosphäre“ Die Schicht wurde dünner, nicht dicker.",
+          "evidence": "Als Ozonloch bezeichnet man eine starke Ausdünnung der Ozonschicht der Erdatmosphäre"
+        }
+      ]
+    },
+    "s2": {
+      "correct": "1985",
+      "variants": [
+        {
+          "text": "1958",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „wie sie 1985 erstmals am Südpol über der Antarktis festgestellt wurde“. Die Zahl wurde verändert: 1985, nicht 1958.",
+          "evidence": "wie sie 1985 erstmals am Südpol über der Antarktis festgestellt wurde"
+        },
+        {
+          "text": "1975",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „wie sie 1985 erstmals am Südpol über der Antarktis festgestellt wurde“. Festgestellt wurde das Ozonloch 1985, nicht 1975.",
+          "evidence": "wie sie 1985 erstmals am Südpol über der Antarktis festgestellt wurde"
+        }
+      ]
+    },
+    "s3": {
+      "correct": "Südpol",
+      "variants": [
+        {
+          "text": "Nordpol",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „am Südpol über der Antarktis“. Die Antarktis liegt am Südpol, nicht am Nordpol. Der Satz widerspricht sich außerdem selbst.",
+          "evidence": "wie sie 1985 erstmals am Südpol über der Antarktis festgestellt wurde"
+        }
+      ]
+    },
+    "s4": {
+      "correct": "Alfred-Wegener-Instituts",
+      "variants": [
+        {
+          "text": "Max-Planck-Instituts",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „nach einem Bericht des Alfred-Wegener-Instituts“. Der Name des Instituts wurde ausgetauscht.",
+          "evidence": "Anfang 2020 nach einem Bericht des Alfred-Wegener-Instituts zum ersten Mal auch über der Arktis"
+        },
+        {
+          "text": "Alfred-Wegner-Instituts",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Hier fehlt ein Buchstabe im Namen: Alfred-Wegener-Instituts."
+        }
+      ]
+    },
+    "s5": {
+      "correct": "Arktis",
+      "variants": [
+        {
+          "text": "Antarktis",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „zum ersten Mal auch über der Arktis“. Die Arktis ist der Nordpol. Die Antarktis kommt im Satz davor schon vor und liegt am Südpol.",
+          "evidence": "Anfang 2020 nach einem Bericht des Alfred-Wegener-Instituts zum ersten Mal auch über der Arktis"
+        }
+      ]
+    },
+    "s6": {
+      "correct": "hauptsächlich",
+      "variants": [
+        {
+          "text": "ausschließlich",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „sind hauptsächlich radikalische Chloratome“. Danach nennt die Quelle noch weitere Stoffe. „Ausschließlich“ meint: nur diese und sonst nichts.",
+          "evidence": "Die Ursachen des Ozonabbaus sind hauptsächlich radikalische Chloratome aus chlorierten organischen Verbindungen, die zusammenfassend als Fluorchlorkohlenwasserstoffe (FCKW oder CFCs) bezeichnet werden."
+        },
+        {
+          "text": "kaum",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „sind hauptsächlich radikalische Chloratome“. „Hauptsächlich“ heißt vor allem, nicht „kaum“.",
+          "evidence": "Die Ursachen des Ozonabbaus sind hauptsächlich radikalische Chloratome aus chlorierten organischen Verbindungen, die zusammenfassend als Fluorchlorkohlenwasserstoffe (FCKW oder CFCs) bezeichnet werden."
+        }
+      ]
+    },
+    "s7": {
+      "correct": "FCKW",
+      "variants": [
+        {
+          "text": "FKCW",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Die Buchstaben sind vertauscht. Richtig ist FCKW (Fluorchlorkohlenwasserstoffe)."
+        },
+        {
+          "text": "FKW",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Fluorchlorkohlenwasserstoffe (FCKW oder CFCs)“. Die Abkürzung heißt FCKW, nicht FKW. Das „C“ für Chlor fehlt.",
+          "evidence": "Die Ursachen des Ozonabbaus sind hauptsächlich radikalische Chloratome aus chlorierten organischen Verbindungen, die zusammenfassend als Fluorchlorkohlenwasserstoffe (FCKW oder CFCs) bezeichnet werden."
+        }
+      ]
+    },
+    "s8": {
+      "correct": "Halon",
+      "variants": [
+        {
+          "text": "Helium",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Daneben sind Halon und auch teilbromierte und teilchlorierte Kohlenwasserstoffe … an der Zerstörung beteiligt.“ Halon wird genannt, Helium nicht.",
+          "evidence": "Daneben sind Halon und auch teilbromierte und teilchlorierte Kohlenwasserstoffe (H-FBKW, H-FCKW), Bromchlormethan, Tetrachlorkohlenstoff, Methylbromid und Trichlorethan an der Zerstörung beteiligt."
+        },
+        {
+          "text": "Sauerstoff",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Daneben sind Halon und auch teilbromierte und teilchlorierte Kohlenwasserstoffe … an der Zerstörung beteiligt.“ Sauerstoff gehört nicht zu den Stoffen, die die Ozonschicht zerstören.",
+          "evidence": "Daneben sind Halon und auch teilbromierte und teilchlorierte Kohlenwasserstoffe (H-FBKW, H-FCKW), Bromchlormethan, Tetrachlorkohlenstoff, Methylbromid und Trichlorethan an der Zerstörung beteiligt."
+        }
+      ]
+    },
+    "s9": {
+      "correct": "mehr",
+      "variants": [
+        {
+          "text": "weniger",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Die ausgedünnte Ozonschicht lässt mehr vom UV-B-Anteil der Sonnenstrahlung zum Erdboden durch“. Die dünnere Schicht lässt mehr durch, nicht weniger.",
+          "evidence": "Die ausgedünnte Ozonschicht lässt mehr vom UV-B-Anteil der Sonnenstrahlung zum Erdboden durch"
+        },
+        {
+          "text": "mer",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Hier fehlt ein Buchstabe: mehr."
+        }
+      ]
+    },
+    "s10": {
+      "correct": "kann",
+      "variants": [
+        {
+          "text": "muss",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Ultraviolette Strahlung kann bei Lebewesen karzinogen wirken.“ „Kann“ heißt: es ist möglich. „Muss“ heißt: es geschieht immer.",
+          "evidence": "Ultraviolette Strahlung kann bei Lebewesen karzinogen wirken"
+        },
+        {
+          "text": "kan",
+          "errorClass": "spelling_rule",
+          "basis": "text",
+          "conspicuousness": 1,
+          "explanation": "Nach dem kurzen „a“ folgt ein doppeltes „n“: kann."
+        }
+      ]
+    },
+    "s11": {
+      "correct": "1957,",
+      "variants": [
+        {
+          "text": "1975,",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „gab es bereits 1957“. Es ging um das Jahr 1957. Zwei Ziffern wurden vertauscht.",
+          "evidence": "Erste Hinweise auf eine Schwächung der Ozonschicht über der Antarktis gab es bereits 1957, doch die Messungen der britischen Forschungsstation Halley Bay wurden weitgehend nicht beachtet."
+        },
+        {
+          "text": "1987,",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „gab es bereits 1957“. Erste Hinweise gab es schon 1957, nicht erst 1987.",
+          "evidence": "Erste Hinweise auf eine Schwächung der Ozonschicht über der Antarktis gab es bereits 1957, doch die Messungen der britischen Forschungsstation Halley Bay wurden weitgehend nicht beachtet."
+        },
+        {
+          "text": "1957",
+          "errorClass": "punctuation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Vor „doch“ beginnt ein neuer Hauptsatz. Dort setzt man ein Komma."
+        }
+      ]
+    },
+    "s11b": {
+      "correct": "doch",
+      "variants": [
+        {
+          "text": "denn",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Mit „denn“ wird aus dem Gegensatz ein Grund: Die Messungen wurden nicht beachtet, „denn“ es gab Hinweise. In der Quelle steht „doch“: Es gab Hinweise, doch niemand beachtete sie."
+        },
+        {
+          "text": "und",
+          "errorClass": "connective_negation",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht „doch“. Es gab erste Hinweise, aber sie wurden nicht beachtet. „Und“ nimmt diesen Gegensatz weg."
+        }
+      ]
+    },
+    "s12": {
+      "correct": "britischen",
+      "variants": [
+        {
+          "text": "amerikanischen",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „die Messungen der britischen Forschungsstation Halley Bay“. Die Station war britisch, nicht amerikanisch.",
+          "evidence": "die Messungen der britischen Forschungsstation Halley Bay"
+        },
+        {
+          "text": "britschen",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt ein Buchstabe: britischen."
+        }
+      ]
+    },
+    "s12b": {
+      "correct": "Halley Bay",
+      "variants": [
+        {
+          "text": "Halifax Bay",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „die Messungen der britischen Forschungsstation Halley Bay“. Der Name der Station wurde verändert.",
+          "evidence": "die Messungen der britischen Forschungsstation Halley Bay"
+        }
+      ]
+    },
+    "s14": {
+      "correct": "1974",
+      "variants": [
+        {
+          "text": "1947",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „1974 warnten die Physikochemiker Mario J. Molina und Frank Sherwood Rowland“. Zwei Ziffern wurden vertauscht.",
+          "evidence": "1974 warnten die Physikochemiker Mario J. Molina und Frank Sherwood Rowland, die Anreicherung der schwer abbaubaren FCKW in der Atmosphäre"
+        },
+        {
+          "text": "1984",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „1974 warnten die Physikochemiker Mario J. Molina und Frank Sherwood Rowland“. Die Warnung kam 1974, nicht 1984.",
+          "evidence": "1974 warnten die Physikochemiker Mario J. Molina und Frank Sherwood Rowland, die Anreicherung der schwer abbaubaren FCKW in der Atmosphäre"
+        }
+      ]
+    },
+    "s15": {
+      "correct": "dass",
+      "variants": [
+        {
+          "text": "das",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier beginnt ein Nebensatz mit einer Aussage. Man schreibt „dass“. Mit „das“ kann man „dieses“ oder „welches“ ersetzen, hier passt das nicht."
+        }
+      ]
+    },
+    "s16": {
+      "correct": "weltweit und ganzjährig",
+      "variants": [
+        {
+          "text": "nur über dem Südpol",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „weltweit und ganzjährig“. Die Forscher warnten nicht nur vor einem einzelnen Ort.",
+          "evidence": "würde zu einer wesentlichen Abnahme der Ozonkonzentration führen, weltweit und ganzjährig",
+          "tolerance": 1
+        },
+        {
+          "text": "nur im Winter",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „weltweit und ganzjährig“. Die Warnung galt für das ganze Jahr, nicht nur für den Winter.",
+          "evidence": "würde zu einer wesentlichen Abnahme der Ozonkonzentration führen, weltweit und ganzjährig",
+          "tolerance": 1
+        }
+      ]
+    },
+    "s17": {
+      "correct": "niemand",
+      "variants": [
+        {
+          "text": "kaum jemand",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „bis dahin hatte niemand das Ozonloch vorausgesehen“. „Niemand“ heißt: gar keiner. „Kaum jemand“ lässt Ausnahmen zu.",
+          "evidence": "bis dahin hatte niemand das Ozonloch vorausgesehen"
+        },
+        {
+          "text": "nieman",
+          "errorClass": "slip",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier fehlt am Ende ein Buchstabe: niemand."
+        }
+      ]
+    },
+    "s19": {
+      "correct": "1995",
+      "variants": [
+        {
+          "text": "1959",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „erhielten 1995 zusammen mit dem Atmosphärenchemiker Paul Crutzen den Nobelpreis“. Zwei Ziffern wurden vertauscht.",
+          "evidence": "Die beiden Forscher erhielten 1995 zusammen mit dem Atmosphärenchemiker Paul Crutzen den Nobelpreis für Chemie"
+        },
+        {
+          "text": "1985",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „erhielten 1995 zusammen mit dem Atmosphärenchemiker Paul Crutzen den Nobelpreis“. Den Preis gab es 1995, nicht 1985.",
+          "evidence": "Die beiden Forscher erhielten 1995 zusammen mit dem Atmosphärenchemiker Paul Crutzen den Nobelpreis für Chemie"
+        }
+      ]
+    },
+    "s18": {
+      "correct": "Chemie",
+      "variants": [
+        {
+          "text": "Physik",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „den Nobelpreis für Chemie“. Der Preis ging an Chemiker für die Chemie, nicht für Physik.",
+          "evidence": "Die beiden Forscher erhielten 1995 zusammen mit dem Atmosphärenchemiker Paul Crutzen den Nobelpreis für Chemie"
+        },
+        {
+          "text": "Medizin",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „den Nobelpreis für Chemie“. Es war der Preis für Chemie, nicht für Medizin.",
+          "evidence": "Die beiden Forscher erhielten 1995 zusammen mit dem Atmosphärenchemiker Paul Crutzen den Nobelpreis für Chemie"
+        }
+      ]
+    },
+    "s21": {
+      "correct": "1980er",
+      "variants": [
+        {
+          "text": "1960er",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Seit Anfang der 1980er Jahre tritt das Ozonloch jährlich auf“. Es sind die 1980er, nicht die 1960er.",
+          "evidence": "Seit Anfang der 1980er Jahre tritt das Ozonloch jährlich auf"
+        },
+        {
+          "text": "1990er",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „Seit Anfang der 1980er Jahre tritt das Ozonloch jährlich auf“. Das Ozonloch tritt schon seit den 1980er Jahren auf.",
+          "evidence": "Seit Anfang der 1980er Jahre tritt das Ozonloch jährlich auf"
+        }
+      ]
+    },
+    "s22": {
+      "correct": "jedes Jahr",
+      "variants": [
+        {
+          "text": "alle zehn Jahre",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „tritt das Ozonloch jährlich auf“. Jährlich heißt: jedes Jahr. Nicht nur alle zehn Jahre.",
+          "evidence": "Seit Anfang der 1980er Jahre tritt das Ozonloch jährlich auf",
+          "tolerance": 1
+        },
+        {
+          "text": "manchmal",
+          "errorClass": "quantity_degree",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „tritt das Ozonloch jährlich auf“. Jährlich heißt: jedes Jahr, nicht nur manchmal.",
+          "evidence": "Seit Anfang der 1980er Jahre tritt das Ozonloch jährlich auf"
+        }
+      ]
+    },
+    "s23": {
+      "correct": "Wochen",
+      "variants": [
+        {
+          "text": "Tage",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „Innerhalb weniger Wochen nach dem Sonnenaufgang“. Der Einbruch dauert Wochen, nicht Tage.",
+          "evidence": "Innerhalb weniger Wochen nach dem Sonnenaufgang in der Antarktis bricht die Ozonkonzentration ein"
+        },
+        {
+          "text": "Jahre",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „Innerhalb weniger Wochen nach dem Sonnenaufgang“. Es sind Wochen, nicht Jahre.",
+          "evidence": "Innerhalb weniger Wochen nach dem Sonnenaufgang in der Antarktis bricht die Ozonkonzentration ein"
+        }
+      ]
+    },
+    "s25": {
+      "correct": "Sonnenaufgang",
+      "variants": [
+        {
+          "text": "Sonnenuntergang",
+          "errorClass": "factual_error",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „nach dem Sonnenaufgang in der Antarktis“. Der Einbruch beginnt nach dem Sonnenaufgang, nicht nach dem Sonnenuntergang.",
+          "evidence": "Innerhalb weniger Wochen nach dem Sonnenaufgang in der Antarktis bricht die Ozonkonzentration ein"
+        }
+      ]
+    },
+    "s24b": {
+      "correct": "wieder",
+      "variants": [
+        {
+          "text": "wider",
+          "errorClass": "real_word",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "„Wieder“ heißt: noch einmal oder zurück. „Wider“ heißt: gegen. Hier passt „wieder“: Die Ozonkonzentration erholt sich."
+        }
+      ]
+    },
+    "s24": {
+      "correct": "Monate",
+      "variants": [
+        {
+          "text": "Jahre",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „erholt sich innerhalb weniger Monate“. Die Erholung dauert Monate, nicht Jahre.",
+          "evidence": "erholt sich innerhalb weniger Monate"
+        },
+        {
+          "text": "Tage",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "In der Quelle steht: „erholt sich innerhalb weniger Monate“. Es dauert Monate, nicht nur Tage.",
+          "evidence": "erholt sich innerhalb weniger Monate"
+        }
+      ]
+    },
+    "s29": {
+      "correct": "mehr als fünfzig Prozent",
+      "variants": [
+        {
+          "text": "mehr als fünf Prozent",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle steht: „von wenigen Prozent auf mehr als fünfzig Prozent“. Es waren mehr als fünfzig Prozent, nicht fünf.",
+          "evidence": "Die Größe des Einbruchs entwickelte sich innerhalb weniger Jahre von wenigen Prozent auf mehr als fünfzig Prozent.",
+          "tolerance": 1
+        },
+        {
+          "text": "fast hundert Prozent",
+          "errorClass": "number_name_date",
+          "basis": "comparison",
+          "conspicuousness": 3,
+          "explanation": "In der Quelle steht: „von wenigen Prozent auf mehr als fünfzig Prozent“. Von „fast hundert“ steht dort nichts.",
+          "evidence": "Die Größe des Einbruchs entwickelte sich innerhalb weniger Jahre von wenigen Prozent auf mehr als fünfzig Prozent.",
+          "tolerance": 1
+        }
+      ]
+    },
+    "i1": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Experten sagen, dass die Antarktis der windigste Kontinent der Erde ist.",
+          "errorClass": "false_authority",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Der Satz beruft sich auf „Experten“, ohne einen Namen oder eine Quelle zu nennen. In der Quelle steht davon nichts. Es spricht nur über die Antarktis als Ort des Ozonlochs.",
+          "evidence": "Als Ozonloch bezeichnet man eine starke Ausdünnung der Ozonschicht der Erdatmosphäre, wie sie 1985 erstmals am Südpol über der Antarktis festgestellt wurde, Anfang 2020 nach einem Bericht des Alfred-Wegener-Instituts zum ersten Mal auch über der Arktis (Nordpol)."
+        },
+        {
+          "text": "Die Antarktis ist der windigste Kontinent der Erde.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort geht es nur um das Ozonloch über der Antarktis."
+        }
+      ]
+    },
+    "i2": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Die Messungen von 1957 waren zweifellos die spannendsten, die je gemacht wurden.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das ist eine Meinung. „Zweifellos“ und „die spannendsten“ bewerten, sie messen nichts. In der Quelle steht nur, dass die Messungen wenig beachtet wurden."
+        },
+        {
+          "text": "Die Messungen wurden in der Antarktis oft bei großer Kälte durchgeführt.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort steht nur, dass die Messungen kaum beachtet wurden."
+        }
+      ]
+    },
+    "i3": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Also wurde das Ozonloch nur deshalb größer, weil die Messungen von 1957 nicht beachtet wurden.",
+          "errorClass": "faulty_inference",
+          "basis": "text",
+          "conspicuousness": 3,
+          "explanation": "Hier werden Ursache und Folge verdreht. Die Messungen zeigten ein Ozonloch, sie haben es nicht verursacht. In der Quelle steht, dass FCKW die Ursache sind."
+        },
+        {
+          "text": "Daran sieht man: Forscher liegen mit ihren Warnungen immer richtig.",
+          "errorClass": "overgeneralization",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Hier wird aus einem Fall ein Gesetz gemacht. In der Quelle geht es nur um die Warnung von 1974. „Immer“ steht dort nicht."
+        }
+      ]
+    },
+    "i4": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Im Jahr 1990 trat das Ozonloch nicht auf.",
+          "errorClass": "contradiction",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz widerspricht dem Text. Dort steht, dass das Ozonloch seit Anfang der 1980er Jahre jedes Jahr auftritt."
+        }
+      ]
+    },
+    "i5": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Das Ozonloch ist das schlimmste Umweltproblem überhaupt.",
+          "errorClass": "opinion_as_fact",
+          "basis": "text",
+          "conspicuousness": 2,
+          "explanation": "Das ist eine Meinung. „Das schlimmste“ lässt sich nicht messen. In der Quelle steht nur, wie das Ozonloch entsteht und wie groß es wurde."
+        },
+        {
+          "text": "Das Ozonloch wird mit Satelliten und mit Messgeräten am Boden beobachtet.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort wird nicht gesagt, wie das Ozonloch beobachtet wird."
+        }
+      ]
+    },
+    "i6": {
+      "correct": "",
+      "variants": [
+        {
+          "text": "Alle Chloratome in der Atmosphäre stammen aus FCKW.",
+          "errorClass": "overgeneralization",
+          "basis": "comparison",
+          "conspicuousness": 2,
+          "explanation": "In der Quelle stehen FCKW als Hauptursache des Ozonabbaus: „hauptsächlich radikalische Chloratome“. „Alle“ Chloratome aus FCKW ist zu viel behauptet.",
+          "evidence": "Die Ursachen des Ozonabbaus sind hauptsächlich radikalische Chloratome aus chlorierten organischen Verbindungen, die zusammenfassend als Fluorchlorkohlenwasserstoffe (FCKW oder CFCs) bezeichnet werden."
+        },
+        {
+          "text": "FCKW wurden früher zum Beispiel in Spraydosen verwendet.",
+          "errorClass": "added_claim",
+          "basis": "comparison",
+          "conspicuousness": 1,
+          "explanation": "Dieser Satz steht nicht in der Quelle. Dort wird nicht gesagt, wofür man FCKW verwendete."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Quelle gelesen: Wikipedia-Artikel Ozonloch, Revision 269186062 (abgerufen am 18.10.2026), als gespeicherte Seite vollständig durchgesehen; die 11 Auszugssätze stehen wörtlich im abgerufenen Artikeltext (per Skript geprüft; Fußnotenzeichen fehlen im Auszug).",
+    "Lizenz: Wikipedia-Text unter CC BY-SA 4.0 (Fußzeile der Seite); die Daten dieses Pakets stehen unter derselben Lizenz.",
+    "Alle Fehlerklassen der Stufe kommen vor. Die Klassen ab Klasse 7 und ab Klasse 10 sind abgeleitet, nicht belegt. Rechtschreibfehler sind konstruiert nach den IQB-Schwerpunkten (Konsonantverdopplung, Auslautverhärtung, Dehnung, das/dass, wieder/wider).",
+    "Die eingefügten Sätze (Stellen ohne Text im richtigen Wortlaut) sind erfunden, harmlos und stehen nicht im Original; die Erklärung nennt das.",
+    "Der eingefügte Satz „Im Jahr 1990 trat das Ozonloch nicht auf.“ ist ein Widerspruch zum richtigen Satz „Seit Anfang der 1980er Jahre tritt das Ozonloch jedes Jahr auf“; er bleibt ein Fehler, auch wenn dort selbst eine Stelle verändert wurde.",
+    "Nicht geprüft: ob der Artikeltext fachlich vollständig stimmt; die Zahlen und Namen folgen dem Artikel, nicht anderen Quellen. Die falschen Varianten sind absichtlich verändert und stehen nicht in der Quelle.",
+    "Die Quelle liegt als PDF unter public/quellen/de/ozonloch.pdf (mit Lizenz-, Autoren- und „unverändert“-Hinweis auf der ersten Seite, aus der abgerufenen Seite erzeugt) für den Modus Quellentreue.",
+    "Überarbeitung Klasse 9–10: Der Auszug beginnt bereits mit dem ersten Satz der Einleitung des Artikels und bleibt unverändert; geprüft wurde, dass er ohne den weggelassenen Teil verständlich ist. Jahre, Namen und Zahlen aller Auszugssätze mit dem Artikel im PDF abgeglichen (1985, 1957, 1974, 1995, Anfang der 1980er Jahre, mehr als fünfzig Prozent).",
+    "Durchsicht (Assistent, nach Hinweis aus der Überarbeitung): Die Auszugssätze zur Reaktion der Schadstoffe auf Eiskristallen („mit dem Ozon verdunsten“) sind entfernt, weil die Formulierung des Artikels fachlich unscharf ist; der Auszug geht von der Dauer des Ozonlochs direkt zur Größe des Einbruchs."
+  ]
+}

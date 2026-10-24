@@ -158,54 +158,52 @@ involves: bb-e2e, bb-interactive-description, bb-interactive-playthroughs, bb-sh
 
 ## Playing a round of Textcheck
 
-The learner opens `app/#klasse-5-6`, possibly with `?seed=<n>`. The core takes the pack of the route's school years from
-the data access, lets the round builder pick the slots to corrupt and the variants from the seed, and splits the Variante
-into words. The root component shows the Original, the Variante and the goal line, the word list takes marks and arrow
-keys and hands them back as actions, and the core keeps the marks. When the learner checks, the evaluation says which
-errors were found and how every word counts, and the root component shows the result view and moves the focus to it.
-Every change is announced through the live region, and every learner text comes from the message file through the
-translator.
-
-The route names the mode: `app/#klasse-5-6-quelle` plays the same round with the source PDF instead of the Original,
-`app/#klasse-5-6-original` shows two texts, A and B, and the learner first picks the text with the errors and then
-marks the words there; the result says whether the pick was right.
+The learner opens `app/`, which shows the choice of the exercise, and picks "Fehler im Text finden" (`#text`) or "Mit der
+Quelle vergleichen" (`#quelle`). The stages page shows the three stages of it, derived by the core from the stage rules
+and the texts. A stage opens a round (`app/?seed=<n>#text-1`): after the reading tip, if the stage has one, the round
+builder picks a text that fits the stage and the places to corrupt from the seed, and the round view shows the question,
+the goal line and the rendition (in the comparison with a source, also the source on a sheet of its own or a link to the
+whole article), whose words the word list takes marks and arrow keys for and hands back as actions. When the learner
+checks, the evaluation says which errors were found and how every word counts, and the round view shows the result with
+the advice: the next stage, another round with a tip for the class missed, or the other exercise. A stage passed is
+remembered on the device. Every change is announced through the live region, and every learner text comes from the
+message file through the translator.
 
 The app has pages per language, German at the root and English below `/en/`, with the frame's language switcher. The
 runtime starts the core with the seed and the route only, so the root component tells it the page's language by the
 action `language`, on the first state and again after every route change; the core then starts the same round, the same
-seed and route, with a pack of that language. The source PDFs lie at the site root, so the link from `/en/app/` goes
-two levels up.
+seed and route, with a text of that language. The source PDFs lie at the site root and are a reserve link on the last
+stage.
 
-The learner can press the button "Schrift" in the heading line at any time, which opens the dialog "Schrift und Lesen", and change the style of the font, its weight, the size and the line
-spacing; the texts change at once, and the settings are kept on the device (through the storage of the tooling, under
-the app's own prefix) for the next visit.
+The learner can press the button "Schrift" in the heading line at any time and change the style of the font, its weight,
+the size and the line spacing; the texts change at once, and the settings are kept on the device for the next visit.
 
 The learner can take hints. The button "Hinweis" waits: the runtime's ticks run the core's wait down (15 s after the round
 starts, then 20 s after each hint), and the button shows the seconds left. The first hint names the kinds of error of the
-round where the level hides them; the next marks the sentences with an error, in the mode Original erkennen in both
-texts. When every error is found, the result shows fireworks without a hint and confetti with one.
+round where the stage hides them; the next marks the sentences with an error. When every error is found, the result
+shows fireworks without a hint and confetti with one.
 
 ```arc42
 :::runtime-scenario
 id: scenario-textcheck-round
 title: Playing a round of Textcheck
-trigger: The learner opens a route, marks words, checks, and asks for the next round
-involves: bb-shell, bb-tooling, bb-textcheck-root, bb-textcheck-wordlist, bb-textcheck-choose, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-controls, bb-textcheck-reading, bb-textcheck-hint-button, bb-textcheck-hint-note, bb-textcheck-hints, bb-textcheck-state, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-packs, bb-textcheck-tables
+trigger: The learner opens an exercise, a stage, marks words, checks, and asks for the next round
+involves: bb-shell, bb-tooling, bb-textcheck-root, bb-textcheck-choose-page, bb-textcheck-stages-page, bb-textcheck-tip-page, bb-textcheck-round-view, bb-textcheck-wordlist, bb-textcheck-result, bb-textcheck-ui-texts, bb-textcheck-controls, bb-textcheck-reading, bb-textcheck-reading-tip, bb-textcheck-progress, bb-textcheck-hint-button, bb-textcheck-hint-note, bb-textcheck-hints, bb-textcheck-state, bb-textcheck-stages, bb-textcheck-round, bb-textcheck-evaluate, bb-textcheck-data-access, bb-textcheck-packs, bb-textcheck-stage-rules, bb-textcheck-error-classes
 :::
 ```
 
 ## Checking a text pack
 
 Whoever writes a pack, and the unit tests in the pre-commit and pre-push checks, run the pack checks over every file under
-`src/data/packs/`: the schema first, then what a schema cannot say, with the round builder telling how many slots each
-level can corrupt. An error fails the tests; warnings are read and justified in the pack's notes.
+`src/data/packs/`: the schema first, then what a schema cannot say, with the stages module telling which stages a text
+fits. An error fails the tests; warnings are read and justified in the pack's notes.
 
 ```arc42
 :::runtime-scenario
 id: scenario-textcheck-pack-check
 title: Checking a text pack
 trigger: A pack is written or changed, or the tests run
-involves: bb-textcheck-pack-check, bb-textcheck-round, bb-textcheck-data-access, bb-textcheck-packs, bb-textcheck-tables
+involves: bb-textcheck-pack-check, bb-textcheck-stages, bb-textcheck-data-access, bb-textcheck-packs, bb-textcheck-stage-rules
 :::
 ```
 <!-- app: end -->

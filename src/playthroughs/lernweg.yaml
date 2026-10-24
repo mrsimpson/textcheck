@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/interactive/playthrough.v1.schema.json
+# The way through the app: from the choice of the exercise to the stages of the comparison with a source, its first stage
+# (the Pyramiden text, seed 5) with the reading tip, the source sheet that cannot be marked, the rendition, checking with
+# two of three errors found, and the advice. The next round of the same stage starts without the tip; another stage
+# starts with it.
+route: start
+seed: 1
+steps:
+  - ticks: 1
+    state: { phase: choose, kind: null, tokens: [] }
+  - inputs: [{ kind: action, name: round, value: { seed: 5, route: quelle } }]
+    state: { phase: stages, kind: quelle, route: quelle, stage: null }
+  - inputs: [{ kind: action, name: round, value: { seed: 5, route: quelle-1 } }]
+    state: { phase: tip, kind: quelle, stage: 1, packId: pyramiden, view: source }
+  - inputs: [{ kind: action, name: toggle, value: 34 }]
+    state: { phase: tip, marked: [] }
+  - inputs: [{ kind: action, name: begin }]
+    state: { phase: marking, last: begin, view: source, announced: [number_name_date] }
+    announce: "Los geht's. 3 Fehler sind versteckt."
+  - inputs: [{ kind: action, name: toggle, value: 34 }, { kind: action, name: check }]
+    state: { phase: marking, marked: [], view: source }
+  - inputs: [{ kind: action, name: view, value: rendition }]
+    state: { view: rendition, last: view }
+    announce: "Wiedergabe."
+  - inputs: [{ kind: action, name: toggle, value: 34 }, { kind: action, name: toggle, value: 58 }]
+    state: { marked: [34, 58], cursor: 58, last: mark }
+    announce: "Mexiko. markiert. 2 markiert."
+  - inputs: [{ kind: action, name: check }]
+    state:
+      phase: result
+      last: check
+      result:
+        {
+          total: 3,
+          found: 2,
+          wrong: 0,
+          advice: { passed: false, next: quelle-2, missed: number_name_date, overmarked: false },
+        }
+    announce: "Geprüft: 2 von 3 Fehlern gefunden. Fälschlich markiert: 0."
+  - inputs: [{ kind: action, name: again }]
+    state: { seed: 6, route: quelle-1, phase: marking, view: source, marked: [], result: null, last: start }
+    announce: "Neue Runde. 3 Fehler sind versteckt."
+  - inputs: [{ kind: action, name: round, value: { seed: 9, route: quelle-2 } }]
+    state: { route: quelle-2, stage: 2, phase: tip }
