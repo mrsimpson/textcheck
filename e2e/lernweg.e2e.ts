@@ -40,6 +40,28 @@ test.describe("The way through the app: exercise, stage, tip, round", () => {
     await expect(cards.nth(0)).toContainText("Ein Lesetipp vorab.");
   });
 
+  test("opens a stage by its button, which has the colour of the main action, and by a click on its card", async ({
+    page,
+  }) => {
+    await open(page, "./app/?seed=1#text");
+    const button = page.getByRole("button", { name: "Stufe 1 üben" });
+    const colour = await button.evaluate((element) => getComputedStyle(element).backgroundColor);
+    const accent = await page.locator(".textcheck").evaluate((element) => {
+      const probe = document.createElement("span");
+      probe.style.backgroundColor = getComputedStyle(element).getPropertyValue("--tc-accent");
+      document.body.append(probe);
+      const value = getComputedStyle(probe).backgroundColor;
+      probe.remove();
+      return value;
+    });
+    expect(colour).toBe(accent);
+    await button.click();
+    await expect.poll(async () => (await stateOf(page))["route"]).toBe("text-1");
+    await open(page, "./app/?seed=1#text");
+    await page.locator(".stages article").nth(2).locator("dl").click();
+    await expect.poll(async () => (await stateOf(page))["route"]).toBe("text-3");
+  });
+
   test("gives the stages of the comparison with a source a sheet, then a link", async ({ page }) => {
     await open(page, "./app/?seed=1#quelle");
     const cards = page.locator(".stages article");

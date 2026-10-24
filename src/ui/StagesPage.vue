@@ -32,14 +32,21 @@ const anyPassed = computed(() => props.state.cards.some((card) => passed.value.i
     </p>
     <h2 id="page-heading" tabindex="-1">{{ t(`kind.${kind}` as never) }}</h2>
     <p class="lead">{{ t("stagesLead") }}</p>
-    <article v-for="card in state.cards" :key="card.route" class="card" :aria-labelledby="`stage-${card.stage}`">
+    <!-- the whole card can be clicked or tapped; the button is the way for the keyboard and for whoever does not see the card as clickable -->
+    <article
+      v-for="card in state.cards"
+      :key="card.route"
+      class="card"
+      :aria-labelledby="`stage-${card.stage}`"
+      @click="emit('open', card.route)"
+    >
       <h3 :id="`stage-${card.stage}`">
         {{ t(`stageTitle.${card.stage}` as never) }}
         <span v-if="passed.includes(card.route)" class="done">✓ {{ t("stageDone") }}</span>
       </h3>
       <button
         type="button"
-        class="tc-btn go"
+        class="tc-btn primary go"
         :aria-label="t('stagePractiseLabel', { stage: t(`stageName.${card.stage}` as never) })"
         @click="emit('open', card.route)"
       >
@@ -93,6 +100,7 @@ h2 {
 }
 
 .card {
+  cursor: pointer;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 0.6rem 1rem;
@@ -102,6 +110,10 @@ h2 {
   border: 1px solid var(--tc-line);
   border-radius: 12px;
   background: var(--tc-card);
+}
+
+.card:hover {
+  border-color: var(--tc-accent);
 }
 
 h3 {
