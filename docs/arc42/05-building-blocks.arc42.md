@@ -432,7 +432,7 @@ implements: concept-core-and-shell, concept-hash-routes, concept-determinism
 
 #### Start interface
 
-The app's `src/main.ts` imports the runtime's style, the core and the root component and calls `startInteractive`, with the component for the slot in the heading line as the option `title` if it has one.
+The app's `src/main.ts` imports the runtime's style, the core and the root component and calls `startInteractive`.
 
 ```arc42
 :::ignore H014 installed package @lernapps/app-templates (arc42 cannot resolve untracked paths, docToolchain/arc42-language#128)
