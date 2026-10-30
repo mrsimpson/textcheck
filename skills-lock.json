@@ -8,11 +8,11 @@
       "skillPath": "skills/process/lernapps-app/SKILL.md",
       "computedHash": "a8cfb73a878da25ddf762d97dd60815003d243ac0209a223885c3454f7d82d26"
     },
-    "lernapps-check": {
+    "lernapps-cli": {
       "source": "lernapps/tooling",
       "sourceType": "github",
-      "skillPath": "skills/tooling/lernapps-check/SKILL.md",
-      "computedHash": "35d4baf3328a6deb39d78b27a7db455a7c9a4312c1b439e11ab29b30498e465d"
+      "skillPath": "skills/tooling/lernapps-cli/SKILL.md",
+      "computedHash": "ee41e1a4208794a04dc8c4177d91dda825663aac10ba0d3ead95f829a8672b96"
     },
     "lernapps-commit": {
       "source": "lernapps/tooling",
@@ -31,7 +31,7 @@
       "source": "lernapps/tooling",
       "sourceType": "github",
       "skillPath": "skills/content/lernapps-content-questions/SKILL.md",
-      "computedHash": "b3e70ceb3267d203c87d350028f87f1548da6cbfc26cae5a2926769456e95daf"
+      "computedHash": "771a639a53027873e569f805a4a29b42edb75b6a3783dfc159c26de22e6eee6e"
     },
     "lernapps-content-research": {
       "source": "lernapps/tooling",
@@ -52,14 +52,14 @@
       "sourceType": "github",
       "ref": "exp/compact-guidance",
       "skillPath": "skills/process/lernapps-github/SKILL.md",
-      "computedHash": "27db0e2cf26849535815e547b74209d4f026077a21b5eb541a9fef11d017d220"
+      "computedHash": "f62411ea0f07a6bc98ce5465a125998e7b14bfe0c3e835854b240a570caf3bbe"
     },
     "lernapps-interactive": {
       "source": "lernapps/tooling",
       "sourceType": "github",
       "ref": "exp/compact-guidance",
       "skillPath": "skills/archetypes/lernapps-interactive/SKILL.md",
-      "computedHash": "12c317e7027c3a5b4fa84984ac72c74e995c45a4c4af4f3b727eb68891144f72"
+      "computedHash": "33764ba79d1ce70f899e7203213f4a008dc32b3b22a17ebff47c708bb7dfe673"
     },
     "lernapps-interactive-design": {
       "source": "lernapps/tooling",
@@ -72,7 +72,7 @@
       "sourceType": "github",
       "ref": "exp/compact-guidance",
       "skillPath": "skills/process/lernapps-listing/SKILL.md",
-      "computedHash": "4d524302dc145dcab0189721aca9b833b5eba28ed817f18204ecb52c5e2e2554"
+      "computedHash": "0d720c85c381d4741f938eec2ff2b6d51eafeceb14a36834740e579482446835"
     },
     "rules-review": {
       "source": "lernapps/tooling",
