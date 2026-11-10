@@ -14,7 +14,7 @@
     "@lernapps/tooling": "github:lernapps/tooling#537b944850fc57eb996372d6c8a28f901a7d42b6",
     "ajv": "^8.20.0",
     "typescript": "6.0.3",
-    "vite-plus": "1.0.0",
+    "vite-plus": "1.3.0",
     "vue-tsc": "3.3.11",
     "yaml": "^2.9.1"
   },
