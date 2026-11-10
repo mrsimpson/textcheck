@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import { PACKS } from "./data.ts";
 import { hintWaitAfter, start, step, tick, type State } from "./index.ts";
 import { classesOf, KINDS, placeOf, roundRoute, ROUTES, rulesOf, STAGES } from "./stages.ts";
