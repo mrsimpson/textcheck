@@ -1,6 +1,6 @@
 import { placeOf, ROUTES, STAGES, firstStageOf, KINDS } from "../core/stages.ts";
 import { parse } from "yaml";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import appYaml from "../app.yaml?raw";
 import readme from "../../README.md?raw";
 import classes from "./error-classes.json" with { type: "json" };

@@ -1,5 +1,5 @@
 import Ajv2020 from "ajv/dist/2020.js";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import schema from "../data/textpack.v1.schema.json" with { type: "json" };
 import classes from "../data/error-classes.json" with { type: "json" };
 import { PACKS } from "./data.ts";
