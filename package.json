@@ -14,11 +14,11 @@
     "@lernapps/tooling": "0.12.1",
     "ajv": "8.20.0",
     "typescript": "6.0.3",
-    "vite-plus": "1.4.0",
+    "vite-plus": "1.6.0",
     "vue-tsc": "3.3.14",
     "yaml": "2.9.1"
   },
   "overrides": {
-    "vite": "npm:@voidzero-dev/vite-plus-core@1.4.0"
+    "vite": "npm:@voidzero-dev/vite-plus-core@1.6.0"
   }
 }
