@@ -13,7 +13,7 @@
     "@lernapps/app-templates": "0.8.0",
     "@lernapps/tooling": "0.12.1",
     "ajv": "8.20.0",
-    "typescript": "6.0.3",
+    "typescript": "7.0.2",
     "vite-plus": "1.4.0",
     "vue-tsc": "3.3.14",
     "yaml": "2.9.1"
